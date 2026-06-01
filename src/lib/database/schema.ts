@@ -1,0 +1,231 @@
+import {
+  ContentStatus,
+  DATABASE_TABLES,
+  PageType,
+  SubscriberStatus,
+  UserRole,
+  UserStatus,
+} from "./constants";
+
+export type ColumnType =
+  | "uuid"
+  | "text"
+  | "numeric"
+  | "timestamp"
+  | "jsonb"
+  | "text[]"
+  | "enum";
+
+export type SchemaColumn = {
+  name: string;
+  type: ColumnType;
+  nullable?: boolean;
+  primaryKey?: boolean;
+  references?: {
+    table: string;
+    column: string;
+    onDelete?: "cascade" | "set null" | "restrict";
+  };
+  default?: string;
+  enumValues?: readonly string[];
+  indexed?: boolean;
+  unique?: boolean;
+};
+
+export type TableSchema = {
+  table: string;
+  description: string;
+  columns: SchemaColumn[];
+};
+
+export const databaseSchema: TableSchema[] = [
+  {
+    table: DATABASE_TABLES.categories,
+    description: "SEO category pages and product/blog grouping.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "name", type: "text" },
+      { name: "slug", type: "text", unique: true, indexed: true },
+      { name: "description", type: "text", nullable: true },
+      { name: "image", type: "text", nullable: true },
+      { name: "seo_title", type: "text", nullable: true },
+      { name: "seo_description", type: "text", nullable: true },
+      { name: "created_at", type: "timestamp", default: "now()" },
+      { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.products,
+    description: "Affiliate supplement product detail pages.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      {
+        name: "category_id",
+        type: "uuid",
+        references: { table: DATABASE_TABLES.categories, column: "id", onDelete: "restrict" },
+        indexed: true,
+      },
+      { name: "name", type: "text" },
+      { name: "slug", type: "text", unique: true, indexed: true },
+      { name: "short_description", type: "text", nullable: true },
+      { name: "full_description", type: "text", nullable: true },
+      { name: "image", type: "text", nullable: true },
+      { name: "gallery", type: "text[]", default: "'{}'" },
+      { name: "rating", type: "numeric", nullable: true },
+      { name: "affiliate_url", type: "text", nullable: true },
+      { name: "pros", type: "text[]", default: "'{}'" },
+      { name: "cons", type: "text[]", default: "'{}'" },
+      { name: "ingredients", type: "jsonb", default: "'[]'" },
+      { name: "faq", type: "jsonb", default: "'[]'" },
+      {
+        name: "status",
+        type: "enum",
+        enumValues: Object.values(ContentStatus),
+        default: ContentStatus.Draft,
+        indexed: true,
+      },
+      { name: "seo_title", type: "text", nullable: true },
+      { name: "seo_description", type: "text", nullable: true },
+      { name: "created_at", type: "timestamp", default: "now()" },
+      { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.blogs,
+    description: "SEO editorial articles and supplement guides.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      {
+        name: "category_id",
+        type: "uuid",
+        nullable: true,
+        references: { table: DATABASE_TABLES.categories, column: "id", onDelete: "set null" },
+        indexed: true,
+      },
+      {
+        name: "author_id",
+        type: "uuid",
+        nullable: true,
+        references: { table: DATABASE_TABLES.authors, column: "id", onDelete: "set null" },
+        indexed: true,
+      },
+      { name: "title", type: "text" },
+      { name: "slug", type: "text", unique: true, indexed: true },
+      { name: "excerpt", type: "text", nullable: true },
+      { name: "content", type: "jsonb", default: "'{}'" },
+      { name: "featured_image", type: "text", nullable: true },
+      { name: "reading_time", type: "text", nullable: true },
+      {
+        name: "status",
+        type: "enum",
+        enumValues: Object.values(ContentStatus),
+        default: ContentStatus.Draft,
+        indexed: true,
+      },
+      { name: "seo_title", type: "text", nullable: true },
+      { name: "seo_description", type: "text", nullable: true },
+      { name: "published_at", type: "timestamp", nullable: true },
+      { name: "created_at", type: "timestamp", default: "now()" },
+      { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.authors,
+    description: "Editorial author profiles.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "name", type: "text" },
+      { name: "slug", type: "text", unique: true, indexed: true },
+      { name: "bio", type: "text", nullable: true },
+      { name: "avatar", type: "text", nullable: true },
+      { name: "social_links", type: "jsonb", default: "'{}'" },
+      { name: "created_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.users,
+    description: "Admin, editor, and user accounts.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "full_name", type: "text", nullable: true },
+      { name: "email", type: "text", unique: true, indexed: true },
+      {
+        name: "role",
+        type: "enum",
+        enumValues: Object.values(UserRole),
+        default: UserRole.User,
+        indexed: true,
+      },
+      { name: "avatar", type: "text", nullable: true },
+      {
+        name: "status",
+        type: "enum",
+        enumValues: Object.values(UserStatus),
+        default: UserStatus.Pending,
+        indexed: true,
+      },
+      { name: "created_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.seo,
+    description: "Centralized metadata and structured data.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "page_type", type: "enum", enumValues: Object.values(PageType), indexed: true },
+      { name: "page_slug", type: "text", indexed: true },
+      { name: "meta_title", type: "text" },
+      { name: "meta_description", type: "text" },
+      { name: "canonical_url", type: "text", nullable: true },
+      { name: "schema_json", type: "jsonb", default: "'{}'" },
+      { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.newsletterSubscribers,
+    description: "Newsletter opt-ins and subscription status.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "email", type: "text", unique: true, indexed: true },
+      {
+        name: "status",
+        type: "enum",
+        enumValues: Object.values(SubscriberStatus),
+        default: SubscriberStatus.Pending,
+        indexed: true,
+      },
+      { name: "created_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.affiliateClicks,
+    description: "Affiliate click analytics.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      {
+        name: "product_id",
+        type: "uuid",
+        references: { table: DATABASE_TABLES.products, column: "id", onDelete: "cascade" },
+        indexed: true,
+      },
+      { name: "clicked_at", type: "timestamp", default: "now()", indexed: true },
+      { name: "source_page", type: "text", nullable: true },
+      { name: "country", type: "text", nullable: true },
+      { name: "device", type: "text", nullable: true },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.siteSettings,
+    description: "Global site branding and content settings.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "site_name", type: "text" },
+      { name: "logo", type: "text", nullable: true },
+      { name: "favicon", type: "text", nullable: true },
+      { name: "social_links", type: "jsonb", default: "'{}'" },
+      { name: "footer_content", type: "jsonb", default: "'{}'" },
+      { name: "contact_email", type: "text", nullable: true },
+      { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+];

@@ -1,0 +1,388 @@
+import { Activity, Brain, Dumbbell, Flower2, HeartPulse, Leaf, Moon, Pill } from "lucide-react";
+import type { BlogPostCard } from "@/components/blog/BlogCard";
+import type { ProductCardData } from "@/components/product/ProductCard";
+import type { ShowcaseProductData } from "@/components/product/SupplementShowcaseCard";
+import type { SearchResult } from "@/lib/search-data";
+import type { CategoryDetail, CategoryProduct } from "@/lib/category-data";
+import type { ProductDetail } from "@/lib/product-data";
+import { ContentStatus } from "@/lib/database/constants";
+import type { Blog, Category, FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
+
+const accentPairs = [
+  { accent: "from-soft-green to-gold/[0.14]", glow: "bg-primary/[0.12]" },
+  { accent: "from-primary/[0.12] to-soft-green", glow: "bg-gold/[0.16]" },
+  { accent: "from-gold/[0.16] to-white", glow: "bg-primary/[0.10]" },
+  { accent: "from-primary/[0.14] to-gold/[0.16]", glow: "bg-gold/[0.14]" },
+];
+
+const categoryIconMap = [
+  { match: "weight", icon: Activity },
+  { match: "hair", icon: Leaf },
+  { match: "men", icon: Dumbbell },
+  { match: "women", icon: Flower2 },
+  { match: "brain", icon: Brain },
+  { match: "sleep", icon: Moon },
+  { match: "gut", icon: Leaf },
+  { match: "heart", icon: HeartPulse },
+];
+
+export function getCategoryIcon(label: string) {
+  const normalized = label.toLowerCase();
+  return categoryIconMap.find((item) => normalized.includes(item.match))?.icon ?? Pill;
+}
+
+export function onlyPublished<T extends { status?: ContentStatus; deleted_at?: string | null }>(
+  records: T[],
+) {
+  return records.filter(
+    (record) => record.status === ContentStatus.Published && record.deleted_at === null,
+  );
+}
+
+export function categoryTitle(category?: Category | null) {
+  return category?.title || category?.name || "Wellness";
+}
+
+export function createCategoryMap(categories: Category[]) {
+  return new Map(categories.map((category) => [category.id, category]));
+}
+
+export function productToCard(
+  product: Product,
+  categories: Map<string, Category>,
+  index = 0,
+): ProductCardData {
+  const accent = accentPairs[index % accentPairs.length];
+
+  return {
+    slug: product.slug,
+    name: product.title || product.name,
+    subtitle:
+      product.short_description ||
+      product.full_description ||
+      "Premium supplement pick with clean daily wellness positioning.",
+    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    rating: (product.rating ?? 4.8).toFixed(1),
+    image: product.image || product.gallery?.[0],
+    glow: accent.glow,
+    accent: accent.accent,
+  };
+}
+
+export function productToShowcaseCard(
+  product: Product,
+  categories: Map<string, Category>,
+  index = 0,
+): ShowcaseProductData {
+  const accent = accentPairs[index % accentPairs.length];
+
+  return {
+    slug: product.slug,
+    name: product.title || product.name,
+    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    rating: (product.rating ?? 4.8).toFixed(1),
+    image: product.image || product.gallery?.[0],
+    accent: accent.accent,
+    imageScale: index % 2 === 0 ? "scale-[1.08]" : "scale-[1.02]",
+  };
+}
+
+export function productToCategoryProduct(
+  product: Product,
+  categories: Map<string, Category>,
+  index = 0,
+): CategoryProduct {
+  const accent = accentPairs[index % accentPairs.length];
+
+  return {
+    slug: product.slug,
+    name: product.title || product.name,
+    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    rating: (product.rating ?? 4.8).toFixed(1),
+    description:
+      product.short_description ||
+      product.full_description ||
+      "Premium wellness formula positioned for clean supplement discovery.",
+    image: product.image || product.gallery?.[0],
+    accent: accent.accent,
+    glow: accent.glow,
+    featured: index < 6,
+  };
+}
+
+function asRecord(value: JsonValue): Record<string, JsonValue> | null {
+  return typeof value === "object" && value !== null && !Array.isArray(value)
+    ? (value as Record<string, JsonValue>)
+    : null;
+}
+
+function textFromValue(value: JsonValue | undefined, fallback = "") {
+  return typeof value === "string" ? value : fallback;
+}
+
+function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
+  const values = Array.isArray(product.benefits) ? product.benefits : [];
+  const benefits = values
+    .map((value, index) => {
+      if (typeof value === "string") {
+        return {
+          title: value,
+          description: "Supports a clean, consistent daily wellness routine.",
+        };
+      }
+
+      const record = asRecord(value);
+
+      if (!record) {
+        return null;
+      }
+
+      return {
+        title: textFromValue(record.title, `Benefit ${index + 1}`),
+        description: textFromValue(
+          record.description ?? record.benefit,
+          "Supports a premium wellness routine when used as directed.",
+        ),
+      };
+    })
+    .filter(Boolean) as ProductDetail["benefits"];
+
+  return benefits.length
+    ? benefits
+    : [
+        {
+          title: "Daily wellness support",
+          description: "Designed to support consistent supplement habits.",
+        },
+        {
+          title: "Premium ingredient focus",
+          description: "Built around a clear supplement positioning and ingredient profile.",
+        },
+        {
+          title: "Routine friendly",
+          description: "Easy to compare and add to a health-focused daily plan.",
+        },
+        {
+          title: "Goal-focused formula",
+          description: "Created for shoppers researching targeted wellness support.",
+        },
+      ];
+}
+
+function ingredientsFromProduct(product: Product): ProductDetail["ingredients"] {
+  const ingredients = (product.ingredients ?? [])
+    .map((ingredient: Ingredient, index) => ({
+      name: ingredient.name || `Ingredient ${index + 1}`,
+      benefit:
+        ingredient.description ||
+        ingredient.amount ||
+        "Included as part of the product's premium wellness formula.",
+    }))
+    .filter((ingredient) => ingredient.name);
+
+  return ingredients.length
+    ? ingredients
+    : [
+        {
+          name: "Premium Formula Blend",
+          benefit: "Review the official label for complete ingredient details and serving guidance.",
+        },
+      ];
+}
+
+export function productToDetail(
+  product: Product,
+  products: Product[],
+  categories: Map<string, Category>,
+): ProductDetail {
+  const benefits = benefitsFromProduct(product);
+  const related = products
+    .filter((item) => item.slug !== product.slug)
+    .slice(0, 6)
+    .map((item) => item.slug);
+
+  return {
+    slug: product.slug,
+    productId: product.id,
+    affiliateUrl: product.affiliate_url ?? undefined,
+    name: product.title || product.name,
+    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    rating: (product.rating ?? 4.8).toFixed(1),
+    description:
+      product.short_description ||
+      product.full_description ||
+      "A premium supplement formula prepared for focused wellness research and product comparison.",
+    image: product.image || product.gallery?.[0],
+    gallery: [product.image, ...(product.gallery ?? [])].filter(Boolean) as string[],
+    bullets: benefits.slice(0, 4).map((benefit) => benefit.title),
+    trustBadges: ["GMP Certified", "Natural Formula", "Trusted Brand", "USA Made"],
+    benefits,
+    ingredients: ingredientsFromProduct(product),
+    pros: product.pros?.length
+      ? product.pros
+      : ["Clear wellness positioning", "Premium supplement profile", "Easy routine fit"],
+    cons: product.cons?.length
+      ? product.cons
+      : ["Results vary by lifestyle", "Review label before use", "Not a replacement for medical care"],
+    faqs: product.faq?.length
+      ? product.faq
+      : [
+          {
+            question: `How do I use ${product.title || product.name}?`,
+            answer: "Follow the official product directions and review the label before use.",
+          },
+          {
+            question: "Is this supplement right for everyone?",
+            answer:
+              "Suitability depends on health status, medications, and personal goals. Consult a qualified professional when unsure.",
+          },
+        ],
+    related,
+    relatedProducts: related
+      .map((slug) => products.find((item) => item.slug === slug))
+      .filter(Boolean)
+      .map((item, index) => productToCard(item as Product, categories, index)),
+  };
+}
+
+export function blogToCard(blog: Blog, categories: Map<string, Category>): BlogPostCard {
+  const category = blog.category_id ? categories.get(blog.category_id) : null;
+
+  return {
+    slug: blog.slug,
+    title: blog.title,
+    description:
+      blog.excerpt ||
+      blog.seo_description ||
+      "Premium Suppriva wellness guide for supplement research and smarter decisions.",
+    category: categoryTitle(category),
+    categorySlug: category?.slug,
+    readingTime: blog.reading_time || "7 min read",
+    image: blog.featured_image || "/assets/blog-weight-loss.webp",
+  };
+}
+
+export function categoryToDetail(
+  category: Category,
+  allCategories: Category[],
+  products: Product[],
+  blogs: Blog[],
+): CategoryDetail {
+  const categoryProducts = products.filter((product) => product.category_id === category.id);
+  const categoryBlogs = blogs.filter((blog) => blog.category_id === category.id);
+  const categories = createCategoryMap(allCategories);
+  const productCards = categoryProducts.map((product, index) =>
+    productToCategoryProduct(product, categories, index),
+  );
+  const title = category.title.endsWith("Supplements")
+    ? category.title
+    : `${category.title} Supplements`;
+  const description =
+    category.description ||
+    category.seo_description ||
+    `Discover premium ${category.title.toLowerCase()} supplements selected for clean wellness research.`;
+  const relatedCategories = allCategories
+    .filter((item) => item.id !== category.id)
+    .slice(0, 6)
+    .map((item) => ({ label: item.title, slug: item.slug }));
+
+  return {
+    slug: category.slug,
+    title,
+    eyebrow: category.title,
+    subtitle: description,
+    image: category.image ?? undefined,
+    stats: [
+      `${categoryProducts.length} Product${categoryProducts.length === 1 ? "" : "s"}`,
+      `${categoryBlogs.length} Guide${categoryBlogs.length === 1 ? "" : "s"}`,
+      "Updated Weekly",
+      "Published Picks",
+    ],
+    products: productCards,
+    featured: productCards.filter((product) => product.featured).slice(0, 6),
+    relatedCategories,
+    seoTitle: category.seo_title || `Best ${category.title} Supplements: Complete Guide`,
+    seoParagraphs: [
+      description,
+      `Suppriva organizes ${category.title.toLowerCase()} products with live category data, product ratings, descriptions, and affiliate-ready research details from the database.`,
+      category.seo_description ||
+        "Always review the official product label and use supplements as part of a balanced wellness routine.",
+    ],
+    facts: [
+      `${categoryProducts.length} live product records are connected to this category.`,
+      category.seo_keywords?.length
+        ? `SEO focus: ${category.seo_keywords.slice(0, 4).join(", ")}.`
+        : "Category metadata is ready for SEO expansion.",
+      "Published database records power this page.",
+    ],
+    faqs: buildCategoryFaq(category.title),
+  };
+}
+
+function buildCategoryFaq(title: string): FAQItem[] {
+  return [
+    {
+      question: `What are ${title.toLowerCase()} supplements?`,
+      answer:
+        "They are supplement products organized around this wellness goal and pulled from Suppriva's live database.",
+    },
+    {
+      question: "How are products selected?",
+      answer:
+        "Products shown here come from published dashboard records with category assignment, descriptions, ratings, and affiliate data.",
+    },
+    {
+      question: "Are supplements a replacement for medical care?",
+      answer:
+        "No. Supplements should not replace professional medical advice, diagnosis, or treatment.",
+    },
+    {
+      question: "How often is this category updated?",
+      answer:
+        "The page updates from live Supabase records as dashboard content changes.",
+    },
+  ];
+}
+
+export function buildSearchResults(
+  products: Product[],
+  categories: Category[],
+  blogs: Blog[],
+): SearchResult[] {
+  const categoryMap = createCategoryMap(categories);
+
+  return [
+    ...products.map((product) => ({
+      id: product.id,
+      type: "product" as const,
+      title: product.title || product.name,
+      category: categoryTitle(product.category_id ? categoryMap.get(product.category_id) : null),
+      rating: (product.rating ?? 4.8).toFixed(1),
+      description:
+        product.short_description ||
+        product.full_description ||
+        "Premium supplement record from Suppriva.",
+      href: `/product/${product.slug}`,
+      image: product.image || product.gallery?.[0] || "/assets/hero-supplements.webp",
+    })),
+    ...categories.map((category) => ({
+      id: category.id,
+      type: "category" as const,
+      title: `${category.title} Supplements`,
+      category: "Category",
+      description: category.description || category.seo_description || "Suppriva supplement category.",
+      href: `/category/${category.slug}`,
+      image: category.image || undefined,
+    })),
+    ...blogs.map((blog) => ({
+      id: blog.id,
+      type: "article" as const,
+      title: blog.title,
+      category: categoryTitle(blog.category_id ? categoryMap.get(blog.category_id) : null),
+      readingTime: blog.reading_time || "7 min read",
+      description: blog.excerpt || blog.seo_description || "Suppriva wellness article.",
+      href: `/blog/${blog.slug}`,
+      image: blog.featured_image || "/assets/blog-weight-loss.webp",
+    })),
+  ];
+}

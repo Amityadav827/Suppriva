@@ -1,0 +1,160 @@
+import type { BlogArticle } from "@/lib/blog-data";
+import type { ProductDetail } from "@/lib/product-data";
+import { absoluteUrl, SITE_URL } from "@/lib/seo/metadata";
+
+type BreadcrumbItem = {
+  name: string;
+  path: string;
+};
+
+export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function buildWebsiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Suppriva",
+    url: SITE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+export function buildOrganizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Suppriva",
+    url: SITE_URL,
+    logo: absoluteUrl("/assets/hero-supplements.webp"),
+  };
+}
+
+export function buildProductJsonLd(product: ProductDetail) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    category: product.category,
+    image: absoluteUrl(product.image || product.gallery?.[0]),
+    brand: {
+      "@type": "Brand",
+      name: product.name,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: product.rating,
+      reviewCount: 128,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    offers: {
+      "@type": "Offer",
+      url: absoluteUrl(`/product/${product.slug}`),
+      availability: "https://schema.org/InStock",
+      priceCurrency: "USD",
+    },
+  };
+}
+
+export function buildArticleJsonLd(article: BlogArticle) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.summary,
+    image: absoluteUrl(article.image),
+    author: {
+      "@type": "Person",
+      name: article.author.name,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Suppriva",
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/assets/hero-supplements.webp"),
+      },
+    },
+    mainEntityOfPage: absoluteUrl(`/blog/${article.slug}`),
+  };
+}
+
+export function buildCollectionPageJsonLd({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description,
+    url: absoluteUrl(path),
+  };
+}
+
+export function buildWebPageJsonLd({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: absoluteUrl(path),
+    publisher: {
+      "@type": "Organization",
+      name: "Suppriva",
+      url: SITE_URL,
+    },
+  };
+}
+
+export function buildContactPageJsonLd({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: title,
+    description,
+    url: absoluteUrl(path),
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "support@suppriva.com",
+    },
+  };
+}
