@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   BarChart3,
   FileText,
+  FlaskConical,
   FolderOpen,
   LayoutDashboard,
   MessageSquare,
@@ -19,6 +20,7 @@ const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Products", href: "/dashboard/products", icon: Package },
   { label: "Categories", href: "/dashboard/categories", icon: FolderOpen },
+  { label: "Ingredients", href: "/dashboard/ingredients", icon: FlaskConical },
   { label: "Blogs", href: "/dashboard/blogs", icon: FileText },
   { label: "Contact", href: "/dashboard/contact-messages", icon: MessageSquare },
   { label: "Users", href: "/dashboard/users", icon: Users },

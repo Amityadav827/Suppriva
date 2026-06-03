@@ -27,6 +27,7 @@ export enum PageType {
   Product = "product",
   Category = "category",
   Blog = "blog",
+  Ingredient = "ingredient",
   Search = "search",
   Static = "static",
 }
@@ -38,6 +39,8 @@ export const DATABASE_TABLES = {
   authors: "authors",
   users: "users",
   seo: "seo",
+  ingredients: "ingredients",
+  productIngredients: "product_ingredients",
   newsletterSubscribers: "newsletter_subscribers",
   contactMessages: "contact_messages",
   affiliateClicks: "affiliate_clicks",

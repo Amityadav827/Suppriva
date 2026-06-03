@@ -6,7 +6,15 @@ import type { SearchResult } from "@/lib/search-data";
 import type { CategoryDetail, CategoryProduct } from "@/lib/category-data";
 import type { ProductDetail } from "@/lib/product-data";
 import { ContentStatus } from "@/lib/database/constants";
-import type { Blog, Category, FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
+import type {
+  Blog,
+  Category,
+  FAQItem,
+  Ingredient,
+  JsonValue,
+  Product,
+  ProductIngredient,
+} from "@/lib/database/types";
 
 const accentPairs = [
   { accent: "from-soft-green to-gold/[0.14]", glow: "bg-primary/[0.12]" },
@@ -169,9 +177,23 @@ function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
       ];
 }
 
-function ingredientsFromProduct(product: Product): ProductDetail["ingredients"] {
+function ingredientsFromProduct(
+  product: Product,
+  linkedIngredients: Ingredient[] = [],
+): ProductDetail["ingredients"] {
+  if (linkedIngredients.length) {
+    return linkedIngredients.map((ingredient) => ({
+      name: ingredient.name,
+      benefit:
+        ingredient.short_description ||
+        ingredient.full_description ||
+        "Explore this ingredient in the Suppriva ingredient library.",
+      slug: ingredient.slug,
+    }));
+  }
+
   const ingredients = (product.ingredients ?? [])
-    .map((ingredient: Ingredient, index) => ({
+    .map((ingredient: ProductIngredient, index) => ({
       name: ingredient.name || `Ingredient ${index + 1}`,
       benefit:
         ingredient.description ||
@@ -194,6 +216,7 @@ export function productToDetail(
   product: Product,
   products: Product[],
   categories: Map<string, Category>,
+  linkedIngredients: Ingredient[] = [],
 ): ProductDetail {
   const benefits = benefitsFromProduct(product);
   const related = products
@@ -217,7 +240,7 @@ export function productToDetail(
     bullets: benefits.slice(0, 4).map((benefit) => benefit.title),
     trustBadges: ["GMP Certified", "Natural Formula", "Trusted Brand", "USA Made"],
     benefits,
-    ingredients: ingredientsFromProduct(product),
+    ingredients: ingredientsFromProduct(product, linkedIngredients),
     pros: product.pros?.length
       ? product.pros
       : ["Clear wellness positioning", "Premium supplement profile", "Easy routine fit"],
@@ -348,6 +371,7 @@ export function buildSearchResults(
   products: Product[],
   categories: Category[],
   blogs: Blog[],
+  ingredients: Ingredient[] = [],
 ): SearchResult[] {
   const categoryMap = createCategoryMap(categories);
 
@@ -383,6 +407,19 @@ export function buildSearchResults(
       description: blog.excerpt || blog.seo_description || "Suppriva wellness article.",
       href: `/blog/${blog.slug}`,
       image: blog.featured_image || "/assets/blog-weight-loss.webp",
+    })),
+    ...ingredients.map((ingredient) => ({
+      id: ingredient.id,
+      type: "ingredient" as const,
+      title: ingredient.name,
+      category: "Ingredient",
+      readingTime: ingredient.is_featured ? "Featured" : "Library",
+      description:
+        ingredient.short_description ||
+        ingredient.meta_description ||
+        "Suppriva ingredient library reference.",
+      href: `/ingredient/${ingredient.slug}`,
+      image: ingredient.featured_image || "/assets/hero-supplements.webp",
     })),
   ];
 }

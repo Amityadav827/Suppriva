@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   BatteryCharging,
@@ -49,13 +50,33 @@ export function BenefitCard({
 export function IngredientCard({
   name,
   benefit,
+  slug,
   index,
 }: {
   name: string;
   benefit: string;
+  slug?: string;
   index: number;
 }) {
   const Icon = ingredientIcons[index % ingredientIcons.length];
+  const content = (
+    <div className="flex items-start gap-4">
+      <span className="grid size-14 shrink-0 place-items-center rounded-full border border-gold/20 bg-gold/10 text-primary transition duration-300 group-hover:scale-105">
+        <Icon className="size-6" aria-hidden="true" />
+      </span>
+      <div>
+        <h3 className="font-heading text-lg font-extrabold text-text-dark">
+          {name}
+        </h3>
+        <p className="mt-2 text-sm leading-6 text-muted">{benefit}</p>
+        {slug ? (
+          <p className="mt-3 font-heading text-xs font-semibold text-primary">
+            View ingredient profile
+          </p>
+        ) : null}
+      </div>
+    </div>
+  );
 
   return (
     <motion.article
@@ -64,17 +85,7 @@ export function IngredientCard({
       transition={{ duration: 0.35 }}
       className="group rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium-hover"
     >
-      <div className="flex items-start gap-4">
-        <span className="grid size-14 shrink-0 place-items-center rounded-full border border-gold/20 bg-gold/10 text-primary transition duration-300 group-hover:scale-105">
-          <Icon className="size-6" aria-hidden="true" />
-        </span>
-        <div>
-          <h3 className="font-heading text-lg font-extrabold text-text-dark">
-            {name}
-          </h3>
-          <p className="mt-2 text-sm leading-6 text-muted">{benefit}</p>
-        </div>
-      </div>
+      {slug ? <Link href={`/ingredient/${slug}`}>{content}</Link> : content}
     </motion.article>
   );
 }

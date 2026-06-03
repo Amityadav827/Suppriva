@@ -8,6 +8,7 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { PageType } from "@/lib/database/constants";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
 import { CategoryService } from "@/services/category.service";
+import { IngredientService } from "@/services/ingredient.service";
 import { ProductService } from "@/services/product.service";
 import { createCategoryMap, onlyPublished, productToDetail } from "@/lib/live-data";
 import {
@@ -71,7 +72,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
   const categoryMap = createCategoryMap(publishedCategories);
-  const productDetail = productToDetail(product, publishedProducts, categoryMap);
+  const linkedIngredients = await new IngredientService().getIngredientsForProduct(product.id);
+  const productDetail = productToDetail(
+    product,
+    publishedProducts,
+    categoryMap,
+    linkedIngredients,
+  );
 
   return (
     <>

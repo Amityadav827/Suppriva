@@ -3,7 +3,13 @@
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { ImageUploader } from "@/components/dashboard/media/ImageUploader";
 import { ContentStatus } from "@/lib/database/constants";
-import type { Category, FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
+import type {
+  Category,
+  FAQItem,
+  JsonValue,
+  Product,
+  ProductIngredient,
+} from "@/lib/database/types";
 import { STORAGE_BUCKETS } from "@/lib/storage/upload";
 import { motion } from "framer-motion";
 import { Loader2, Pencil, Plus, RefreshCw, Search, Trash2, X } from "lucide-react";
@@ -74,7 +80,7 @@ function commaList(value: string) {
     .filter(Boolean);
 }
 
-function parseIngredients(value: string): Ingredient[] {
+function parseIngredients(value: string): ProductIngredient[] {
   return lines(value).map((item) => {
     const [name, description = ""] = item.split("|").map((part) => part.trim());
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, ShoppingCart, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -23,32 +24,34 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[linear-gradient(90deg,#063921,#0B5D3B)] shadow-[0_18px_50px_rgba(6,57,33,0.18)]">
       <nav
         aria-label="Primary navigation"
-        className="site-container flex min-h-[82px] items-center gap-4 py-3 lg:min-h-[90px] lg:gap-7"
+        className="site-container relative flex min-h-[82px] items-center justify-between gap-4 py-3 lg:min-h-[90px] lg:gap-7"
       >
         <Link href="/" className="shrink-0" aria-label="Suppriva home">
-          <span className="block font-heading text-2xl font-extrabold tracking-[0.14em] text-white sm:text-[28px]">
-            SUPPRIVA
-          </span>
-          <span className="mt-0.5 block font-heading text-[9px] font-semibold uppercase tracking-[0.22em] text-white/62 sm:text-[10px]">
-            Your Supplement Destination
-          </span>
+          <Image
+            src="/assets/suppriva-logo-transparent.png"
+            alt="Suppriva"
+            width={256}
+            height={76}
+            priority
+            className="h-auto w-[154px] sm:w-[192px] lg:w-[208px]"
+          />
         </Link>
 
-        <SearchBar className="mx-auto hidden max-w-[520px] flex-1 md:flex xl:max-w-[620px]" />
+        <SearchBar className="mx-auto hidden max-w-[420px] flex-1 md:flex xl:max-w-[500px]" />
 
         <div className="ml-auto hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="font-heading text-sm font-semibold text-white/82 transition duration-300 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="font-heading text-sm font-semibold text-white transition duration-300 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        <div className="ml-auto hidden items-center gap-2 md:flex lg:ml-0">
+        <div className="ml-auto hidden items-center gap-2 lg:flex lg:ml-0">
           <IconButton label="Account" href="/login">
             <User className="size-5" aria-hidden="true" />
           </IconButton>
@@ -60,7 +63,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="ml-auto grid size-12 place-items-center rounded-full border border-white/12 bg-white/10 text-white backdrop-blur transition duration-300 hover:bg-white/16 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:hidden"
+          className="absolute right-0 top-1/2 grid size-12 shrink-0 -translate-y-1/2 place-items-center rounded-full border border-white/12 bg-white/10 text-white backdrop-blur transition duration-300 hover:bg-white/16 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold lg:hidden"
           aria-label="Open navigation menu"
           aria-expanded={open}
           onClick={() => setOpen(true)}
@@ -79,7 +82,7 @@ export function Navbar() {
             <motion.button
               type="button"
               aria-label="Close navigation menu"
-              className="fixed inset-0 z-40 cursor-default bg-dark-green/55 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 cursor-default bg-dark-green/55 backdrop-blur-sm lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -88,21 +91,23 @@ export function Navbar() {
             />
             <motion.aside
               aria-label="Mobile navigation"
-              className="fixed right-0 top-0 z-50 flex h-dvh w-[min(88vw,390px)] flex-col bg-[linear-gradient(180deg,#063921,#0B5D3B)] p-6 text-white shadow-[-24px_0_80px_rgba(0,0,0,0.26)] md:hidden"
+              className="fixed right-0 top-0 z-50 flex h-dvh w-[min(88vw,390px)] flex-col bg-[linear-gradient(180deg,#063921,#0B5D3B)] p-6 text-white shadow-[-24px_0_80px_rgba(0,0,0,0.26)] lg:hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="font-heading text-2xl font-extrabold tracking-[0.14em]">
-                    SUPPRIVA
-                  </p>
-                  <p className="mt-1 font-heading text-[10px] font-semibold uppercase tracking-[0.22em] text-white/62">
-                    Your Supplement Destination
-                  </p>
-                </div>
+                <Link href="/" onClick={() => setOpen(false)} aria-label="Suppriva home">
+                  <Image
+                    src="/assets/suppriva-logo-transparent.png"
+                    alt="Suppriva"
+                    width={224}
+                    height={67}
+                    priority
+                    className="h-auto w-[184px]"
+                  />
+                </Link>
                 <button
                   type="button"
                   aria-label="Close navigation menu"
@@ -121,7 +126,7 @@ export function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-2xl px-4 py-4 font-heading text-base font-semibold text-white/86 transition duration-300 hover:bg-white/10 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    className="rounded-2xl px-4 py-4 font-heading text-base font-semibold text-white transition duration-300 hover:bg-white/10 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                   >
                     {link.label}
                   </Link>

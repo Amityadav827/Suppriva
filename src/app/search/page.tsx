@@ -8,6 +8,7 @@ import { PageType } from "@/lib/database/constants";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
+import { IngredientService } from "@/services/ingredient.service";
 import { ProductService } from "@/services/product.service";
 import { buildSearchResults, onlyPublished } from "@/lib/live-data";
 import { buildBreadcrumbJsonLd, buildWebsiteJsonLd } from "@/lib/seo/structured-data";
@@ -37,18 +38,25 @@ export async function generateMetadata({
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const { q } = await searchParams;
-  const [products, categories, blogs] = await Promise.all([
+  const [products, categories, blogs, ingredients] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
+    new IngredientService().getAllIngredients(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
   const publishedBlogs = onlyPublished(blogs);
-  const results = buildSearchResults(publishedProducts, publishedCategories, publishedBlogs);
+  const results = buildSearchResults(
+    publishedProducts,
+    publishedCategories,
+    publishedBlogs,
+    ingredients,
+  );
   const suggestions = publishedCategories.slice(0, 8).map((category) => category.title);
   const popular = [
     ...publishedProducts.slice(0, 5).map((product) => product.title || product.name),
+    ...ingredients.slice(0, 3).map((ingredient) => ingredient.name),
     ...publishedCategories.slice(0, 3).map((category) => category.title),
   ].slice(0, 8);
 

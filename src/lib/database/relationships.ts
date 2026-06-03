@@ -35,6 +35,22 @@ export const databaseRelationships: Relationship[] = [
     description: "Each blog can have one author. Authors can write many blogs.",
   },
   {
+    fromTable: DATABASE_TABLES.productIngredients,
+    fromColumn: "product_id",
+    toTable: DATABASE_TABLES.products,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each product ingredient relation belongs to one product.",
+  },
+  {
+    fromTable: DATABASE_TABLES.productIngredients,
+    fromColumn: "ingredient_id",
+    toTable: DATABASE_TABLES.ingredients,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each product ingredient relation belongs to one ingredient.",
+  },
+  {
     fromTable: DATABASE_TABLES.affiliateClicks,
     fromColumn: "product_id",
     toTable: DATABASE_TABLES.products,
@@ -53,5 +69,9 @@ authors
   └─ blogs
 
 products
+  ├─ product_ingredients
   └─ affiliate_clicks
+
+ingredients
+  └─ product_ingredients
 `;

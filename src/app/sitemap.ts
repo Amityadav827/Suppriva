@@ -4,6 +4,7 @@ import { legalFooterLinks } from "@/lib/legal-pages";
 import { SITE_URL } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
+import { IngredientService } from "@/services/ingredient.service";
 import { ProductService } from "@/services/product.service";
 
 function toUrl(path: string) {
@@ -16,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/products",
     "/blogs",
     "/categories",
+    "/ingredients",
     "/search",
     ...legalFooterLinks.map((link) => link.href),
   ].map((path) => ({
@@ -25,10 +27,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path ? 0.8 : 1,
   }));
 
-  const [products, categories, blogs] = await Promise.all([
+  const [products, categories, blogs, ingredients] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
+    new IngredientService().getAllIngredients(),
   ]);
 
   const productRoutes = products
@@ -58,5 +61,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
-  return [...staticRoutes, ...productRoutes, ...categoryRoutes, ...blogRoutes];
+  const ingredientRoutes = ingredients
+    .filter((ingredient) => !ingredient.deleted_at)
+    .map((ingredient) => ({
+      url: toUrl(`/ingredient/${ingredient.slug}`),
+      lastModified: new Date(ingredient.updated_at || ingredient.created_at),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
+
+  return [
+    ...staticRoutes,
+    ...productRoutes,
+    ...categoryRoutes,
+    ...blogRoutes,
+    ...ingredientRoutes,
+  ];
 }

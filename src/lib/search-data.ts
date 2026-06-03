@@ -1,4 +1,4 @@
-export type SearchResultType = "product" | "category" | "article";
+export type SearchResultType = "product" | "category" | "article" | "ingredient";
 
 export type SearchResult = {
   id: string;

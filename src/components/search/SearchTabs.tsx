@@ -9,6 +9,7 @@ const tabs: { label: string; value: SearchTab }[] = [
   { label: "Products", value: "product" },
   { label: "Categories", value: "category" },
   { label: "Articles", value: "article" },
+  { label: "Ingredients", value: "ingredient" },
 ];
 
 export function SearchTabs({

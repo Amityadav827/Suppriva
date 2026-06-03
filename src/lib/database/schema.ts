@@ -14,6 +14,7 @@ export type ColumnType =
   | "timestamp"
   | "jsonb"
   | "text[]"
+  | "boolean"
   | "enum";
 
 export type SchemaColumn = {
@@ -179,6 +180,47 @@ export const databaseSchema: TableSchema[] = [
       { name: "canonical_url", type: "text", nullable: true },
       { name: "schema_json", type: "jsonb", default: "'{}'" },
       { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.ingredients,
+    description: "Ingredient library reference pages and SEO authority content.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "name", type: "text" },
+      { name: "slug", type: "text", unique: true, indexed: true },
+      { name: "short_description", type: "text", nullable: true },
+      { name: "full_description", type: "text", nullable: true },
+      { name: "benefits", type: "text[]", default: "'{}'" },
+      { name: "side_effects", type: "text[]", default: "'{}'" },
+      { name: "dosage", type: "text", nullable: true },
+      { name: "scientific_notes", type: "text", nullable: true },
+      { name: "featured_image", type: "text", nullable: true },
+      { name: "meta_title", type: "text", nullable: true },
+      { name: "meta_description", type: "text", nullable: true },
+      { name: "is_featured", type: "boolean", default: "false", indexed: true },
+      { name: "created_at", type: "timestamp", default: "now()" },
+      { name: "updated_at", type: "timestamp", default: "now()" },
+    ],
+  },
+  {
+    table: DATABASE_TABLES.productIngredients,
+    description: "Many-to-many product and ingredient relationships.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      {
+        name: "product_id",
+        type: "uuid",
+        references: { table: DATABASE_TABLES.products, column: "id", onDelete: "cascade" },
+        indexed: true,
+      },
+      {
+        name: "ingredient_id",
+        type: "uuid",
+        references: { table: DATABASE_TABLES.ingredients, column: "id", onDelete: "cascade" },
+        indexed: true,
+      },
+      { name: "created_at", type: "timestamp", default: "now()" },
     ],
   },
   {

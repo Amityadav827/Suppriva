@@ -31,6 +31,7 @@ import { legalFooterLinks } from "@/lib/legal-pages";
 
 export const navLinks = [
   { label: "Products", href: "/products" },
+  { label: "Ingredients", href: "/ingredients" },
   { label: "Categories", href: "/categories" },
   { label: "Blogs", href: "/blogs" },
   { label: "Search", href: "/search" },
@@ -297,6 +298,7 @@ export const footerQuickLinks = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Categories", href: "/categories" },
+  { label: "Ingredients", href: "/ingredients" },
   { label: "Blogs", href: "/blogs" },
   { label: "Search", href: "/search" },
 ];

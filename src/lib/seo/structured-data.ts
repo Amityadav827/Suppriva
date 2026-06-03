@@ -1,4 +1,5 @@
 import type { BlogArticle } from "@/lib/blog-data";
+import type { FAQItem, Ingredient } from "@/lib/database/types";
 import type { ProductDetail } from "@/lib/product-data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo/metadata";
 
@@ -92,6 +93,47 @@ export function buildArticleJsonLd(article: BlogArticle) {
       },
     },
     mainEntityOfPage: absoluteUrl(`/blog/${article.slug}`),
+  };
+}
+
+export function buildIngredientJsonLd(ingredient: Ingredient) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: ingredient.meta_title || ingredient.name,
+    description:
+      ingredient.meta_description ||
+      ingredient.short_description ||
+      `Suppriva ingredient profile for ${ingredient.name}.`,
+    image: absoluteUrl(ingredient.featured_image),
+    author: {
+      "@type": "Organization",
+      name: "Suppriva",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Suppriva",
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/assets/hero-supplements.webp"),
+      },
+    },
+    mainEntityOfPage: absoluteUrl(`/ingredient/${ingredient.slug}`),
+  };
+}
+
+export function buildFaqJsonLd(faqs: FAQItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }
 

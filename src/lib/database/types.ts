@@ -30,11 +30,42 @@ export type FAQItem = {
   answer: string;
 };
 
-export type Ingredient = {
+export type ProductIngredient = {
   name: string;
   description: string;
   amount?: string;
   image?: string;
+};
+
+export type Ingredient = {
+  id: string;
+  name: string;
+  slug: string;
+  short_description: string | null;
+  full_description: string | null;
+  benefits: string[];
+  side_effects: string[];
+  dosage: string | null;
+  scientific_notes: string | null;
+  featured_image: string | null;
+  meta_title: string | null;
+  meta_description: string | null;
+  is_featured: boolean;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+  deleted_at: Timestamp | null;
+};
+
+export type ProductIngredientRelation = {
+  id: string;
+  product_id: string;
+  ingredient_id: string;
+  created_at: Timestamp;
+};
+
+export type IngredientListResponse = {
+  ingredients: Ingredient[];
+  total: number;
 };
 
 export type Category = {
@@ -67,7 +98,7 @@ export type Product = {
   affiliate_url: string | null;
   pros: string[];
   cons: string[];
-  ingredients: Ingredient[];
+  ingredients: ProductIngredient[];
   benefits: JsonValue[];
   faq: FAQItem[];
   status: ContentStatus;
@@ -181,6 +212,8 @@ export type Database = {
   authors: Author;
   users: User;
   seo: SEO;
+  ingredients: Ingredient;
+  product_ingredients: ProductIngredientRelation;
   newsletter_subscribers: NewsletterSubscriber;
   contact_messages: ContactMessage;
   affiliate_clicks: AffiliateClick;

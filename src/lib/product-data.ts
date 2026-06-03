@@ -17,6 +17,7 @@ export type ProductDetail = {
   ingredients: {
     name: string;
     benefit: string;
+    slug?: string;
   }[];
   pros: string[];
   cons: string[];

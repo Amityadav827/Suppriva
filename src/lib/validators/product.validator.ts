@@ -1,5 +1,5 @@
 import { ContentStatus } from "@/lib/database/constants";
-import type { FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
+import type { FAQItem, JsonValue, Product, ProductIngredient } from "@/lib/database/types";
 
 export type ProductCreateInput = {
   category_id?: string | null;
@@ -11,7 +11,7 @@ export type ProductCreateInput = {
   gallery?: string[];
   rating?: number | null;
   affiliate_url?: string | null;
-  ingredients?: Ingredient[];
+  ingredients?: ProductIngredient[];
   benefits?: JsonValue[];
   pros?: string[];
   cons?: string[];
@@ -54,7 +54,7 @@ function isFaqArray(value: unknown): value is FAQItem[] {
   );
 }
 
-function isIngredientArray(value: unknown): value is Ingredient[] {
+function isIngredientArray(value: unknown): value is ProductIngredient[] {
   return (
     Array.isArray(value) &&
     value.every(

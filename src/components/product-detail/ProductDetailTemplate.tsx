@@ -73,6 +73,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               key={ingredient.name}
               name={ingredient.name}
               benefit={ingredient.benefit}
+              slug={ingredient.slug}
               index={index}
             />
           ))}
