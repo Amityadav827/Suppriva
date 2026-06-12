@@ -33,7 +33,7 @@ export const INGREDIENT_CSV_COLUMNS = [
   "who_should_avoid_json",
   "faq_json",
   "related_ingredients_json",
-  "product_ids",
+  "related_products",
   "dosage",
   "scientific_notes",
   "seo_title",
@@ -51,9 +51,30 @@ export const INGREDIENT_IMPORT_BATCH_SIZE = 100;
 export type IngredientCsvColumn = (typeof INGREDIENT_CSV_COLUMNS)[number];
 export type IngredientCsvRow = Record<IngredientCsvColumn, string>;
 
-const REQUIRED_INGREDIENT_CSV_COLUMNS = INGREDIENT_CSV_COLUMNS.filter(
+const CANONICAL_REQUIRED_INGREDIENT_CSV_COLUMNS = INGREDIENT_CSV_COLUMNS.filter(
   (column) => column !== "status",
 );
+
+export const INGREDIENT_CSV_LEGACY_ALIASES: Partial<
+  Record<IngredientCsvColumn, readonly string[]>
+> = {
+  related_products: ["product_ids"],
+};
+
+function getAcceptedIngredientCsvHeaders(column: IngredientCsvColumn) {
+  return [column, ...(INGREDIENT_CSV_LEGACY_ALIASES[column] ?? [])];
+}
+
+function findIngredientCsvHeaderIndex(
+  header: string[],
+  column: IngredientCsvColumn,
+) {
+  return (
+    getAcceptedIngredientCsvHeaders(column)
+      .map((acceptedHeader) => header.indexOf(acceptedHeader))
+      .find((index) => index >= 0) ?? -1
+  );
+}
 
 function isRecord(value: JsonValue): value is Record<string, JsonValue> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -194,8 +215,8 @@ export function parseIngredientCsv(text: string) {
   }
 
   const normalizedHeader = header.map((column) => column.trim());
-  const missingColumns = REQUIRED_INGREDIENT_CSV_COLUMNS.filter(
-    (column) => !normalizedHeader.includes(column),
+  const missingColumns = CANONICAL_REQUIRED_INGREDIENT_CSV_COLUMNS.filter(
+    (column) => findIngredientCsvHeaderIndex(normalizedHeader, column) < 0,
   );
   const errors = missingColumns.length
     ? [`Missing columns: ${missingColumns.join(", ")}.`]
@@ -205,8 +226,9 @@ export function parseIngredientCsv(text: string) {
     const entry = {} as IngredientCsvRow;
 
     INGREDIENT_CSV_COLUMNS.forEach((column) => {
-      const columnIndex = normalizedHeader.indexOf(column);
-      entry[column] = columnIndex >= 0 ? bodyRow[columnIndex]?.trim() ?? "" : "";
+      const acceptedHeaderIndex = findIngredientCsvHeaderIndex(normalizedHeader, column);
+      entry[column] =
+        acceptedHeaderIndex >= 0 ? bodyRow[acceptedHeaderIndex]?.trim() ?? "" : "";
     });
 
     return entry;
@@ -274,7 +296,13 @@ function parseStructuredTitleDescriptionItems(value: string, fallback: string[],
   const normalizedValue = value.trim();
 
   if (!normalizedValue) {
-    return fallback.map((title) => ({ title, description: "" }));
+    if (!fallback.length) {
+      return [];
+    }
+
+    throw new Error(
+      `${fieldLabel} must include title and description for every item.`,
+    );
   }
 
   const { value: parsed, errors } = parseJsonArrayCell(normalizedValue, fieldLabel);
@@ -289,12 +317,24 @@ function parseStructuredTitleDescriptionItems(value: string, fallback: string[],
         return null;
       }
 
-      return {
+      const structuredItem = {
         title: typeof item.title === "string" ? item.title.trim() : "",
         description: typeof item.description === "string" ? item.description.trim() : "",
       };
+
+      if (!structuredItem.title && !structuredItem.description) {
+        return null;
+      }
+
+      if (!structuredItem.title || !structuredItem.description) {
+        throw new Error(
+          `${fieldLabel} entries must include both title and description.`,
+        );
+      }
+
+      return structuredItem;
     })
-    .filter((item) => item?.title || item?.description) as Array<{
+    .filter(Boolean) as Array<{
     title: string;
     description: string;
   }>;
@@ -387,7 +427,53 @@ function parseStringJsonList(value: string, fieldLabel: string) {
     .filter(Boolean);
 }
 
-export function ingredientToCsvRow(ingredient: Ingredient) {
+function structuredItemsForExport(
+  items: JsonValue[] | undefined,
+  fallback: string[],
+  fieldLabel: "benefit" | "side effect",
+) {
+  const parsed = (Array.isArray(items) ? items : [])
+    .map((item) => {
+      if (!isRecord(item)) {
+        return null;
+      }
+
+      const title = typeof item.title === "string" ? item.title.trim() : "";
+      const description =
+        typeof item.description === "string" ? item.description.trim() : "";
+
+      return title && description ? { title, description } : null;
+    })
+    .filter(Boolean) as Array<{ title: string; description: string }>;
+
+  if (parsed.length) {
+    return parsed;
+  }
+
+  return fallback
+    .map((title) => title.trim())
+    .filter(Boolean)
+    .map((title) => ({
+      title,
+      description: `Legacy ${fieldLabel} record exported from title-only ingredient data. Replace this placeholder with a full description before publishing.`,
+    }));
+}
+
+export function ingredientToCsvRow(
+  ingredient: Ingredient,
+  relatedProductIds: string[] = [],
+) {
+  const benefitItems = structuredItemsForExport(
+    ingredient.benefits_json,
+    ingredient.benefits,
+    "benefit",
+  );
+  const sideEffectItems = structuredItemsForExport(
+    ingredient.side_effects_json,
+    ingredient.side_effects,
+    "side effect",
+  );
+
   return [
     ingredient.id,
     ingredient.name,
@@ -412,14 +498,14 @@ export function ingredientToCsvRow(ingredient: Ingredient) {
     ingredient.how_it_works_content ?? "",
     ingredient.interesting_fact ?? "",
     ingredient.benefits.join("; "),
-    stringifyJsonCell(ingredient.benefits_json),
+    stringifyJsonCell(benefitItems),
     ingredient.side_effects.join("; "),
-    stringifyJsonCell(ingredient.side_effects_json),
+    stringifyJsonCell(sideEffectItems),
     stringifyJsonCell(ingredient.drug_interactions_json),
     stringifyJsonCell(ingredient.who_should_avoid_json),
     stringifyJsonCell(ingredient.faq_json),
     stringifyJsonCell(ingredient.related_ingredients_json),
-    "",
+    relatedProductIds.join("; "),
     ingredient.dosage ?? "",
     ingredient.scientific_notes ?? "",
     ingredient.seo_title ?? "",
@@ -506,7 +592,7 @@ export function csvRowToIngredientPayload(row: IngredientCsvRow) {
     );
   }
 
-  const productIds = csvList(row.product_ids);
+  const productIds = csvList(row.related_products);
 
   const payload: IngredientCreateInput = {
     name,

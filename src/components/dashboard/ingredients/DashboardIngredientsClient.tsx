@@ -351,6 +351,21 @@ function validateStructuredForm(form: IngredientFormState) {
   return errors;
 }
 
+async function getRelatedProductIdsForIngredient(slug: string) {
+  try {
+    const response = await fetch(`/api/ingredients/${slug}`, { cache: "no-store" });
+    const payload = (await response.json()) as IngredientsResponse;
+
+    if (!response.ok) {
+      return [];
+    }
+
+    return (payload.relatedProducts ?? []).map((product) => product.id);
+  } catch {
+    return [];
+  }
+}
+
 function formToPayload(form: IngredientFormState) {
   const normalizedSlug = form.slug.trim() || slugify(form.name);
   const primaryImage = cleanText(form.image_url);
@@ -788,10 +803,39 @@ export function DashboardIngredientsClient() {
     }
   }
 
-  function exportIngredients() {
-    const rows = [[...INGREDIENT_CSV_COLUMNS], ...ingredients.map(ingredientToCsvRow)];
+  async function exportIngredients() {
+    setError("");
+    setSuccess("");
 
-    downloadCsv("suppriva-ingredients-export.csv", createCsv(rows));
+    try {
+      const relatedProductsByIngredientId = new Map(
+        await Promise.all(
+          ingredients.map(async (ingredient) => [
+            ingredient.id,
+            await getRelatedProductIdsForIngredient(ingredient.slug),
+          ] as const),
+        ),
+      );
+
+      const rows = [
+        [...INGREDIENT_CSV_COLUMNS],
+        ...ingredients.map((ingredient) =>
+          ingredientToCsvRow(
+            ingredient,
+            relatedProductsByIngredientId.get(ingredient.id) ?? [],
+          ),
+        ),
+      ];
+
+      downloadCsv("suppriva-ingredients-export.csv", createCsv(rows));
+      setSuccess("Ingredients exported successfully.");
+    } catch (exportError) {
+      setError(
+        exportError instanceof Error
+          ? exportError.message
+          : "Unable to export ingredients.",
+      );
+    }
   }
 
   function downloadSampleCsv() {

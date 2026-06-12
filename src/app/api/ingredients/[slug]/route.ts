@@ -4,12 +4,34 @@ import { IngredientService } from "@/services/ingredient.service";
 import { NextResponse } from "next/server";
 
 const ingredientService = new IngredientService();
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 type IngredientRouteContext = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+async function resolveIngredientId(identifier: string) {
+  if (UUID_PATTERN.test(identifier)) {
+    const ingredientById = await ingredientService.getIngredientById(identifier).catch(() => null);
+
+    if (ingredientById) {
+      return ingredientById.id;
+    }
+  }
+
+  const ingredientBySlug = await ingredientService.getIngredientBySlug(identifier).catch(
+    () => null,
+  );
+
+  if (ingredientBySlug) {
+    return ingredientBySlug.id;
+  }
+
+  throw new AppError("Ingredient not found.", "INGREDIENT_NOT_FOUND", 404);
+}
 
 function handleApiError(error: unknown) {
   if (error instanceof AppError) {
@@ -44,8 +66,9 @@ export async function GET(_request: Request, context: IngredientRouteContext) {
 
 export async function PUT(request: Request, context: IngredientRouteContext) {
   try {
-    const { slug: id } = await context.params;
+    const { slug: identifier } = await context.params;
     const payload = await request.json();
+    const id = await resolveIngredientId(identifier);
     const ingredient = await ingredientService.updateIngredient(id, payload);
 
     return NextResponse.json({ ingredient });
@@ -56,7 +79,8 @@ export async function PUT(request: Request, context: IngredientRouteContext) {
 
 export async function DELETE(_request: Request, context: IngredientRouteContext) {
   try {
-    const { slug: id } = await context.params;
+    const { slug: identifier } = await context.params;
+    const id = await resolveIngredientId(identifier);
     await ingredientService.deleteIngredient(id);
 
     return NextResponse.json({ success: true });

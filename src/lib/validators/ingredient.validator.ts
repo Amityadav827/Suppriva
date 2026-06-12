@@ -92,8 +92,10 @@ function isFaqArray(value: unknown): value is FAQItem[] {
         item !== null &&
         "question" in item &&
         typeof item.question === "string" &&
+        item.question.trim().length > 0 &&
         "answer" in item &&
-        typeof item.answer === "string",
+        typeof item.answer === "string" &&
+        item.answer.trim().length > 0,
     )
   );
 }
@@ -107,8 +109,10 @@ function isTitleDescriptionArray(value: unknown) {
         item !== null &&
         "title" in item &&
         typeof item.title === "string" &&
+        item.title.trim().length > 0 &&
         "description" in item &&
-        typeof item.description === "string",
+        typeof item.description === "string" &&
+        item.description.trim().length > 0,
     )
   );
 }
@@ -122,6 +126,7 @@ function isRelatedIngredientsArray(value: unknown) {
         item !== null &&
         "name" in item &&
         typeof item.name === "string" &&
+        item.name.trim().length > 0 &&
         (!("slug" in item) || typeof item.slug === "string"),
     )
   );
