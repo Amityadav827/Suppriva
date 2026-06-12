@@ -416,10 +416,11 @@ export function buildSearchResults(
       readingTime: ingredient.is_featured ? "Featured" : "Library",
       description:
         ingredient.short_description ||
+        ingredient.seo_description ||
         ingredient.meta_description ||
         "Suppriva ingredient library reference.",
       href: `/ingredient/${ingredient.slug}`,
-      image: ingredient.featured_image || "/assets/hero-supplements.webp",
+      image: ingredient.image_url || ingredient.featured_image || "/assets/hero-supplements.webp",
     })),
   ];
 }

@@ -1,26 +1,257 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, FlaskConical } from "lucide-react";
-import { CategoryProductGrid } from "@/components/category-page/CategoryProductGrid";
-import { BlogGrid } from "@/components/blog/BlogGrid";
-import { SectionTitle } from "@/components/ui/SectionTitle";
+import {
+  ArrowUpRight,
+  BadgeInfo,
+  Beaker,
+  BookOpenText,
+  ChevronRight,
+  CircleHelp,
+  FlaskConical,
+  Leaf,
+  MapPin,
+  Pill,
+  ShieldAlert,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  TestTube2,
+} from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
 import type { CategoryProduct } from "@/lib/category-data";
-import type { Ingredient } from "@/lib/database/types";
+import type { FAQItem, Ingredient, JsonValue } from "@/lib/database/types";
+
+export type RelatedIngredientCardData = {
+  name: string;
+  slug?: string;
+  scientificName?: string | null;
+  category?: string | null;
+  image?: string | null;
+  description?: string | null;
+};
+
+type TitleDescriptionItem = {
+  title: string;
+  description: string;
+};
+
+type SectionLink = {
+  id: string;
+  label: string;
+};
+
+function isRecord(value: JsonValue): value is Record<string, JsonValue> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function parseTitleDescriptionItems(
+  items: JsonValue[] | undefined,
+  fallback: string[] = [],
+): TitleDescriptionItem[] {
+  if (Array.isArray(items) && items.length) {
+    const parsed = items
+      .map((item) => {
+        if (!isRecord(item)) {
+          return null;
+        }
+
+        const title = typeof item.title === "string" ? item.title.trim() : "";
+        const description =
+          typeof item.description === "string" ? item.description.trim() : "";
+
+        if (!title) {
+          return null;
+        }
+
+        return { title, description };
+      })
+      .filter(Boolean) as TitleDescriptionItem[];
+
+    if (parsed.length) {
+      return parsed;
+    }
+  }
+
+  return fallback
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .map((item) => ({ title: item, description: "" }));
+}
+
+function parseStringList(items: JsonValue[] | undefined) {
+  if (!Array.isArray(items)) {
+    return [];
+  }
+
+  return items
+    .map((item) => (typeof item === "string" ? item.trim() : ""))
+    .filter(Boolean);
+}
+
+function normalizeFaqs(items: FAQItem[]) {
+  return (Array.isArray(items) ? items : []).filter(
+    (item) => item.question?.trim() && item.answer?.trim(),
+  );
+}
+
+function splitParagraphs(content?: string | null) {
+  if (!content) {
+    return [];
+  }
+
+  return content
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+}
+
+function extractFlowSteps(content?: string | null) {
+  if (!content) {
+    return [];
+  }
+
+  const bulletLines = content
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (bulletLines.length > 1 && bulletLines.every((line) => /^([-*]|\d+[.)])\s+/.test(line))) {
+    return bulletLines.map((line) => line.replace(/^([-*]|\d+[.)])\s+/, "").trim());
+  }
+
+  return splitParagraphs(content);
+}
+
+function hasVisibleText(value?: string | null) {
+  return Boolean(value?.trim());
+}
+
+function renderFormattedBlock(block: string, index: number) {
+  const lines = block
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) {
+    return null;
+  }
+
+  const isBulletList = lines.every((line) => /^[-*]\s+/.test(line));
+  if (isBulletList) {
+    return (
+      <ul key={`block-${index}`} className="space-y-3 pl-5 text-base leading-8 text-muted">
+        {lines.map((line) => (
+          <li key={line} className="list-disc">
+            {line.replace(/^[-*]\s+/, "")}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  const isOrderedList = lines.every((line) => /^\d+[.)]\s+/.test(line));
+  if (isOrderedList) {
+    return (
+      <ol key={`block-${index}`} className="space-y-3 pl-5 text-base leading-8 text-muted">
+        {lines.map((line) => (
+          <li key={line} className="list-decimal">
+            {line.replace(/^\d+[.)]\s+/, "")}
+          </li>
+        ))}
+      </ol>
+    );
+  }
+
+  return (
+    <p key={`block-${index}`} className="text-base leading-8 text-muted">
+      {block}
+    </p>
+  );
+}
+
+function RichTextContent({ content }: { content?: string | null }) {
+  const blocks = splitParagraphs(content);
+
+  if (!blocks.length) {
+    return null;
+  }
+
+  return <div className="space-y-5">{blocks.map(renderFormattedBlock)}</div>;
+}
+
+function buildHeroFacts(ingredient: Ingredient) {
+  return [
+    { label: "Rating", value: ingredient.rating ? ingredient.rating.toFixed(1) : "", icon: Star },
+    { label: "Evidence Level", value: ingredient.evidence_level ?? "", icon: ShieldCheck },
+    { label: "Origin Country", value: ingredient.origin_country ?? "", icon: MapPin },
+    { label: "Part Used", value: ingredient.part_used ?? "", icon: Leaf },
+    { label: "Ingredient Form", value: ingredient.ingredient_form ?? "", icon: Beaker },
+    { label: "Taste Profile", value: ingredient.taste_profile ?? "", icon: Sparkles },
+  ].filter((item) => item.value);
+}
+
+function buildQuickFacts(ingredient: Ingredient) {
+  return [
+    { label: "Typical Dose", value: ingredient.typical_dose ?? "", icon: Pill },
+    { label: "Best For", value: ingredient.best_for ?? "", icon: ShieldCheck },
+    { label: "Safety Level", value: ingredient.safety_level ?? "", icon: ShieldAlert },
+  ].filter((item) => item.value);
+}
 
 export function IngredientDetailTemplate({
   ingredient,
   relatedProducts,
+  relatedIngredients,
   relatedArticles,
 }: {
   ingredient: Ingredient;
   relatedProducts: CategoryProduct[];
+  relatedIngredients: RelatedIngredientCardData[];
   relatedArticles: BlogPostCard[];
 }) {
+  const heroFacts = buildHeroFacts(ingredient);
+  const quickFacts = buildQuickFacts(ingredient);
+  const overviewContent =
+    ingredient.overview_content || ingredient.full_description || ingredient.short_description;
+  const howItWorksContent =
+    ingredient.how_it_works_content || ingredient.scientific_notes || null;
+  const benefitItems = parseTitleDescriptionItems(
+    ingredient.benefits_json,
+    ingredient.benefits ?? [],
+  );
+  const sideEffects = parseTitleDescriptionItems(
+    ingredient.side_effects_json,
+    ingredient.side_effects ?? [],
+  );
+  const drugInteractions = parseStringList(ingredient.drug_interactions_json);
+  const whoShouldAvoid = parseStringList(ingredient.who_should_avoid_json);
+  const faqs = normalizeFaqs(ingredient.faq_json ?? []);
+  const howItWorksSteps = extractFlowSteps(howItWorksContent);
+  const heroImage = ingredient.image_url || ingredient.featured_image;
+
+  const sections: SectionLink[] = [
+    ...(hasVisibleText(overviewContent) ? [{ id: "overview", label: "Overview" }] : []),
+    ...(hasVisibleText(howItWorksContent)
+      ? [{ id: "how-it-works", label: "How It Works" }]
+      : []),
+    ...(benefitItems.length ? [{ id: "benefits", label: "Benefits" }] : []),
+    ...(sideEffects.length || drugInteractions.length || whoShouldAvoid.length
+      ? [{ id: "safety-information", label: "Safety Information" }]
+      : []),
+    ...(faqs.length ? [{ id: "faq", label: "FAQ" }] : []),
+    ...(relatedProducts.length ? [{ id: "found-in-products", label: "Found In Products" }] : []),
+    ...(relatedIngredients.length
+      ? [{ id: "related-ingredients", label: "Related Ingredients" }]
+      : []),
+    ...(relatedArticles.length ? [{ id: "related-articles", label: "Related Articles" }] : []),
+  ];
+
   return (
     <main>
-      <section className="relative isolate overflow-hidden bg-cream pb-[72px] pt-8 md:pb-[92px] lg:pb-[100px]">
+      <section className="relative isolate overflow-hidden bg-cream pb-14 pt-8 md:pb-20 lg:pb-24">
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(234,244,236,0.95)_0%,rgba(247,246,242,0)_32%),radial-gradient(circle_at_86%_34%,rgba(217,165,32,0.15)_0%,rgba(247,246,242,0)_28%)]"
@@ -43,147 +274,629 @@ export function IngredientDetailTemplate({
             </span>
           </nav>
 
-          <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div className="relative min-h-[360px] overflow-hidden rounded-[34px] border border-white/70 bg-white shadow-[0_28px_86px_rgba(15,23,42,0.08)]">
-              {ingredient.featured_image ? (
-                <Image
-                  src={ingredient.featured_image}
-                  alt={ingredient.name}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="grid h-full min-h-[360px] place-items-center bg-gradient-to-br from-soft-green to-gold/[0.14]">
-                  <FlaskConical className="size-24 text-primary" aria-hidden="true" />
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
+            <div className="space-y-8">
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
+                <div className="relative overflow-hidden rounded-[32px] border border-white/70 bg-white shadow-[0_28px_86px_rgba(15,23,42,0.08)]">
+                  {heroImage ? (
+                    <div className="relative aspect-[4/3] min-h-[320px]">
+                      <Image
+                        src={heroImage}
+                        alt={ingredient.name}
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="grid min-h-[320px] place-items-center bg-gradient-to-br from-soft-green to-gold/[0.14]">
+                      <FlaskConical className="size-24 text-primary" aria-hidden="true" />
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
 
-            <div>
-              <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-primary">
-                Ingredient Library
-              </p>
-              <h1 className="mt-4 font-heading text-4xl font-extrabold leading-tight text-text-dark md:text-5xl">
-                {ingredient.name}
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                {ingredient.short_description ||
-                  ingredient.meta_description ||
-                  "A Suppriva ingredient profile for supplement research, product comparison, and wellness education."}
-              </p>
-              {ingredient.is_featured ? (
-                <span className="mt-6 inline-flex rounded-pill bg-gold/12 px-4 py-2 font-heading text-sm font-semibold text-text-dark ring-1 ring-gold/25">
-                  Featured ingredient
-                </span>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
+                        Ingredient Library
+                      </span>
+                      {ingredient.ingredient_category ? (
+                        <span className="inline-flex items-center gap-2 rounded-pill border border-gold/20 bg-gold/10 px-4 py-2 text-sm font-semibold text-text-dark">
+                          {ingredient.ingredient_category}
+                        </span>
+                      ) : null}
+                    </div>
+                    <div>
+                      <h1 className="font-heading text-4xl font-extrabold leading-[1.05] text-text-dark md:text-5xl lg:text-6xl">
+                        {ingredient.name}
+                      </h1>
+                      {ingredient.scientific_name ? (
+                        <p className="mt-3 text-base italic tracking-[0.02em] text-primary md:text-lg">
+                          {ingredient.scientific_name}
+                        </p>
+                      ) : null}
+                    </div>
+                    <p className="max-w-3xl text-lg leading-8 text-muted">
+                      {ingredient.short_description ||
+                        ingredient.seo_description ||
+                        "A premium Suppriva ingredient profile for supplement research, safety review, and product discovery."}
+                    </p>
+                  </div>
+
+                  {heroFacts.length ? (
+                    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                      {heroFacts.map((fact, index) => (
+                        <FadeIn
+                          key={fact.label}
+                          delay={0.04 * index}
+                          className="rounded-[24px] border border-border-light bg-white p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]"
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="inline-flex size-11 items-center justify-center rounded-full bg-soft-green text-primary">
+                              <fact.icon className="size-5" aria-hidden="true" />
+                            </span>
+                            <div>
+                              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                                {fact.label}
+                              </p>
+                              <p className="mt-1 font-heading text-base font-bold text-text-dark">
+                                {fact.label === "Rating" ? (
+                                  <span className="inline-flex items-center gap-1.5">
+                                    <Star className="size-4 fill-gold text-gold" />
+                                    {fact.value}
+                                  </span>
+                                ) : (
+                                  fact.value
+                                )}
+                              </p>
+                            </div>
+                          </div>
+                        </FadeIn>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {quickFacts.length ? (
+                    <div className="rounded-[28px] border border-border-light bg-white p-5 shadow-[0_20px_54px_rgba(15,23,42,0.06)]">
+                      <div className="mb-4 flex items-center gap-3">
+                        <span className="inline-flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                          <BadgeInfo className="size-5" aria-hidden="true" />
+                        </span>
+                        <div>
+                          <h2 className="font-heading text-xl font-extrabold text-text-dark">
+                            Quick Facts
+                          </h2>
+                          <p className="text-sm text-muted">
+                            Fast-scan information for research and comparison.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="grid gap-3 md:grid-cols-3">
+                        {quickFacts.map((fact) => (
+                          <div
+                            key={fact.label}
+                            className="rounded-[22px] border border-border-light bg-cream/70 p-4"
+                          >
+                            <div className="flex items-center gap-3">
+                              <span className="inline-flex size-10 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+                                <fact.icon className="size-4.5" aria-hidden="true" />
+                              </span>
+                              <div>
+                                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                                  {fact.label}
+                                </p>
+                                <p className="mt-1 font-heading text-sm font-bold text-text-dark">
+                                  {fact.value}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+
+              {sections.length ? (
+                <div className="xl:hidden">
+                  <OnThisPage sections={sections} mobile />
+                </div>
               ) : null}
             </div>
+
+            {sections.length ? (
+              <aside className="hidden xl:block xl:sticky xl:top-28">
+                <OnThisPage sections={sections} />
+              </aside>
+            ) : null}
           </div>
         </div>
       </section>
 
-      <IngredientTextSection
-        id="overview"
-        title="Overview"
-        content={ingredient.full_description || ingredient.short_description}
-      />
-      <IngredientListSection id="benefits" title="Potential Benefits" items={ingredient.benefits} />
-      <IngredientListSection
-        id="side-effects"
-        title="Side Effects & Considerations"
-        items={ingredient.side_effects}
-        fallback="Review tolerance, medication use, and personal health history before adding this ingredient to a routine."
-      />
-      <IngredientTextSection id="dosage" title="Dosage Notes" content={ingredient.dosage} tone="white" />
-      <IngredientTextSection
-        id="science"
-        title="Scientific Notes"
-        content={ingredient.scientific_notes}
-      />
+      <div className="relative">
+        {hasVisibleText(overviewContent) ? (
+          <SectionWrapper id="overview" tone="white">
+            <SectionHeading
+              eyebrow="Section 01"
+              title="Overview"
+              subtitle="A practical medical-style summary of what this ingredient is and how it is commonly used."
+            />
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+              <ContentPanel content={overviewContent} />
+              <AsideFactCard
+                icon={BookOpenText}
+                title="Profile Snapshot"
+                items={[
+                  ingredient.ingredient_category,
+                  ingredient.origin_country,
+                  ingredient.part_used,
+                  ingredient.ingredient_form,
+                ].filter(Boolean) as string[]}
+              />
+            </div>
+          </SectionWrapper>
+        ) : null}
 
-      <SectionWrapper id="related-products" tone="white">
-        <SectionTitle
-          title="Related Products"
-          subtitle="Published Suppriva products connected to this ingredient."
-        />
+        {hasVisibleText(howItWorksContent) ? (
+          <SectionWrapper id="how-it-works">
+            <SectionHeading
+              eyebrow="Section 02"
+              title="How It Works"
+              subtitle="The page turns your stored ingredient explanation into a premium visual flow without hardcoded steps."
+            />
+            <div className="space-y-8">
+              {howItWorksSteps.length ? (
+                <div className="grid gap-4 lg:grid-cols-3">
+                  {howItWorksSteps.map((step, index) => (
+                    <FadeIn
+                      key={`${index + 1}-${step.slice(0, 24)}`}
+                      delay={index * 0.05}
+                      className="relative rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]"
+                    >
+                      <span className="mb-5 inline-flex size-12 items-center justify-center rounded-full bg-primary text-lg font-heading font-extrabold text-white shadow-[0_14px_34px_rgba(11,93,59,0.22)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-base leading-8 text-muted">{step}</p>
+                    </FadeIn>
+                  ))}
+                </div>
+              ) : null}
+              <ContentPanel content={howItWorksContent} />
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {hasVisibleText(ingredient.interesting_fact) ? (
+          <SectionWrapper tone="white">
+            <FadeIn className="rounded-[32px] border border-gold/18 bg-white p-6 shadow-[0_22px_64px_rgba(15,23,42,0.06)] md:p-8">
+              <div className="grid gap-5 lg:grid-cols-[88px_minmax(0,1fr)] lg:items-center">
+                <span className="inline-flex size-16 items-center justify-center rounded-full bg-gold/12 text-gold">
+                  <Sparkles className="size-7" aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                    Interesting Fact
+                  </p>
+                  <p className="mt-3 text-lg leading-8 text-text-dark">
+                    {ingredient.interesting_fact}
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </SectionWrapper>
+        ) : null}
+
+        {benefitItems.length ? (
+          <SectionWrapper id="benefits">
+            <SectionHeading
+              eyebrow="Section 03"
+              title="Benefits"
+              subtitle="Responsive benefit cards generated directly from the ingredient record."
+            />
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {benefitItems.map((benefit, index) => (
+                <FadeIn
+                  key={benefit.title}
+                  delay={index * 0.04}
+                  className="rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]"
+                >
+                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-soft-green text-primary">
+                    <ShieldCheck className="size-5" aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">
+                    {benefit.title}
+                  </h3>
+                  {benefit.description ? (
+                    <p className="mt-3 text-sm leading-7 text-muted">
+                      {benefit.description}
+                    </p>
+                  ) : null}
+                </FadeIn>
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {sideEffects.length || drugInteractions.length || whoShouldAvoid.length ? (
+          <SectionWrapper id="safety-information" tone="white">
+            <SectionHeading
+              eyebrow="Section 04"
+              title="Safety Information"
+              subtitle="Separate evidence-oriented cards for side effects, interactions, and avoidance notes."
+            />
+            <div className="grid gap-5 xl:grid-cols-3">
+              {sideEffects.length ? (
+                <SafetyCard
+                  title="Side Effects"
+                  icon={ShieldAlert}
+                  items={sideEffects.map((item) =>
+                    item.description ? `${item.title}: ${item.description}` : item.title,
+                  )}
+                />
+              ) : null}
+              {drugInteractions.length ? (
+                <SafetyCard
+                  title="Drug Interactions"
+                  icon={TestTube2}
+                  items={drugInteractions}
+                />
+              ) : null}
+              {whoShouldAvoid.length ? (
+                <SafetyCard
+                  title="Who Should Avoid"
+                  icon={CircleHelp}
+                  items={whoShouldAvoid}
+                />
+              ) : null}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {faqs.length ? (
+          <SectionWrapper id="faq">
+            <SectionHeading
+              eyebrow="Section 05"
+              title="Frequently Asked Questions"
+              subtitle="Accordion answers built from the ingredient FAQ data for readers and schema output."
+            />
+            <FAQAccordion faqs={faqs} />
+          </SectionWrapper>
+        ) : null}
+
         {relatedProducts.length ? (
-          <CategoryProductGrid products={relatedProducts} />
-        ) : (
-          <EmptyPanel text="No products are linked to this ingredient yet." />
-        )}
-      </SectionWrapper>
+          <SectionWrapper id="found-in-products" tone="white">
+            <SectionHeading
+              eyebrow="Section 06"
+              title="Found In Products"
+              subtitle="Published Suppriva products connected through the existing ingredient relationship table."
+            />
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {relatedProducts.map((product, index) => (
+                <IngredientProductCard
+                  key={product.slug}
+                  product={product}
+                  priority={index < 2}
+                />
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
 
-      <SectionWrapper id="related-articles">
-        <SectionTitle
-          title="Related Articles"
-          subtitle="Supplement guides and educational content from Suppriva."
-        />
+        {relatedIngredients.length ? (
+          <SectionWrapper id="related-ingredients">
+            <SectionHeading
+              eyebrow="Section 07"
+              title="Related Ingredients"
+              subtitle="Nearby ingredient profiles referenced directly from the ingredient record."
+            />
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {relatedIngredients.map((item, index) => (
+                <RelatedIngredientCard
+                  key={`${item.slug || item.name}-${index}`}
+                  item={item}
+                />
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
         {relatedArticles.length ? (
-          <BlogGrid posts={relatedArticles} />
-        ) : (
-          <EmptyPanel text="Related articles will appear here as editorial coverage grows." />
-        )}
-      </SectionWrapper>
+          <SectionWrapper id="related-articles" tone="white">
+            <SectionHeading
+              eyebrow="Section 08"
+              title="Related Articles"
+              subtitle="Editorial coverage surfaced through the current article relation logic."
+            />
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {relatedArticles.map((article) => (
+                <RelatedArticleCard key={article.slug || article.title} article={article} />
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
+      </div>
     </main>
   );
 }
 
-function IngredientTextSection({
-  id,
-  title,
-  content,
-  tone,
+function OnThisPage({
+  sections,
+  mobile = false,
 }: {
-  id: string;
-  title: string;
-  content?: string | null;
-  tone?: "cream" | "white";
+  sections: SectionLink[];
+  mobile?: boolean;
 }) {
   return (
-    <SectionWrapper id={id} tone={tone}>
-      <SectionTitle title={title} />
-      <div className="mx-auto mt-10 max-w-3xl rounded-[28px] border border-border-light bg-white p-6 text-base leading-8 text-muted shadow-[0_18px_52px_rgba(15,23,42,0.07)] md:p-8">
-        {content || "This ingredient profile is ready for additional research notes."}
+    <div
+      className={`rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] ${
+        mobile ? "" : "xl:max-w-[320px]"
+      }`}
+    >
+      <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
+        On This Page
+      </p>
+      <div className={mobile ? "mt-4 flex gap-2 overflow-x-auto pb-1" : "mt-4 space-y-2"}>
+        {sections.map((section) => (
+          <a
+            key={section.id}
+            href={`#${section.id}`}
+            className={`group inline-flex items-center gap-3 rounded-pill border border-border-light bg-cream/55 px-4 py-3 text-sm font-semibold text-text-dark transition hover:border-gold/60 hover:bg-white hover:text-primary ${
+              mobile ? "shrink-0 whitespace-nowrap" : "w-full justify-between"
+            }`}
+          >
+            <span>{section.label}</span>
+            {!mobile ? (
+              <ArrowUpRight className="size-4 text-muted transition group-hover:text-primary" />
+            ) : null}
+          </a>
+        ))}
       </div>
-    </SectionWrapper>
+    </div>
   );
 }
 
-function IngredientListSection({
-  id,
+function SectionHeading({
+  eyebrow,
   title,
-  items,
-  fallback,
+  subtitle,
 }: {
-  id: string;
+  eyebrow: string;
   title: string;
-  items: string[];
-  fallback?: string;
+  subtitle: string;
 }) {
-  const visibleItems = items.length ? items : [fallback || "More ingredient details coming soon."];
+  return (
+    <FadeIn className="mx-auto mb-12 max-w-3xl text-center">
+      <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-primary">
+        {eyebrow}
+      </p>
+      <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted">
+        {subtitle}
+      </p>
+    </FadeIn>
+  );
+}
+
+function ContentPanel({ content }: { content?: string | null }) {
+  if (!hasVisibleText(content)) {
+    return null;
+  }
 
   return (
-    <SectionWrapper id={id} tone="white">
-      <SectionTitle title={title} />
-      <div className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
-        {visibleItems.map((item) => (
+    <FadeIn className="rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] md:p-8">
+      <RichTextContent content={content} />
+    </FadeIn>
+  );
+}
+
+function AsideFactCard({
+  icon: Icon,
+  title,
+  items,
+}: {
+  icon: typeof BookOpenText;
+  title: string;
+  items: string[];
+}) {
+  if (!items.length) {
+    return null;
+  }
+
+  return (
+    <FadeIn className="rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
+      <span className="inline-flex size-14 items-center justify-center rounded-full bg-soft-green text-primary">
+        <Icon className="size-6" aria-hidden="true" />
+      </span>
+      <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
+      <div className="mt-5 space-y-3">
+        {items.map((item) => (
           <div
             key={item}
-            className="rounded-[24px] border border-border-light bg-white p-5 text-sm leading-6 text-muted shadow-[0_18px_52px_rgba(15,23,42,0.07)]"
+            className="rounded-[18px] border border-border-light bg-cream/60 px-4 py-3 text-sm leading-6 text-muted"
           >
             {item}
           </div>
         ))}
       </div>
-    </SectionWrapper>
+    </FadeIn>
   );
 }
 
-function EmptyPanel({ text }: { text: string }) {
+function SafetyCard({
+  title,
+  icon: Icon,
+  items,
+}: {
+  title: string;
+  icon: typeof ShieldAlert;
+  items: string[];
+}) {
   return (
-    <div className="mt-10 rounded-[28px] border border-border-light bg-white p-10 text-center text-sm text-muted shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
-      {text}
-    </div>
+    <FadeIn className="rounded-[30px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
+      <span className="inline-flex size-14 items-center justify-center rounded-full bg-soft-green text-primary">
+        <Icon className="size-6" aria-hidden="true" />
+      </span>
+      <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
+      <ul className="mt-5 space-y-3">
+        {items.map((item) => (
+          <li
+            key={item}
+            className="rounded-[18px] border border-border-light bg-cream/60 px-4 py-3 text-sm leading-7 text-muted"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </FadeIn>
+  );
+}
+
+function IngredientProductCard({
+  product,
+  priority,
+}: {
+  product: CategoryProduct;
+  priority?: boolean;
+}) {
+  return (
+    <FadeIn className="group relative h-full overflow-hidden rounded-[30px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover">
+      <Link
+        href={`/product/${product.slug}`}
+        className="absolute inset-0 z-20 rounded-[30px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        aria-label={`View ${product.name}`}
+      />
+      <div className="relative h-[220px] overflow-hidden rounded-[24px] bg-gradient-to-br from-soft-green to-gold/[0.16]">
+        <Image
+          src={product.image || "/assets/hero-supplements.webp"}
+          alt={product.name}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          className="object-contain p-5 transition duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="relative z-10 mt-5">
+        <div className="flex items-center justify-between gap-3">
+          <span className="rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
+            {product.category}
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-pill border border-gold/24 bg-gold/10 px-3 py-1.5 font-heading text-sm font-semibold text-text-dark">
+            <Star className="size-4 fill-gold text-gold" />
+            {product.rating}
+          </span>
+        </div>
+        <h3 className="mt-4 font-heading text-2xl font-extrabold text-text-dark">
+          {product.name}
+        </h3>
+        <p className="mt-3 text-sm leading-7 text-muted">{product.description}</p>
+        <span className="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold text-primary">
+          View product
+          <ArrowUpRight className="size-4" />
+        </span>
+      </div>
+    </FadeIn>
+  );
+}
+
+function RelatedIngredientCard({ item }: { item: RelatedIngredientCardData }) {
+  const wrapperClasses =
+    "group relative h-full overflow-hidden rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover";
+  const content = (
+    <>
+      <div className="relative h-[210px] overflow-hidden rounded-[24px] bg-gradient-to-br from-white to-soft-green">
+        {item.image ? (
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="grid h-full place-items-center">
+            <FlaskConical className="size-16 text-primary" aria-hidden="true" />
+          </div>
+        )}
+      </div>
+      <div className="mt-5">
+        {item.category ? (
+          <span className="rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
+            {item.category}
+          </span>
+        ) : null}
+        <h3 className="mt-4 font-heading text-2xl font-extrabold text-text-dark">
+          {item.name}
+        </h3>
+        {item.scientificName ? (
+          <p className="mt-2 text-sm italic text-primary">{item.scientificName}</p>
+        ) : null}
+        {item.description ? (
+          <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+        ) : null}
+        {item.slug ? (
+          <span className="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold text-primary">
+            Explore ingredient
+            <ArrowUpRight className="size-4" />
+          </span>
+        ) : null}
+      </div>
+    </>
+  );
+
+  return item.slug ? (
+    <FadeIn className={wrapperClasses}>
+      <Link
+        href={`/ingredient/${item.slug}`}
+        className="absolute inset-0 z-20 rounded-[28px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        aria-label={`View ${item.name}`}
+      />
+      <div className="relative z-10">{content}</div>
+    </FadeIn>
+  ) : (
+    <FadeIn className={wrapperClasses}>{content}</FadeIn>
+  );
+}
+
+function RelatedArticleCard({ article }: { article: BlogPostCard }) {
+  return (
+    <FadeIn className="group relative h-full overflow-hidden rounded-[30px] border border-border-light bg-white shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover">
+      {article.slug ? (
+        <Link
+          href={`/blog/${article.slug}`}
+          className="absolute inset-0 z-20 rounded-[30px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          aria-label={`Read ${article.title}`}
+        />
+      ) : null}
+      <div className="relative h-[220px] overflow-hidden bg-soft-green">
+        <Image
+          src={article.image}
+          alt={article.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          className="object-cover transition duration-700 group-hover:scale-105"
+        />
+      </div>
+      <div className="relative z-10 p-6">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
+          <span className="rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
+            {article.category}
+          </span>
+          <span>{article.readingTime}</span>
+        </div>
+        <h3 className="mt-4 font-heading text-2xl font-extrabold leading-tight text-text-dark">
+          {article.title}
+        </h3>
+        <p className="mt-3 text-sm leading-7 text-muted">{article.description}</p>
+        <span className="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold text-primary">
+          Read article
+          <ArrowUpRight className="size-4" />
+        </span>
+      </div>
+    </FadeIn>
   );
 }

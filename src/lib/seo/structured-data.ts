@@ -100,12 +100,13 @@ export function buildIngredientJsonLd(ingredient: Ingredient) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: ingredient.meta_title || ingredient.name,
+    headline: ingredient.seo_title || ingredient.meta_title || ingredient.name,
     description:
+      ingredient.seo_description ||
       ingredient.meta_description ||
       ingredient.short_description ||
       `Suppriva ingredient profile for ${ingredient.name}.`,
-    image: absoluteUrl(ingredient.featured_image),
+    image: absoluteUrl(ingredient.image_url || ingredient.featured_image),
     author: {
       "@type": "Organization",
       name: "Suppriva",
@@ -119,6 +120,46 @@ export function buildIngredientJsonLd(ingredient: Ingredient) {
       },
     },
     mainEntityOfPage: absoluteUrl(`/ingredient/${ingredient.slug}`),
+  };
+}
+
+export function buildMedicalWebPageJsonLd(ingredient: Ingredient) {
+  const image = ingredient.image_url || ingredient.featured_image;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: ingredient.seo_title || ingredient.name,
+    description:
+      ingredient.seo_description ||
+      ingredient.short_description ||
+      ingredient.full_description ||
+      `Suppriva ingredient profile for ${ingredient.name}.`,
+    url: absoluteUrl(`/ingredient/${ingredient.slug}`),
+    lastReviewed: ingredient.updated_at,
+    ...(image
+      ? {
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: absoluteUrl(image),
+          },
+        }
+      : {}),
+    about: {
+      "@type": "Substance",
+      name: ingredient.name,
+      ...(ingredient.scientific_name
+        ? { alternateName: ingredient.scientific_name }
+        : {}),
+      ...(ingredient.short_description
+        ? { description: ingredient.short_description }
+        : {}),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Suppriva",
+      url: SITE_URL,
+    },
   };
 }
 

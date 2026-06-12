@@ -1,4 +1,5 @@
 import { AppError } from "@/lib/errors/AppError";
+import { isAdmin } from "@/lib/auth/admin";
 import { IngredientService } from "@/services/ingredient.service";
 import { NextResponse } from "next/server";
 
@@ -29,7 +30,10 @@ function handleApiError(error: unknown) {
 export async function GET(_request: Request, context: IngredientRouteContext) {
   try {
     const { slug } = await context.params;
-    const ingredient = await ingredientService.getIngredientBySlug(slug);
+    const admin = await isAdmin().catch(() => false);
+    const ingredient = admin
+      ? await ingredientService.getIngredientBySlug(slug)
+      : await ingredientService.getPublishedIngredientBySlug(slug);
     const relatedProducts = await ingredientService.getRelatedProductsForIngredient(ingredient.id);
 
     return NextResponse.json({ ingredient, relatedProducts });

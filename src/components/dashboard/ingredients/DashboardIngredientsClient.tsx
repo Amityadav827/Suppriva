@@ -1,15 +1,28 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
-import type { Ingredient, Product } from "@/lib/database/types";
+import { ContentStatus } from "@/lib/database/constants";
+import type { FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
+import {
+  INGREDIENT_CSV_COLUMNS,
+  INGREDIENT_IMPORT_BATCH_SIZE,
+  createCsv,
+  csvRowToIngredientPayload,
+  ingredientToCsvRow,
+  parseIngredientCsv,
+  slugify,
+} from "@/lib/ingredients/csv";
+import { getIngredientQualityWarnings } from "@/lib/ingredients/data-quality";
 import { motion } from "framer-motion";
 import {
+  AlertTriangle,
   Download,
   FileDown,
   FileUp,
   FlaskConical,
   Loader2,
   Pencil,
+  Plus,
   RefreshCw,
   Search,
   Star,
@@ -18,18 +31,45 @@ import {
 } from "lucide-react";
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+type TitleDescriptionItem = {
+  title: string;
+  description: string;
+};
+
+type RelatedIngredientItem = {
+  name: string;
+  slug: string;
+};
+
 type IngredientFormState = {
   name: string;
   slug: string;
+  status: ContentStatus;
+  scientific_name: string;
+  ingredient_category: string;
+  image_url: string;
+  rating: string;
+  evidence_level: string;
+  origin_country: string;
+  part_used: string;
+  ingredient_form: string;
+  taste_profile: string;
+  typical_dose: string;
+  best_for: string;
+  safety_level: string;
   short_description: string;
   full_description: string;
-  benefits: string;
-  side_effects: string;
-  dosage: string;
-  scientific_notes: string;
-  featured_image: string;
-  meta_title: string;
-  meta_description: string;
+  overview_content: string;
+  how_it_works_content: string;
+  interesting_fact: string;
+  benefits_json: TitleDescriptionItem[];
+  side_effects_json: TitleDescriptionItem[];
+  drug_interactions_json: string[];
+  who_should_avoid_json: string[];
+  faq_json: FAQItem[];
+  related_ingredients_json: RelatedIngredientItem[];
+  seo_title: string;
+  seo_description: string;
   is_featured: boolean;
   product_ids: string[];
 };
@@ -46,84 +86,115 @@ type ProductsResponse = {
   error?: string;
 };
 
-const CSV_COLUMNS = [
-  "id",
-  "name",
-  "slug",
-  "short_description",
-  "full_description",
-  "benefits",
-  "side_effects",
-  "dosage",
-  "scientific_notes",
-  "featured_image",
-  "meta_title",
-  "meta_description",
-  "is_featured",
-  "created_at",
-  "updated_at",
-  "deleted_at",
-] as const;
+type IngredientImportSummary = {
+  totalRows: number;
+  batchesProcessed: number;
+  created: number;
+  skipped: number;
+  conflicts: number;
+  validationErrors: number;
+  warnings: number;
+};
 
-type IngredientCsvRow = Record<(typeof CSV_COLUMNS)[number], string>;
+type IngredientImportIssue = {
+  rowNumber: number;
+  slug: string | null;
+  message?: string;
+  warnings?: string[];
+};
+
+type IngredientImportResponse = {
+  summary?: IngredientImportSummary;
+  errors?: IngredientImportIssue[];
+  warnings?: IngredientImportIssue[];
+  error?: string;
+};
+
+const emptyTitleDescriptionItem = (): TitleDescriptionItem => ({
+  title: "",
+  description: "",
+});
+
+const emptyFaqItem = (): FAQItem => ({
+  question: "",
+  answer: "",
+});
+
+const emptyRelatedIngredientItem = (): RelatedIngredientItem => ({
+  name: "",
+  slug: "",
+});
 
 const emptyForm: IngredientFormState = {
   name: "",
   slug: "",
+  status: ContentStatus.Draft,
+  scientific_name: "",
+  ingredient_category: "",
+  image_url: "",
+  rating: "",
+  evidence_level: "",
+  origin_country: "",
+  part_used: "",
+  ingredient_form: "",
+  taste_profile: "",
+  typical_dose: "",
+  best_for: "",
+  safety_level: "",
   short_description: "",
   full_description: "",
-  benefits: "",
-  side_effects: "",
-  dosage: "",
-  scientific_notes: "",
-  featured_image: "",
-  meta_title: "",
-  meta_description: "",
+  overview_content: "",
+  how_it_works_content: "",
+  interesting_fact: "",
+  benefits_json: [],
+  side_effects_json: [],
+  drug_interactions_json: [],
+  who_should_avoid_json: [],
+  faq_json: [],
+  related_ingredients_json: [],
+  seo_title: "",
+  seo_description: "",
   is_featured: false,
   product_ids: [],
 };
 
-function lines(value: string) {
-  return value
-    .split("\n")
-    .map((item) => item.trim())
-    .filter(Boolean);
+function cleanText(value: string) {
+  const normalizedValue = value.trim();
+
+  return normalizedValue ? normalizedValue : null;
 }
 
-function csvList(value: string) {
-  const separator = value.includes(";") ? ";" : value.includes("|") ? "|" : ",";
-
-  return value
-    .split(separator)
-    .map((item) => item.trim())
-    .filter(Boolean);
+function serializeStringList(values: string[]) {
+  return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
 
-function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+function serializeTitleDescriptionItems(items: TitleDescriptionItem[]) {
+  return items
+    .map((item) => ({
+      title: item.title.trim(),
+      description: item.description.trim(),
+    }))
+    .filter((item) => item.title && item.description);
 }
 
-function parseBoolean(value: string) {
-  return ["true", "1", "yes", "featured"].includes(value.trim().toLowerCase());
+function serializeFaqItems(items: FAQItem[]) {
+  return items
+    .map((item) => ({
+      question: item.question.trim(),
+      answer: item.answer.trim(),
+    }))
+    .filter((item) => item.question && item.answer);
 }
 
-function escapeCsvCell(value: string | number | boolean | null | undefined) {
-  const text = String(value ?? "");
+function serializeRelatedIngredients(items: RelatedIngredientItem[]) {
+  return items
+    .map((item) => {
+      const name = item.name.trim();
+      const slug = item.slug.trim() || (name ? slugify(name) : "");
 
-  if (/[",\n\r]/.test(text)) {
-    return `"${text.replace(/"/g, '""')}"`;
-  }
-
-  return text;
-}
-
-function createCsv(rows: Array<Array<string | number | boolean | null | undefined>>) {
-  return rows.map((row) => row.map(escapeCsvCell).join(",")).join("\r\n");
+      return { name, slug };
+    })
+    .filter((item) => item.name);
 }
 
 function downloadCsv(filename: string, csv: string) {
@@ -139,335 +210,196 @@ function downloadCsv(filename: string, csv: string) {
   URL.revokeObjectURL(url);
 }
 
-function parseCsv(text: string) {
-  const rows: string[][] = [];
-  let row: string[] = [];
-  let cell = "";
-  let inQuotes = false;
+function isRecord(value: JsonValue): value is Record<string, JsonValue> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
 
-  for (let index = 0; index < text.length; index += 1) {
-    const char = text[index];
-    const nextChar = text[index + 1];
+function parseTitleDescriptionItems(value: JsonValue[] | undefined, fallback: string[]) {
+  if (Array.isArray(value) && value.length) {
+    const items = value
+      .map((item) => {
+        if (isRecord(item)) {
+          const title = typeof item.title === "string" ? item.title : "";
+          const description = typeof item.description === "string" ? item.description : "";
 
-    if (char === '"' && inQuotes && nextChar === '"') {
-      cell += '"';
-      index += 1;
-      continue;
+          return { title, description };
+        }
+
+        return null;
+      })
+      .filter(Boolean) as TitleDescriptionItem[];
+
+    if (items.length) {
+      return items;
     }
+  }
 
-    if (char === '"') {
-      inQuotes = !inQuotes;
-      continue;
-    }
+  return fallback.map((item) => ({ title: item, description: "" }));
+}
 
-    if (char === "," && !inQuotes) {
-      row.push(cell);
-      cell = "";
-      continue;
-    }
+function parseStringItems(value: JsonValue[] | undefined) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
 
-    if ((char === "\n" || char === "\r") && !inQuotes) {
-      if (char === "\r" && nextChar === "\n") {
-        index += 1;
+  return value
+    .map((item) => (typeof item === "string" ? item : ""))
+    .filter(Boolean);
+}
+
+function parseFaqItems(value: FAQItem[] | undefined) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value
+    .map((item) => ({
+      question: item.question ?? "",
+      answer: item.answer ?? "",
+    }))
+    .filter((item) => item.question || item.answer);
+}
+
+function parseRelatedIngredients(value: JsonValue[] | undefined) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value
+    .map((item) => {
+      if (isRecord(item)) {
+        return {
+          name: typeof item.name === "string" ? item.name : "",
+          slug: typeof item.slug === "string" ? item.slug : "",
+        };
       }
 
-      row.push(cell);
-      if (row.some((value) => value.trim())) {
-        rows.push(row);
-      }
-      row = [];
-      cell = "";
-      continue;
-    }
-
-    cell += char;
-  }
-
-  row.push(cell);
-  if (row.some((value) => value.trim())) {
-    rows.push(row);
-  }
-
-  return rows;
-}
-
-function parseIngredientCsv(text: string) {
-  const rows = parseCsv(text);
-  const [header, ...bodyRows] = rows;
-
-  if (!header) {
-    return { rows: [] as IngredientCsvRow[], errors: ["CSV file is empty."] };
-  }
-
-  const normalizedHeader = header.map((column) => column.trim());
-  const missingColumns = CSV_COLUMNS.filter((column) => !normalizedHeader.includes(column));
-  const errors = missingColumns.length
-    ? [`Missing columns: ${missingColumns.join(", ")}.`]
-    : [];
-
-  const parsedRows = bodyRows.map((bodyRow) => {
-    const entry = {} as IngredientCsvRow;
-
-    CSV_COLUMNS.forEach((column) => {
-      const columnIndex = normalizedHeader.indexOf(column);
-      entry[column] = columnIndex >= 0 ? bodyRow[columnIndex]?.trim() ?? "" : "";
-    });
-
-    return entry;
-  });
-
-  return { rows: parsedRows, errors };
-}
-
-function ingredientToCsvRow(ingredient: Ingredient) {
-  return [
-    ingredient.id,
-    ingredient.name,
-    ingredient.slug,
-    ingredient.short_description ?? "",
-    ingredient.full_description ?? "",
-    ingredient.benefits.join("; "),
-    ingredient.side_effects.join("; "),
-    ingredient.dosage ?? "",
-    ingredient.scientific_notes ?? "",
-    ingredient.featured_image ?? "",
-    ingredient.meta_title ?? "",
-    ingredient.meta_description ?? "",
-    ingredient.is_featured,
-    ingredient.created_at,
-    ingredient.updated_at,
-    ingredient.deleted_at ?? "",
-  ];
-}
-
-function sampleIngredientRows() {
-  const samples = [
-    {
-      name: "Ashwagandha",
-      slug: "ashwagandha",
-      short: "An adaptogenic herb used to support calm, resilience, and balanced stress response.",
-      full:
-        "Ashwagandha is a traditional adaptogen commonly used in wellness formulas for stress support, relaxation, sleep quality, and daily balance. It is often paired with magnesium or L-theanine in calm-focused routines.",
-      benefits: "Stress resilience; Calm mood support; Sleep quality support; General wellness balance",
-      sideEffects: "May cause digestive discomfort in sensitive users; Avoid during pregnancy unless advised by a clinician",
-      dosage: "Common supplemental ranges are 300-600 mg daily depending on extract strength.",
-      notes: "Look for standardized extracts and review with a healthcare professional when using thyroid or sedative medications.",
-      metaTitle: "Ashwagandha Benefits, Dosage and Safety | Suppriva",
-      metaDescription:
-        "Learn about ashwagandha benefits, dosage ranges, side effects, and how this adaptogen is used in premium wellness supplements.",
-      featured: true,
-    },
-    {
-      name: "Berberine",
-      slug: "berberine",
-      short: "A plant compound often used for metabolic wellness and healthy blood sugar support.",
-      full:
-        "Berberine is a bioactive alkaloid found in several plants and is commonly discussed for metabolic health, glucose metabolism, and cardiometabolic wellness routines.",
-      benefits: "Metabolic wellness; Healthy glucose metabolism support; Lipid profile support; Weight management routines",
-      sideEffects: "May cause gastrointestinal discomfort; Can interact with glucose-lowering medications",
-      dosage: "Common ranges are 500 mg one to three times daily with meals.",
-      notes: "Berberine has meaningful interaction potential, so users on medication should seek medical guidance before use.",
-      metaTitle: "Berberine Guide: Benefits, Dosage and Safety | Suppriva",
-      metaDescription:
-        "Review berberine uses for metabolic wellness, typical dosage ranges, safety notes, and supplement selection tips.",
-      featured: true,
-    },
-    {
-      name: "Creatine Monohydrate",
-      slug: "creatine-monohydrate",
-      short: "A well-studied performance ingredient for strength, power, and muscle energy support.",
-      full:
-        "Creatine monohydrate supports phosphocreatine stores in muscle and is widely used in fitness, strength, and performance routines. It is one of the most researched sports nutrition ingredients.",
-      benefits: "Strength support; Power output support; Muscle energy support; Training recovery support",
-      sideEffects: "May cause temporary water weight increase; Digestive discomfort can occur with high single doses",
-      dosage: "A common maintenance dose is 3-5 g daily.",
-      notes: "Creatine monohydrate is the reference form with strong research history and broad supplement availability.",
-      metaTitle: "Creatine Monohydrate Benefits and Dosage | Suppriva",
-      metaDescription:
-        "Understand creatine monohydrate benefits, common dosage, performance uses, and practical safety considerations.",
-      featured: false,
-    },
-    {
-      name: "Magnesium Glycinate",
-      slug: "magnesium-glycinate",
-      short: "A gentle magnesium form often used for relaxation, sleep, and muscle function support.",
-      full:
-        "Magnesium glycinate combines magnesium with glycine and is popular for users seeking a gentle, well-tolerated magnesium option for evening routines and general mineral support.",
-      benefits: "Relaxation support; Sleep routine support; Muscle function; Nervous system support",
-      sideEffects: "High intakes may cause loose stools; Users with kidney disease should consult a clinician",
-      dosage: "Typical supplemental elemental magnesium ranges from 100-300 mg daily.",
-      notes: "Check the elemental magnesium amount rather than only the compound weight on the supplement label.",
-      metaTitle: "Magnesium Glycinate Benefits and Dosage | Suppriva",
-      metaDescription:
-        "Explore magnesium glycinate benefits for sleep, calm, muscle function, dosage guidance, and safety notes.",
-      featured: true,
-    },
-    {
-      name: "Omega 3",
-      slug: "omega-3",
-      short: "Essential fatty acids commonly used for heart, brain, and inflammation-supportive wellness routines.",
-      full:
-        "Omega 3 fatty acids such as EPA and DHA are found in fish oil and algae oil supplements. They are widely used for cardiovascular wellness, cognitive support, and balanced inflammation response.",
-      benefits: "Heart health support; Brain health support; Joint comfort routines; Healthy triglyceride support",
-      sideEffects: "May cause fishy aftertaste; Can increase bleeding risk at high doses or with blood thinners",
-      dosage: "Common daily EPA plus DHA ranges vary from 250-1000 mg depending on wellness goals.",
-      notes: "Choose products that clearly list EPA and DHA amounts and use third-party purity testing where possible.",
-      metaTitle: "Omega 3 Benefits, EPA DHA and Dosage | Suppriva",
-      metaDescription:
-        "Compare omega 3 benefits, EPA and DHA labels, dosage ranges, and quality tips for fish oil or algae oil supplements.",
-      featured: false,
-    },
-    {
-      name: "L-Theanine",
-      slug: "l-theanine",
-      short: "An amino acid from tea often used for calm focus without heavy sedation.",
-      full:
-        "L-theanine is commonly used in focus, stress, and sleep-support formulas. It is often paired with caffeine for smoother alertness or with magnesium for evening calm.",
-      benefits: "Calm focus; Relaxation support; Stress routine support; Smooth caffeine pairing",
-      sideEffects: "Generally well tolerated; May increase drowsiness when paired with sedatives",
-      dosage: "Common supplemental ranges are 100-200 mg as needed.",
-      notes: "L-theanine is popular because it can support a calm state while preserving mental clarity for many users.",
-      metaTitle: "L-Theanine Benefits for Calm Focus | Suppriva",
-      metaDescription:
-        "Learn how L-theanine supports calm focus, caffeine balance, relaxation routines, dosage, and safety considerations.",
-      featured: false,
-    },
-    {
-      name: "Curcumin",
-      slug: "curcumin",
-      short: "The active compound in turmeric, often used for antioxidant and joint comfort support.",
-      full:
-        "Curcumin is a turmeric-derived polyphenol commonly included in formulas for antioxidant support, joint comfort, and healthy inflammation response.",
-      benefits: "Antioxidant support; Joint comfort routines; Healthy inflammation response; Mobility support",
-      sideEffects: "May cause stomach upset; Can interact with blood thinners or gallbladder conditions",
-      dosage: "Common extract doses range from 500-1000 mg daily depending on formulation.",
-      notes: "Bioavailability-enhanced curcumin forms may improve absorption compared with plain turmeric powder.",
-      metaTitle: "Curcumin Benefits, Absorption and Safety | Suppriva",
-      metaDescription:
-        "Review curcumin benefits, turmeric extract quality, absorption technology, dosage ranges, and safety notes.",
-      featured: false,
-    },
-    {
-      name: "CoQ10",
-      slug: "coq10",
-      short: "A coenzyme involved in cellular energy, commonly used for heart and vitality support.",
-      full:
-        "CoQ10 is naturally involved in mitochondrial energy production and is frequently used in heart health and energy-support supplement routines.",
-      benefits: "Cellular energy support; Heart wellness; Antioxidant support; Vitality routines",
-      sideEffects: "May cause mild digestive upset; Can interact with anticoagulant medications",
-      dosage: "Common supplemental ranges are 100-200 mg daily with a meal containing fat.",
-      notes: "Ubiquinol and ubiquinone are common forms; taking CoQ10 with food can support absorption.",
-      metaTitle: "CoQ10 Benefits for Energy and Heart Health | Suppriva",
-      metaDescription:
-        "Understand CoQ10 benefits, common forms, dosage ranges, heart health uses, and supplement quality tips.",
-      featured: false,
-    },
-    {
-      name: "Rhodiola Rosea",
-      slug: "rhodiola-rosea",
-      short: "An adaptogenic herb often used for energy, stress resilience, and mental stamina.",
-      full:
-        "Rhodiola rosea is an adaptogen used in formulas designed for fatigue support, daily resilience, and cognitive performance under stress.",
-      benefits: "Stress resilience; Mental stamina; Energy support; Fatigue management routines",
-      sideEffects: "May feel stimulating for some users; Avoid late-day use if sensitive",
-      dosage: "Common extract ranges are 200-400 mg daily, often standardized for rosavins and salidroside.",
-      notes: "Rhodiola may be best suited earlier in the day because some users find it energizing.",
-      metaTitle: "Rhodiola Rosea Benefits and Dosage | Suppriva",
-      metaDescription:
-        "Explore Rhodiola rosea benefits for energy, stress resilience, fatigue routines, dosage, and safety notes.",
-      featured: false,
-    },
-    {
-      name: "5-HTP",
-      slug: "5-htp",
-      short: "A serotonin precursor used in some mood and sleep-support supplement routines.",
-      full:
-        "5-HTP is a compound involved in serotonin production and appears in some mood, appetite, and sleep-support formulas. It requires careful review because of medication interactions.",
-      benefits: "Sleep routine support; Mood wellness routines; Appetite support; Relaxation support",
-      sideEffects: "Can cause nausea or drowsiness; Avoid with SSRIs, MAOIs, or other serotonergic medications unless medically supervised",
-      dosage: "Common supplemental ranges vary, often starting around 50-100 mg.",
-      notes: "Because 5-HTP affects serotonin pathways, interaction screening is especially important before use.",
-      metaTitle: "5-HTP Benefits, Dosage and Safety | Suppriva",
-      metaDescription:
-        "Learn about 5-HTP uses for mood and sleep routines, dosage considerations, side effects, and important interaction warnings.",
-      featured: false,
-    },
-  ];
-
-  return samples.map((sample) => [
-    "",
-    sample.name,
-    sample.slug,
-    sample.short,
-    sample.full,
-    sample.benefits,
-    sample.sideEffects,
-    sample.dosage,
-    sample.notes,
-    "",
-    sample.metaTitle,
-    sample.metaDescription,
-    sample.featured,
-    "",
-    "",
-    "",
-  ]);
-}
-
-function csvRowToPayload(row: IngredientCsvRow) {
-  const name = row.name.trim();
-  const slug = row.slug.trim() || slugify(name);
-
-  return {
-    name,
-    slug,
-    short_description: row.short_description || null,
-    full_description: row.full_description || null,
-    benefits: csvList(row.benefits),
-    side_effects: csvList(row.side_effects),
-    dosage: row.dosage || null,
-    scientific_notes: row.scientific_notes || null,
-    featured_image: row.featured_image || null,
-    meta_title: row.meta_title || null,
-    meta_description: row.meta_description || null,
-    is_featured: parseBoolean(row.is_featured),
-    product_ids: [],
-  };
+      return null;
+    })
+    .filter(Boolean) as RelatedIngredientItem[];
 }
 
 function ingredientToForm(ingredient: Ingredient): IngredientFormState {
   return {
     name: ingredient.name,
     slug: ingredient.slug,
+    status: ingredient.status ?? ContentStatus.Draft,
+    scientific_name: ingredient.scientific_name ?? "",
+    ingredient_category: ingredient.ingredient_category ?? "",
+    image_url: ingredient.image_url ?? ingredient.featured_image ?? "",
+    rating: ingredient.rating !== null ? String(ingredient.rating) : "",
+    evidence_level: ingredient.evidence_level ?? "",
+    origin_country: ingredient.origin_country ?? "",
+    part_used: ingredient.part_used ?? "",
+    ingredient_form: ingredient.ingredient_form ?? "",
+    taste_profile: ingredient.taste_profile ?? "",
+    typical_dose: ingredient.typical_dose ?? ingredient.dosage ?? "",
+    best_for: ingredient.best_for ?? "",
+    safety_level: ingredient.safety_level ?? "",
     short_description: ingredient.short_description ?? "",
     full_description: ingredient.full_description ?? "",
-    benefits: ingredient.benefits.join("\n"),
-    side_effects: ingredient.side_effects.join("\n"),
-    dosage: ingredient.dosage ?? "",
-    scientific_notes: ingredient.scientific_notes ?? "",
-    featured_image: ingredient.featured_image ?? "",
-    meta_title: ingredient.meta_title ?? "",
-    meta_description: ingredient.meta_description ?? "",
+    overview_content: ingredient.overview_content ?? "",
+    how_it_works_content: ingredient.how_it_works_content ?? ingredient.scientific_notes ?? "",
+    interesting_fact: ingredient.interesting_fact ?? "",
+    benefits_json: parseTitleDescriptionItems(ingredient.benefits_json, ingredient.benefits),
+    side_effects_json: parseTitleDescriptionItems(
+      ingredient.side_effects_json,
+      ingredient.side_effects,
+    ),
+    drug_interactions_json: parseStringItems(ingredient.drug_interactions_json),
+    who_should_avoid_json: parseStringItems(ingredient.who_should_avoid_json),
+    faq_json: parseFaqItems(ingredient.faq_json),
+    related_ingredients_json: parseRelatedIngredients(ingredient.related_ingredients_json),
+    seo_title: ingredient.seo_title ?? ingredient.meta_title ?? "",
+    seo_description: ingredient.seo_description ?? ingredient.meta_description ?? "",
     is_featured: ingredient.is_featured,
     product_ids: [],
   };
 }
 
+function validateStructuredForm(form: IngredientFormState) {
+  const errors: string[] = [];
+
+  const invalidBenefits = form.benefits_json.some(
+    (item) => (item.title.trim() || item.description.trim()) && !(item.title.trim() && item.description.trim()),
+  );
+  if (invalidBenefits) {
+    errors.push("Each benefit needs both a title and description.");
+  }
+
+  const invalidSideEffects = form.side_effects_json.some(
+    (item) => (item.title.trim() || item.description.trim()) && !(item.title.trim() && item.description.trim()),
+  );
+  if (invalidSideEffects) {
+    errors.push("Each side effect needs both a title and description.");
+  }
+
+  const invalidFaqs = form.faq_json.some(
+    (item) => (item.question.trim() || item.answer.trim()) && !(item.question.trim() && item.answer.trim()),
+  );
+  if (invalidFaqs) {
+    errors.push("Each FAQ needs both a question and answer.");
+  }
+
+  const invalidRelatedIngredients = form.related_ingredients_json.some(
+    (item) => (item.name.trim() || item.slug.trim()) && !item.name.trim(),
+  );
+  if (invalidRelatedIngredients) {
+    errors.push("Related ingredients need a name.");
+  }
+
+  return errors;
+}
+
 function formToPayload(form: IngredientFormState) {
+  const normalizedSlug = form.slug.trim() || slugify(form.name);
+  const primaryImage = cleanText(form.image_url);
+  const seoTitle = cleanText(form.seo_title);
+  const seoDescription = cleanText(form.seo_description);
+  const benefitsJson = serializeTitleDescriptionItems(form.benefits_json);
+  const sideEffectsJson = serializeTitleDescriptionItems(form.side_effects_json);
+  const howItWorksContent = cleanText(form.how_it_works_content);
+  const overviewContent = cleanText(form.overview_content);
+  const typicalDose = cleanText(form.typical_dose);
+
   return {
-    name: form.name,
-    slug: form.slug || undefined,
-    short_description: form.short_description || null,
-    full_description: form.full_description || null,
-    benefits: lines(form.benefits),
-    side_effects: lines(form.side_effects),
-    dosage: form.dosage || null,
-    scientific_notes: form.scientific_notes || null,
-    featured_image: form.featured_image || null,
-    meta_title: form.meta_title || null,
-    meta_description: form.meta_description || null,
+    name: form.name.trim(),
+    slug: normalizedSlug || undefined,
+    status: form.status,
+    scientific_name: cleanText(form.scientific_name),
+    ingredient_category: cleanText(form.ingredient_category),
+    image_url: primaryImage,
+    rating: form.rating.trim() ? Number(form.rating) : null,
+    evidence_level: cleanText(form.evidence_level),
+    origin_country: cleanText(form.origin_country),
+    part_used: cleanText(form.part_used),
+    ingredient_form: cleanText(form.ingredient_form),
+    taste_profile: cleanText(form.taste_profile),
+    typical_dose: typicalDose,
+    best_for: cleanText(form.best_for),
+    safety_level: cleanText(form.safety_level),
+    short_description: cleanText(form.short_description),
+    full_description: cleanText(form.full_description),
+    overview_content: overviewContent,
+    how_it_works_content: howItWorksContent,
+    interesting_fact: cleanText(form.interesting_fact),
+    benefits_json: benefitsJson,
+    side_effects_json: sideEffectsJson,
+    drug_interactions_json: serializeStringList(form.drug_interactions_json),
+    who_should_avoid_json: serializeStringList(form.who_should_avoid_json),
+    faq_json: serializeFaqItems(form.faq_json),
+    related_ingredients_json: serializeRelatedIngredients(form.related_ingredients_json),
+    seo_title: seoTitle,
+    seo_description: seoDescription,
     is_featured: form.is_featured,
     product_ids: form.product_ids,
+    benefits: benefitsJson.map((item) => item.title),
+    side_effects: sideEffectsJson.map((item) => item.title),
+    dosage: typicalDose,
+    scientific_notes: howItWorksContent || overviewContent,
+    featured_image: primaryImage,
+    meta_title: seoTitle,
+    meta_description: seoDescription,
   };
 }
 
@@ -477,6 +409,7 @@ export function DashboardIngredientsClient() {
   const [form, setForm] = useState<IngredientFormState>(emptyForm);
   const importInputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState<"all" | ContentStatus>("all");
   const [editingIngredient, setEditingIngredient] = useState<Ingredient | null>(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -484,6 +417,8 @@ export function DashboardIngredientsClient() {
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [importSummary, setImportSummary] = useState<IngredientImportSummary | null>(null);
+  const [importIssues, setImportIssues] = useState<IngredientImportIssue[]>([]);
 
   const fetchData = useCallback(async () => {
     setIsLoading(true);
@@ -520,29 +455,206 @@ export function DashboardIngredientsClient() {
 
   const filteredIngredients = useMemo(() => {
     const query = search.trim().toLowerCase();
+    return ingredients.filter((ingredient) => {
+      const matchesStatus =
+        statusFilter === "all" ? true : ingredient.status === statusFilter;
 
-    if (!query) {
-      return ingredients;
-    }
+      if (!matchesStatus) {
+        return false;
+      }
 
-    return ingredients.filter((ingredient) =>
-      [
+      if (!query) {
+        return true;
+      }
+
+      return [
         ingredient.name,
+        ingredient.scientific_name ?? "",
         ingredient.slug,
-        ingredient.short_description ?? "",
-        ingredient.meta_title ?? "",
+        ingredient.ingredient_category ?? "",
       ]
         .join(" ")
         .toLowerCase()
-        .includes(query),
-    );
-  }, [ingredients, search]);
+        .includes(query);
+    });
+  }, [ingredients, search, statusFilter]);
+
+  const ingredientQualitySummary = useMemo(() => {
+    const warningMap = new Map<string, string[]>();
+    let ingredientsWithWarnings = 0;
+
+    for (const ingredient of ingredients) {
+      const warnings = getIngredientQualityWarnings(ingredient);
+      warningMap.set(ingredient.id, warnings);
+
+      if (warnings.length) {
+        ingredientsWithWarnings += 1;
+      }
+    }
+
+    return { warningMap, ingredientsWithWarnings };
+  }, [ingredients]);
+
+  const publishWarnings = useMemo(() => {
+    if (form.status !== ContentStatus.Published) {
+      return [];
+    }
+
+    return getIngredientQualityWarnings(formToPayload(form));
+  }, [form]);
 
   function updateForm<K extends keyof IngredientFormState>(
     key: K,
     value: IngredientFormState[K],
   ) {
     setForm((currentForm) => ({ ...currentForm, [key]: value }));
+  }
+
+  function updateTextField<K extends keyof IngredientFormState>(
+    key: K,
+    value: IngredientFormState[K],
+  ) {
+    setForm((currentForm) => {
+      const nextForm = { ...currentForm, [key]: value };
+
+      if (key === "name") {
+        const nameValue = typeof value === "string" ? value : "";
+        if (!currentForm.slug.trim()) {
+          nextForm.slug = slugify(nameValue);
+        }
+      }
+
+      return nextForm;
+    });
+  }
+
+  function updateListValue(
+    key: "drug_interactions_json" | "who_should_avoid_json",
+    index: number,
+    value: string,
+  ) {
+    setForm((currentForm) => {
+      const items = [...currentForm[key]];
+      items[index] = value;
+
+      return {
+        ...currentForm,
+        [key]: items,
+      };
+    });
+  }
+
+  function addListValue(key: "drug_interactions_json" | "who_should_avoid_json") {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [key]: [...currentForm[key], ""],
+    }));
+  }
+
+  function removeListValue(
+    key: "drug_interactions_json" | "who_should_avoid_json",
+    index: number,
+  ) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [key]: currentForm[key].filter((_, currentIndex) => currentIndex !== index),
+    }));
+  }
+
+  function updateTitleDescriptionItem(
+    key: "benefits_json" | "side_effects_json",
+    index: number,
+    field: keyof TitleDescriptionItem,
+    value: string,
+  ) {
+    setForm((currentForm) => {
+      const items = [...currentForm[key]];
+      items[index] = { ...items[index], [field]: value };
+
+      return {
+        ...currentForm,
+        [key]: items,
+      };
+    });
+  }
+
+  function addTitleDescriptionItem(key: "benefits_json" | "side_effects_json") {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [key]: [...currentForm[key], emptyTitleDescriptionItem()],
+    }));
+  }
+
+  function removeTitleDescriptionItem(
+    key: "benefits_json" | "side_effects_json",
+    index: number,
+  ) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [key]: currentForm[key].filter((_, currentIndex) => currentIndex !== index),
+    }));
+  }
+
+  function updateFaqItem(index: number, field: keyof FAQItem, value: string) {
+    setForm((currentForm) => {
+      const items = [...currentForm.faq_json];
+      items[index] = { ...items[index], [field]: value };
+
+      return {
+        ...currentForm,
+        faq_json: items,
+      };
+    });
+  }
+
+  function addFaqItem() {
+    setForm((currentForm) => ({
+      ...currentForm,
+      faq_json: [...currentForm.faq_json, emptyFaqItem()],
+    }));
+  }
+
+  function removeFaqItem(index: number) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      faq_json: currentForm.faq_json.filter((_, currentIndex) => currentIndex !== index),
+    }));
+  }
+
+  function updateRelatedIngredientItem(
+    index: number,
+    field: keyof RelatedIngredientItem,
+    value: string,
+  ) {
+    setForm((currentForm) => {
+      const items = [...currentForm.related_ingredients_json];
+      items[index] = { ...items[index], [field]: value };
+
+      if (field === "name" && !items[index].slug.trim()) {
+        items[index].slug = slugify(value);
+      }
+
+      return {
+        ...currentForm,
+        related_ingredients_json: items,
+      };
+    });
+  }
+
+  function addRelatedIngredientItem() {
+    setForm((currentForm) => ({
+      ...currentForm,
+      related_ingredients_json: [...currentForm.related_ingredients_json, emptyRelatedIngredientItem()],
+    }));
+  }
+
+  function removeRelatedIngredientItem(index: number) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      related_ingredients_json: currentForm.related_ingredients_json.filter(
+        (_, currentIndex) => currentIndex !== index,
+      ),
+    }));
   }
 
   function toggleProduct(productId: string) {
@@ -580,7 +692,7 @@ export function DashboardIngredientsClient() {
         }));
       }
     } catch {
-      // Related product selection is a form enhancement; the main edit form can still load.
+      // Related products can fail independently without blocking edit mode.
     }
   }
 
@@ -591,18 +703,48 @@ export function DashboardIngredientsClient() {
     setSuccess("");
 
     try {
+      const normalizedSlug = form.slug.trim() || slugify(form.name);
+      const structuredErrors = validateStructuredForm(form);
+
+      if (!form.name.trim()) {
+        throw new Error("Ingredient name is required.");
+      }
+
+      if (!normalizedSlug) {
+        throw new Error("Ingredient slug is required.");
+      }
+
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(normalizedSlug)) {
+        throw new Error("Ingredient slug must use lowercase letters, numbers, and hyphens.");
+      }
+
+      const duplicateIngredient = ingredients.find(
+        (ingredient) =>
+          ingredient.slug === normalizedSlug &&
+          ingredient.id !== editingIngredient?.id,
+      );
+
+      if (duplicateIngredient) {
+        throw new Error(`An ingredient with slug "${normalizedSlug}" already exists.`);
+      }
+
+      if (structuredErrors.length) {
+        throw new Error(structuredErrors.join(" "));
+      }
+
+      const payload = formToPayload({ ...form, slug: normalizedSlug });
       const response = await fetch(
         editingIngredient ? `/api/ingredients/${editingIngredient.id}` : "/api/ingredients",
         {
           method: editingIngredient ? "PUT" : "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formToPayload(form)),
+          body: JSON.stringify(payload),
         },
       );
-      const payload = (await response.json()) as IngredientsResponse;
+      const responsePayload = (await response.json()) as IngredientsResponse;
 
       if (!response.ok) {
-        throw new Error(payload.error ?? "Unable to save ingredient.");
+        throw new Error(responsePayload.error ?? "Unable to save ingredient.");
       }
 
       setSuccess(
@@ -647,66 +789,18 @@ export function DashboardIngredientsClient() {
   }
 
   function exportIngredients() {
-    const rows = [[...CSV_COLUMNS], ...ingredients.map(ingredientToCsvRow)];
+    const rows = [[...INGREDIENT_CSV_COLUMNS], ...ingredients.map(ingredientToCsvRow)];
 
     downloadCsv("suppriva-ingredients-export.csv", createCsv(rows));
   }
 
   function downloadSampleCsv() {
-    const rows = [[...CSV_COLUMNS], ...sampleIngredientRows()];
-
-    downloadCsv("ingredients-import-template.csv", createCsv(rows));
-  }
-
-  async function loadCurrentIngredients() {
-    const response = await fetch("/api/ingredients", { cache: "no-store" });
-    const payload = (await response.json()) as IngredientsResponse;
-
-    if (!response.ok) {
-      throw new Error(payload.error ?? "Unable to load existing ingredients.");
-    }
-
-    setIngredients(payload.ingredients ?? []);
-
-    return payload.ingredients ?? [];
-  }
-
-  function validateImportRow(
-    row: IngredientCsvRow,
-    rowNumber: number,
-    existingSlugs: Set<string>,
-    importedSlugs: Set<string>,
-  ) {
-    const payload = csvRowToPayload(row);
-    const errors: string[] = [];
-
-    if (!payload.name) {
-      errors.push("name is required");
-    }
-
-    if (!payload.slug) {
-      errors.push("slug is required or name must generate one");
-    }
-
-    if (payload.slug && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(payload.slug)) {
-      errors.push("slug must use lowercase letters, numbers, and hyphens");
-    }
-
-    if (payload.slug && existingSlugs.has(payload.slug)) {
-      errors.push(`slug "${payload.slug}" already exists`);
-    }
-
-    if (payload.slug && importedSlugs.has(payload.slug)) {
-      errors.push(`duplicate slug "${payload.slug}" in CSV`);
-    }
-
-    if (errors.length) {
-      return { payload, error: `Row ${rowNumber}: ${errors.join(", ")}.` };
-    }
-
-    importedSlugs.add(payload.slug);
-
-    return { payload, error: "" };
+    const link = document.createElement("a");
+    link.href = "/templates/ingredients-master-template.csv";
+    link.download = "ingredients-master-template.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 
   async function importIngredientsCsv(event: ChangeEvent<HTMLInputElement>) {
@@ -719,6 +813,8 @@ export function DashboardIngredientsClient() {
 
     setError("");
     setSuccess("");
+    setImportSummary(null);
+    setImportIssues([]);
     setIsImporting(true);
 
     try {
@@ -733,46 +829,88 @@ export function DashboardIngredientsClient() {
         throw new Error("CSV must include at least one ingredient row.");
       }
 
-      const currentIngredients = await loadCurrentIngredients();
-      const existingSlugs = new Set(currentIngredients.map((ingredient) => ingredient.slug));
-      const importedSlugs = new Set<string>();
-      let created = 0;
-      const skipped: string[] = [];
-
+      const preflightErrors: string[] = [];
       for (const [index, row] of rows.entries()) {
-        const { payload, error: rowError } = validateImportRow(
-          row,
-          index + 2,
-          existingSlugs,
-          importedSlugs,
+        const result = csvRowToIngredientPayload(row);
+        if (result.errors.length) {
+          preflightErrors.push(`Row ${index + 2}: ${result.errors.join(" ")}`);
+        }
+      }
+
+      if (preflightErrors.length) {
+        throw new Error(preflightErrors.slice(0, 12).join(" "));
+      }
+
+      const batches: typeof rows[] = [];
+      for (let index = 0; index < rows.length; index += INGREDIENT_IMPORT_BATCH_SIZE) {
+        batches.push(rows.slice(index, index + INGREDIENT_IMPORT_BATCH_SIZE));
+      }
+
+      let combinedSummary: IngredientImportSummary = {
+        totalRows: rows.length,
+        batchesProcessed: 0,
+        created: 0,
+        skipped: 0,
+        conflicts: 0,
+        validationErrors: 0,
+        warnings: 0,
+      };
+      const issues: IngredientImportIssue[] = [];
+
+      for (const [batchIndex, batch] of batches.entries()) {
+        setSuccess(
+          `Importing ingredient batch ${batchIndex + 1} of ${batches.length}...`,
         );
 
-        if (rowError) {
-          skipped.push(rowError);
-          continue;
-        }
-
-        const response = await fetch("/api/ingredients", {
+        const response = await fetch("/api/ingredients/import", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({
+            rows: batch.map((row, rowIndex) => ({
+              rowNumber: batchIndex * INGREDIENT_IMPORT_BATCH_SIZE + rowIndex + 2,
+              row,
+            })),
+          }),
         });
-        const responsePayload = (await response.json()) as IngredientsResponse;
+        const responsePayload = (await response.json()) as IngredientImportResponse;
 
         if (!response.ok) {
-          skipped.push(`${payload.slug}: ${responsePayload.error ?? "Unable to import ingredient."}`);
-          continue;
+          throw new Error(responsePayload.error ?? "Unable to import ingredient CSV.");
         }
 
-        created += 1;
-        existingSlugs.add(payload.slug);
+        combinedSummary = {
+          totalRows: rows.length,
+          batchesProcessed:
+            combinedSummary.batchesProcessed + (responsePayload.summary?.batchesProcessed ?? 0),
+          created: combinedSummary.created + (responsePayload.summary?.created ?? 0),
+          skipped: combinedSummary.skipped + (responsePayload.summary?.skipped ?? 0),
+          conflicts: combinedSummary.conflicts + (responsePayload.summary?.conflicts ?? 0),
+          validationErrors:
+            combinedSummary.validationErrors +
+            (responsePayload.summary?.validationErrors ?? 0),
+          warnings: combinedSummary.warnings + (responsePayload.summary?.warnings ?? 0),
+        };
+        issues.push(...(responsePayload.errors ?? []), ...(responsePayload.warnings ?? []));
       }
 
       await fetchData();
-      setSuccess(`CSV import complete. Created: ${created}. Skipped: ${skipped.length}.`);
+      setImportSummary(combinedSummary);
+      setImportIssues(issues);
+      setSuccess(
+        `CSV import complete. Created ${combinedSummary.created} ingredients across ${combinedSummary.batchesProcessed} batches.`,
+      );
 
-      if (skipped.length) {
-        setError(skipped.slice(0, 8).join(" "));
+      if (issues.length) {
+        setError(
+          issues
+            .slice(0, 10)
+            .map((issue) =>
+              issue.message
+                ? `Row ${issue.rowNumber}: ${issue.message}`
+                : `Row ${issue.rowNumber}: ${(issue.warnings ?? []).join(", ")}`
+            )
+            .join(" "),
+        );
       }
     } catch (importError) {
       setError(importError instanceof Error ? importError.message : "Unable to import CSV.");
@@ -800,6 +938,19 @@ export function DashboardIngredientsClient() {
             className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted"
           />
         </div>
+        <label className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 text-sm font-medium text-text-dark shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
+          <span className="text-muted">Status</span>
+          <select
+            value={statusFilter}
+            onChange={(event) => setStatusFilter(event.target.value as "all" | ContentStatus)}
+            className="bg-transparent text-sm font-semibold text-text-dark outline-none"
+          >
+            <option value="all">All</option>
+            <option value={ContentStatus.Draft}>Draft</option>
+            <option value={ContentStatus.Published}>Published</option>
+            <option value={ContentStatus.Archived}>Archived</option>
+          </select>
+        </label>
         <div className="flex flex-wrap gap-2">
           <button
             type="button"
@@ -815,7 +966,7 @@ export function DashboardIngredientsClient() {
             className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
           >
             <FileDown className="size-4" />
-            Sample CSV
+            Download Sample CSV
           </button>
           <button
             type="button"
@@ -855,8 +1006,57 @@ export function DashboardIngredientsClient() {
           {success}
         </div>
       ) : null}
+      {importSummary ? (
+        <div className="grid gap-3 rounded-[24px] border border-border-light bg-white p-4 shadow-[0_14px_34px_rgba(15,23,42,0.05)] md:grid-cols-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.14em] text-muted">Imported</p>
+            <p className="mt-1 font-heading text-2xl font-bold text-text-dark">
+              {importSummary.created}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.14em] text-muted">Skipped</p>
+            <p className="mt-1 font-heading text-2xl font-bold text-text-dark">
+              {importSummary.skipped}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.14em] text-muted">Conflicts</p>
+            <p className="mt-1 font-heading text-2xl font-bold text-text-dark">
+              {importSummary.conflicts}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.14em] text-muted">Quality Warnings</p>
+            <p className="mt-1 font-heading text-2xl font-bold text-text-dark">
+              {importSummary.warnings}
+            </p>
+          </div>
+          {importIssues.length ? (
+            <div className="rounded-[18px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 md:col-span-4">
+              <p className="font-semibold">Import summary details</p>
+              <ul className="mt-2 space-y-1">
+                {importIssues.slice(0, 12).map((issue, index) => (
+                  <li key={`${issue.rowNumber}-${issue.slug ?? index}`}>
+                    Row {issue.rowNumber}:{" "}
+                    {issue.message || (issue.warnings ?? []).join(", ")}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
 
       <DashboardCard title="Ingredient Library">
+        {ingredientQualitySummary.ingredientsWithWarnings ? (
+          <div className="mb-4 flex items-center gap-3 rounded-[18px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+            <AlertTriangle className="size-4 shrink-0" />
+            <span>
+              {ingredientQualitySummary.ingredientsWithWarnings} ingredients still need SEO or content enrichment.
+            </span>
+          </div>
+        ) : null}
         {isLoading ? (
           <div className="rounded-[24px] border border-border-light bg-cream p-10 text-center text-sm text-muted">
             <span className="inline-flex items-center gap-2">
@@ -866,64 +1066,100 @@ export function DashboardIngredientsClient() {
           </div>
         ) : filteredIngredients.length ? (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[780px] border-separate border-spacing-y-3 text-left">
+            <table className="w-full min-w-[980px] border-separate border-spacing-y-3 text-left">
               <thead>
                 <tr className="text-xs uppercase tracking-[0.14em] text-muted">
-                  <th className="px-4 py-2">Ingredient</th>
-                  <th className="px-4 py-2">Slug</th>
-                  <th className="px-4 py-2">Featured</th>
+                  <th className="px-4 py-2">Image</th>
+                  <th className="px-4 py-2">Name</th>
+                  <th className="px-4 py-2">Scientific Name</th>
+                  <th className="px-4 py-2">Category</th>
+                  <th className="px-4 py-2">Status</th>
+                  <th className="px-4 py-2">Warnings</th>
                   <th className="px-4 py-2">Updated</th>
                   <th className="px-4 py-2 text-right">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {filteredIngredients.map((ingredient) => (
-                  <tr
-                    key={ingredient.id}
-                    className="rounded-[20px] bg-cream text-sm shadow-[0_12px_28px_rgba(15,23,42,0.04)]"
-                  >
-                    <td className="rounded-l-[20px] px-4 py-4">
-                      <p className="font-heading font-semibold text-text-dark">{ingredient.name}</p>
-                      <p className="mt-1 line-clamp-1 text-xs text-muted">
-                        {ingredient.short_description || "No short description yet."}
-                      </p>
-                    </td>
-                    <td className="px-4 py-4 text-muted">{ingredient.slug}</td>
-                    <td className="px-4 py-4">
-                      {ingredient.is_featured ? (
-                        <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/12 px-3 py-1.5 text-xs font-semibold text-text-dark">
-                          <Star className="size-3.5 fill-gold text-gold" />
-                          Featured
-                        </span>
-                      ) : (
-                        <span className="text-xs text-muted">Standard</span>
-                      )}
-                    </td>
-                    <td className="px-4 py-4 text-muted">
-                      {new Date(ingredient.updated_at).toLocaleDateString()}
-                    </td>
-                    <td className="rounded-r-[20px] px-4 py-4">
-                      <div className="flex justify-end gap-2">
-                        <button
-                          type="button"
-                          onClick={() => void openEditForm(ingredient)}
-                          className="rounded-pill border border-border-light bg-white p-2 text-primary transition hover:border-gold/70"
-                          aria-label={`Edit ${ingredient.name}`}
+                {filteredIngredients.map((ingredient) => {
+                  const image = ingredient.image_url ?? ingredient.featured_image;
+                  const warnings =
+                    ingredientQualitySummary.warningMap.get(ingredient.id) ?? [];
+
+                  return (
+                    <tr
+                      key={ingredient.id}
+                      className="rounded-[20px] bg-cream text-sm shadow-[0_12px_28px_rgba(15,23,42,0.04)]"
+                    >
+                      <td className="rounded-l-[20px] px-4 py-4">
+                        <div
+                          className="grid h-14 w-14 place-items-center rounded-[18px] border border-border-light bg-white bg-cover bg-center text-[10px] font-bold uppercase tracking-[0.14em] text-primary"
+                          style={image ? { backgroundImage: `url("${image}")` } : undefined}
                         >
-                          <Pencil className="size-4" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => void deleteIngredient(ingredient)}
-                          className="rounded-pill border border-red-200 bg-white p-2 text-red-600 transition hover:border-red-300 hover:bg-red-50"
-                          aria-label={`Delete ${ingredient.name}`}
-                        >
-                          <Trash2 className="size-4" />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                          {image ? <span className="sr-only">{ingredient.name}</span> : "ING"}
+                        </div>
+                      </td>
+                      <td className="px-4 py-4">
+                        <div className="space-y-1">
+                          <p className="font-heading font-semibold text-text-dark">{ingredient.name}</p>
+                          <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
+                            <span>{ingredient.slug}</span>
+                            {ingredient.is_featured ? (
+                              <span className="inline-flex items-center gap-1 rounded-pill bg-gold/12 px-2 py-1 font-semibold text-text-dark">
+                                <Star className="size-3 fill-gold text-gold" />
+                                Featured
+                              </span>
+                            ) : null}
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-4 py-4 text-muted">
+                        {ingredient.scientific_name || "Not added"}
+                      </td>
+                      <td className="px-4 py-4 text-muted">
+                        {ingredient.ingredient_category || "Uncategorized"}
+                      </td>
+                      <td className="px-4 py-4">
+                        <StatusBadge status={ingredient.status} />
+                      </td>
+                      <td className="px-4 py-4">
+                        {warnings.length ? (
+                          <div className="space-y-2">
+                            <span className="inline-flex items-center gap-1 rounded-pill bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+                              <AlertTriangle className="size-3" />
+                              {warnings.length} warning{warnings.length > 1 ? "s" : ""}
+                            </span>
+                            <p className="text-xs text-muted">{warnings.join(" • ")}</p>
+                          </div>
+                        ) : (
+                          <span className="text-xs font-medium text-primary">Complete</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-4 text-muted">
+                        {new Date(ingredient.updated_at).toLocaleDateString()}
+                      </td>
+                      <td className="rounded-r-[20px] px-4 py-4">
+                        <div className="flex justify-end gap-2">
+                          <button
+                            type="button"
+                            onClick={() => void openEditForm(ingredient)}
+                            className="rounded-pill border border-border-light bg-white p-2 text-primary transition hover:border-gold/70"
+                            aria-label={`Edit ${ingredient.name}`}
+                          >
+                            <Pencil className="size-4" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => void deleteIngredient(ingredient)}
+                            className="rounded-pill border border-red-200 bg-white p-2 text-red-600 transition hover:border-red-300 hover:bg-red-50"
+                            aria-label={`Delete ${ingredient.name}`}
+                          >
+                            <Trash2 className="size-4" />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -946,7 +1182,7 @@ export function DashboardIngredientsClient() {
                 {editingIngredient ? "Edit Ingredient" : "Create Ingredient"}
               </h2>
               <p className="mt-1 text-sm text-muted">
-                Add ingredient profile details, SEO metadata, and related products.
+                Manage complete ingredient data for the upcoming premium detail page.
               </p>
             </div>
             <button
@@ -959,53 +1195,175 @@ export function DashboardIngredientsClient() {
             </button>
           </div>
 
-          <form onSubmit={submitIngredient} className="grid gap-4 lg:grid-cols-2">
-            <InputField label="Name" value={form.name} onChange={(value) => updateForm("name", value)} required />
-            <InputField label="Slug" value={form.slug} onChange={(value) => updateForm("slug", value)} placeholder="auto-generated if empty" />
-            <InputField label="Featured Image URL" value={form.featured_image} onChange={(value) => updateForm("featured_image", value)} />
-            <label className="flex min-h-12 items-center gap-3 rounded-[18px] border border-border-light bg-white px-4">
-              <input
-                type="checkbox"
-                checked={form.is_featured}
-                onChange={(event) => updateForm("is_featured", event.target.checked)}
-                className="size-4 accent-primary"
+          <form onSubmit={submitIngredient} className="space-y-6">
+            <FormSection
+              title="Basic Information"
+              description="Core identity and primary image data."
+            >
+              <InputField label="Name" value={form.name} onChange={(value) => updateTextField("name", value)} required />
+              <InputField label="Slug" value={form.slug} onChange={(value) => updateTextField("slug", slugify(value))} required />
+              <SelectField
+                label="Status"
+                value={form.status}
+                onChange={(value) => updateForm("status", value as ContentStatus)}
+                options={[
+                  { label: "Draft", value: ContentStatus.Draft },
+                  { label: "Published", value: ContentStatus.Published },
+                  { label: "Archived", value: ContentStatus.Archived },
+                ]}
               />
-              <span className="font-heading text-sm font-semibold text-text-dark">
-                Featured ingredient
-              </span>
-            </label>
-            <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateForm("short_description", value)} />
-            <TextAreaField label="Full Description" value={form.full_description} onChange={(value) => updateForm("full_description", value)} />
-            <TextAreaField label="Benefits" value={form.benefits} onChange={(value) => updateForm("benefits", value)} placeholder="One benefit per line" />
-            <TextAreaField label="Side Effects" value={form.side_effects} onChange={(value) => updateForm("side_effects", value)} placeholder="One consideration per line" />
-            <TextAreaField label="Dosage" value={form.dosage} onChange={(value) => updateForm("dosage", value)} />
-            <TextAreaField label="Scientific Notes" value={form.scientific_notes} onChange={(value) => updateForm("scientific_notes", value)} />
-            <InputField label="Meta Title" value={form.meta_title} onChange={(value) => updateForm("meta_title", value)} />
-            <TextAreaField label="Meta Description" value={form.meta_description} onChange={(value) => updateForm("meta_description", value)} />
+              <InputField label="Scientific Name" value={form.scientific_name} onChange={(value) => updateTextField("scientific_name", value)} />
+              <InputField label="Ingredient Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
+              <InputField label="Image URL" value={form.image_url} onChange={(value) => updateTextField("image_url", value)} className="lg:col-span-2" />
+            </FormSection>
 
-            <div className="lg:col-span-2">
-              <p className="font-heading text-sm font-semibold text-text-dark">
-                Related Products
-              </p>
-              <div className="mt-3 grid max-h-56 gap-2 overflow-y-auto rounded-[18px] border border-border-light bg-cream p-3 md:grid-cols-2">
-                {products.map((product) => (
-                  <label
-                    key={product.id}
-                    className="flex items-center gap-3 rounded-[14px] bg-white px-3 py-2 text-sm text-muted"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={form.product_ids.includes(product.id)}
-                      onChange={() => toggleProduct(product.id)}
-                      className="size-4 accent-primary"
-                    />
-                    <span>{product.title || product.name}</span>
-                  </label>
-                ))}
+            <FormSection
+              title="Hero Section"
+              description="High-level authority signals shown above the fold."
+            >
+              <InputField label="Rating" value={form.rating} onChange={(value) => updateTextField("rating", value)} placeholder="4.8" />
+              <InputField label="Evidence Level" value={form.evidence_level} onChange={(value) => updateTextField("evidence_level", value)} placeholder="Moderate" />
+              <InputField label="Origin Country" value={form.origin_country} onChange={(value) => updateTextField("origin_country", value)} />
+              <InputField label="Part Used" value={form.part_used} onChange={(value) => updateTextField("part_used", value)} />
+              <InputField label="Ingredient Form" value={form.ingredient_form} onChange={(value) => updateTextField("ingredient_form", value)} placeholder="Extract, powder, oil" />
+              <InputField label="Taste Profile" value={form.taste_profile} onChange={(value) => updateTextField("taste_profile", value)} />
+            </FormSection>
+
+            <FormSection
+              title="Quick Facts"
+              description="Fast-scan detail cards and summary badges."
+            >
+              <InputField label="Typical Dose" value={form.typical_dose} onChange={(value) => updateTextField("typical_dose", value)} />
+              <InputField label="Best For" value={form.best_for} onChange={(value) => updateTextField("best_for", value)} />
+              <InputField label="Safety Level" value={form.safety_level} onChange={(value) => updateTextField("safety_level", value)} />
+              <ToggleField
+                label="Featured Ingredient"
+                checked={form.is_featured}
+                onChange={(checked) => updateForm("is_featured", checked)}
+              />
+            </FormSection>
+
+            <FormSection
+              title="Content"
+              description="Editorial blocks for the premium ingredient page."
+            >
+              <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateTextField("short_description", value)} />
+              <TextAreaField label="Full Description" value={form.full_description} onChange={(value) => updateTextField("full_description", value)} />
+              <TextAreaField label="Overview Content" value={form.overview_content} onChange={(value) => updateTextField("overview_content", value)} className="lg:col-span-2" rows={5} />
+              <TextAreaField label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
+              <TextAreaField label="Interesting Fact" value={form.interesting_fact} onChange={(value) => updateTextField("interesting_fact", value)} className="lg:col-span-2" rows={3} />
+            </FormSection>
+
+            <FormSection
+              title="Structured Sections"
+              description="Repeatable content blocks without raw JSON editing."
+            >
+              <div className="grid gap-4 lg:col-span-2 xl:grid-cols-2">
+                <RepeatableTitleDescriptionField
+                  label="Benefits"
+                  items={form.benefits_json}
+                  addLabel="Add Benefit"
+                  emptyLabel="No benefits added yet."
+                  onAdd={() => addTitleDescriptionItem("benefits_json")}
+                  onRemove={(index) => removeTitleDescriptionItem("benefits_json", index)}
+                  onChange={(index, field, value) =>
+                    updateTitleDescriptionItem("benefits_json", index, field, value)
+                  }
+                />
+                <RepeatableTitleDescriptionField
+                  label="Side Effects"
+                  items={form.side_effects_json}
+                  addLabel="Add Side Effect"
+                  emptyLabel="No side effects added yet."
+                  onAdd={() => addTitleDescriptionItem("side_effects_json")}
+                  onRemove={(index) => removeTitleDescriptionItem("side_effects_json", index)}
+                  onChange={(index, field, value) =>
+                    updateTitleDescriptionItem("side_effects_json", index, field, value)
+                  }
+                />
               </div>
-            </div>
+              <div className="grid gap-4 lg:col-span-2 xl:grid-cols-2">
+                <RepeatableStringField
+                  label="Drug Interactions"
+                  items={form.drug_interactions_json}
+                  addLabel="Add Interaction"
+                  emptyLabel="No interactions added yet."
+                  onAdd={() => addListValue("drug_interactions_json")}
+                  onRemove={(index) => removeListValue("drug_interactions_json", index)}
+                  onChange={(index, value) => updateListValue("drug_interactions_json", index, value)}
+                />
+                <RepeatableStringField
+                  label="Who Should Avoid"
+                  items={form.who_should_avoid_json}
+                  addLabel="Add Avoidance Note"
+                  emptyLabel="No avoidance notes added yet."
+                  onAdd={() => addListValue("who_should_avoid_json")}
+                  onRemove={(index) => removeListValue("who_should_avoid_json", index)}
+                  onChange={(index, value) => updateListValue("who_should_avoid_json", index, value)}
+                />
+              </div>
+              <div className="lg:col-span-2">
+                <RepeatableFaqField
+                  items={form.faq_json}
+                  onAdd={addFaqItem}
+                  onRemove={removeFaqItem}
+                  onChange={updateFaqItem}
+                />
+              </div>
+              <div className="lg:col-span-2">
+                <RepeatableRelatedIngredientsField
+                  items={form.related_ingredients_json}
+                  onAdd={addRelatedIngredientItem}
+                  onRemove={removeRelatedIngredientItem}
+                  onChange={updateRelatedIngredientItem}
+                />
+              </div>
+            </FormSection>
 
-            <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
+            <FormSection
+              title="SEO"
+              description="New SEO fields are mirrored to legacy metadata for backward compatibility."
+            >
+              <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateTextField("seo_title", value)} className="lg:col-span-2" />
+              <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateTextField("seo_description", value)} className="lg:col-span-2" />
+            </FormSection>
+
+            {publishWarnings.length ? (
+              <div className="rounded-[20px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                <p className="font-semibold">
+                  Publishing warning: this ingredient is still missing a few quality signals.
+                </p>
+                <p className="mt-1">
+                  {publishWarnings.join(" • ")}. Publishing is still allowed, but the profile may feel incomplete on the public site.
+                </p>
+              </div>
+            ) : null}
+
+            <FormSection
+              title="Related Products"
+              description="Existing product relationships continue working unchanged."
+            >
+              <div className="lg:col-span-2">
+                <div className="grid max-h-56 gap-2 overflow-y-auto rounded-[18px] border border-border-light bg-cream p-3 md:grid-cols-2">
+                  {products.map((product) => (
+                    <label
+                      key={product.id}
+                      className="flex items-center gap-3 rounded-[14px] bg-white px-3 py-2 text-sm text-muted"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={form.product_ids.includes(product.id)}
+                        onChange={() => toggleProduct(product.id)}
+                        className="size-4 accent-primary"
+                      />
+                      <span>{product.title || product.name}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </FormSection>
+
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <button
                 type="submit"
                 disabled={isSaving}
@@ -1029,21 +1387,43 @@ export function DashboardIngredientsClient() {
   );
 }
 
+function FormSection({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="rounded-[24px] border border-border-light bg-cream/55 p-4 md:p-5">
+      <div className="mb-4">
+        <h3 className="font-heading text-lg font-bold text-text-dark">{title}</h3>
+        <p className="mt-1 text-sm text-muted">{description}</p>
+      </div>
+      <div className="grid gap-4 lg:grid-cols-2">{children}</div>
+    </section>
+  );
+}
+
 function InputField({
   label,
   value,
   onChange,
   placeholder,
   required,
+  className = "",
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   required?: boolean;
+  className?: string;
 }) {
   return (
-    <label className="grid gap-2">
+    <label className={`grid gap-2 ${className}`}>
       <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
       <input
         value={value}
@@ -1061,22 +1441,341 @@ function TextAreaField({
   value,
   onChange,
   placeholder,
+  rows = 4,
+  className = "",
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  rows?: number;
+  className?: string;
 }) {
   return (
-    <label className="grid gap-2">
+    <label className={`grid gap-2 ${className}`}>
       <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
       <textarea
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        rows={4}
+        rows={rows}
         className="rounded-[18px] border border-border-light bg-white px-4 py-3 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
     </label>
+  );
+}
+
+function SelectField({
+  label,
+  value,
+  onChange,
+  options,
+  className = "",
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: Array<{ label: string; value: string }>;
+  className?: string;
+}) {
+  return (
+    <label className={`grid gap-2 ${className}`}>
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function ToggleField({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+}) {
+  return (
+    <label className="flex min-h-12 items-center gap-3 rounded-[18px] border border-border-light bg-white px-4">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
+        className="size-4 accent-primary"
+      />
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+    </label>
+  );
+}
+
+function StatusBadge({ status }: { status: ContentStatus }) {
+  const palette =
+    status === ContentStatus.Published
+      ? "bg-soft-green text-primary"
+      : status === ContentStatus.Archived
+        ? "bg-slate-200 text-slate-700"
+        : "bg-amber-100 text-amber-800";
+
+  return (
+    <span className={`inline-flex rounded-pill px-2.5 py-1 text-xs font-semibold capitalize ${palette}`}>
+      {status}
+    </span>
+  );
+}
+
+function RepeatableTitleDescriptionField({
+  label,
+  items,
+  addLabel,
+  emptyLabel,
+  onAdd,
+  onRemove,
+  onChange,
+}: {
+  label: string;
+  items: TitleDescriptionItem[];
+  addLabel: string;
+  emptyLabel: string;
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onChange: (index: number, field: keyof TitleDescriptionItem, value: string) => void;
+}) {
+  return (
+    <div className="rounded-[20px] border border-border-light bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-semibold text-text-dark">{label}</h4>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
+        >
+          <Plus className="size-3.5" />
+          {addLabel}
+        </button>
+      </div>
+      <div className="space-y-3">
+        {items.length ? (
+          items.map((item, index) => (
+            <div key={`${label}-${index}`} className="rounded-[18px] border border-border-light bg-cream p-3">
+              <div className="mb-2 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => onRemove(index)}
+                  className="rounded-full border border-red-200 p-1.5 text-red-600 transition hover:bg-red-50"
+                  aria-label={`Remove ${label} item ${index + 1}`}
+                >
+                  <Trash2 className="size-3.5" />
+                </button>
+              </div>
+              <div className="grid gap-3">
+                <InputField
+                  label="Title"
+                  value={item.title}
+                  onChange={(value) => onChange(index, "title", value)}
+                />
+                <TextAreaField
+                  label="Description"
+                  value={item.description}
+                  onChange={(value) => onChange(index, "description", value)}
+                  rows={3}
+                />
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted">{emptyLabel}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RepeatableStringField({
+  label,
+  items,
+  addLabel,
+  emptyLabel,
+  onAdd,
+  onRemove,
+  onChange,
+}: {
+  label: string;
+  items: string[];
+  addLabel: string;
+  emptyLabel: string;
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onChange: (index: number, value: string) => void;
+}) {
+  return (
+    <div className="rounded-[20px] border border-border-light bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-semibold text-text-dark">{label}</h4>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
+        >
+          <Plus className="size-3.5" />
+          {addLabel}
+        </button>
+      </div>
+      <div className="space-y-3">
+        {items.length ? (
+          items.map((item, index) => (
+            <div key={`${label}-${index}`} className="flex items-start gap-2">
+              <div className="flex-1">
+                <InputField
+                  label={`${label} ${index + 1}`}
+                  value={item}
+                  onChange={(value) => onChange(index, value)}
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => onRemove(index)}
+                className="mt-7 rounded-full border border-red-200 p-2 text-red-600 transition hover:bg-red-50"
+                aria-label={`Remove ${label} item ${index + 1}`}
+              >
+                <Trash2 className="size-3.5" />
+              </button>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted">{emptyLabel}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RepeatableFaqField({
+  items,
+  onAdd,
+  onRemove,
+  onChange,
+}: {
+  items: FAQItem[];
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onChange: (index: number, field: keyof FAQItem, value: string) => void;
+}) {
+  return (
+    <div className="rounded-[20px] border border-border-light bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-semibold text-text-dark">FAQs</h4>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
+        >
+          <Plus className="size-3.5" />
+          Add FAQ
+        </button>
+      </div>
+      <div className="space-y-3">
+        {items.length ? (
+          items.map((item, index) => (
+            <div key={`faq-${index}`} className="rounded-[18px] border border-border-light bg-cream p-3">
+              <div className="mb-2 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => onRemove(index)}
+                  className="rounded-full border border-red-200 p-1.5 text-red-600 transition hover:bg-red-50"
+                  aria-label={`Remove FAQ ${index + 1}`}
+                >
+                  <Trash2 className="size-3.5" />
+                </button>
+              </div>
+              <div className="grid gap-3">
+                <InputField
+                  label="Question"
+                  value={item.question}
+                  onChange={(value) => onChange(index, "question", value)}
+                />
+                <TextAreaField
+                  label="Answer"
+                  value={item.answer}
+                  onChange={(value) => onChange(index, "answer", value)}
+                  rows={3}
+                />
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted">No FAQs added yet.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RepeatableRelatedIngredientsField({
+  items,
+  onAdd,
+  onRemove,
+  onChange,
+}: {
+  items: RelatedIngredientItem[];
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onChange: (index: number, field: keyof RelatedIngredientItem, value: string) => void;
+}) {
+  return (
+    <div className="rounded-[20px] border border-border-light bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-semibold text-text-dark">Related Ingredients</h4>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
+        >
+          <Plus className="size-3.5" />
+          Add Related Ingredient
+        </button>
+      </div>
+      <div className="space-y-3">
+        {items.length ? (
+          items.map((item, index) => (
+            <div key={`related-${index}`} className="rounded-[18px] border border-border-light bg-cream p-3">
+              <div className="mb-2 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => onRemove(index)}
+                  className="rounded-full border border-red-200 p-1.5 text-red-600 transition hover:bg-red-50"
+                  aria-label={`Remove related ingredient ${index + 1}`}
+                >
+                  <Trash2 className="size-3.5" />
+                </button>
+              </div>
+              <div className="grid gap-3 md:grid-cols-2">
+                <InputField
+                  label="Name"
+                  value={item.name}
+                  onChange={(value) => onChange(index, "name", value)}
+                />
+                <InputField
+                  label="Slug"
+                  value={item.slug}
+                  onChange={(value) => onChange(index, "slug", slugify(value))}
+                />
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted">No related ingredients added yet.</p>
+        )}
+      </div>
+    </div>
   );
 }

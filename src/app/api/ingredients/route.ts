@@ -1,4 +1,5 @@
 import { AppError } from "@/lib/errors/AppError";
+import { isAdmin } from "@/lib/auth/admin";
 import { IngredientService } from "@/services/ingredient.service";
 import { NextResponse } from "next/server";
 
@@ -25,6 +26,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get("q");
     const featured = searchParams.get("featured");
+    const admin = await isAdmin().catch(() => false);
 
     if (featured === "true") {
       const ingredients = await ingredientService.getFeaturedIngredients();
@@ -33,12 +35,16 @@ export async function GET(request: Request) {
     }
 
     if (query) {
-      const ingredients = await ingredientService.searchIngredients(query);
+      const ingredients = admin
+        ? await ingredientService.searchIngredients(query)
+        : await ingredientService.searchPublishedIngredients(query);
 
       return NextResponse.json({ ingredients, total: ingredients.length });
     }
 
-    const ingredients = await ingredientService.getAllIngredients();
+    const ingredients = admin
+      ? await ingredientService.getAllIngredients()
+      : await ingredientService.getPublishedIngredients();
 
     return NextResponse.json({ ingredients, total: ingredients.length });
   } catch (error) {

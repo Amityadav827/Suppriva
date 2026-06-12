@@ -42,7 +42,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
-    new IngredientService().getAllIngredients(),
+    new IngredientService().getPublishedIngredients(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);

@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
-    new IngredientService().getAllIngredients(),
+    new IngredientService().getPublishedIngredients(),
   ]);
 
   const productRoutes = products
@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
   const ingredientRoutes = ingredients
-    .filter((ingredient) => !ingredient.deleted_at)
+    .filter((ingredient) => ingredient.status === ContentStatus.Published && !ingredient.deleted_at)
     .map((ingredient) => ({
       url: toUrl(`/ingredient/${ingredient.slug}`),
       lastModified: new Date(ingredient.updated_at || ingredient.created_at),

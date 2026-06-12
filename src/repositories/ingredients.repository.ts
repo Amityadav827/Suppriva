@@ -10,12 +10,16 @@ import type { SlugRepository } from "./base.repository";
 
 export interface IngredientsRepository extends SlugRepository<Ingredient> {
   getAllIngredients(): Promise<Ingredient[]>;
+  getPublishedIngredients(): Promise<Ingredient[]>;
   getIngredientById(id: string): Promise<Ingredient | null>;
   getIngredientBySlug(slug: string): Promise<Ingredient | null>;
+  getPublishedIngredientBySlug(slug: string): Promise<Ingredient | null>;
   createIngredient(input: IngredientCreateInput): Promise<Ingredient>;
+  bulkCreateIngredients(inputs: IngredientCreateInput[]): Promise<Ingredient[]>;
   updateIngredient(id: string, input: IngredientUpdateInput): Promise<Ingredient>;
   deleteIngredient(id: string): Promise<void>;
   searchIngredients(query: string): Promise<Ingredient[]>;
+  searchPublishedIngredients(query: string): Promise<Ingredient[]>;
   getFeaturedIngredients(): Promise<Ingredient[]>;
   getRelatedProductsForIngredient(ingredientId: string): Promise<Product[]>;
   getIngredientsForProduct(productId: string): Promise<Ingredient[]>;
@@ -30,12 +34,64 @@ function isMissingIngredientsTable(error: { code?: string; message?: string } | 
   );
 }
 
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function matchesIngredientToProduct(product: Product, ingredient: Ingredient) {
+  const ingredientTerms = new Set(
+    [ingredient.name, ingredient.scientific_name ?? "", ingredient.slug]
+      .map((term) => term.trim().toLowerCase())
+      .filter(Boolean),
+  );
+
+  return (product.ingredients ?? []).some((productIngredient) => {
+    const ingredientName = (productIngredient.name ?? "").trim();
+    const ingredientSlug = slugify(ingredientName);
+    const haystack = [
+      ingredientName,
+      productIngredient.description ?? "",
+      productIngredient.amount ?? "",
+      ingredientSlug,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return (
+      ingredientTerms.has(ingredientSlug) ||
+      [...ingredientTerms].some((term) => haystack.includes(term))
+    );
+  });
+}
+
 export class SupabaseIngredientsRepository implements IngredientsRepository {
   async getAllIngredients(): Promise<Ingredient[]> {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
       .from("ingredients")
       .select("*")
+      .is("deleted_at", null)
+      .order("name", { ascending: true });
+
+    if (error) {
+      if (isMissingIngredientsTable(error)) return [];
+      throw new DatabaseError(error.message);
+    }
+
+    return (data ?? []) as Ingredient[];
+  }
+
+  async getPublishedIngredients(): Promise<Ingredient[]> {
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("ingredients")
+      .select("*")
+      .eq("status", ContentStatus.Published)
       .is("deleted_at", null)
       .order("name", { ascending: true });
 
@@ -81,6 +137,24 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
     return (data as Ingredient | null) ?? null;
   }
 
+  async getPublishedIngredientBySlug(slug: string): Promise<Ingredient | null> {
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("ingredients")
+      .select("*")
+      .eq("slug", slug)
+      .eq("status", ContentStatus.Published)
+      .is("deleted_at", null)
+      .maybeSingle();
+
+    if (error) {
+      if (isMissingIngredientsTable(error)) return null;
+      throw new DatabaseError(error.message);
+    }
+
+    return (data as Ingredient | null) ?? null;
+  }
+
   async createIngredient(input: IngredientCreateInput): Promise<Ingredient> {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
@@ -94,6 +168,24 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
     }
 
     return data as Ingredient;
+  }
+
+  async bulkCreateIngredients(inputs: IngredientCreateInput[]): Promise<Ingredient[]> {
+    if (!inputs.length) {
+      return [];
+    }
+
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("ingredients")
+      .insert(inputs.map((input) => this.toDatabaseInput(input)))
+      .select("*");
+
+    if (error) {
+      throw new DatabaseError(error.message);
+    }
+
+    return (data ?? []) as Ingredient[];
   }
 
   async updateIngredient(id: string, input: IngredientUpdateInput): Promise<Ingredient> {
@@ -139,7 +231,33 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
       .select("*")
       .is("deleted_at", null)
       .or(
-        `name.ilike.%${normalizedQuery}%,slug.ilike.%${normalizedQuery}%,short_description.ilike.%${normalizedQuery}%`,
+        `name.ilike.%${normalizedQuery}%,slug.ilike.%${normalizedQuery}%,scientific_name.ilike.%${normalizedQuery}%,ingredient_category.ilike.%${normalizedQuery}%,short_description.ilike.%${normalizedQuery}%,full_description.ilike.%${normalizedQuery}%`,
+      )
+      .order("name", { ascending: true });
+
+    if (error) {
+      if (isMissingIngredientsTable(error)) return [];
+      throw new DatabaseError(error.message);
+    }
+
+    return (data ?? []) as Ingredient[];
+  }
+
+  async searchPublishedIngredients(query: string): Promise<Ingredient[]> {
+    const normalizedQuery = query.trim();
+
+    if (!normalizedQuery) {
+      return this.getPublishedIngredients();
+    }
+
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("ingredients")
+      .select("*")
+      .eq("status", ContentStatus.Published)
+      .is("deleted_at", null)
+      .or(
+        `name.ilike.%${normalizedQuery}%,slug.ilike.%${normalizedQuery}%,scientific_name.ilike.%${normalizedQuery}%,ingredient_category.ilike.%${normalizedQuery}%,short_description.ilike.%${normalizedQuery}%,full_description.ilike.%${normalizedQuery}%`,
       )
       .order("name", { ascending: true });
 
@@ -157,6 +275,7 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
       .from("ingredients")
       .select("*")
       .eq("is_featured", true)
+      .eq("status", ContentStatus.Published)
       .is("deleted_at", null)
       .order("name", { ascending: true });
 
@@ -170,6 +289,12 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
 
   async getRelatedProductsForIngredient(ingredientId: string): Promise<Product[]> {
     const supabase = await createSupabaseServerClient();
+    const ingredient = await this.getIngredientById(ingredientId);
+
+    if (!ingredient) {
+      return [];
+    }
+
     const { data: relations, error: relationError } = await supabase
       .from("product_ingredients")
       .select("product_id")
@@ -180,18 +305,13 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
       throw new DatabaseError(relationError.message);
     }
 
-    const productIds = (relations ?? [])
+    const relatedProductIds = (relations ?? [])
       .map((relation) => relation.product_id)
       .filter(Boolean) as string[];
-
-    if (!productIds.length) {
-      return [];
-    }
 
     const { data, error } = await supabase
       .from("products")
       .select("*")
-      .in("id", productIds)
       .eq("status", ContentStatus.Published)
       .is("deleted_at", null)
       .order("created_at", { ascending: false });
@@ -200,7 +320,15 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return (data ?? []) as Product[];
+    const publishedProducts = (data ?? []) as Product[];
+    const relatedProductIdSet = new Set(relatedProductIds);
+    const automatedMatches = publishedProducts.filter((product) =>
+      matchesIngredientToProduct(product, ingredient),
+    );
+
+    return publishedProducts.filter(
+      (product) => relatedProductIdSet.has(product.id) || automatedMatches.some((item) => item.id === product.id),
+    );
   }
 
   async getIngredientsForProduct(productId: string): Promise<Ingredient[]> {
@@ -227,6 +355,7 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
       .from("ingredients")
       .select("*")
       .in("id", ingredientIds)
+      .eq("status", ContentStatus.Published)
       .is("deleted_at", null)
       .order("name", { ascending: true });
 
@@ -295,17 +424,51 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
 
     if ("name" in input) payload.name = input.name;
     if ("slug" in input) payload.slug = input.slug;
+    if ("status" in input) payload.status = input.status ?? ContentStatus.Draft;
+    if ("scientific_name" in input) payload.scientific_name = input.scientific_name ?? null;
+    if ("ingredient_category" in input) {
+      payload.ingredient_category = input.ingredient_category ?? null;
+    }
     if ("short_description" in input) {
       payload.short_description = input.short_description ?? null;
     }
     if ("full_description" in input) payload.full_description = input.full_description ?? null;
+    if ("image_url" in input) payload.image_url = input.image_url ?? null;
+    if ("rating" in input) payload.rating = input.rating ?? null;
+    if ("evidence_level" in input) payload.evidence_level = input.evidence_level ?? null;
+    if ("origin_country" in input) payload.origin_country = input.origin_country ?? null;
+    if ("part_used" in input) payload.part_used = input.part_used ?? null;
+    if ("ingredient_form" in input) payload.ingredient_form = input.ingredient_form ?? null;
+    if ("taste_profile" in input) payload.taste_profile = input.taste_profile ?? null;
+    if ("typical_dose" in input) payload.typical_dose = input.typical_dose ?? null;
+    if ("best_for" in input) payload.best_for = input.best_for ?? null;
+    if ("safety_level" in input) payload.safety_level = input.safety_level ?? null;
+    if ("overview_content" in input) payload.overview_content = input.overview_content ?? null;
+    if ("how_it_works_content" in input) {
+      payload.how_it_works_content = input.how_it_works_content ?? null;
+    }
+    if ("interesting_fact" in input) payload.interesting_fact = input.interesting_fact ?? null;
     if ("benefits" in input) payload.benefits = input.benefits ?? [];
     if ("side_effects" in input) payload.side_effects = input.side_effects ?? [];
     if ("dosage" in input) payload.dosage = input.dosage ?? null;
     if ("scientific_notes" in input) payload.scientific_notes = input.scientific_notes ?? null;
+    if ("benefits_json" in input) payload.benefits_json = input.benefits_json ?? [];
+    if ("side_effects_json" in input) payload.side_effects_json = input.side_effects_json ?? [];
+    if ("drug_interactions_json" in input) {
+      payload.drug_interactions_json = input.drug_interactions_json ?? [];
+    }
+    if ("who_should_avoid_json" in input) {
+      payload.who_should_avoid_json = input.who_should_avoid_json ?? [];
+    }
+    if ("faq_json" in input) payload.faq_json = input.faq_json ?? [];
+    if ("related_ingredients_json" in input) {
+      payload.related_ingredients_json = input.related_ingredients_json ?? [];
+    }
     if ("featured_image" in input) payload.featured_image = input.featured_image ?? null;
     if ("meta_title" in input) payload.meta_title = input.meta_title ?? null;
     if ("meta_description" in input) payload.meta_description = input.meta_description ?? null;
+    if ("seo_title" in input) payload.seo_title = input.seo_title ?? null;
+    if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
     if ("is_featured" in input) payload.is_featured = input.is_featured ?? false;
 
     return payload;
