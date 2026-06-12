@@ -3,10 +3,12 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   BadgeInfo,
+  Beaker,
   BookOpenText,
   ChevronRight,
   CircleHelp,
   Leaf,
+  MapPin,
   Pill,
   ShieldAlert,
   ShieldCheck,
@@ -232,10 +234,10 @@ export function IngredientDetailTemplate({
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
   const heroImage = ingredient.image_url || ingredient.featured_image;
   const metadataStrip = [
-    { label: "Origin", value: ingredient.origin_country ?? "" },
-    { label: "Part Used", value: ingredient.part_used ?? "" },
-    { label: "Form", value: ingredient.ingredient_form ?? "" },
-    { label: "Taste", value: ingredient.taste_profile ?? "" },
+    { label: "Origin", value: ingredient.origin_country ?? "", icon: MapPin },
+    { label: "Part Used", value: ingredient.part_used ?? "", icon: Leaf },
+    { label: "Form", value: ingredient.ingredient_form ?? "", icon: Beaker },
+    { label: "Taste", value: ingredient.taste_profile ?? "", icon: Sparkles },
   ].filter((item) => item.value);
   const atAGlanceItems = [
     { label: "Evidence Level", value: ingredient.evidence_level || "Not specified" },
@@ -357,63 +359,25 @@ export function IngredientDetailTemplate({
               ) : null}
 
               {metadataStrip.length ? (
-                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid gap-3 sm:grid-cols-2">
                   {metadataStrip.map((item) => (
                     <div
                       key={item.label}
-                      className="rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
+                      className="flex items-start gap-3 rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
                     >
-                      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                        {item.label}
-                      </p>
-                      <p className="mt-2 font-heading text-base font-bold text-text-dark">
-                        {item.value}
-                      </p>
+                      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <item.icon className="size-4.5" aria-hidden="true" />
+                      </span>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                          {item.label}
+                        </p>
+                        <p className="mt-1 font-heading text-base font-bold text-text-dark">
+                          {item.value}
+                        </p>
+                      </div>
                     </div>
                   ))}
-                </div>
-              ) : null}
-
-              {quickFacts.length ? (
-                <div className="rounded-[24px] bg-white/80 p-4 shadow-[0_18px_42px_rgba(15,23,42,0.05)] ring-1 ring-black/5">
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <BadgeInfo className="size-5" aria-hidden="true" />
-                    </span>
-                    <div>
-                      <h2 className="font-heading text-xl font-extrabold text-text-dark">
-                        Quick Facts
-                      </h2>
-                      <p className="text-sm text-muted">Fast comparison fields for research.</p>
-                    </div>
-                  </div>
-                  <div className="grid gap-3 md:grid-cols-2">
-                    {[
-                      {
-                        label: "Type",
-                        value: ingredient.ingredient_category ?? "General wellness",
-                        icon: Leaf,
-                      },
-                      ...quickFacts,
-                    ].map((fact) => (
-                      <div
-                        key={fact.label}
-                        className="flex min-h-[88px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
-                      >
-                        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
-                          <fact.icon className="size-4.5" aria-hidden="true" />
-                        </span>
-                        <div>
-                          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                            {fact.label}
-                          </p>
-                          <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
-                            {fact.value}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               ) : null}
             </div>
@@ -431,10 +395,10 @@ export function IngredientDetailTemplate({
                         key={item.label}
                         className="flex items-center justify-between gap-4 border-b border-black/6 pb-3 last:border-b-0 last:pb-0"
                       >
-                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                        <span className="text-sm font-medium text-muted">
                           {item.label}
                         </span>
-                        <span className="text-right font-heading text-sm font-bold text-text-dark">
+                        <span className="text-right text-sm font-semibold text-text-dark">
                           {item.value}
                         </span>
                       </div>
@@ -451,6 +415,48 @@ export function IngredientDetailTemplate({
               </div>
             ) : null}
           </div>
+          {quickFacts.length ? (
+            <div className="mt-6 rounded-[24px] bg-white/80 p-4 shadow-[0_18px_42px_rgba(15,23,42,0.05)] ring-1 ring-black/5">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <BadgeInfo className="size-5" aria-hidden="true" />
+                </span>
+                <div>
+                  <h2 className="font-heading text-xl font-extrabold text-text-dark">
+                    Quick Facts
+                  </h2>
+                  <p className="text-sm text-muted">Fast comparison fields for research.</p>
+                </div>
+              </div>
+              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {[
+                  {
+                    label: "Type",
+                    value: ingredient.ingredient_category ?? "General wellness",
+                    icon: Leaf,
+                  },
+                  ...quickFacts,
+                ].map((fact) => (
+                  <div
+                    key={fact.label}
+                    className="flex min-h-[84px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                  >
+                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+                      <fact.icon className="size-4.5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                        {fact.label}
+                      </p>
+                      <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
+                        {fact.value}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
           {sections.length ? (
             <div className="mt-6 xl:hidden">
               <IngredientSectionNav sections={sections} mobile />
