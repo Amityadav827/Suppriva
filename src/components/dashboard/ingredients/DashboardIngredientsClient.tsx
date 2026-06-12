@@ -965,7 +965,7 @@ export function DashboardIngredientsClient() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div className="overflow-x-auto pb-1">
         <input
           ref={importInputRef}
           type="file"
@@ -973,33 +973,33 @@ export function DashboardIngredientsClient() {
           onChange={(event) => void importIngredientsCsv(event)}
           className="hidden"
         />
-        <div className="flex min-h-12 flex-1 items-center gap-3 rounded-pill border border-border-light bg-white px-4 shadow-[0_12px_30px_rgba(15,23,42,0.04)] md:max-w-sm">
-          <Search className="size-4 text-primary" aria-hidden="true" />
-          <input
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search ingredients..."
-            className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted"
-          />
-        </div>
-        <label className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 text-sm font-medium text-text-dark shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
-          <span className="text-muted">Status</span>
-          <select
-            value={statusFilter}
-            onChange={(event) => setStatusFilter(event.target.value as "all" | ContentStatus)}
-            className="bg-transparent text-sm font-semibold text-text-dark outline-none"
-          >
-            <option value="all">All</option>
-            <option value={ContentStatus.Draft}>Draft</option>
-            <option value={ContentStatus.Published}>Published</option>
-            <option value={ContentStatus.Archived}>Archived</option>
-          </select>
-        </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex min-w-max items-center gap-3">
+          <div className="flex h-12 w-[320px] shrink-0 items-center gap-3 rounded-pill border border-border-light bg-white px-4 shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
+            <Search className="size-4 text-primary" aria-hidden="true" />
+            <input
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              placeholder="Search ingredients..."
+              className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted"
+            />
+          </div>
+          <label className="inline-flex h-12 w-[216px] shrink-0 items-center gap-2 rounded-pill border border-border-light bg-white px-4 text-sm font-medium text-text-dark shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
+            <span className="text-muted">Status</span>
+            <select
+              value={statusFilter}
+              onChange={(event) => setStatusFilter(event.target.value as "all" | ContentStatus)}
+              className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-text-dark outline-none"
+            >
+              <option value="all">All</option>
+              <option value={ContentStatus.Draft}>Draft</option>
+              <option value={ContentStatus.Published}>Published</option>
+              <option value={ContentStatus.Archived}>Archived</option>
+            </select>
+          </label>
           <button
             type="button"
             onClick={() => void fetchData()}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
+            className="inline-flex h-12 shrink-0 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
           >
             <RefreshCw className="size-4" />
             Refresh
@@ -1007,7 +1007,7 @@ export function DashboardIngredientsClient() {
           <button
             type="button"
             onClick={downloadSampleCsv}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
+            className="inline-flex h-12 shrink-0 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
           >
             <FileDown className="size-4" />
             Download Sample CSV
@@ -1015,7 +1015,7 @@ export function DashboardIngredientsClient() {
           <button
             type="button"
             onClick={exportIngredients}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
+            className="inline-flex h-12 shrink-0 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
           >
             <Download className="size-4" />
             Export CSV
@@ -1024,7 +1024,7 @@ export function DashboardIngredientsClient() {
             type="button"
             onClick={() => importInputRef.current?.click()}
             disabled={isImporting}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex h-12 shrink-0 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isImporting ? <Loader2 className="size-4 animate-spin" /> : <FileUp className="size-4" />}
             Import CSV
@@ -1032,7 +1032,7 @@ export function DashboardIngredientsClient() {
           <button
             type="button"
             onClick={openCreateForm}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill bg-primary px-5 font-heading text-sm font-semibold text-white shadow-[0_14px_34px_rgba(11,93,59,0.18)] transition hover:bg-button-hover"
+            className="inline-flex h-12 shrink-0 items-center gap-2 rounded-pill bg-primary px-5 font-heading text-sm font-semibold text-white shadow-[0_14px_34px_rgba(11,93,59,0.18)] transition hover:bg-button-hover"
           >
             <FlaskConical className="size-4" />
             Add Ingredient
