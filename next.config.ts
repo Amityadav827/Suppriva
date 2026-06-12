@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "suppriva.vercel.app",
+        pathname: "/assets/**",
+      },
+      {
+        protocol: "https",
         hostname: "auzapxutkteykldxhyyq.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },

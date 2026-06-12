@@ -7,7 +7,6 @@ import {
   BookOpenText,
   ChevronRight,
   CircleHelp,
-  FlaskConical,
   Leaf,
   MapPin,
   Pill,
@@ -20,6 +19,8 @@ import {
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import { IngredientSectionNav, type IngredientSectionLink } from "@/components/ingredients/IngredientSectionNav";
+import { IngredientSmartImage } from "@/components/ingredients/IngredientSmartImage";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
 import type { CategoryProduct } from "@/lib/category-data";
 import type { FAQItem, Ingredient, JsonValue } from "@/lib/database/types";
@@ -36,11 +37,6 @@ export type RelatedIngredientCardData = {
 type TitleDescriptionItem = {
   title: string;
   description: string;
-};
-
-type SectionLink = {
-  id: string;
-  label: string;
 };
 
 function isRecord(value: JsonValue): value is Record<string, JsonValue> {
@@ -232,7 +228,7 @@ export function IngredientDetailTemplate({
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
   const heroImage = ingredient.image_url || ingredient.featured_image;
 
-  const sections: SectionLink[] = [
+  const sections: IngredientSectionLink[] = [
     ...(hasVisibleText(overviewContent) ? [{ id: "overview", label: "Overview" }] : []),
     ...(hasVisibleText(howItWorksContent)
       ? [{ id: "how-it-works", label: "How It Works" }]
@@ -276,44 +272,39 @@ export function IngredientDetailTemplate({
 
           <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
             <div className="space-y-8">
-              <div className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
-                <div className="relative overflow-hidden rounded-[32px] border border-white/70 bg-white shadow-[0_28px_86px_rgba(15,23,42,0.08)]">
-                  {heroImage ? (
-                    <div className="relative aspect-[4/3] min-h-[320px]">
-                      <Image
-                        src={heroImage}
-                        alt={ingredient.name}
-                        fill
-                        priority
-                        sizes="(max-width: 1024px) 100vw, 42vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="grid min-h-[320px] place-items-center bg-gradient-to-br from-soft-green to-gold/[0.14]">
-                      <FlaskConical className="size-24 text-primary" aria-hidden="true" />
-                    </div>
-                  )}
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-center">
+                <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
+                  <div className="relative h-[300px] md:h-[450px] lg:h-[600px]">
+                    <IngredientSmartImage
+                      src={heroImage}
+                      alt={ingredient.name}
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="group-hover:scale-[1.03]"
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
+                  </div>
                 </div>
 
                 <div className="space-y-6">
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
                         Ingredient Library
                       </span>
                       {ingredient.ingredient_category ? (
-                        <span className="inline-flex items-center gap-2 rounded-pill border border-gold/20 bg-gold/10 px-4 py-2 text-sm font-semibold text-text-dark">
+                        <span className="inline-flex items-center gap-2 rounded-pill border border-[#8B5CF6]/18 bg-[#8B5CF6]/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]">
                           {ingredient.ingredient_category}
                         </span>
                       ) : null}
                     </div>
-                    <div>
-                      <h1 className="font-heading text-4xl font-extrabold leading-[1.05] text-text-dark md:text-5xl lg:text-6xl">
+                    <div className="space-y-3">
+                      <h1 className="font-heading text-4xl font-extrabold leading-[1.02] text-text-dark md:text-5xl lg:text-6xl">
                         {ingredient.name}
                       </h1>
                       {ingredient.scientific_name ? (
-                        <p className="mt-3 text-base italic tracking-[0.02em] text-primary md:text-lg">
+                        <p className="font-heading text-base italic tracking-[0.03em] text-primary md:text-lg">
                           {ingredient.scientific_name}
                         </p>
                       ) : null}
@@ -331,24 +322,32 @@ export function IngredientDetailTemplate({
                         <FadeIn
                           key={fact.label}
                           delay={0.04 * index}
-                          className="rounded-[24px] border border-border-light bg-white p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]"
+                          className="h-full rounded-[24px] border border-border-light bg-white p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(15,23,42,0.08)]"
                         >
-                          <div className="flex items-center gap-3">
-                            <span className="inline-flex size-11 items-center justify-center rounded-full bg-soft-green text-primary">
+                          <div className="flex h-full items-start gap-3">
+                            <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-soft-green text-primary">
                               <fact.icon className="size-5" aria-hidden="true" />
                             </span>
                             <div>
-                              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                                 {fact.label}
                               </p>
                               <p className="mt-1 font-heading text-base font-bold text-text-dark">
                                 {fact.label === "Rating" ? (
-                                  <span className="inline-flex items-center gap-1.5">
+                                  <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1 text-sm text-text-dark">
                                     <Star className="size-4 fill-gold text-gold" />
                                     {fact.value}
                                   </span>
                                 ) : (
-                                  fact.value
+                                  <span
+                                    className={
+                                      fact.label === "Evidence Level"
+                                        ? "inline-flex rounded-pill bg-primary/8 px-3 py-1 text-sm text-primary"
+                                        : ""
+                                    }
+                                  >
+                                    {fact.value}
+                                  </span>
                                 )}
                               </p>
                             </div>
@@ -377,17 +376,17 @@ export function IngredientDetailTemplate({
                         {quickFacts.map((fact) => (
                           <div
                             key={fact.label}
-                            className="rounded-[22px] border border-border-light bg-cream/70 p-4"
+                            className="flex h-full rounded-[22px] border border-border-light bg-cream/70 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-white hover:shadow-[0_18px_40px_rgba(15,23,42,0.06)]"
                           >
-                            <div className="flex items-center gap-3">
-                              <span className="inline-flex size-10 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+                            <div className="flex items-start gap-3">
+                              <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                                 <fact.icon className="size-4.5" aria-hidden="true" />
                               </span>
-                              <div>
-                                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                              <div className="flex min-h-full flex-col">
+                                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                                   {fact.label}
                                 </p>
-                                <p className="mt-1 font-heading text-sm font-bold text-text-dark">
+                                <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
                                   {fact.value}
                                 </p>
                               </div>
@@ -402,14 +401,14 @@ export function IngredientDetailTemplate({
 
               {sections.length ? (
                 <div className="xl:hidden">
-                  <OnThisPage sections={sections} mobile />
+                  <IngredientSectionNav sections={sections} mobile />
                 </div>
               ) : null}
             </div>
 
             {sections.length ? (
               <aside className="hidden xl:block xl:sticky xl:top-28">
-                <OnThisPage sections={sections} />
+                <IngredientSectionNav sections={sections} />
               </aside>
             ) : null}
           </div>
@@ -418,7 +417,7 @@ export function IngredientDetailTemplate({
 
       <div className="relative">
         {hasVisibleText(overviewContent) ? (
-          <SectionWrapper id="overview" tone="white">
+          <SectionWrapper id="overview" tone="white" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 01"
               title="Overview"
@@ -441,7 +440,7 @@ export function IngredientDetailTemplate({
         ) : null}
 
         {hasVisibleText(howItWorksContent) ? (
-          <SectionWrapper id="how-it-works">
+          <SectionWrapper id="how-it-works" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 02"
               title="How It Works"
@@ -490,7 +489,7 @@ export function IngredientDetailTemplate({
         ) : null}
 
         {benefitItems.length ? (
-          <SectionWrapper id="benefits">
+          <SectionWrapper id="benefits" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 03"
               title="Benefits"
@@ -501,7 +500,7 @@ export function IngredientDetailTemplate({
                 <FadeIn
                   key={benefit.title}
                   delay={index * 0.04}
-                  className="rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]"
+                  className="h-full rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-[0_26px_60px_rgba(15,23,42,0.09)]"
                 >
                   <span className="inline-flex size-12 items-center justify-center rounded-full bg-soft-green text-primary">
                     <ShieldCheck className="size-5" aria-hidden="true" />
@@ -521,7 +520,7 @@ export function IngredientDetailTemplate({
         ) : null}
 
         {sideEffects.length || drugInteractions.length || whoShouldAvoid.length ? (
-          <SectionWrapper id="safety-information" tone="white">
+          <SectionWrapper id="safety-information" tone="white" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 04"
               title="Safety Information"
@@ -556,18 +555,20 @@ export function IngredientDetailTemplate({
         ) : null}
 
         {faqs.length ? (
-          <SectionWrapper id="faq">
+          <SectionWrapper id="faq" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 05"
               title="Frequently Asked Questions"
               subtitle="Accordion answers built from the ingredient FAQ data for readers and schema output."
             />
-            <FAQAccordion faqs={faqs} />
+            <div className="mx-auto max-w-4xl rounded-[30px] border border-border-light bg-white/70 p-3 shadow-[0_20px_56px_rgba(15,23,42,0.06)]">
+              <FAQAccordion faqs={faqs} />
+            </div>
           </SectionWrapper>
         ) : null}
 
         {relatedProducts.length ? (
-          <SectionWrapper id="found-in-products" tone="white">
+          <SectionWrapper id="found-in-products" tone="white" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 06"
               title="Found In Products"
@@ -586,7 +587,7 @@ export function IngredientDetailTemplate({
         ) : null}
 
         {relatedIngredients.length ? (
-          <SectionWrapper id="related-ingredients">
+          <SectionWrapper id="related-ingredients" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 07"
               title="Related Ingredients"
@@ -604,7 +605,7 @@ export function IngredientDetailTemplate({
         ) : null}
 
         {relatedArticles.length ? (
-          <SectionWrapper id="related-articles" tone="white">
+          <SectionWrapper id="related-articles" tone="white" className="scroll-mt-28">
             <SectionHeading
               eyebrow="Section 08"
               title="Related Articles"
@@ -619,42 +620,6 @@ export function IngredientDetailTemplate({
         ) : null}
       </div>
     </main>
-  );
-}
-
-function OnThisPage({
-  sections,
-  mobile = false,
-}: {
-  sections: SectionLink[];
-  mobile?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] ${
-        mobile ? "" : "xl:max-w-[320px]"
-      }`}
-    >
-      <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-        On This Page
-      </p>
-      <div className={mobile ? "mt-4 flex gap-2 overflow-x-auto pb-1" : "mt-4 space-y-2"}>
-        {sections.map((section) => (
-          <a
-            key={section.id}
-            href={`#${section.id}`}
-            className={`group inline-flex items-center gap-3 rounded-pill border border-border-light bg-cream/55 px-4 py-3 text-sm font-semibold text-text-dark transition hover:border-gold/60 hover:bg-white hover:text-primary ${
-              mobile ? "shrink-0 whitespace-nowrap" : "w-full justify-between"
-            }`}
-          >
-            <span>{section.label}</span>
-            {!mobile ? (
-              <ArrowUpRight className="size-4 text-muted transition group-hover:text-primary" />
-            ) : null}
-          </a>
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -809,19 +774,12 @@ function RelatedIngredientCard({ item }: { item: RelatedIngredientCardData }) {
   const content = (
     <>
       <div className="relative h-[210px] overflow-hidden rounded-[24px] bg-gradient-to-br from-white to-soft-green">
-        {item.image ? (
-          <Image
-            src={item.image}
-            alt={item.name}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-cover transition duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="grid h-full place-items-center">
-            <FlaskConical className="size-16 text-primary" aria-hidden="true" />
-          </div>
-        )}
+        <IngredientSmartImage
+          src={item.image}
+          alt={item.name}
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          className="group-hover:scale-105"
+        />
       </div>
       <div className="mt-5">
         {item.category ? (
