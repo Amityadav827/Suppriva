@@ -4,9 +4,11 @@ import {
   ArrowUpRight,
   BadgeInfo,
   Beaker,
+  Check,
   BookOpenText,
   ChevronRight,
   CircleHelp,
+  HelpCircle,
   Leaf,
   MapPin,
   Pill,
@@ -125,6 +127,12 @@ function hasVisibleText(value?: string | null) {
   return Boolean(value?.trim());
 }
 
+function splitIntoColumns<T>(items: T[], columns: number) {
+  return Array.from({ length: columns }, (_, columnIndex) =>
+    items.filter((_, itemIndex) => itemIndex % columns === columnIndex),
+  ).filter((column) => column.length);
+}
+
 function formatLastUpdated(value?: string | null) {
   if (!value) {
     return "Recently updated";
@@ -233,6 +241,7 @@ export function IngredientDetailTemplate({
   const faqs = normalizeFaqs(ingredient.faq_json ?? []);
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
   const heroImage = ingredient.image_url || ingredient.featured_image;
+  const faqColumns = splitIntoColumns(faqs, 2);
   const metadataStrip = [
     { label: "Origin", value: ingredient.origin_country ?? "", icon: MapPin },
     { label: "Part Used", value: ingredient.part_used ?? "", icon: Leaf },
@@ -469,7 +478,7 @@ export function IngredientDetailTemplate({
         {hasVisibleText(overviewContent) ? (
           <SectionWrapper id="overview" tone="white" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 01"
+              icon={Leaf}
               title="Overview"
               subtitle="A practical medical-style summary of what this ingredient is and how it is commonly used."
             />
@@ -492,25 +501,32 @@ export function IngredientDetailTemplate({
         {hasVisibleText(howItWorksContent) ? (
           <SectionWrapper id="how-it-works" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 02"
+              icon={BadgeInfo}
               title="How It Works"
               subtitle="The page turns your stored ingredient explanation into a premium visual flow without hardcoded steps."
             />
             <div className="space-y-8">
               {howItWorksSteps.length ? (
-                <div className="grid gap-4 lg:grid-cols-3">
-                  {howItWorksSteps.map((step, index) => (
-                    <FadeIn
-                      key={`${index + 1}-${step.slice(0, 24)}`}
-                      delay={index * 0.05}
-                      className="relative rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]"
-                    >
-                      <span className="mb-5 inline-flex size-12 items-center justify-center rounded-full bg-primary text-lg font-heading font-extrabold text-white shadow-[0_14px_34px_rgba(11,93,59,0.22)]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p className="text-base leading-8 text-muted">{step}</p>
-                    </FadeIn>
-                  ))}
+                <div className="overflow-hidden rounded-[28px] bg-white/92 p-5 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
+                  <div className="grid gap-4 lg:grid-cols-[repeat(5,minmax(0,1fr))] lg:items-center">
+                    {howItWorksSteps.map((step, index) => (
+                      <FadeIn
+                        key={`${index + 1}-${step.slice(0, 24)}`}
+                        delay={index * 0.05}
+                        className="relative rounded-[24px] bg-cream/70 p-5 ring-1 ring-black/5"
+                      >
+                        <span className="mb-4 inline-flex size-12 items-center justify-center rounded-full bg-white text-primary shadow-[0_12px_28px_rgba(15,23,42,0.08)]">
+                          <BadgeInfo className="size-5" aria-hidden="true" />
+                        </span>
+                        <p className="text-sm leading-7 text-text-dark">{step}</p>
+                        {index < howItWorksSteps.length - 1 ? (
+                          <span className="absolute right-[-12px] top-1/2 hidden size-6 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-[0_8px_18px_rgba(15,23,42,0.08)] lg:inline-flex">
+                            <ArrowUpRight className="size-3.5 rotate-45" aria-hidden="true" />
+                          </span>
+                        ) : null}
+                      </FadeIn>
+                    ))}
+                  </div>
                 </div>
               ) : null}
               <ContentPanel content={howItWorksContent} />
@@ -541,21 +557,21 @@ export function IngredientDetailTemplate({
         {benefitItems.length ? (
           <SectionWrapper id="benefits" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 03"
+              icon={ShieldCheck}
               title="Benefits"
               subtitle="Responsive benefit cards generated directly from the ingredient record."
             />
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {benefitItems.map((benefit, index) => (
                 <FadeIn
                   key={benefit.title}
                   delay={index * 0.04}
-                  className="h-full rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-[0_26px_60px_rgba(15,23,42,0.09)]"
+                  className="h-full rounded-[24px] bg-white/92 p-5 shadow-[0_14px_38px_rgba(15,23,42,0.05)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
                 >
-                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-soft-green text-primary">
+                  <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
                     <ShieldCheck className="size-5" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">
+                  <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
                     {benefit.title}
                   </h3>
                   {benefit.description ? (
@@ -572,7 +588,7 @@ export function IngredientDetailTemplate({
         {sideEffects.length || drugInteractions.length || whoShouldAvoid.length ? (
           <SectionWrapper id="safety-information" tone="white" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 04"
+              icon={ShieldAlert}
               title="Safety Information"
               subtitle="Separate evidence-oriented cards for side effects, interactions, and avoidance notes."
             />
@@ -607,12 +623,21 @@ export function IngredientDetailTemplate({
         {faqs.length ? (
           <SectionWrapper id="faq" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 05"
+              icon={HelpCircle}
               title="Frequently Asked Questions"
               subtitle="Accordion answers built from the ingredient FAQ data for readers and schema output."
+              actionHref="/ingredients"
+              actionLabel="View All FAQs"
             />
-            <div className="mx-auto max-w-4xl rounded-[30px] border border-border-light bg-white/70 p-3 shadow-[0_20px_56px_rgba(15,23,42,0.06)]">
-              <FAQAccordion faqs={faqs} />
+            <div className="grid gap-5 xl:grid-cols-2">
+              {faqColumns.map((column, index) => (
+                <div
+                  key={`faq-column-${index + 1}`}
+                  className="rounded-[28px] bg-white/70 p-3 shadow-[0_20px_56px_rgba(15,23,42,0.06)] ring-1 ring-black/5"
+                >
+                  <FAQAccordion faqs={column} />
+                </div>
+              ))}
             </div>
           </SectionWrapper>
         ) : null}
@@ -620,7 +645,7 @@ export function IngredientDetailTemplate({
         {relatedProducts.length ? (
           <SectionWrapper id="found-in-products" tone="white" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 06"
+              icon={Pill}
               title="Found In Products"
               subtitle="Published Suppriva products connected through the existing ingredient relationship table."
             />
@@ -639,7 +664,7 @@ export function IngredientDetailTemplate({
         {relatedIngredients.length ? (
           <SectionWrapper id="related-ingredients" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 07"
+              icon={Leaf}
               title="Related Ingredients"
               subtitle="Nearby ingredient profiles referenced directly from the ingredient record."
             />
@@ -657,7 +682,7 @@ export function IngredientDetailTemplate({
         {relatedArticles.length ? (
           <SectionWrapper id="related-articles" tone="white" className="scroll-mt-28">
             <SectionHeading
-              eyebrow="Section 08"
+              icon={BookOpenText}
               title="Related Articles"
               subtitle="Editorial coverage surfaced through the current article relation logic."
             />
@@ -674,25 +699,42 @@ export function IngredientDetailTemplate({
 }
 
 function SectionHeading({
-  eyebrow,
+  icon: Icon,
   title,
   subtitle,
+  actionHref,
+  actionLabel,
 }: {
-  eyebrow: string;
+  icon: typeof Leaf;
   title: string;
   subtitle: string;
+  actionHref?: string;
+  actionLabel?: string;
 }) {
   return (
-    <FadeIn className="mx-auto mb-12 max-w-3xl text-center">
-      <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-primary">
-        {eyebrow}
-      </p>
-      <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl lg:text-5xl">
-        {title}
-      </h2>
-      <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted">
-        {subtitle}
-      </p>
+    <FadeIn className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+      <div className="flex items-start gap-4">
+        <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_14px_36px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
+          <Icon className="size-6" aria-hidden="true" />
+        </span>
+        <div className="max-w-3xl">
+          <h2 className="font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl">
+            {title}
+          </h2>
+          <p className="mt-3 text-base leading-7 text-muted">
+            {subtitle}
+          </p>
+        </div>
+      </div>
+      {actionHref && actionLabel ? (
+        <Link
+          href={actionHref}
+          className="inline-flex items-center gap-2 self-start font-heading text-sm font-bold text-primary transition hover:text-primary/80"
+        >
+          {actionLabel}
+          <ArrowUpRight className="size-4" />
+        </Link>
+      ) : null}
     </FadeIn>
   );
 }
@@ -753,17 +795,18 @@ function SafetyCard({
 }) {
   return (
     <FadeIn className="rounded-[28px] bg-white/92 p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
-      <span className="inline-flex size-14 items-center justify-center rounded-full bg-soft-green text-primary">
+      <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
         <Icon className="size-6" aria-hidden="true" />
       </span>
-      <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
+      <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
       <ul className="mt-5 space-y-3">
         {items.map((item) => (
           <li
             key={item}
-            className="rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
+            className="flex items-start gap-3 rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
           >
-            {item}
+            <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
+            <span>{item}</span>
           </li>
         ))}
       </ul>
