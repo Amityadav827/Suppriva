@@ -3,12 +3,10 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   BadgeInfo,
-  Beaker,
   BookOpenText,
   ChevronRight,
   CircleHelp,
   Leaf,
-  MapPin,
   Pill,
   ShieldAlert,
   ShieldCheck,
@@ -125,6 +123,24 @@ function hasVisibleText(value?: string | null) {
   return Boolean(value?.trim());
 }
 
+function formatLastUpdated(value?: string | null) {
+  if (!value) {
+    return "Recently updated";
+  }
+
+  const parsed = new Date(value);
+
+  if (Number.isNaN(parsed.getTime())) {
+    return "Recently updated";
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(parsed);
+}
+
 function renderFormattedBlock(block: string, index: number) {
   const lines = block
     .split("\n")
@@ -178,17 +194,6 @@ function RichTextContent({ content }: { content?: string | null }) {
   return <div className="space-y-5">{blocks.map(renderFormattedBlock)}</div>;
 }
 
-function buildHeroFacts(ingredient: Ingredient) {
-  return [
-    { label: "Rating", value: ingredient.rating ? ingredient.rating.toFixed(1) : "", icon: Star },
-    { label: "Evidence Level", value: ingredient.evidence_level ?? "", icon: ShieldCheck },
-    { label: "Origin Country", value: ingredient.origin_country ?? "", icon: MapPin },
-    { label: "Part Used", value: ingredient.part_used ?? "", icon: Leaf },
-    { label: "Ingredient Form", value: ingredient.ingredient_form ?? "", icon: Beaker },
-    { label: "Taste Profile", value: ingredient.taste_profile ?? "", icon: Sparkles },
-  ].filter((item) => item.value);
-}
-
 function buildQuickFacts(ingredient: Ingredient) {
   return [
     { label: "Typical Dose", value: ingredient.typical_dose ?? "", icon: Pill },
@@ -208,7 +213,6 @@ export function IngredientDetailTemplate({
   relatedIngredients: RelatedIngredientCardData[];
   relatedArticles: BlogPostCard[];
 }) {
-  const heroFacts = buildHeroFacts(ingredient);
   const quickFacts = buildQuickFacts(ingredient);
   const overviewContent =
     ingredient.overview_content || ingredient.full_description || ingredient.short_description;
@@ -227,6 +231,18 @@ export function IngredientDetailTemplate({
   const faqs = normalizeFaqs(ingredient.faq_json ?? []);
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
   const heroImage = ingredient.image_url || ingredient.featured_image;
+  const metadataStrip = [
+    { label: "Origin", value: ingredient.origin_country ?? "" },
+    { label: "Part Used", value: ingredient.part_used ?? "" },
+    { label: "Form", value: ingredient.ingredient_form ?? "" },
+    { label: "Taste", value: ingredient.taste_profile ?? "" },
+  ].filter((item) => item.value);
+  const atAGlanceItems = [
+    { label: "Evidence Level", value: ingredient.evidence_level || "Not specified" },
+    { label: "Found In Products", value: String(relatedProducts.length) },
+    { label: "Related Ingredients", value: String(relatedIngredients.length) },
+    { label: "Last Updated", value: formatLastUpdated(ingredient.updated_at) },
+  ];
 
   const sections: IngredientSectionLink[] = [
     ...(hasVisibleText(overviewContent) ? [{ id: "overview", label: "Overview" }] : []),
@@ -270,148 +286,176 @@ export function IngredientDetailTemplate({
             </span>
           </nav>
 
-          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
-            <div className="space-y-8">
-              <div className="grid gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-center">
-                <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
-                  <div className="relative h-[300px] md:h-[450px] lg:h-[600px]">
-                    <IngredientSmartImage
-                      src={heroImage}
-                      alt={ingredient.name}
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="group-hover:scale-[1.03]"
-                    />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
-                  </div>
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.08fr)_300px] xl:items-start">
+            <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
+              <div className="relative h-[300px] md:h-[450px] xl:h-[600px]">
+                <IngredientSmartImage
+                  src={heroImage}
+                  alt={ingredient.name}
+                  priority
+                  sizes="(max-width: 1279px) 100vw, 32vw"
+                  className="group-hover:scale-[1.03]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="space-y-5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
+                    Ingredient Library
+                  </span>
+                  {ingredient.ingredient_category ? (
+                    <span className="inline-flex items-center gap-2 rounded-pill border border-[#8B5CF6]/18 bg-[#8B5CF6]/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]">
+                      {ingredient.ingredient_category}
+                    </span>
+                  ) : null}
                 </div>
-
-                <div className="space-y-6">
-                  <div className="space-y-5">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
-                        Ingredient Library
-                      </span>
-                      {ingredient.ingredient_category ? (
-                        <span className="inline-flex items-center gap-2 rounded-pill border border-[#8B5CF6]/18 bg-[#8B5CF6]/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]">
-                          {ingredient.ingredient_category}
-                        </span>
-                      ) : null}
-                    </div>
-                    <div className="space-y-3">
-                      <h1 className="font-heading text-4xl font-extrabold leading-[1.02] text-text-dark md:text-5xl lg:text-6xl">
-                        {ingredient.name}
-                      </h1>
-                      {ingredient.scientific_name ? (
-                        <p className="font-heading text-base italic tracking-[0.03em] text-primary md:text-lg">
-                          {ingredient.scientific_name}
-                        </p>
-                      ) : null}
-                    </div>
-                    <p className="max-w-3xl text-lg leading-8 text-muted">
-                      {ingredient.short_description ||
-                        ingredient.seo_description ||
-                        "A premium Suppriva ingredient profile for supplement research, safety review, and product discovery."}
+                <div className="space-y-3">
+                  <h1 className="font-heading text-5xl font-extrabold leading-[0.98] text-text-dark md:text-6xl xl:text-[4.5rem]">
+                    {ingredient.name}
+                  </h1>
+                  {ingredient.scientific_name ? (
+                    <p className="font-heading text-lg italic tracking-[0.04em] text-primary md:text-xl">
+                      {ingredient.scientific_name}
                     </p>
-                  </div>
+                  ) : null}
+                </div>
+                <p className="max-w-3xl text-lg leading-8 text-muted">
+                  {ingredient.short_description ||
+                    ingredient.seo_description ||
+                    "A premium Suppriva ingredient profile for supplement research, safety review, and product discovery."}
+                </p>
+              </div>
 
-                  {heroFacts.length ? (
-                    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                      {heroFacts.map((fact, index) => (
-                        <FadeIn
-                          key={fact.label}
-                          delay={0.04 * index}
-                          className="h-full rounded-[24px] border border-border-light bg-white p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_58px_rgba(15,23,42,0.08)]"
-                        >
-                          <div className="flex h-full items-start gap-3">
-                            <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-soft-green text-primary">
-                              <fact.icon className="size-5" aria-hidden="true" />
-                            </span>
-                            <div>
-                              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                                {fact.label}
-                              </p>
-                              <p className="mt-1 font-heading text-base font-bold text-text-dark">
-                                {fact.label === "Rating" ? (
-                                  <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1 text-sm text-text-dark">
-                                    <Star className="size-4 fill-gold text-gold" />
-                                    {fact.value}
-                                  </span>
-                                ) : (
-                                  <span
-                                    className={
-                                      fact.label === "Evidence Level"
-                                        ? "inline-flex rounded-pill bg-primary/8 px-3 py-1 text-sm text-primary"
-                                        : ""
-                                    }
-                                  >
-                                    {fact.value}
-                                  </span>
-                                )}
-                              </p>
-                            </div>
-                          </div>
-                        </FadeIn>
-                      ))}
+              {(ingredient.rating || ingredient.evidence_level) ? (
+                <div className="flex flex-wrap items-center gap-5 border-y border-black/6 py-4">
+                  {ingredient.rating ? (
+                    <div className="inline-flex items-center gap-2">
+                      <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                        Rating
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-sm font-bold text-text-dark">
+                        <Star className="size-4 fill-gold text-gold" />
+                        {ingredient.rating.toFixed(1)}
+                      </span>
                     </div>
                   ) : null}
+                  {ingredient.evidence_level ? (
+                    <div className="inline-flex items-center gap-2">
+                      <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                        Evidence
+                      </span>
+                      <span className="inline-flex rounded-pill bg-primary/8 px-3 py-1.5 font-heading text-sm font-bold text-primary">
+                        {ingredient.evidence_level}
+                      </span>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
 
-                  {quickFacts.length ? (
-                    <div className="rounded-[28px] border border-border-light bg-white p-5 shadow-[0_20px_54px_rgba(15,23,42,0.06)]">
-                      <div className="mb-4 flex items-center gap-3">
-                        <span className="inline-flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                          <BadgeInfo className="size-5" aria-hidden="true" />
+              {metadataStrip.length ? (
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                  {metadataStrip.map((item) => (
+                    <div
+                      key={item.label}
+                      className="rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
+                    >
+                      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                        {item.label}
+                      </p>
+                      <p className="mt-2 font-heading text-base font-bold text-text-dark">
+                        {item.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              {quickFacts.length ? (
+                <div className="rounded-[24px] bg-white/80 p-4 shadow-[0_18px_42px_rgba(15,23,42,0.05)] ring-1 ring-black/5">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <BadgeInfo className="size-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h2 className="font-heading text-xl font-extrabold text-text-dark">
+                        Quick Facts
+                      </h2>
+                      <p className="text-sm text-muted">Fast comparison fields for research.</p>
+                    </div>
+                  </div>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {[
+                      {
+                        label: "Type",
+                        value: ingredient.ingredient_category ?? "General wellness",
+                        icon: Leaf,
+                      },
+                      ...quickFacts,
+                    ].map((fact) => (
+                      <div
+                        key={fact.label}
+                        className="flex min-h-[88px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                      >
+                        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+                          <fact.icon className="size-4.5" aria-hidden="true" />
                         </span>
                         <div>
-                          <h2 className="font-heading text-xl font-extrabold text-text-dark">
-                            Quick Facts
-                          </h2>
-                          <p className="text-sm text-muted">
-                            Fast-scan information for research and comparison.
+                          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                            {fact.label}
+                          </p>
+                          <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
+                            {fact.value}
                           </p>
                         </div>
                       </div>
-                      <div className="grid gap-3 md:grid-cols-3">
-                        {quickFacts.map((fact) => (
-                          <div
-                            key={fact.label}
-                            className="flex h-full rounded-[22px] border border-border-light bg-cream/70 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-white hover:shadow-[0_18px_40px_rgba(15,23,42,0.06)]"
-                          >
-                            <div className="flex items-start gap-3">
-                              <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
-                                <fact.icon className="size-4.5" aria-hidden="true" />
-                              </span>
-                              <div className="flex min-h-full flex-col">
-                                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                                  {fact.label}
-                                </p>
-                                <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
-                                  {fact.value}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-
-              {sections.length ? (
-                <div className="xl:hidden">
-                  <IngredientSectionNav sections={sections} mobile />
+                    ))}
+                  </div>
                 </div>
               ) : null}
             </div>
 
             {sections.length ? (
-              <aside className="hidden xl:block xl:sticky xl:top-28">
+              <div className="space-y-5 xl:sticky xl:top-28">
                 <IngredientSectionNav sections={sections} />
-              </aside>
+                <FadeIn className="rounded-[28px] bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
+                  <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                    At A Glance
+                  </p>
+                  <div className="mt-5 space-y-4">
+                    {atAGlanceItems.map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex items-center justify-between gap-4 border-b border-black/6 pb-3 last:border-b-0 last:pb-0"
+                      >
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                          {item.label}
+                        </span>
+                        <span className="text-right font-heading text-sm font-bold text-text-dark">
+                          {item.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href="/ingredients"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-3 font-heading text-sm font-bold text-white transition hover:bg-primary/90"
+                  >
+                    Browse All Ingredients
+                    <ArrowUpRight className="size-4" />
+                  </Link>
+                </FadeIn>
+              </div>
             ) : null}
           </div>
+          {sections.length ? (
+            <div className="mt-6 xl:hidden">
+              <IngredientSectionNav sections={sections} mobile />
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -653,7 +697,7 @@ function ContentPanel({ content }: { content?: string | null }) {
   }
 
   return (
-    <FadeIn className="rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] md:p-8">
+    <FadeIn className="rounded-[28px] bg-white/92 p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5 md:p-8">
       <RichTextContent content={content} />
     </FadeIn>
   );
@@ -673,7 +717,7 @@ function AsideFactCard({
   }
 
   return (
-    <FadeIn className="rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
+    <FadeIn className="rounded-[28px] bg-white/92 p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
       <span className="inline-flex size-14 items-center justify-center rounded-full bg-soft-green text-primary">
         <Icon className="size-6" aria-hidden="true" />
       </span>
@@ -682,7 +726,7 @@ function AsideFactCard({
         {items.map((item) => (
           <div
             key={item}
-            className="rounded-[18px] border border-border-light bg-cream/60 px-4 py-3 text-sm leading-6 text-muted"
+            className="rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-6 text-muted ring-1 ring-black/5"
           >
             {item}
           </div>
@@ -702,7 +746,7 @@ function SafetyCard({
   items: string[];
 }) {
   return (
-    <FadeIn className="rounded-[30px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
+    <FadeIn className="rounded-[28px] bg-white/92 p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
       <span className="inline-flex size-14 items-center justify-center rounded-full bg-soft-green text-primary">
         <Icon className="size-6" aria-hidden="true" />
       </span>
@@ -711,7 +755,7 @@ function SafetyCard({
         {items.map((item) => (
           <li
             key={item}
-            className="rounded-[18px] border border-border-light bg-cream/60 px-4 py-3 text-sm leading-7 text-muted"
+            className="rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
           >
             {item}
           </li>

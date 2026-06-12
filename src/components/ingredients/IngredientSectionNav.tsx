@@ -78,14 +78,14 @@ export function IngredientSectionNav({
   return (
     <div
       className={cn(
-        "rounded-[28px] border border-border-light bg-white/95 p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] backdrop-blur-sm",
+        "rounded-[28px] border border-black/5 bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] backdrop-blur-sm",
         !mobile && "xl:max-w-[320px]",
       )}
     >
       <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
         On This Page
       </p>
-      <div className={mobile ? "mt-4 flex gap-2 overflow-x-auto pb-1" : "mt-4 space-y-2"}>
+      <div className={mobile ? "mt-4 flex gap-2 overflow-x-auto pb-1" : "mt-5 space-y-1.5"}>
         {sections.map((section) => {
           const isActive = section.id === activeId;
 
@@ -96,19 +96,28 @@ export function IngredientSectionNav({
               onClick={scrollToSection(section.id)}
               aria-current={isActive ? "location" : undefined}
               className={cn(
-                "group inline-flex items-center gap-3 rounded-pill border px-4 py-3 text-sm font-semibold transition duration-200",
-                mobile ? "shrink-0 whitespace-nowrap" : "w-full justify-between",
+                "group inline-flex items-center gap-3 text-sm font-medium transition duration-200",
+                mobile ? "shrink-0 whitespace-nowrap rounded-pill border px-4 py-3" : "w-full rounded-2xl px-3 py-3",
                 isActive
-                  ? "border-primary/15 bg-primary text-white shadow-[0_16px_34px_rgba(11,93,59,0.22)]"
-                  : "border-border-light bg-cream/55 text-text-dark hover:border-gold/60 hover:bg-white hover:text-primary",
+                  ? "border-transparent bg-primary/[0.08] text-primary"
+                  : "border-transparent text-text-dark hover:bg-black/[0.03] hover:text-primary",
               )}
             >
-              <span>{section.label}</span>
+              {!mobile ? (
+                <span
+                  className={cn(
+                    "h-6 w-1 rounded-full transition",
+                    isActive ? "bg-primary" : "bg-transparent group-hover:bg-primary/30",
+                  )}
+                  aria-hidden="true"
+                />
+              ) : null}
+              <span className="flex-1">{section.label}</span>
               {!mobile ? (
                 <ArrowUpRight
                   className={cn(
                     "size-4 transition",
-                    isActive ? "text-white" : "text-muted group-hover:text-primary",
+                    isActive ? "text-primary" : "text-muted group-hover:text-primary",
                   )}
                 />
               ) : null}
