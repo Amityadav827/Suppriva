@@ -30,7 +30,7 @@ export function StatCard({
         </span>
       </div>
       <p className="mt-4 font-heading text-sm font-semibold text-primary">
-        {change} this month
+        {change}
       </p>
     </motion.article>
   );

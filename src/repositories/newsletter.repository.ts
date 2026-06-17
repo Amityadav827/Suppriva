@@ -109,11 +109,22 @@ export class NewsletterRepository {
     const growthMap = new Map<string, number>();
 
     activeSubscribers.forEach((subscriber) => {
-      const label = new Date(subscriber.created_at).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-      });
+      const label = this.toTrendKey(subscriber.created_at);
       growthMap.set(label, (growthMap.get(label) ?? 0) + 1);
+    });
+
+    const growth = Array.from({ length: 30 }, (_, index) => {
+      const pointDate = new Date(now);
+      pointDate.setDate(now.getDate() - (29 - index));
+      const key = this.toTrendKey(pointDate.toISOString());
+
+      return {
+        label: pointDate.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+        }),
+        subscribers: growthMap.get(key) ?? 0,
+      };
     });
 
     return {
@@ -128,12 +139,16 @@ export class NewsletterRepository {
         (subscriber) => new Date(subscriber.created_at) >= startOfMonth,
       ).length,
       recentSubscribers: subscribers.slice(0, 8),
-      growth: [...growthMap.entries()]
-        .map(([label, subscribersCount]) => ({
-          label,
-          subscribers: subscribersCount,
-        }))
-        .slice(0, 14),
+      growth,
     };
+  }
+
+  private toTrendKey(dateValue: string) {
+    const date = new Date(dateValue);
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
   }
 }

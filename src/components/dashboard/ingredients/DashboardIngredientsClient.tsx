@@ -1,6 +1,7 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
+import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type { FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
 import {
@@ -1258,7 +1259,13 @@ export function DashboardIngredientsClient() {
               />
               <InputField label="Scientific Name" value={form.scientific_name} onChange={(value) => updateTextField("scientific_name", value)} />
               <InputField label="Ingredient Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
-              <InputField label="Image URL" value={form.image_url} onChange={(value) => updateTextField("image_url", value)} className="lg:col-span-2" />
+              <MediaLibraryField
+                label="Ingredient Image"
+                value={form.image_url}
+                onChange={(value) => updateTextField("image_url", value)}
+                className="lg:col-span-2"
+                helperText="Use the Media Library for the primary ingredient hero image."
+              />
             </FormSection>
 
             <FormSection

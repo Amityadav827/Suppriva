@@ -8,6 +8,9 @@ export type AffiliateClickCreateRecord = {
   source_page?: string | null;
   country?: string | null;
   device?: string | null;
+  user_agent?: string | null;
+  ip_hash?: string | null;
+  referrer?: string | null;
 };
 
 export type AffiliateDashboardStats = {
@@ -80,6 +83,9 @@ export class AffiliateClickRepository {
       source_page: input.source_page ?? null,
       country: input.country ?? null,
       device: input.device ?? null,
+      user_agent: input.user_agent ?? null,
+      ip_hash: input.ip_hash ?? null,
+      referrer: input.referrer ?? null,
       created_at: now,
       deleted_at: null,
     };
@@ -111,11 +117,22 @@ export class AffiliateClickRepository {
       productCounts.set(click.product_id, (productCounts.get(click.product_id) ?? 0) + 1);
       const category = this.extractMeta(click.source_page, "category") ?? "Uncategorized";
       categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
-      const label = new Date(click.clicked_at).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-      });
+      const label = this.toTrendKey(click.clicked_at);
       trendCounts.set(label, (trendCounts.get(label) ?? 0) + 1);
+    });
+
+    const trend = Array.from({ length: 30 }, (_, index) => {
+      const pointDate = new Date(now);
+      pointDate.setDate(now.getDate() - (29 - index));
+      const key = this.toTrendKey(pointDate.toISOString());
+
+      return {
+        label: pointDate.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+        }),
+        clicks: trendCounts.get(key) ?? 0,
+      };
     });
 
     return {
@@ -132,7 +149,7 @@ export class AffiliateClickRepository {
         .sort((a, b) => b.clicks - a.clicks)
         .slice(0, 5),
       recentClicks: clicks.slice(0, 8),
-      trend: [...trendCounts.entries()].map(([label, count]) => ({ label, clicks: count })).slice(0, 14),
+      trend,
     };
   }
 
@@ -149,5 +166,14 @@ export class AffiliateClickRepository {
     } catch {
       return null;
     }
+  }
+
+  private toTrendKey(dateValue: string) {
+    const date = new Date(dateValue);
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
   }
 }

@@ -44,6 +44,7 @@ export const DATABASE_TABLES = {
   newsletterSubscribers: "newsletter_subscribers",
   contactMessages: "contact_messages",
   affiliateClicks: "affiliate_clicks",
+  mediaLibrary: "media_library",
   siteSettings: "site_settings",
 } as const;
 

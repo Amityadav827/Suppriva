@@ -1,9 +1,8 @@
 "use client";
 
-import { ImageUploader } from "@/components/dashboard/media/ImageUploader";
+import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type { Category } from "@/lib/database/types";
-import { STORAGE_BUCKETS } from "@/lib/storage/upload";
 import { motion } from "framer-motion";
 import {
   FolderPlus,
@@ -361,13 +360,12 @@ export function DashboardCategoriesClient() {
               onChange={(value) => updateForm("slug", value)}
               placeholder="auto-generated if empty"
             />
-            <ImageUploader
+            <MediaLibraryField
               label="Category Image"
               value={form.image}
               onChange={(value) => updateForm("image", value)}
-              bucket={STORAGE_BUCKETS.categories}
-              folder="categories"
               className="lg:col-span-2"
+              helperText="Upload a new image or choose an existing asset from the Media Library."
             />
             <label className="grid gap-2">
               <span className="font-heading text-sm font-semibold text-text-dark">Status</span>

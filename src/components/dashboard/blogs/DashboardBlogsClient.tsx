@@ -1,10 +1,12 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
-import { ImageUploader } from "@/components/dashboard/media/ImageUploader";
+import {
+  MediaGalleryField,
+  MediaLibraryField,
+} from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type { Blog } from "@/lib/database/types";
-import { STORAGE_BUCKETS } from "@/lib/storage/upload";
 import { motion } from "framer-motion";
 import {
   Download,
@@ -26,6 +28,7 @@ type BlogFormState = {
   excerpt: string;
   content: string;
   featured_image: string;
+  gallery: string[];
   category_id: string;
   author_id: string;
   reading_time: string;
@@ -65,6 +68,7 @@ const emptyForm: BlogFormState = {
   excerpt: "",
   content: "",
   featured_image: "",
+  gallery: [],
   category_id: "",
   author_id: "",
   reading_time: "",
@@ -112,6 +116,20 @@ function plainTextFromContent(content: Blog["content"]) {
   }
 
   return "";
+}
+
+function galleryFromContent(content: Blog["content"]) {
+  if (
+    typeof content === "object" &&
+    content !== null &&
+    !Array.isArray(content) &&
+    "gallery" in content &&
+    Array.isArray(content.gallery)
+  ) {
+    return content.gallery.filter((item): item is string => typeof item === "string");
+  }
+
+  return [];
 }
 
 function slugify(value: string) {
@@ -285,6 +303,7 @@ function blogToForm(blog: Blog): BlogFormState {
     excerpt: blog.excerpt ?? "",
     content: plainTextFromContent(blog.content),
     featured_image: blog.featured_image ?? "",
+    gallery: galleryFromContent(blog.content),
     category_id: blog.category_id ?? "",
     author_id: blog.author_id ?? "",
     reading_time: blog.reading_time ?? "",
@@ -303,6 +322,7 @@ function formToPayload(form: BlogFormState) {
     excerpt: form.excerpt || null,
     content: {
       body: form.content,
+      gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
       sections: form.content
         .split(/\n{2,}/)
         .map((section) => section.trim())
@@ -791,14 +811,19 @@ export function DashboardBlogsClient() {
           <form onSubmit={submitBlog} className="grid gap-4 lg:grid-cols-2">
             <InputField label="Title" value={form.title} onChange={(value) => updateForm("title", value)} required />
             <InputField label="Slug" value={form.slug} onChange={(value) => updateForm("slug", value)} placeholder="auto-generated if empty" />
-            <ImageUploader
+            <MediaLibraryField
               label="Featured Image"
               value={form.featured_image}
               onChange={(value) => updateForm("featured_image", value)}
-              bucket={STORAGE_BUCKETS.blogs}
-              folder="blogs"
               className="lg:col-span-2"
-              manualLabel="Featured Image URL"
+              helperText="Choose the primary blog hero image from the Media Library."
+            />
+            <MediaGalleryField
+              label="Blog Gallery"
+              values={form.gallery}
+              onChange={(value) => updateForm("gallery", value)}
+              className="lg:col-span-2"
+              helperText="Optional supporting images stored in the blog content payload."
             />
             <InputField label="Reading Time" value={form.reading_time} onChange={(value) => updateForm("reading_time", value)} placeholder="7 min read" />
             <InputField label="Category ID" value={form.category_id} onChange={(value) => updateForm("category_id", value)} placeholder="Optional UUID" />

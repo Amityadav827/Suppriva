@@ -7,6 +7,7 @@ import {
   FileText,
   FlaskConical,
   FolderOpen,
+  Images,
   LayoutDashboard,
   MessageSquare,
   Package,
@@ -22,6 +23,7 @@ const navItems = [
   { label: "Categories", href: "/dashboard/categories", icon: FolderOpen },
   { label: "Ingredients", href: "/dashboard/ingredients", icon: FlaskConical },
   { label: "Blogs", href: "/dashboard/blogs", icon: FileText },
+  { label: "Media Library", href: "/dashboard/media-library", icon: Images },
   { label: "Contact", href: "/dashboard/contact-messages", icon: MessageSquare },
   { label: "Users", href: "/dashboard/users", icon: Users },
   { label: "SEO", href: "/dashboard/seo", icon: SearchCheck },
@@ -83,10 +85,10 @@ export function Sidebar({
       <div className="mt-auto rounded-[24px] border border-white/10 bg-white/[0.07] p-4">
         <BarChart3 className="size-5 text-gold" aria-hidden="true" />
         <p className="mt-3 font-heading text-sm font-semibold">
-          Premium analytics ready
+          Live analytics + assets
         </p>
         <p className="mt-1 text-xs leading-5 text-white/58">
-          UI-only dashboard prepared for live data later.
+          Media library, click trends, and subscriber growth all sync from Supabase.
         </p>
       </div>
     </aside>

@@ -4,6 +4,7 @@ export type AffiliateClickCreateInput = {
   source_page?: string | null;
   referrer?: string | null;
   user_agent?: string | null;
+  ip_hash?: string | null;
   country?: string | null;
   session_id?: string | null;
 };

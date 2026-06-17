@@ -1,7 +1,10 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
-import { ImageUploader } from "@/components/dashboard/media/ImageUploader";
+import {
+  MediaGalleryField,
+  MediaLibraryField,
+} from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type {
   Category,
@@ -10,7 +13,6 @@ import type {
   Product,
   ProductIngredient,
 } from "@/lib/database/types";
-import { STORAGE_BUCKETS } from "@/lib/storage/upload";
 import { motion } from "framer-motion";
 import { Loader2, Pencil, Plus, RefreshCw, Search, Trash2, X } from "lucide-react";
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
@@ -22,7 +24,7 @@ type ProductFormState = {
   short_description: string;
   full_description: string;
   image: string;
-  gallery: string;
+  gallery: string[];
   rating: string;
   affiliate_url: string;
   ingredients: string;
@@ -53,7 +55,7 @@ const emptyForm: ProductFormState = {
   short_description: "",
   full_description: "",
   image: "",
-  gallery: "",
+  gallery: [],
   rating: "",
   affiliate_url: "",
   ingredients: "",
@@ -69,13 +71,6 @@ const emptyForm: ProductFormState = {
 function lines(value: string) {
   return value
     .split("\n")
-    .map((item) => item.trim())
-    .filter(Boolean);
-}
-
-function commaList(value: string) {
-  return value
-    .split(",")
     .map((item) => item.trim())
     .filter(Boolean);
 }
@@ -112,7 +107,7 @@ function productToForm(product: Product): ProductFormState {
     short_description: product.short_description ?? "",
     full_description: product.full_description ?? "",
     image: product.image ?? "",
-    gallery: product.gallery.join(", "),
+    gallery: product.gallery,
     rating: product.rating?.toString() ?? "",
     affiliate_url: product.affiliate_url ?? "",
     ingredients: product.ingredients
@@ -150,7 +145,7 @@ function formToPayload(form: ProductFormState) {
     short_description: form.short_description || null,
     full_description: form.full_description || null,
     image: form.image || null,
-    gallery: commaList(form.gallery),
+    gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
     rating: form.rating ? Number(form.rating) : null,
     affiliate_url: form.affiliate_url || null,
     ingredients: parseIngredients(form.ingredients),
@@ -484,13 +479,12 @@ export function DashboardProductsClient() {
               onChange={(value) => updateForm("category_id", value)}
             />
             <InputField label="Rating" value={form.rating} onChange={(value) => updateForm("rating", value)} placeholder="4.8" />
-            <ImageUploader
+            <MediaLibraryField
               label="Product Image"
               value={form.image}
               onChange={(value) => updateForm("image", value)}
-              bucket={STORAGE_BUCKETS.products}
-              folder="products"
               className="lg:col-span-2"
+              helperText="Select a primary product visual from the Media Library."
             />
             <InputField label="Affiliate URL" value={form.affiliate_url} onChange={(value) => updateForm("affiliate_url", value)} />
             <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
@@ -509,7 +503,12 @@ export function DashboardProductsClient() {
             <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateForm("short_description", value)} />
             <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} />
             <TextAreaField label="Full Description" value={form.full_description} onChange={(value) => updateForm("full_description", value)} className="lg:col-span-2" rows={4} />
-            <TextAreaField label="Gallery URLs" value={form.gallery} onChange={(value) => updateForm("gallery", value)} placeholder="Comma separated URLs" />
+            <MediaGalleryField
+              label="Product Gallery"
+              values={form.gallery}
+              onChange={(value) => updateForm("gallery", value)}
+              helperText="Optional secondary product images pulled directly from the Media Library."
+            />
             <TextAreaField label="Pros" value={form.pros} onChange={(value) => updateForm("pros", value)} placeholder="One item per line" />
             <TextAreaField label="Cons" value={form.cons} onChange={(value) => updateForm("cons", value)} placeholder="One item per line" />
             <TextAreaField label="Ingredients" value={form.ingredients} onChange={(value) => updateForm("ingredients", value)} placeholder="Name | Benefit, one per line" />

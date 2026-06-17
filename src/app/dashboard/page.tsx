@@ -6,7 +6,7 @@ export default function DashboardPage() {
     <>
       <DashboardHeader
         title="Dashboard Overview"
-        subtitle="Monitor Suppriva content, affiliate performance, and editorial activity from one premium command center."
+        subtitle="Monitor Suppriva content, media assets, affiliate performance, subscriber growth, and editorial activity from one premium command center."
       />
       <DashboardAnalyticsClient />
     </>

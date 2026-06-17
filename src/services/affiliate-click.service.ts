@@ -57,6 +57,9 @@ export class AffiliateClickService {
       source_page: sourcePage,
       country: input.country ?? null,
       device: input.user_agent ?? null,
+      user_agent: input.user_agent ?? null,
+      ip_hash: input.ip_hash ?? null,
+      referrer: input.referrer ?? null,
     });
   }
 

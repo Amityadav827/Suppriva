@@ -1,98 +1,145 @@
 "use client";
 
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Download, ExternalLink, Loader2, RefreshCw } from "lucide-react";
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { StatCard } from "@/components/dashboard/StatCard";
 import type { AffiliateClick, NewsletterSubscriber } from "@/lib/database/types";
-import { Download, Loader2, RefreshCw } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
 
-type DashboardStats = {
-  totalClicks: number;
-  todayClicks: number;
-  weeklyClicks: number;
-  monthlyClicks: number;
-  topProducts: { product_id: string; clicks: number }[];
-  topCategories: { category: string; clicks: number }[];
-  recentClicks: AffiliateClick[];
-  trend: { label: string; clicks: number }[];
+type RecentActivityItem = {
+  id: string;
+  title: string;
+  subtitle: string;
+  href: string;
+  updatedAt: string;
+  status?: string;
 };
 
-type StatsResponse = {
-  stats?: DashboardStats;
+type EnrichedClick = AffiliateClick & {
+  product_title: string;
+  source_label: string;
+};
+
+type DashboardOverview = {
+  summary: {
+    totalProducts: number;
+    totalCategories: number;
+    totalBlogs: number;
+    totalIngredients: number;
+    newsletterSubscribers: number;
+    affiliateClicks: number;
+    publishedContent: number;
+  };
+  storage: {
+    uploadedImagesCount: number;
+    categoryImages: number;
+    productImages: number;
+    blogImages: number;
+    ingredientImages: number;
+  };
+  affiliate: {
+    totalClicks: number;
+    todayClicks: number;
+    weeklyClicks: number;
+    monthlyClicks: number;
+    topProducts: { product_id: string; product_title: string; clicks: number }[];
+    topCategories: { category: string; clicks: number }[];
+    recentClicks: EnrichedClick[];
+    trend: { label: string; clicks: number }[];
+  };
+  newsletter: {
+    totalSubscribers: number;
+    newToday: number;
+    weeklySubscribers: number;
+    monthlySubscribers: number;
+    recentSubscribers: NewsletterSubscriber[];
+    growth: { label: string; subscribers: number }[];
+  };
+  recentActivity: {
+    products: RecentActivityItem[];
+    blogs: RecentActivityItem[];
+    ingredients: RecentActivityItem[];
+    subscribers: RecentActivityItem[];
+  };
+  quickActions: {
+    label: string;
+    href: string;
+  }[];
+};
+
+type DashboardOverviewResponse = {
+  overview?: DashboardOverview;
   error?: string;
 };
 
-type NewsletterStats = {
-  totalSubscribers: number;
-  newToday: number;
-  weeklySubscribers: number;
-  monthlySubscribers: number;
-  recentSubscribers: NewsletterSubscriber[];
-  growth: { label: string; subscribers: number }[];
-};
-
-type NewsletterStatsResponse = {
-  stats?: NewsletterStats;
-  error?: string;
-};
-
-const emptyStats: DashboardStats = {
-  totalClicks: 0,
-  todayClicks: 0,
-  weeklyClicks: 0,
-  monthlyClicks: 0,
-  topProducts: [],
-  topCategories: [],
-  recentClicks: [],
-  trend: [],
-};
-
-const emptyNewsletterStats: NewsletterStats = {
-  totalSubscribers: 0,
-  newToday: 0,
-  weeklySubscribers: 0,
-  monthlySubscribers: 0,
-  recentSubscribers: [],
-  growth: [],
+const emptyOverview: DashboardOverview = {
+  summary: {
+    totalProducts: 0,
+    totalCategories: 0,
+    totalBlogs: 0,
+    totalIngredients: 0,
+    newsletterSubscribers: 0,
+    affiliateClicks: 0,
+    publishedContent: 0,
+  },
+  storage: {
+    uploadedImagesCount: 0,
+    categoryImages: 0,
+    productImages: 0,
+    blogImages: 0,
+    ingredientImages: 0,
+  },
+  affiliate: {
+    totalClicks: 0,
+    todayClicks: 0,
+    weeklyClicks: 0,
+    monthlyClicks: 0,
+    topProducts: [],
+    topCategories: [],
+    recentClicks: [],
+    trend: [],
+  },
+  newsletter: {
+    totalSubscribers: 0,
+    newToday: 0,
+    weeklySubscribers: 0,
+    monthlySubscribers: 0,
+    recentSubscribers: [],
+    growth: [],
+  },
+  recentActivity: {
+    products: [],
+    blogs: [],
+    ingredients: [],
+    subscribers: [],
+  },
+  quickActions: [],
 };
 
 export function DashboardAnalyticsClient() {
-  const [stats, setStats] = useState<DashboardStats>(emptyStats);
-  const [newsletterStats, setNewsletterStats] =
-    useState<NewsletterStats>(emptyNewsletterStats);
+  const [overview, setOverview] = useState<DashboardOverview>(emptyOverview);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const fetchStats = useCallback(async () => {
+  const fetchOverview = useCallback(async () => {
     setIsLoading(true);
     setError("");
 
     try {
-      const [affiliateResponse, newsletterResponse] = await Promise.all([
-        fetch("/api/affiliate-clicks/stats", { cache: "no-store" }),
-        fetch("/api/newsletter/stats", { cache: "no-store" }),
-      ]);
-      const affiliatePayload = (await affiliateResponse.json()) as StatsResponse;
-      const newsletterPayload =
-        (await newsletterResponse.json()) as NewsletterStatsResponse;
+      const response = await fetch("/api/dashboard/overview", { cache: "no-store" });
+      const payload = (await response.json()) as DashboardOverviewResponse;
 
-      if (!affiliateResponse.ok) {
-        throw new Error(affiliatePayload.error ?? "Unable to load affiliate analytics.");
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to load dashboard overview.");
       }
 
-      if (!newsletterResponse.ok) {
-        throw new Error(
-          newsletterPayload.error ?? "Unable to load newsletter analytics.",
-        );
-      }
-
-      setStats(affiliatePayload.stats ?? emptyStats);
-      setNewsletterStats(newsletterPayload.stats ?? emptyNewsletterStats);
+      setOverview(payload.overview ?? emptyOverview);
     } catch (fetchError) {
       setError(
         fetchError instanceof Error
           ? fetchError.message
-          : "Unable to load affiliate analytics.",
+          : "Unable to load dashboard overview.",
       );
     } finally {
       setIsLoading(false);
@@ -100,27 +147,43 @@ export function DashboardAnalyticsClient() {
   }, []);
 
   useEffect(() => {
-    void fetchStats();
-  }, [fetchStats]);
+    void fetchOverview();
+  }, [fetchOverview]);
 
-  const statCards = useMemo(
+  const primaryCards = useMemo(
     () => [
-      { label: "Total Clicks", value: String(stats.totalClicks), change: "Live" },
-      { label: "Today's Clicks", value: String(stats.todayClicks), change: "Today" },
-      { label: "Weekly Clicks", value: String(stats.weeklyClicks), change: "7 days" },
-      { label: "Monthly Clicks", value: String(stats.monthlyClicks), change: "30 days" },
       {
-        label: "Top Products",
-        value: String(stats.topProducts.length),
-        change: "Ranked",
+        label: "Total Products",
+        value: String(overview.summary.totalProducts),
+        change: "Live Supabase count",
       },
       {
-        label: "Subscribers",
-        value: String(newsletterStats.totalSubscribers),
-        change: "Active",
+        label: "Total Categories",
+        value: String(overview.summary.totalCategories),
+        change: "Live Supabase count",
+      },
+      {
+        label: "Total Blogs",
+        value: String(overview.summary.totalBlogs),
+        change: "Live Supabase count",
+      },
+      {
+        label: "Newsletter Subscribers",
+        value: String(overview.summary.newsletterSubscribers),
+        change: `${overview.newsletter.newToday} joined today`,
+      },
+      {
+        label: "Affiliate Clicks",
+        value: String(overview.summary.affiliateClicks),
+        change: `${overview.affiliate.weeklyClicks} in the last 7 days`,
+      },
+      {
+        label: "Published Content",
+        value: String(overview.summary.publishedContent),
+        change: `${overview.summary.totalIngredients} ingredient records tracked`,
       },
     ],
-    [stats, newsletterStats],
+    [overview],
   );
 
   if (isLoading) {
@@ -128,7 +191,7 @@ export function DashboardAnalyticsClient() {
       <div className="rounded-[28px] border border-border-light bg-white p-10 text-center text-sm text-muted shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
         <span className="inline-flex items-center gap-2">
           <Loader2 className="size-4 animate-spin text-primary" />
-          Loading affiliate analytics...
+          Loading dashboard analytics...
         </span>
       </div>
     );
@@ -145,7 +208,7 @@ export function DashboardAnalyticsClient() {
       <div className="flex justify-end">
         <button
           type="button"
-          onClick={() => void fetchStats()}
+          onClick={() => void fetchOverview()}
           className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
         >
           <RefreshCw className="size-4" />
@@ -153,89 +216,128 @@ export function DashboardAnalyticsClient() {
         </button>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-        {statCards.map((stat) => (
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {primaryCards.map((stat) => (
           <StatCard key={stat.label} {...stat} />
         ))}
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {[
-          {
-            label: "New Subscribers Today",
-            value: String(newsletterStats.newToday),
-            change: "Today",
-          },
-          {
-            label: "Weekly Subscribers",
-            value: String(newsletterStats.weeklySubscribers),
-            change: "7 days",
-          },
-          {
-            label: "Monthly Subscribers",
-            value: String(newsletterStats.monthlySubscribers),
-            change: "30 days",
-          },
-          {
-            label: "Recent Subscribers",
-            value: String(newsletterStats.recentSubscribers.length),
-            change: "Latest",
-          },
-        ].map((stat) => (
-          <StatCard key={stat.label} {...stat} />
-        ))}
+      <div className="grid gap-5 xl:grid-cols-[1.25fr_0.75fr]">
+        <DashboardCard
+          title="Quick Actions"
+          description="Jump straight into the high-frequency workflows for content, media, and SEO."
+        >
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {overview.quickActions.map((action) => (
+              <Link
+                key={action.href}
+                href={action.href}
+                className="group rounded-[24px] border border-border-light bg-cream px-4 py-5 transition hover:border-gold/70 hover:bg-white"
+              >
+                <p className="font-heading text-base font-bold text-text-dark">
+                  {action.label}
+                </p>
+                <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Open
+                  <ExternalLink className="size-4 transition group-hover:translate-x-0.5" />
+                </p>
+              </Link>
+            ))}
+          </div>
+        </DashboardCard>
+
+        <DashboardCard
+          title="Storage Overview"
+          description="Live media usage snapshot across the CMS and storefront."
+        >
+          <div className="grid gap-3">
+            {[
+              ["Uploaded Images Count", overview.storage.uploadedImagesCount],
+              ["Categories Images", overview.storage.categoryImages],
+              ["Product Images", overview.storage.productImages],
+              ["Blog Images", overview.storage.blogImages],
+              ["Ingredient Images", overview.storage.ingredientImages],
+            ].map(([label, value]) => (
+              <div
+                key={String(label)}
+                className="flex items-center justify-between rounded-[20px] border border-border-light bg-white px-4 py-3 text-sm"
+              >
+                <span className="font-medium text-text-dark">{label}</span>
+                <span className="font-heading text-lg font-bold text-primary">{value}</span>
+              </div>
+            ))}
+          </div>
+        </DashboardCard>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <DashboardCard title="Click Trend Chart" description="Affiliate click activity over recent days.">
-          <BarChart values={stats.trend.map((item) => item.clicks)} labels={stats.trend.map((item) => item.label)} />
+        <DashboardCard
+          title="Click Trend Chart"
+          description="Affiliate click activity over the last 30 days."
+        >
+          <BarChart
+            values={overview.affiliate.trend.map((item) => item.clicks)}
+            labels={overview.affiliate.trend.map((item) => item.label)}
+          />
         </DashboardCard>
-        <DashboardCard title="Recent Click Activity">
-          <RecentClicks clicks={stats.recentClicks} />
+        <DashboardCard title="Top Products Chart" description="Products ranked by tracked affiliate clicks.">
+          <RankingChart
+            rows={overview.affiliate.topProducts.map((item) => ({
+              label: item.product_title,
+              value: item.clicks,
+            }))}
+          />
         </DashboardCard>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
         <DashboardCard
           title="Subscriber Growth Chart"
-          description="Newsletter subscriber growth over recent days."
+          description="Newsletter subscriber growth over the last 30 days."
         >
           <BarChart
-            values={newsletterStats.growth.map((item) => item.subscribers)}
-            labels={newsletterStats.growth.map((item) => item.label)}
+            values={overview.newsletter.growth.map((item) => item.subscribers)}
+            labels={overview.newsletter.growth.map((item) => item.label)}
           />
         </DashboardCard>
+        <DashboardCard title="Recent Click Activity">
+          <RecentClicks clicks={overview.affiliate.recentClicks} />
+        </DashboardCard>
+      </div>
+
+      <div className="grid gap-6 xl:grid-cols-2">
         <DashboardCard title="Recent Subscribers">
           <div className="mb-4 flex justify-end">
             <button
               type="button"
-              onClick={() => exportSubscribersCsv(newsletterStats.recentSubscribers)}
+              onClick={() => exportSubscribersCsv(overview.newsletter.recentSubscribers)}
               className="inline-flex min-h-11 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-xs font-semibold text-primary transition hover:border-gold/70"
             >
               <Download className="size-4" />
               Export CSV
             </button>
           </div>
-          <RecentSubscribers subscribers={newsletterStats.recentSubscribers} />
-        </DashboardCard>
-      </div>
-
-      <div className="grid gap-6 xl:grid-cols-2">
-        <DashboardCard title="Top Products Chart">
-          <RankingChart
-            rows={stats.topProducts.map((item) => ({
-              label: item.product_id.slice(0, 8),
-              value: item.clicks,
-            }))}
-          />
+          <RecentSubscribers subscribers={overview.newsletter.recentSubscribers} />
         </DashboardCard>
         <DashboardCard title="Category Performance Chart">
           <RankingChart
-            rows={stats.topCategories.map((item) => ({
+            rows={overview.affiliate.topCategories.map((item) => ({
               label: item.category,
               value: item.clicks,
             }))}
           />
+        </DashboardCard>
+      </div>
+
+      <div className="grid gap-6 xl:grid-cols-3">
+        <DashboardCard title="Latest Products">
+          <RecentActivityList items={overview.recentActivity.products} />
+        </DashboardCard>
+        <DashboardCard title="Latest Blogs">
+          <RecentActivityList items={overview.recentActivity.blogs} />
+        </DashboardCard>
+        <DashboardCard title="Latest Ingredients">
+          <RecentActivityList items={overview.recentActivity.ingredients} />
         </DashboardCard>
       </div>
     </div>
@@ -289,7 +391,7 @@ function RankingChart({ rows }: { rows: { label: string; value: number }[] }) {
   const max = Math.max(...rows.map((row) => row.value), 1);
 
   if (!rows.length) {
-    return <p className="rounded-[24px] bg-cream p-6 text-sm text-muted">No click data yet.</p>;
+    return <p className="rounded-[24px] bg-cream p-6 text-sm text-muted">No ranking data yet.</p>;
   }
 
   return (
@@ -312,7 +414,7 @@ function RankingChart({ rows }: { rows: { label: string; value: number }[] }) {
   );
 }
 
-function RecentClicks({ clicks }: { clicks: AffiliateClick[] }) {
+function RecentClicks({ clicks }: { clicks: EnrichedClick[] }) {
   if (!clicks.length) {
     return <p className="rounded-[24px] bg-cream p-6 text-sm text-muted">No recent clicks yet.</p>;
   }
@@ -331,9 +433,9 @@ function RecentClicks({ clicks }: { clicks: AffiliateClick[] }) {
           {clicks.map((click) => (
             <tr key={click.id} className="border-t border-border-light">
               <td className="px-5 py-4 font-heading font-semibold text-text-dark">
-                {click.product_id.slice(0, 8)}
+                {click.product_title}
               </td>
-              <td className="px-5 py-4 text-muted">{click.source_page ?? "Direct"}</td>
+              <td className="px-5 py-4 text-muted">{click.source_label}</td>
               <td className="px-5 py-4 text-muted">
                 {new Date(click.clicked_at).toLocaleString()}
               </td>
@@ -390,6 +492,39 @@ function RecentSubscribers({
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+function RecentActivityList({ items }: { items: RecentActivityItem[] }) {
+  if (!items.length) {
+    return <p className="rounded-[24px] bg-cream p-6 text-sm text-muted">No activity yet.</p>;
+  }
+
+  return (
+    <div className="grid gap-3">
+      {items.map((item) => (
+        <Link
+          key={item.id}
+          href={item.href}
+          className="rounded-[20px] border border-border-light bg-white px-4 py-4 transition hover:border-gold/70"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="font-heading text-base font-bold text-text-dark">{item.title}</p>
+              <p className="mt-1 text-sm text-muted">{item.subtitle}</p>
+            </div>
+            {item.status ? (
+              <span className="rounded-pill bg-soft-green px-3 py-1 text-[11px] font-semibold capitalize text-primary">
+                {item.status}
+              </span>
+            ) : null}
+          </div>
+          <p className="mt-3 text-xs text-muted">
+            Updated {new Date(item.updatedAt).toLocaleString()}
+          </p>
+        </Link>
+      ))}
     </div>
   );
 }

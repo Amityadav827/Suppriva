@@ -214,8 +214,29 @@ export type AffiliateClick = {
   source_page: string | null;
   country: string | null;
   device: string | null;
+  user_agent: string | null;
+  ip_hash: string | null;
+  referrer: string | null;
   created_at: Timestamp;
   deleted_at: Timestamp | null;
+};
+
+export type MediaLibraryItem = {
+  id: string;
+  file_name: string;
+  file_url: string;
+  title: string;
+  alt_text: string | null;
+  caption: string | null;
+  description: string | null;
+  slug: string;
+  tags: string[];
+  width: number | null;
+  height: number | null;
+  file_size: number | null;
+  mime_type: string;
+  created_at: Timestamp;
+  updated_at: Timestamp;
 };
 
 export type SiteSettings = {
@@ -241,5 +262,6 @@ export type Database = {
   newsletter_subscribers: NewsletterSubscriber;
   contact_messages: ContactMessage;
   affiliate_clicks: AffiliateClick;
+  media_library: MediaLibraryItem;
   site_settings: SiteSettings;
 };
