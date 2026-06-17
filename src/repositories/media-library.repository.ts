@@ -22,6 +22,20 @@ export interface MediaLibraryRepository {
   deleteMedia(id: string): Promise<void>;
 }
 
+function isMissingMediaLibraryTable(error: { code?: string; message?: string } | null) {
+  return (
+    error?.code === "PGRST205" ||
+    error?.code === "42P01" ||
+    (error?.message?.includes("media_library") && error.message.includes("schema cache"))
+  );
+}
+
+function createMissingMediaLibrarySetupError() {
+  return new DatabaseError(
+    "Media Library database setup is missing. Run SUPABASE_MEDIA_LIBRARY_SETUP.sql in Supabase SQL Editor, then reload the PostgREST schema cache.",
+  );
+}
+
 export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
   async listMedia(filters: MediaLibraryFilters = {}): Promise<MediaLibraryItem[]> {
     const supabase = await createSupabaseServerClient();
@@ -48,6 +62,9 @@ export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
     const { data, error } = await query;
 
     if (error) {
+      if (isMissingMediaLibraryTable(error)) {
+        return [];
+      }
       throw new DatabaseError(error.message);
     }
 
@@ -63,6 +80,9 @@ export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
       .maybeSingle();
 
     if (error) {
+      if (isMissingMediaLibraryTable(error)) {
+        return null;
+      }
       throw new DatabaseError(error.message);
     }
 
@@ -78,6 +98,9 @@ export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
       .maybeSingle();
 
     if (error) {
+      if (isMissingMediaLibraryTable(error)) {
+        return null;
+      }
       throw new DatabaseError(error.message);
     }
 
@@ -96,6 +119,9 @@ export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
       .single();
 
     if (error) {
+      if (isMissingMediaLibraryTable(error)) {
+        throw createMissingMediaLibrarySetupError();
+      }
       throw new DatabaseError(error.message);
     }
 
@@ -130,6 +156,9 @@ export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
       .single();
 
     if (error) {
+      if (isMissingMediaLibraryTable(error)) {
+        throw createMissingMediaLibrarySetupError();
+      }
       throw new DatabaseError(error.message);
     }
 
@@ -144,6 +173,9 @@ export class SupabaseMediaLibraryRepository implements MediaLibraryRepository {
       .eq("id", id);
 
     if (error) {
+      if (isMissingMediaLibraryTable(error)) {
+        throw createMissingMediaLibrarySetupError();
+      }
       throw new DatabaseError(error.message);
     }
   }

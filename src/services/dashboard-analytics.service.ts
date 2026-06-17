@@ -57,6 +57,11 @@ export class DashboardAnalyticsService {
   async getOverview() {
     await this.assertAdmin();
 
+    const mediaItemsPromise = new MediaLibraryService().listMedia().catch((error) => {
+      console.error("Dashboard analytics fallback: media library unavailable.", error);
+      return [];
+    });
+
     const [
       products,
       categories,
@@ -70,7 +75,7 @@ export class DashboardAnalyticsService {
       new CategoryService().getAllCategories(),
       new BlogService().getAllBlogs(),
       new IngredientService().getAllIngredients(),
-      new MediaLibraryService().listMedia(),
+      mediaItemsPromise,
       new AffiliateClickService().getDashboardStats(),
       new NewsletterService().getSubscriberStats(),
     ]);
