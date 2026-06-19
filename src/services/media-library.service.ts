@@ -1,4 +1,5 @@
 import { isAdmin } from "@/lib/auth/admin";
+import { DATABASE_TABLES } from "@/lib/database/constants";
 import type { MediaLibraryItem } from "@/lib/database/types";
 import { AppError } from "@/lib/errors/AppError";
 import { ValidationError } from "@/lib/errors/ValidationError";
@@ -9,7 +10,7 @@ import {
   getExtensionFromMimeType,
   slugifyMediaValue,
 } from "@/lib/media/constants";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import type {
   MediaLibraryCreateInput,
   MediaLibraryUpdateInput,
@@ -54,7 +55,8 @@ export class MediaLibraryService {
       throw new ValidationError(validation.errors.join(" "));
     }
 
-    const supabase = await createSupabaseServerClient();
+    const adminSupabase = createSupabaseAdminClient();
+    await this.verifyMediaLibraryBucket(adminSupabase);
     const baseSlug =
       normalizedInput.title?.trim() ||
       slugifyMediaValue(normalizedInput.originalFileName.replace(/\.[^.]+$/, "")) ||
@@ -71,7 +73,7 @@ export class MediaLibraryService {
     const fileUrl = buildMediaLibraryUrl(fileName);
     const fileArray = new Uint8Array(normalizedInput.fileBuffer);
 
-    const { error: uploadError } = await supabase.storage
+    const { error: uploadError } = await adminSupabase.storage
       .from(MEDIA_LIBRARY_BUCKET)
       .upload(fileName, fileArray, {
         contentType: normalizedInput.mime_type,
@@ -79,6 +81,9 @@ export class MediaLibraryService {
       });
 
     if (uploadError) {
+      if (this.isMissingMediaLibraryBucketError(uploadError)) {
+        throw this.createMissingMediaLibraryBucketError();
+      }
       throw new AppError(uploadError.message, "MEDIA_UPLOAD_FAILED", 500);
     }
 
@@ -99,14 +104,14 @@ export class MediaLibraryService {
 
     const createValidation = validateMediaLibraryCreateInput(createInput);
     if (!createValidation.success) {
-      await supabase.storage.from(MEDIA_LIBRARY_BUCKET).remove([fileName]);
+      await adminSupabase.storage.from(MEDIA_LIBRARY_BUCKET).remove([fileName]);
       throw new ValidationError(createValidation.errors.join(" "));
     }
 
     try {
-      return await this.mediaLibraryRepository.createMedia(createInput);
+      return await this.createMediaRecord(adminSupabase, createInput);
     } catch (error) {
-      await supabase.storage.from(MEDIA_LIBRARY_BUCKET).remove([fileName]);
+      await adminSupabase.storage.from(MEDIA_LIBRARY_BUCKET).remove([fileName]);
       throw error;
     }
   }
@@ -136,17 +141,20 @@ export class MediaLibraryService {
       nextFileName = await this.generateUniqueFileName(desiredSlug, extension, current.id);
       nextFileUrl = buildMediaLibraryUrl(nextFileName);
 
-      const supabase = await createSupabaseServerClient();
-      const { error } = await supabase.storage
+      const adminSupabase = createSupabaseAdminClient();
+      const { error } = await adminSupabase.storage
         .from(MEDIA_LIBRARY_BUCKET)
         .move(current.file_name, nextFileName);
 
       if (error) {
+        if (this.isMissingMediaLibraryBucketError(error)) {
+          throw this.createMissingMediaLibraryBucketError();
+        }
         throw new AppError(error.message, "MEDIA_RENAME_FAILED", 500);
       }
     }
 
-    return this.mediaLibraryRepository.updateMedia(id, {
+    return this.updateMediaRecord(createSupabaseAdminClient(), id, {
       ...normalizedInput,
       slug: desiredSlug,
       file_name: nextFileName,
@@ -157,17 +165,20 @@ export class MediaLibraryService {
   async deleteMedia(id: string) {
     await this.assertAdmin();
     const current = await this.requireMedia(id);
-    const supabase = await createSupabaseServerClient();
+    const adminSupabase = createSupabaseAdminClient();
 
-    const { error: removeError } = await supabase.storage
+    const { error: removeError } = await adminSupabase.storage
       .from(MEDIA_LIBRARY_BUCKET)
       .remove([current.file_name]);
 
     if (removeError) {
+      if (this.isMissingMediaLibraryBucketError(removeError)) {
+        throw this.createMissingMediaLibraryBucketError();
+      }
       throw new AppError(removeError.message, "MEDIA_DELETE_FAILED", 500);
     }
 
-    await this.mediaLibraryRepository.deleteMedia(id);
+    await this.deleteMediaRecord(adminSupabase, id);
   }
 
   private async requireMedia(id: string) {
@@ -230,6 +241,128 @@ export class MediaLibraryService {
   private async assertAdmin() {
     if (!(await isAdmin())) {
       throw new AppError("Admin access is required.", "ADMIN_REQUIRED", 403);
+    }
+  }
+
+  private async verifyMediaLibraryBucket(supabase: ReturnType<typeof createSupabaseAdminClient>) {
+    const { data: buckets, error } = await supabase.storage.listBuckets();
+
+    if (error) {
+      return;
+    }
+
+    const hasBucket = (buckets ?? []).some(
+      (bucket) =>
+        bucket.id === MEDIA_LIBRARY_BUCKET || bucket.name === MEDIA_LIBRARY_BUCKET,
+    );
+
+    if (!hasBucket) {
+      throw this.createMissingMediaLibraryBucketError();
+    }
+  }
+
+  private isMissingMediaLibraryBucketError(error: { message?: string | null }) {
+    const message = error.message?.toLowerCase() ?? "";
+    return message.includes("bucket not found");
+  }
+
+  private createMissingMediaLibraryBucketError() {
+    return new AppError(
+      'Media Storage bucket is not configured. Please create bucket "media-library" in Supabase Storage.',
+      "MEDIA_BUCKET_NOT_CONFIGURED",
+      500,
+    );
+  }
+
+  private isMissingMediaLibraryTableError(error: { code?: string | null; message?: string | null }) {
+    const message = error.message?.toLowerCase() ?? "";
+    return error.code === "PGRST205" || error.code === "42P01" || (
+      message.includes("media_library") && message.includes("schema cache")
+    );
+  }
+
+  private createMissingMediaLibraryTableError() {
+    return new AppError(
+      "Media Library database setup is missing. Run SUPABASE_MEDIA_LIBRARY_SETUP.sql in Supabase SQL Editor, then reload the PostgREST schema cache.",
+      "MEDIA_LIBRARY_TABLE_NOT_CONFIGURED",
+      500,
+    );
+  }
+
+  private async createMediaRecord(
+    supabase: ReturnType<typeof createSupabaseAdminClient>,
+    input: MediaLibraryCreateInput,
+  ) {
+    const { data, error } = await supabase
+      .from(DATABASE_TABLES.mediaLibrary)
+      .insert({
+        ...input,
+        tags: input.tags ?? [],
+      })
+      .select("*")
+      .single();
+
+    if (error) {
+      if (this.isMissingMediaLibraryTableError(error)) {
+        throw this.createMissingMediaLibraryTableError();
+      }
+      throw new AppError(error.message, "MEDIA_METADATA_CREATE_FAILED", 500);
+    }
+
+    return data as MediaLibraryItem;
+  }
+
+  private async updateMediaRecord(
+    supabase: ReturnType<typeof createSupabaseAdminClient>,
+    id: string,
+    input: MediaLibraryUpdateInput & Partial<MediaLibraryCreateInput>,
+  ) {
+    const payload: Record<string, unknown> = {};
+
+    if ("file_name" in input) payload.file_name = input.file_name;
+    if ("file_url" in input) payload.file_url = input.file_url;
+    if ("title" in input) payload.title = input.title;
+    if ("alt_text" in input) payload.alt_text = input.alt_text ?? null;
+    if ("caption" in input) payload.caption = input.caption ?? null;
+    if ("description" in input) payload.description = input.description ?? null;
+    if ("slug" in input) payload.slug = input.slug;
+    if ("tags" in input) payload.tags = input.tags ?? [];
+    if ("width" in input) payload.width = input.width ?? null;
+    if ("height" in input) payload.height = input.height ?? null;
+    if ("file_size" in input) payload.file_size = input.file_size ?? null;
+    if ("mime_type" in input) payload.mime_type = input.mime_type;
+
+    const { data, error } = await supabase
+      .from(DATABASE_TABLES.mediaLibrary)
+      .update(payload)
+      .eq("id", id)
+      .select("*")
+      .single();
+
+    if (error) {
+      if (this.isMissingMediaLibraryTableError(error)) {
+        throw this.createMissingMediaLibraryTableError();
+      }
+      throw new AppError(error.message, "MEDIA_METADATA_UPDATE_FAILED", 500);
+    }
+
+    return data as MediaLibraryItem;
+  }
+
+  private async deleteMediaRecord(
+    supabase: ReturnType<typeof createSupabaseAdminClient>,
+    id: string,
+  ) {
+    const { error } = await supabase
+      .from(DATABASE_TABLES.mediaLibrary)
+      .delete()
+      .eq("id", id);
+
+    if (error) {
+      if (this.isMissingMediaLibraryTableError(error)) {
+        throw this.createMissingMediaLibraryTableError();
+      }
+      throw new AppError(error.message, "MEDIA_METADATA_DELETE_FAILED", 500);
     }
   }
 

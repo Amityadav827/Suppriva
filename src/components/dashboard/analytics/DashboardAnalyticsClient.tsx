@@ -198,14 +198,14 @@ export function DashboardAnalyticsClient() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="min-w-0 max-w-full space-y-6 overflow-x-clip">
       {error ? (
         <div className="rounded-[20px] border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
           {error}
         </div>
       ) : null}
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end gap-3">
         <button
           type="button"
           onClick={() => void fetchOverview()}
@@ -216,129 +216,151 @@ export function DashboardAnalyticsClient() {
         </button>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid min-w-0 gap-5 md:grid-cols-2 2xl:grid-cols-3">
         {primaryCards.map((stat) => (
           <StatCard key={stat.label} {...stat} />
         ))}
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1.25fr_0.75fr]">
-        <DashboardCard
-          title="Quick Actions"
-          description="Jump straight into the high-frequency workflows for content, media, and SEO."
-        >
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {overview.quickActions.map((action) => (
-              <Link
-                key={action.href}
-                href={action.href}
-                className="group rounded-[24px] border border-border-light bg-cream px-4 py-5 transition hover:border-gold/70 hover:bg-white"
+      <div className="grid min-w-0 items-start gap-5 2xl:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
+        <div className="min-w-0">
+          <DashboardCard
+            title="Quick Actions"
+            description="Jump straight into the high-frequency workflows for content, media, and SEO."
+          >
+            <div className="grid min-w-0 gap-3 sm:grid-cols-2 2xl:grid-cols-3">
+              {overview.quickActions.map((action) => (
+                <Link
+                  key={action.href}
+                  href={action.href}
+                  className="group min-w-0 rounded-[24px] border border-border-light bg-cream px-4 py-5 transition hover:border-gold/70 hover:bg-white"
+                >
+                  <p className="font-heading text-base font-bold text-text-dark">
+                    {action.label}
+                  </p>
+                  <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    Open
+                    <ExternalLink className="size-4 transition group-hover:translate-x-0.5" />
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </DashboardCard>
+        </div>
+
+        <div className="min-w-0">
+          <DashboardCard
+            title="Storage Overview"
+            description="Live media usage snapshot across the CMS and storefront."
+          >
+            <div className="grid gap-3">
+              {[
+                ["Uploaded Images Count", overview.storage.uploadedImagesCount],
+                ["Categories Images", overview.storage.categoryImages],
+                ["Product Images", overview.storage.productImages],
+                ["Blog Images", overview.storage.blogImages],
+                ["Ingredient Images", overview.storage.ingredientImages],
+              ].map(([label, value]) => (
+                <div
+                  key={String(label)}
+                  className="flex items-center justify-between gap-4 rounded-[20px] border border-border-light bg-white px-4 py-3 text-sm"
+                >
+                  <span className="min-w-0 flex-1 leading-5 text-text-dark">{label}</span>
+                  <span className="shrink-0 font-heading text-lg font-bold text-primary">{value}</span>
+                </div>
+              ))}
+            </div>
+          </DashboardCard>
+        </div>
+      </div>
+
+      <div className="grid min-w-0 items-start gap-6 2xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+        <div className="min-w-0">
+          <DashboardCard
+            title="Click Trend Chart"
+            description="Affiliate click activity over the last 30 days."
+          >
+            <BarChart
+              values={overview.affiliate.trend.map((item) => item.clicks)}
+              labels={overview.affiliate.trend.map((item) => item.label)}
+            />
+          </DashboardCard>
+        </div>
+        <div className="min-w-0">
+          <DashboardCard title="Top Products Chart" description="Products ranked by tracked affiliate clicks.">
+            <RankingChart
+              rows={overview.affiliate.topProducts.map((item) => ({
+                label: item.product_title,
+                value: item.clicks,
+              }))}
+            />
+          </DashboardCard>
+        </div>
+      </div>
+
+      <div className="grid min-w-0 items-start gap-6 2xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+        <div className="min-w-0">
+          <DashboardCard
+            title="Subscriber Growth Chart"
+            description="Newsletter subscriber growth over the last 30 days."
+          >
+            <BarChart
+              values={overview.newsletter.growth.map((item) => item.subscribers)}
+              labels={overview.newsletter.growth.map((item) => item.label)}
+            />
+          </DashboardCard>
+        </div>
+        <div className="min-w-0">
+          <DashboardCard title="Recent Click Activity">
+            <RecentClicks clicks={overview.affiliate.recentClicks} />
+          </DashboardCard>
+        </div>
+      </div>
+
+      <div className="grid min-w-0 items-start gap-6 2xl:grid-cols-2">
+        <div className="min-w-0">
+          <DashboardCard title="Recent Subscribers">
+            <div className="mb-4 flex flex-wrap justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => exportSubscribersCsv(overview.newsletter.recentSubscribers)}
+                className="inline-flex min-h-11 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-xs font-semibold text-primary transition hover:border-gold/70"
               >
-                <p className="font-heading text-base font-bold text-text-dark">
-                  {action.label}
-                </p>
-                <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  Open
-                  <ExternalLink className="size-4 transition group-hover:translate-x-0.5" />
-                </p>
-              </Link>
-            ))}
-          </div>
-        </DashboardCard>
-
-        <DashboardCard
-          title="Storage Overview"
-          description="Live media usage snapshot across the CMS and storefront."
-        >
-          <div className="grid gap-3">
-            {[
-              ["Uploaded Images Count", overview.storage.uploadedImagesCount],
-              ["Categories Images", overview.storage.categoryImages],
-              ["Product Images", overview.storage.productImages],
-              ["Blog Images", overview.storage.blogImages],
-              ["Ingredient Images", overview.storage.ingredientImages],
-            ].map(([label, value]) => (
-              <div
-                key={String(label)}
-                className="flex items-center justify-between rounded-[20px] border border-border-light bg-white px-4 py-3 text-sm"
-              >
-                <span className="font-medium text-text-dark">{label}</span>
-                <span className="font-heading text-lg font-bold text-primary">{value}</span>
-              </div>
-            ))}
-          </div>
-        </DashboardCard>
+                <Download className="size-4" />
+                Export CSV
+              </button>
+            </div>
+            <RecentSubscribers subscribers={overview.newsletter.recentSubscribers} />
+          </DashboardCard>
+        </div>
+        <div className="min-w-0">
+          <DashboardCard title="Category Performance Chart">
+            <RankingChart
+              rows={overview.affiliate.topCategories.map((item) => ({
+                label: item.category,
+                value: item.clicks,
+              }))}
+            />
+          </DashboardCard>
+        </div>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <DashboardCard
-          title="Click Trend Chart"
-          description="Affiliate click activity over the last 30 days."
-        >
-          <BarChart
-            values={overview.affiliate.trend.map((item) => item.clicks)}
-            labels={overview.affiliate.trend.map((item) => item.label)}
-          />
-        </DashboardCard>
-        <DashboardCard title="Top Products Chart" description="Products ranked by tracked affiliate clicks.">
-          <RankingChart
-            rows={overview.affiliate.topProducts.map((item) => ({
-              label: item.product_title,
-              value: item.clicks,
-            }))}
-          />
-        </DashboardCard>
-      </div>
-
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <DashboardCard
-          title="Subscriber Growth Chart"
-          description="Newsletter subscriber growth over the last 30 days."
-        >
-          <BarChart
-            values={overview.newsletter.growth.map((item) => item.subscribers)}
-            labels={overview.newsletter.growth.map((item) => item.label)}
-          />
-        </DashboardCard>
-        <DashboardCard title="Recent Click Activity">
-          <RecentClicks clicks={overview.affiliate.recentClicks} />
-        </DashboardCard>
-      </div>
-
-      <div className="grid gap-6 xl:grid-cols-2">
-        <DashboardCard title="Recent Subscribers">
-          <div className="mb-4 flex justify-end">
-            <button
-              type="button"
-              onClick={() => exportSubscribersCsv(overview.newsletter.recentSubscribers)}
-              className="inline-flex min-h-11 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-xs font-semibold text-primary transition hover:border-gold/70"
-            >
-              <Download className="size-4" />
-              Export CSV
-            </button>
-          </div>
-          <RecentSubscribers subscribers={overview.newsletter.recentSubscribers} />
-        </DashboardCard>
-        <DashboardCard title="Category Performance Chart">
-          <RankingChart
-            rows={overview.affiliate.topCategories.map((item) => ({
-              label: item.category,
-              value: item.clicks,
-            }))}
-          />
-        </DashboardCard>
-      </div>
-
-      <div className="grid gap-6 xl:grid-cols-3">
-        <DashboardCard title="Latest Products">
-          <RecentActivityList items={overview.recentActivity.products} />
-        </DashboardCard>
-        <DashboardCard title="Latest Blogs">
-          <RecentActivityList items={overview.recentActivity.blogs} />
-        </DashboardCard>
-        <DashboardCard title="Latest Ingredients">
-          <RecentActivityList items={overview.recentActivity.ingredients} />
-        </DashboardCard>
+      <div className="grid min-w-0 items-start gap-6 xl:grid-cols-2 2xl:grid-cols-3">
+        <div className="min-w-0">
+          <DashboardCard title="Latest Products">
+            <RecentActivityList items={overview.recentActivity.products} />
+          </DashboardCard>
+        </div>
+        <div className="min-w-0">
+          <DashboardCard title="Latest Blogs">
+            <RecentActivityList items={overview.recentActivity.blogs} />
+          </DashboardCard>
+        </div>
+        <div className="min-w-0 xl:col-span-2 2xl:col-span-1">
+          <DashboardCard title="Latest Ingredients">
+            <RecentActivityList items={overview.recentActivity.ingredients} />
+          </DashboardCard>
+        </div>
       </div>
     </div>
   );
@@ -371,7 +393,7 @@ function BarChart({ values, labels }: { values: number[]; labels: string[] }) {
   const max = Math.max(...chartValues, 1);
 
   return (
-    <div className="flex h-[320px] items-end gap-3 rounded-[24px] bg-[linear-gradient(135deg,#F7F6F2,#EAF4EC)] p-5">
+    <div className="flex h-[280px] w-full min-w-0 items-end gap-2 overflow-hidden rounded-[24px] bg-[linear-gradient(135deg,#F7F6F2,#EAF4EC)] p-4 md:h-[320px] md:gap-3 md:p-5">
       {chartValues.map((value, index) => (
         <div key={`${labels[index] ?? index}-${index}`} className="flex min-w-0 flex-1 flex-col items-center gap-2">
           <div className="flex h-full w-full items-end rounded-pill bg-white/70 p-1 shadow-[0_8px_20px_rgba(15,23,42,0.04)]">
@@ -399,8 +421,8 @@ function RankingChart({ rows }: { rows: { label: string; value: number }[] }) {
       {rows.map((row) => (
         <div key={row.label}>
           <div className="mb-2 flex justify-between gap-4 text-sm">
-            <span className="font-heading font-semibold text-text-dark">{row.label}</span>
-            <span className="text-muted">{row.value}</span>
+            <span className="min-w-0 flex-1 break-words pr-3 font-heading font-semibold text-text-dark">{row.label}</span>
+            <span className="shrink-0 text-muted">{row.value}</span>
           </div>
           <div className="h-3 overflow-hidden rounded-pill bg-soft-green">
             <div
@@ -420,7 +442,7 @@ function RecentClicks({ clicks }: { clicks: EnrichedClick[] }) {
   }
 
   return (
-    <div className="overflow-x-auto rounded-[24px] border border-border-light">
+    <div className="max-w-full overflow-x-auto rounded-[24px] border border-border-light">
       <table className="w-full min-w-[620px] text-left text-sm">
         <thead className="bg-soft-green font-heading text-text-dark">
           <tr>
@@ -461,7 +483,7 @@ function RecentSubscribers({
   }
 
   return (
-    <div className="overflow-x-auto rounded-[24px] border border-border-light">
+    <div className="max-w-full overflow-x-auto rounded-[24px] border border-border-light">
       <table className="w-full min-w-[620px] text-left text-sm">
         <thead className="bg-soft-green font-heading text-text-dark">
           <tr>
