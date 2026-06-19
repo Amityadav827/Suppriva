@@ -16,7 +16,7 @@ export function StatCard({
     <motion.article
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3 }}
-      className="rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium"
+      className="w-full max-w-full min-w-0 rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium"
     >
       <div className="flex items-start justify-between gap-4">
         <div>

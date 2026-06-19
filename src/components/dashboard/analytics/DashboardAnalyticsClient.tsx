@@ -216,13 +216,13 @@ export function DashboardAnalyticsClient() {
         </button>
       </div>
 
-      <div className="grid min-w-0 gap-5 md:grid-cols-2 2xl:grid-cols-3">
+      <div className="grid min-w-0 gap-5 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         {primaryCards.map((stat) => (
           <StatCard key={stat.label} {...stat} />
         ))}
       </div>
 
-      <div className="grid min-w-0 items-start gap-5 2xl:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
+      <div className="grid min-w-0 items-start gap-5 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         <div className="min-w-0">
           <DashboardCard
             title="Quick Actions"
@@ -274,7 +274,7 @@ export function DashboardAnalyticsClient() {
         </div>
       </div>
 
-      <div className="grid min-w-0 items-start gap-6 2xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <div className="grid min-w-0 items-start gap-6 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         <div className="min-w-0">
           <DashboardCard
             title="Click Trend Chart"
@@ -298,7 +298,7 @@ export function DashboardAnalyticsClient() {
         </div>
       </div>
 
-      <div className="grid min-w-0 items-start gap-6 2xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <div className="grid min-w-0 items-start gap-6 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         <div className="min-w-0">
           <DashboardCard
             title="Subscriber Growth Chart"
@@ -317,7 +317,7 @@ export function DashboardAnalyticsClient() {
         </div>
       </div>
 
-      <div className="grid min-w-0 items-start gap-6 2xl:grid-cols-2">
+      <div className="grid min-w-0 items-start gap-6 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         <div className="min-w-0">
           <DashboardCard title="Recent Subscribers">
             <div className="mb-4 flex flex-wrap justify-end gap-3">
@@ -345,7 +345,7 @@ export function DashboardAnalyticsClient() {
         </div>
       </div>
 
-      <div className="grid min-w-0 items-start gap-6 xl:grid-cols-2 2xl:grid-cols-3">
+      <div className="grid min-w-0 items-start gap-6 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         <div className="min-w-0">
           <DashboardCard title="Latest Products">
             <RecentActivityList items={overview.recentActivity.products} />
@@ -356,7 +356,7 @@ export function DashboardAnalyticsClient() {
             <RecentActivityList items={overview.recentActivity.blogs} />
           </DashboardCard>
         </div>
-        <div className="min-w-0 xl:col-span-2 2xl:col-span-1">
+        <div className="min-w-0">
           <DashboardCard title="Latest Ingredients">
             <RecentActivityList items={overview.recentActivity.ingredients} />
           </DashboardCard>

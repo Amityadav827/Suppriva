@@ -11,7 +11,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="h-screen overflow-hidden bg-[linear-gradient(135deg,#F7F6F2,#FFFFFF_52%,#EAF4EC)]">
-      <div className="flex h-screen">
+      <div className="flex h-screen max-w-full overflow-hidden">
         <Sidebar className="sticky top-0 hidden lg:flex" />
 
         <AnimatePresence>
@@ -39,7 +39,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           ) : null}
         </AnimatePresence>
 
-        <div className="min-w-0 flex-1 overflow-y-auto">
+        <div className="min-w-0 flex-1 overflow-x-hidden overflow-y-auto">
           <div className="sticky top-0 z-30 border-b border-border-light bg-white/78 backdrop-blur-xl">
             <div className="flex h-20 items-center gap-4 px-4 md:px-7">
               <button
@@ -54,7 +54,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <main className="px-4 py-6 md:px-7 md:py-8 lg:px-9">
+          <main className="min-w-0 max-w-full overflow-x-hidden px-4 py-6 md:px-7 md:py-8 lg:px-9">
             {children}
           </main>
         </div>
