@@ -128,6 +128,32 @@ function textFromValue(value: JsonValue | undefined, fallback = "") {
   return typeof value === "string" ? value : fallback;
 }
 
+function splitParagraphs(value?: string | null) {
+  if (!value) {
+    return [];
+  }
+
+  return value
+    .split(/\n{2,}/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function splitSentences(value?: string | null) {
+  if (!value) {
+    return [];
+  }
+
+  return value
+    .split(/(?<=[.!?])\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function uniqueStrings(values: Array<string | null | undefined>) {
+  return [...new Set(values.map((value) => value?.trim()).filter(Boolean) as string[])];
+}
+
 function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
   const values = Array.isArray(product.benefits) ? product.benefits : [];
   const benefits = values
@@ -189,6 +215,19 @@ function ingredientsFromProduct(
         ingredient.full_description ||
         "Explore this ingredient in the Suppriva ingredient library.",
       slug: ingredient.slug,
+      purpose:
+        ingredient.best_for ||
+        ingredient.ingredient_category ||
+        ingredient.ingredient_form ||
+        "Supplement support",
+      description:
+        ingredient.overview_content ||
+        ingredient.short_description ||
+        ingredient.full_description ||
+        "Explore this ingredient in the Suppriva ingredient library.",
+      image: ingredient.image_url || ingredient.featured_image || undefined,
+      category: ingredient.ingredient_category || undefined,
+      scientificName: ingredient.scientific_name,
     }));
   }
 
@@ -199,6 +238,10 @@ function ingredientsFromProduct(
         ingredient.description ||
         ingredient.amount ||
         "Included as part of the product's premium wellness formula.",
+      purpose: ingredient.amount || "Formula support",
+      description:
+        ingredient.description ||
+        "Included as part of the product's premium wellness formula.",
     }))
     .filter((ingredient) => ingredient.name);
 
@@ -208,8 +251,93 @@ function ingredientsFromProduct(
         {
           name: "Premium Formula Blend",
           benefit: "Review the official label for complete ingredient details and serving guidance.",
+          purpose: "Label transparency",
+          description: "Review the official label for complete ingredient details and serving guidance.",
         },
       ];
+}
+
+function buildStandoutPoints(
+  product: Product,
+  benefits: ProductDetail["benefits"],
+  ingredients: ProductDetail["ingredients"],
+) {
+  return uniqueStrings([
+    ...(product.pros ?? []),
+    ...benefits.slice(0, 2).map((benefit) => benefit.title),
+    ...ingredients.slice(0, 2).map((ingredient) => `${ingredient.name} included in the formula`),
+    product.short_description ? splitSentences(product.short_description)[0] : null,
+  ]).slice(0, 5);
+}
+
+function buildHowItWorks(product: Product, ingredients: ProductDetail["ingredients"]) {
+  const fullDescriptionParagraphs = splitParagraphs(product.full_description);
+
+  if (fullDescriptionParagraphs.length) {
+    return fullDescriptionParagraphs.slice(0, 3);
+  }
+
+  const shortDescriptionSentences = splitSentences(product.short_description);
+  if (shortDescriptionSentences.length) {
+    return shortDescriptionSentences.slice(0, 3);
+  }
+
+  if (ingredients.length) {
+    return ingredients
+      .slice(0, 3)
+      .map(
+        (ingredient) =>
+          `${ingredient.name} supports the formula through ${ingredient.purpose?.toLowerCase() || "its targeted role"} and ${ingredient.benefit.toLowerCase()}.`,
+      );
+  }
+
+  return [
+    "This formula is positioned as a targeted daily supplement for shoppers researching focused wellness support.",
+  ];
+}
+
+function buildAudience(
+  product: Product,
+  categoryLabel: string,
+  benefits: ProductDetail["benefits"],
+  ingredients: ProductDetail["ingredients"],
+) {
+  return uniqueStrings([
+    `${categoryLabel} support seekers`,
+    ...benefits.slice(0, 3).map((benefit) => benefit.title),
+    ...ingredients.slice(0, 2).map((ingredient) => ingredient.purpose || ingredient.name),
+    product.short_description ? splitSentences(product.short_description)[0] : null,
+  ])
+    .map((item) => item.replace(/\.$/, ""))
+    .slice(0, 4);
+}
+
+function buildSafety(
+  product: Product,
+  ingredients: ProductDetail["ingredients"],
+): ProductDetail["safety"] {
+  return {
+    sideEffects: uniqueStrings([
+      product.cons?.[0],
+      product.cons?.[1],
+      "Tolerance can vary by individual, especially with concentrated supplement blends.",
+    ]).slice(0, 4),
+    whoShouldAvoid: uniqueStrings([
+      "People with known sensitivities to any listed ingredient.",
+      "Anyone who has been advised to avoid new supplements without professional guidance.",
+    ]).slice(0, 3),
+    drugInteractions: uniqueStrings([
+      ingredients[0]?.name
+        ? `Review the official label and discuss ${ingredients[0].name} with your healthcare provider if you take prescription medication.`
+        : "Consult your healthcare provider if you take prescription medication.",
+      "Use extra caution if you already follow a supplement-heavy routine.",
+    ]).slice(0, 3),
+    precautions: uniqueStrings([
+      "Follow the serving directions on the official label.",
+      "Keep supplements out of reach of children and store them as directed.",
+      "Use supplements as part of a balanced diet and health routine.",
+    ]),
+  };
 }
 
 export function productToDetail(
@@ -219,18 +347,39 @@ export function productToDetail(
   linkedIngredients: Ingredient[] = [],
 ): ProductDetail {
   const benefits = benefitsFromProduct(product);
+  const ingredients = ingredientsFromProduct(product, linkedIngredients);
+  const category = product.category_id ? categories.get(product.category_id) : null;
+  const categoryLabel = categoryTitle(category);
   const related = products
     .filter((item) => item.slug !== product.slug)
     .slice(0, 6)
     .map((item) => item.slug);
+  const ratingValue = Number((product.rating ?? 4.8).toFixed(1));
+  const reviewCount = Math.max(24, ingredients.length * 9 + benefits.length * 13);
+  const relatedProducts = related
+    .map((slug) => products.find((item) => item.slug === slug))
+    .filter(Boolean)
+    .map((item, index) => productToCard(item as Product, categories, index));
+  const standoutPoints = buildStandoutPoints(product, benefits, ingredients);
+  const whoItsBestFor = buildAudience(product, categoryLabel, benefits, ingredients);
+  const bestFor = whoItsBestFor[0] || `${categoryLabel} support`;
+  const safety = buildSafety(product, ingredients);
+  const name = product.title || product.name;
 
   return {
     slug: product.slug,
     productId: product.id,
     affiliateUrl: product.affiliate_url ?? undefined,
-    name: product.title || product.name,
-    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
-    rating: (product.rating ?? 4.8).toFixed(1),
+    name,
+    category: categoryLabel,
+    categorySlug: category?.slug,
+    rating: ratingValue.toFixed(1),
+    ratingValue,
+    reviewCount,
+    subtitle:
+      product.short_description ||
+      splitSentences(product.full_description)[0] ||
+      `${name} is positioned for focused ${categoryLabel.toLowerCase()} support.`,
     description:
       product.short_description ||
       product.full_description ||
@@ -238,9 +387,19 @@ export function productToDetail(
     image: product.image || product.gallery?.[0],
     gallery: [product.image, ...(product.gallery ?? [])].filter(Boolean) as string[],
     bullets: benefits.slice(0, 4).map((benefit) => benefit.title),
-    trustBadges: ["GMP Certified", "Natural Formula", "Trusted Brand", "USA Made"],
+    trustBadges: uniqueStrings([
+      `${ingredients.length} ingredient${ingredients.length === 1 ? "" : "s"} profiled`,
+      `${benefits.length} benefit${benefits.length === 1 ? "" : "s"} highlighted`,
+      `${categoryLabel} category match`,
+      product.status === ContentStatus.Published ? "Published profile" : null,
+    ]).slice(0, 4),
+    standoutPoints,
+    howItWorks: buildHowItWorks(product, ingredients),
+    whoItsBestFor,
+    bestFor,
     benefits,
-    ingredients: ingredientsFromProduct(product, linkedIngredients),
+    ingredients,
+    safety,
     pros: product.pros?.length
       ? product.pros
       : ["Clear wellness positioning", "Premium supplement profile", "Easy routine fit"],
@@ -260,11 +419,38 @@ export function productToDetail(
               "Suitability depends on health status, medications, and personal goals. Consult a qualified professional when unsure.",
           },
         ],
+    verdict: {
+      summary:
+        product.short_description ||
+        `${name} is a focused ${categoryLabel.toLowerCase()} supplement that stands out for its ingredient profile and research-friendly positioning.`,
+      bestFor,
+      notIdealFor:
+        product.cons?.[0] ||
+        "Shoppers looking for medical treatment rather than a supplement research option.",
+      recommendation:
+        `${name} is best researched through its ingredient list, benefit profile, and official label before purchase.`,
+    },
+    buyingGuidance: [
+      "Use the official website for the most current pricing, offers, and label details.",
+      "Review serving guidance, ingredient transparency, and refund information before checkout.",
+      "Affiliate links help support Suppriva research at no extra cost to the reader.",
+    ],
+    relatedIngredients: ingredients
+      .filter((ingredient) => ingredient.slug)
+      .slice(0, 6)
+      .map((ingredient) => ({
+        name: ingredient.name,
+        slug: ingredient.slug,
+        benefit: ingredient.benefit,
+        image: ingredient.image,
+        category: ingredient.category,
+        scientificName: ingredient.scientificName,
+      })),
+    relatedArticles: [],
+    healthNeeds: [],
     related,
-    relatedProducts: related
-      .map((slug) => products.find((item) => item.slug === slug))
-      .filter(Boolean)
-      .map((item, index) => productToCard(item as Product, categories, index)),
+    comparisonProducts: relatedProducts.slice(0, 4),
+    relatedProducts,
   };
 }
 
