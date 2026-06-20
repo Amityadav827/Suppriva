@@ -228,7 +228,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       <h1 className="font-heading text-5xl font-extrabold leading-[0.98] text-text-dark md:text-6xl xl:text-[4.15rem]">
                         {product.name}
                       </h1>
-                      <p className="max-w-3xl text-xl leading-8 text-primary md:text-2xl">
+                      <p className="max-w-3xl text-[1rem] leading-7 text-primary">
                         {product.subtitle}
                       </p>
                     </div>
@@ -553,8 +553,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               subtitle="A premium summary section that helps readers decide whether this product belongs on their shortlist."
               tone="cream"
             >
-              <div className="grid gap-6 lg:grid-cols-[180px_minmax(0,1fr)] lg:items-start">
-                <div className="rounded-[24px] bg-white p-5 text-center ring-1 ring-black/5">
+              <div className="grid gap-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:items-stretch">
+                <div className="flex h-full flex-col items-center justify-center rounded-[24px] bg-white p-5 text-center ring-1 ring-black/5">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
                     Overall Rating
                   </p>
@@ -570,7 +570,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     ))}
                   </div>
                 </div>
-                <div className="space-y-5">
+                  <div className="flex h-full flex-col justify-center space-y-5">
                   <p className="text-lg leading-8 text-muted">{product.verdict.summary}</p>
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     <VerdictFact label="Best For" value={product.verdict.bestFor} />
@@ -709,7 +709,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 subtitle="Premium category cards that keep product readers moving into broader topical journeys."
                 tone="cream"
               >
-                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
                   {product.healthNeeds.map((item, index) => (
                     <motion.div
                       key={item.slug || item.label}
@@ -724,21 +724,14 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     >
                       <Link
                         href={item.slug ? `/category/${item.slug}` : "/categories"}
-                        className="group flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+                        className="group flex h-full flex-col items-center justify-center rounded-[24px] bg-white px-5 py-6 text-center ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
                       >
                         <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
                           <HeartPulse className="size-5" />
                         </span>
-                        <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
+                        <h3 className="mt-4 font-heading text-lg font-extrabold text-text-dark">
                           {item.label}
                         </h3>
-                        <p className="mt-3 flex-1 text-sm leading-7 text-muted">
-                          {item.description}
-                        </p>
-                        <span className="mt-5 inline-flex items-center gap-2 font-heading text-sm font-bold text-primary">
-                          Explore category
-                          <ArrowUpRight className="size-4" />
-                        </span>
                       </Link>
                     </motion.div>
                   ))}
@@ -771,7 +764,7 @@ function SidebarColumn({
   product: ProductDetail;
 }) {
   return (
-    <div className="h-fit space-y-5 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
+    <div className="h-fit space-y-5">
       <IngredientSectionNav sections={sections} />
 
       <FadeIn className={sectionCardClasses()}>
@@ -900,7 +893,7 @@ function SingleProductImageCard({
 }) {
   return (
     <FadeIn className="rounded-[32px] border border-border-light bg-white p-5 shadow-premium lg:p-6">
-      <div className="relative flex h-[380px] items-center justify-center overflow-hidden rounded-[28px] bg-gradient-to-br from-primary/[0.16] to-gold/[0.18] sm:h-[470px]">
+      <div className="relative flex h-[340px] items-center justify-center overflow-hidden rounded-[28px] bg-gradient-to-br from-primary/[0.16] to-gold/[0.18] sm:h-[420px]">
         <span
           aria-hidden="true"
           className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
@@ -911,7 +904,7 @@ function SingleProductImageCard({
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
-          className="relative h-[320px] w-[290px] sm:h-[420px] sm:w-[380px]"
+          className="relative h-[285px] w-[255px] sm:h-[360px] sm:w-[330px]"
         >
           <Image
             src={image}
@@ -922,7 +915,7 @@ function SingleProductImageCard({
             className="object-contain drop-shadow-[0_34px_42px_rgba(6,57,33,0.24)] transition duration-500 hover:scale-105"
           />
         </motion.div>
-        <div className="absolute inset-x-5 bottom-5 z-10 sm:inset-x-8 sm:bottom-6">
+        <div className="absolute inset-x-5 bottom-4 z-10 sm:inset-x-8 sm:bottom-4">
           <AffiliateCtaButton
             productId={productId}
             productSlug={productSlug}
@@ -974,10 +967,19 @@ function SafetyCard({
         {items.map((item) => (
           <li
             key={item}
-            className="flex h-full items-start gap-3 rounded-[18px] bg-white px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
+            className="flex h-full min-h-[112px] items-start gap-3 rounded-[18px] bg-white px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
           >
             <Check className="mt-1 size-4 shrink-0 text-primary" />
-            <span>{item}</span>
+            <span
+              style={{
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: 2,
+                overflow: "hidden",
+              }}
+            >
+              {item}
+            </span>
           </li>
         ))}
       </ul>
@@ -987,7 +989,7 @@ function SafetyCard({
 
 function VerdictFact({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[22px] bg-white px-4 py-4 ring-1 ring-black/5">
+    <div className="flex h-full flex-col rounded-[22px] bg-white px-4 py-4 ring-1 ring-black/5">
       <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
         {label}
       </p>
