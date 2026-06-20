@@ -160,69 +160,29 @@ export function ExpertChatWidget({
   }
 
   return (
-    <div className="relative z-20 flex flex-col items-start gap-3 pt-2 md:pt-4">
-      <div className="pointer-events-none flex flex-col items-start gap-2">
-        <motion.div
-          aria-hidden="true"
-          className="hidden md:block"
-          animate={{ opacity: [0.7, 1, 0.7], y: [0, -4, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <div className="relative pl-5">
-            <motion.p
-              className="text-left text-[20px] font-semibold leading-[1.05] text-primary [font-family:'Segoe_Print','Comic_Sans_MS',cursive]"
-              animate={{ opacity: [0.82, 1, 0.82] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              Click to open
-              <br />
-              chat window
-            </motion.p>
-            <motion.svg
-              viewBox="0 0 92 88"
-              className="absolute left-[4.6rem] top-[2.7rem] h-[78px] w-[82px] text-primary/90"
-              fill="none"
-              animate={{ x: [0, 5, 0], y: [0, 3, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <path
-                d="M8 8C30 10 49 22 48 44C47 59 54 69 68 75"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-              <path
-                d="M58 63L69 77L82 63"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </motion.svg>
-          </div>
-        </motion.div>
-
+    <>
+      <div className="fixed bottom-4 left-4 z-[60] md:bottom-6 md:left-6">
         <motion.button
           type="button"
           onClick={() => setIsOpen(true)}
           aria-label="Ask an Expert"
           whileTap={{ scale: 0.96 }}
           animate={{
-            y: [0, -10, 0],
-            scale: [1, 1.05, 1],
+            y: [0, -8, 0],
+            scale: [1, 1.04, 1],
           }}
           transition={{
-            duration: 4.2,
+            duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="pointer-events-auto relative ml-6 grid size-[60px] place-items-center rounded-full border border-white/60 bg-[linear-gradient(180deg,#0A5535_0%,#0B5D3B_48%,#08492E_100%)] text-white shadow-[0_26px_70px_rgba(11,93,59,0.34)] ring-[14px] ring-[#EAF4EC]/90 transition hover:shadow-[0_30px_80px_rgba(11,93,59,0.42)] md:size-[68px]"
+          className="relative grid size-14 place-items-center rounded-full border border-white/60 bg-[linear-gradient(180deg,#0A5535_0%,#0B5D3B_48%,#08492E_100%)] text-white shadow-[0_22px_60px_rgba(11,93,59,0.34)] ring-[10px] ring-[#EAF4EC]/90 transition hover:shadow-[0_28px_70px_rgba(11,93,59,0.4)] md:size-16 md:ring-[12px]"
         >
           <span
             aria-hidden="true"
             className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.26),rgba(255,255,255,0))]"
           />
-          <MessageCircleMore className="relative z-10 size-7 md:size-7.5" />
+          <MessageCircleMore className="relative z-10 size-6 md:size-7" />
         </motion.button>
       </div>
 
@@ -233,22 +193,22 @@ export function ExpertChatWidget({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="fixed bottom-4 left-4 right-4 z-[60] max-h-[calc(100dvh-2rem)] overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] sm:left-auto sm:right-5 sm:w-[calc(100vw-2rem)] sm:max-w-[400px] sm:origin-bottom-right md:absolute md:bottom-auto md:left-0 md:right-auto md:top-full md:mt-4 md:w-[392px] md:max-w-[min(392px,calc(100vw-6rem))] md:max-h-[80vh] md:origin-top-left"
+            className="fixed bottom-[5.5rem] left-4 right-4 z-[70] max-h-[calc(100dvh-7rem)] overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] sm:left-4 sm:right-auto sm:w-[calc(100vw-2rem)] sm:max-w-[400px] sm:origin-bottom-left md:bottom-[6rem] md:left-6 md:w-[392px] md:max-w-[392px] md:max-h-[80vh]"
             role="dialog"
             aria-label="Ask Our Supplement Expert"
           >
             <div className="flex max-h-[inherit] flex-col md:max-h-none">
-              <div className="bg-[linear-gradient(180deg,#074A2F_0%,#0A5535_55%,#0B5D3B_100%)] px-4 py-3.5 text-white md:px-5 md:py-3.5">
+              <div className="bg-[linear-gradient(180deg,#074A2F_0%,#0A5535_55%,#0B5D3B_100%)] px-4 py-3 text-white md:px-5 md:py-3">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-3">
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/12 shadow-[0_10px_22px_rgba(0,0,0,0.16)]">
-                      <Stethoscope className="size-4.5 text-white" aria-hidden="true" />
+                    <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/12 shadow-[0_10px_22px_rgba(0,0,0,0.16)]">
+                      <Stethoscope className="size-4 text-white" aria-hidden="true" />
                     </span>
                     <div className="min-w-0">
-                      <h2 className="font-heading text-lg font-extrabold leading-tight md:text-[1.1rem]">
+                      <h2 className="font-heading text-base font-extrabold leading-tight md:text-[1rem]">
                         Ask Our Supplement Expert
                       </h2>
-                      <p className="mt-0.5 text-xs font-medium text-white/78">
+                      <p className="mt-0.5 text-[11px] font-medium text-white/78">
                         We&apos;re here to help you!
                       </p>
                     </div>
@@ -274,12 +234,12 @@ export function ExpertChatWidget({
                 </div>
               </div>
 
-              <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-4 md:overflow-visible md:px-5 md:pb-5 md:pt-4">
+              <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-3.5 md:overflow-visible md:px-5 md:pb-4 md:pt-3.5">
                 {isSuccess ? (
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-[24px] border border-primary/10 bg-soft-green/75 px-5 py-6 text-center shadow-[0_18px_46px_rgba(15,23,42,0.06)]"
+                    className="rounded-[24px] border border-primary/10 bg-soft-green/75 px-5 py-5 text-center shadow-[0_18px_46px_rgba(15,23,42,0.06)]"
                   >
                     <div className="mx-auto inline-flex size-16 items-center justify-center rounded-full bg-white text-primary shadow-[0_18px_42px_rgba(15,23,42,0.08)]">
                       <CheckCircle2 className="size-8" aria-hidden="true" />
@@ -295,17 +255,17 @@ export function ExpertChatWidget({
                     </p>
                   </motion.div>
                 ) : (
-                  <div className="space-y-4">
-                    <div className="rounded-[22px] border border-primary/10 bg-soft-green/70 px-4 py-3 shadow-[0_14px_36px_rgba(15,23,42,0.04)]">
-                      <p className="font-heading text-[0.95rem] font-bold text-text-dark">
+                  <div className="space-y-3">
+                    <div className="rounded-[20px] border border-primary/10 bg-soft-green/70 px-4 py-2.5 shadow-[0_14px_36px_rgba(15,23,42,0.04)]">
+                      <p className="font-heading text-[0.92rem] font-bold text-text-dark">
                         Hi! How can we help you today?
                       </p>
-                      <p className="mt-1 text-[13px] leading-5 text-muted">
+                      <p className="mt-0.5 text-[12px] leading-5 text-muted">
                         Our supplement expert will get back to you as soon as possible.
                       </p>
                     </div>
 
-                    <form className="space-y-3.5" onSubmit={submitQuery}>
+                    <form className="space-y-3" onSubmit={submitQuery}>
                       <input type="hidden" value={productName} name="product_name" readOnly />
                       <input type="hidden" value={resolvedProductUrl} name="product_url" readOnly />
 
@@ -361,7 +321,7 @@ export function ExpertChatWidget({
                         <textarea
                           value={form.message}
                           onChange={(event) => updateForm("message", event.target.value)}
-                          className={`${inputClasses(Boolean(errors.message))} min-h-[120px] resize-none py-3.5 md:min-h-[116px]`}
+                          className={`${inputClasses(Boolean(errors.message))} min-h-[110px] resize-none py-3 md:min-h-[104px]`}
                           placeholder="Write your question here..."
                         />
                       </FormField>
@@ -377,7 +337,7 @@ export function ExpertChatWidget({
                         disabled={isSubmitting}
                         whileHover={{ y: -2, scale: 1.01 }}
                         whileTap={{ scale: 0.985 }}
-                        className="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#0A5535_0%,#0B5D3B_55%,#0E7A4F_100%)] px-5 font-heading text-[0.98rem] font-semibold text-white shadow-[0_20px_54px_rgba(11,93,59,0.22)] transition hover:shadow-[0_26px_68px_rgba(11,93,59,0.28)] disabled:cursor-not-allowed disabled:opacity-75"
+                        className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#0A5535_0%,#0B5D3B_55%,#0E7A4F_100%)] px-5 font-heading text-[0.96rem] font-semibold text-white shadow-[0_20px_54px_rgba(11,93,59,0.22)] transition hover:shadow-[0_26px_68px_rgba(11,93,59,0.28)] disabled:cursor-not-allowed disabled:opacity-75"
                       >
                         {isSubmitting ? (
                           <>
@@ -392,7 +352,7 @@ export function ExpertChatWidget({
                         )}
                       </motion.button>
 
-                      <p className="px-1 text-[13px] leading-6 text-muted">
+                      <p className="px-1 text-[12px] leading-5 text-muted">
                         Your information is secure and will only be used to respond to
                         your query.
                       </p>
@@ -404,12 +364,12 @@ export function ExpertChatWidget({
           </motion.aside>
         ) : null}
       </AnimatePresence>
-    </div>
+    </>
   );
 }
 
 function inputClasses(hasError: boolean) {
-  return `min-h-[54px] w-full rounded-[20px] border bg-white pl-11 pr-4 text-[15px] text-text-dark outline-none transition placeholder:text-muted/70 focus:border-primary/45 focus:shadow-[0_0_0_4px_rgba(11,93,59,0.08)] ${
+  return `min-h-[52px] w-full rounded-[18px] border bg-white pl-11 pr-4 text-[14px] text-text-dark outline-none transition placeholder:text-muted/70 focus:border-primary/45 focus:shadow-[0_0_0_4px_rgba(11,93,59,0.08)] ${
     hasError ? "border-red-300 bg-red-50/40" : "border-border-light hover:border-primary/20"
   }`;
 }
