@@ -22,10 +22,14 @@ export function AffiliateCtaButton({
   productId,
   productSlug,
   affiliateUrl = "/products",
+  label = "Visit Official Website",
+  className = "",
 }: {
   productId?: string;
   productSlug: string;
   affiliateUrl?: string;
+  label?: string;
+  className?: string;
 }) {
   const sourcePage = useMemo(() => `/product/${productSlug}`, [productSlug]);
 
@@ -58,9 +62,9 @@ export function AffiliateCtaButton({
       whileHover={{ scale: 1.025, y: -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.3 }}
-      className="mt-8 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-7 font-heading text-sm font-semibold text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)] sm:w-auto"
+      className={`mt-8 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-7 font-heading text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)] sm:w-auto ${className}`.trim()}
     >
-      Visit Official Website
+      {label}
       <ArrowRight className="size-4" aria-hidden="true" />
     </motion.a>
   );

@@ -26,7 +26,6 @@ import { motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { AffiliateCtaButton } from "@/components/product-detail/AffiliateCtaButton";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
-import { ProductGallery } from "@/components/product-detail/ProductGallery";
 import { ProsCons } from "@/components/product-detail/ProsCons";
 import { RelatedProductsSlider } from "@/components/product-detail/RelatedProductsSlider";
 import {
@@ -75,6 +74,8 @@ function sectionCardClasses(tone: "white" | "cream" = "white") {
 
 export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
   const faqColumns = splitIntoColumns(product.faqs, 2);
+  const heroImage =
+    product.image || product.gallery?.[0] || "/assets/hero-supplements.webp";
   const whatIsParagraphs = [
     product.description,
     `${product.name} is positioned in the ${product.category.toLowerCase()} category and is typically considered by readers comparing ingredient depth, benefit focus, and day-to-day usability.`,
@@ -169,32 +170,51 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
           <span className="font-heading font-semibold text-text-dark">{product.name}</span>
         </nav>
 
-        <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
           <div className="min-w-0 space-y-8 md:space-y-10">
             <section
               id="hero"
               className={sectionCardClasses()}
             >
               <div className="grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)] lg:items-start">
-                <FadeIn className="min-w-0">
-                  <ProductGallery
+                <div className="min-w-0 space-y-5">
+                  <SingleProductImageCard
                     productName={product.name}
-                    images={
-                      product.gallery?.length
-                        ? product.gallery
-                        : product.image
-                          ? [product.image]
-                          : []
-                    }
+                    image={heroImage}
                   />
-                </FadeIn>
+                  <FadeIn className="mx-auto w-full max-w-[520px] rounded-[28px] border border-black/5 bg-white/94 p-5 text-center shadow-[0_18px_48px_rgba(15,23,42,0.06)] md:p-6">
+                    <AffiliateCtaButton
+                      productId={product.productId}
+                      productSlug={product.slug}
+                      affiliateUrl={product.affiliateUrl}
+                      label="Buy Now"
+                      className="mt-0 w-full sm:w-full"
+                    />
+                    <div className="mt-5 space-y-3 text-left">
+                      <p className="text-center font-heading text-sm font-bold text-text-dark">
+                        Go to official page
+                      </p>
+                      <div className="space-y-2.5">
+                        {[
+                          "Fast access to official ordering",
+                          "Quality and safety details are easy to review",
+                          "Checkout is handled on the official product page",
+                        ].map((item) => (
+                          <div key={item} className="flex items-start gap-3">
+                            <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                              <Check className="size-4" aria-hidden="true" />
+                            </span>
+                            <p className="text-sm leading-6 text-muted">{item}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </FadeIn>
+                </div>
 
                 <div className="min-w-0 space-y-6">
                   <FadeIn className="space-y-5">
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-                        Featured Product
-                      </span>
                       <Link
                         href={
                           product.categorySlug
@@ -233,15 +253,6 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           out of 5 ({product.reviewCount} reviews)
                         </span>
                       </div>
-                      {product.trustBadges.map((badge) => (
-                        <span
-                          key={badge}
-                          className="inline-flex items-center gap-2 rounded-pill bg-white px-3 py-1.5 text-xs font-semibold text-muted ring-1 ring-black/6"
-                        >
-                          <BadgeCheck className="size-4 text-primary" />
-                          {badge}
-                        </span>
-                      ))}
                     </div>
 
                     <p className="max-w-3xl text-lg leading-8 text-muted">
@@ -265,23 +276,11 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     ))}
                   </FadeIn>
 
-                  <FadeIn className="flex flex-wrap items-center gap-4">
-                    <AffiliateCtaButton
-                      productId={product.productId}
-                      productSlug={product.slug}
-                      affiliateUrl={product.affiliateUrl}
-                    />
-                    <p className="max-w-2xl text-sm leading-7 text-muted">
-                      Suppriva may earn from qualifying purchases. Our review structure stays
-                      focused on product research, ingredient transparency, and practical
-                      comparison.
-                    </p>
-                  </FadeIn>
                 </div>
               </div>
             </section>
 
-            <div className="xl:hidden">
+            <div className="hidden md:block lg:hidden">
               <SidebarColumn
                 sections={sections}
                 sidebarFacts={sidebarFacts}
@@ -295,19 +294,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               title={`What Is ${product.name}?`}
               subtitle="A clean, SEO-friendly review section that explains purpose, positioning, and how this supplement is typically researched by shoppers."
             >
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
-                <ContentPanel paragraphs={whatIsParagraphs} />
-                <AsideFactCard
-                  title="Research Snapshot"
-                  icon={ClipboardList}
-                  items={[
-                    product.category,
-                    `${product.ingredients.length} ingredients profiled`,
-                    `${product.benefits.length} benefit areas highlighted`,
-                    product.bestFor,
-                  ]}
-                />
-              </div>
+              <ContentPanel paragraphs={whatIsParagraphs} />
             </ReviewSection>
 
             {product.standoutPoints.length ? (
@@ -342,33 +329,21 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 title={`How ${product.name} Works`}
                 subtitle="Mechanism and ingredient interaction are presented in a cleaner research-oriented layout without changing the underlying data model."
               >
-                <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-                  <div className="space-y-4">
-                    {product.howItWorks.map((paragraph, index) => (
-                      <FadeIn
-                        key={`${paragraph.slice(0, 36)}-${index + 1}`}
-                        delay={index * 0.05}
-                        className="rounded-[24px] bg-cream/70 p-5 ring-1 ring-black/5"
-                      >
-                        <div className="flex items-start gap-4">
-                          <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white font-heading text-base font-bold text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
-                            {index + 1}
-                          </span>
-                          <p className="text-base leading-8 text-muted">{paragraph}</p>
-                        </div>
-                      </FadeIn>
-                    ))}
-                  </div>
-                  <AsideFactCard
-                    title="Formula Roles"
-                    icon={Beaker}
-                    items={product.ingredients
-                      .slice(0, 4)
-                      .map(
-                        (ingredient) =>
-                          `${ingredient.name}: ${ingredient.purpose || ingredient.benefit}`,
-                      )}
-                  />
+                <div className="space-y-4">
+                  {product.howItWorks.map((paragraph, index) => (
+                    <FadeIn
+                      key={`${paragraph.slice(0, 36)}-${index + 1}`}
+                      delay={index * 0.05}
+                      className="rounded-[24px] bg-cream/70 p-5 ring-1 ring-black/5"
+                    >
+                      <div className="flex items-start gap-4">
+                        <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white font-heading text-base font-bold text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
+                          {index + 1}
+                        </span>
+                        <p className="text-base leading-8 text-muted">{paragraph}</p>
+                      </div>
+                    </FadeIn>
+                  ))}
                 </div>
               </ReviewSection>
             ) : null}
@@ -619,38 +594,27 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               id="where-to-buy"
               icon={PackageCheck}
               title={`Where To Buy ${product.name}`}
-              subtitle="A dedicated purchase section with official-website guidance, trust reminders, and affiliate disclosure."
+              subtitle="A dedicated purchase section with official-website guidance and a direct action path for readers ready to review the offer."
             >
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-                <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
-                  <div className="space-y-4">
-                    {product.buyingGuidance.map((item) => (
-                      <div key={item} className="flex items-start gap-3">
-                        <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                          <Check className="size-4.5" />
-                        </span>
-                        <p className="text-sm leading-7 text-muted">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6">
-                    <AffiliateCtaButton
-                      productId={product.productId}
-                      productSlug={product.slug}
-                      affiliateUrl={product.affiliateUrl}
-                    />
-                  </div>
-                </FadeIn>
-                <AsideFactCard
-                  title="Purchase Trust"
-                  icon={ShieldCheck}
-                  items={[
-                    "Use the official website for authenticity and the latest offer details.",
-                    "Review ingredient transparency before checkout.",
-                    "Compare alternatives if your goals or routine differ.",
-                  ]}
-                />
-              </div>
+              <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
+                <div className="space-y-4">
+                  {product.buyingGuidance.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <Check className="size-4.5" />
+                      </span>
+                      <p className="text-sm leading-7 text-muted">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <AffiliateCtaButton
+                    productId={product.productId}
+                    productSlug={product.slug}
+                    affiliateUrl={product.affiliateUrl}
+                  />
+                </div>
+              </FadeIn>
             </ReviewSection>
 
             {product.relatedIngredients.length ? (
@@ -786,7 +750,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
             ) : null}
           </div>
 
-          <aside className="hidden xl:block xl:self-start xl:sticky xl:top-28">
+          <aside className="hidden lg:block lg:self-start lg:sticky lg:top-28">
             <SidebarColumn sections={sections} sidebarFacts={sidebarFacts} product={product} />
           </aside>
         </div>
@@ -923,34 +887,37 @@ function ContentPanel({ paragraphs }: { paragraphs: string[] }) {
   );
 }
 
-function AsideFactCard({
-  title,
-  icon: Icon,
-  items,
+function SingleProductImageCard({
+  productName,
+  image,
 }: {
-  title: string;
-  icon: typeof ClipboardList;
-  items: string[];
+  productName: string;
+  image: string;
 }) {
-  if (!items.length) {
-    return null;
-  }
-
   return (
-    <FadeIn className="rounded-[24px] bg-white p-6 ring-1 ring-black/5">
-      <span className="inline-flex size-14 items-center justify-center rounded-full bg-soft-green text-primary">
-        <Icon className="size-6" aria-hidden="true" />
-      </span>
-      <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
-      <div className="mt-5 space-y-3">
-        {items.map((item) => (
-          <div
-            key={item}
-            className="rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
-          >
-            {item}
-          </div>
-        ))}
+    <FadeIn className="rounded-[32px] border border-border-light bg-white p-5 shadow-premium lg:p-6">
+      <div className="relative flex h-[420px] items-center justify-center overflow-hidden rounded-[28px] bg-gradient-to-br from-primary/[0.16] to-gold/[0.18] sm:h-[520px]">
+        <span
+          aria-hidden="true"
+          className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
+        />
+        <span className="absolute left-1/2 top-5 z-10 -translate-x-1/2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+          Best Seller
+        </span>
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
+          className="relative h-[360px] w-[320px] sm:h-[470px] sm:w-[420px]"
+        >
+          <Image
+            src={image}
+            alt={`${productName} supplement product image`}
+            fill
+            priority
+            sizes="(max-width: 768px) 320px, 420px"
+            className="object-contain drop-shadow-[0_34px_42px_rgba(6,57,33,0.24)] transition duration-500 hover:scale-105"
+          />
+        </motion.div>
       </div>
     </FadeIn>
   );
