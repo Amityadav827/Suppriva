@@ -14,6 +14,9 @@ import {
   FlaskConical,
   HeartPulse,
   Leaf,
+  MoonStar,
+  ScanHeart,
+  Sparkle,
   PackageCheck,
   Pill,
   ShieldAlert,
@@ -21,6 +24,7 @@ import {
   Sparkles,
   Star,
   Users,
+  Dumbbell,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { ExpertChatWidget } from "@/components/product/ExpertChatWidget";
@@ -62,6 +66,36 @@ function benefitIcon(title: string) {
 
   if (normalized.includes("weight") || normalized.includes("support")) {
     return ShieldCheck;
+  }
+
+  return Leaf;
+}
+
+function healthNeedIcon(label: string) {
+  const normalized = label.toLowerCase();
+
+  if (normalized.includes("women")) {
+    return HeartPulse;
+  }
+
+  if (normalized.includes("men")) {
+    return Dumbbell;
+  }
+
+  if (normalized.includes("hair")) {
+    return Sparkle;
+  }
+
+  if (normalized.includes("weight")) {
+    return ScanHeart;
+  }
+
+  if (normalized.includes("sleep")) {
+    return MoonStar;
+  }
+
+  if (normalized.includes("heart")) {
+    return HeartPulse;
   }
 
   return Leaf;
@@ -182,9 +216,6 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                   <SingleProductImageCard
                     productName={product.name}
                     image={heroImage}
-                    productId={product.productId}
-                    productSlug={product.slug}
-                    affiliateUrl={product.affiliateUrl}
                   />
                   <FadeIn className="mx-auto w-full max-w-[520px] px-2 pt-1 md:px-3">
                     <div className="space-y-3 text-left">
@@ -271,6 +302,16 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                         </span>
                       </div>
                     ))}
+                  </FadeIn>
+
+                  <FadeIn className="pt-1">
+                    <AffiliateCtaButton
+                      productId={product.productId}
+                      productSlug={product.slug}
+                      affiliateUrl={product.affiliateUrl}
+                      label="Buy Now"
+                      className="mt-0 min-h-12 px-6 text-xs sm:w-auto"
+                    />
                   </FadeIn>
 
                 </div>
@@ -710,31 +751,35 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 tone="cream"
               >
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
-                  {product.healthNeeds.map((item, index) => (
-                    <motion.div
-                      key={item.slug || item.label}
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-80px" }}
-                      transition={{
-                        duration: 0.4,
-                        ease: "easeOut",
-                        delay: index * 0.04,
-                      }}
-                    >
-                      <Link
-                        href={item.slug ? `/category/${item.slug}` : "/categories"}
-                        className="group flex h-full flex-col items-center justify-center rounded-[24px] bg-white px-5 py-6 text-center ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+                  {product.healthNeeds.map((item, index) => {
+                    const Icon = healthNeedIcon(item.label);
+
+                    return (
+                      <motion.div
+                        key={item.slug || item.label}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-80px" }}
+                        transition={{
+                          duration: 0.4,
+                          ease: "easeOut",
+                          delay: index * 0.04,
+                        }}
                       >
-                        <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
-                          <HeartPulse className="size-5" />
-                        </span>
-                        <h3 className="mt-4 font-heading text-lg font-extrabold text-text-dark">
-                          {item.label}
-                        </h3>
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <Link
+                          href={item.slug ? `/category/${item.slug}` : "/categories"}
+                          className="group flex h-full flex-col items-center justify-center rounded-[24px] bg-white px-5 py-6 text-center ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+                        >
+                          <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
+                            <Icon className="size-5" />
+                          </span>
+                          <h3 className="mt-4 font-heading text-lg font-extrabold text-text-dark">
+                            {item.label}
+                          </h3>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </ReviewSection>
             ) : null}
@@ -881,15 +926,9 @@ function ContentPanel({ paragraphs }: { paragraphs: string[] }) {
 function SingleProductImageCard({
   productName,
   image,
-  productId,
-  productSlug,
-  affiliateUrl,
 }: {
   productName: string;
   image: string;
-  productId?: string;
-  productSlug: string;
-  affiliateUrl?: string;
 }) {
   return (
     <FadeIn className="rounded-[32px] border border-border-light bg-white p-5 shadow-premium lg:p-6">
@@ -915,15 +954,6 @@ function SingleProductImageCard({
             className="object-contain drop-shadow-[0_34px_42px_rgba(6,57,33,0.24)] transition duration-500 hover:scale-105"
           />
         </motion.div>
-        <div className="absolute inset-x-5 bottom-4 z-10 sm:inset-x-8 sm:bottom-4">
-          <AffiliateCtaButton
-            productId={productId}
-            productSlug={productSlug}
-            affiliateUrl={affiliateUrl}
-            label="Buy Now"
-            className="mt-0 w-full sm:w-full"
-          />
-        </div>
       </div>
     </FadeIn>
   );
@@ -953,6 +983,8 @@ function SafetyCard({
     return null;
   }
 
+  const visibleItems = items.slice(0, 2);
+
   return (
     <FadeIn className="flex h-full flex-col rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
       <div className="min-h-[116px]">
@@ -964,7 +996,7 @@ function SafetyCard({
         </h3>
       </div>
       <ul className="mt-5 grid flex-1 auto-rows-fr gap-3">
-        {items.map((item) => (
+        {visibleItems.map((item) => (
           <li
             key={item}
             className="flex h-full min-h-[112px] items-start gap-3 rounded-[18px] bg-white px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
