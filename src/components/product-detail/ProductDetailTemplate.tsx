@@ -178,12 +178,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               className={sectionCardClasses()}
             >
               <div className="grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)] lg:items-start">
-                <div className="min-w-0 space-y-5">
+                <div className="min-w-0 space-y-4">
                   <SingleProductImageCard
                     productName={product.name}
                     image={heroImage}
                   />
-                  <FadeIn className="mx-auto w-full max-w-[520px] rounded-[28px] border border-black/5 bg-white/94 p-5 text-center shadow-[0_18px_48px_rgba(15,23,42,0.06)] md:p-6">
+                  <FadeIn className="mx-auto w-full max-w-[520px] rounded-[28px] border border-black/5 bg-white/94 p-5 text-center shadow-[0_18px_48px_rgba(15,23,42,0.06)] md:p-6 lg:-mt-10">
                     <AffiliateCtaButton
                       productId={product.productId}
                       productSlug={product.slug}
@@ -898,7 +898,7 @@ function SingleProductImageCard({
 }) {
   return (
     <FadeIn className="rounded-[32px] border border-border-light bg-white p-5 shadow-premium lg:p-6">
-      <div className="relative flex h-[420px] items-center justify-center overflow-hidden rounded-[28px] bg-gradient-to-br from-primary/[0.16] to-gold/[0.18] sm:h-[520px]">
+      <div className="relative flex h-[380px] items-center justify-center overflow-hidden rounded-[28px] bg-gradient-to-br from-primary/[0.16] to-gold/[0.18] sm:h-[470px]">
         <span
           aria-hidden="true"
           className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
@@ -909,7 +909,7 @@ function SingleProductImageCard({
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
-          className="relative h-[360px] w-[320px] sm:h-[470px] sm:w-[420px]"
+          className="relative h-[320px] w-[290px] sm:h-[420px] sm:w-[380px]"
         >
           <Image
             src={image}

@@ -35,7 +35,7 @@ export function BackToTopButton() {
           whileHover={{ y: -4, scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
           transition={{ duration: 0.28, ease: "easeOut" }}
-          className="fixed bottom-5 right-5 z-50 grid size-12 place-items-center rounded-full border border-gold/30 bg-primary text-white shadow-[0_18px_46px_rgba(11,93,59,0.28)] transition duration-300 hover:bg-button-hover hover:shadow-[0_22px_56px_rgba(217,165,32,0.24)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:bottom-7 md:right-7 md:size-14"
+          className="fixed bottom-[5.4rem] right-5 z-50 grid size-12 place-items-center rounded-full border border-gold/30 bg-primary text-white shadow-[0_18px_46px_rgba(11,93,59,0.28)] transition duration-300 hover:bg-button-hover hover:shadow-[0_22px_56px_rgba(217,165,32,0.24)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:bottom-[6.2rem] md:right-7 md:size-14"
         >
           <ArrowUp className="size-5" aria-hidden="true" />
         </motion.button>
