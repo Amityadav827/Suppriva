@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  ChevronDown,
   CheckCircle2,
   Loader2,
   Mail,
@@ -14,7 +15,7 @@ import {
   UserRound,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { EXPERT_QUERY_TYPES } from "@/lib/validators/expert-query.validator";
 
 type ExpertChatWidgetProps = {
@@ -42,6 +43,7 @@ export function ExpertChatWidget({
   productName,
   productPath,
 }: ExpertChatWidgetProps) {
+  const questionTypeId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState<ExpertChatForm>(initialForm);
   const [errors, setErrors] = useState<Partial<Record<FieldKey, string>>>({});
@@ -49,6 +51,10 @@ export function ExpertChatWidget({
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [resolvedProductUrl, setResolvedProductUrl] = useState(productPath);
+  const [isQuestionTypeOpen, setIsQuestionTypeOpen] = useState(false);
+  const [highlightedQuestionType, setHighlightedQuestionType] = useState(0);
+  const questionTypeRef = useRef<HTMLDivElement | null>(null);
+  const questionTypeButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -73,14 +79,34 @@ export function ExpertChatWidget({
     return () => window.clearTimeout(timeout);
   }, [isSuccess]);
 
+  useEffect(() => {
+    function handlePointerDown(event: MouseEvent) {
+      if (
+        questionTypeRef.current &&
+        !questionTypeRef.current.contains(event.target as Node)
+      ) {
+        setIsQuestionTypeOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => document.removeEventListener("mousedown", handlePointerDown);
+  }, []);
+
   function updateForm<Key extends FieldKey>(key: Key, value: ExpertChatForm[Key]) {
     setForm((current) => ({ ...current, [key]: value }));
     setErrors((current) => ({ ...current, [key]: "" }));
     setSubmitError("");
+
+    if (key === "questionType") {
+      const nextIndex = EXPERT_QUERY_TYPES.findIndex((option) => option === value);
+      setHighlightedQuestionType(nextIndex >= 0 ? nextIndex : 0);
+    }
   }
 
   function minimizePanel() {
     setIsOpen(false);
+    setIsQuestionTypeOpen(false);
   }
 
   function closePanel() {
@@ -89,6 +115,55 @@ export function ExpertChatWidget({
     setSubmitError("");
     setErrors({});
     setForm(initialForm);
+    setIsQuestionTypeOpen(false);
+    setHighlightedQuestionType(0);
+  }
+
+  function selectQuestionType(option: string) {
+    updateForm("questionType", option);
+    setIsQuestionTypeOpen(false);
+    questionTypeButtonRef.current?.focus();
+  }
+
+  function handleQuestionTypeKeyDown(event: React.KeyboardEvent<HTMLButtonElement>) {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      if (!isQuestionTypeOpen) {
+        setIsQuestionTypeOpen(true);
+        return;
+      }
+
+      setHighlightedQuestionType((current) =>
+        current + 1 >= EXPERT_QUERY_TYPES.length ? 0 : current + 1,
+      );
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      if (!isQuestionTypeOpen) {
+        setIsQuestionTypeOpen(true);
+        return;
+      }
+
+      setHighlightedQuestionType((current) =>
+        current - 1 < 0 ? EXPERT_QUERY_TYPES.length - 1 : current - 1,
+      );
+    }
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      if (!isQuestionTypeOpen) {
+        setIsQuestionTypeOpen(true);
+        return;
+      }
+
+      selectQuestionType(EXPERT_QUERY_TYPES[highlightedQuestionType]);
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setIsQuestionTypeOpen(false);
+    }
   }
 
   function validateForm() {
@@ -176,13 +251,17 @@ export function ExpertChatWidget({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative grid size-14 place-items-center rounded-full border border-white/60 bg-[linear-gradient(180deg,#0A5535_0%,#0B5D3B_48%,#08492E_100%)] text-white shadow-[0_22px_60px_rgba(11,93,59,0.34)] ring-[10px] ring-[#EAF4EC]/90 transition hover:shadow-[0_28px_70px_rgba(11,93,59,0.4)] md:size-16 md:ring-[12px]"
+          className="relative grid size-[52px] place-items-center rounded-full border border-white/70 bg-[linear-gradient(180deg,#0B603C_0%,#0A5535_55%,#08492E_100%)] text-white shadow-[0_16px_36px_rgba(11,93,59,0.28)] ring-[8px] ring-[#EDF6EF]/85 backdrop-blur-sm transition hover:shadow-[0_22px_48px_rgba(11,93,59,0.34)] md:size-[56px] md:ring-[10px]"
         >
           <span
             aria-hidden="true"
-            className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.26),rgba(255,255,255,0))]"
+            className="absolute inset-[1px] rounded-full bg-[radial-gradient(circle_at_32%_22%,rgba(255,255,255,0.28),rgba(255,255,255,0.04)_45%,rgba(255,255,255,0))]"
           />
-          <MessageCircleMore className="relative z-10 size-6 md:size-7" />
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.24),inset_0_-8px_20px_rgba(0,0,0,0.08)]"
+          />
+          <MessageCircleMore className="relative z-10 size-5 md:size-[22px]" />
         </motion.button>
       </div>
 
@@ -193,7 +272,7 @@ export function ExpertChatWidget({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="fixed bottom-[5.5rem] left-4 right-4 z-[70] max-h-[calc(100dvh-7rem)] overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] sm:left-4 sm:right-auto sm:w-[calc(100vw-2rem)] sm:max-w-[400px] sm:origin-bottom-left md:bottom-[6rem] md:left-6 md:w-[392px] md:max-w-[392px] md:max-h-[80vh]"
+            className="fixed bottom-[4.75rem] left-4 right-4 z-[70] max-h-[calc(100dvh-6rem)] overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] sm:left-4 sm:right-auto sm:w-[calc(100vw-2rem)] sm:max-w-[400px] sm:origin-bottom-left md:bottom-[5.25rem] md:left-6 md:w-[392px] md:max-w-[392px] md:max-h-[80vh]"
             role="dialog"
             aria-label="Ask Our Supplement Expert"
           >
@@ -234,7 +313,7 @@ export function ExpertChatWidget({
                 </div>
               </div>
 
-              <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-3.5 md:overflow-visible md:px-5 md:pb-4 md:pt-3.5">
+              <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-5 pt-3.5 md:overflow-visible md:px-5 md:pb-5 md:pt-3.5">
                 {isSuccess ? (
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
@@ -299,18 +378,76 @@ export function ExpertChatWidget({
                         error={errors.questionType}
                         icon={<Tag className="size-4.5" aria-hidden="true" />}
                       >
-                        <select
-                          value={form.questionType}
-                          onChange={(event) => updateForm("questionType", event.target.value)}
-                          className={inputClasses(Boolean(errors.questionType))}
-                        >
-                          <option value="">What is your question about?</option>
-                          {EXPERT_QUERY_TYPES.map((option) => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
+                        <div ref={questionTypeRef} className="relative">
+                          <button
+                            ref={questionTypeButtonRef}
+                            type="button"
+                            id={questionTypeId}
+                            aria-haspopup="listbox"
+                            aria-expanded={isQuestionTypeOpen}
+                            aria-controls={`${questionTypeId}-listbox`}
+                            onClick={() => setIsQuestionTypeOpen((current) => !current)}
+                            onKeyDown={handleQuestionTypeKeyDown}
+                            className={`${inputClasses(Boolean(errors.questionType))} flex items-center justify-between text-left ${
+                              form.questionType ? "text-text-dark" : "text-muted/70"
+                            }`}
+                          >
+                            <span className="truncate">
+                              {form.questionType || "What is your question about?"}
+                            </span>
+                            <ChevronDown
+                              className={`ml-3 size-4 shrink-0 text-muted transition duration-200 ${
+                                isQuestionTypeOpen ? "rotate-180 text-primary" : ""
+                              }`}
+                              aria-hidden="true"
+                            />
+                          </button>
+
+                          <AnimatePresence>
+                            {isQuestionTypeOpen ? (
+                              <motion.div
+                                id={`${questionTypeId}-listbox`}
+                                role="listbox"
+                                aria-labelledby={questionTypeId}
+                                initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                                transition={{ duration: 0.18, ease: "easeOut" }}
+                                className="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-20 overflow-hidden rounded-[20px] border border-border-light bg-white p-2 shadow-[0_22px_58px_rgba(15,23,42,0.14)]"
+                              >
+                                {EXPERT_QUERY_TYPES.map((option, index) => {
+                                  const isSelected = form.questionType === option;
+                                  const isActive = highlightedQuestionType === index;
+
+                                  return (
+                                    <button
+                                      key={option}
+                                      type="button"
+                                      role="option"
+                                      aria-selected={isSelected}
+                                      onMouseEnter={() => setHighlightedQuestionType(index)}
+                                      onClick={() => selectQuestionType(option)}
+                                      className={`flex w-full items-center justify-between rounded-[16px] px-4 py-3 text-left text-sm transition ${
+                                        isSelected
+                                          ? "bg-primary text-white shadow-[0_10px_24px_rgba(11,93,59,0.2)]"
+                                          : isActive
+                                            ? "bg-soft-green/80 text-text-dark"
+                                            : "text-text-dark hover:bg-soft-green/60"
+                                      }`}
+                                    >
+                                      <span>{option}</span>
+                                      {isSelected ? (
+                                        <span className="inline-flex size-5 items-center justify-center rounded-full bg-white/18">
+                                          <Tag className="size-3.5" aria-hidden="true" />
+                                        </span>
+                                      ) : null}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            ) : null}
+                          </AnimatePresence>
+                        </div>
                       </FormField>
 
                       <FormField
@@ -352,7 +489,7 @@ export function ExpertChatWidget({
                         )}
                       </motion.button>
 
-                      <p className="px-1 text-[12px] leading-5 text-muted">
+                      <p className="px-2 pb-1 text-center text-[12px] leading-5 text-muted/90">
                         Your information is secure and will only be used to respond to
                         your query.
                       </p>
