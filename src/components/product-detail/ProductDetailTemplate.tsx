@@ -277,6 +277,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     ))}
                   </FadeIn>
 
+                  <ExpertChatWidget productName={product.name} productPath={product.path} />
+
                 </div>
               </div>
             </section>
@@ -756,7 +758,6 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
           </aside>
         </div>
       </div>
-      <ExpertChatWidget productName={product.name} productPath={product.path} />
     </main>
   );
 }
