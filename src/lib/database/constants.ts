@@ -43,6 +43,7 @@ export const DATABASE_TABLES = {
   productIngredients: "product_ingredients",
   newsletterSubscribers: "newsletter_subscribers",
   contactMessages: "contact_messages",
+  expertQueries: "expert_queries",
   affiliateClicks: "affiliate_clicks",
   mediaLibrary: "media_library",
   siteSettings: "site_settings",

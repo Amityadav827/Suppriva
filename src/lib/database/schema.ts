@@ -270,6 +270,21 @@ export const databaseSchema: TableSchema[] = [
     ],
   },
   {
+    table: DATABASE_TABLES.expertQueries,
+    description: "Pre-purchase expert questions submitted from product pages.",
+    columns: [
+      { name: "id", type: "uuid", primaryKey: true, default: "gen_random_uuid()" },
+      { name: "name", type: "text", indexed: true },
+      { name: "email", type: "text", indexed: true },
+      { name: "product_name", type: "text", indexed: true },
+      { name: "product_url", type: "text" },
+      { name: "question_type", type: "text", indexed: true },
+      { name: "message", type: "text" },
+      { name: "status", type: "text", default: "'new'", indexed: true },
+      { name: "created_at", type: "timestamp", default: "now()", indexed: true },
+    ],
+  },
+  {
     table: DATABASE_TABLES.affiliateClicks,
     description: "Affiliate click analytics.",
     columns: [

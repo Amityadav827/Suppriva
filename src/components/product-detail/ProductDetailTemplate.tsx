@@ -23,6 +23,7 @@ import {
   Users,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { ExpertChatWidget } from "@/components/product/ExpertChatWidget";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { AffiliateCtaButton } from "@/components/product-detail/AffiliateCtaButton";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
@@ -137,7 +138,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
   ];
 
   return (
-    <main className="relative overflow-hidden bg-cream">
+    <main className="relative overflow-x-clip bg-cream">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(234,244,236,0.95)_0%,rgba(247,246,242,0)_32%),radial-gradient(circle_at_86%_34%,rgba(217,165,32,0.15)_0%,rgba(247,246,242,0)_28%)]"
@@ -755,6 +756,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
           </aside>
         </div>
       </div>
+      <ExpertChatWidget productName={product.name} productPath={product.path} />
     </main>
   );
 }
@@ -773,7 +775,7 @@ function SidebarColumn({
   product: ProductDetail;
 }) {
   return (
-    <div className="space-y-5 h-fit">
+    <div className="h-fit space-y-5 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
       <IngredientSectionNav sections={sections} />
 
       <FadeIn className={sectionCardClasses()}>

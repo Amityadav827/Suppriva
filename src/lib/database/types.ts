@@ -207,6 +207,20 @@ export type ContactMessage = {
   created_at: Timestamp;
 };
 
+export type ExpertQueryStatus = "new" | "contacted" | "resolved";
+
+export type ExpertQuery = {
+  id: string;
+  name: string;
+  email: string;
+  product_name: string;
+  product_url: string;
+  question_type: string;
+  message: string;
+  status: ExpertQueryStatus;
+  created_at: Timestamp;
+};
+
 export type AffiliateClick = {
   id: string;
   product_id: string;
@@ -261,6 +275,7 @@ export type Database = {
   product_ingredients: ProductIngredientRelation;
   newsletter_subscribers: NewsletterSubscriber;
   contact_messages: ContactMessage;
+  expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;
   media_library: MediaLibraryItem;
   site_settings: SiteSettings;
