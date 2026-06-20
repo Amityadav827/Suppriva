@@ -16,7 +16,7 @@ export function CategoryProductCard({ product }: { product: CategoryProduct }) {
       className="group relative h-full rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium-hover focus-within:border-gold focus-within:shadow-premium-hover"
     >
       <Link
-        href={`/product/${product.slug}`}
+        href={product.href || `/product/${product.slug}`}
         aria-label={`View ${product.name}`}
         className="absolute inset-0 z-20 rounded-[28px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
       />

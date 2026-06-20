@@ -824,7 +824,7 @@ function IngredientProductCard({
   return (
     <FadeIn className="group relative h-full overflow-hidden rounded-[30px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover">
       <Link
-        href={`/product/${product.slug}`}
+        href={product.href || `/product/${product.slug}`}
         className="absolute inset-0 z-20 rounded-[30px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         aria-label={`View ${product.name}`}
       />

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ContentStatus } from "@/lib/database/constants";
 import { legalFooterLinks } from "@/lib/legal-pages";
+import { buildProductPath } from "@/lib/products/url";
 import { SITE_URL } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
@@ -37,7 +38,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const productRoutes = products
     .filter((product) => product.status === ContentStatus.Published && !product.deleted_at)
     .map((product) => ({
-      url: toUrl(`/product/${product.slug}`),
+      url: toUrl(
+        buildProductPath(
+          product.slug,
+          product.category_id
+            ? categories.find((category) => category.id === product.category_id)?.slug
+            : undefined,
+        ),
+      ),
       lastModified: new Date(product.updated_at || product.created_at),
       changeFrequency: "weekly" as const,
       priority: 0.8,

@@ -516,7 +516,7 @@ function HeroMetricCard({
 function InternalProductCard({ product }: { product: CategoryProduct }) {
   return (
     <Link
-      href={`/product/${product.slug}`}
+      href={product.href || `/product/${product.slug}`}
       className="group flex items-center gap-4 rounded-[24px] border border-border-light bg-cream/60 p-4 transition hover:-translate-y-0.5 hover:border-gold/70 hover:bg-white"
     >
       <div className="relative size-20 shrink-0 overflow-hidden rounded-[20px] bg-soft-green">

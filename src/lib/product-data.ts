@@ -1,5 +1,6 @@
 export type ProductDetail = {
   slug: string;
+  path: string;
   productId?: string;
   affiliateUrl?: string;
   image?: string;
@@ -76,6 +77,7 @@ export type ProductDetail = {
   related: string[];
   comparisonProducts: {
     slug?: string;
+    href?: string;
     name: string;
     subtitle: string;
     category: string;
@@ -86,6 +88,7 @@ export type ProductDetail = {
   }[];
   relatedProducts?: {
     slug?: string;
+    href?: string;
     name: string;
     subtitle: string;
     category: string;

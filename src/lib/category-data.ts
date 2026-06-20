@@ -1,5 +1,6 @@
 export type CategoryProduct = {
   slug: string;
+  href?: string;
   name: string;
   category: string;
   rating: string;

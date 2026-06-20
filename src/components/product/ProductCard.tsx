@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 export type ProductCardData = {
   slug?: string;
+  href?: string;
   name: string;
   subtitle: string;
   category: string;
@@ -32,7 +33,7 @@ export function ProductCard({ product }: ProductCardProps) {
     >
       {product.slug ? (
         <a
-          href={`/product/${product.slug}`}
+          href={product.href || `/product/${product.slug}`}
           aria-label={`View ${product.name}`}
           className="absolute inset-0 z-20 rounded-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         />

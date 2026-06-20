@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export type ShowcaseProductData = {
   slug?: string;
+  href?: string;
   name: string;
   category: string;
   rating: string;
@@ -35,7 +36,7 @@ export function SupplementShowcaseCard({
     >
       {product.slug ? (
         <Link
-          href={`/product/${product.slug}`}
+          href={product.href || `/product/${product.slug}`}
           aria-label={`View ${product.name}`}
           className="absolute inset-0 z-20 rounded-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         />

@@ -60,13 +60,13 @@ export function buildProductJsonLd(product: ProductDetail) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: product.rating,
-      reviewCount: 128,
+      reviewCount: product.reviewCount,
       bestRating: 5,
       worstRating: 1,
     },
     offers: {
       "@type": "Offer",
-      url: absoluteUrl(`/product/${product.slug}`),
+      url: absoluteUrl(product.path),
       availability: "https://schema.org/InStock",
       priceCurrency: "USD",
     },

@@ -6,6 +6,7 @@ import type { SearchResult } from "@/lib/search-data";
 import type { CategoryDetail, CategoryProduct } from "@/lib/category-data";
 import type { ProductDetail } from "@/lib/product-data";
 import { ContentStatus } from "@/lib/database/constants";
+import { buildProductPath } from "@/lib/products/url";
 import type {
   Blog,
   Category,
@@ -61,15 +62,17 @@ export function productToCard(
   index = 0,
 ): ProductCardData {
   const accent = accentPairs[index % accentPairs.length];
+  const category = product.category_id ? categories.get(product.category_id) : null;
 
   return {
     slug: product.slug,
+    href: buildProductPath(product.slug, category?.slug),
     name: product.title || product.name,
     subtitle:
       product.short_description ||
       product.full_description ||
       "Premium supplement pick with clean daily wellness positioning.",
-    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    category: categoryTitle(category),
     rating: (product.rating ?? 4.8).toFixed(1),
     image: product.image || product.gallery?.[0],
     glow: accent.glow,
@@ -83,11 +86,13 @@ export function productToShowcaseCard(
   index = 0,
 ): ShowcaseProductData {
   const accent = accentPairs[index % accentPairs.length];
+  const category = product.category_id ? categories.get(product.category_id) : null;
 
   return {
     slug: product.slug,
+    href: buildProductPath(product.slug, category?.slug),
     name: product.title || product.name,
-    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    category: categoryTitle(category),
     rating: (product.rating ?? 4.8).toFixed(1),
     image: product.image || product.gallery?.[0],
     accent: accent.accent,
@@ -101,11 +106,13 @@ export function productToCategoryProduct(
   index = 0,
 ): CategoryProduct {
   const accent = accentPairs[index % accentPairs.length];
+  const category = product.category_id ? categories.get(product.category_id) : null;
 
   return {
     slug: product.slug,
+    href: buildProductPath(product.slug, category?.slug),
     name: product.title || product.name,
-    category: categoryTitle(product.category_id ? categories.get(product.category_id) : null),
+    category: categoryTitle(category),
     rating: (product.rating ?? 4.8).toFixed(1),
     description:
       product.short_description ||
@@ -368,6 +375,7 @@ export function productToDetail(
 
   return {
     slug: product.slug,
+    path: buildProductPath(product.slug, category?.slug),
     productId: product.id,
     affiliateUrl: product.affiliate_url ?? undefined,
     name,
@@ -572,7 +580,10 @@ export function buildSearchResults(
         product.short_description ||
         product.full_description ||
         "Premium supplement record from Suppriva.",
-      href: `/product/${product.slug}`,
+      href: buildProductPath(
+        product.slug,
+        product.category_id ? categoryMap.get(product.category_id)?.slug : undefined,
+      ),
       image: product.image || product.gallery?.[0] || "/assets/hero-supplements.webp",
     })),
     ...categories.map((category) => ({

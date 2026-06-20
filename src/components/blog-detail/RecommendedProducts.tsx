@@ -18,7 +18,7 @@ export function RecommendedProducts({ products }: { products: ProductCardData[] 
           <ProductCard product={product} />
           {product.slug ? (
             <Link
-              href={`/product/${product.slug}`}
+              href={product.href || `/product/${product.slug}`}
               className="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-pill bg-primary px-5 font-heading text-sm font-semibold text-white transition duration-300 hover:bg-button-hover"
             >
               View Product
