@@ -29,7 +29,7 @@ export function RelatedProductsSlider({
   }
 
   return (
-    <div className="relative mt-12">
+    <div className="relative mt-12 min-w-0">
       <div className="mb-6 flex justify-end gap-3">
         <SliderButton className="related-products-prev" label="Previous products">
           <ChevronLeft className="size-5" aria-hidden="true" />
@@ -39,34 +39,39 @@ export function RelatedProductsSlider({
         </SliderButton>
       </div>
 
-      <Swiper
-        modules={[Autoplay, Navigation]}
-        navigation={{
-          prevEl: ".related-products-prev",
-          nextEl: ".related-products-next",
-        }}
-        autoplay={{
-          delay: 3800,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        loop={products.length > 3}
-        speed={650}
-        grabCursor
-        slidesPerView={1.15}
-        spaceBetween={18}
-        breakpoints={{
-          768: { slidesPerView: 2, spaceBetween: 22 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        }}
-        className="!overflow-visible"
-      >
-        {[...products, ...products].map((product, index) => (
-          <SwiperSlide key={`${product.name}-${index}`} className="!h-auto pb-3">
-            <ProductCard product={product} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="min-w-0 overflow-hidden">
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          navigation={{
+            prevEl: ".related-products-prev",
+            nextEl: ".related-products-next",
+          }}
+          autoplay={{
+            delay: 3800,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={products.length > 4}
+          watchOverflow
+          speed={650}
+          grabCursor
+          slidesPerView={1}
+          spaceBetween={18}
+          breakpoints={{
+            640: { slidesPerView: 1.2, spaceBetween: 18 },
+            768: { slidesPerView: 2, spaceBetween: 22 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
+          }}
+          className="w-full !overflow-hidden !pb-3"
+        >
+          {products.map((product) => (
+            <SwiperSlide key={product.href || product.slug || product.name} className="!h-auto">
+              <ProductCard product={product} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }

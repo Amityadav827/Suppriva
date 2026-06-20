@@ -520,7 +520,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               title="Safety Information"
               subtitle="Trust-focused safety cards help readers review side effects, who should avoid the product, possible interactions, and general precautions."
             >
-              <div className="grid gap-5 xl:grid-cols-2 2xl:grid-cols-4">
+              <div className="grid items-stretch gap-5 xl:grid-cols-2 2xl:grid-cols-4">
                 <SafetyCard
                   title="Possible Side Effects"
                   icon={CircleAlert}
@@ -981,16 +981,20 @@ function SafetyCard({
   }
 
   return (
-    <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
-      <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-white text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
-        <Icon className="size-6" aria-hidden="true" />
-      </span>
-      <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
-      <ul className="mt-5 space-y-3">
+    <FadeIn className="flex h-full flex-col rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
+      <div className="min-h-[116px]">
+        <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-white text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
+          <Icon className="size-6" aria-hidden="true" />
+        </span>
+        <h3 className="mt-4 font-heading text-xl font-extrabold leading-[1.2] text-text-dark">
+          {title}
+        </h3>
+      </div>
+      <ul className="mt-5 grid flex-1 auto-rows-fr gap-3">
         {items.map((item) => (
           <li
             key={item}
-            className="flex items-start gap-3 rounded-[18px] bg-white px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
+            className="flex h-full items-start gap-3 rounded-[18px] bg-white px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
           >
             <Check className="mt-1 size-4 shrink-0 text-primary" />
             <span>{item}</span>
