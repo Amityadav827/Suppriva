@@ -67,6 +67,17 @@ function benefitIcon(title: string) {
 
 export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
   const faqColumns = splitIntoColumns(product.faqs, 2);
+  const whatIsParagraphs = [
+    product.description,
+    `${product.name} is positioned in the ${product.category.toLowerCase()} category and is typically considered by readers comparing ingredient depth, benefit focus, and day-to-day usability.`,
+    `Consumers usually evaluate ${product.name} around goals like ${product.bestFor.toLowerCase()} while reviewing ingredient transparency and overall formula support.`,
+  ].filter(hasText) as string[];
+  const researchSnapshotItems = [
+    product.category,
+    `${product.ingredients.length} ingredients profiled`,
+    `${product.benefits.length} benefit areas highlighted`,
+    product.bestFor,
+  ];
   const sections: IngredientSectionLink[] = [
     { id: "what-is-product", label: `What Is ${product.name}?` },
     ...(product.standoutPoints.length
@@ -107,7 +118,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
 
   return (
     <main>
-      <section className="relative isolate overflow-hidden bg-cream pb-14 pt-8 md:pb-20 lg:pb-24">
+      <section className="relative isolate overflow-hidden bg-cream pb-10 pt-8 md:pb-12 lg:pb-14">
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(234,244,236,0.95)_0%,rgba(247,246,242,0)_32%),radial-gradient(circle_at_86%_34%,rgba(217,165,32,0.15)_0%,rgba(247,246,242,0)_28%)]"
@@ -226,7 +237,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </FadeIn>
             </div>
 
-            <div className="space-y-5 xl:sticky xl:top-28">
+            <div className="h-fit space-y-5 xl:sticky xl:top-28 xl:self-start">
               <IngredientSectionNav sections={sections} />
 
               <FadeIn className="rounded-[28px] bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
@@ -274,35 +285,26 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
           <div className="mt-6 xl:hidden">
             <IngredientSectionNav sections={sections} mobile />
           </div>
+
+          <div className="mt-12 grid gap-6 xl:mt-14 xl:grid-cols-[minmax(0,1fr)_300px] xl:pr-[352px]">
+            <div id="what-is-product" className="scroll-mt-28">
+              <SectionHeading
+                icon={PackageCheck}
+                title={`What Is ${product.name}?`}
+                subtitle="A clean, SEO-friendly review section that explains purpose, positioning, and how this supplement is typically researched by shoppers."
+              />
+              <ContentPanel paragraphs={whatIsParagraphs} />
+            </div>
+            <div className="hidden xl:block">
+              <AsideFactCard
+                title="Research Snapshot"
+                icon={ClipboardList}
+                items={researchSnapshotItems}
+              />
+            </div>
+          </div>
         </div>
       </section>
-
-      <SectionWrapper id="what-is-product" tone="white" className="scroll-mt-28">
-        <SectionHeading
-          icon={PackageCheck}
-          title={`What Is ${product.name}?`}
-          subtitle="A clean, SEO-friendly review section that explains purpose, positioning, and how this supplement is typically researched by shoppers."
-        />
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
-          <ContentPanel
-            paragraphs={[
-              product.description,
-              `${product.name} is positioned in the ${product.category.toLowerCase()} category and is typically considered by readers comparing ingredient depth, benefit focus, and day-to-day usability.`,
-              `Consumers usually evaluate ${product.name} around goals like ${product.bestFor.toLowerCase()} while reviewing ingredient transparency and overall formula support.`,
-            ]}
-          />
-          <AsideFactCard
-            title="Research Snapshot"
-            icon={ClipboardList}
-            items={[
-              product.category,
-              `${product.ingredients.length} ingredients profiled`,
-              `${product.benefits.length} benefit areas highlighted`,
-              product.bestFor,
-            ]}
-          />
-        </div>
-      </SectionWrapper>
 
       {product.standoutPoints.length ? (
         <SectionWrapper id="why-it-stands-out" className="scroll-mt-28">
