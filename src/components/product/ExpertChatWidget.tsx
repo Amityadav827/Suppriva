@@ -230,7 +230,7 @@ export function ExpertChatWidget({
 
   return (
     <>
-      <div className="fixed bottom-4 left-4 z-[60] md:bottom-6 md:left-6">
+      <div className="fixed bottom-4 left-2 z-[60] md:bottom-6 md:left-6">
         <motion.button
           type="button"
           onClick={() => setIsOpen(true)}
@@ -266,7 +266,7 @@ export function ExpertChatWidget({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="fixed bottom-[5.5rem] left-4 right-4 z-[70] max-h-[calc(100dvh-6.5rem)] overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] sm:left-4 sm:right-auto sm:w-[calc(100vw-2rem)] sm:max-w-[392px] sm:origin-bottom-left md:bottom-[5.9rem] md:left-6 md:w-[384px] md:max-w-[384px] md:max-h-[78vh]"
+            className="fixed bottom-[5.5rem] left-2 right-4 z-[70] max-h-[calc(100dvh-6.5rem)] overflow-hidden rounded-[28px] border border-black/6 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] sm:left-2 sm:right-auto sm:w-[calc(100vw-2rem)] sm:max-w-[392px] sm:origin-bottom-left md:bottom-[5.9rem] md:left-6 md:w-[384px] md:max-w-[384px] md:max-h-[78vh]"
             role="dialog"
             aria-label="Ask Our Supplement Expert"
           >
