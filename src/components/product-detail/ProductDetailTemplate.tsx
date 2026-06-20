@@ -182,16 +182,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                   <SingleProductImageCard
                     productName={product.name}
                     image={heroImage}
+                    productId={product.productId}
+                    productSlug={product.slug}
+                    affiliateUrl={product.affiliateUrl}
                   />
-                  <FadeIn className="mx-auto w-full max-w-[520px] rounded-[28px] border border-black/5 bg-white/94 p-5 text-center shadow-[0_18px_48px_rgba(15,23,42,0.06)] md:p-6 lg:-mt-10">
-                    <AffiliateCtaButton
-                      productId={product.productId}
-                      productSlug={product.slug}
-                      affiliateUrl={product.affiliateUrl}
-                      label="Buy Now"
-                      className="mt-0 w-full sm:w-full"
-                    />
-                    <div className="mt-5 space-y-3 text-left">
+                  <FadeIn className="mx-auto w-full max-w-[520px] px-2 pt-1 md:px-3">
+                    <div className="space-y-3 text-left">
                       <p className="text-center font-heading text-sm font-bold text-text-dark">
                         Go to official page
                       </p>
@@ -892,9 +888,15 @@ function ContentPanel({ paragraphs }: { paragraphs: string[] }) {
 function SingleProductImageCard({
   productName,
   image,
+  productId,
+  productSlug,
+  affiliateUrl,
 }: {
   productName: string;
   image: string;
+  productId?: string;
+  productSlug: string;
+  affiliateUrl?: string;
 }) {
   return (
     <FadeIn className="rounded-[32px] border border-border-light bg-white p-5 shadow-premium lg:p-6">
@@ -920,6 +922,15 @@ function SingleProductImageCard({
             className="object-contain drop-shadow-[0_34px_42px_rgba(6,57,33,0.24)] transition duration-500 hover:scale-105"
           />
         </motion.div>
+        <div className="absolute inset-x-5 bottom-5 z-10 sm:inset-x-8 sm:bottom-6">
+          <AffiliateCtaButton
+            productId={productId}
+            productSlug={productSlug}
+            affiliateUrl={affiliateUrl}
+            label="Buy Now"
+            className="mt-0 w-full sm:w-full"
+          />
+        </div>
       </div>
     </FadeIn>
   );
