@@ -224,8 +224,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           productSlug={product.slug}
                           affiliateUrl={product.affiliateUrl}
                           label="Visit Official Website"
-                          variant="outline"
-                          className="mx-auto min-h-11 !border-[#8B5CF6]/18 !bg-[#8B5CF6]/10 !px-5 !text-[10.5px] !text-[#6D28D9] hover:!border-[#8B5CF6]/22 hover:!bg-[#8B5CF6]/14 hover:!text-[#6D28D9] sm:min-h-11"
+                          variant="solid"
+                          className="mx-auto min-h-11 !px-5 !text-[10.5px] sm:min-h-11"
                         />
                       </div>
                       <div className="space-y-2.5">
