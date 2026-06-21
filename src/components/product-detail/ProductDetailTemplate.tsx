@@ -225,7 +225,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           affiliateUrl={product.affiliateUrl}
                           label="Visit Official Website"
                           variant="outline"
-                          className="mx-auto min-h-11 px-5 text-[11px] sm:min-h-11"
+                          className="mx-auto min-h-11 !border-[#E0B326] !bg-[#E0B326] !px-5 !text-[10.5px] !text-[#063921] hover:!border-[#C99809] hover:!bg-[#C99809] hover:!text-[#063921] sm:min-h-11"
                         />
                       </div>
                       <div className="space-y-2.5">
@@ -265,9 +265,9 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       <h1 className="font-heading text-5xl font-extrabold leading-[0.98] text-text-dark md:text-6xl xl:text-[4.15rem]">
                         {product.name}
                       </h1>
-                      <p className="max-w-3xl text-[1rem] leading-7 text-primary">
+                      <span className="block max-w-3xl text-[1.02rem] font-semibold leading-8 text-primary">
                         {product.subtitle}
-                      </p>
+                      </span>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 border-y border-black/6 py-4">
@@ -707,7 +707,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                   {product.comparisonProducts.map((item) => (
                     <FadeIn
                       key={item.href || item.slug || item.name}
-                      className="rounded-[24px] bg-white p-5 ring-1 ring-black/5"
+                      className="flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ring-black/5"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <span className="rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
@@ -721,11 +721,11 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
                         {item.name}
                       </h3>
-                      <p className="mt-3 text-sm leading-7 text-muted">{item.subtitle}</p>
+                      <p className="mt-3 flex-1 text-sm leading-7 text-muted">{item.subtitle}</p>
                       {item.href ? (
                         <Link
                           href={item.href}
-                          className="mt-5 inline-flex items-center gap-2 font-heading text-sm font-bold text-primary transition hover:text-primary/80"
+                          className="mt-auto inline-flex items-center gap-2 pt-5 font-heading text-sm font-bold text-primary transition hover:text-primary/80"
                         >
                           Compare product
                           <ArrowUpRight className="size-4" />
@@ -756,7 +756,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 subtitle="Premium category cards that keep product readers moving into broader topical journeys."
                 tone="cream"
               >
-                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
                   {product.healthNeeds.map((item, index) => {
                     const Icon = healthNeedIcon(item.label);
 
@@ -774,12 +774,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       >
                         <Link
                           href={item.slug ? `/category/${item.slug}` : "/categories"}
-                          className="group flex h-full flex-col items-center justify-center rounded-[24px] bg-white px-5 py-6 text-center ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+                          className="group flex h-full flex-col items-center justify-center rounded-[22px] bg-white px-4 py-5 text-center ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
                         >
-                          <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
-                            <Icon className="size-5" />
+                          <span className="inline-flex size-10 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
+                            <Icon className="size-4.5" />
                           </span>
-                          <h3 className="mt-4 font-heading text-lg font-extrabold text-text-dark">
+                          <h3 className="mt-3 font-heading text-base font-extrabold leading-tight text-text-dark">
                             {item.label}
                           </h3>
                         </Link>
@@ -943,7 +943,7 @@ function SingleProductImageCard({
           aria-hidden="true"
           className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
         />
-        <span className="absolute left-1/2 -top-[10px] z-10 -translate-x-1/2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+        <span className="absolute left-5 top-4 z-10 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
           Best Seller
         </span>
         <motion.div

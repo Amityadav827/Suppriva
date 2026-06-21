@@ -29,7 +29,7 @@ export function ProductCard({ product }: ProductCardProps) {
       viewport={{ once: true, margin: "-70px" }}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="group relative h-full rounded-card border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium-hover focus-within:border-gold focus-within:shadow-premium-hover"
+      className="group relative flex h-full flex-col rounded-card border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium-hover focus-within:border-gold focus-within:shadow-premium-hover"
     >
       {product.slug ? (
         <a
@@ -66,17 +66,17 @@ export function ProductCard({ product }: ProductCardProps) {
         </motion.div>
       </div>
 
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 flex flex-1 flex-col text-center">
         <p className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-primary/70">
           {product.category}
         </p>
         <h3 className="mt-2 font-heading text-xl font-extrabold text-text-dark">
           {product.name}
         </h3>
-        <p className="mt-2 min-h-11 text-sm leading-6 text-muted">
+        <p className="mt-2 min-h-[88px] flex-1 text-sm leading-6 text-muted">
           {product.subtitle}
         </p>
-        <div className="mt-5 flex items-center justify-center gap-3">
+        <div className="mt-auto flex items-center justify-center gap-3 pt-5">
         <span className="inline-flex items-center gap-1.5 rounded-pill border border-gold/35 bg-[linear-gradient(135deg,rgba(217,165,32,0.18),rgba(255,255,255,0.95))] px-3.5 py-2 font-heading text-sm font-bold text-text-dark shadow-[0_10px_26px_rgba(217,165,32,0.14)]">
           <Star className="size-4 fill-gold text-gold" aria-hidden="true" />
           {product.rating}
