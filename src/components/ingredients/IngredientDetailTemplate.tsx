@@ -298,26 +298,57 @@ export function IngredientDetailTemplate({
           </nav>
 
           <div className="grid gap-8 xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.08fr)_300px] xl:items-start">
-            <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
-              <div className="relative h-[320px] md:h-[430px] xl:h-[520px]">
-                <IngredientSmartImage
-                  src={heroImage}
-                  alt={ingredient.name}
-                  priority
-                  sizes="(max-width: 1279px) 100vw, 32vw"
-                  className="object-contain p-5 group-hover:scale-[1.03] md:p-7 xl:p-8"
-                />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
+            <div className="space-y-5 xl:col-start-1">
+              <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
+                <div className="relative h-[320px] md:h-[430px] xl:h-[520px]">
+                  <IngredientSmartImage
+                    src={heroImage}
+                    alt={ingredient.name}
+                    priority
+                    sizes="(max-width: 1279px) 100vw, 32vw"
+                    className="object-contain p-5 group-hover:scale-[1.03] md:p-7 xl:p-8"
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
+                </div>
+              </div>
+
+              <div className="space-y-4 px-1">
+                <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
+                  Ingredient Library
+                </span>
+
+                {(ingredient.rating || ingredient.evidence_level) ? (
+                  <div className="flex flex-wrap items-center gap-5 border-y border-black/6 py-4">
+                    {ingredient.rating ? (
+                      <div className="inline-flex items-center gap-2">
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                          Rating
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-sm font-bold text-text-dark">
+                          <Star className="size-4 fill-gold text-gold" />
+                          {ingredient.rating.toFixed(1)}
+                        </span>
+                      </div>
+                    ) : null}
+                    {ingredient.evidence_level ? (
+                      <div className="inline-flex items-center gap-2">
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                          Evidence
+                        </span>
+                        <span className="inline-flex rounded-pill bg-primary/8 px-3 py-1.5 font-heading text-sm font-bold text-primary">
+                          {ingredient.evidence_level}
+                        </span>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 xl:col-start-2">
               <div className="space-y-5">
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
-                    Ingredient Library
-                  </span>
                   {ingredient.ingredient_category ? (
                     <span className="inline-flex items-center gap-2 rounded-pill border border-[#8B5CF6]/18 bg-[#8B5CF6]/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]">
                       {ingredient.ingredient_category}
@@ -383,55 +414,6 @@ export function IngredientDetailTemplate({
                   </div>
                 ) : null}
               </div>
-
-              {(ingredient.rating || ingredient.evidence_level) ? (
-                <div className="flex flex-wrap items-center gap-5 border-y border-black/6 py-4">
-                  {ingredient.rating ? (
-                    <div className="inline-flex items-center gap-2">
-                      <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                        Rating
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-sm font-bold text-text-dark">
-                        <Star className="size-4 fill-gold text-gold" />
-                        {ingredient.rating.toFixed(1)}
-                      </span>
-                    </div>
-                  ) : null}
-                  {ingredient.evidence_level ? (
-                    <div className="inline-flex items-center gap-2">
-                      <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                        Evidence
-                      </span>
-                      <span className="inline-flex rounded-pill bg-primary/8 px-3 py-1.5 font-heading text-sm font-bold text-primary">
-                        {ingredient.evidence_level}
-                      </span>
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-
-              {metadataStrip.length ? (
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {metadataStrip.map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-start gap-3 rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
-                    >
-                      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <item.icon className="size-4.5" aria-hidden="true" />
-                      </span>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-                          {item.label}
-                        </p>
-                        <p className="mt-1 font-heading text-base font-bold text-text-dark">
-                          {item.value}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
             </div>
 
             {sections.length ? (
@@ -464,6 +446,31 @@ export function IngredientDetailTemplate({
                     <ArrowUpRight className="size-4" />
                   </Link>
                 </FadeIn>
+              </div>
+            ) : null}
+
+            {metadataStrip.length ? (
+              <div className="xl:col-span-2">
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                  {metadataStrip.map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex items-start gap-3 rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
+                    >
+                      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <item.icon className="size-4.5" aria-hidden="true" />
+                      </span>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                          {item.label}
+                        </p>
+                        <p className="mt-1 font-heading text-base font-bold text-text-dark">
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ) : null}
           </div>
