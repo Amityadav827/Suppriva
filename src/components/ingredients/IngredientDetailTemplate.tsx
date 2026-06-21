@@ -300,13 +300,13 @@ export function IngredientDetailTemplate({
           <div className="grid gap-8 xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.08fr)_300px] xl:items-start">
             <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
-              <div className="relative h-[300px] md:h-[450px] xl:h-[600px]">
+              <div className="relative h-[320px] md:h-[430px] xl:h-[520px]">
                 <IngredientSmartImage
                   src={heroImage}
                   alt={ingredient.name}
                   priority
                   sizes="(max-width: 1279px) 100vw, 32vw"
-                  className="group-hover:scale-[1.03]"
+                  className="object-contain p-5 group-hover:scale-[1.03] md:p-7 xl:p-8"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
               </div>
@@ -314,7 +314,7 @@ export function IngredientDetailTemplate({
 
             <div className="space-y-6">
               <div className="space-y-5">
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3 pt-2">
                   <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
                     Ingredient Library
                   </span>
@@ -339,6 +339,49 @@ export function IngredientDetailTemplate({
                     ingredient.seo_description ||
                     "A premium Suppriva ingredient profile for supplement research, safety review, and product discovery."}
                 </p>
+
+                {quickFacts.length ? (
+                  <div className="rounded-[24px] bg-white/80 p-4 shadow-[0_18px_42px_rgba(15,23,42,0.05)] ring-1 ring-black/5">
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <BadgeInfo className="size-5" aria-hidden="true" />
+                      </span>
+                      <div>
+                        <h2 className="font-heading text-xl font-extrabold text-text-dark">
+                          Quick Facts
+                        </h2>
+                        <p className="text-sm text-muted">Fast comparison fields for research.</p>
+                      </div>
+                    </div>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      {[
+                        {
+                          label: "Type",
+                          value: ingredient.ingredient_category ?? "General wellness",
+                          icon: Leaf,
+                        },
+                        ...quickFacts,
+                      ].map((fact) => (
+                        <div
+                          key={fact.label}
+                          className="flex min-h-[84px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                        >
+                          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+                            <fact.icon className="size-4.5" aria-hidden="true" />
+                          </span>
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                              {fact.label}
+                            </p>
+                            <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
+                              {fact.value}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
               </div>
 
               {(ingredient.rating || ingredient.evidence_level) ? (
@@ -424,48 +467,6 @@ export function IngredientDetailTemplate({
               </div>
             ) : null}
           </div>
-          {quickFacts.length ? (
-            <div className="mt-6 rounded-[24px] bg-white/80 p-4 shadow-[0_18px_42px_rgba(15,23,42,0.05)] ring-1 ring-black/5">
-              <div className="mb-3 flex items-center gap-3">
-                <span className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <BadgeInfo className="size-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-heading text-xl font-extrabold text-text-dark">
-                    Quick Facts
-                  </h2>
-                  <p className="text-sm text-muted">Fast comparison fields for research.</p>
-                </div>
-              </div>
-              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                {[
-                  {
-                    label: "Type",
-                    value: ingredient.ingredient_category ?? "General wellness",
-                    icon: Leaf,
-                  },
-                  ...quickFacts,
-                ].map((fact) => (
-                  <div
-                    key={fact.label}
-                    className="flex min-h-[84px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
-                  >
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
-                      <fact.icon className="size-4.5" aria-hidden="true" />
-                    </span>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-                        {fact.label}
-                      </p>
-                      <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
-                        {fact.value}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null}
           {sections.length ? (
             <div className="mt-6 xl:hidden">
               <IngredientSectionNav sections={sections} mobile />
@@ -713,7 +714,7 @@ function SectionHeading({
 }) {
   return (
     <FadeIn className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col items-start gap-3 md:flex-row md:items-start md:gap-4">
         <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_14px_36px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
           <Icon className="size-6" aria-hidden="true" />
         </span>
