@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { ExpertChatWidget } from "@/components/product/ExpertChatWidget";
 import { DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/seo/metadata";
 import "@/styles/tokens.css";
 import "swiper/css";
@@ -65,7 +66,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${poppins.variable}`}
     >
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <ExpertChatWidget />
+      </body>
     </html>
   );
 }

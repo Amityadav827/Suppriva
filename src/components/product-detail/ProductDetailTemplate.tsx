@@ -27,7 +27,6 @@ import {
   Dumbbell,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { ExpertChatWidget } from "@/components/product/ExpertChatWidget";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { AffiliateCtaButton } from "@/components/product-detail/AffiliateCtaButton";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
@@ -797,7 +796,6 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
           </aside>
         </div>
       </div>
-      <ExpertChatWidget productName={product.name} productPath={product.path} />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import {
   ChevronDown,
   CheckCircle2,
@@ -14,12 +15,12 @@ import {
   UserRound,
   X,
 } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { EXPERT_QUERY_TYPES } from "@/lib/validators/expert-query.validator";
 
 type ExpertChatWidgetProps = {
-  productName: string;
-  productPath: string;
+  productName?: string;
+  productPath?: string;
 };
 
 type ExpertChatForm = {
@@ -42,6 +43,7 @@ export function ExpertChatWidget({
   productName,
   productPath,
 }: ExpertChatWidgetProps) {
+  const pathname = usePathname();
   const questionTypeId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState<ExpertChatForm>(initialForm);
@@ -49,11 +51,46 @@ export function ExpertChatWidget({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const [resolvedProductUrl, setResolvedProductUrl] = useState(productPath);
+  const [resolvedProductUrl, setResolvedProductUrl] = useState(productPath || pathname || "/");
   const [isQuestionTypeOpen, setIsQuestionTypeOpen] = useState(false);
   const [highlightedQuestionType, setHighlightedQuestionType] = useState(0);
   const questionTypeRef = useRef<HTMLDivElement | null>(null);
   const questionTypeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const hiddenRoutes = new Set([
+    "/login",
+    "/register",
+    "/forgot-password",
+    "/reset-password",
+  ]);
+
+  const shouldHideWidget =
+    pathname?.startsWith("/dashboard") || hiddenRoutes.has(pathname ?? "");
+
+  const resolvedProductName = useMemo(() => {
+    if (productName?.trim()) {
+      return productName;
+    }
+
+    if (!pathname || pathname === "/") {
+      return "Suppriva Homepage";
+    }
+
+    const cleanedSegments = pathname
+      .split("/")
+      .filter(Boolean)
+      .map((segment) =>
+        segment
+          .replace(/[-_]+/g, " ")
+          .replace(/\b\w/g, (letter) => letter.toUpperCase()),
+      );
+
+    if (!cleanedSegments.length) {
+      return "Suppriva";
+    }
+
+    return cleanedSegments[cleanedSegments.length - 1];
+  }, [pathname, productName]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -61,7 +98,7 @@ export function ExpertChatWidget({
     }
 
     setResolvedProductUrl(window.location.href);
-  }, [productPath]);
+  }, [pathname, productPath]);
 
   useEffect(() => {
     if (!isSuccess) {
@@ -203,7 +240,7 @@ export function ExpertChatWidget({
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          product_name: productName,
+          product_name: resolvedProductName,
           product_url: resolvedProductUrl,
           question_type: form.questionType,
           message: form.message,
@@ -226,6 +263,10 @@ export function ExpertChatWidget({
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  if (shouldHideWidget) {
+    return null;
   }
 
   return (
@@ -331,7 +372,12 @@ export function ExpertChatWidget({
                     </div>
 
                     <form className="space-y-2.5" onSubmit={submitQuery}>
-                      <input type="hidden" value={productName} name="product_name" readOnly />
+                      <input
+                        type="hidden"
+                        value={resolvedProductName}
+                        name="product_name"
+                        readOnly
+                      />
                       <input type="hidden" value={resolvedProductUrl} name="product_url" readOnly />
 
                       <FormField
