@@ -381,11 +381,11 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       delay={index * 0.05}
                       className="rounded-[24px] bg-cream/70 p-5 ring-1 ring-black/5"
                     >
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-col items-start gap-4 md:flex-row">
                         <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white font-heading text-base font-bold text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
                           {index + 1}
                         </span>
-                        <p className="text-base leading-8 text-muted">{paragraph}</p>
+                        <p className="w-full text-base leading-8 text-muted">{paragraph}</p>
                       </div>
                     </FadeIn>
                   ))}
