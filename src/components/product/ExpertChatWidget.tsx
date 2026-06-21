@@ -492,7 +492,7 @@ export function ExpertChatWidget({
 }
 
 function inputClasses(hasError: boolean) {
-  return `min-h-[48px] w-full rounded-[18px] border bg-white pl-10 pr-4 text-[13px] text-text-dark outline-none transition placeholder:text-muted/70 focus:border-primary/45 focus:shadow-[0_0_0_4px_rgba(11,93,59,0.08)] ${
+  return `min-h-[48px] w-full rounded-[18px] border bg-white pl-[3.25rem] pr-4 text-[13px] text-text-dark outline-none transition placeholder:text-muted/70 focus:border-primary/45 focus:shadow-[0_0_0_4px_rgba(11,93,59,0.08)] ${
     hasError ? "border-red-300 bg-red-50/40" : "border-border-light hover:border-primary/20"
   }`;
 }
@@ -512,7 +512,7 @@ function FormField({
     <div className="space-y-1.5">
       <div className="relative">
         <span
-          className={`pointer-events-none absolute left-4 z-10 inline-flex text-muted ${
+          className={`pointer-events-none absolute left-5 z-10 inline-flex text-muted ${
             alignTop ? "top-4" : "top-1/2 -translate-y-1/2"
           }`}
         >

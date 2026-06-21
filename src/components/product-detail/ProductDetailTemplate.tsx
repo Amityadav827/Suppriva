@@ -219,9 +219,16 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                   />
                   <FadeIn className="mx-auto w-full max-w-[520px] px-2 pt-1 md:px-3">
                     <div className="space-y-3 text-left">
-                      <p className="text-center font-heading text-sm font-bold text-text-dark">
-                        Go to official page
-                      </p>
+                      <div className="flex justify-center">
+                        <AffiliateCtaButton
+                          productId={product.productId}
+                          productSlug={product.slug}
+                          affiliateUrl={product.affiliateUrl}
+                          label="Visit Official Website"
+                          variant="outline"
+                          className="mx-auto min-h-11 px-5 text-[11px] sm:min-h-11"
+                        />
+                      </div>
                       <div className="space-y-2.5">
                         {[
                           "Fast access to official ordering",
@@ -889,12 +896,12 @@ function SectionHeading({
   subtitle: string;
 }) {
   return (
-    <FadeIn className="mb-8 flex items-start gap-4">
+    <FadeIn className="mb-8 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-3 md:flex md:items-start">
       <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_14px_36px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
         <Icon className="size-6" aria-hidden="true" />
       </span>
-      <div className="max-w-3xl">
-        <h2 className="font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl">
+      <div className="min-w-0 max-w-3xl">
+        <h2 className="font-heading text-[2.2rem] font-extrabold leading-[1.05] text-text-dark md:text-4xl">
           {title}
         </h2>
         <p className="mt-3 text-base leading-7 text-muted">{subtitle}</p>
@@ -937,7 +944,7 @@ function SingleProductImageCard({
           aria-hidden="true"
           className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
         />
-        <span className="absolute left-1/2 top-5 z-10 -translate-x-1/2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+        <span className="absolute left-1/2 top-3 z-10 -translate-x-1/2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
           Best Seller
         </span>
         <motion.div

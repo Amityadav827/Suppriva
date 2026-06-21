@@ -24,12 +24,14 @@ export function AffiliateCtaButton({
   affiliateUrl = "/products",
   label = "Visit Official Website",
   className = "",
+  variant = "solid",
 }: {
   productId?: string;
   productSlug: string;
   affiliateUrl?: string;
   label?: string;
   className?: string;
+  variant?: "solid" | "outline";
 }) {
   const sourcePage = useMemo(() => `/product/${productSlug}`, [productSlug]);
 
@@ -53,6 +55,14 @@ export function AffiliateCtaButton({
     }
   }
 
+  const baseClasses =
+    "mt-0 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-pill px-5 font-heading text-[12px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap transition duration-300 sm:min-h-14 sm:w-auto sm:px-6";
+
+  const variantClasses =
+    variant === "outline"
+      ? "border border-primary bg-white text-primary shadow-[0_14px_34px_rgba(15,23,42,0.06)] hover:bg-primary hover:text-white hover:shadow-[0_20px_48px_rgba(11,93,59,0.18)]"
+      : "bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)]";
+
   return (
     <motion.a
       href={affiliateUrl}
@@ -62,7 +72,7 @@ export function AffiliateCtaButton({
       whileHover={{ scale: 1.025, y: -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.3 }}
-      className={`mt-0 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-7 font-heading text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)] sm:w-auto ${className}`.trim()}
+      className={`${baseClasses} ${variantClasses} ${className}`.trim()}
     >
       {label}
       <ArrowRight className="size-4" aria-hidden="true" />
