@@ -419,16 +419,16 @@ export function IngredientDetailTemplate({
                       {metadataStrip.map((item) => (
                         <div
                           key={item.label}
-                          className="flex min-h-[72px] items-start gap-3 rounded-2xl bg-white/78 px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
+                          className="flex min-h-[68px] items-start gap-2.5 rounded-2xl bg-white/78 px-3.5 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
                         >
-                          <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            <item.icon className="size-4.5" aria-hidden="true" />
+                          <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <item.icon className="size-4" aria-hidden="true" />
                           </span>
                           <div className="min-w-0 flex-1">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">
+                            <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted">
                               {item.label}
                             </p>
-                            <p className="mt-1 line-clamp-2 font-heading text-sm font-bold leading-5 text-text-dark">
+                            <p className="mt-1 line-clamp-2 font-heading text-[0.95rem] font-bold leading-5 text-text-dark">
                               {item.value}
                             </p>
                           </div>
