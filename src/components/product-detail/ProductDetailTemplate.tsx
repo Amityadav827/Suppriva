@@ -897,11 +897,11 @@ function SectionHeading({
   subtitle: string;
 }) {
   return (
-    <FadeIn className="mb-8 flex items-start gap-3 text-left md:gap-4">
+    <FadeIn className="mb-8 flex flex-col items-start gap-3 text-left md:flex-row md:items-start md:gap-4">
       <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_14px_36px_rgba(15,23,42,0.08)] ring-1 ring-black/5 md:size-14">
         <Icon className="size-5 md:size-6" aria-hidden="true" />
       </span>
-      <div className="min-w-0 max-w-3xl flex-1">
+      <div className="min-w-0 max-w-3xl w-full flex-1">
         <h2 className="font-heading text-[1.95rem] font-extrabold leading-[1.08] text-text-dark sm:text-[2.2rem] md:text-4xl">
           {title}
         </h2>
@@ -945,7 +945,7 @@ function SingleProductImageCard({
           aria-hidden="true"
           className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
         />
-        <span className="absolute left-1/2 top-0 z-10 -translate-x-1/2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+        <span className="absolute left-1/2 -top-[10px] z-10 -translate-x-1/2 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
           Best Seller
         </span>
         <motion.div
