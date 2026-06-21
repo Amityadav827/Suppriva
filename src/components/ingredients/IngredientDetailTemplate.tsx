@@ -301,6 +301,9 @@ export function IngredientDetailTemplate({
             <div className="space-y-5 xl:col-start-1">
               <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
+                <span className="absolute left-5 top-5 z-10 inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
+                  Ingredient Library
+                </span>
                 <div className="relative h-[320px] md:h-[430px] xl:h-[520px]">
                   <IngredientSmartImage
                     src={heroImage}
@@ -314,10 +317,6 @@ export function IngredientDetailTemplate({
               </div>
 
               <div className="space-y-4 px-1">
-                <span className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
-                  Ingredient Library
-                </span>
-
                 {(ingredient.rating || ingredient.evidence_level) ? (
                   <div className="flex flex-wrap items-center gap-5 border-y border-black/6 py-4">
                     {ingredient.rating ? (
@@ -413,6 +412,29 @@ export function IngredientDetailTemplate({
                     </div>
                   </div>
                 ) : null}
+
+                {metadataStrip.length ? (
+                  <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                    {metadataStrip.map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex items-start gap-3 rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
+                      >
+                        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                          <item.icon className="size-4.5" aria-hidden="true" />
+                        </span>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                            {item.label}
+                          </p>
+                          <p className="mt-1 font-heading text-base font-bold text-text-dark">
+                            {item.value}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </div>
             </div>
 
@@ -449,30 +471,6 @@ export function IngredientDetailTemplate({
               </div>
             ) : null}
 
-            {metadataStrip.length ? (
-              <div className="xl:col-span-2">
-                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                  {metadataStrip.map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-start gap-3 rounded-[20px] bg-white/72 px-4 py-4 shadow-[0_8px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
-                    >
-                      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <item.icon className="size-4.5" aria-hidden="true" />
-                      </span>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-                          {item.label}
-                        </p>
-                        <p className="mt-1 font-heading text-base font-bold text-text-dark">
-                          {item.value}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
           </div>
           {sections.length ? (
             <div className="mt-6 xl:hidden">
