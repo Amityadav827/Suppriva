@@ -1,8 +1,8 @@
 import {
   Activity,
-  BadgeCheck,
   Battery,
   BatteryCharging,
+  BookOpen,
   Brain,
   Candy,
   Compass,
@@ -16,7 +16,6 @@ import {
   LeafyGreen,
   LockKeyhole,
   Mail,
-  MapPin,
   Moon,
   Scissors,
   ShieldPlus,
@@ -362,24 +361,28 @@ export const whyChooseItems = [
 
 export const trustBadges = [
   {
-    title: "GMP Certified",
-    subtitle: "Quality-first manufacturing standards",
-    icon: BadgeCheck,
-  },
-  {
-    title: "Quality Reviewed",
-    subtitle: "Trusted wellness compliance focus",
-    icon: ShieldCheck,
-  },
-  {
-    title: "100% Natural",
-    subtitle: "Clean, health-conscious selections",
+    title: "Ingredient First",
+    subtitle:
+      "Explore supplements through ingredients, wellness goals, and functional benefits.",
     icon: Leaf,
   },
   {
-    title: "Made in USA",
-    subtitle: "Premium domestic brand partners",
-    icon: MapPin,
+    title: "Educational Content",
+    subtitle:
+      "Access easy-to-understand wellness information designed to support informed decisions.",
+    icon: BookOpen,
+  },
+  {
+    title: "Smart Comparisons",
+    subtitle:
+      "Compare ingredients, formulations, and wellness solutions to find the right fit.",
+    icon: Scale,
+  },
+  {
+    title: "Expert Guidance",
+    subtitle:
+      "Have questions before choosing a supplement? Submit your query and receive personalized guidance.",
+    icon: Stethoscope,
   },
 ];
 
