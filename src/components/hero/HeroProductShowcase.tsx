@@ -1,46 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { heroGoalPills } from "@/lib/constants";
-
-const heroGoalPillPositions: Array<{
-  label: string;
-  icon: LucideIcon;
-  className: string;
-}> = [
-  {
-    label: heroGoalPills[0].label,
-    icon: heroGoalPills[0].icon,
-    className:
-      "left-2 top-12 hidden sm:flex lg:left-0 lg:top-16",
-  },
-  {
-    label: heroGoalPills[1].label,
-    icon: heroGoalPills[1].icon,
-    className:
-      "right-0 top-8 hidden sm:flex lg:right-2",
-  },
-  {
-    label: heroGoalPills[2].label,
-    icon: heroGoalPills[2].icon,
-    className:
-      "right-2 top-44 hidden md:flex lg:right-0 lg:top-48",
-  },
-  {
-    label: heroGoalPills[3].label,
-    icon: heroGoalPills[3].icon,
-    className:
-      "bottom-28 right-8 hidden md:flex lg:bottom-32 lg:right-4",
-  },
-  {
-    label: heroGoalPills[4].label,
-    icon: heroGoalPills[4].icon,
-    className:
-      "left-2 top-1/2 hidden sm:flex -translate-y-1/2 lg:left-0",
-  },
-];
 
 export function HeroProductShowcase() {
   return (
@@ -85,41 +46,6 @@ export function HeroProductShowcase() {
           className="object-contain drop-shadow-[0_38px_42px_rgba(6,57,33,0.22)]"
         />
       </motion.div>
-
-      <div className="absolute bottom-2 left-0 z-20 hidden w-full max-w-[250px] rounded-card border border-white/70 bg-white/86 p-4 shadow-premium backdrop-blur md:block lg:left-4">
-        <p className="font-heading text-sm font-semibold text-text-dark">
-          Curated Wellness Collection
-        </p>
-        <p className="mt-1 text-sm leading-6 text-muted">
-          Discover supplements organized by ingredients, health goals, and
-          everyday wellness needs.
-        </p>
-      </div>
-
-      {heroGoalPillPositions.map((item, index) => {
-        const Icon = item.icon;
-
-        return (
-          <motion.div
-            key={item.label}
-            animate={{ y: [0, -8, 0] }}
-            transition={{
-              duration: 4.4 + index * 0.35,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: index * 0.18,
-            }}
-            className={`absolute z-20 items-center gap-2 rounded-pill border border-primary/10 bg-soft-green/88 px-4 py-3 shadow-[0_18px_44px_rgba(6,57,33,0.11)] backdrop-blur ${item.className}`}
-          >
-            <span className="grid size-8 place-items-center rounded-full bg-white/88 text-primary">
-              <Icon className="size-4" aria-hidden="true" />
-            </span>
-            <span className="font-heading text-xs font-semibold text-text-dark">
-              {item.label}
-            </span>
-          </motion.div>
-        );
-      })}
     </motion.div>
   );
 }
