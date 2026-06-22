@@ -645,18 +645,24 @@ where i.id = rel.id;
 delete from public.product_ingredients;
 
 insert into public.product_ingredients (id, product_id, ingredient_id, created_at)
-select distinct
+select
   gen_random_uuid(),
-  p.id,
-  ci.id,
+  matched.product_id,
+  matched.ingredient_id,
   now()
-from public.products p
-cross join lateral jsonb_array_elements(coalesce(p.ingredients, '[]'::jsonb)) as ingredient_item
-join _ingredient_aliases ia
-  on ia.alias_slug = public.suppriva_slugify(coalesce(ingredient_item ->> 'name', ''))
-join _canonical_ingredients ci
-  on ci.slug = ia.master_slug
-where p.deleted_at is null;
+from (
+  select distinct
+    p.id as product_id,
+    ci.id as ingredient_id
+  from public.products p
+  cross join lateral jsonb_array_elements(coalesce(p.ingredients, '[]'::jsonb)) as ingredient_item
+  join _ingredient_aliases ia
+    on ia.alias_slug = public.suppriva_slugify(coalesce(ingredient_item ->> 'name', ''))
+  join _canonical_ingredients ci
+    on ci.slug = ia.master_slug
+  where p.deleted_at is null
+) matched
+on conflict (product_id, ingredient_id) do nothing;
 
 update public.ingredients i
 set
