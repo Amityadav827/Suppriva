@@ -135,6 +135,22 @@ export type Product = {
   deleted_at: Timestamp | null;
 };
 
+export type ProductImportStatus =
+  | "pending"
+  | "completed"
+  | "completed_with_errors"
+  | "failed";
+
+export type ProductImportLog = {
+  id: string;
+  filename: string;
+  total_rows: number;
+  imported_rows: number;
+  failed_rows: number;
+  status: ProductImportStatus;
+  created_at: Timestamp;
+};
+
 export type Blog = {
   id: string;
   category_id: string | null;
@@ -268,6 +284,7 @@ export type SiteSettings = {
 export type Database = {
   categories: Category;
   products: Product;
+  product_import_logs: ProductImportLog;
   blogs: Blog;
   authors: Author;
   users: User;

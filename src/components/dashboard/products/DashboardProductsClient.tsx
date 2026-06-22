@@ -15,6 +15,7 @@ import type {
 } from "@/lib/database/types";
 import { motion } from "framer-motion";
 import { Loader2, Pencil, Plus, RefreshCw, Search, Trash2, X } from "lucide-react";
+import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 
 type ProductFormState = {
@@ -366,6 +367,13 @@ export function DashboardProductsClient() {
               <RefreshCw className="size-4" />
               Refresh
             </button>
+            <Link
+              href="/dashboard/products/bulk-import"
+              className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
+            >
+              <Plus className="size-4" />
+              Bulk Import
+            </Link>
             <button
               type="button"
               onClick={openCreateForm}
