@@ -64,7 +64,7 @@ export function NewsletterSection() {
               <h2 className="relative mt-5 max-w-3xl font-heading text-3xl font-extrabold leading-[1.18] text-white md:text-4xl lg:text-5xl lg:leading-[1.14]">
                 Stay Updated With Health & Wellness Tips
               </h2>
-              <p className="mx-auto mt-5 max-w-[590px] text-base leading-8 text-white/84 lg:mx-0">
+              <p className="mx-auto mt-5 max-w-[590px] text-base leading-8 text-emerald-50/90 lg:mx-0">
                 Subscribe to get exclusive offers, wellness tips, and the latest
                 supplement insights.
               </p>
@@ -80,7 +80,7 @@ export function NewsletterSection() {
                     key={text}
                     whileHover={{ y: -2 }}
                     transition={{ duration: 0.25 }}
-                    className="flex items-center justify-center gap-2 rounded-pill border border-white/10 bg-white/[0.065] px-4 py-3 text-sm text-white/86 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur lg:justify-start"
+                    className="flex items-center justify-center gap-2 rounded-pill border border-white/10 bg-white/[0.065] px-4 py-3 text-sm text-emerald-50/90 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur lg:justify-start"
                   >
                     <BadgeCheck
                       className="size-4 shrink-0 text-gold"

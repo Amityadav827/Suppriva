@@ -63,14 +63,14 @@ export function NewsletterForm() {
       />
 
       <div className="relative z-10">
-        <span className="inline-flex items-center gap-2 rounded-pill border border-white/12 bg-white/10 px-3.5 py-2 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-white/78">
+        <span className="inline-flex items-center gap-2 rounded-pill border border-white/12 bg-white/10 px-3.5 py-2 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-emerald-50/90">
           <Sparkles className="size-4 text-gold" aria-hidden="true" />
           Join the list
         </span>
         <h3 className="mt-5 font-heading text-2xl font-extrabold leading-tight text-white md:text-3xl">
           Get smarter supplement picks in your inbox.
         </h3>
-        <p className="mt-3 text-sm leading-6 text-white/66">
+        <p className="mt-3 text-sm leading-6 text-emerald-50/85">
           Curated guides, premium offers, and wellness insights. Built for
           clarity, not inbox clutter.
         </p>
@@ -119,11 +119,11 @@ export function NewsletterForm() {
         ) : null}
 
         <div className="mt-5 grid gap-2 sm:grid-cols-2">
-          <p className="inline-flex items-center gap-2 text-sm text-white/64">
+          <p className="inline-flex items-center gap-2 text-sm text-emerald-50/85">
             <LockKeyhole className="size-4 text-gold" aria-hidden="true" />
             Privacy protected
           </p>
-          <p className="inline-flex items-center gap-2 text-sm text-white/64">
+          <p className="inline-flex items-center gap-2 text-sm text-emerald-50/85">
             <BadgeCheck className="size-4 text-gold" aria-hidden="true" />
             No spam, unsubscribe anytime
           </p>
