@@ -30,7 +30,7 @@ export function HealthNeedsSection({
             },
           },
         }}
-        className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-14 md:grid-cols-6 md:gap-5 xl:grid-cols-12"
+        className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-14 md:grid-cols-6 md:gap-5 xl:grid-cols-11"
       >
         {categories.map((category) => (
           <CategoryCard

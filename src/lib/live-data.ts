@@ -1,4 +1,27 @@
-import { Activity, Brain, Dumbbell, Flower2, HeartPulse, Leaf, Moon, Pill } from "lucide-react";
+import {
+  Activity,
+  Bone,
+  Brain,
+  BrainCircuit,
+  Compass,
+  Dumbbell,
+  Ear,
+  Eye,
+  Flower2,
+  Hand,
+  HeartHandshake,
+  HeartPulse,
+  Leaf,
+  Moon,
+  Pill,
+  Scale,
+  Scissors,
+  Shield,
+  ShieldCheck,
+  Smile,
+  Sparkles,
+  Wind,
+} from "lucide-react";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
 import type { ProductCardData } from "@/components/product/ProductCard";
 import type { ShowcaseProductData } from "@/components/product/SupplementShowcaseCard";
@@ -25,19 +48,37 @@ const accentPairs = [
 ];
 
 const categoryIconMap = [
-  { match: "weight", icon: Activity },
-  { match: "hair", icon: Leaf },
-  { match: "men", icon: Dumbbell },
-  { match: "women", icon: Flower2 },
-  { match: "brain", icon: Brain },
-  { match: "sleep", icon: Moon },
-  { match: "gut", icon: Leaf },
-  { match: "heart", icon: HeartPulse },
+  { matches: ["immunity", "immune"], icon: ShieldCheck },
+  { matches: ["blood sugar", "diabetes"], icon: Activity },
+  { matches: ["bone", "joint"], icon: Bone },
+  { matches: ["brain", "memory"], icon: Brain },
+  { matches: ["sleep", "relaxation"], icon: Moon },
+  { matches: ["heart"], icon: HeartPulse },
+  { matches: ["gut"], icon: Leaf },
+  { matches: ["skin"], icon: Sparkles },
+  { matches: ["sexual"], icon: HeartHandshake },
+  { matches: ["energy", "athletic", "performance"], icon: Dumbbell },
+  { matches: ["prostate"], icon: Shield },
+  { matches: ["lung"], icon: Wind },
+  { matches: ["nervous"], icon: BrainCircuit },
+  { matches: ["vision"], icon: Eye },
+  { matches: ["hearing"], icon: Ear },
+  { matches: ["teeth", "gums"], icon: Smile },
+  { matches: ["nail"], icon: Hand },
+  { matches: ["general wellness", "wellness"], icon: Compass },
+  { matches: ["women"], icon: Flower2 },
+  { matches: ["men"], icon: Dumbbell },
+  { matches: ["hair"], icon: Scissors },
+  { matches: ["weight"], icon: Scale },
 ];
 
 export function getCategoryIcon(label: string) {
   const normalized = label.toLowerCase();
-  return categoryIconMap.find((item) => normalized.includes(item.match))?.icon ?? Pill;
+  return (
+    categoryIconMap.find((item) =>
+      item.matches.some((match) => normalized.includes(match)),
+    )?.icon ?? Pill
+  );
 }
 
 export function onlyPublished<T extends { status?: ContentStatus; deleted_at?: string | null }>(
