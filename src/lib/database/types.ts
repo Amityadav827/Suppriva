@@ -111,6 +111,7 @@ export type Category = {
 export type Product = {
   id: string;
   category_id: string | null;
+  ingredient_ids?: string[];
   title: string;
   name: string;
   slug: string;

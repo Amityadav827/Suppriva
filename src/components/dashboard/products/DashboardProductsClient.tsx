@@ -9,9 +9,9 @@ import { ContentStatus } from "@/lib/database/constants";
 import type {
   Category,
   FAQItem,
+  Ingredient,
   JsonValue,
   Product,
-  ProductIngredient,
 } from "@/lib/database/types";
 import { motion } from "framer-motion";
 import { Loader2, Pencil, Plus, RefreshCw, Search, Trash2, X } from "lucide-react";
@@ -21,13 +21,13 @@ type ProductFormState = {
   title: string;
   slug: string;
   category_id: string;
+  ingredient_ids: string[];
   short_description: string;
   full_description: string;
   image: string;
   gallery: string[];
   rating: string;
   affiliate_url: string;
-  ingredients: string;
   benefits: string;
   pros: string;
   cons: string;
@@ -48,17 +48,22 @@ type CategoriesResponse = {
   error?: string;
 };
 
+type IngredientsResponse = {
+  ingredients?: Ingredient[];
+  error?: string;
+};
+
 const emptyForm: ProductFormState = {
   title: "",
   slug: "",
   category_id: "",
+  ingredient_ids: [],
   short_description: "",
   full_description: "",
   image: "",
   gallery: [],
   rating: "",
   affiliate_url: "",
-  ingredients: "",
   benefits: "",
   pros: "",
   cons: "",
@@ -73,14 +78,6 @@ function lines(value: string) {
     .split("\n")
     .map((item) => item.trim())
     .filter(Boolean);
-}
-
-function parseIngredients(value: string): ProductIngredient[] {
-  return lines(value).map((item) => {
-    const [name, description = ""] = item.split("|").map((part) => part.trim());
-
-    return { name, description };
-  });
 }
 
 function parseBenefits(value: string): JsonValue[] {
@@ -104,15 +101,13 @@ function productToForm(product: Product): ProductFormState {
     title: product.title,
     slug: product.slug,
     category_id: product.category_id ?? "",
+    ingredient_ids: product.ingredient_ids ?? [],
     short_description: product.short_description ?? "",
     full_description: product.full_description ?? "",
     image: product.image ?? "",
     gallery: product.gallery,
     rating: product.rating?.toString() ?? "",
     affiliate_url: product.affiliate_url ?? "",
-    ingredients: product.ingredients
-      .map((item) => `${item.name}${item.description ? ` | ${item.description}` : ""}`)
-      .join("\n"),
     benefits: product.benefits
       .map((item) => {
         if (typeof item === "object" && item !== null && !Array.isArray(item)) {
@@ -142,13 +137,13 @@ function formToPayload(form: ProductFormState) {
     title: form.title,
     slug: form.slug || undefined,
     category_id: form.category_id || null,
+    ingredient_ids: form.ingredient_ids,
     short_description: form.short_description || null,
     full_description: form.full_description || null,
     image: form.image || null,
     gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
     rating: form.rating ? Number(form.rating) : null,
     affiliate_url: form.affiliate_url || null,
-    ingredients: parseIngredients(form.ingredients),
     benefits: parseBenefits(form.benefits),
     pros: lines(form.pros),
     cons: lines(form.cons),
@@ -170,12 +165,14 @@ function getCategoryTitle(categories: Category[], categoryId: string | null) {
 export function DashboardProductsClient() {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const [form, setForm] = useState<ProductFormState>(emptyForm);
   const [search, setSearch] = useState("");
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(true);
+  const [isIngredientsLoading, setIsIngredientsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -221,10 +218,32 @@ export function DashboardProductsClient() {
     }
   }, []);
 
+  const fetchIngredients = useCallback(async () => {
+    setIsIngredientsLoading(true);
+
+    try {
+      const response = await fetch("/api/ingredients", { cache: "no-store" });
+      const payload = (await response.json()) as IngredientsResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to load ingredients.");
+      }
+
+      setIngredients(payload.ingredients ?? []);
+    } catch (fetchError) {
+      setError(
+        fetchError instanceof Error ? fetchError.message : "Unable to load ingredients.",
+      );
+    } finally {
+      setIsIngredientsLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void fetchProducts();
     void fetchCategories();
-  }, [fetchCategories, fetchProducts]);
+    void fetchIngredients();
+  }, [fetchCategories, fetchIngredients, fetchProducts]);
 
   const filteredProducts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -509,9 +528,20 @@ export function DashboardProductsClient() {
               onChange={(value) => updateForm("gallery", value)}
               helperText="Optional secondary product images pulled directly from the Media Library."
             />
+            <IngredientMultiSelect
+              ingredients={ingredients}
+              isLoading={isIngredientsLoading}
+              selectedIngredientIds={form.ingredient_ids}
+              onChange={(value) => updateForm("ingredient_ids", value)}
+              errorMessage={
+                error.toLowerCase().includes("ingredient")
+                  ? error
+                  : ""
+              }
+              className="lg:col-span-2"
+            />
             <TextAreaField label="Pros" value={form.pros} onChange={(value) => updateForm("pros", value)} placeholder="One item per line" />
             <TextAreaField label="Cons" value={form.cons} onChange={(value) => updateForm("cons", value)} placeholder="One item per line" />
-            <TextAreaField label="Ingredients" value={form.ingredients} onChange={(value) => updateForm("ingredients", value)} placeholder="Name | Benefit, one per line" />
             <TextAreaField label="Benefits" value={form.benefits} onChange={(value) => updateForm("benefits", value)} placeholder="Title | Description, one per line" />
             <TextAreaField label="FAQ" value={form.faq} onChange={(value) => updateForm("faq", value)} placeholder="Question | Answer, one per line" />
 
@@ -673,6 +703,168 @@ function CategorySelect({
           Clear category
         </button>
       ) : null}
+    </label>
+  );
+}
+
+function IngredientMultiSelect({
+  ingredients,
+  isLoading,
+  selectedIngredientIds,
+  onChange,
+  errorMessage,
+  className = "",
+}: {
+  ingredients: Ingredient[];
+  isLoading: boolean;
+  selectedIngredientIds: string[];
+  onChange: (value: string[]) => void;
+  errorMessage?: string;
+  className?: string;
+}) {
+  const [query, setQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const selectedIngredients = useMemo(
+    () =>
+      selectedIngredientIds
+        .map((ingredientId) => ingredients.find((ingredient) => ingredient.id === ingredientId))
+        .filter(Boolean) as Ingredient[],
+    [ingredients, selectedIngredientIds],
+  );
+
+  const filteredIngredients = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+    const selectedIngredientIdSet = new Set(selectedIngredientIds);
+
+    return ingredients.filter((ingredient) => {
+      if (selectedIngredientIdSet.has(ingredient.id)) {
+        return false;
+      }
+
+      if (!normalizedQuery) {
+        return true;
+      }
+
+      return [
+        ingredient.name,
+        ingredient.scientific_name ?? "",
+        ingredient.ingredient_category ?? "",
+        ingredient.slug,
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(normalizedQuery);
+    });
+  }, [ingredients, query, selectedIngredientIds]);
+
+  function addIngredient(ingredientId: string) {
+    if (selectedIngredientIds.includes(ingredientId)) {
+      return;
+    }
+
+    onChange([...selectedIngredientIds, ingredientId]);
+    setQuery("");
+    setIsOpen(true);
+  }
+
+  function removeIngredient(ingredientId: string) {
+    onChange(selectedIngredientIds.filter((value) => value !== ingredientId));
+  }
+
+  return (
+    <label className={`relative grid gap-2 ${className}`}>
+      <span className="font-heading text-sm font-semibold text-text-dark">Ingredients</span>
+      <div className="rounded-[18px] border border-border-light bg-white p-3 transition focus-within:border-gold/80 focus-within:ring-4 focus-within:ring-gold/10">
+        {selectedIngredients.length ? (
+          <div className="mb-3 flex flex-wrap gap-2">
+            {selectedIngredients.map((ingredient) => (
+              <span
+                key={ingredient.id}
+                className="inline-flex items-center gap-2 rounded-pill bg-soft-green px-3 py-2 text-xs font-semibold text-primary"
+              >
+                <span>{ingredient.name}</span>
+                <button
+                  type="button"
+                  onClick={() => removeIngredient(ingredient.id)}
+                  className="rounded-full text-primary/80 transition hover:text-primary"
+                  aria-label={`Remove ${ingredient.name}`}
+                >
+                  <X className="size-3.5" />
+                </button>
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p className="mb-3 text-sm text-muted">
+            No ingredients selected yet. Search the live ingredient library and choose one or more items.
+          </p>
+        )}
+
+        <div className="relative">
+          <Search
+            className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-primary"
+            aria-hidden="true"
+          />
+          <input
+            value={query}
+            onBlur={() => {
+              window.setTimeout(() => {
+                setIsOpen(false);
+                setQuery("");
+              }, 120);
+            }}
+            onChange={(event) => {
+              setQuery(event.target.value);
+              setIsOpen(true);
+            }}
+            onFocus={() => setIsOpen(true)}
+            placeholder={isLoading ? "Loading ingredients..." : "Search and select ingredients"}
+            className="min-h-12 w-full rounded-[14px] border border-border-light bg-white px-11 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80"
+          />
+        </div>
+
+        {isOpen ? (
+          <div className="mt-3 max-h-64 overflow-y-auto rounded-[18px] border border-border-light bg-white p-2 shadow-[0_20px_52px_rgba(15,23,42,0.12)]">
+            {isLoading ? (
+              <div className="flex items-center gap-2 px-3 py-3 text-sm text-muted">
+                <Loader2 className="size-4 animate-spin text-primary" />
+                Loading ingredients...
+              </div>
+            ) : filteredIngredients.length ? (
+              filteredIngredients.map((ingredient) => (
+                <button
+                  key={ingredient.id}
+                  type="button"
+                  onMouseDown={(event) => event.preventDefault()}
+                  onClick={() => addIngredient(ingredient.id)}
+                  className="flex w-full items-start justify-between gap-3 rounded-[14px] px-3 py-3 text-left transition hover:bg-soft-green"
+                >
+                  <span>
+                    <span className="block font-heading text-sm font-semibold text-text-dark">
+                      {ingredient.name}
+                    </span>
+                    <span className="block text-xs text-muted">
+                      {ingredient.ingredient_category || ingredient.scientific_name || ingredient.slug}
+                    </span>
+                  </span>
+                  <span className="text-xs font-semibold text-primary">Add</span>
+                </button>
+              ))
+            ) : (
+              <div className="px-3 py-3 text-sm text-muted">
+                No ingredients found. Try another search term.
+              </div>
+            )}
+          </div>
+        ) : null}
+      </div>
+
+      <div className="flex items-center justify-between gap-3 text-xs">
+        <span className="text-muted">
+          {selectedIngredientIds.length} ingredient{selectedIngredientIds.length === 1 ? "" : "s"} selected from the live library.
+        </span>
+        {errorMessage ? <span className="font-semibold text-red-600">{errorMessage}</span> : null}
+      </div>
     </label>
   );
 }

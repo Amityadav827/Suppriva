@@ -3,6 +3,7 @@ import type { FAQItem, JsonValue, Product, ProductIngredient } from "@/lib/datab
 
 export type ProductCreateInput = {
   category_id?: string | null;
+  ingredient_ids?: string[];
   title: string;
   slug?: string;
   short_description?: string | null;
@@ -91,6 +92,22 @@ export function validateProductInput<TInput extends ProductValidationInput>(
     !UUID_PATTERN.test(input.category_id)
   ) {
     errors.push("Category ID must be a valid UUID.");
+  }
+
+  if ("ingredient_ids" in input && input.ingredient_ids !== undefined) {
+    if (!isStringArray(input.ingredient_ids)) {
+      errors.push("Ingredient IDs must be a list of valid UUID values.");
+    } else {
+      const normalizedIngredientIds = input.ingredient_ids.map((value) => value.trim()).filter(Boolean);
+
+      if (normalizedIngredientIds.some((value) => !UUID_PATTERN.test(value))) {
+        errors.push("Each ingredient ID must be a valid UUID.");
+      }
+
+      if (new Set(normalizedIngredientIds).size !== normalizedIngredientIds.length) {
+        errors.push("Duplicate ingredient assignments are not allowed.");
+      }
+    }
   }
 
   if (

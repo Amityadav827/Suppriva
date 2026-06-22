@@ -11,6 +11,9 @@ export interface ProductsRepository extends SlugRepository<Product> {
   getProductBySlug(slug: string): Promise<Product | null>;
   createProduct(input: ProductCreateInput): Promise<Product>;
   updateProduct(id: string, input: ProductUpdateInput): Promise<Product>;
+  getProductIngredientIds(productId: string): Promise<string[]>;
+  syncProductIngredients(productId: string, ingredientIds: string[]): Promise<void>;
+  deleteProductIngredients(productId: string): Promise<void>;
   deleteProduct(id: string): Promise<void>;
 }
 
@@ -27,7 +30,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return (data ?? []) as Product[];
+    return this.attachIngredientIds((data ?? []) as Product[]);
   }
 
   async getProductById(id: string): Promise<Product | null> {
@@ -43,7 +46,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return (data as Product | null) ?? null;
+    return this.attachIngredientIdsToProduct((data as Product | null) ?? null);
   }
 
   async getProductBySlug(slug: string): Promise<Product | null> {
@@ -59,7 +62,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return (data as Product | null) ?? null;
+    return this.attachIngredientIdsToProduct((data as Product | null) ?? null);
   }
 
   async createProduct(input: ProductCreateInput): Promise<Product> {
@@ -74,7 +77,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return data as Product;
+    return (await this.attachIngredientIdsToProduct(data as Product)) as Product;
   }
 
   async updateProduct(id: string, input: ProductUpdateInput): Promise<Product> {
@@ -91,7 +94,82 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return data as Product;
+    return (await this.attachIngredientIdsToProduct(data as Product)) as Product;
+  }
+
+  async getProductIngredientIds(productId: string): Promise<string[]> {
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("product_ingredients")
+      .select("ingredient_id")
+      .eq("product_id", productId);
+
+    if (error) {
+      throw new DatabaseError(error.message);
+    }
+
+    return (data ?? [])
+      .map((relation) => relation.ingredient_id)
+      .filter(Boolean) as string[];
+  }
+
+  async syncProductIngredients(productId: string, ingredientIds: string[]): Promise<void> {
+    const supabase = await createSupabaseServerClient();
+    const uniqueIngredientIds = [...new Set(ingredientIds)];
+    const currentIngredientIds = await this.getProductIngredientIds(productId);
+    const currentIngredientIdSet = new Set(currentIngredientIds);
+    const nextIngredientIdSet = new Set(uniqueIngredientIds);
+    const ingredientIdsToDelete = currentIngredientIds.filter(
+      (ingredientId) => !nextIngredientIdSet.has(ingredientId),
+    );
+    const ingredientIdsToInsert = uniqueIngredientIds.filter(
+      (ingredientId) => !currentIngredientIdSet.has(ingredientId),
+    );
+
+    if (ingredientIdsToDelete.length) {
+      const { error: deleteError } = await supabase
+        .from("product_ingredients")
+        .delete()
+        .eq("product_id", productId)
+        .in("ingredient_id", ingredientIdsToDelete);
+
+      if (deleteError) {
+        throw new DatabaseError(deleteError.message);
+      }
+    }
+
+    if (!ingredientIdsToInsert.length) {
+      return;
+    }
+
+    const { error: insertError } = await supabase
+      .from("product_ingredients")
+      .upsert(
+        ingredientIdsToInsert.map((ingredientId) => ({
+          product_id: productId,
+          ingredient_id: ingredientId,
+        })),
+        {
+          onConflict: "product_id,ingredient_id",
+          ignoreDuplicates: true,
+        },
+      );
+
+    if (insertError) {
+      throw new DatabaseError(insertError.message);
+    }
+  }
+
+  async deleteProductIngredients(productId: string): Promise<void> {
+    const supabase = await createSupabaseServerClient();
+    const { error } = await supabase
+      .from("product_ingredients")
+      .delete()
+      .eq("product_id", productId);
+
+    if (error) {
+      throw new DatabaseError(error.message);
+    }
   }
 
   async deleteProduct(id: string): Promise<void> {
@@ -156,5 +234,48 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
 
     return payload;
+  }
+
+  private async attachIngredientIds(products: Product[]): Promise<Product[]> {
+    if (!products.length) {
+      return [];
+    }
+
+    const supabase = await createSupabaseServerClient();
+    const productIds = products.map((product) => product.id);
+    const { data, error } = await supabase
+      .from("product_ingredients")
+      .select("product_id, ingredient_id")
+      .in("product_id", productIds);
+
+    if (error) {
+      throw new DatabaseError(error.message);
+    }
+
+    const ingredientIdsByProductId = new Map<string, string[]>();
+
+    (data ?? []).forEach((relation) => {
+      const productIngredientIds = ingredientIdsByProductId.get(relation.product_id) ?? [];
+      productIngredientIds.push(relation.ingredient_id);
+      ingredientIdsByProductId.set(relation.product_id, productIngredientIds);
+    });
+
+    return products.map((product) => ({
+      ...product,
+      ingredient_ids: ingredientIdsByProductId.get(product.id) ?? [],
+    }));
+  }
+
+  private async attachIngredientIdsToProduct(product: Product | null): Promise<Product | null> {
+    if (!product) {
+      return null;
+    }
+
+    const ingredientIds = await this.getProductIngredientIds(product.id);
+
+    return {
+      ...product,
+      ingredient_ids: ingredientIds,
+    };
   }
 }
