@@ -86,7 +86,7 @@ export function HeroProductShowcase() {
         />
       </motion.div>
 
-      <div className="absolute bottom-2 left-0 z-20 hidden w-full max-w-[250px] rounded-card border border-white/70 bg-white/86 p-4 shadow-premium backdrop-blur md:block lg:left-4">
+      <div className="absolute bottom-16 left-1/2 z-20 hidden w-full max-w-[250px] -translate-x-1/2 rounded-card border border-white/70 bg-white/86 p-4 shadow-premium backdrop-blur md:block lg:bottom-20">
         <p className="font-heading text-sm font-semibold text-text-dark">
           Curated Wellness Collection
         </p>
