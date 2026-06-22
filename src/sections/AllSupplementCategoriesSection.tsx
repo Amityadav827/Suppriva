@@ -1,26 +1,19 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { CategoryPill } from "@/components/category/CategoryPill";
+import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { getCategoryIcon } from "@/lib/live-data";
+import { homepageIngredients } from "@/lib/constants";
 
-type LiveCategoryPill = {
-  label: string;
-  slug: string;
-};
-
-export function AllSupplementCategoriesSection({
-  categories,
-}: {
-  categories: LiveCategoryPill[];
-}) {
+export function AllSupplementCategoriesSection() {
   return (
     <SectionWrapper id="all-categories">
       <SectionTitle
-        title="All Supplement Categories"
-        subtitle="A structured directory for fast discovery and SEO-focused supplement browsing."
+        title="Explore By Ingredients"
+        subtitle="Discover vitamins, herbs, minerals, probiotics, adaptogens, and functional ingredients."
       />
 
       <motion.div
@@ -37,15 +30,21 @@ export function AllSupplementCategoriesSection({
         }}
         className="mx-auto mt-12 grid max-w-[1180px] grid-cols-2 gap-3 sm:gap-4 md:mt-14 md:flex md:flex-wrap md:justify-center"
       >
-        {categories.map((category) => (
+        {homepageIngredients.map((ingredient) => (
           <CategoryPill
-            key={category.label}
-            label={category.label}
-            icon={getCategoryIcon(category.label)}
-            href={`/category/${category.slug}`}
+            key={ingredient.label}
+            label={ingredient.label}
+            icon={ingredient.icon}
+            href={ingredient.href}
           />
         ))}
       </motion.div>
+
+      <div className="mt-10 flex justify-center">
+        <PremiumButton href="/ingredients" icon={<ArrowRight className="size-4" aria-hidden="true" />}>
+          View All Ingredients
+        </PremiumButton>
+      </div>
     </SectionWrapper>
   );
 }

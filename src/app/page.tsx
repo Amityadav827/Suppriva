@@ -77,7 +77,7 @@ export default async function Home() {
         <HeroSection />
         <HealthNeedsSection categories={categoryPills} />
         <PopularPicksSection products={productCards} />
-        <AllSupplementCategoriesSection categories={categoryPills} />
+        <AllSupplementCategoriesSection />
         <SupplementsBlogSection posts={blogCards} />
         <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />
