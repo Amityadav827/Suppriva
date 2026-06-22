@@ -736,7 +736,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       },
                     },
                   }}
-                  className="mt-1 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5"
+                  className="mt-1 flex flex-wrap gap-3"
                 >
                   {product.healthNeeds.map((item, index) => {
                     const Icon = getCategoryIcon(item.label);
@@ -758,6 +758,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           label={item.label}
                           icon={Icon}
                           href={item.slug ? `/category/${item.slug}` : "/categories"}
+                          className="w-full sm:w-auto sm:max-w-full"
+                          labelClassName="whitespace-nowrap text-[13px] sm:text-sm"
                         />
                       </motion.div>
                     );
