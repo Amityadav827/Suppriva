@@ -17,7 +17,8 @@ export const dynamic = "force-dynamic";
 export function generateMetadata(): Promise<Metadata> {
   return buildSeoMetadata(PageType.Static, "categories", {
     title: "Categories | Suppriva",
-    description: "Browse live Suppriva supplement categories from the database.",
+    description:
+      "Browse wellness categories organized around health goals, lifestyle needs, and everyday wellness support.",
     canonicalPath: "/categories",
   });
 }
@@ -37,8 +38,9 @@ export default async function CategoriesPage() {
         pageSlug="categories"
         schema={[
           buildCollectionPageJsonLd({
-            title: "All Categories",
-            description: "Live published supplement categories from the Suppriva database.",
+            title: "Explore Wellness Categories",
+            description:
+              "Browse wellness categories organized around health goals, lifestyle needs, and everyday wellness support.",
             path: "/categories",
           }),
           buildBreadcrumbJsonLd([
@@ -51,8 +53,8 @@ export default async function CategoriesPage() {
       <main>
         <SectionWrapper id="categories" tone="white">
           <SectionTitle
-            title="All Categories"
-            subtitle="Live published supplement categories from the Suppriva database."
+            title="Explore Wellness Categories"
+            subtitle="Browse wellness categories organized around health goals, lifestyle needs, and everyday wellness support."
           />
           <CategoriesListingClient categories={categories} />
         </SectionWrapper>
