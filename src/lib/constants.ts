@@ -1,7 +1,6 @@
 import {
   Activity,
   Apple,
-  Award,
   BadgeCheck,
   BatteryCharging,
   BicepsFlexed,
@@ -15,7 +14,6 @@ import {
   Flower2,
   Heart,
   FlaskConical,
-  HeartPulse,
   Leaf,
   LockKeyhole,
   Mail,
@@ -41,31 +39,50 @@ export const navLinks = [
 
 export const trustItems = [
   {
-    label: "Premium Quality Ingredients",
-    icon: Sparkles,
+    title: "Ingredient Library",
+    description:
+      "Explore vitamins, herbs, minerals, probiotics, and functional ingredients.",
+    icon: Leaf,
   },
   {
-    label: "Scientifically Backed",
-    icon: FlaskConical,
+    title: "Health Goal Collections",
+    description:
+      "Browse wellness solutions organized around real health goals.",
+    icon: Compass,
   },
   {
-    label: "Trusted by Thousands",
-    icon: HeartPulse,
+    title: "Smart Comparisons",
+    description: "Compare ingredients and wellness products side by side.",
+    icon: Scale,
   },
   {
-    label: "Made in USA GMP Certified",
-    icon: BadgeCheck,
+    title: "Expert Guidance",
+    description:
+      "Get help choosing products that match your wellness needs.",
+    icon: Stethoscope,
   },
 ];
 
-export const productHighlights = [
+export const heroGoalPills = [
   {
-    label: "Third-party tested",
-    icon: ShieldCheck,
+    label: "Weight Management",
+    icon: Activity,
   },
   {
-    label: "Affiliate picks",
-    icon: Award,
+    label: "Gut Health",
+    icon: Leaf,
+  },
+  {
+    label: "Sleep Support",
+    icon: Moon,
+  },
+  {
+    label: "Blood Sugar",
+    icon: Candy,
+  },
+  {
+    label: "Immunity",
+    icon: ShieldPlus,
   },
 ];
 

@@ -28,31 +28,32 @@ export function HeroSection() {
           <FadeIn>
             <span className="inline-flex items-center gap-2 rounded-pill border border-primary/10 bg-white px-4 py-2 font-heading text-sm font-semibold text-primary shadow-[0_14px_36px_rgba(6,57,33,0.08)]">
               <CheckCircle2 className="size-4 text-gold" aria-hidden="true" />
-              Premium Wellness
+              Wellness Discovery Platform
             </span>
           </FadeIn>
 
           <FadeIn delay={0.08}>
             <h1 className="mt-7 font-heading text-3xl font-extrabold leading-[1.08] text-text-dark md:text-4xl xl:text-6xl">
-              Premium Supplements For a{" "}
-              <span className="text-gold">Better You</span>
+              Discover Wellness Solutions{" "}
+              <span className="text-gold">That Fit Your Goals</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
             <p className="mx-auto mt-6 max-w-[620px] text-base leading-8 text-muted lg:mx-0">
-              Handpicked top-quality supplements to support your health, boost
-              your performance & transform your lifestyle.
+              Explore supplements, ingredient insights, and wellness
+              collections designed to help you make informed health decisions
+              with confidence.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.24}>
             <div className="mt-9 grid gap-3 sm:flex sm:justify-center lg:justify-start">
-              <PremiumButton href="/categories" icon={<ArrowRight className="size-4" />}>
-                Explore Categories
+              <PremiumButton href="/category" icon={<ArrowRight className="size-4" />}>
+                Explore Wellness Categories
               </PremiumButton>
-              <PremiumButton href="/products" variant="secondary">
-                View Best Sellers
+              <PremiumButton href="/ingredients" variant="secondary" icon={<ArrowRight className="size-4" />}>
+                Explore Ingredients
               </PremiumButton>
             </div>
           </FadeIn>
@@ -64,16 +65,21 @@ export function HeroSection() {
 
                 return (
                   <motion.div
-                    key={item.label}
+                    key={item.title}
                     whileHover={{ y: -5, scale: 1.01 }}
                     transition={{ duration: 0.3 }}
-                    className="group flex min-h-[72px] items-center gap-3 rounded-card border border-border-light bg-white/82 p-4 text-left shadow-[0_14px_38px_rgba(15,23,42,0.05)] backdrop-blur transition duration-300 hover:border-gold/70 hover:shadow-premium"
+                    className="group flex min-h-[120px] items-start gap-3 rounded-card border border-border-light bg-white/82 p-4 text-left shadow-[0_14px_38px_rgba(15,23,42,0.05)] backdrop-blur transition duration-300 hover:border-gold/70 hover:shadow-premium"
                   >
                     <span className="grid size-11 shrink-0 place-items-center rounded-full bg-soft-green text-primary transition duration-300 group-hover:bg-primary group-hover:text-white">
                       <Icon className="size-5" aria-hidden="true" />
                     </span>
-                    <span className="font-heading text-sm font-semibold leading-5 text-text-dark">
-                      {item.label}
+                    <span>
+                      <span className="block font-heading text-sm font-semibold leading-5 text-text-dark">
+                        {item.title}
+                      </span>
+                      <span className="mt-1 block text-sm leading-6 text-muted">
+                        {item.description}
+                      </span>
                     </span>
                   </motion.div>
                 );
