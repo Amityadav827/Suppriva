@@ -736,7 +736,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       },
                     },
                   }}
-                  className="mt-1 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+                  className="mt-1 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5"
                 >
                   {product.healthNeeds.map((item, index) => {
                     const Icon = getCategoryIcon(item.label);
