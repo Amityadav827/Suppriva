@@ -73,7 +73,7 @@ export async function getProductPageData(slug: string) {
     categoryMap,
   );
 
-  const healthNeeds = publishedCategories.slice(0, 8).map((category) => ({
+  const healthNeeds = publishedCategories.map((category) => ({
     label: category.title,
     slug: category.slug,
     description:

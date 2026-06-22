@@ -3,28 +3,41 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Activity,
   ArrowUpRight,
   BadgeCheck,
   Beaker,
+  Bone,
   BookOpenText,
+  Brain,
+  BrainCircuit,
   Check,
   ChevronRight,
   CircleAlert,
   ClipboardList,
+  Compass,
+  Ear,
+  Eye,
   FlaskConical,
+  Flower2,
+  Hand,
+  HeartHandshake,
   HeartPulse,
   Leaf,
-  MoonStar,
-  ScanHeart,
-  Sparkle,
+  Moon,
   PackageCheck,
   Pill,
+  Scale,
+  Scissors,
+  Shield,
   ShieldAlert,
   ShieldCheck,
+  Smile,
   Sparkles,
   Star,
   Users,
   Dumbbell,
+  Wind,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -73,8 +86,84 @@ function benefitIcon(title: string) {
 function healthNeedIcon(label: string) {
   const normalized = label.toLowerCase();
 
-  if (normalized.includes("women")) {
+  if (normalized.includes("immunity") || normalized.includes("immune")) {
+    return Shield;
+  }
+
+  if (normalized.includes("blood sugar") || normalized.includes("diabetes")) {
+    return Activity;
+  }
+
+  if (normalized.includes("bone") || normalized.includes("joint")) {
+    return Bone;
+  }
+
+  if (normalized.includes("brain") || normalized.includes("memory")) {
+    return Brain;
+  }
+
+  if (normalized.includes("sleep") || normalized.includes("relaxation")) {
+    return Moon;
+  }
+
+  if (normalized.includes("heart")) {
     return HeartPulse;
+  }
+
+  if (normalized.includes("gut")) {
+    return Leaf;
+  }
+
+  if (normalized.includes("skin")) {
+    return Sparkles;
+  }
+
+  if (normalized.includes("sexual")) {
+    return HeartHandshake;
+  }
+
+  if (
+    normalized.includes("energy") ||
+    normalized.includes("athletic") ||
+    normalized.includes("performance")
+  ) {
+    return Dumbbell;
+  }
+
+  if (normalized.includes("prostate")) {
+    return ShieldCheck;
+  }
+
+  if (normalized.includes("lung")) {
+    return Wind;
+  }
+
+  if (normalized.includes("nervous")) {
+    return BrainCircuit;
+  }
+
+  if (normalized.includes("vision")) {
+    return Eye;
+  }
+
+  if (normalized.includes("hearing")) {
+    return Ear;
+  }
+
+  if (normalized.includes("teeth") || normalized.includes("gums")) {
+    return Smile;
+  }
+
+  if (normalized.includes("nail")) {
+    return Hand;
+  }
+
+  if (normalized.includes("general wellness") || normalized.includes("wellness")) {
+    return Compass;
+  }
+
+  if (normalized.includes("women")) {
+    return Flower2;
   }
 
   if (normalized.includes("men")) {
@@ -82,19 +171,11 @@ function healthNeedIcon(label: string) {
   }
 
   if (normalized.includes("hair")) {
-    return Sparkle;
+    return Scissors;
   }
 
   if (normalized.includes("weight")) {
-    return ScanHeart;
-  }
-
-  if (normalized.includes("sleep")) {
-    return MoonStar;
-  }
-
-  if (normalized.includes("heart")) {
-    return HeartPulse;
+    return Scale;
   }
 
   return Leaf;
@@ -756,7 +837,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 subtitle="Premium category cards that keep product readers moving into broader topical journeys."
                 tone="cream"
               >
-                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6 md:gap-4 xl:grid-cols-11">
                   {product.healthNeeds.map((item, index) => {
                     const Icon = healthNeedIcon(item.label);
 
@@ -774,12 +855,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       >
                         <Link
                           href={item.slug ? `/category/${item.slug}` : "/categories"}
-                          className="group flex h-full flex-col items-center justify-center rounded-[22px] bg-white px-4 py-5 text-center ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+                          className="group flex min-h-[144px] h-full flex-col items-center justify-center rounded-[24px] border border-border-light bg-white px-3 py-4 text-center shadow-[0_14px_38px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:border-primary/38 hover:shadow-premium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:min-h-[148px] md:px-4 md:py-5"
                         >
-                          <span className="inline-flex size-10 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
-                            <Icon className="size-4.5" />
+                          <span className="inline-flex size-10 items-center justify-center rounded-full border border-primary/12 bg-soft-green text-primary transition duration-300 group-hover:border-gold/45 group-hover:bg-white group-hover:text-dark-green group-hover:shadow-[0_12px_30px_rgba(11,93,59,0.14)] md:size-11">
+                            <Icon className="size-4.5 md:size-5" />
                           </span>
-                          <h3 className="mt-3 font-heading text-base font-extrabold leading-tight text-text-dark">
+                          <h3 className="mt-3 max-w-[11ch] font-heading text-[13px] font-semibold leading-[1.3] text-text-dark sm:text-[14px] md:text-[15px] lg:text-[16px]">
                             {item.label}
                           </h3>
                         </Link>
