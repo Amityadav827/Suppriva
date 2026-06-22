@@ -38,7 +38,7 @@ const heroGoalPillPositions: Array<{
     label: heroGoalPills[4].label,
     icon: heroGoalPills[4].icon,
     className:
-      "bottom-24 left-6 hidden sm:flex lg:bottom-28 lg:left-2",
+      "left-2 top-1/2 hidden sm:flex -translate-y-1/2 lg:left-0",
   },
 ];
 
@@ -86,7 +86,7 @@ export function HeroProductShowcase() {
         />
       </motion.div>
 
-      <div className="absolute bottom-16 left-1/2 z-20 hidden w-full max-w-[250px] -translate-x-1/2 rounded-card border border-white/70 bg-white/86 p-4 shadow-premium backdrop-blur md:block lg:bottom-20">
+      <div className="absolute bottom-2 left-0 z-20 hidden w-full max-w-[250px] rounded-card border border-white/70 bg-white/86 p-4 shadow-premium backdrop-blur md:block lg:left-4">
         <p className="font-heading text-sm font-semibold text-text-dark">
           Curated Wellness Collection
         </p>
