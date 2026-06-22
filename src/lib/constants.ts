@@ -8,6 +8,7 @@ import {
   Brain,
   Candy,
   CircleDot,
+  Compass,
   Citrus,
   CreditCard,
   Dumbbell,
@@ -24,6 +25,7 @@ import {
   ShieldPlus,
   ShieldCheck,
   Sparkles,
+  Scale,
   Sprout,
   Stethoscope,
 } from "lucide-react";
@@ -239,28 +241,28 @@ export const buySellBullets = [
 
 export const whyChooseItems = [
   {
-    title: "Premium Quality Ingredients",
+    title: "Ingredient Library",
     description:
-      "Carefully selected formulas with clean sourcing standards for everyday wellness confidence.",
-    icon: Sparkles,
+      "Explore vitamins, herbs, minerals, probiotics, and functional ingredients.",
+    icon: Leaf,
   },
   {
-    title: "Scientifically Backed Formulas",
+    title: "Wellness Solutions",
     description:
-      "Ingredient profiles are organized around practical health goals and research-led selection.",
-    icon: FlaskConical,
+      "Find supplements organized by your health goals and lifestyle needs.",
+    icon: Compass,
   },
   {
-    title: "GMP Certified Manufacturing",
+    title: "Smart Comparisons",
     description:
-      "We prioritize products from brands that follow rigorous manufacturing and quality controls.",
-    icon: BadgeCheck,
+      "Compare formulas, ingredients, and features to make informed decisions.",
+    icon: Scale,
   },
   {
-    title: "Trusted by Thousands",
+    title: "Expert Guidance",
     description:
-      "A polished discovery experience built for shoppers who want clarity before they choose.",
-    icon: HeartPulse,
+      "Need help choosing? Submit your question and get personalized support.",
+    icon: Stethoscope,
   },
 ];
 

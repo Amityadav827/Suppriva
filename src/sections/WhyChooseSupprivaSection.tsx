@@ -10,8 +10,8 @@ export function WhyChooseSupprivaSection() {
   return (
     <SectionWrapper id="why-choose-suppriva" tone="white">
       <SectionTitle
-        title="Why Choose Suppriva"
-        subtitle="Trusted wellness solutions designed to support your healthier lifestyle."
+        title="Your Wellness Journey Starts Here"
+        subtitle="Explore trusted supplements, ingredient insights, wellness solutions, and expert guidance-all in one place."
       />
 
       <GridWrapper className="mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 xl:grid-cols-4">
