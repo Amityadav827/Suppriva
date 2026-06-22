@@ -13,6 +13,7 @@ import { buildSeoMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
+  buildIngredientDefinedTermJsonLd,
   buildMedicalWebPageJsonLd,
 } from "@/lib/seo/structured-data";
 import { BlogService } from "@/services/blog.service";
@@ -183,6 +184,7 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
         pageSlug={ingredient.slug}
         schema={[
           buildMedicalWebPageJsonLd(ingredient),
+          buildIngredientDefinedTermJsonLd(ingredient, productCards),
           ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

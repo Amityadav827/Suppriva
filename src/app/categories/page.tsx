@@ -42,6 +42,10 @@ export default async function CategoriesPage() {
             description:
               "Browse wellness categories organized around health goals, lifestyle needs, and everyday wellness support.",
             path: "/categories",
+            items: categories.map((category) => ({
+              name: category.title,
+              path: `/category/${category.slug}`,
+            })),
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

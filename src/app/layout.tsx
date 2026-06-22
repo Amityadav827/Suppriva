@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { ExpertChatWidget } from "@/components/product/ExpertChatWidget";
-import { DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/seo/metadata";
+import {
+  DEFAULT_OG_IMAGE,
+  serializeJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/seo/metadata";
+import { buildOrganizationJsonLd } from "@/lib/seo/structured-data";
 import "@/styles/tokens.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,9 +27,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Suppriva | Premium Supplement Destination",
+  title: `${SITE_NAME} | Wellness Discovery Platform`,
   description:
-    "Handpicked supplements, vitamins, and wellness products for premium health-focused affiliate recommendations.",
+    "Explore supplements, ingredients, wellness categories, and expert guidance through Suppriva's search-friendly discovery platform.",
   metadataBase: new URL(SITE_URL),
   icons: {
     icon: "/icon.svg",
@@ -32,9 +38,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Suppriva | Premium Supplement Destination",
+    title: `${SITE_NAME} | Wellness Discovery Platform`,
     description:
-      "Discover handpicked supplements for health, performance, and daily wellness.",
+      "Discover supplements, ingredients, wellness categories, and research content across Suppriva.",
     type: "website",
     url: SITE_URL,
     images: [
@@ -48,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suppriva | Premium Supplement Destination",
+    title: `${SITE_NAME} | Wellness Discovery Platform`,
     description:
-      "Discover handpicked supplements for health, performance, and daily wellness.",
+      "Discover supplements, ingredients, wellness categories, and research content across Suppriva.",
     images: [DEFAULT_OG_IMAGE],
   },
 };
@@ -67,6 +73,11 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable}`}
     >
       <body suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildOrganizationJsonLd()) }}
+        />
         {children}
         <ExpertChatWidget />
       </body>

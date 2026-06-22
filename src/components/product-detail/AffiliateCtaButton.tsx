@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useMemo } from "react";
+import { AffiliateLink } from "@/components/seo/AffiliateLink";
 
 function getSessionId() {
   const key = "suppriva_affiliate_session";
@@ -64,18 +65,19 @@ export function AffiliateCtaButton({
       : "bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)]";
 
   return (
-    <motion.a
-      href={affiliateUrl}
-      target={affiliateUrl.startsWith("http") ? "_blank" : undefined}
-      rel={affiliateUrl.startsWith("http") ? "nofollow sponsored noopener noreferrer" : undefined}
-      onClick={() => void trackClick()}
+    <motion.div
       whileHover={{ scale: 1.025, y: -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.3 }}
-      className={`${baseClasses} ${variantClasses} ${className}`.trim()}
     >
-      {label}
-      <ArrowRight className="size-4" aria-hidden="true" />
-    </motion.a>
+      <AffiliateLink
+        href={affiliateUrl}
+        onClick={() => void trackClick()}
+        className={`${baseClasses} ${variantClasses} ${className}`.trim()}
+      >
+        {label}
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </AffiliateLink>
+    </motion.div>
   );
 }

@@ -43,6 +43,10 @@ export default async function ProductsPage() {
             title: "All Supplements",
             description: "Live published products from the Suppriva database.",
             path: "/products",
+            items: productCards.map((product) => ({
+              name: product.name,
+              path: product.href || `/product/${product.slug}`,
+            })),
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

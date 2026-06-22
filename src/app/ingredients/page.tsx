@@ -178,6 +178,10 @@ export default async function IngredientsPage() {
             title: "Suppriva Ingredients Directory",
             description,
             path: "/ingredients",
+            items: ingredients.map((ingredient) => ({
+              name: ingredient.name,
+              path: `/ingredient/${ingredient.slug}`,
+            })),
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

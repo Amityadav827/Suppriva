@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import { PageType } from "@/lib/database/constants";
 import type { JsonValue, SEO } from "@/lib/database/types";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/seo/site-config";
 import { SeoService } from "@/services/seo.service";
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://suppriva.com").replace(
-  /\/+$/,
-  "",
-);
-export const DEFAULT_OG_IMAGE = "/assets/hero-supplements-og.jpg";
+export {
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_SOCIAL_LINKS,
+  SITE_LOGO_PATH,
+  SITE_URL,
+} from "@/lib/seo/site-config";
 
 export type SeoMetadataFallback = {
   title: string;
@@ -58,11 +65,19 @@ export async function buildSeoMetadata(
     alternates: {
       canonical,
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
     openGraph: {
       title,
       description,
       url: canonicalUrl,
-      siteName: "Suppriva",
+      siteName: SITE_NAME,
       type: fallback.type || "website",
       images: [
         {

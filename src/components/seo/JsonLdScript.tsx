@@ -12,10 +12,13 @@ export async function JsonLdScript({
   schema?: JsonValue | JsonValue[];
 }) {
   const seo = await getSeoRecordSafe(pageType, pageSlug);
-  const schemas = [
-    ...(Array.isArray(schema) ? schema : schema ? [schema] : []),
-    ...(hasSchemaJson(seo) ? [seo.schema_json] : []),
-  ];
+  const runtimeSchemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
+  const seoSchemas = hasSchemaJson(seo)
+    ? Array.isArray(seo.schema_json)
+      ? seo.schema_json
+      : [seo.schema_json]
+    : [];
+  const schemas = [...runtimeSchemas, ...seoSchemas];
 
   if (!schemas.length) {
     return null;

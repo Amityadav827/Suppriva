@@ -16,7 +16,6 @@ import {
 } from "@/lib/live-data";
 import {
   buildBreadcrumbJsonLd,
-  buildOrganizationJsonLd,
   buildWebsiteJsonLd,
 } from "@/lib/seo/structured-data";
 import { HeroSection } from "@/sections/HeroSection";
@@ -68,7 +67,6 @@ export default async function Home() {
         pageSlug="home"
         schema={[
           buildWebsiteJsonLd(),
-          buildOrganizationJsonLd(),
           buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
         ]}
       />

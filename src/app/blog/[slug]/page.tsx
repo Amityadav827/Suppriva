@@ -21,6 +21,7 @@ import {
 import {
   buildArticleJsonLd,
   buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
 } from "@/lib/seo/structured-data";
 
 type BlogPageProps = {
@@ -93,7 +94,16 @@ export default async function BlogPage({ params }: BlogPageProps) {
           pageType={PageType.Blog}
           pageSlug={slug}
           schema={[
-            buildArticleJsonLd(article),
+            buildArticleJsonLd({
+              slug,
+              title: article.title,
+              description: article.summary,
+              image: article.image,
+              authorName: article.author.name,
+              datePublished: blog.published_at || blog.created_at,
+              dateModified: blog.updated_at,
+            }),
+            ...(article.faqs.length ? [buildFaqJsonLd(article.faqs)] : []),
             buildBreadcrumbJsonLd([
               { name: "Home", path: "/" },
               { name: "Blogs", path: "/blogs" },

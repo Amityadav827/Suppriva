@@ -90,6 +90,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             title: categoryDetail.title,
             description: categoryDetail.subtitle,
             path: `/category/${slug}`,
+            items: categoryDetail.products.map((product) => ({
+              name: product.name,
+              path: product.href || `/product/${product.slug}`,
+            })),
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

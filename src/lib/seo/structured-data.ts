@@ -1,12 +1,46 @@
-import type { BlogArticle } from "@/lib/blog-data";
+import type { CategoryProduct } from "@/lib/category-data";
 import type { FAQItem, Ingredient } from "@/lib/database/types";
 import type { ProductDetail } from "@/lib/product-data";
-import { absoluteUrl, SITE_URL } from "@/lib/seo/metadata";
+import {
+  absoluteUrl,
+  SITE_LOGO_PATH,
+  SITE_NAME,
+  SITE_SOCIAL_LINKS,
+  SITE_URL,
+} from "@/lib/seo/metadata";
 
 type BreadcrumbItem = {
   name: string;
   path: string;
 };
+
+type LinkedItem = {
+  name: string;
+  path: string;
+};
+
+type BlogSchemaInput = {
+  slug: string;
+  title: string;
+  description: string;
+  image?: string | null;
+  authorName: string;
+  datePublished?: string | null;
+  dateModified?: string | null;
+};
+
+function buildItemListElement(items: LinkedItem[]) {
+  return items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    url: absoluteUrl(item.path),
+  }));
+}
+
+function cleanTextList(values: Array<string | null | undefined>) {
+  return values.map((value) => value?.trim()).filter((value): value is string => Boolean(value));
+}
 
 export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   return {
@@ -25,8 +59,13 @@ export function buildWebsiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Suppriva",
+    name: SITE_NAME,
     url: SITE_URL,
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/search?q={search_term_string}`,
@@ -39,87 +78,132 @@ export function buildOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Suppriva",
+    name: SITE_NAME,
     url: SITE_URL,
-    logo: absoluteUrl("/assets/hero-supplements.webp"),
+    logo: absoluteUrl(SITE_LOGO_PATH),
+    ...(SITE_SOCIAL_LINKS.length ? { sameAs: SITE_SOCIAL_LINKS } : {}),
   };
 }
 
 export function buildProductJsonLd(product: ProductDetail) {
+  const image = product.image || product.gallery?.[0];
+  const offerUrl = product.affiliateUrl || product.path;
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.description,
     category: product.category,
-    image: absoluteUrl(product.image || product.gallery?.[0]),
+    url: absoluteUrl(product.path),
+    ...(image ? { image: [absoluteUrl(image)] } : {}),
     brand: {
       "@type": "Brand",
-      name: product.name,
+      name: SITE_NAME,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: product.rating,
-      reviewCount: product.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    ...(product.ratingValue
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: product.ratingValue,
+            reviewCount: product.reviewCount,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
     offers: {
       "@type": "Offer",
-      url: absoluteUrl(product.path),
+      url: absoluteUrl(offerUrl),
       availability: "https://schema.org/InStock",
       priceCurrency: "USD",
+      seller: {
+        "@type": "Organization",
+        name: SITE_NAME,
+      },
     },
   };
 }
 
-export function buildArticleJsonLd(article: BlogArticle) {
+export function buildArticleJsonLd(article: BlogSchemaInput) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
-    description: article.summary,
-    image: absoluteUrl(article.image),
+    description: article.description,
+    ...(article.image ? { image: [absoluteUrl(article.image)] } : {}),
     author: {
       "@type": "Person",
-      name: article.author.name,
+      name: article.authorName,
     },
     publisher: {
       "@type": "Organization",
-      name: "Suppriva",
+      name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/assets/hero-supplements.webp"),
+        url: absoluteUrl(SITE_LOGO_PATH),
       },
     },
     mainEntityOfPage: absoluteUrl(`/blog/${article.slug}`),
+    ...(article.datePublished ? { datePublished: article.datePublished } : {}),
+    ...(article.dateModified ? { dateModified: article.dateModified } : {}),
   };
 }
 
-export function buildIngredientJsonLd(ingredient: Ingredient) {
+export function buildIngredientDefinedTermJsonLd(
+  ingredient: Ingredient,
+  relatedProducts: CategoryProduct[] = [],
+) {
+  const description =
+    ingredient.seo_description ||
+    ingredient.short_description ||
+    ingredient.full_description ||
+    ingredient.overview_content ||
+    `Suppriva ingredient profile for ${ingredient.name}.`;
+  const benefits = cleanTextList([
+    ...ingredient.benefits,
+    ...((Array.isArray(ingredient.benefits_json)
+      ? ingredient.benefits_json
+          .map((entry) =>
+            typeof entry === "object" &&
+            entry !== null &&
+            "title" in entry &&
+            typeof entry.title === "string"
+              ? entry.title
+              : null,
+          )
+      : []) as Array<string | null>),
+  ]).slice(0, 8);
+
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: ingredient.seo_title || ingredient.meta_title || ingredient.name,
-    description:
-      ingredient.seo_description ||
-      ingredient.meta_description ||
-      ingredient.short_description ||
-      `Suppriva ingredient profile for ${ingredient.name}.`,
-    image: absoluteUrl(ingredient.image_url || ingredient.featured_image),
-    author: {
-      "@type": "Organization",
-      name: "Suppriva",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Suppriva",
-      logo: {
-        "@type": "ImageObject",
-        url: absoluteUrl("/assets/hero-supplements.webp"),
-      },
-    },
-    mainEntityOfPage: absoluteUrl(`/ingredient/${ingredient.slug}`),
+    "@type": "DefinedTerm",
+    name: ingredient.name,
+    termCode: ingredient.slug,
+    url: absoluteUrl(`/ingredient/${ingredient.slug}`),
+    inDefinedTermSet: absoluteUrl("/ingredients"),
+    description,
+    ...(ingredient.scientific_name
+      ? { alternateName: ingredient.scientific_name }
+      : {}),
+    ...(benefits.length
+      ? {
+          additionalProperty: benefits.map((benefit) => ({
+            "@type": "PropertyValue",
+            name: "Benefit",
+            value: benefit,
+          })),
+        }
+      : {}),
+    ...(relatedProducts.length
+      ? {
+          subjectOf: relatedProducts.slice(0, 8).map((product) => ({
+            "@type": "WebPage",
+            name: product.name,
+            url: absoluteUrl(product.href || `/product/${product.slug}`),
+          })),
+        }
+      : {}),
   };
 }
 
@@ -146,7 +230,7 @@ export function buildMedicalWebPageJsonLd(ingredient: Ingredient) {
         }
       : {}),
     about: {
-      "@type": "Substance",
+      "@type": "MedicalEntity",
       name: ingredient.name,
       ...(ingredient.scientific_name
         ? { alternateName: ingredient.scientific_name }
@@ -157,7 +241,7 @@ export function buildMedicalWebPageJsonLd(ingredient: Ingredient) {
     },
     publisher: {
       "@type": "Organization",
-      name: "Suppriva",
+      name: SITE_NAME,
       url: SITE_URL,
     },
   };
@@ -182,10 +266,12 @@ export function buildCollectionPageJsonLd({
   title,
   description,
   path,
+  items = [],
 }: {
   title: string;
   description: string;
   path: string;
+  items?: LinkedItem[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -193,6 +279,14 @@ export function buildCollectionPageJsonLd({
     name: title,
     description,
     url: absoluteUrl(path),
+    ...(items.length
+      ? {
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: buildItemListElement(items),
+          },
+        }
+      : {}),
   };
 }
 
@@ -213,7 +307,7 @@ export function buildWebPageJsonLd({
     url: absoluteUrl(path),
     publisher: {
       "@type": "Organization",
-      name: "Suppriva",
+      name: SITE_NAME,
       url: SITE_URL,
     },
   };

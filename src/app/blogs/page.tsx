@@ -41,6 +41,12 @@ export default async function BlogsPage() {
             title: "Supplement Guides",
             description: "Live published articles from the Suppriva database.",
             path: "/blogs",
+            items: blogCards
+              .filter((blog): blog is typeof blog & { slug: string } => Boolean(blog.slug))
+              .map((blog) => ({
+                name: blog.title,
+                path: `/blog/${blog.slug}`,
+              })),
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
