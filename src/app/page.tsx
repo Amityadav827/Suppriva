@@ -13,7 +13,6 @@ import {
   createCategoryMap,
   onlyPublished,
   productToCard,
-  productToShowcaseCard,
 } from "@/lib/live-data";
 import {
   buildBreadcrumbJsonLd,
@@ -54,9 +53,6 @@ export default async function Home() {
   const productCards = publishedProducts
     .slice(0, 8)
     .map((product, index) => productToCard(product, categoryMap, index));
-  const showcaseProducts = publishedProducts
-    .slice(0, 6)
-    .map((product, index) => productToShowcaseCard(product, categoryMap, index));
   const blogCards = publishedBlogs
     .slice(0, 4)
     .map((blog) => blogToCard(blog, categoryMap));
@@ -83,7 +79,7 @@ export default async function Home() {
         <PopularPicksSection products={productCards} />
         <AllSupplementCategoriesSection categories={categoryPills} />
         <SupplementsBlogSection posts={blogCards} />
-        <SupplementsBuySellSection products={showcaseProducts} />
+        <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />
         <TrustBadgesStrip />
         <NewsletterSection />

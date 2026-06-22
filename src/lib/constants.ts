@@ -232,12 +232,93 @@ export const supplementShowcaseProducts = [
   },
 ];
 
-export const buySellBullets = [
-  "Premium Quality Supplements",
-  "Verified Ingredients",
-  "Trusted Wellness Brands",
-  "Expert Recommended Products",
-];
+export const buySellFeatures = [
+  {
+    title: "Organized by Health Goals",
+    description: "Browse supplements grouped around real wellness objectives.",
+    icon: Compass,
+  },
+  {
+    title: "Ingredient-Focused Discovery",
+    description:
+      "Find products through vitamins, herbs, minerals, probiotics, and functional ingredients.",
+    icon: Leaf,
+  },
+  {
+    title: "Easy Product Comparisons",
+    description: "Understand formulas, ingredients, and benefits side by side.",
+    icon: Scale,
+  },
+  {
+    title: "Updated Wellness Collections",
+    description:
+      "Discover featured products and trending wellness categories regularly.",
+    icon: Sparkles,
+  },
+] as const;
+
+export const buySellShowcaseProducts = [
+  {
+    name: "Liv Pure",
+    benefit: "Supports liver health & healthy metabolism",
+    category: "Weight Management",
+    status: "FEATURED",
+    href: "/supplements",
+    image: "/assets/hero-supplements.webp",
+    accent: "from-soft-green to-primary/[0.10]",
+    imageScale: "scale-[1.02]",
+  },
+  {
+    name: "LeanBiome",
+    benefit: "Supports gut health & healthy weight management",
+    category: "Weight Management",
+    status: "POPULAR",
+    href: "/supplements",
+    image: "/assets/hero-supplements.webp",
+    accent: "from-soft-green to-gold/[0.14]",
+    imageScale: "scale-[1.04]",
+  },
+  {
+    name: "Mitolyn",
+    benefit: "Supports energy, metabolism & cellular wellness",
+    category: "Metabolism Support",
+    status: "TRENDING",
+    href: "/supplements",
+    image: "/assets/hero-supplements.webp",
+    accent: "from-primary/[0.12] to-soft-green",
+    imageScale: "scale-[1.05]",
+  },
+  {
+    name: "Java Burn",
+    benefit: "Coffee-based wellness formula for daily metabolism support",
+    category: "Weight Management",
+    status: "POPULAR",
+    href: "/supplements",
+    image: "/assets/hero-supplements.webp",
+    accent: "from-gold/[0.14] to-white",
+    imageScale: "scale-[1.03]",
+  },
+  {
+    name: "Nagano Tonic",
+    benefit: "Supports natural weight management & everyday wellness",
+    category: "Weight Management",
+    status: "FEATURED",
+    href: "/supplements",
+    image: "/assets/hero-supplements.webp",
+    accent: "from-gold/[0.16] to-white",
+    imageScale: "scale-[1.06]",
+  },
+  {
+    name: "Gluco6",
+    benefit: "Supports healthy blood sugar & metabolic wellness",
+    category: "Blood Sugar Support",
+    status: "UPDATED",
+    href: "/supplements",
+    image: "/assets/hero-supplements.webp",
+    accent: "from-soft-green to-gold/[0.12]",
+    imageScale: "scale-[1.02]",
+  },
+] as const;
 
 export const whyChooseItems = [
   {

@@ -87,13 +87,23 @@ export function productToShowcaseCard(
 ): ShowcaseProductData {
   const accent = accentPairs[index % accentPairs.length];
   const category = product.category_id ? categories.get(product.category_id) : null;
+  const badgeCycle: ShowcaseProductData["status"][] = [
+    "FEATURED",
+    "POPULAR",
+    "TRENDING",
+    "UPDATED",
+  ];
 
   return {
     slug: product.slug,
     href: buildProductPath(product.slug, category?.slug),
     name: product.title || product.name,
+    benefit:
+      product.short_description ||
+      product.full_description ||
+      "Ingredient-focused wellness support designed for confident supplement discovery.",
     category: categoryTitle(category),
-    rating: (product.rating ?? 4.8).toFixed(1),
+    status: badgeCycle[index % badgeCycle.length],
     image: product.image || product.gallery?.[0],
     accent: accent.accent,
     imageScale: index % 2 === 0 ? "scale-[1.08]" : "scale-[1.02]",
