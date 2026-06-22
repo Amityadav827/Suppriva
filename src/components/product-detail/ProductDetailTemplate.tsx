@@ -3,43 +3,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Activity,
   ArrowUpRight,
   BadgeCheck,
   Beaker,
-  Bone,
   BookOpenText,
-  Brain,
-  BrainCircuit,
   Check,
   ChevronRight,
   CircleAlert,
   ClipboardList,
-  Compass,
-  Ear,
-  Eye,
   FlaskConical,
-  Flower2,
-  Hand,
-  HeartHandshake,
   HeartPulse,
   Leaf,
-  Moon,
   PackageCheck,
   Pill,
-  Scale,
-  Scissors,
-  Shield,
   ShieldAlert,
   ShieldCheck,
-  Smile,
   Sparkles,
   Star,
   Users,
-  Dumbbell,
-  Wind,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { CategoryPill } from "@/components/category/CategoryPill";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { AffiliateCtaButton } from "@/components/product-detail/AffiliateCtaButton";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
@@ -50,6 +34,7 @@ import {
   type IngredientSectionLink,
 } from "@/components/ingredients/IngredientSectionNav";
 import type { ProductDetail } from "@/lib/product-data";
+import { getCategoryIcon } from "@/lib/live-data";
 
 function splitIntoColumns<T>(items: T[], columns: number) {
   return Array.from({ length: columns }, (_, columnIndex) =>
@@ -78,104 +63,6 @@ function benefitIcon(title: string) {
 
   if (normalized.includes("weight") || normalized.includes("support")) {
     return ShieldCheck;
-  }
-
-  return Leaf;
-}
-
-function healthNeedIcon(label: string) {
-  const normalized = label.toLowerCase();
-
-  if (normalized.includes("immunity") || normalized.includes("immune")) {
-    return Shield;
-  }
-
-  if (normalized.includes("blood sugar") || normalized.includes("diabetes")) {
-    return Activity;
-  }
-
-  if (normalized.includes("bone") || normalized.includes("joint")) {
-    return Bone;
-  }
-
-  if (normalized.includes("brain") || normalized.includes("memory")) {
-    return Brain;
-  }
-
-  if (normalized.includes("sleep") || normalized.includes("relaxation")) {
-    return Moon;
-  }
-
-  if (normalized.includes("heart")) {
-    return HeartPulse;
-  }
-
-  if (normalized.includes("gut")) {
-    return Leaf;
-  }
-
-  if (normalized.includes("skin")) {
-    return Sparkles;
-  }
-
-  if (normalized.includes("sexual")) {
-    return HeartHandshake;
-  }
-
-  if (
-    normalized.includes("energy") ||
-    normalized.includes("athletic") ||
-    normalized.includes("performance")
-  ) {
-    return Dumbbell;
-  }
-
-  if (normalized.includes("prostate")) {
-    return ShieldCheck;
-  }
-
-  if (normalized.includes("lung")) {
-    return Wind;
-  }
-
-  if (normalized.includes("nervous")) {
-    return BrainCircuit;
-  }
-
-  if (normalized.includes("vision")) {
-    return Eye;
-  }
-
-  if (normalized.includes("hearing")) {
-    return Ear;
-  }
-
-  if (normalized.includes("teeth") || normalized.includes("gums")) {
-    return Smile;
-  }
-
-  if (normalized.includes("nail")) {
-    return Hand;
-  }
-
-  if (normalized.includes("general wellness") || normalized.includes("wellness")) {
-    return Compass;
-  }
-
-  if (normalized.includes("women")) {
-    return Flower2;
-  }
-
-  if (normalized.includes("men")) {
-    return Dumbbell;
-  }
-
-  if (normalized.includes("hair")) {
-    return Scissors;
-  }
-
-  if (normalized.includes("weight")) {
-    return Scale;
   }
 
   return Leaf;
@@ -834,40 +721,48 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 id="explore-health-needs"
                 icon={HeartPulse}
                 title="Explore By Health Needs"
-                subtitle="Premium category cards that keep product readers moving into broader topical journeys."
+                subtitle="Discover wellness categories related to this product and explore solutions for other health goals."
                 tone="cream"
               >
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6 md:gap-4 xl:grid-cols-11">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-80px" }}
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.04,
+                      },
+                    },
+                  }}
+                  className="mt-1 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+                >
                   {product.healthNeeds.map((item, index) => {
-                    const Icon = healthNeedIcon(item.label);
+                    const Icon = getCategoryIcon(item.label);
 
                     return (
                       <motion.div
                         key={item.slug || item.label}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-80px" }}
+                        variants={{
+                          hidden: { opacity: 0, y: 16 },
+                          visible: { opacity: 1, y: 0 },
+                        }}
                         transition={{
-                          duration: 0.4,
+                          duration: 0.35,
                           ease: "easeOut",
-                          delay: index * 0.04,
+                          delay: index * 0.01,
                         }}
                       >
-                        <Link
+                        <CategoryPill
+                          label={item.label}
+                          icon={Icon}
                           href={item.slug ? `/category/${item.slug}` : "/categories"}
-                          className="group flex min-h-[144px] h-full flex-col items-center justify-center rounded-[24px] border border-border-light bg-white px-3 py-4 text-center shadow-[0_14px_38px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:border-primary/38 hover:shadow-premium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:min-h-[148px] md:px-4 md:py-5"
-                        >
-                          <span className="inline-flex size-10 items-center justify-center rounded-full border border-primary/12 bg-soft-green text-primary transition duration-300 group-hover:border-gold/45 group-hover:bg-white group-hover:text-dark-green group-hover:shadow-[0_12px_30px_rgba(11,93,59,0.14)] md:size-11">
-                            <Icon className="size-4.5 md:size-5" />
-                          </span>
-                          <h3 className="mt-3 max-w-[11ch] font-heading text-[13px] font-semibold leading-[1.3] text-text-dark sm:text-[14px] md:text-[15px] lg:text-[16px]">
-                            {item.label}
-                          </h3>
-                        </Link>
+                        />
                       </motion.div>
                     );
                   })}
-                </div>
+                </motion.div>
               </ReviewSection>
             ) : null}
           </div>
