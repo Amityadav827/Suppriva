@@ -16,7 +16,7 @@ export function TrustBadgesStrip() {
           <h2 className="font-heading text-2xl font-extrabold leading-tight text-white md:text-3xl xl:text-4xl">
             Why Thousands Start Their Wellness Journey with Suppriva
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-white/78 md:text-base">
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-emerald-50/90 md:text-base">
             Discover supplements, ingredients, wellness solutions, and expert
             insights designed to help you make informed health decisions.
           </p>

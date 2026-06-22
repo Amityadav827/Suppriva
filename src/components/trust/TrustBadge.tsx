@@ -35,7 +35,7 @@ export function TrustBadge({ badge }: TrustBadgeProps) {
         <h3 className="font-heading text-base font-extrabold text-white">
           {badge.title}
         </h3>
-        <p className="mt-1 text-sm leading-5 text-white/68">{badge.subtitle}</p>
+        <p className="mt-1 text-sm leading-5 text-emerald-50/85">{badge.subtitle}</p>
       </div>
     </motion.div>
   );
