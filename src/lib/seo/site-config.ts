@@ -1,6 +1,6 @@
 export const SITE_NAME = "Suppriva";
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://suppriva.com"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://suppriva.vercel.app"
 ).replace(/\/+$/, "");
 export const SITE_LOGO_PATH = "/assets/hero-supplements.webp";
 export const DEFAULT_OG_IMAGE = "/assets/hero-supplements-og.jpg";
@@ -13,4 +13,3 @@ export const SITE_SOCIAL_LINKS = [
 ]
   .map((value) => value?.trim())
   .filter((value): value is string => Boolean(value));
-
