@@ -99,6 +99,38 @@ export function buildPersonJsonLd(profile: ExpertPerson, role: ExpertRole) {
   };
 }
 
+export function buildPublicPersonJsonLd({
+  name,
+  path,
+  image,
+  jobTitle,
+  description,
+  sameAs = [],
+}: {
+  name: string;
+  path: string;
+  image?: string | null;
+  jobTitle?: string | null;
+  description?: string | null;
+  sameAs?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    url: absoluteUrl(path),
+    ...(image ? { image: absoluteUrl(image) } : {}),
+    ...(jobTitle ? { jobTitle } : {}),
+    ...(description ? { description } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
+    worksFor: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
 export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   return {
     "@context": "https://schema.org",

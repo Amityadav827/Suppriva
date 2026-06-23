@@ -16,8 +16,10 @@ import {
 } from "@/lib/live-data";
 import {
   buildBreadcrumbJsonLd,
+  buildPublicPersonJsonLd,
   buildWebsiteJsonLd,
 } from "@/lib/seo/structured-data";
+import { ADVISORY_EXPERT } from "@/lib/experts/advisory-board";
 import { HeroSection } from "@/sections/HeroSection";
 import { AllSupplementCategoriesSection } from "@/sections/AllSupplementCategoriesSection";
 import { HealthNeedsSection } from "@/sections/HealthNeedsSection";
@@ -28,16 +30,6 @@ import { SupplementsBuySellSection } from "@/sections/SupplementsBuySellSection"
 import { TrustBadgesStrip } from "@/sections/TrustBadgesStrip";
 import { WellnessExpertSection } from "@/sections/WellnessExpertSection";
 import { WhyChooseSupprivaSection } from "@/sections/WhyChooseSupprivaSection";
-
-const homeWellnessExpertSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Dr. Arindham Chatterjee",
-  image:
-    "https://auzapxutkteykldxhyyq.supabase.co/storage/v1/object/public/media-library/1773219025832.jpg",
-  jobTitle: "Medical & Wellness Advisor",
-  sameAs: ["https://www.linkedin.com/in/dr-arindham-chatterjee-2b1b6716/"],
-};
 
 export const dynamic = "force-dynamic";
 
@@ -79,7 +71,14 @@ export default async function Home() {
         schema={[
           buildWebsiteJsonLd(),
           buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
-          homeWellnessExpertSchema,
+          buildPublicPersonJsonLd({
+            name: ADVISORY_EXPERT.name,
+            path: ADVISORY_EXPERT.path,
+            image: ADVISORY_EXPERT.image,
+            jobTitle: ADVISORY_EXPERT.designation,
+            description: ADVISORY_EXPERT.aboutShort,
+            sameAs: [ADVISORY_EXPERT.linkedin],
+          }),
         ]}
       />
       <Navbar />
