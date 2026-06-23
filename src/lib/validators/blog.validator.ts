@@ -9,6 +9,7 @@ export type BlogCreateInput = {
   featured_image?: string | null;
   category_id?: string | null;
   author_id?: string | null;
+  reviewer_id?: string | null;
   reading_time?: string | null;
   tags?: string[];
   status?: ContentStatus;
@@ -63,6 +64,10 @@ export function validateBlogInput<TInput extends BlogValidationInput>(
 
   if ("author_id" in input && input.author_id && !UUID_PATTERN.test(input.author_id)) {
     errors.push("Author ID must be a valid UUID.");
+  }
+
+  if ("reviewer_id" in input && input.reviewer_id && !UUID_PATTERN.test(input.reviewer_id)) {
+    errors.push("Reviewer ID must be a valid UUID.");
   }
 
   if (

@@ -1,3 +1,5 @@
+import type { ExpertAttribution } from "@/lib/database/types";
+
 export type ProductDetail = {
   slug: string;
   path: string;
@@ -97,4 +99,5 @@ export type ProductDetail = {
     glow: string;
     accent: string;
   }[];
+  expertAttribution: ExpertAttribution;
 };

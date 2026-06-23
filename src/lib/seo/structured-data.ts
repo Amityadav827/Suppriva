@@ -1,5 +1,12 @@
 import type { CategoryProduct } from "@/lib/category-data";
-import type { FAQItem, Ingredient } from "@/lib/database/types";
+import type {
+  Author,
+  ExpertAttribution,
+  FAQItem,
+  Ingredient,
+  Reviewer,
+} from "@/lib/database/types";
+import { getExpertProfilePath, type ExpertRole } from "@/lib/eeat/shared";
 import type { ProductDetail } from "@/lib/product-data";
 import {
   absoluteUrl,
@@ -24,10 +31,13 @@ type BlogSchemaInput = {
   title: string;
   description: string;
   image?: string | null;
-  authorName: string;
+  author: Author;
+  reviewer?: Reviewer | null;
   datePublished?: string | null;
   dateModified?: string | null;
 };
+
+type ExpertPerson = Author | Reviewer;
 
 function buildItemListElement(items: LinkedItem[]) {
   return items.map((item, index) => ({
@@ -40,6 +50,53 @@ function buildItemListElement(items: LinkedItem[]) {
 
 function cleanTextList(values: Array<string | null | undefined>) {
   return values.map((value) => value?.trim()).filter((value): value is string => Boolean(value));
+}
+
+function buildPersonReference(profile?: ExpertPerson | null, role: ExpertRole = "author") {
+  if (!profile) {
+    return null;
+  }
+
+  const sameAs = [profile.linkedin_url, profile.website_url].filter(Boolean);
+
+  return {
+    "@type": "Person",
+    name: profile.name,
+    url: absoluteUrl(getExpertProfilePath(role, profile.slug)),
+    ...(profile.photo_url ? { image: absoluteUrl(profile.photo_url) } : {}),
+    ...(profile.designation ? { jobTitle: profile.designation } : {}),
+    ...(profile.qualification ? { hasCredential: profile.qualification } : {}),
+    ...(profile.bio ? { description: profile.bio } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
+  };
+}
+
+export function buildPersonJsonLd(profile: ExpertPerson, role: ExpertRole) {
+  const sameAs = [profile.linkedin_url, profile.website_url].filter(Boolean);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    url: absoluteUrl(getExpertProfilePath(role, profile.slug)),
+    ...(profile.photo_url ? { image: absoluteUrl(profile.photo_url) } : {}),
+    ...(profile.designation ? { jobTitle: profile.designation } : {}),
+    ...(profile.qualification ? { hasCredential: profile.qualification } : {}),
+    ...(profile.experience_years
+      ? {
+          description: `${profile.bio || profile.name} ${profile.experience_years}+ years of experience.`,
+        }
+      : profile.bio
+        ? { description: profile.bio }
+        : {}),
+    ...(profile.email ? { email: profile.email } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
+    worksFor: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
 }
 
 export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
@@ -88,6 +145,8 @@ export function buildOrganizationJsonLd() {
 export function buildProductJsonLd(product: ProductDetail) {
   const image = product.image || product.gallery?.[0];
   const offerUrl = product.affiliateUrl || product.path;
+  const author = buildPersonReference(product.expertAttribution.author, "author");
+  const reviewer = buildPersonReference(product.expertAttribution.reviewer, "reviewer");
 
   return {
     "@context": "https://schema.org",
@@ -101,6 +160,8 @@ export function buildProductJsonLd(product: ProductDetail) {
       "@type": "Brand",
       name: SITE_NAME,
     },
+    ...(author ? { author } : {}),
+    ...(reviewer ? { reviewedBy: reviewer } : {}),
     ...(product.ratingValue
       ? {
           aggregateRating: {
@@ -126,16 +187,17 @@ export function buildProductJsonLd(product: ProductDetail) {
 }
 
 export function buildArticleJsonLd(article: BlogSchemaInput) {
+  const author = buildPersonReference(article.author, "author");
+  const reviewer = buildPersonReference(article.reviewer, "reviewer");
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.description,
     ...(article.image ? { image: [absoluteUrl(article.image)] } : {}),
-    author: {
-      "@type": "Person",
-      name: article.authorName,
-    },
+    ...(author ? { author } : {}),
+    ...(reviewer ? { reviewedBy: reviewer } : {}),
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -153,6 +215,7 @@ export function buildArticleJsonLd(article: BlogSchemaInput) {
 export function buildIngredientDefinedTermJsonLd(
   ingredient: Ingredient,
   relatedProducts: CategoryProduct[] = [],
+  attribution?: Partial<ExpertAttribution>,
 ) {
   const description =
     ingredient.seo_description ||
@@ -174,6 +237,8 @@ export function buildIngredientDefinedTermJsonLd(
           )
       : []) as Array<string | null>),
   ]).slice(0, 8);
+  const author = buildPersonReference(attribution?.author, "author");
+  const reviewer = buildPersonReference(attribution?.reviewer, "reviewer");
 
   return {
     "@context": "https://schema.org",
@@ -183,6 +248,8 @@ export function buildIngredientDefinedTermJsonLd(
     url: absoluteUrl(`/ingredient/${ingredient.slug}`),
     inDefinedTermSet: absoluteUrl("/ingredients"),
     description,
+    ...(author ? { author } : {}),
+    ...(reviewer ? { reviewedBy: reviewer } : {}),
     ...(ingredient.scientific_name
       ? { alternateName: ingredient.scientific_name }
       : {}),
@@ -207,8 +274,13 @@ export function buildIngredientDefinedTermJsonLd(
   };
 }
 
-export function buildMedicalWebPageJsonLd(ingredient: Ingredient) {
+export function buildMedicalWebPageJsonLd(
+  ingredient: Ingredient,
+  attribution?: Partial<ExpertAttribution>,
+) {
   const image = ingredient.image_url || ingredient.featured_image;
+  const author = buildPersonReference(attribution?.author, "author");
+  const reviewer = buildPersonReference(attribution?.reviewer, "reviewer");
 
   return {
     "@context": "https://schema.org",
@@ -221,6 +293,8 @@ export function buildMedicalWebPageJsonLd(ingredient: Ingredient) {
       `Suppriva ingredient profile for ${ingredient.name}.`,
     url: absoluteUrl(`/ingredient/${ingredient.slug}`),
     lastReviewed: ingredient.updated_at,
+    ...(author ? { author } : {}),
+    ...(reviewer ? { reviewedBy: reviewer } : {}),
     ...(image
       ? {
           primaryImageOfPage: {

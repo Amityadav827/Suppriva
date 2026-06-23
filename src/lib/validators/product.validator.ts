@@ -4,6 +4,8 @@ import type { FAQItem, JsonValue, Product, ProductIngredient } from "@/lib/datab
 export type ProductCreateInput = {
   category_id?: string | null;
   ingredient_ids?: string[];
+  author_id?: string | null;
+  reviewer_id?: string | null;
   title: string;
   slug?: string;
   short_description?: string | null;
@@ -108,6 +110,14 @@ export function validateProductInput<TInput extends ProductValidationInput>(
         errors.push("Duplicate ingredient assignments are not allowed.");
       }
     }
+  }
+
+  if ("author_id" in input && input.author_id && !UUID_PATTERN.test(input.author_id)) {
+    errors.push("Author ID must be a valid UUID.");
+  }
+
+  if ("reviewer_id" in input && input.reviewer_id && !UUID_PATTERN.test(input.reviewer_id)) {
+    errors.push("Reviewer ID must be a valid UUID.");
   }
 
   if (

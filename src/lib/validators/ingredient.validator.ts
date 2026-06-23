@@ -5,6 +5,8 @@ export type IngredientCreateInput = {
   name: string;
   slug?: string;
   status?: ContentStatus;
+  author_id?: string | null;
+  reviewer_id?: string | null;
   scientific_name?: string | null;
   ingredient_category?: string | null;
   short_description?: string | null;
@@ -148,6 +150,14 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
 
   if ("slug" in input && input.slug && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input.slug)) {
     errors.push("Slug must use lowercase letters, numbers, and hyphens only.");
+  }
+
+  if ("author_id" in input && input.author_id && !UUID_PATTERN.test(input.author_id)) {
+    errors.push("Author ID must be a valid UUID.");
+  }
+
+  if ("reviewer_id" in input && input.reviewer_id && !UUID_PATTERN.test(input.reviewer_id)) {
+    errors.push("Reviewer ID must be a valid UUID.");
   }
 
   if (

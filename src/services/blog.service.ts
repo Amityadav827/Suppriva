@@ -10,8 +10,12 @@ import {
   SupabaseBlogsRepository,
   type BlogsRepository,
 } from "@/repositories/blogs.repository";
+import { AuthorsService, ReviewersService } from "@/services/expert-profiles.service";
 
 export class BlogService {
+  private readonly authorsService = new AuthorsService();
+  private readonly reviewersService = new ReviewersService();
+
   constructor(private readonly blogsRepository: BlogsRepository = new SupabaseBlogsRepository()) {}
 
   get repository() {
@@ -43,7 +47,7 @@ export class BlogService {
   }
 
   async createBlog(input: BlogCreateInput) {
-    const normalizedInput = this.normalizeCreateInput(input);
+    const normalizedInput = await this.normalizeCreateInput(input);
     this.assertValid(normalizedInput, "create");
     await this.assertUniqueSlug(normalizedInput.slug);
 
@@ -52,7 +56,7 @@ export class BlogService {
 
   async updateBlog(id: string, input: BlogUpdateInput) {
     await this.getBlogById(id);
-    const normalizedInput = this.normalizeUpdateInput(input);
+    const normalizedInput = await this.normalizeUpdateInput(input);
     this.assertValid(normalizedInput, "update");
 
     if (normalizedInput.slug) {
@@ -67,7 +71,7 @@ export class BlogService {
     await this.blogsRepository.deleteBlog(id);
   }
 
-  private normalizeCreateInput(input: BlogCreateInput): BlogCreateInput {
+  private async normalizeCreateInput(input: BlogCreateInput): Promise<BlogCreateInput> {
     const title = input.title.trim();
     const slug = input.slug?.trim() || this.createSlug(title);
 
@@ -76,7 +80,8 @@ export class BlogService {
       title,
       slug,
       category_id: input.category_id || null,
-      author_id: input.author_id || null,
+      author_id: await this.authorsService.resolveAssignedProfileId(input.author_id),
+      reviewer_id: await this.reviewersService.resolveAssignedProfileId(input.reviewer_id),
       content: input.content ?? {},
       tags: input.tags ?? [],
       status: input.status ?? ContentStatus.Draft,
@@ -88,7 +93,7 @@ export class BlogService {
     };
   }
 
-  private normalizeUpdateInput(input: BlogUpdateInput): BlogUpdateInput {
+  private async normalizeUpdateInput(input: BlogUpdateInput): Promise<BlogUpdateInput> {
     const title = input.title?.trim();
     const slug = input.slug?.trim() || (title ? this.createSlug(title) : undefined);
     const normalizedInput: BlogUpdateInput = {
@@ -102,7 +107,16 @@ export class BlogService {
     };
 
     if ("category_id" in input) normalizedInput.category_id = input.category_id || null;
-    if ("author_id" in input) normalizedInput.author_id = input.author_id || null;
+    if ("author_id" in input) {
+      normalizedInput.author_id = await this.authorsService.resolveAssignedProfileId(
+        input.author_id,
+      );
+    }
+    if ("reviewer_id" in input) {
+      normalizedInput.reviewer_id = await this.reviewersService.resolveAssignedProfileId(
+        input.reviewer_id,
+      );
+    }
     if ("tags" in input) normalizedInput.tags = input.tags ?? [];
     if ("seo_keywords" in input) normalizedInput.seo_keywords = input.seo_keywords ?? [];
 

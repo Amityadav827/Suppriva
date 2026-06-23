@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { CategoryPill } from "@/components/category/CategoryPill";
+import { AuthorReviewerCard } from "@/components/eeat/AuthorReviewerCard";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { AffiliateCtaButton } from "@/components/product-detail/AffiliateCtaButton";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
@@ -299,6 +300,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 product={product}
               />
             </div>
+
+            <AuthorReviewerCard
+              attribution={product.expertAttribution}
+              heading="Written and reviewed for clearer supplement decisions"
+              description="Suppriva pairs product research with ingredient context and review oversight so readers can evaluate wellness options with more confidence."
+            />
 
             <ReviewSection
               id="what-is-product"

@@ -6,7 +6,7 @@ import {
   MediaLibraryField,
 } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
-import type { Blog } from "@/lib/database/types";
+import type { Author, Blog, Reviewer } from "@/lib/database/types";
 import { motion } from "framer-motion";
 import {
   Download,
@@ -31,6 +31,7 @@ type BlogFormState = {
   gallery: string[];
   category_id: string;
   author_id: string;
+  reviewer_id: string;
   reading_time: string;
   tags: string;
   status: ContentStatus;
@@ -46,6 +47,11 @@ type BlogsResponse = {
 };
 
 type BlogCsvRow = Record<(typeof CSV_COLUMNS)[number], string>;
+type ExpertProfilesResponse = {
+  authors?: Author[];
+  reviewers?: Reviewer[];
+  error?: string;
+};
 
 const CSV_COLUMNS = [
   "title",
@@ -71,6 +77,7 @@ const emptyForm: BlogFormState = {
   gallery: [],
   category_id: "",
   author_id: "",
+  reviewer_id: "",
   reading_time: "",
   tags: "",
   status: ContentStatus.Draft,
@@ -306,6 +313,7 @@ function blogToForm(blog: Blog): BlogFormState {
     gallery: galleryFromContent(blog.content),
     category_id: blog.category_id ?? "",
     author_id: blog.author_id ?? "",
+    reviewer_id: blog.reviewer_id ?? "",
     reading_time: blog.reading_time ?? "",
     tags: blog.tags.join(", "),
     status: blog.status,
@@ -336,6 +344,7 @@ function formToPayload(form: BlogFormState) {
     featured_image: form.featured_image || null,
     category_id: form.category_id || null,
     author_id: form.author_id || null,
+    reviewer_id: form.reviewer_id || null,
     reading_time: form.reading_time || null,
     tags: commaList(form.tags),
     status: form.status,
@@ -377,6 +386,8 @@ function csvRowToPayload(row: BlogCsvRow) {
 
 export function DashboardBlogsClient() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [authors, setAuthors] = useState<Author[]>([]);
+  const [reviewers, setReviewers] = useState<Reviewer[]>([]);
   const [form, setForm] = useState<BlogFormState>(emptyForm);
   const importInputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
@@ -408,9 +419,34 @@ export function DashboardBlogsClient() {
     }
   }, []);
 
+  const fetchExpertProfiles = useCallback(async () => {
+    try {
+      const [authorsResponse, reviewersResponse] = await Promise.all([
+        fetch("/api/authors?active=true", { cache: "no-store" }),
+        fetch("/api/reviewers?active=true", { cache: "no-store" }),
+      ]);
+      const authorsPayload = (await authorsResponse.json()) as ExpertProfilesResponse;
+      const reviewersPayload = (await reviewersResponse.json()) as ExpertProfilesResponse;
+
+      if (!authorsResponse.ok) {
+        throw new Error(authorsPayload.error ?? "Unable to load authors.");
+      }
+
+      if (!reviewersResponse.ok) {
+        throw new Error(reviewersPayload.error ?? "Unable to load reviewers.");
+      }
+
+      setAuthors(authorsPayload.authors ?? []);
+      setReviewers(reviewersPayload.reviewers ?? []);
+    } catch (fetchError) {
+      setError(fetchError instanceof Error ? fetchError.message : "Unable to load EEAT profiles.");
+    }
+  }, []);
+
   useEffect(() => {
     void fetchBlogs();
-  }, [fetchBlogs]);
+    void fetchExpertProfiles();
+  }, [fetchBlogs, fetchExpertProfiles]);
 
   const filteredBlogs = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -827,7 +863,18 @@ export function DashboardBlogsClient() {
             />
             <InputField label="Reading Time" value={form.reading_time} onChange={(value) => updateForm("reading_time", value)} placeholder="7 min read" />
             <InputField label="Category ID" value={form.category_id} onChange={(value) => updateForm("category_id", value)} placeholder="Optional UUID" />
-            <InputField label="Author ID" value={form.author_id} onChange={(value) => updateForm("author_id", value)} placeholder="Optional UUID" />
+            <ProfileSelect
+              label="Author"
+              value={form.author_id}
+              options={authors}
+              onChange={(value) => updateForm("author_id", value)}
+            />
+            <ProfileSelect
+              label="Reviewer"
+              value={form.reviewer_id}
+              options={reviewers}
+              onChange={(value) => updateForm("reviewer_id", value)}
+            />
             <InputField label="Tags" value={form.tags} onChange={(value) => updateForm("tags", value)} placeholder="weight loss, wellness" />
             <label className="grid gap-2">
               <span className="font-heading text-sm font-semibold text-text-dark">Status</span>
@@ -923,6 +970,37 @@ function TextAreaField({
         rows={rows}
         className="rounded-[18px] border border-border-light bg-white px-4 py-3 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+    </label>
+  );
+}
+
+function ProfileSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: Array<Author | Reviewer>;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+      >
+        <option value="">Use default profile</option>
+        {options.map((option) => (
+          <option key={option.id} value={option.id}>
+            {option.name}
+            {option.designation ? ` - ${option.designation}` : ""}
+          </option>
+        ))}
+      </select>
     </label>
   );
 }

@@ -31,6 +31,7 @@ export function BlogHero({ article }: { article: BlogArticle }) {
           <Meta icon={<Clock3 className="size-4" />} label={article.readingTime} />
           <Meta icon={<CalendarDays className="size-4" />} label={article.publishDate} />
           <Meta icon={<UserRound className="size-4" />} label={article.author.name} />
+          <Meta icon={<CalendarDays className="size-4" />} label={`Updated ${article.lastUpdated}`} />
         </div>
       </motion.div>
 

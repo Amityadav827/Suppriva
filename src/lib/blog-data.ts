@@ -1,3 +1,5 @@
+import type { ExpertAttribution } from "@/lib/database/types";
+
 export type BlogArticle = {
   slug: string;
   title: string;
@@ -5,11 +7,13 @@ export type BlogArticle = {
   category: string;
   readingTime: string;
   publishDate: string;
+  lastUpdated: string;
   author: {
     name: string;
     expertise: string;
     bio: string;
   };
+  expertAttribution: ExpertAttribution;
   image: string;
   toc: {
     id: string;

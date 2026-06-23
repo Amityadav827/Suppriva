@@ -141,6 +141,7 @@ export class SupabaseBlogsRepository implements BlogsRepository {
     if ("featured_image" in input) payload.featured_image = input.featured_image ?? null;
     if ("category_id" in input) payload.category_id = input.category_id ?? null;
     if ("author_id" in input) payload.author_id = input.author_id ?? null;
+    if ("reviewer_id" in input) payload.reviewer_id = input.reviewer_id ?? null;
     if ("reading_time" in input) payload.reading_time = input.reading_time ?? null;
     if ("tags" in input) payload.tags = input.tags ?? [];
     if ("status" in input) payload.status = input.status ?? ContentStatus.Draft;

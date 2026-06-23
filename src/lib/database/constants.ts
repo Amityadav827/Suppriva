@@ -37,6 +37,7 @@ export const DATABASE_TABLES = {
   products: "products",
   blogs: "blogs",
   authors: "authors",
+  reviewers: "reviewers",
   users: "users",
   seo: "seo",
   ingredients: "ingredients",

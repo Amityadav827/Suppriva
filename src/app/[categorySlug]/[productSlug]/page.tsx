@@ -11,6 +11,7 @@ import { buildSeoMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
+  buildPersonJsonLd,
   buildProductJsonLd,
 } from "@/lib/seo/structured-data";
 
@@ -73,6 +74,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         pageSlug={productSlug}
         schema={[
           buildProductJsonLd(payload.productDetail),
+          buildPersonJsonLd(payload.productDetail.expertAttribution.author, "author"),
+          buildPersonJsonLd(payload.productDetail.expertAttribution.reviewer, "reviewer"),
           ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },

@@ -7,6 +7,7 @@ import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { BlogDetailTemplate } from "@/components/blog-detail/BlogDetailTemplate";
 import { blogToArticle } from "@/lib/blog-article-adapter";
 import { PageType } from "@/lib/database/constants";
+import { resolveExpertAttribution } from "@/lib/eeat/server";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
@@ -22,6 +23,7 @@ import {
   buildArticleJsonLd,
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
+  buildPersonJsonLd,
 } from "@/lib/seo/structured-data";
 
 type BlogPageProps = {
@@ -75,8 +77,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
     }
 
     const categoryMap = createCategoryMap(onlyPublished(categories));
+    const expertAttribution = await resolveExpertAttribution({
+      authorId: blog.author_id,
+      reviewerId: blog.reviewer_id,
+      updatedAt: blog.updated_at || blog.published_at || blog.created_at,
+    });
     const article = {
-      ...blogToArticle(blog),
+      ...blogToArticle(blog, expertAttribution),
       category: categoryTitle(blog.category_id ? categoryMap.get(blog.category_id) : null),
     };
     const relatedArticles = onlyPublished(blogs)
@@ -99,10 +106,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
               title: article.title,
               description: article.summary,
               image: article.image,
-              authorName: article.author.name,
+              author: article.expertAttribution.author,
+              reviewer: article.expertAttribution.reviewer,
               datePublished: blog.published_at || blog.created_at,
               dateModified: blog.updated_at,
             }),
+            buildPersonJsonLd(article.expertAttribution.author, "author"),
+            buildPersonJsonLd(article.expertAttribution.reviewer, "reviewer"),
             ...(article.faqs.length ? [buildFaqJsonLd(article.faqs)] : []),
             buildBreadcrumbJsonLd([
               { name: "Home", path: "/" },

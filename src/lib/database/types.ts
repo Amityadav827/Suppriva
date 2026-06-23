@@ -42,6 +42,8 @@ export type Ingredient = {
   name: string;
   slug: string;
   status: ContentStatus;
+  author_id: string | null;
+  reviewer_id: string | null;
   scientific_name: string | null;
   ingredient_category: string | null;
   short_description: string | null;
@@ -112,6 +114,8 @@ export type Product = {
   id: string;
   category_id: string | null;
   ingredient_ids?: string[];
+  author_id: string | null;
+  reviewer_id: string | null;
   title: string;
   name: string;
   slug: string;
@@ -155,6 +159,7 @@ export type Blog = {
   id: string;
   category_id: string | null;
   author_id: string | null;
+  reviewer_id: string | null;
   title: string;
   slug: string;
   excerpt: string | null;
@@ -172,14 +177,31 @@ export type Blog = {
   deleted_at: Timestamp | null;
 };
 
-export type Author = {
+export type ExpertProfile = {
   id: string;
   name: string;
   slug: string;
+  photo_url: string | null;
+  designation: string | null;
+  qualification: string | null;
+  experience_years: number | null;
   bio: string | null;
-  avatar: string | null;
-  social_links: SocialLinks;
+  linkedin_url: string | null;
+  website_url: string | null;
+  email: string | null;
+  is_active: boolean;
   created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type Author = ExpertProfile;
+
+export type Reviewer = ExpertProfile;
+
+export type ExpertAttribution = {
+  author: Author;
+  reviewer: Reviewer;
+  lastUpdated: Timestamp | null;
 };
 
 export type User = {
@@ -287,6 +309,7 @@ export type Database = {
   product_import_logs: ProductImportLog;
   blogs: Blog;
   authors: Author;
+  reviewers: Reviewer;
   users: User;
   seo: SEO;
   ingredients: Ingredient;

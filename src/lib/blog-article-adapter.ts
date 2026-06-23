@@ -1,5 +1,5 @@
 import type { BlogArticle } from "@/lib/blog-data";
-import type { Blog, JsonValue } from "@/lib/database/types";
+import type { Blog, ExpertAttribution, JsonValue } from "@/lib/database/types";
 
 type BlogContentObject = {
   body?: string;
@@ -15,13 +15,6 @@ type BlogContentObject = {
   recommended?: string[];
   faqs?: BlogArticle["faqs"];
   related?: string[];
-  author?: BlogArticle["author"];
-};
-
-const defaultAuthor = {
-  name: "Suppriva Editorial Team",
-  expertise: "Supplement Research Editors",
-  bio: "The Suppriva editorial team reviews supplement positioning, wellness trends, and ingredient research for clearer product discovery.",
 };
 
 function isRecord(value: JsonValue): value is Record<string, JsonValue> {
@@ -75,7 +68,10 @@ function createDefaultSections(blog: Blog, body?: string): BlogArticle["sections
   ];
 }
 
-export function blogToArticle(blog: Blog): BlogArticle {
+export function blogToArticle(
+  blog: Blog,
+  expertAttribution: ExpertAttribution,
+): BlogArticle {
   const content = asContentObject(blog.content);
   const body = typeof content.body === "string" ? content.body : undefined;
   const category = typeof content.category === "string" ? content.category : blog.tags[0];
@@ -103,7 +99,18 @@ export function blogToArticle(blog: Blog): BlogArticle {
       typeof content.publishDate === "string"
         ? content.publishDate
         : formatDate(blog.published_at || blog.created_at),
-    author: content.author ?? defaultAuthor,
+    lastUpdated: formatDate(blog.updated_at || blog.published_at || blog.created_at),
+    author: {
+      name: expertAttribution.author.name,
+      expertise:
+        [expertAttribution.author.designation, expertAttribution.author.qualification]
+          .filter(Boolean)
+          .join(" • ") || "Suppriva Editorial Contributor",
+      bio:
+        expertAttribution.author.bio ||
+        "Suppriva contributors help readers research supplements, ingredients, and wellness solutions with clearer editorial context.",
+    },
+    expertAttribution,
     image,
     toc: Array.isArray(content.toc)
       ? content.toc

@@ -424,6 +424,8 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
 
     if ("name" in input) payload.name = input.name;
     if ("slug" in input) payload.slug = input.slug;
+    if ("author_id" in input) payload.author_id = input.author_id ?? null;
+    if ("reviewer_id" in input) payload.reviewer_id = input.reviewer_id ?? null;
     if ("status" in input) payload.status = input.status ?? ContentStatus.Draft;
     if ("scientific_name" in input) payload.scientific_name = input.scientific_name ?? null;
     if ("ingredient_category" in input) {

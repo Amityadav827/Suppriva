@@ -33,6 +33,7 @@ import { buildProductPath } from "@/lib/products/url";
 import type {
   Blog,
   Category,
+  ExpertAttribution,
   FAQItem,
   Ingredient,
   JsonValue,
@@ -402,6 +403,7 @@ export function productToDetail(
   product: Product,
   products: Product[],
   categories: Map<string, Category>,
+  expertAttribution: ExpertAttribution,
   linkedIngredients: Ingredient[] = [],
 ): ProductDetail {
   const benefits = benefitsFromProduct(product);
@@ -510,6 +512,7 @@ export function productToDetail(
     related,
     comparisonProducts: relatedProducts.slice(0, 4),
     relatedProducts,
+    expertAttribution,
   };
 }
 

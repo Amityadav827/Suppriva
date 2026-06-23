@@ -15,8 +15,12 @@ import {
   SupabaseProductsRepository,
   type ProductsRepository,
 } from "@/repositories/products.repository";
+import { AuthorsService, ReviewersService } from "@/services/expert-profiles.service";
 
 export class ProductService {
+  private readonly authorsService = new AuthorsService();
+  private readonly reviewersService = new ReviewersService();
+
   constructor(
     private readonly productsRepository: ProductsRepository = new SupabaseProductsRepository(),
     private readonly ingredientsRepository: IngredientsRepository = new SupabaseIngredientsRepository(),
@@ -51,7 +55,7 @@ export class ProductService {
   }
 
   async createProduct(input: ProductCreateInput) {
-    const normalizedInput = this.normalizeCreateInput(input);
+    const normalizedInput = await this.normalizeCreateInput(input);
     this.assertValid(normalizedInput, "create");
     await this.assertUniqueSlug(normalizedInput.slug);
     const selectedIngredients = await this.validateAndResolveIngredientIds(
@@ -79,7 +83,7 @@ export class ProductService {
 
   async updateProduct(id: string, input: ProductUpdateInput) {
     const existingProduct = await this.getProductById(id);
-    const normalizedInput = this.normalizeUpdateInput(input);
+    const normalizedInput = await this.normalizeUpdateInput(input);
     this.assertValid(normalizedInput, "update");
 
     if (normalizedInput.slug) {
@@ -116,7 +120,7 @@ export class ProductService {
     await this.productsRepository.deleteProduct(id);
   }
 
-  private normalizeCreateInput(input: ProductCreateInput): ProductCreateInput {
+  private async normalizeCreateInput(input: ProductCreateInput): Promise<ProductCreateInput> {
     const title = input.title.trim();
     const slug = input.slug?.trim() || this.createSlug(title);
 
@@ -125,6 +129,8 @@ export class ProductService {
       title,
       slug,
       category_id: input.category_id || null,
+      author_id: await this.authorsService.resolveAssignedProfileId(input.author_id),
+      reviewer_id: await this.reviewersService.resolveAssignedProfileId(input.reviewer_id),
       ingredient_ids: this.normalizeIngredientIds(input.ingredient_ids),
       gallery: input.gallery ?? [],
       ingredients: input.ingredients ?? [],
@@ -140,7 +146,7 @@ export class ProductService {
     };
   }
 
-  private normalizeUpdateInput(input: ProductUpdateInput): ProductUpdateInput {
+  private async normalizeUpdateInput(input: ProductUpdateInput): Promise<ProductUpdateInput> {
     const title = input.title?.trim();
     const slug = input.slug?.trim() || (title ? this.createSlug(title) : undefined);
     const normalizedInput: ProductUpdateInput = {
@@ -155,6 +161,18 @@ export class ProductService {
 
     if ("category_id" in input) {
       normalizedInput.category_id = input.category_id || null;
+    }
+
+    if ("author_id" in input) {
+      normalizedInput.author_id = await this.authorsService.resolveAssignedProfileId(
+        input.author_id,
+      );
+    }
+
+    if ("reviewer_id" in input) {
+      normalizedInput.reviewer_id = await this.reviewersService.resolveAssignedProfileId(
+        input.reviewer_id,
+      );
     }
 
     if ("ingredient_ids" in input) {

@@ -14,6 +14,7 @@ import {
   SupabaseIngredientsRepository,
   type IngredientsRepository,
 } from "@/repositories/ingredients.repository";
+import { AuthorsService, ReviewersService } from "@/services/expert-profiles.service";
 
 export type IngredientImportError = {
   rowNumber: number;
@@ -43,6 +44,9 @@ type IngredientImportRow = {
 };
 
 export class IngredientService {
+  private readonly authorsService = new AuthorsService();
+  private readonly reviewersService = new ReviewersService();
+
   constructor(
     private readonly ingredientsRepository: IngredientsRepository = new SupabaseIngredientsRepository(),
   ) {}
@@ -139,7 +143,7 @@ export class IngredientService {
 
     for (const entry of rows) {
       const { payload, errors: rowErrors } = csvRowToIngredientPayload(entry.row);
-      const normalizedPayload = this.normalizeCreateInput(payload);
+      const normalizedPayload = await this.normalizeCreateInput(payload);
       const validationMessages = [...rowErrors];
 
       if (!normalizedPayload.name.trim()) {
@@ -264,7 +268,7 @@ export class IngredientService {
 
   async createIngredient(input: IngredientCreateInput) {
     await this.ensureAdminAccess();
-    const normalizedInput = this.normalizeCreateInput(input);
+    const normalizedInput = await this.normalizeCreateInput(input);
     this.assertValid(normalizedInput, "create");
     await this.assertUniqueSlug(normalizedInput.slug);
 
@@ -280,7 +284,7 @@ export class IngredientService {
   async updateIngredient(id: string, input: IngredientUpdateInput) {
     await this.ensureAdminAccess();
     await this.getIngredientById(id);
-    const normalizedInput = this.normalizeUpdateInput(input);
+    const normalizedInput = await this.normalizeUpdateInput(input);
     this.assertValid(normalizedInput, "update");
 
     if (normalizedInput.slug) {
@@ -305,7 +309,9 @@ export class IngredientService {
     await this.ingredientsRepository.deleteIngredient(id);
   }
 
-  private normalizeCreateInput(input: IngredientCreateInput): IngredientCreateInput {
+  private async normalizeCreateInput(
+    input: IngredientCreateInput,
+  ): Promise<IngredientCreateInput> {
     const name = input.name.trim();
     const slug = input.slug?.trim() || this.createSlug(name);
 
@@ -314,6 +320,8 @@ export class IngredientService {
       name,
       slug,
       status: input.status ?? ContentStatus.Draft,
+      author_id: await this.authorsService.resolveAssignedProfileId(input.author_id),
+      reviewer_id: await this.reviewersService.resolveAssignedProfileId(input.reviewer_id),
       scientific_name: this.cleanText(input.scientific_name),
       ingredient_category: this.cleanText(input.ingredient_category),
       short_description: this.cleanText(input.short_description),
@@ -351,7 +359,9 @@ export class IngredientService {
     };
   }
 
-  private normalizeUpdateInput(input: IngredientUpdateInput): IngredientUpdateInput {
+  private async normalizeUpdateInput(
+    input: IngredientUpdateInput,
+  ): Promise<IngredientUpdateInput> {
     const name = input.name?.trim();
     const slug = input.slug?.trim() || (name ? this.createSlug(name) : undefined);
 
@@ -360,6 +370,18 @@ export class IngredientService {
       ...(name ? { name } : {}),
       ...(slug ? { slug } : {}),
       ...("status" in input ? { status: input.status ?? ContentStatus.Draft } : {}),
+      ...("author_id" in input
+        ? {
+            author_id: await this.authorsService.resolveAssignedProfileId(input.author_id),
+          }
+        : {}),
+      ...("reviewer_id" in input
+        ? {
+            reviewer_id: await this.reviewersService.resolveAssignedProfileId(
+              input.reviewer_id,
+            ),
+          }
+        : {}),
       ...("scientific_name" in input
         ? { scientific_name: this.cleanText(input.scientific_name) }
         : {}),

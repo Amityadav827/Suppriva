@@ -19,6 +19,22 @@ export const databaseRelationships: Relationship[] = [
     description: "Each product belongs to one category. Categories can contain many products.",
   },
   {
+    fromTable: DATABASE_TABLES.products,
+    fromColumn: "author_id",
+    toTable: DATABASE_TABLES.authors,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each product can have one author. Authors can contribute to many products.",
+  },
+  {
+    fromTable: DATABASE_TABLES.products,
+    fromColumn: "reviewer_id",
+    toTable: DATABASE_TABLES.reviewers,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each product can have one reviewer. Reviewers can review many products.",
+  },
+  {
     fromTable: DATABASE_TABLES.blogs,
     fromColumn: "category_id",
     toTable: DATABASE_TABLES.categories,
@@ -33,6 +49,30 @@ export const databaseRelationships: Relationship[] = [
     toColumn: "id",
     type: "many-to-one",
     description: "Each blog can have one author. Authors can write many blogs.",
+  },
+  {
+    fromTable: DATABASE_TABLES.blogs,
+    fromColumn: "reviewer_id",
+    toTable: DATABASE_TABLES.reviewers,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each blog can have one reviewer. Reviewers can review many blogs.",
+  },
+  {
+    fromTable: DATABASE_TABLES.ingredients,
+    fromColumn: "author_id",
+    toTable: DATABASE_TABLES.authors,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each ingredient can have one author. Authors can contribute to many ingredients.",
+  },
+  {
+    fromTable: DATABASE_TABLES.ingredients,
+    fromColumn: "reviewer_id",
+    toTable: DATABASE_TABLES.reviewers,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each ingredient can have one reviewer. Reviewers can review many ingredients.",
   },
   {
     fromTable: DATABASE_TABLES.productIngredients,
@@ -62,16 +102,23 @@ export const databaseRelationships: Relationship[] = [
 
 export const relationshipDiagram = `
 categories
-  ├─ products
-  └─ blogs
+  -> products
+  -> blogs
 
 authors
-  └─ blogs
+  -> products
+  -> ingredients
+  -> blogs
+
+reviewers
+  -> products
+  -> ingredients
+  -> blogs
 
 products
-  ├─ product_ingredients
-  └─ affiliate_clicks
+  -> product_ingredients
+  -> affiliate_clicks
 
 ingredients
-  └─ product_ingredients
+  -> product_ingredients
 `;

@@ -7,6 +7,7 @@ import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { PageType } from "@/lib/database/constants";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
+import { resolveExpertAttribution } from "@/lib/eeat/server";
 import type { Ingredient, JsonValue } from "@/lib/database/types";
 import { blogToCard, createCategoryMap, onlyPublished, productToCategoryProduct } from "@/lib/live-data";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
@@ -15,6 +16,7 @@ import {
   buildFaqJsonLd,
   buildIngredientDefinedTermJsonLd,
   buildMedicalWebPageJsonLd,
+  buildPersonJsonLd,
 } from "@/lib/seo/structured-data";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
@@ -173,6 +175,11 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
   );
   const articleCards: BlogPostCard[] = resolveRelatedArticles(ingredient, blogs, categoryMap);
   const relatedIngredients = resolveRelatedIngredients(ingredient, allIngredients);
+  const expertAttribution = await resolveExpertAttribution({
+    authorId: ingredient.author_id,
+    reviewerId: ingredient.reviewer_id,
+    updatedAt: ingredient.updated_at || ingredient.created_at,
+  });
   const faqs = (Array.isArray(ingredient.faq_json) ? ingredient.faq_json : []).filter(
     (faq) => faq.question?.trim() && faq.answer?.trim(),
   );
@@ -183,8 +190,10 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
         pageType={PageType.Ingredient}
         pageSlug={ingredient.slug}
         schema={[
-          buildMedicalWebPageJsonLd(ingredient),
-          buildIngredientDefinedTermJsonLd(ingredient, productCards),
+          buildMedicalWebPageJsonLd(ingredient, expertAttribution),
+          buildIngredientDefinedTermJsonLd(ingredient, productCards, expertAttribution),
+          buildPersonJsonLd(expertAttribution.author, "author"),
+          buildPersonJsonLd(expertAttribution.reviewer, "reviewer"),
           ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
@@ -196,6 +205,7 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
       <Navbar />
       <IngredientDetailTemplate
         ingredient={ingredient}
+        expertAttribution={expertAttribution}
         relatedProducts={productCards}
         relatedIngredients={relatedIngredients}
         relatedArticles={articleCards}

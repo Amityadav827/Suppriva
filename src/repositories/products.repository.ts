@@ -213,6 +213,8 @@ export class SupabaseProductsRepository implements ProductsRepository {
     const payload: Record<string, unknown> = {};
 
     if ("category_id" in input) payload.category_id = input.category_id ?? null;
+    if ("author_id" in input) payload.author_id = input.author_id ?? null;
+    if ("reviewer_id" in input) payload.reviewer_id = input.reviewer_id ?? null;
     if ("title" in input) payload.title = input.title;
     if ("slug" in input) payload.slug = input.slug;
     if ("short_description" in input) {

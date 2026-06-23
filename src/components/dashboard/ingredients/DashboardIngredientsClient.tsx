@@ -3,7 +3,14 @@
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
-import type { FAQItem, Ingredient, JsonValue, Product } from "@/lib/database/types";
+import type {
+  Author,
+  FAQItem,
+  Ingredient,
+  JsonValue,
+  Product,
+  Reviewer,
+} from "@/lib/database/types";
 import {
   INGREDIENT_CSV_COLUMNS,
   INGREDIENT_IMPORT_BATCH_SIZE,
@@ -46,6 +53,8 @@ type IngredientFormState = {
   name: string;
   slug: string;
   status: ContentStatus;
+  author_id: string;
+  reviewer_id: string;
   scientific_name: string;
   ingredient_category: string;
   image_url: string;
@@ -84,6 +93,12 @@ type IngredientsResponse = {
 
 type ProductsResponse = {
   products?: Product[];
+  error?: string;
+};
+
+type ExpertProfilesResponse = {
+  authors?: Author[];
+  reviewers?: Reviewer[];
   error?: string;
 };
 
@@ -130,6 +145,8 @@ const emptyForm: IngredientFormState = {
   name: "",
   slug: "",
   status: ContentStatus.Draft,
+  author_id: "",
+  reviewer_id: "",
   scientific_name: "",
   ingredient_category: "",
   image_url: "",
@@ -285,6 +302,8 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     name: ingredient.name,
     slug: ingredient.slug,
     status: ingredient.status ?? ContentStatus.Draft,
+    author_id: ingredient.author_id ?? "",
+    reviewer_id: ingredient.reviewer_id ?? "",
     scientific_name: ingredient.scientific_name ?? "",
     ingredient_category: ingredient.ingredient_category ?? "",
     image_url: ingredient.image_url ?? ingredient.featured_image ?? "",
@@ -382,6 +401,8 @@ function formToPayload(form: IngredientFormState) {
     name: form.name.trim(),
     slug: normalizedSlug || undefined,
     status: form.status,
+    author_id: form.author_id || null,
+    reviewer_id: form.reviewer_id || null,
     scientific_name: cleanText(form.scientific_name),
     ingredient_category: cleanText(form.ingredient_category),
     image_url: primaryImage,
@@ -422,6 +443,8 @@ function formToPayload(form: IngredientFormState) {
 export function DashboardIngredientsClient() {
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [authors, setAuthors] = useState<Author[]>([]);
+  const [reviewers, setReviewers] = useState<Reviewer[]>([]);
   const [form, setForm] = useState<IngredientFormState>(emptyForm);
   const importInputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
@@ -465,9 +488,34 @@ export function DashboardIngredientsClient() {
     }
   }, []);
 
+  const fetchExpertProfiles = useCallback(async () => {
+    try {
+      const [authorsResponse, reviewersResponse] = await Promise.all([
+        fetch("/api/authors?active=true", { cache: "no-store" }),
+        fetch("/api/reviewers?active=true", { cache: "no-store" }),
+      ]);
+      const authorsPayload = (await authorsResponse.json()) as ExpertProfilesResponse;
+      const reviewersPayload = (await reviewersResponse.json()) as ExpertProfilesResponse;
+
+      if (!authorsResponse.ok) {
+        throw new Error(authorsPayload.error ?? "Unable to load authors.");
+      }
+
+      if (!reviewersResponse.ok) {
+        throw new Error(reviewersPayload.error ?? "Unable to load reviewers.");
+      }
+
+      setAuthors(authorsPayload.authors ?? []);
+      setReviewers(reviewersPayload.reviewers ?? []);
+    } catch (fetchError) {
+      setError(fetchError instanceof Error ? fetchError.message : "Unable to load EEAT profiles.");
+    }
+  }, []);
+
   useEffect(() => {
     void fetchData();
-  }, [fetchData]);
+    void fetchExpertProfiles();
+  }, [fetchData, fetchExpertProfiles]);
 
   const filteredIngredients = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -1257,6 +1305,18 @@ export function DashboardIngredientsClient() {
                   { label: "Archived", value: ContentStatus.Archived },
                 ]}
               />
+              <ProfileSelect
+                label="Author"
+                value={form.author_id}
+                options={authors}
+                onChange={(value) => updateForm("author_id", value)}
+              />
+              <ProfileSelect
+                label="Reviewer"
+                value={form.reviewer_id}
+                options={reviewers}
+                onChange={(value) => updateForm("reviewer_id", value)}
+              />
               <InputField label="Scientific Name" value={form.scientific_name} onChange={(value) => updateTextField("scientific_name", value)} />
               <InputField label="Ingredient Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
               <MediaLibraryField
@@ -1540,6 +1600,37 @@ function SelectField({
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function ProfileSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: Array<Author | Reviewer>;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+      >
+        <option value="">Use default profile</option>
+        {options.map((option) => (
+          <option key={option.id} value={option.id}>
+            {option.name}
+            {option.designation ? ` - ${option.designation}` : ""}
           </option>
         ))}
       </select>

@@ -1,4 +1,5 @@
 import type { BlogPostCard } from "@/components/blog/BlogCard";
+import { resolveExpertAttribution } from "@/lib/eeat/server";
 import type { JsonValue } from "@/lib/database/types";
 import { blogToCard, createCategoryMap, onlyPublished, productToDetail } from "@/lib/live-data";
 import { BlogService } from "@/services/blog.service";
@@ -55,10 +56,16 @@ export async function getProductPageData(slug: string) {
   const publishedCategories = onlyPublished(categories);
   const categoryMap = createCategoryMap(publishedCategories);
   const linkedIngredients = await new IngredientService().getIngredientsForProduct(product.id);
+  const expertAttribution = await resolveExpertAttribution({
+    authorId: product.author_id,
+    reviewerId: product.reviewer_id,
+    updatedAt: product.updated_at || product.published_at || product.created_at,
+  });
   const baseProductDetail = productToDetail(
     product,
     publishedProducts,
     categoryMap,
+    expertAttribution,
     linkedIngredients,
   );
 

@@ -7,11 +7,13 @@ import {
 } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type {
+  Author,
   Category,
   FAQItem,
   Ingredient,
   JsonValue,
   Product,
+  Reviewer,
 } from "@/lib/database/types";
 import { motion } from "framer-motion";
 import { Loader2, Pencil, Plus, RefreshCw, Search, Trash2, X } from "lucide-react";
@@ -22,6 +24,8 @@ type ProductFormState = {
   title: string;
   slug: string;
   category_id: string;
+  author_id: string;
+  reviewer_id: string;
   ingredient_ids: string[];
   short_description: string;
   full_description: string;
@@ -54,10 +58,18 @@ type IngredientsResponse = {
   error?: string;
 };
 
+type ExpertProfilesResponse = {
+  authors?: Author[];
+  reviewers?: Reviewer[];
+  error?: string;
+};
+
 const emptyForm: ProductFormState = {
   title: "",
   slug: "",
   category_id: "",
+  author_id: "",
+  reviewer_id: "",
   ingredient_ids: [],
   short_description: "",
   full_description: "",
@@ -102,6 +114,8 @@ function productToForm(product: Product): ProductFormState {
     title: product.title,
     slug: product.slug,
     category_id: product.category_id ?? "",
+    author_id: product.author_id ?? "",
+    reviewer_id: product.reviewer_id ?? "",
     ingredient_ids: product.ingredient_ids ?? [],
     short_description: product.short_description ?? "",
     full_description: product.full_description ?? "",
@@ -138,6 +152,8 @@ function formToPayload(form: ProductFormState) {
     title: form.title,
     slug: form.slug || undefined,
     category_id: form.category_id || null,
+    author_id: form.author_id || null,
+    reviewer_id: form.reviewer_id || null,
     ingredient_ids: form.ingredient_ids,
     short_description: form.short_description || null,
     full_description: form.full_description || null,
@@ -167,6 +183,8 @@ export function DashboardProductsClient() {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
+  const [authors, setAuthors] = useState<Author[]>([]);
+  const [reviewers, setReviewers] = useState<Reviewer[]>([]);
   const [form, setForm] = useState<ProductFormState>(emptyForm);
   const [search, setSearch] = useState("");
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
@@ -240,11 +258,36 @@ export function DashboardProductsClient() {
     }
   }, []);
 
+  const fetchExpertProfiles = useCallback(async () => {
+    try {
+      const [authorsResponse, reviewersResponse] = await Promise.all([
+        fetch("/api/authors?active=true", { cache: "no-store" }),
+        fetch("/api/reviewers?active=true", { cache: "no-store" }),
+      ]);
+      const authorsPayload = (await authorsResponse.json()) as ExpertProfilesResponse;
+      const reviewersPayload = (await reviewersResponse.json()) as ExpertProfilesResponse;
+
+      if (!authorsResponse.ok) {
+        throw new Error(authorsPayload.error ?? "Unable to load authors.");
+      }
+
+      if (!reviewersResponse.ok) {
+        throw new Error(reviewersPayload.error ?? "Unable to load reviewers.");
+      }
+
+      setAuthors(authorsPayload.authors ?? []);
+      setReviewers(reviewersPayload.reviewers ?? []);
+    } catch (fetchError) {
+      setError(fetchError instanceof Error ? fetchError.message : "Unable to load EEAT profiles.");
+    }
+  }, []);
+
   useEffect(() => {
     void fetchProducts();
     void fetchCategories();
     void fetchIngredients();
-  }, [fetchCategories, fetchIngredients, fetchProducts]);
+    void fetchExpertProfiles();
+  }, [fetchCategories, fetchExpertProfiles, fetchIngredients, fetchProducts]);
 
   const filteredProducts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -506,6 +549,18 @@ export function DashboardProductsClient() {
               onChange={(value) => updateForm("category_id", value)}
             />
             <InputField label="Rating" value={form.rating} onChange={(value) => updateForm("rating", value)} placeholder="4.8" />
+            <ProfileSelect
+              label="Author"
+              value={form.author_id}
+              options={authors}
+              onChange={(value) => updateForm("author_id", value)}
+            />
+            <ProfileSelect
+              label="Reviewer"
+              value={form.reviewer_id}
+              options={reviewers}
+              onChange={(value) => updateForm("reviewer_id", value)}
+            />
             <MediaLibraryField
               label="Product Image"
               value={form.image}
@@ -600,6 +655,37 @@ function InputField({
         required={required}
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+    </label>
+  );
+}
+
+function ProfileSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: Array<Author | Reviewer>;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+      >
+        <option value="">Use default profile</option>
+        {options.map((option) => (
+          <option key={option.id} value={option.id}>
+            {option.name}
+            {option.designation ? ` - ${option.designation}` : ""}
+          </option>
+        ))}
+      </select>
     </label>
   );
 }
