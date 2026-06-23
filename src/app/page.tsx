@@ -63,6 +63,10 @@ export default async function Home() {
     label: category.title,
     slug: category.slug,
   }));
+  const homepageExpert =
+    featuredExperts.find((expert) => expert.slug === "dr-arindham-chatterjee") ||
+    featuredExperts[0] ||
+    null;
 
   return (
     <>
@@ -72,18 +76,20 @@ export default async function Home() {
         schema={[
           buildWebsiteJsonLd(),
           buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
-          ...featuredExperts.map((expert) =>
-            buildPublicPersonJsonLd({
-              name: expert.name,
-              path: `/experts/${expert.slug}`,
-              image: expert.profile_image,
-              jobTitle: expert.designation,
-              description: expert.short_bio,
-              sameAs: [expert.linkedin_url, expert.website_url].filter(
-                (value): value is string => Boolean(value),
-              ),
-            }),
-          ),
+          ...(homepageExpert
+            ? [
+                buildPublicPersonJsonLd({
+                  name: homepageExpert.name,
+                  path: `/experts/${homepageExpert.slug}`,
+                  image: homepageExpert.profile_image,
+                  jobTitle: homepageExpert.designation,
+                  description: homepageExpert.short_bio,
+                  sameAs: [homepageExpert.linkedin_url, homepageExpert.website_url].filter(
+                    (value): value is string => Boolean(value),
+                  ),
+                }),
+              ]
+            : []),
         ]}
       />
       <Navbar />
@@ -92,7 +98,7 @@ export default async function Home() {
         <HealthNeedsSection categories={categoryPills} />
         <PopularPicksSection products={productCards} />
         <AllSupplementCategoriesSection />
-        <WellnessExpertSection experts={featuredExperts} />
+        <WellnessExpertSection expert={homepageExpert} />
         <SupplementsBlogSection posts={blogCards} />
         <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />
