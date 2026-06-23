@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import type { Expert } from "@/lib/database/types";
 import { motion } from "framer-motion";
