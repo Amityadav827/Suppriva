@@ -26,7 +26,18 @@ import { PopularPicksSection } from "@/sections/PopularPicksSection";
 import { SupplementsBlogSection } from "@/sections/SupplementsBlogSection";
 import { SupplementsBuySellSection } from "@/sections/SupplementsBuySellSection";
 import { TrustBadgesStrip } from "@/sections/TrustBadgesStrip";
+import { WellnessExpertSection } from "@/sections/WellnessExpertSection";
 import { WhyChooseSupprivaSection } from "@/sections/WhyChooseSupprivaSection";
+
+const homeWellnessExpertSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dr. Arindham Chatterjee",
+  image:
+    "https://auzapxutkteykldxhyyq.supabase.co/storage/v1/object/public/media-library/1773219025832.jpg",
+  jobTitle: "Medical & Wellness Advisor",
+  sameAs: ["https://www.linkedin.com/in/dr-arindham-chatterjee-2b1b6716/"],
+};
 
 export const dynamic = "force-dynamic";
 
@@ -68,6 +79,7 @@ export default async function Home() {
         schema={[
           buildWebsiteJsonLd(),
           buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
+          homeWellnessExpertSchema,
         ]}
       />
       <Navbar />
@@ -76,6 +88,7 @@ export default async function Home() {
         <HealthNeedsSection categories={categoryPills} />
         <PopularPicksSection products={productCards} />
         <AllSupplementCategoriesSection />
+        <WellnessExpertSection />
         <SupplementsBlogSection posts={blogCards} />
         <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />
