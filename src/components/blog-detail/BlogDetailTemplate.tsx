@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { ArticleContent } from "@/components/blog-detail/ArticleContent";
 import { BlogHero } from "@/components/blog-detail/BlogHero";
-import { AuthorReviewerCard } from "@/components/eeat/AuthorReviewerCard";
 import { ReadingProgressBar } from "@/components/blog-detail/ReadingProgressBar";
 import { RecommendedProducts } from "@/components/blog-detail/RecommendedProducts";
 import { RelatedArticlesSlider } from "@/components/blog-detail/RelatedArticlesSlider";
@@ -53,14 +52,6 @@ export function BlogDetailTemplate({
             <BlogHero article={article} />
           </div>
         </section>
-
-        <SectionWrapper id="editorial-review">
-          <AuthorReviewerCard
-            attribution={article.expertAttribution}
-            heading="Written, reviewed, and updated for wellness clarity"
-            description="Suppriva articles combine editorial research, expert review, and practical supplement context so readers can learn before they buy."
-          />
-        </SectionWrapper>
 
         <SectionWrapper id="article" tone="white">
           <div className="grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-10">

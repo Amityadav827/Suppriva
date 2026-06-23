@@ -18,7 +18,6 @@ import {
   Star,
   TestTube2,
 } from "lucide-react";
-import { AuthorReviewerCard } from "@/components/eeat/AuthorReviewerCard";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
@@ -218,19 +217,14 @@ function buildQuickFacts(ingredient: Ingredient) {
   ].filter((item) => item.value);
 }
 
-export function IngredientDetailTemplate({
-  ingredient,
-  expertAttribution,
-  relatedProducts,
-  relatedIngredients,
-  relatedArticles,
-}: {
+export function IngredientDetailTemplate(props: {
   ingredient: Ingredient;
   expertAttribution: ExpertAttribution;
   relatedProducts: CategoryProduct[];
   relatedIngredients: RelatedIngredientCardData[];
   relatedArticles: BlogPostCard[];
 }) {
+  const { ingredient, relatedProducts, relatedIngredients, relatedArticles } = props;
   const quickFacts = buildQuickFacts(ingredient);
   const overviewContent =
     ingredient.overview_content || ingredient.full_description || ingredient.short_description;
@@ -488,16 +482,6 @@ export function IngredientDetailTemplate({
               <IngredientSectionNav sections={sections} mobile />
             </div>
           ) : null}
-        </div>
-      </section>
-
-      <section className="bg-cream pb-4">
-        <div className="site-container">
-          <AuthorReviewerCard
-            attribution={expertAttribution}
-            heading="Expert-reviewed ingredient research"
-            description="Suppriva ingredient profiles pair editorial authorship, medical-style review oversight, and real product context for better wellness research."
-          />
         </div>
       </section>
 
