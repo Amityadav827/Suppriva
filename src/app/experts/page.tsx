@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { ArrowRight, BadgeCheck, ShieldCheck, Stethoscope } from "lucide-react";
+import { BadgeCheck, ShieldCheck, Stethoscope } from "lucide-react";
 import { PremiumFooter } from "@/components/footer/PremiumFooter";
-import { FeaturedExpertCard } from "@/components/experts/FeaturedExpertCard";
+import { ExpertCard } from "@/components/experts/ExpertCard";
 import { Navbar } from "@/components/navbar/Navbar";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { PageType } from "@/lib/database/constants";
-import { ADVISORY_EXPERT } from "@/lib/experts/advisory-board";
+import { getExpertsDirectoryItems } from "@/lib/experts/page-data";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbJsonLd,
@@ -33,7 +32,13 @@ const trustPoints = [
   "Supports a more informed and confidence-building discovery experience",
 ];
 
-export default function ExpertsPage() {
+export default async function ExpertsPage() {
+  const experts = await getExpertsDirectoryItems();
+  const linkedItems = experts.map(({ expert }) => ({
+    name: expert.name,
+    path: `/experts/${expert.slug}`,
+  }));
+
   return (
     <>
       <JsonLdScript
@@ -45,7 +50,7 @@ export default function ExpertsPage() {
             description:
               "Meet the wellness professionals who contribute expert guidance and editorial review for Suppriva's educational wellness resources.",
             path: "/experts",
-            items: [{ name: ADVISORY_EXPERT.name, path: ADVISORY_EXPERT.path }],
+            items: linkedItems,
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
@@ -70,11 +75,24 @@ export default function ExpertsPage() {
             </p>
           </FadeIn>
 
-          <FeaturedExpertCard
-            className="mx-auto mt-12 max-w-6xl"
-            ctaLabel="View Profile"
-            ctaHref={ADVISORY_EXPERT.path}
-          />
+          {experts.length ? (
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {experts.map(({ expert }) => (
+                <ExpertCard key={expert.id} expert={expert} />
+              ))}
+            </div>
+          ) : (
+            <div className="mx-auto mt-12 max-w-3xl rounded-[28px] border border-border-light bg-white p-8 text-center shadow-[0_18px_52px_rgba(15,23,42,0.05)]">
+              <Stethoscope className="mx-auto size-10 text-primary" aria-hidden="true" />
+              <p className="mt-4 font-heading text-xl font-bold text-text-dark">
+                Advisory board profiles will appear here soon.
+              </p>
+              <p className="mt-2 text-sm leading-7 text-muted">
+                Suppriva&apos;s public wellness experts page updates automatically as
+                active expert profiles are published from the dashboard.
+              </p>
+            </div>
+          )}
         </SectionWrapper>
 
         <SectionWrapper tone="cream">
@@ -117,12 +135,6 @@ export default function ExpertsPage() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="mt-8 flex justify-center lg:justify-start">
-              <PremiumButton href={ADVISORY_EXPERT.path} variant="secondary" icon={<ArrowRight className="size-4" aria-hidden="true" />}>
-                Explore Featured Profile
-              </PremiumButton>
             </div>
           </FadeIn>
         </SectionWrapper>

@@ -1,5 +1,6 @@
 import {
   ContentStatus,
+  type ExpertStatus,
   PageType,
   SubscriberStatus,
   UserRole,
@@ -198,6 +199,28 @@ export type Author = ExpertProfile;
 
 export type Reviewer = ExpertProfile;
 
+export type Expert = {
+  id: string;
+  name: string;
+  slug: string;
+  profile_image: string | null;
+  designation: string | null;
+  short_bio: string | null;
+  full_bio: string | null;
+  experience_years: number | null;
+  linkedin_url: string | null;
+  website_url: string | null;
+  email: string | null;
+  expertise_tags: string[];
+  status: ExpertStatus;
+  display_order: number;
+  featured_on_homepage: boolean;
+  linked_author_id: string | null;
+  linked_reviewer_id: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
 export type ExpertAttribution = {
   author: Author;
   reviewer: Reviewer;
@@ -252,12 +275,17 @@ export type ExpertQuery = {
   id: string;
   name: string;
   email: string;
-  product_name: string;
-  product_url: string;
+  category: string | null;
+  expert_id: string | null;
+  product_name: string | null;
+  product_url: string | null;
   question_type: string;
   message: string;
   status: ExpertQueryStatus;
   created_at: Timestamp;
+  updated_at: Timestamp | null;
+  resolved_at: Timestamp | null;
+  source_page: string | null;
 };
 
 export type AffiliateClick = {
@@ -310,6 +338,7 @@ export type Database = {
   blogs: Blog;
   authors: Author;
   reviewers: Reviewer;
+  experts: Expert;
   users: User;
   seo: SEO;
   ingredients: Ingredient;

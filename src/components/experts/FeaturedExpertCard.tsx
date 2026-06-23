@@ -2,26 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BookOpenText,
-  ExternalLink,
-  HeartPulse,
-  Leaf,
-  ShieldCheck,
-  Stethoscope,
-} from "lucide-react";
+import { ArrowRight, ExternalLink, Stethoscope } from "lucide-react";
+import type { Expert } from "@/lib/database/types";
 import { PremiumButton } from "@/components/ui/PremiumButton";
-import { ADVISORY_EXPERT } from "@/lib/experts/advisory-board";
-
-const expertiseIconMap = {
-  "Integrative Healthcare": HeartPulse,
-  "Ayurveda & Herbal Wellness": Leaf,
-  "Preventive Lifestyle": ShieldCheck,
-  "Supplement Education": BookOpenText,
-} as const;
+import { getExpertiseIcon } from "@/components/experts/expert-icons";
 
 type FeaturedExpertCardProps = {
+  expert: Expert;
   ctaLabel: string;
   ctaHref: string;
   external?: boolean;
@@ -30,6 +17,7 @@ type FeaturedExpertCardProps = {
 };
 
 export function FeaturedExpertCard({
+  expert,
   ctaLabel,
   ctaHref,
   external = false,
@@ -52,28 +40,36 @@ export function FeaturedExpertCard({
       <div className="relative grid gap-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-center">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <div className="relative size-36 overflow-hidden rounded-full border-[6px] border-white bg-soft-green shadow-[0_24px_50px_rgba(15,23,42,0.14)] md:size-40 lg:size-44">
-            <Image
-              src={ADVISORY_EXPERT.image}
-              alt={ADVISORY_EXPERT.name}
-              fill
-              sizes="(max-width: 768px) 144px, (max-width: 1024px) 160px, 176px"
-              className="object-cover"
-            />
+            {expert.profile_image ? (
+              <Image
+                src={expert.profile_image}
+                alt={expert.name}
+                fill
+                sizes="(max-width: 768px) 144px, (max-width: 1024px) 160px, 176px"
+                className="object-cover"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-primary">
+                <Stethoscope className="size-14" aria-hidden="true" />
+              </div>
+            )}
           </div>
 
           <h3 className="mt-6 font-heading text-3xl font-extrabold text-text-dark">
-            {ADVISORY_EXPERT.name}
+            {expert.name}
           </h3>
-          <p className="mt-2 text-base font-semibold text-primary">
-            {ADVISORY_EXPERT.designation}
-          </p>
-          <p className="mt-3 text-sm leading-7 text-muted">
-            {ADVISORY_EXPERT.trustLine}
-          </p>
+          {expert.designation ? (
+            <p className="mt-2 text-base font-semibold text-primary">{expert.designation}</p>
+          ) : null}
+          {expert.experience_years ? (
+            <p className="mt-3 text-sm leading-7 text-muted">
+              {expert.experience_years}+ years of experience
+            </p>
+          ) : null}
 
           <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
-            {ADVISORY_EXPERT.featuredCardExpertise.map((tag) => {
-              const Icon = expertiseIconMap[tag];
+            {expert.expertise_tags.slice(0, 4).map((tag) => {
+              const Icon = getExpertiseIcon(tag);
 
               return (
                 <motion.span
@@ -94,17 +90,21 @@ export function FeaturedExpertCard({
           {showAboutLabel ? (
             <p className="inline-flex items-center gap-2 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-primary">
               <Stethoscope className="size-3.5 text-gold" aria-hidden="true" />
-              About {ADVISORY_EXPERT.name}
+              About {expert.name}
             </p>
           ) : null}
 
-          <p className={`${showAboutLabel ? "mt-5" : ""} text-base leading-8 text-muted`}>
-            {ADVISORY_EXPERT.aboutShort}
-          </p>
+          {expert.short_bio ? (
+            <p className={`${showAboutLabel ? "mt-5" : ""} text-base leading-8 text-muted`}>
+              {expert.short_bio}
+            </p>
+          ) : null}
 
-          <p className="mt-4 text-base leading-8 text-muted">
-            {ADVISORY_EXPERT.aboutSecondary}
-          </p>
+          {expert.full_bio ? (
+            <p className="mt-4 text-base leading-8 text-muted">
+              {expert.full_bio.split(/\n+/).find(Boolean)}
+            </p>
+          ) : null}
 
           <div className="mt-7 flex justify-center lg:justify-start">
             <PremiumButton

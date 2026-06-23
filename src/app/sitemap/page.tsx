@@ -30,6 +30,7 @@ export default async function HtmlSitemapPage() {
     ...collections.ingredients,
     ...collections.products,
     ...collections.blogs,
+    ...collections.experts,
   ].map((item) => ({
     name: item.title,
     path: item.path,
@@ -44,7 +45,7 @@ export default async function HtmlSitemapPage() {
           buildCollectionPageJsonLd({
             title: "Suppriva HTML Sitemap",
             description:
-              "Searchable HTML sitemap for Suppriva categories, ingredients, products, and blog pages.",
+              "Searchable HTML sitemap for Suppriva categories, ingredients, products, expert profiles, and blog pages.",
             path: "/sitemap",
             items: linkedItems,
           }),
@@ -61,4 +62,3 @@ export default async function HtmlSitemapPage() {
     </>
   );
 }
-

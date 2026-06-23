@@ -1,6 +1,7 @@
 import type { ExpertQueryStatus } from "@/lib/database/types";
 
 export const EXPERT_QUERY_TYPES = [
+  "General Wellness Guidance",
   "Ingredient Guidance",
   "Safety Information",
   "Usage Support",
@@ -12,10 +13,13 @@ export const EXPERT_QUERY_STATUSES = ["new", "contacted", "resolved"] as const;
 export type ExpertQueryCreateInput = {
   name: string;
   email: string;
-  product_name: string;
-  product_url: string;
+  category?: string | null;
+  expert_id?: string | null;
+  product_name?: string | null;
+  product_url?: string | null;
   question_type: string;
   message: string;
+  source_page?: string | null;
 };
 
 export type ExpertQueryUpdateInput = {
@@ -45,14 +49,6 @@ export function validateExpertQueryInput<TInput extends ExpertQueryCreateInput>(
     errors.push("Email must be valid.");
   }
 
-  if (!input.product_name?.trim()) {
-    errors.push("Product name is required.");
-  }
-
-  if (!input.product_url?.trim()) {
-    errors.push("Product URL is required.");
-  }
-
   if (!input.question_type?.trim()) {
     errors.push("Question type is required.");
   } else if (
@@ -75,16 +71,24 @@ export function validateExpertQueryInput<TInput extends ExpertQueryCreateInput>(
     errors.push("Email must be 180 characters or fewer.");
   }
 
-  if (input.product_name?.trim().length > 180) {
+  if (input.category?.trim().length && input.category.trim().length > 120) {
+    errors.push("Category must be 120 characters or fewer.");
+  }
+
+  if (input.product_name?.trim().length && input.product_name.trim().length > 180) {
     errors.push("Product name must be 180 characters or fewer.");
   }
 
-  if (input.product_url?.trim().length > 500) {
+  if (input.product_url?.trim().length && input.product_url.trim().length > 500) {
     errors.push("Product URL must be 500 characters or fewer.");
   }
 
   if (input.message?.trim().length > 4000) {
     errors.push("Message must be 4000 characters or fewer.");
+  }
+
+  if (!input.product_name?.trim() && !input.category?.trim()) {
+    errors.push("Either a product context or category is required.");
   }
 
   return {

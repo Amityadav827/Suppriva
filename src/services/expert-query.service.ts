@@ -72,10 +72,13 @@ export class ExpertQueryService {
     return {
       name: input.name?.trim() ?? "",
       email: input.email?.trim().toLowerCase() ?? "",
+      category: input.category?.trim() ?? "",
+      expert_id: input.expert_id?.trim() ?? "",
       product_name: input.product_name?.trim() ?? "",
       product_url: input.product_url?.trim() ?? "",
       question_type: input.question_type?.trim() ?? "",
       message: input.message?.trim() ?? "",
+      source_page: input.source_page?.trim() ?? "",
     };
   }
 

@@ -32,12 +32,16 @@ export enum PageType {
   Static = "static",
 }
 
+export const EXPERT_STATUSES = ["active", "inactive"] as const;
+export type ExpertStatus = (typeof EXPERT_STATUSES)[number];
+
 export const DATABASE_TABLES = {
   categories: "categories",
   products: "products",
   blogs: "blogs",
   authors: "authors",
   reviewers: "reviewers",
+  experts: "experts",
   users: "users",
   seo: "seo",
   ingredients: "ingredients",

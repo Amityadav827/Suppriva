@@ -1,11 +1,19 @@
 import type { MetadataRoute } from "next";
 import { ContentStatus } from "@/lib/database/constants";
-import type { Blog, Category, Ingredient, Product, Timestamp } from "@/lib/database/types";
+import type {
+  Blog,
+  Category,
+  Expert,
+  Ingredient,
+  Product,
+  Timestamp,
+} from "@/lib/database/types";
 import { legalFooterLinks } from "@/lib/legal-pages";
 import { buildProductPath } from "@/lib/products/url";
 import { absoluteUrl } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
+import { ExpertsService } from "@/services/experts.service";
 import { IngredientService } from "@/services/ingredient.service";
 import { ProductService } from "@/services/product.service";
 
@@ -26,6 +34,7 @@ export type SitemapCollections = {
   ingredients: SitemapLinkItem[];
   products: SitemapLinkItem[];
   blogs: SitemapLinkItem[];
+  experts: SitemapLinkItem[];
   comparisonPages: SitemapLinkItem[];
 };
 
@@ -79,6 +88,22 @@ function buildStaticPages(): SitemapLinkItem[] {
       description: "Browse live wellness articles.",
       priority: 0.8,
       changeFrequency: "monthly",
+      updatedAt: new Date(),
+    },
+    {
+      title: "Experts",
+      path: "/experts",
+      description: "Meet Suppriva's public wellness experts and advisory profiles.",
+      priority: 0.8,
+      changeFrequency: "weekly",
+      updatedAt: new Date(),
+    },
+    {
+      title: "Ask An Expert",
+      path: "/ask-expert",
+      description: "Submit ingredient and wellness questions to Suppriva's expert guidance team.",
+      priority: 0.7,
+      changeFrequency: "weekly",
       updatedAt: new Date(),
     },
     {
@@ -191,12 +216,29 @@ function buildBlogEntries(blogs: Blog[]): SitemapLinkItem[] {
   );
 }
 
+function buildExpertEntries(experts: Expert[]): SitemapLinkItem[] {
+  return sortAlphabetically(
+    experts.map((expert) => ({
+      title: expert.name,
+      path: `/experts/${expert.slug}`,
+      description:
+        expert.short_bio ||
+        expert.designation ||
+        `Explore ${expert.name}'s public wellness expert profile on Suppriva.`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+      updatedAt: expert.updated_at || expert.created_at,
+    })),
+  );
+}
+
 export async function getSitemapCollections(): Promise<SitemapCollections> {
-  const [products, categories, blogs, ingredients] = await Promise.all([
+  const [products, categories, blogs, ingredients, experts] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
     new IngredientService().getPublishedIngredients(),
+    new ExpertsService().safeGetActiveExperts(),
   ]);
 
   const publishedCategories = categories.filter(isPublishedRecord);
@@ -207,6 +249,7 @@ export async function getSitemapCollections(): Promise<SitemapCollections> {
     ingredients: buildIngredientEntries(ingredients),
     products: buildProductEntries(products, publishedCategories),
     blogs: buildBlogEntries(blogs),
+    experts: buildExpertEntries(experts),
     comparisonPages: [],
   };
 }
@@ -218,6 +261,7 @@ export function buildXmlSitemapEntries(data: SitemapCollections): MetadataRoute.
     ...data.ingredients,
     ...data.products,
     ...data.blogs,
+    ...data.experts,
     ...data.comparisonPages,
   ];
 
@@ -228,4 +272,3 @@ export function buildXmlSitemapEntries(data: SitemapCollections): MetadataRoute.
     priority: entry.priority,
   }));
 }
-

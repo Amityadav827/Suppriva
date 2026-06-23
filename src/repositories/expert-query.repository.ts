@@ -28,12 +28,17 @@ export class ExpertQueryRepository {
       id: randomUUID(),
       name: input.name,
       email: input.email,
-      product_name: input.product_name,
-      product_url: input.product_url,
+      category: input.category ?? null,
+      expert_id: input.expert_id ?? null,
+      product_name: input.product_name ?? null,
+      product_url: input.product_url ?? null,
       question_type: input.question_type,
       message: input.message,
       status: "new",
       created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      resolved_at: null,
+      source_page: input.source_page ?? null,
     };
 
     const { error } = await supabase.from("expert_queries").insert(query);
@@ -49,7 +54,10 @@ export class ExpertQueryRepository {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
       .from("expert_queries")
-      .update({ status: input.status })
+      .update({
+        status: input.status,
+        resolved_at: input.status === "resolved" ? new Date().toISOString() : null,
+      })
       .eq("id", id)
       .select("*")
       .single();

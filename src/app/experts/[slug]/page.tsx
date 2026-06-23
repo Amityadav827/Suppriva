@@ -5,35 +5,32 @@ import { notFound } from "next/navigation";
 import {
   ArrowRight,
   BookOpenText,
-  BrainCircuit,
   ExternalLink,
   FlaskConical,
   HeartPulse,
-  Leaf,
   SearchCheck,
   ShieldCheck,
-  Sparkles,
   Stethoscope,
 } from "lucide-react";
+import { BlogCard } from "@/components/blog/BlogCard";
 import { PremiumFooter } from "@/components/footer/PremiumFooter";
+import { IngredientCard } from "@/components/ingredients/IngredientCard";
 import { Navbar } from "@/components/navbar/Navbar";
+import { ProductCard } from "@/components/product/ProductCard";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { PageType } from "@/lib/database/constants";
-import { onlyPublished } from "@/lib/live-data";
-import { ADVISORY_EXPERT } from "@/lib/experts/advisory-board";
+import { getExpertPublicProfileData, getExpertsDirectoryItems } from "@/lib/experts/page-data";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbJsonLd,
+  buildProfilePageJsonLd,
   buildPublicPersonJsonLd,
 } from "@/lib/seo/structured-data";
-import { BlogService } from "@/services/blog.service";
-import { CategoryService } from "@/services/category.service";
-import { IngredientService } from "@/services/ingredient.service";
-import { ProductService } from "@/services/product.service";
+import { getExpertiseIcon } from "@/components/experts/expert-icons";
 
 type ExpertProfilePageProps = {
   params: Promise<{
@@ -41,96 +38,101 @@ type ExpertProfilePageProps = {
   }>;
 };
 
-const expertiseIconMap = {
-  "Integrative Healthcare": HeartPulse,
-  "Ayurveda & Herbal Wellness": Leaf,
-  "Preventive Lifestyle": ShieldCheck,
-  "Supplement Education": BookOpenText,
-  "Public Health Awareness": Sparkles,
-  "Wellness Research": BrainCircuit,
-} as const;
-
 export const dynamic = "force-dynamic";
 
-export function generateStaticParams() {
-  return [{ slug: ADVISORY_EXPERT.slug }];
+export async function generateStaticParams() {
+  const experts = await getExpertsDirectoryItems();
+  return experts.map(({ expert }) => ({ slug: expert.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ExpertProfilePageProps): Promise<Metadata> {
   const { slug } = await params;
+  const payload = await getExpertPublicProfileData(slug);
 
-  if (slug !== ADVISORY_EXPERT.slug) {
+  if (!payload) {
     return {
       title: "Expert Not Found | Suppriva",
     };
   }
 
   return buildSeoMetadata(PageType.Static, `experts-${slug}`, {
-    title: "Dr. Arindham Chatterjee | Medical & Wellness Advisor | Suppriva",
+    title: `${payload.expert.name} | ${payload.expert.designation || "Wellness Expert"} | Suppriva`,
     description:
-      "Learn about Dr. Arindham Chatterjee, Medical & Wellness Advisor contributing educational wellness guidance and ingredient resources at Suppriva.",
-    canonicalPath: ADVISORY_EXPERT.path,
-    image: ADVISORY_EXPERT.image,
+      payload.expert.short_bio ||
+      `Learn about ${payload.expert.name}, a wellness expert contributing educational guidance and ingredient resources at Suppriva.`,
+    canonicalPath: `/experts/${payload.expert.slug}`,
+    image: payload.expert.profile_image,
     type: "article",
   });
 }
 
-async function getReviewedContentCounts() {
-  try {
-    const [products, categories, blogs, ingredients] = await Promise.all([
-      new ProductService().getAllProducts(),
-      new CategoryService().getAllCategories(),
-      new BlogService().getAllBlogs(),
-      new IngredientService().getAllIngredients(),
-    ]);
+function renderFullBio(fullBio: string) {
+  const blocks = fullBio
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean);
 
-    return {
-      ingredientGuides: onlyPublished(ingredients).length,
-      productReviews: onlyPublished(products).length,
-      wellnessArticles: onlyPublished(blogs).length,
-      healthGoalPages: onlyPublished(categories).length,
-    };
-  } catch {
-    return {
-      ingredientGuides: null,
-      productReviews: null,
-      wellnessArticles: null,
-      healthGoalPages: null,
-    };
-  }
+  return blocks.map((block, index) => {
+    const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+    const listLines = lines.filter((line) => /^[-*]\s+/.test(line));
+
+    if (listLines.length === lines.length) {
+      return (
+        <ul key={`${block}-${index}`} className="list-disc space-y-2 pl-5">
+          {listLines.map((line) => (
+            <li key={line}>{line.replace(/^[-*]\s+/, "")}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    return <p key={`${block}-${index}`}>{block}</p>;
+  });
 }
 
 export default async function ExpertProfilePage({
   params,
 }: ExpertProfilePageProps) {
   const { slug } = await params;
+  const payload = await getExpertPublicProfileData(slug);
 
-  if (slug !== ADVISORY_EXPERT.slug) {
+  if (!payload) {
     notFound();
   }
 
-  const counts = await getReviewedContentCounts();
+  const { expert, stats, relatedProducts, relatedIngredients, relatedBlogs } = payload;
+  const personSchema = buildPublicPersonJsonLd({
+    name: expert.name,
+    path: `/experts/${expert.slug}`,
+    image: expert.profile_image,
+    jobTitle: expert.designation,
+    description: expert.short_bio || expert.full_bio,
+    sameAs: [expert.linkedin_url, expert.website_url].filter(
+      (value): value is string => Boolean(value),
+    ),
+  });
+
   const reviewedCards = [
     {
       label: "Ingredient Guides",
-      value: counts.ingredientGuides,
+      value: stats.ingredientGuides,
       icon: FlaskConical,
     },
     {
       label: "Product Reviews",
-      value: counts.productReviews,
+      value: stats.productReviews,
       icon: SearchCheck,
     },
     {
-      label: "Wellness Articles",
-      value: counts.wellnessArticles,
+      label: "Blog Articles",
+      value: stats.blogArticles,
       icon: BookOpenText,
     },
     {
       label: "Health Goal Pages",
-      value: counts.healthGoalPages,
+      value: stats.healthGoalPages,
       icon: HeartPulse,
     },
   ];
@@ -141,18 +143,19 @@ export default async function ExpertProfilePage({
         pageType={PageType.Static}
         pageSlug={`experts-${slug}`}
         schema={[
-          buildPublicPersonJsonLd({
-            name: ADVISORY_EXPERT.name,
-            path: ADVISORY_EXPERT.path,
-            image: ADVISORY_EXPERT.image,
-            jobTitle: ADVISORY_EXPERT.designation,
-            description: ADVISORY_EXPERT.aboutLong.join(" "),
-            sameAs: [ADVISORY_EXPERT.linkedin],
+          personSchema,
+          buildProfilePageJsonLd({
+            title: expert.name,
+            description:
+              expert.short_bio ||
+              `Wellness expert profile for ${expert.name} on Suppriva.`,
+            path: `/experts/${expert.slug}`,
+            mainEntity: personSchema,
           }),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "Experts", path: "/experts" },
-            { name: ADVISORY_EXPERT.name, path: ADVISORY_EXPERT.path },
+            { name: expert.name, path: `/experts/${expert.slug}` },
           ]),
         ]}
       />
@@ -162,27 +165,40 @@ export default async function ExpertProfilePage({
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-center">
             <FadeIn className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <div className="relative size-40 overflow-hidden rounded-full border-[6px] border-white bg-soft-green shadow-[0_28px_60px_rgba(15,23,42,0.16)] md:size-44 lg:size-[180px]">
-                <Image
-                  src={ADVISORY_EXPERT.image}
-                  alt={ADVISORY_EXPERT.name}
-                  fill
-                  sizes="(max-width: 768px) 160px, (max-width: 1024px) 176px, 180px"
-                  className="object-cover"
-                />
+                {expert.profile_image ? (
+                  <Image
+                    src={expert.profile_image}
+                    alt={expert.name}
+                    fill
+                    sizes="(max-width: 768px) 160px, (max-width: 1024px) 176px, 180px"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-primary">
+                    <Stethoscope className="size-16" aria-hidden="true" />
+                  </div>
+                )}
               </div>
               <p className="mt-6 inline-flex items-center gap-2 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-primary">
                 <Stethoscope className="size-3.5 text-gold" aria-hidden="true" />
                 Medical &amp; Editorial Advisory
               </p>
               <h1 className="mt-4 font-heading text-4xl font-extrabold leading-tight text-text-dark md:text-5xl">
-                {ADVISORY_EXPERT.name}
+                {expert.name}
               </h1>
-              <p className="mt-3 text-lg font-semibold text-primary">
-                {ADVISORY_EXPERT.designation}
-              </p>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-muted">
-                {ADVISORY_EXPERT.aboutShort}
-              </p>
+              {expert.designation ? (
+                <p className="mt-3 text-lg font-semibold text-primary">{expert.designation}</p>
+              ) : null}
+              {expert.experience_years ? (
+                <p className="mt-2 text-sm leading-7 text-muted">
+                  {expert.experience_years}+ years of experience
+                </p>
+              ) : null}
+              {expert.short_bio ? (
+                <p className="mt-4 max-w-2xl text-base leading-8 text-muted">
+                  {expert.short_bio}
+                </p>
+              ) : null}
             </FadeIn>
 
             <FadeIn
@@ -203,18 +219,20 @@ export default async function ExpertProfilePage({
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                {expert.linkedin_url ? (
+                  <PremiumButton
+                    href={expert.linkedin_url}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    variant="secondary"
+                    className="w-full sm:w-auto"
+                    icon={<ExternalLink className="size-4" aria-hidden="true" />}
+                  >
+                    LinkedIn Profile
+                  </PremiumButton>
+                ) : null}
                 <PremiumButton
-                  href={ADVISORY_EXPERT.linkedin}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  variant="secondary"
-                  className="w-full sm:w-auto"
-                  icon={<ExternalLink className="size-4" aria-hidden="true" />}
-                >
-                  LinkedIn Profile
-                </PremiumButton>
-                <PremiumButton
-                  href="/contact"
+                  href="/ask-expert"
                   className="w-full sm:w-auto"
                   icon={<ArrowRight className="size-4" aria-hidden="true" />}
                 >
@@ -227,14 +245,14 @@ export default async function ExpertProfilePage({
 
         <SectionWrapper tone="cream">
           <div className="grid gap-6">
-            <FadeIn className="rounded-[28px] border border-border-light bg-white p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)] md:p-9">
-              <h2 className="font-heading text-3xl font-extrabold text-text-dark">About</h2>
-              <div className="mt-5 space-y-4 text-base leading-8 text-muted">
-                {ADVISORY_EXPERT.aboutLong.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </FadeIn>
+            {expert.full_bio ? (
+              <FadeIn className="rounded-[28px] border border-border-light bg-white p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)] md:p-9">
+                <h2 className="font-heading text-3xl font-extrabold text-text-dark">About</h2>
+                <div className="mt-5 space-y-4 text-base leading-8 text-muted">
+                  {renderFullBio(expert.full_bio)}
+                </div>
+              </FadeIn>
+            ) : null}
 
             <FadeIn
               delay={0.04}
@@ -244,8 +262,8 @@ export default async function ExpertProfilePage({
                 Areas of Expertise
               </h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {ADVISORY_EXPERT.expertise.map((topic) => {
-                  const Icon = expertiseIconMap[topic];
+                {expert.expertise_tags.map((topic) => {
+                  const Icon = getExpertiseIcon(topic);
 
                   return (
                     <div
@@ -274,7 +292,17 @@ export default async function ExpertProfilePage({
                 Editorial Contribution
               </h2>
               <p className="mt-5 text-base leading-8 text-muted">
-                {ADVISORY_EXPERT.editorialContribution}
+                {expert.name} contributes expert guidance to educational wellness
+                content, ingredient explainers, and wellness resources published on
+                Suppriva.
+              </p>
+              <p className="mt-4 text-base leading-8 text-muted">
+                The role focuses on improving educational quality and helping readers
+                better understand ingredients and wellness concepts.
+              </p>
+              <p className="mt-4 text-base leading-8 text-muted">
+                Individual product rankings, affiliate partnerships, and editorial
+                decisions remain independently managed by the Suppriva Editorial Team.
               </p>
             </FadeIn>
 
@@ -298,14 +326,70 @@ export default async function ExpertProfilePage({
                       {label}
                     </p>
                     <p className="mt-3 text-sm leading-7 text-muted">
-                      {typeof value === "number"
-                        ? `${value}+ published resources`
-                        : "Counts will appear here as connected content continues to expand."}
+                      {value} published resource{value === 1 ? "" : "s"}
                     </p>
                   </div>
                 ))}
               </div>
             </FadeIn>
+
+            {relatedProducts.length || relatedIngredients.length || relatedBlogs.length ? (
+              <FadeIn
+                delay={0.14}
+                className="rounded-[28px] border border-border-light bg-white p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)] md:p-9"
+              >
+                <h2 className="font-heading text-3xl font-extrabold text-text-dark">
+                  Related Content
+                </h2>
+                <p className="mt-3 text-base leading-8 text-muted">
+                  Explore live Suppriva content currently associated with this expert profile.
+                </p>
+
+                <div className="mt-8 grid gap-8">
+                  {relatedProducts.length ? (
+                    <section>
+                      <h3 className="font-heading text-2xl font-extrabold text-text-dark">
+                        Product Reviews
+                      </h3>
+                      <div className="mt-5 grid gap-5 md:grid-cols-2">
+                        {relatedProducts.map((product) => (
+                          <ProductCard
+                            key={product.href || product.slug || product.name}
+                            product={product}
+                          />
+                        ))}
+                      </div>
+                    </section>
+                  ) : null}
+
+                  {relatedIngredients.length ? (
+                    <section>
+                      <h3 className="font-heading text-2xl font-extrabold text-text-dark">
+                        Ingredient Guides
+                      </h3>
+                      <div className="mt-5 grid gap-5 md:grid-cols-2">
+                        {relatedIngredients.map((ingredient) => (
+                          <IngredientCard key={ingredient.id} ingredient={ingredient} />
+                        ))}
+                      </div>
+                    </section>
+                  ) : null}
+
+                  {relatedBlogs.length ? (
+                    <section>
+                      <h3 className="font-heading text-2xl font-extrabold text-text-dark">
+                        Blog Articles
+                      </h3>
+                      <div className="mt-5 grid gap-5 md:grid-cols-2">
+                        {relatedBlogs.map((blog) => (
+                          <BlogCard key={blog.slug || blog.title} post={blog} />
+                        ))}
+                      </div>
+                    </section>
+                  ) : null}
+                </div>
+              </FadeIn>
+            ) : null}
 
             <FadeIn
               delay={0.16}
@@ -328,12 +412,12 @@ export default async function ExpertProfilePage({
 
                 <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                   <PremiumButton
-                    href="/contact"
+                    href="/ask-expert"
                     variant="secondary"
                     className="w-full border-white/30 bg-white text-primary hover:text-dark-green sm:w-auto"
                     icon={<ArrowRight className="size-4" aria-hidden="true" />}
                   >
-                    Ask an Expert
+                    Ask An Expert
                   </PremiumButton>
                   <Link
                     href="/experts"

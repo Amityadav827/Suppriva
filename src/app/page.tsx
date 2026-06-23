@@ -7,6 +7,7 @@ import { PageType } from "@/lib/database/constants";
 import { buildSeoMetadata } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
+import { ExpertsService } from "@/services/experts.service";
 import { ProductService } from "@/services/product.service";
 import {
   blogToCard,
@@ -19,7 +20,6 @@ import {
   buildPublicPersonJsonLd,
   buildWebsiteJsonLd,
 } from "@/lib/seo/structured-data";
-import { ADVISORY_EXPERT } from "@/lib/experts/advisory-board";
 import { HeroSection } from "@/sections/HeroSection";
 import { AllSupplementCategoriesSection } from "@/sections/AllSupplementCategoriesSection";
 import { HealthNeedsSection } from "@/sections/HealthNeedsSection";
@@ -43,10 +43,11 @@ export function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const [products, categories, blogs] = await Promise.all([
+  const [products, categories, blogs, featuredExperts] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
+    new ExpertsService().safeGetFeaturedExperts(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -71,14 +72,18 @@ export default async function Home() {
         schema={[
           buildWebsiteJsonLd(),
           buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
-          buildPublicPersonJsonLd({
-            name: ADVISORY_EXPERT.name,
-            path: ADVISORY_EXPERT.path,
-            image: ADVISORY_EXPERT.image,
-            jobTitle: ADVISORY_EXPERT.designation,
-            description: ADVISORY_EXPERT.aboutShort,
-            sameAs: [ADVISORY_EXPERT.linkedin],
-          }),
+          ...featuredExperts.map((expert) =>
+            buildPublicPersonJsonLd({
+              name: expert.name,
+              path: `/experts/${expert.slug}`,
+              image: expert.profile_image,
+              jobTitle: expert.designation,
+              description: expert.short_bio,
+              sameAs: [expert.linkedin_url, expert.website_url].filter(
+                (value): value is string => Boolean(value),
+              ),
+            }),
+          ),
         ]}
       />
       <Navbar />
@@ -87,7 +92,7 @@ export default async function Home() {
         <HealthNeedsSection categories={categoryPills} />
         <PopularPicksSection products={productCards} />
         <AllSupplementCategoriesSection />
-        <WellnessExpertSection />
+        <WellnessExpertSection experts={featuredExperts} />
         <SupplementsBlogSection posts={blogCards} />
         <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />

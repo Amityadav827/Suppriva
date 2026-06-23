@@ -75,6 +75,30 @@ export const databaseRelationships: Relationship[] = [
     description: "Each ingredient can have one reviewer. Reviewers can review many ingredients.",
   },
   {
+    fromTable: DATABASE_TABLES.experts,
+    fromColumn: "linked_author_id",
+    toTable: DATABASE_TABLES.authors,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each public expert profile can optionally connect to one author profile for dynamic content attribution.",
+  },
+  {
+    fromTable: DATABASE_TABLES.experts,
+    fromColumn: "linked_reviewer_id",
+    toTable: DATABASE_TABLES.reviewers,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Each public expert profile can optionally connect to one reviewer profile for dynamic content attribution.",
+  },
+  {
+    fromTable: DATABASE_TABLES.expertQueries,
+    fromColumn: "expert_id",
+    toTable: DATABASE_TABLES.experts,
+    toColumn: "id",
+    type: "many-to-one",
+    description: "Ask-expert submissions can optionally target one public expert profile.",
+  },
+  {
     fromTable: DATABASE_TABLES.productIngredients,
     fromColumn: "product_id",
     toTable: DATABASE_TABLES.products,
@@ -114,6 +138,11 @@ reviewers
   -> products
   -> ingredients
   -> blogs
+
+experts
+  -> authors
+  -> reviewers
+  -> expert_queries
 
 products
   -> product_ingredients

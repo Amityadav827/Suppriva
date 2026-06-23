@@ -4,6 +4,7 @@ import type {
   ExpertAttribution,
   FAQItem,
   Ingredient,
+  JsonValue,
   Reviewer,
 } from "@/lib/database/types";
 import { getExpertProfilePath, type ExpertRole } from "@/lib/eeat/shared";
@@ -393,6 +394,32 @@ export function buildCollectionPageJsonLd({
           },
         }
       : {}),
+  };
+}
+
+export function buildProfilePageJsonLd({
+  title,
+  description,
+  path,
+  mainEntity,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  mainEntity: JsonValue;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: title,
+    description,
+    url: absoluteUrl(path),
+    mainEntity,
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
   };
 }
 
