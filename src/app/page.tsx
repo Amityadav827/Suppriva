@@ -43,11 +43,12 @@ export function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const [products, categories, blogs, featuredExperts] = await Promise.all([
+  const [products, categories, blogs, featuredExperts, activeExperts] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
     new ExpertsService().safeGetFeaturedExperts(),
+    new ExpertsService().safeGetActiveExperts(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -63,7 +64,7 @@ export default async function Home() {
     label: category.title,
     slug: category.slug,
   }));
-  const homepageExpert = featuredExperts[0] || null;
+  const homepageExpert = featuredExperts[0] || activeExperts[0] || null;
 
   return (
     <>
@@ -95,7 +96,7 @@ export default async function Home() {
         <HealthNeedsSection categories={categoryPills} />
         <PopularPicksSection products={productCards} />
         <AllSupplementCategoriesSection />
-        {homepageExpert ? <WellnessExpertSection expert={homepageExpert} /> : null}
+        <WellnessExpertSection expert={homepageExpert} />
         <SupplementsBlogSection posts={blogCards} />
         <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />

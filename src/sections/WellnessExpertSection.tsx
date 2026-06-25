@@ -16,20 +16,32 @@ const DEFAULT_EXPERTISE_TAGS = [
   "Supplement Education",
 ] as const;
 
-export function WellnessExpertSection({ expert }: { expert: Expert }) {
-  const expertiseTags = expert.expertise_tags?.slice(0, 4).filter(Boolean);
+const FALLBACK_EXPERT = {
+  name: "Dr. Arindham Chatterjee",
+  designation: "Medical & Wellness Advisor",
+  profileImage:
+    "https://auzapxutkteykldxhyyq.supabase.co/storage/v1/object/public/media-library/1773219025832.jpg",
+  expertiseTags: DEFAULT_EXPERTISE_TAGS,
+  description:
+    "Dr. Arindham Chatterjee contributes expert guidance to Suppriva's educational wellness content and ingredient resources, helping readers better understand ingredients, wellness goals, and healthy lifestyle practices.",
+  secondary:
+    "His focus includes wellness education, preventive lifestyle strategies, ingredient awareness, and supporting readers with evidence-informed wellness knowledge.",
+} as const;
+
+export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
+  const expertiseTags = expert?.expertise_tags?.slice(0, 4).filter(Boolean);
   const spotlight = {
-    name: expert.name,
-    designation: expert.designation || "Wellness Expert",
-    profileImage: expert.profile_image,
+    name: expert?.name || FALLBACK_EXPERT.name,
+    designation: expert?.designation || FALLBACK_EXPERT.designation,
+    profileImage: expert?.profile_image || FALLBACK_EXPERT.profileImage,
     trustLine: "Wellness Education - Ingredient Research - Preventive Health",
-    expertiseTags: expertiseTags.length ? expertiseTags : DEFAULT_EXPERTISE_TAGS,
+    expertiseTags: expertiseTags?.length ? expertiseTags : FALLBACK_EXPERT.expertiseTags,
     description:
-      expert.short_bio ||
-      `${expert.name} contributes expert guidance to Suppriva's educational wellness content and ingredient resources.`,
+      expert?.short_bio ||
+      FALLBACK_EXPERT.description,
     secondary:
-      expert.full_bio?.split(/\n+/).map((item) => item.trim()).find(Boolean) ||
-      "Their work supports ingredient awareness, wellness education, and clearer everyday health decisions.",
+      expert?.full_bio?.split(/\n+/).map((item) => item.trim()).find(Boolean) ||
+      FALLBACK_EXPERT.secondary,
   };
 
   return (
