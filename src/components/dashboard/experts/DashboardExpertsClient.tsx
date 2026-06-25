@@ -7,6 +7,7 @@ import type {
   Blog,
   Category,
   Expert,
+  ExpertContentReviewedItem,
   Ingredient,
   Product,
   Reviewer,
@@ -51,6 +52,7 @@ type ExpertFormState = {
   short_bio: string;
   full_bio: string;
   editorial_contribution: string;
+  content_reviewed: ContentReviewedFormItem[];
   experience_years: string;
   linkedin_url: string;
   website_url: string;
@@ -64,6 +66,12 @@ type ExpertFormState = {
   meta_image: string;
   linked_author_id: string;
   linked_reviewer_id: string;
+};
+
+type ContentReviewedFormItem = {
+  label: string;
+  value: string;
+  description: string;
 };
 
 type ExpertResponse = {
@@ -87,6 +95,28 @@ const emptyForm: ExpertFormState = {
   short_bio: "",
   full_bio: "",
   editorial_contribution: "",
+  content_reviewed: [
+    {
+      label: "Ingredient Guides",
+      value: "0",
+      description: "Published ingredient education and research resources.",
+    },
+    {
+      label: "Product Reviews",
+      value: "0",
+      description: "Supplement product reviews and comparison resources.",
+    },
+    {
+      label: "Wellness Articles",
+      value: "0",
+      description: "Educational wellness articles and practical guides.",
+    },
+    {
+      label: "Health Goal Pages",
+      value: "0",
+      description: "Health goal pages and wellness category resources.",
+    },
+  ],
   experience_years: "",
   linkedin_url: "",
   website_url: "",
@@ -117,6 +147,40 @@ function isPublishedRecord<T extends { status?: ContentStatus; deleted_at?: stri
   return item.status === ContentStatus.Published && item.deleted_at === null;
 }
 
+function contentReviewedToForm(
+  items?: ExpertContentReviewedItem[] | null,
+): ContentReviewedFormItem[] {
+  if (!items?.length) {
+    return emptyForm.content_reviewed.map((item) => ({ ...item }));
+  }
+
+  return items.map((item) => ({
+    label: item.label,
+    value: item.value.toString(),
+    description: item.description ?? "",
+  }));
+}
+
+function contentReviewedToPayload(
+  items: ContentReviewedFormItem[],
+): ExpertContentReviewedItem[] {
+  return items
+    .map((item) => ({
+      label: item.label.trim(),
+      value: Math.max(0, Math.trunc(Number(item.value) || 0)),
+      description: item.description.trim() || null,
+    }))
+    .filter((item) => item.label);
+}
+
+function getContentReviewedTotal(expert: Expert, fallbackTotal: number) {
+  if (!expert.content_reviewed?.length) {
+    return fallbackTotal;
+  }
+
+  return expert.content_reviewed.reduce((total, item) => total + (Number(item.value) || 0), 0);
+}
+
 function expertToForm(expert: Expert): ExpertFormState {
   return {
     name: expert.name,
@@ -126,6 +190,7 @@ function expertToForm(expert: Expert): ExpertFormState {
     short_bio: expert.short_bio ?? "",
     full_bio: expert.full_bio ?? "",
     editorial_contribution: expert.editorial_contribution ?? "",
+    content_reviewed: contentReviewedToForm(expert.content_reviewed),
     experience_years: expert.experience_years?.toString() ?? "",
     linkedin_url: expert.linkedin_url ?? "",
     website_url: expert.website_url ?? "",
@@ -151,6 +216,7 @@ function formToPayload(form: ExpertFormState) {
     short_bio: form.short_bio || null,
     full_bio: form.full_bio || null,
     editorial_contribution: form.editorial_contribution || null,
+    content_reviewed: contentReviewedToPayload(form.content_reviewed),
     experience_years: form.experience_years ? Number(form.experience_years) : null,
     linkedin_url: form.linkedin_url || null,
     website_url: form.website_url || null,
@@ -341,6 +407,33 @@ export function DashboardExpertsClient({
 
     updateForm("expertise_tags", [...form.expertise_tags, tag]);
     setCustomTag("");
+  }
+
+  function updateContentReviewedItem(
+    index: number,
+    key: keyof ContentReviewedFormItem,
+    value: string,
+  ) {
+    updateForm(
+      "content_reviewed",
+      form.content_reviewed.map((item, itemIndex) =>
+        itemIndex === index ? { ...item, [key]: value } : item,
+      ),
+    );
+  }
+
+  function addContentReviewedItem() {
+    updateForm("content_reviewed", [
+      ...form.content_reviewed,
+      { label: "", value: "0", description: "" },
+    ]);
+  }
+
+  function removeContentReviewedItem(index: number) {
+    updateForm(
+      "content_reviewed",
+      form.content_reviewed.filter((_, itemIndex) => itemIndex !== index),
+    );
   }
 
   function openCreateForm() {
@@ -559,7 +652,7 @@ export function DashboardExpertsClient({
                     </td>
                     <td className="px-5 py-4">
                       <span className="font-heading font-semibold text-text-dark">
-                        {expertCounts.get(expert.id) ?? 0}
+                        {getContentReviewedTotal(expert, expertCounts.get(expert.id) ?? 0)}
                       </span>
                     </td>
                     <td className="px-5 py-4 text-muted">
@@ -691,6 +784,67 @@ export function DashboardExpertsClient({
                 rows={5}
                 helperText="Shown on the public expert profile page. Supports paragraphs."
               />
+            </section>
+
+            <section className="grid gap-4">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="font-heading text-sm font-semibold text-text-dark">
+                    Content Reviewed
+                  </p>
+                  <p className="mt-1 text-xs text-muted">
+                    These cards appear on the public expert profile page.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={addContentReviewedItem}
+                  className="inline-flex min-h-10 items-center justify-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-xs font-semibold text-primary transition hover:border-gold/70"
+                >
+                  <Plus className="size-3.5" />
+                  Add Reviewed Item
+                </button>
+              </div>
+
+              <div className="grid gap-3">
+                {form.content_reviewed.map((item, index) => (
+                  <div
+                    key={`${item.label}-${index}`}
+                    className="rounded-[20px] border border-border-light bg-cream/40 p-4"
+                  >
+                    <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_150px_auto] md:items-end">
+                      <InputField
+                        label="Card Label"
+                        value={item.label}
+                        onChange={(value) => updateContentReviewedItem(index, "label", value)}
+                      />
+                      <InputField
+                        label="Count"
+                        type="number"
+                        value={item.value}
+                        onChange={(value) => updateContentReviewedItem(index, "value", value)}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => removeContentReviewedItem(index)}
+                        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-pill border border-red-200 bg-white px-4 font-heading text-xs font-semibold text-red-600 transition hover:border-red-300 hover:bg-red-50"
+                      >
+                        <Trash2 className="size-3.5" />
+                        Remove
+                      </button>
+                    </div>
+                    <div className="mt-3">
+                      <InputField
+                        label="Description"
+                        value={item.description}
+                        onChange={(value) =>
+                          updateContentReviewedItem(index, "description", value)
+                        }
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </section>
 
             <section className="grid gap-5 lg:grid-cols-2">

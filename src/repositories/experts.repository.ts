@@ -169,6 +169,7 @@ export class SupabaseExpertsRepository implements ExpertsRepository {
     if ("editorial_contribution" in input) {
       payload.editorial_contribution = input.editorial_contribution ?? null;
     }
+    if ("content_reviewed" in input) payload.content_reviewed = input.content_reviewed ?? [];
     if ("experience_years" in input) payload.experience_years = input.experience_years ?? null;
     if ("linkedin_url" in input) payload.linkedin_url = input.linkedin_url ?? null;
     if ("website_url" in input) payload.website_url = input.website_url ?? null;

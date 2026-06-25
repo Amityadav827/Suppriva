@@ -95,6 +95,17 @@ function renderFullBio(fullBio: string) {
   });
 }
 
+function getContentReviewedIcon(label: string) {
+  const normalizedLabel = label.toLowerCase();
+
+  if (normalizedLabel.includes("ingredient")) return FlaskConical;
+  if (normalizedLabel.includes("product") || normalizedLabel.includes("review")) return SearchCheck;
+  if (normalizedLabel.includes("article") || normalizedLabel.includes("blog")) return BookOpenText;
+  if (normalizedLabel.includes("health") || normalizedLabel.includes("goal")) return HeartPulse;
+
+  return BookOpenText;
+}
+
 export default async function ExpertProfilePage({
   params,
 }: ExpertProfilePageProps) {
@@ -117,28 +128,51 @@ export default async function ExpertProfilePage({
     ),
   });
 
-  const reviewedCards = [
+  const defaultReviewedCards = [
     {
       label: "Ingredient Guides",
       value: stats.ingredientGuides,
+      description: `${stats.ingredientGuides} published resource${
+        stats.ingredientGuides === 1 ? "" : "s"
+      }`,
       icon: FlaskConical,
     },
     {
       label: "Product Reviews",
       value: stats.productReviews,
+      description: `${stats.productReviews} published resource${
+        stats.productReviews === 1 ? "" : "s"
+      }`,
       icon: SearchCheck,
     },
     {
       label: "Wellness Articles",
       value: stats.blogArticles,
+      description: `${stats.blogArticles} published resource${
+        stats.blogArticles === 1 ? "" : "s"
+      }`,
       icon: BookOpenText,
     },
     {
       label: "Health Goal Pages",
       value: stats.healthGoalPages,
+      description: `${stats.healthGoalPages} published resource${
+        stats.healthGoalPages === 1 ? "" : "s"
+      }`,
       icon: HeartPulse,
     },
   ];
+  const dynamicReviewedCards = (expert.content_reviewed ?? [])
+    .filter((item) => item.label?.trim())
+    .map((item) => ({
+      label: item.label,
+      value: Number(item.value) || 0,
+      description:
+        item.description ||
+        `${Number(item.value) || 0} published resource${Number(item.value) === 1 ? "" : "s"}`,
+      icon: getContentReviewedIcon(item.label),
+    }));
+  const reviewedCards = dynamicReviewedCards.length ? dynamicReviewedCards : defaultReviewedCards;
 
   return (
     <>
@@ -310,7 +344,7 @@ export default async function ExpertProfilePage({
                 Content Reviewed
               </h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                {reviewedCards.map(({ label, value, icon: Icon }) => (
+                {reviewedCards.map(({ label, description, icon: Icon }) => (
                   <div
                     key={label}
                     className="rounded-[24px] border border-primary/10 bg-soft-green/45 p-5"
@@ -322,7 +356,7 @@ export default async function ExpertProfilePage({
                       {label}
                     </p>
                     <p className="mt-3 text-sm leading-7 text-muted">
-                      {value} published resource{value === 1 ? "" : "s"}
+                      {description}
                     </p>
                   </div>
                 ))}

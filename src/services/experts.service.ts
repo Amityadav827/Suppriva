@@ -112,6 +112,7 @@ export class ExpertsService {
       short_bio: input.short_bio?.trim() || null,
       full_bio: input.full_bio?.trim() || null,
       editorial_contribution: input.editorial_contribution?.trim() || null,
+      content_reviewed: this.normalizeContentReviewed(input.content_reviewed),
       linkedin_url: input.linkedin_url?.trim() || null,
       website_url: input.website_url?.trim() || null,
       email: input.email?.trim().toLowerCase() || null,
@@ -143,6 +144,9 @@ export class ExpertsService {
     if ("editorial_contribution" in input) {
       normalizedInput.editorial_contribution = input.editorial_contribution?.trim() || null;
     }
+    if ("content_reviewed" in input) {
+      normalizedInput.content_reviewed = this.normalizeContentReviewed(input.content_reviewed);
+    }
     if ("linkedin_url" in input) normalizedInput.linkedin_url = input.linkedin_url?.trim() || null;
     if ("website_url" in input) normalizedInput.website_url = input.website_url?.trim() || null;
     if ("email" in input) normalizedInput.email = input.email?.trim().toLowerCase() || null;
@@ -164,6 +168,18 @@ export class ExpertsService {
 
   private normalizeTags(tags?: string[] | null) {
     return [...new Set((tags ?? []).map((tag) => tag.trim()).filter(Boolean))];
+  }
+
+  private normalizeContentReviewed(
+    items?: ExpertCreateInput["content_reviewed"],
+  ): NonNullable<ExpertCreateInput["content_reviewed"]> {
+    return (items ?? [])
+      .map((item) => ({
+        label: item.label.trim(),
+        value: Math.max(0, Math.trunc(Number(item.value) || 0)),
+        description: item.description?.trim() || null,
+      }))
+      .filter((item) => item.label);
   }
 
   private async normalizeAuthorId(id?: string | null) {

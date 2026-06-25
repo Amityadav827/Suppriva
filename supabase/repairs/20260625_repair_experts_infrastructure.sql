@@ -13,6 +13,7 @@ create table if not exists public.experts (
   short_bio text,
   full_bio text,
   editorial_contribution text,
+  content_reviewed jsonb not null default '[]'::jsonb,
   experience_years integer,
   linkedin_url text,
   website_url text,
@@ -32,6 +33,7 @@ create table if not exists public.experts (
 
 alter table if exists public.experts
   add column if not exists editorial_contribution text,
+  add column if not exists content_reviewed jsonb not null default '[]'::jsonb,
   add column if not exists seo_title text,
   add column if not exists seo_description text,
   add column if not exists meta_image text;
@@ -200,6 +202,7 @@ insert into public.experts (
   short_bio,
   full_bio,
   editorial_contribution,
+  content_reviewed,
   experience_years,
   linkedin_url,
   expertise_tags,
@@ -218,6 +221,28 @@ values (
   'Dr. Arindham Chatterjee contributes expert guidance to Suppriva''s educational wellness resources, ingredient explainers, and prevention-focused health content.',
   E'Dr. Arindham Chatterjee is a wellness-focused medical professional whose work centers on integrative healthcare, ingredient education, and preventive lifestyle awareness.\n\nHis contribution to Suppriva focuses on educational clarity, practical wellness communication, and helping readers better understand herbs, functional ingredients, and long-term lifestyle habits.\n\nHis areas of interest include herbal wellness, public health awareness, supplement education, and prevention-oriented wellness strategies that support informed decision-making.',
   E'Dr. Arindham Chatterjee contributes expert guidance to educational wellness content, ingredient explainers, and wellness resources published on Suppriva.\n\nThe role focuses on improving educational quality and helping readers better understand ingredients and wellness concepts.\n\nIndividual product rankings, affiliate partnerships, and editorial decisions remain independently managed by the Suppriva Editorial Team.',
+  '[
+    {
+      "label": "Ingredient Guides",
+      "value": 0,
+      "description": "Published ingredient education and research resources."
+    },
+    {
+      "label": "Product Reviews",
+      "value": 0,
+      "description": "Supplement product reviews and comparison resources."
+    },
+    {
+      "label": "Wellness Articles",
+      "value": 0,
+      "description": "Educational wellness articles and practical guides."
+    },
+    {
+      "label": "Health Goal Pages",
+      "value": 0,
+      "description": "Health goal pages and wellness category resources."
+    }
+  ]'::jsonb,
   12,
   'https://www.linkedin.com/in/dr-arindham-chatterjee-2b1b6716/',
   array[
@@ -240,6 +265,7 @@ set
   short_bio = excluded.short_bio,
   full_bio = excluded.full_bio,
   editorial_contribution = excluded.editorial_contribution,
+  content_reviewed = excluded.content_reviewed,
   experience_years = excluded.experience_years,
   linkedin_url = excluded.linkedin_url,
   expertise_tags = excluded.expertise_tags,

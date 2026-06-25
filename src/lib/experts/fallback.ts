@@ -13,6 +13,28 @@ export const DR_ARINDHAM_EXPERT: Expert = {
     "Dr. Arindham Chatterjee is a wellness-focused medical professional whose work centers on integrative healthcare, ingredient education, and preventive lifestyle awareness.\n\nHis contribution to Suppriva focuses on educational clarity, practical wellness communication, and helping readers better understand herbs, functional ingredients, and long-term lifestyle habits.\n\nHis areas of interest include herbal wellness, public health awareness, supplement education, and prevention-oriented wellness strategies that support informed decision-making.",
   editorial_contribution:
     "Dr. Arindham Chatterjee contributes expert guidance to educational wellness content, ingredient explainers, and wellness resources published on Suppriva.\n\nThe role focuses on improving educational quality and helping readers better understand ingredients and wellness concepts.\n\nIndividual product rankings, affiliate partnerships, and editorial decisions remain independently managed by the Suppriva Editorial Team.",
+  content_reviewed: [
+    {
+      label: "Ingredient Guides",
+      value: 0,
+      description: "Published ingredient education and research resources.",
+    },
+    {
+      label: "Product Reviews",
+      value: 0,
+      description: "Supplement product reviews and comparison resources.",
+    },
+    {
+      label: "Wellness Articles",
+      value: 0,
+      description: "Educational wellness articles and practical guides.",
+    },
+    {
+      label: "Health Goal Pages",
+      value: 0,
+      description: "Health goal pages and wellness category resources.",
+    },
+  ],
   experience_years: 12,
   linkedin_url: "https://www.linkedin.com/in/dr-arindham-chatterjee-2b1b6716/",
   website_url: null,

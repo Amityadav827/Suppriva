@@ -1,4 +1,5 @@
 import { EXPERT_STATUSES, type ExpertStatus } from "@/lib/database/constants";
+import type { ExpertContentReviewedItem } from "@/lib/database/types";
 
 export type ExpertCreateInput = {
   name: string;
@@ -8,6 +9,7 @@ export type ExpertCreateInput = {
   short_bio?: string | null;
   full_bio?: string | null;
   editorial_contribution?: string | null;
+  content_reviewed?: ExpertContentReviewedItem[] | null;
   experience_years?: number | null;
   linkedin_url?: string | null;
   website_url?: string | null;
@@ -124,6 +126,26 @@ export function validateExpertInput<TInput extends ExpertValidationInput>(
       errors.push("Expertise tags must be an array.");
     } else if (input.expertise_tags.some((tag) => typeof tag !== "string" || !tag.trim())) {
       errors.push("Expertise tags must contain valid text values.");
+    }
+  }
+
+  if ("content_reviewed" in input && input.content_reviewed !== undefined) {
+    if (!Array.isArray(input.content_reviewed)) {
+      errors.push("Content reviewed must be an array.");
+    } else {
+      input.content_reviewed.forEach((item) => {
+        if (!item || typeof item.label !== "string" || !item.label.trim()) {
+          errors.push("Each content reviewed item needs a label.");
+        }
+
+        if (
+          typeof item.value !== "number" ||
+          !Number.isInteger(item.value) ||
+          item.value < 0
+        ) {
+          errors.push("Each content reviewed count must be a non-negative whole number.");
+        }
+      });
     }
   }
 

@@ -199,6 +199,12 @@ export type Author = ExpertProfile;
 
 export type Reviewer = ExpertProfile;
 
+export type ExpertContentReviewedItem = {
+  label: string;
+  value: number;
+  description?: string | null;
+};
+
 export type Expert = {
   id: string;
   name: string;
@@ -208,6 +214,7 @@ export type Expert = {
   short_bio: string | null;
   full_bio: string | null;
   editorial_contribution: string | null;
+  content_reviewed: ExpertContentReviewedItem[];
   experience_years: number | null;
   linkedin_url: string | null;
   website_url: string | null;
