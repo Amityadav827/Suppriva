@@ -3,44 +3,33 @@
 import Image from "next/image";
 import type { Expert } from "@/lib/database/types";
 import { motion } from "framer-motion";
-import { ExternalLink, ShieldCheck, Stethoscope } from "lucide-react";
+import { ArrowRight, ShieldCheck, Stethoscope } from "lucide-react";
 import { getExpertiseIcon } from "@/components/experts/expert-icons";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 
-const FALLBACK_EXPERT = {
-  name: "Dr. Arindham Chatterjee",
-  designation: "Medical & Wellness Advisor",
-  profileImage:
-    "https://auzapxutkteykldxhyyq.supabase.co/storage/v1/object/public/media-library/1773219025832.jpg",
-  trustLine: "Wellness Education • Ingredient Research • Preventive Health",
-  expertiseTags: [
-    "Integrative Healthcare",
-    "Herbal Wellness",
-    "Preventive Lifestyle",
-    "Supplement Education",
-  ],
-  description:
-    "Dr. Arindham Chatterjee contributes expert guidance to Suppriva's educational wellness content and ingredient resources, helping readers better understand ingredients, wellness goals, and healthy lifestyle practices.",
-  secondary:
-    "His focus includes wellness education, preventive lifestyle strategies, ingredient awareness, and supporting readers with evidence-informed wellness knowledge.",
-  profileUrl: "https://www.linkedin.com/in/dr-arindham-chatterjee-2b1b6716/",
-} as const;
+const DEFAULT_EXPERTISE_TAGS = [
+  "Integrative Healthcare",
+  "Herbal Wellness",
+  "Preventive Lifestyle",
+  "Supplement Education",
+] as const;
 
-export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
+export function WellnessExpertSection({ expert }: { expert: Expert }) {
+  const expertiseTags = expert.expertise_tags?.slice(0, 4).filter(Boolean);
   const spotlight = {
-    name: expert?.name || FALLBACK_EXPERT.name,
-    designation: expert?.designation || FALLBACK_EXPERT.designation,
-    profileImage: expert?.profile_image || FALLBACK_EXPERT.profileImage,
-    trustLine: FALLBACK_EXPERT.trustLine,
-    expertiseTags:
-      expert?.expertise_tags?.slice(0, 4).filter(Boolean) || FALLBACK_EXPERT.expertiseTags,
-    description: expert?.short_bio || FALLBACK_EXPERT.description,
+    name: expert.name,
+    designation: expert.designation || "Wellness Expert",
+    profileImage: expert.profile_image,
+    trustLine: "Wellness Education - Ingredient Research - Preventive Health",
+    expertiseTags: expertiseTags.length ? expertiseTags : DEFAULT_EXPERTISE_TAGS,
+    description:
+      expert.short_bio ||
+      `${expert.name} contributes expert guidance to Suppriva's educational wellness content and ingredient resources.`,
     secondary:
-      expert?.full_bio?.split(/\n+/).map((item) => item.trim()).find(Boolean) ||
-      FALLBACK_EXPERT.secondary,
-    profileUrl: expert?.linkedin_url || FALLBACK_EXPERT.profileUrl,
+      expert.full_bio?.split(/\n+/).map((item) => item.trim()).find(Boolean) ||
+      "Their work supports ingredient awareness, wellness education, and clearer everyday health decisions.",
   };
 
   return (
@@ -75,13 +64,19 @@ export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
         <div className="relative grid gap-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-center">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="relative size-36 overflow-hidden rounded-full border-[6px] border-white bg-soft-green shadow-[0_24px_50px_rgba(15,23,42,0.14)] md:size-40 lg:size-44">
-              <Image
-                src={spotlight.profileImage}
-                alt={spotlight.name}
-                fill
-                sizes="(max-width: 768px) 144px, (max-width: 1024px) 160px, 176px"
-                className="object-cover"
-              />
+              {spotlight.profileImage ? (
+                <Image
+                  src={spotlight.profileImage}
+                  alt={spotlight.name}
+                  fill
+                  sizes="(max-width: 768px) 144px, (max-width: 1024px) 160px, 176px"
+                  className="object-cover"
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center text-primary">
+                  <Stethoscope className="size-14" aria-hidden="true" />
+                </div>
+              )}
             </div>
 
             <h3 className="mt-6 font-heading text-3xl font-extrabold text-text-dark">
@@ -122,13 +117,11 @@ export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
 
             <div className="mt-7 flex justify-center lg:justify-start">
               <PremiumButton
-                href={spotlight.profileUrl}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href="/experts"
                 className="w-full sm:w-auto"
-                icon={<ExternalLink className="size-4" aria-hidden="true" />}
+                icon={<ArrowRight className="size-4" aria-hidden="true" />}
               >
-                View Full Profile
+                Explore Our Experts
               </PremiumButton>
             </div>
           </div>

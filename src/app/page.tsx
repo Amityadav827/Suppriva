@@ -63,10 +63,7 @@ export default async function Home() {
     label: category.title,
     slug: category.slug,
   }));
-  const homepageExpert =
-    featuredExperts.find((expert) => expert.slug === "dr-arindham-chatterjee") ||
-    featuredExperts[0] ||
-    null;
+  const homepageExpert = featuredExperts[0] || null;
 
   return (
     <>
@@ -98,7 +95,7 @@ export default async function Home() {
         <HealthNeedsSection categories={categoryPills} />
         <PopularPicksSection products={productCards} />
         <AllSupplementCategoriesSection />
-        <WellnessExpertSection expert={homepageExpert} />
+        {homepageExpert ? <WellnessExpertSection expert={homepageExpert} /> : null}
         <SupplementsBlogSection posts={blogCards} />
         <SupplementsBuySellSection />
         <WhyChooseSupprivaSection />

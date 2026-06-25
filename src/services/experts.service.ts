@@ -111,6 +111,7 @@ export class ExpertsService {
       designation: input.designation?.trim() || null,
       short_bio: input.short_bio?.trim() || null,
       full_bio: input.full_bio?.trim() || null,
+      editorial_contribution: input.editorial_contribution?.trim() || null,
       linkedin_url: input.linkedin_url?.trim() || null,
       website_url: input.website_url?.trim() || null,
       email: input.email?.trim().toLowerCase() || null,
@@ -118,6 +119,9 @@ export class ExpertsService {
       status: input.status ?? "active",
       display_order: input.display_order ?? 0,
       featured_on_homepage: input.featured_on_homepage ?? false,
+      seo_title: input.seo_title?.trim() || null,
+      seo_description: input.seo_description?.trim() || null,
+      meta_image: input.meta_image?.trim() || null,
       linked_author_id: await this.normalizeAuthorId(input.linked_author_id),
       linked_reviewer_id: await this.normalizeReviewerId(input.linked_reviewer_id),
     };
@@ -136,10 +140,18 @@ export class ExpertsService {
     if ("designation" in input) normalizedInput.designation = input.designation?.trim() || null;
     if ("short_bio" in input) normalizedInput.short_bio = input.short_bio?.trim() || null;
     if ("full_bio" in input) normalizedInput.full_bio = input.full_bio?.trim() || null;
+    if ("editorial_contribution" in input) {
+      normalizedInput.editorial_contribution = input.editorial_contribution?.trim() || null;
+    }
     if ("linkedin_url" in input) normalizedInput.linkedin_url = input.linkedin_url?.trim() || null;
     if ("website_url" in input) normalizedInput.website_url = input.website_url?.trim() || null;
     if ("email" in input) normalizedInput.email = input.email?.trim().toLowerCase() || null;
     if ("expertise_tags" in input) normalizedInput.expertise_tags = this.normalizeTags(input.expertise_tags);
+    if ("seo_title" in input) normalizedInput.seo_title = input.seo_title?.trim() || null;
+    if ("seo_description" in input) {
+      normalizedInput.seo_description = input.seo_description?.trim() || null;
+    }
+    if ("meta_image" in input) normalizedInput.meta_image = input.meta_image?.trim() || null;
     if ("linked_author_id" in input) {
       normalizedInput.linked_author_id = await this.normalizeAuthorId(input.linked_author_id);
     }

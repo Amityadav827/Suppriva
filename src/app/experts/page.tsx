@@ -14,6 +14,7 @@ import {
   buildBreadcrumbJsonLd,
   buildCollectionPageJsonLd,
 } from "@/lib/seo/structured-data";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -46,7 +47,7 @@ export default async function ExpertsPage() {
         pageSlug="experts"
         schema={[
           buildCollectionPageJsonLd({
-            title: "Meet Our Wellness Experts",
+            title: "Medical & Editorial Advisory Board",
             description:
               "Meet the wellness professionals who contribute expert guidance and editorial review for Suppriva's educational wellness resources.",
             path: "/experts",
@@ -67,7 +68,7 @@ export default async function ExpertsPage() {
               Medical &amp; Editorial Advisory Board
             </p>
             <h1 className="mt-5 font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl lg:text-5xl">
-              Meet Our Wellness Experts
+              Medical &amp; Editorial Advisory Board
             </h1>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-muted">
               Meet the wellness professionals who contribute expert guidance and
@@ -76,7 +77,14 @@ export default async function ExpertsPage() {
           </FadeIn>
 
           {experts.length ? (
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div
+              className={cn(
+                "mt-12 grid gap-6",
+                experts.length === 1
+                  ? "mx-auto max-w-md"
+                  : "md:grid-cols-2 xl:grid-cols-3",
+              )}
+            >
               {experts.map(({ expert }) => (
                 <ExpertCard key={expert.id} expert={expert} />
               ))}

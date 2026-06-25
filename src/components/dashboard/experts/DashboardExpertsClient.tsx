@@ -50,6 +50,7 @@ type ExpertFormState = {
   designation: string;
   short_bio: string;
   full_bio: string;
+  editorial_contribution: string;
   experience_years: string;
   linkedin_url: string;
   website_url: string;
@@ -58,6 +59,9 @@ type ExpertFormState = {
   status: "active" | "inactive";
   display_order: string;
   featured_on_homepage: boolean;
+  seo_title: string;
+  seo_description: string;
+  meta_image: string;
   linked_author_id: string;
   linked_reviewer_id: string;
 };
@@ -82,6 +86,7 @@ const emptyForm: ExpertFormState = {
   designation: "",
   short_bio: "",
   full_bio: "",
+  editorial_contribution: "",
   experience_years: "",
   linkedin_url: "",
   website_url: "",
@@ -90,6 +95,9 @@ const emptyForm: ExpertFormState = {
   status: "active",
   display_order: "0",
   featured_on_homepage: false,
+  seo_title: "",
+  seo_description: "",
+  meta_image: "",
   linked_author_id: "",
   linked_reviewer_id: "",
 };
@@ -117,6 +125,7 @@ function expertToForm(expert: Expert): ExpertFormState {
     designation: expert.designation ?? "",
     short_bio: expert.short_bio ?? "",
     full_bio: expert.full_bio ?? "",
+    editorial_contribution: expert.editorial_contribution ?? "",
     experience_years: expert.experience_years?.toString() ?? "",
     linkedin_url: expert.linkedin_url ?? "",
     website_url: expert.website_url ?? "",
@@ -125,6 +134,9 @@ function expertToForm(expert: Expert): ExpertFormState {
     status: expert.status,
     display_order: expert.display_order.toString(),
     featured_on_homepage: expert.featured_on_homepage,
+    seo_title: expert.seo_title ?? "",
+    seo_description: expert.seo_description ?? "",
+    meta_image: expert.meta_image ?? "",
     linked_author_id: expert.linked_author_id ?? "",
     linked_reviewer_id: expert.linked_reviewer_id ?? "",
   };
@@ -138,6 +150,7 @@ function formToPayload(form: ExpertFormState) {
     designation: form.designation || null,
     short_bio: form.short_bio || null,
     full_bio: form.full_bio || null,
+    editorial_contribution: form.editorial_contribution || null,
     experience_years: form.experience_years ? Number(form.experience_years) : null,
     linkedin_url: form.linkedin_url || null,
     website_url: form.website_url || null,
@@ -146,6 +159,9 @@ function formToPayload(form: ExpertFormState) {
     status: form.status,
     display_order: form.display_order ? Number(form.display_order) : 0,
     featured_on_homepage: form.featured_on_homepage,
+    seo_title: form.seo_title || null,
+    seo_description: form.seo_description || null,
+    meta_image: form.meta_image || null,
     linked_author_id: form.linked_author_id || null,
     linked_reviewer_id: form.linked_reviewer_id || null,
   };
@@ -465,12 +481,14 @@ export function DashboardExpertsClient({
         ) : null}
 
         <div className="overflow-x-auto rounded-[24px] border border-border-light">
-          <table className="w-full min-w-[1100px] text-left text-sm">
+          <table className="w-full min-w-[1200px] text-left text-sm">
             <thead className="bg-soft-green font-heading text-text-dark">
               <tr>
                 <th className="px-5 py-4">Expert</th>
                 <th className="px-5 py-4">Designation</th>
                 <th className="px-5 py-4">Status</th>
+                <th className="px-5 py-4">Featured</th>
+                <th className="px-5 py-4">Order</th>
                 <th className="px-5 py-4">Experience</th>
                 <th className="px-5 py-4">Content Reviewed</th>
                 <th className="px-5 py-4">Created</th>
@@ -480,7 +498,7 @@ export function DashboardExpertsClient({
             <tbody className="bg-white">
               {isLoading ? (
                 <tr>
-                  <td colSpan={7} className="px-5 py-10 text-center text-muted">
+                  <td colSpan={9} className="px-5 py-10 text-center text-muted">
                     <span className="inline-flex items-center gap-2">
                       <Loader2 className="size-4 animate-spin text-primary" />
                       Loading experts...
@@ -524,6 +542,18 @@ export function DashboardExpertsClient({
                         {expert.status}
                       </span>
                     </td>
+                    <td className="px-5 py-4">
+                      <span
+                        className={`inline-flex rounded-pill px-3 py-1 text-xs font-semibold ${
+                          expert.featured_on_homepage
+                            ? "bg-gold/15 text-primary"
+                            : "bg-slate-100 text-slate-600"
+                        }`}
+                      >
+                        {expert.featured_on_homepage ? "Featured" : "No"}
+                      </span>
+                    </td>
+                    <td className="px-5 py-4 text-muted">{expert.display_order}</td>
                     <td className="px-5 py-4 text-muted">
                       {expert.experience_years ? `${expert.experience_years} years` : "—"}
                     </td>
@@ -567,7 +597,7 @@ export function DashboardExpertsClient({
                 ))
               ) : (
                 <tr>
-                  <td colSpan={7} className="px-5 py-10 text-center text-muted">
+                  <td colSpan={9} className="px-5 py-10 text-center text-muted">
                     No experts found.
                   </td>
                 </tr>
@@ -654,6 +684,34 @@ export function DashboardExpertsClient({
                 rows={8}
                 helperText="Supports paragraphs and list lines using - or *."
               />
+              <TextAreaField
+                label="Editorial Contribution"
+                value={form.editorial_contribution}
+                onChange={(value) => updateForm("editorial_contribution", value)}
+                rows={5}
+                helperText="Shown on the public expert profile page. Supports paragraphs."
+              />
+            </section>
+
+            <section className="grid gap-5 lg:grid-cols-2">
+              <InputField
+                label="SEO Title"
+                value={form.seo_title}
+                onChange={(value) => updateForm("seo_title", value)}
+              />
+              <InputField
+                label="SEO Description"
+                value={form.seo_description}
+                onChange={(value) => updateForm("seo_description", value)}
+              />
+              <div className="lg:col-span-2">
+                <MediaLibraryField
+                  label="Meta Image"
+                  value={form.meta_image}
+                  onChange={(value) => updateForm("meta_image", value)}
+                  helperText="Optional social preview image. Defaults to the profile image when empty."
+                />
+              </div>
             </section>
 
             <section className="grid gap-4">

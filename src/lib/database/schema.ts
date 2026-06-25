@@ -203,6 +203,7 @@ export const databaseSchema: TableSchema[] = [
       { name: "designation", type: "text", nullable: true },
       { name: "short_bio", type: "text", nullable: true },
       { name: "full_bio", type: "text", nullable: true },
+      { name: "editorial_contribution", type: "text", nullable: true },
       { name: "experience_years", type: "numeric", nullable: true },
       { name: "linkedin_url", type: "text", nullable: true },
       { name: "website_url", type: "text", nullable: true },
@@ -217,6 +218,9 @@ export const databaseSchema: TableSchema[] = [
       },
       { name: "display_order", type: "numeric", default: "0", indexed: true },
       { name: "featured_on_homepage", type: "boolean", default: "false", indexed: true },
+      { name: "seo_title", type: "text", nullable: true },
+      { name: "seo_description", type: "text", nullable: true },
+      { name: "meta_image", type: "text", nullable: true },
       {
         name: "linked_author_id",
         type: "uuid",

@@ -207,6 +207,7 @@ export type Expert = {
   designation: string | null;
   short_bio: string | null;
   full_bio: string | null;
+  editorial_contribution: string | null;
   experience_years: number | null;
   linkedin_url: string | null;
   website_url: string | null;
@@ -215,6 +216,9 @@ export type Expert = {
   status: ExpertStatus;
   display_order: number;
   featured_on_homepage: boolean;
+  seo_title: string | null;
+  seo_description: string | null;
+  meta_image: string | null;
   linked_author_id: string | null;
   linked_reviewer_id: string | null;
   created_at: Timestamp;

@@ -58,12 +58,15 @@ export async function generateMetadata({
   }
 
   return buildSeoMetadata(PageType.Static, `experts-${slug}`, {
-    title: `${payload.expert.name} | ${payload.expert.designation || "Wellness Expert"} | Suppriva`,
+    title:
+      payload.expert.seo_title ||
+      `${payload.expert.name} | ${payload.expert.designation || "Wellness Expert"} | Suppriva`,
     description:
+      payload.expert.seo_description ||
       payload.expert.short_bio ||
       `Learn about ${payload.expert.name}, a wellness expert contributing educational guidance and ingredient resources at Suppriva.`,
     canonicalPath: `/experts/${payload.expert.slug}`,
-    image: payload.expert.profile_image,
+    image: payload.expert.meta_image || payload.expert.profile_image,
     type: "article",
   });
 }
@@ -126,7 +129,7 @@ export default async function ExpertProfilePage({
       icon: SearchCheck,
     },
     {
-      label: "Blog Articles",
+      label: "Wellness Articles",
       value: stats.blogArticles,
       icon: BookOpenText,
     },
@@ -291,19 +294,12 @@ export default async function ExpertProfilePage({
               <h2 className="font-heading text-3xl font-extrabold text-text-dark">
                 Editorial Contribution
               </h2>
-              <p className="mt-5 text-base leading-8 text-muted">
-                {expert.name} contributes expert guidance to educational wellness
-                content, ingredient explainers, and wellness resources published on
-                Suppriva.
-              </p>
-              <p className="mt-4 text-base leading-8 text-muted">
-                The role focuses on improving educational quality and helping readers
-                better understand ingredients and wellness concepts.
-              </p>
-              <p className="mt-4 text-base leading-8 text-muted">
-                Individual product rankings, affiliate partnerships, and editorial
-                decisions remain independently managed by the Suppriva Editorial Team.
-              </p>
+              <div className="mt-5 space-y-4 text-base leading-8 text-muted">
+                {renderFullBio(
+                  expert.editorial_contribution ||
+                    `${expert.name} contributes expert guidance to educational wellness content, ingredient explainers, and wellness resources published on Suppriva.\n\nThe role focuses on improving educational quality and helping readers better understand ingredients and wellness concepts.\n\nIndividual product rankings, affiliate partnerships, and editorial decisions remain independently managed by the Suppriva Editorial Team.`,
+                )}
+              </div>
             </FadeIn>
 
             <FadeIn

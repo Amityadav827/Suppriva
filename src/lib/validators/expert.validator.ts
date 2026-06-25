@@ -7,6 +7,7 @@ export type ExpertCreateInput = {
   designation?: string | null;
   short_bio?: string | null;
   full_bio?: string | null;
+  editorial_contribution?: string | null;
   experience_years?: number | null;
   linkedin_url?: string | null;
   website_url?: string | null;
@@ -15,6 +16,9 @@ export type ExpertCreateInput = {
   status?: ExpertStatus;
   display_order?: number;
   featured_on_homepage?: boolean;
+  seo_title?: string | null;
+  seo_description?: string | null;
+  meta_image?: string | null;
   linked_author_id?: string | null;
   linked_reviewer_id?: string | null;
 };
@@ -88,6 +92,10 @@ export function validateExpertInput<TInput extends ExpertValidationInput>(
 
   if ("profile_image" in input && input.profile_image && !isValidUrl(input.profile_image)) {
     errors.push("Profile image URL must be a valid URL.");
+  }
+
+  if ("meta_image" in input && input.meta_image && !isValidUrl(input.meta_image)) {
+    errors.push("Meta image URL must be a valid URL.");
   }
 
   if ("email" in input && input.email && !isValidEmail(input.email)) {

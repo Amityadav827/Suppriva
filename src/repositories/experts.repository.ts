@@ -166,6 +166,9 @@ export class SupabaseExpertsRepository implements ExpertsRepository {
     if ("designation" in input) payload.designation = input.designation ?? null;
     if ("short_bio" in input) payload.short_bio = input.short_bio ?? null;
     if ("full_bio" in input) payload.full_bio = input.full_bio ?? null;
+    if ("editorial_contribution" in input) {
+      payload.editorial_contribution = input.editorial_contribution ?? null;
+    }
     if ("experience_years" in input) payload.experience_years = input.experience_years ?? null;
     if ("linkedin_url" in input) payload.linkedin_url = input.linkedin_url ?? null;
     if ("website_url" in input) payload.website_url = input.website_url ?? null;
@@ -176,6 +179,9 @@ export class SupabaseExpertsRepository implements ExpertsRepository {
     if ("featured_on_homepage" in input) {
       payload.featured_on_homepage = input.featured_on_homepage ?? false;
     }
+    if ("seo_title" in input) payload.seo_title = input.seo_title ?? null;
+    if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
+    if ("meta_image" in input) payload.meta_image = input.meta_image ?? null;
     if ("linked_author_id" in input) payload.linked_author_id = input.linked_author_id ?? null;
     if ("linked_reviewer_id" in input) {
       payload.linked_reviewer_id = input.linked_reviewer_id ?? null;
