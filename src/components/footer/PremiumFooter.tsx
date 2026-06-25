@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FooterColumn } from "@/components/footer/FooterColumn";
-import { PaymentIcons } from "@/components/footer/PaymentIcons";
 import { SocialLinks } from "@/components/footer/SocialLinks";
 import {
   footerCategories,
@@ -18,7 +17,7 @@ export function PremiumFooter() {
       />
 
       <div className="site-container">
-        <div className="grid gap-9 rounded-[32px] border border-white/10 bg-white/[0.045] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.18)] backdrop-blur md:p-8 lg:grid-cols-[1.25fr_0.8fr_0.8fr_0.9fr_0.9fr] lg:gap-8">
+        <div className="grid gap-9 rounded-[32px] border border-white/10 bg-white/[0.045] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.18)] backdrop-blur md:grid-cols-2 md:p-8 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.9fr] lg:gap-12">
           <div>
             <Link href="/" aria-label="Suppriva home" className="inline-block">
               <span className="block font-heading text-3xl font-extrabold tracking-[0.14em] text-white">
@@ -38,7 +37,6 @@ export function PremiumFooter() {
           <FooterColumn title="Quick Links" links={footerQuickLinks} />
           <FooterColumn title="Categories" links={footerCategories} />
           <FooterColumn title="Support" links={footerSupportLinks} />
-          <PaymentIcons />
         </div>
 
         <div className="grid gap-4 border-t border-white/10 py-7 text-sm text-white/58 md:grid-cols-[1fr_auto] md:items-center">

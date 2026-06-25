@@ -6,7 +6,6 @@ import {
   Brain,
   Candy,
   Compass,
-  CreditCard,
   Dumbbell,
   Fish,
   Flower2,
@@ -14,7 +13,6 @@ import {
   FlaskConical,
   Leaf,
   LeafyGreen,
-  LockKeyhole,
   Mail,
   Moon,
   Scissors,
@@ -415,7 +413,5 @@ export const footerSupportLinks = [
 ];
 
 export const footerContactBadges = [
-  { label: "Secure checkout", icon: LockKeyhole },
   { label: "Wellness updates", icon: Mail },
-  { label: "Flexible payments", icon: CreditCard },
 ];
