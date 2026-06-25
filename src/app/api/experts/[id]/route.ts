@@ -1,11 +1,23 @@
 import { NextResponse } from "next/server";
 import { isAdmin } from "@/lib/auth/admin";
 import { AppError } from "@/lib/errors/AppError";
+import { isMissingExpertsTableError } from "@/lib/experts/fallback";
 import { ExpertsService } from "@/services/experts.service";
 
 const expertsService = new ExpertsService();
 
 function handleApiError(error: unknown) {
+  if (isMissingExpertsTableError(error)) {
+    return NextResponse.json(
+      {
+        error:
+          "Experts table is missing in Supabase. Run supabase/repairs/20260625_repair_experts_infrastructure.sql, then retry.",
+        code: "EXPERTS_TABLE_MISSING",
+      },
+      { status: 503 },
+    );
+  }
+
   if (error instanceof AppError) {
     return NextResponse.json(
       { error: error.message, code: error.code },

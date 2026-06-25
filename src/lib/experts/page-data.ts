@@ -7,6 +7,11 @@ import {
   productToCard,
 } from "@/lib/live-data";
 import type { Blog, Category, Expert, Ingredient, Product } from "@/lib/database/types";
+import {
+  DR_ARINDHAM_EXPERT,
+  FALLBACK_EXPERTS,
+  isMissingExpertsTableError,
+} from "@/lib/experts/fallback";
 import { ExpertsService } from "@/services/experts.service";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
@@ -108,7 +113,10 @@ export async function getExpertsDirectoryItems({
       : await expertsService.safeGetActiveExperts();
 
     if (!experts.length) {
-      return [];
+      return FALLBACK_EXPERTS.map((expert) => ({
+        expert,
+        stats: buildStats(expert, [], [], [], []),
+      }));
     }
 
     const { publishedProducts, publishedCategories, publishedBlogs, publishedIngredients } =
@@ -124,7 +132,14 @@ export async function getExpertsDirectoryItems({
         publishedCategories,
       ),
     }));
-  } catch {
+  } catch (error) {
+    if (isMissingExpertsTableError(error)) {
+      return FALLBACK_EXPERTS.map((expert) => ({
+        expert,
+        stats: buildStats(expert, [], [], [], []),
+      }));
+    }
+
     return [];
   }
 }
@@ -134,7 +149,13 @@ export async function getExpertPublicProfileData(
 ): Promise<ExpertPublicProfileData | null> {
   try {
     const expertsService = new ExpertsService();
-    const expert = await expertsService.getExpertBySlug(slug).catch(() => null);
+    const expert = await expertsService.getExpertBySlug(slug).catch((error) => {
+      if (isMissingExpertsTableError(error) && slug === DR_ARINDHAM_EXPERT.slug) {
+        return DR_ARINDHAM_EXPERT;
+      }
+
+      return null;
+    });
 
     if (!expert || expert.status !== "active") {
       return null;
