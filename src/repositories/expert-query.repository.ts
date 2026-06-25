@@ -7,6 +7,11 @@ import type {
 } from "@/lib/validators/expert-query.validator";
 import { randomUUID } from "node:crypto";
 
+function optionalTextToNull(value?: string | null) {
+  const cleaned = value?.trim();
+  return cleaned ? cleaned : null;
+}
+
 export class ExpertQueryRepository {
   async getAllQueries(): Promise<ExpertQuery[]> {
     const supabase = await createSupabaseServerClient();
@@ -28,17 +33,17 @@ export class ExpertQueryRepository {
       id: randomUUID(),
       name: input.name,
       email: input.email,
-      category: input.category ?? null,
-      expert_id: input.expert_id ?? null,
-      product_name: input.product_name ?? null,
-      product_url: input.product_url ?? null,
+      category: optionalTextToNull(input.category),
+      expert_id: optionalTextToNull(input.expert_id),
+      product_name: optionalTextToNull(input.product_name),
+      product_url: optionalTextToNull(input.product_url),
       question_type: input.question_type,
       message: input.message,
       status: "new",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
       resolved_at: null,
-      source_page: input.source_page ?? null,
+      source_page: optionalTextToNull(input.source_page),
     };
 
     const { error } = await supabase.from("expert_queries").insert(query);
