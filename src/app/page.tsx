@@ -32,6 +32,7 @@ import { WellnessExpertSection } from "@/sections/WellnessExpertSection";
 import { WhyChooseSupprivaSection } from "@/sections/WhyChooseSupprivaSection";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export function generateMetadata(): Promise<Metadata> {
   return buildSeoMetadata(PageType.Home, "home", {
