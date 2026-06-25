@@ -69,16 +69,21 @@ export class ExpertQueryService {
   }
 
   private normalizeInput(input: ExpertQueryCreateInput): ExpertQueryCreateInput {
+    const cleanOptionalText = (value?: string | null) => {
+      const cleaned = value?.trim();
+      return cleaned ? cleaned : null;
+    };
+
     return {
       name: input.name?.trim() ?? "",
       email: input.email?.trim().toLowerCase() ?? "",
-      category: input.category?.trim() ?? "",
-      expert_id: input.expert_id?.trim() ?? "",
-      product_name: input.product_name?.trim() ?? "",
-      product_url: input.product_url?.trim() ?? "",
+      category: cleanOptionalText(input.category),
+      expert_id: cleanOptionalText(input.expert_id),
+      product_name: cleanOptionalText(input.product_name),
+      product_url: cleanOptionalText(input.product_url),
       question_type: input.question_type?.trim() ?? "",
       message: input.message?.trim() ?? "",
-      source_page: input.source_page?.trim() ?? "",
+      source_page: cleanOptionalText(input.source_page),
     };
   }
 
