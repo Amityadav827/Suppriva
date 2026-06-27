@@ -12,6 +12,10 @@ import {
   type IngredientsRepository,
 } from "@/repositories/ingredients.repository";
 import {
+  SupabaseBlogsRepository,
+  type BlogsRepository,
+} from "@/repositories/blogs.repository";
+import {
   SupabaseProductsRepository,
   type ProductsRepository,
 } from "@/repositories/products.repository";
@@ -24,6 +28,7 @@ export class ProductService {
   constructor(
     private readonly productsRepository: ProductsRepository = new SupabaseProductsRepository(),
     private readonly ingredientsRepository: IngredientsRepository = new SupabaseIngredientsRepository(),
+    private readonly blogsRepository: BlogsRepository = new SupabaseBlogsRepository(),
   ) {}
 
   get repository() {
@@ -58,6 +63,7 @@ export class ProductService {
     const normalizedInput = await this.normalizeCreateInput(input);
     this.assertValid(normalizedInput, "create");
     await this.assertUniqueSlug(normalizedInput.slug);
+    await this.assertValidCmsRelations(normalizedInput);
     const selectedIngredients = await this.validateAndResolveIngredientIds(
       normalizedInput.ingredient_ids ?? [],
     );
@@ -69,6 +75,7 @@ export class ProductService {
         product.id,
         normalizedInput.ingredient_ids ?? [],
       );
+      await this.productsRepository.syncProductCmsRelations(product.id, normalizedInput);
     } catch (error) {
       await this.productsRepository.deleteProductIngredients(product.id);
       await this.productsRepository.deleteProduct(product.id);
@@ -90,6 +97,8 @@ export class ProductService {
       await this.assertUniqueSlug(normalizedInput.slug, id);
     }
 
+    await this.assertValidCmsRelations(normalizedInput, id);
+
     const ingredientIds =
       "ingredient_ids" in normalizedInput
         ? normalizedInput.ingredient_ids ?? []
@@ -107,6 +116,8 @@ export class ProductService {
     if ("ingredient_ids" in normalizedInput) {
       await this.productsRepository.syncProductIngredients(id, ingredientIds);
     }
+
+    await this.productsRepository.syncProductCmsRelations(id, normalizedInput);
 
     return {
       ...product,
@@ -133,11 +144,25 @@ export class ProductService {
       reviewer_id: await this.reviewersService.resolveAssignedProfileId(input.reviewer_id),
       ingredient_ids: this.normalizeIngredientIds(input.ingredient_ids),
       gallery: input.gallery ?? [],
+      hero_checklist: input.hero_checklist ?? [],
+      hero_show_rating: input.hero_show_rating ?? true,
+      hero_show_badge: input.hero_show_badge ?? true,
       ingredients: input.ingredients ?? [],
       benefits: input.benefits ?? [],
       pros: input.pros ?? [],
       cons: input.cons ?? [],
       faq: input.faq ?? [],
+      standout_points: input.standout_points ?? [],
+      how_it_works_steps: input.how_it_works_steps ?? [],
+      best_for_items: input.best_for_items ?? [],
+      safety_items: input.safety_items ?? [],
+      buying_guide_items: input.buying_guide_items ?? [],
+      sidebar_facts: input.sidebar_facts ?? [],
+      ingredient_overrides: input.ingredient_overrides ?? [],
+      related_product_relations: input.related_product_relations ?? [],
+      compare_product_relations: input.compare_product_relations ?? [],
+      related_blog_relations: input.related_blog_relations ?? [],
+      related_ingredient_relations: input.related_ingredient_relations ?? [],
       status: input.status ?? ContentStatus.Draft,
       published_at:
         input.status === ContentStatus.Published
@@ -178,6 +203,8 @@ export class ProductService {
     if ("ingredient_ids" in input) {
       normalizedInput.ingredient_ids = this.normalizeIngredientIds(input.ingredient_ids);
     }
+
+    if ("hero_checklist" in input) normalizedInput.hero_checklist = input.hero_checklist ?? [];
 
     return normalizedInput;
   }
@@ -233,6 +260,86 @@ export class ProductService {
     }
 
     return ingredients as Ingredient[];
+  }
+
+  private async assertValidCmsRelations(
+    input: ProductCreateInput | ProductUpdateInput,
+    currentProductId?: string,
+  ) {
+    const ingredientIds = [
+      ...(input.ingredient_overrides ?? []).map((item) => item.ingredient_id),
+      ...(input.related_ingredient_relations ?? []).map((item) => item.ingredient_id),
+    ];
+    const relatedProductIds = (input.related_product_relations ?? []).map(
+      (item) => item.related_product_id,
+    );
+    const compareProductIds = (input.compare_product_relations ?? []).map(
+      (item) => item.compared_product_id,
+    );
+    const blogIds = (input.related_blog_relations ?? []).map((item) => item.blog_id);
+
+    if (
+      currentProductId &&
+      [...relatedProductIds, ...compareProductIds].some((productId) => productId === currentProductId)
+    ) {
+      throw new ValidationError("A product cannot be related to or compared with itself.");
+    }
+
+    await Promise.all([
+      this.assertIngredientsExist(ingredientIds),
+      this.assertProductsExist([...relatedProductIds, ...compareProductIds]),
+      this.assertBlogsExist(blogIds),
+    ]);
+  }
+
+  private async assertIngredientsExist(ingredientIds: string[]) {
+    const uniqueIngredientIds = [...new Set(ingredientIds.filter(Boolean))];
+
+    if (!uniqueIngredientIds.length) {
+      return;
+    }
+
+    const ingredients = await Promise.all(
+      uniqueIngredientIds.map((ingredientId) =>
+        this.ingredientsRepository.getIngredientById(ingredientId),
+      ),
+    );
+
+    if (ingredients.some((ingredient) => !ingredient)) {
+      throw new ValidationError("One or more CMS ingredient relationships are invalid.");
+    }
+  }
+
+  private async assertProductsExist(productIds: string[]) {
+    const uniqueProductIds = [...new Set(productIds.filter(Boolean))];
+
+    if (!uniqueProductIds.length) {
+      return;
+    }
+
+    const products = await Promise.all(
+      uniqueProductIds.map((productId) => this.productsRepository.getProductById(productId)),
+    );
+
+    if (products.some((product) => !product)) {
+      throw new ValidationError("One or more related product relationships are invalid.");
+    }
+  }
+
+  private async assertBlogsExist(blogIds: string[]) {
+    const uniqueBlogIds = [...new Set(blogIds.filter(Boolean))];
+
+    if (!uniqueBlogIds.length) {
+      return;
+    }
+
+    const blogs = await Promise.all(
+      uniqueBlogIds.map((blogId) => this.blogsRepository.getBlogById(blogId)),
+    );
+
+    if (blogs.some((blog) => !blog)) {
+      throw new ValidationError("One or more related blog relationships are invalid.");
+    }
   }
 
   private withIngredientSnapshot<T extends ProductCreateInput | ProductUpdateInput>(

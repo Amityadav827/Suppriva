@@ -8,6 +8,7 @@ import {
 import { ContentStatus } from "@/lib/database/constants";
 import type {
   Author,
+  Blog,
   Category,
   FAQItem,
   Ingredient,
@@ -23,6 +24,18 @@ import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 type ProductFormState = {
   title: string;
   slug: string;
+  hero_badge: string;
+  hero_title: string;
+  hero_subtitle: string;
+  hero_description: string;
+  hero_image_alt: string;
+  hero_cta_label: string;
+  hero_secondary_cta_label: string;
+  hero_checklist: string;
+  hero_show_rating: boolean;
+  hero_show_badge: boolean;
+  review_count: string;
+  rating_label: string;
   category_id: string;
   author_id: string;
   reviewer_id: string;
@@ -37,9 +50,66 @@ type ProductFormState = {
   pros: string;
   cons: string;
   faq: string;
+  overview_title: string;
+  overview_subtitle: string;
+  overview_content: string;
+  how_it_works_title: string;
+  how_it_works_subtitle: string;
+  how_it_works_content: string;
+  how_it_works_steps: string;
+  benefits_title: string;
+  benefits_subtitle: string;
+  ingredients_title: string;
+  ingredients_subtitle: string;
+  best_for_title: string;
+  best_for_subtitle: string;
+  best_for_items: string;
+  standout_points: string;
+  safety_title: string;
+  safety_subtitle: string;
+  safety_items: string;
+  pros_cons_title: string;
+  pros_cons_subtitle: string;
+  faq_title: string;
+  faq_subtitle: string;
+  verdict_title: string;
+  verdict_subtitle: string;
+  verdict_summary: string;
+  verdict_best_for: string;
+  verdict_not_ideal_for: string;
+  verdict_recommendation: string;
+  buying_guide_title: string;
+  buying_guide_subtitle: string;
+  buying_cta_label: string;
+  buying_guide_items: string;
+  related_product_ids: string[];
+  compare_product_ids: string[];
+  related_blog_ids: string[];
+  related_ingredient_ids: string[];
+  related_ingredients_title: string;
+  related_ingredients_subtitle: string;
+  related_blogs_title: string;
+  related_blogs_subtitle: string;
+  compare_title: string;
+  compare_subtitle: string;
+  related_products_title: string;
+  related_products_subtitle: string;
+  health_needs_title: string;
+  health_needs_subtitle: string;
+  sidebar_facts: string;
+  sidebar_cta_title: string;
+  sidebar_cta_description: string;
+  sidebar_cta_label: string;
+  ingredient_overrides: string;
   status: ContentStatus;
   seo_title: string;
   seo_description: string;
+  seo_canonical_url: string;
+  seo_og_title: string;
+  seo_og_description: string;
+  seo_og_image: string;
+  seo_noindex: boolean;
+  schema_json: string;
 };
 
 type ProductsResponse = {
@@ -58,6 +128,11 @@ type IngredientsResponse = {
   error?: string;
 };
 
+type BlogsResponse = {
+  blogs?: Blog[];
+  error?: string;
+};
+
 type ExpertProfilesResponse = {
   authors?: Author[];
   reviewers?: Reviewer[];
@@ -67,6 +142,18 @@ type ExpertProfilesResponse = {
 const emptyForm: ProductFormState = {
   title: "",
   slug: "",
+  hero_badge: "",
+  hero_title: "",
+  hero_subtitle: "",
+  hero_description: "",
+  hero_image_alt: "",
+  hero_cta_label: "",
+  hero_secondary_cta_label: "",
+  hero_checklist: "",
+  hero_show_rating: true,
+  hero_show_badge: true,
+  review_count: "",
+  rating_label: "",
   category_id: "",
   author_id: "",
   reviewer_id: "",
@@ -81,9 +168,66 @@ const emptyForm: ProductFormState = {
   pros: "",
   cons: "",
   faq: "",
+  overview_title: "",
+  overview_subtitle: "",
+  overview_content: "",
+  how_it_works_title: "",
+  how_it_works_subtitle: "",
+  how_it_works_content: "",
+  how_it_works_steps: "",
+  benefits_title: "",
+  benefits_subtitle: "",
+  ingredients_title: "",
+  ingredients_subtitle: "",
+  best_for_title: "",
+  best_for_subtitle: "",
+  best_for_items: "",
+  standout_points: "",
+  safety_title: "",
+  safety_subtitle: "",
+  safety_items: "",
+  pros_cons_title: "",
+  pros_cons_subtitle: "",
+  faq_title: "",
+  faq_subtitle: "",
+  verdict_title: "",
+  verdict_subtitle: "",
+  verdict_summary: "",
+  verdict_best_for: "",
+  verdict_not_ideal_for: "",
+  verdict_recommendation: "",
+  buying_guide_title: "",
+  buying_guide_subtitle: "",
+  buying_cta_label: "",
+  buying_guide_items: "",
+  related_product_ids: [],
+  compare_product_ids: [],
+  related_blog_ids: [],
+  related_ingredient_ids: [],
+  related_ingredients_title: "",
+  related_ingredients_subtitle: "",
+  related_blogs_title: "",
+  related_blogs_subtitle: "",
+  compare_title: "",
+  compare_subtitle: "",
+  related_products_title: "",
+  related_products_subtitle: "",
+  health_needs_title: "",
+  health_needs_subtitle: "",
+  sidebar_facts: "",
+  sidebar_cta_title: "",
+  sidebar_cta_description: "",
+  sidebar_cta_label: "",
+  ingredient_overrides: "",
   status: ContentStatus.Draft,
   seo_title: "",
   seo_description: "",
+  seo_canonical_url: "",
+  seo_og_title: "",
+  seo_og_description: "",
+  seo_og_image: "",
+  seo_noindex: false,
+  schema_json: "",
 };
 
 function lines(value: string) {
@@ -109,10 +253,207 @@ function parseFaq(value: string): FAQItem[] {
   });
 }
 
+function serializeCmsCards(
+  items?: Array<{
+    title?: string | null;
+    description?: string | null;
+    icon?: string | null;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [item.title ?? "", item.description ?? "", item.icon ?? ""]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseCmsCards(value: string) {
+  return lines(value).map((item, index) => {
+    const [title, description = "", icon = ""] = item.split("|").map((part) => part.trim());
+
+    return {
+      title,
+      description: description || null,
+      icon: icon || null,
+      display_order: index,
+      is_active: true,
+    };
+  });
+}
+
+function serializeHowItWorksSteps(
+  items?: Array<{
+    title?: string | null;
+    description?: string | null;
+    icon?: string | null;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [item.title ?? "", item.description ?? "", item.icon ?? ""]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseHowItWorksSteps(value: string) {
+  return lines(value)
+    .map((item, index) => {
+      const [title, description = "", icon = ""] = item.split("|").map((part) => part.trim());
+      const resolvedDescription = description || title;
+
+      return {
+        title: description ? title || null : null,
+        description: resolvedDescription,
+        icon: icon || null,
+        display_order: index,
+        is_active: true,
+      };
+    })
+    .filter((item) => item.description);
+}
+
+function serializeSafetyItems(
+  items?: Array<{
+    item_type?: string | null;
+    title?: string | null;
+    description?: string | null;
+    icon?: string | null;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [item.item_type ?? "", item.title ?? "", item.description ?? "", item.icon ?? ""]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseSafetyItems(value: string) {
+  const allowedTypes = new Set(["side_effect", "who_should_avoid", "interaction", "precaution"]);
+
+  return lines(value).map((item, index) => {
+    const [itemType = "precaution", title = "", description = "", icon = ""] = item
+      .split("|")
+      .map((part) => part.trim());
+
+    return {
+      item_type: allowedTypes.has(itemType) ? itemType : "precaution",
+      title,
+      description: description || null,
+      icon: icon || null,
+      display_order: index,
+      is_active: true,
+    };
+  });
+}
+
+function serializeSidebarFacts(
+  items?: Array<{
+    label?: string | null;
+    value?: string | null;
+    icon?: string | null;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [item.label ?? "", item.value ?? "", item.icon ?? ""]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseSidebarFacts(value: string) {
+  return lines(value).map((item, index) => {
+    const [label, factValue = "", icon = ""] = item.split("|").map((part) => part.trim());
+
+    return {
+      label,
+      value: factValue,
+      icon: icon || null,
+      display_order: index,
+      is_active: true,
+    };
+  });
+}
+
+function serializeIngredientOverrides(
+  items?: Array<{
+    ingredient_id?: string | null;
+    purpose?: string | null;
+    dosage?: string | null;
+    description_override?: string | null;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [
+        item.ingredient_id ?? "",
+        item.purpose ?? "",
+        item.dosage ?? "",
+        item.description_override ?? "",
+      ]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseIngredientOverrides(value: string) {
+  return lines(value).map((item, index) => {
+    const [ingredientId, purpose = "", dosage = "", descriptionOverride = ""] = item
+      .split("|")
+      .map((part) => part.trim());
+
+    return {
+      ingredient_id: ingredientId,
+      purpose: purpose || null,
+      dosage: dosage || null,
+      description_override: descriptionOverride || null,
+      display_order: index,
+    };
+  });
+}
+
+function parseSchemaJson(value: string): JsonValue {
+  if (!value.trim()) {
+    return {};
+  }
+
+  return JSON.parse(value) as JsonValue;
+}
+
 function productToForm(product: Product): ProductFormState {
   return {
     title: product.title,
     slug: product.slug,
+    hero_badge: product.hero_badge ?? "",
+    hero_title: product.hero_title ?? "",
+    hero_subtitle: product.hero_subtitle ?? "",
+    hero_description: product.hero_description ?? "",
+    hero_image_alt: product.hero_image_alt ?? "",
+    hero_cta_label: product.hero_cta_label ?? "",
+    hero_secondary_cta_label: product.hero_secondary_cta_label ?? "",
+    hero_checklist: product.hero_checklist.join("\n"),
+    hero_show_rating: product.hero_show_rating,
+    hero_show_badge: product.hero_show_badge,
+    review_count: product.review_count?.toString() ?? "",
+    rating_label: product.rating_label ?? "",
     category_id: product.category_id ?? "",
     author_id: product.author_id ?? "",
     reviewer_id: product.reviewer_id ?? "",
@@ -141,9 +482,72 @@ function productToForm(product: Product): ProductFormState {
     pros: product.pros.join("\n"),
     cons: product.cons.join("\n"),
     faq: product.faq.map((item) => `${item.question} | ${item.answer}`).join("\n"),
+    overview_title: product.overview_title ?? "",
+    overview_subtitle: product.overview_subtitle ?? "",
+    overview_content: product.overview_content ?? "",
+    how_it_works_title: product.how_it_works_title ?? "",
+    how_it_works_subtitle: product.how_it_works_subtitle ?? "",
+    how_it_works_content: product.how_it_works_content ?? "",
+    how_it_works_steps: serializeHowItWorksSteps(product.how_it_works_steps),
+    benefits_title: product.benefits_title ?? "",
+    benefits_subtitle: product.benefits_subtitle ?? "",
+    ingredients_title: product.ingredients_title ?? "",
+    ingredients_subtitle: product.ingredients_subtitle ?? "",
+    best_for_title: product.best_for_title ?? "",
+    best_for_subtitle: product.best_for_subtitle ?? "",
+    best_for_items: serializeCmsCards(product.best_for_items),
+    standout_points: serializeCmsCards(product.standout_points),
+    safety_title: product.safety_title ?? "",
+    safety_subtitle: product.safety_subtitle ?? "",
+    safety_items: serializeSafetyItems(product.safety_items),
+    pros_cons_title: product.pros_cons_title ?? "",
+    pros_cons_subtitle: product.pros_cons_subtitle ?? "",
+    faq_title: product.faq_title ?? "",
+    faq_subtitle: product.faq_subtitle ?? "",
+    verdict_title: product.verdict_title ?? "",
+    verdict_subtitle: product.verdict_subtitle ?? "",
+    verdict_summary: product.verdict_summary ?? "",
+    verdict_best_for: product.verdict_best_for ?? "",
+    verdict_not_ideal_for: product.verdict_not_ideal_for ?? "",
+    verdict_recommendation: product.verdict_recommendation ?? "",
+    buying_guide_title: product.buying_guide_title ?? "",
+    buying_guide_subtitle: product.buying_guide_subtitle ?? "",
+    buying_cta_label: product.buying_cta_label ?? "",
+    buying_guide_items: serializeCmsCards(product.buying_guide_items),
+    related_product_ids:
+      product.related_product_relations?.map((item) => item.related_product_id) ?? [],
+    compare_product_ids:
+      product.compare_product_relations?.map((item) => item.compared_product_id) ?? [],
+    related_blog_ids: product.related_blog_relations?.map((item) => item.blog_id) ?? [],
+    related_ingredient_ids:
+      product.related_ingredient_relations?.map((item) => item.ingredient_id) ?? [],
+    related_ingredients_title: product.related_ingredients_title ?? "",
+    related_ingredients_subtitle: product.related_ingredients_subtitle ?? "",
+    related_blogs_title: product.related_blogs_title ?? "",
+    related_blogs_subtitle: product.related_blogs_subtitle ?? "",
+    compare_title: product.compare_title ?? "",
+    compare_subtitle: product.compare_subtitle ?? "",
+    related_products_title: product.related_products_title ?? "",
+    related_products_subtitle: product.related_products_subtitle ?? "",
+    health_needs_title: product.health_needs_title ?? "",
+    health_needs_subtitle: product.health_needs_subtitle ?? "",
+    sidebar_facts: serializeSidebarFacts(product.sidebar_facts),
+    sidebar_cta_title: product.sidebar_cta_title ?? "",
+    sidebar_cta_description: product.sidebar_cta_description ?? "",
+    sidebar_cta_label: product.sidebar_cta_label ?? "",
+    ingredient_overrides: serializeIngredientOverrides(product.ingredient_overrides),
     status: product.status,
     seo_title: product.seo_title ?? "",
     seo_description: product.seo_description ?? "",
+    seo_canonical_url: product.seo_canonical_url ?? "",
+    seo_og_title: product.seo_og_title ?? "",
+    seo_og_description: product.seo_og_description ?? "",
+    seo_og_image: product.seo_og_image ?? "",
+    seo_noindex: product.seo_noindex,
+    schema_json:
+      product.schema_json && typeof product.schema_json === "object"
+        ? JSON.stringify(product.schema_json, null, 2)
+        : "",
   };
 }
 
@@ -151,6 +555,18 @@ function formToPayload(form: ProductFormState) {
   return {
     title: form.title,
     slug: form.slug || undefined,
+    hero_badge: form.hero_badge || null,
+    hero_title: form.hero_title || null,
+    hero_subtitle: form.hero_subtitle || null,
+    hero_description: form.hero_description || null,
+    hero_image_alt: form.hero_image_alt || null,
+    hero_cta_label: form.hero_cta_label || null,
+    hero_secondary_cta_label: form.hero_secondary_cta_label || null,
+    hero_checklist: lines(form.hero_checklist),
+    hero_show_rating: form.hero_show_rating,
+    hero_show_badge: form.hero_show_badge,
+    review_count: form.review_count ? Number(form.review_count) : null,
+    rating_label: form.rating_label || null,
     category_id: form.category_id || null,
     author_id: form.author_id || null,
     reviewer_id: form.reviewer_id || null,
@@ -165,9 +581,87 @@ function formToPayload(form: ProductFormState) {
     pros: lines(form.pros),
     cons: lines(form.cons),
     faq: parseFaq(form.faq),
+    overview_title: form.overview_title || null,
+    overview_subtitle: form.overview_subtitle || null,
+    overview_content: form.overview_content || null,
+    how_it_works_title: form.how_it_works_title || null,
+    how_it_works_subtitle: form.how_it_works_subtitle || null,
+    how_it_works_content: form.how_it_works_content || null,
+    how_it_works_steps: parseHowItWorksSteps(form.how_it_works_steps),
+    benefits_title: form.benefits_title || null,
+    benefits_subtitle: form.benefits_subtitle || null,
+    ingredients_title: form.ingredients_title || null,
+    ingredients_subtitle: form.ingredients_subtitle || null,
+    best_for_title: form.best_for_title || null,
+    best_for_subtitle: form.best_for_subtitle || null,
+    best_for_items: parseCmsCards(form.best_for_items),
+    standout_points: parseCmsCards(form.standout_points),
+    safety_title: form.safety_title || null,
+    safety_subtitle: form.safety_subtitle || null,
+    safety_items: parseSafetyItems(form.safety_items),
+    pros_cons_title: form.pros_cons_title || null,
+    pros_cons_subtitle: form.pros_cons_subtitle || null,
+    faq_title: form.faq_title || null,
+    faq_subtitle: form.faq_subtitle || null,
+    verdict_title: form.verdict_title || null,
+    verdict_subtitle: form.verdict_subtitle || null,
+    verdict_summary: form.verdict_summary || null,
+    verdict_best_for: form.verdict_best_for || null,
+    verdict_not_ideal_for: form.verdict_not_ideal_for || null,
+    verdict_recommendation: form.verdict_recommendation || null,
+    buying_guide_title: form.buying_guide_title || null,
+    buying_guide_subtitle: form.buying_guide_subtitle || null,
+    buying_cta_label: form.buying_cta_label || null,
+    buying_guide_items: parseCmsCards(form.buying_guide_items),
+    related_product_relations: form.related_product_ids.map((productId, index) => ({
+      related_product_id: productId,
+      relationship_type: "related",
+      display_order: index,
+      title_override: null,
+      description_override: null,
+    })),
+    compare_product_relations: form.compare_product_ids.map((productId, index) => ({
+      compared_product_id: productId,
+      display_order: index,
+      title_override: null,
+      description_override: null,
+    })),
+    related_blog_relations: form.related_blog_ids.map((blogId, index) => ({
+      blog_id: blogId,
+      display_order: index,
+      title_override: null,
+      description_override: null,
+    })),
+    related_ingredient_relations: form.related_ingredient_ids.map((ingredientId, index) => ({
+      ingredient_id: ingredientId,
+      display_order: index,
+      title_override: null,
+      description_override: null,
+    })),
+    related_ingredients_title: form.related_ingredients_title || null,
+    related_ingredients_subtitle: form.related_ingredients_subtitle || null,
+    related_blogs_title: form.related_blogs_title || null,
+    related_blogs_subtitle: form.related_blogs_subtitle || null,
+    compare_title: form.compare_title || null,
+    compare_subtitle: form.compare_subtitle || null,
+    related_products_title: form.related_products_title || null,
+    related_products_subtitle: form.related_products_subtitle || null,
+    health_needs_title: form.health_needs_title || null,
+    health_needs_subtitle: form.health_needs_subtitle || null,
+    sidebar_facts: parseSidebarFacts(form.sidebar_facts),
+    sidebar_cta_title: form.sidebar_cta_title || null,
+    sidebar_cta_description: form.sidebar_cta_description || null,
+    sidebar_cta_label: form.sidebar_cta_label || null,
+    ingredient_overrides: parseIngredientOverrides(form.ingredient_overrides),
     status: form.status,
     seo_title: form.seo_title || null,
     seo_description: form.seo_description || null,
+    seo_canonical_url: form.seo_canonical_url || null,
+    seo_og_title: form.seo_og_title || null,
+    seo_og_description: form.seo_og_description || null,
+    seo_og_image: form.seo_og_image || null,
+    seo_noindex: form.seo_noindex,
+    schema_json: parseSchemaJson(form.schema_json),
   };
 }
 
@@ -183,6 +677,7 @@ export function DashboardProductsClient() {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [authors, setAuthors] = useState<Author[]>([]);
   const [reviewers, setReviewers] = useState<Reviewer[]>([]);
   const [form, setForm] = useState<ProductFormState>(emptyForm);
@@ -192,6 +687,7 @@ export function DashboardProductsClient() {
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(true);
   const [isIngredientsLoading, setIsIngredientsLoading] = useState(true);
+  const [isBlogsLoading, setIsBlogsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -258,6 +754,25 @@ export function DashboardProductsClient() {
     }
   }, []);
 
+  const fetchBlogs = useCallback(async () => {
+    setIsBlogsLoading(true);
+
+    try {
+      const response = await fetch("/api/blogs", { cache: "no-store" });
+      const payload = (await response.json()) as BlogsResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to load blogs.");
+      }
+
+      setBlogs(payload.blogs ?? []);
+    } catch (fetchError) {
+      setError(fetchError instanceof Error ? fetchError.message : "Unable to load blogs.");
+    } finally {
+      setIsBlogsLoading(false);
+    }
+  }, []);
+
   const fetchExpertProfiles = useCallback(async () => {
     try {
       const [authorsResponse, reviewersResponse] = await Promise.all([
@@ -286,8 +801,9 @@ export function DashboardProductsClient() {
     void fetchProducts();
     void fetchCategories();
     void fetchIngredients();
+    void fetchBlogs();
     void fetchExpertProfiles();
-  }, [fetchCategories, fetchExpertProfiles, fetchIngredients, fetchProducts]);
+  }, [fetchBlogs, fetchCategories, fetchExpertProfiles, fetchIngredients, fetchProducts]);
 
   const filteredProducts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -608,6 +1124,143 @@ export function DashboardProductsClient() {
             <TextAreaField label="Benefits" value={form.benefits} onChange={(value) => updateForm("benefits", value)} placeholder="Title | Description, one per line" />
             <TextAreaField label="FAQ" value={form.faq} onChange={(value) => updateForm("faq", value)} placeholder="Question | Answer, one per line" />
 
+            <CmsSection
+              title="Hero"
+              description="Foundation fields for the product hero. Public rendering will connect in a later phase."
+            >
+              <InputField label="Hero Badge" value={form.hero_badge} onChange={(value) => updateForm("hero_badge", value)} />
+              <InputField label="Hero Title Override" value={form.hero_title} onChange={(value) => updateForm("hero_title", value)} />
+              <InputField label="Hero Subtitle" value={form.hero_subtitle} onChange={(value) => updateForm("hero_subtitle", value)} />
+              <InputField label="Hero CTA Label" value={form.hero_cta_label} onChange={(value) => updateForm("hero_cta_label", value)} />
+              <InputField label="Secondary CTA Label" value={form.hero_secondary_cta_label} onChange={(value) => updateForm("hero_secondary_cta_label", value)} />
+              <InputField label="Rating Label" value={form.rating_label} onChange={(value) => updateForm("rating_label", value)} />
+              <InputField label="Review Count" value={form.review_count} onChange={(value) => updateForm("review_count", value)} />
+              <InputField label="Hero Image Alt Text" value={form.hero_image_alt} onChange={(value) => updateForm("hero_image_alt", value)} />
+              <TextAreaField label="Hero Description" value={form.hero_description} onChange={(value) => updateForm("hero_description", value)} className="lg:col-span-2" rows={4} />
+              <TextAreaField label="Hero Checklist" value={form.hero_checklist} onChange={(value) => updateForm("hero_checklist", value)} placeholder="One checklist item per line" />
+              <div className="grid gap-3">
+                <CheckboxField label="Show Rating" checked={form.hero_show_rating} onChange={(value) => updateForm("hero_show_rating", value)} />
+                <CheckboxField label="Show Hero Badge" checked={form.hero_show_badge} onChange={(value) => updateForm("hero_show_badge", value)} />
+              </div>
+            </CmsSection>
+
+            <CmsSection title="Overview & Education">
+              <InputField label="Overview Title" value={form.overview_title} onChange={(value) => updateForm("overview_title", value)} />
+              <InputField label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateForm("overview_subtitle", value)} />
+              <TextAreaField label="Overview Content" value={form.overview_content} onChange={(value) => updateForm("overview_content", value)} className="lg:col-span-2" rows={5} />
+              <InputField label="How It Works Title" value={form.how_it_works_title} onChange={(value) => updateForm("how_it_works_title", value)} />
+              <InputField label="How It Works Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateForm("how_it_works_subtitle", value)} />
+              <TextAreaField label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateForm("how_it_works_content", value)} rows={4} />
+              <TextAreaField label="How It Works Steps" value={form.how_it_works_steps} onChange={(value) => updateForm("how_it_works_steps", value)} placeholder="Title | Description | icon, one per line" rows={4} />
+            </CmsSection>
+
+            <CmsSection title="Content Sections">
+              <InputField label="Benefits Title" value={form.benefits_title} onChange={(value) => updateForm("benefits_title", value)} />
+              <InputField label="Benefits Subtitle" value={form.benefits_subtitle} onChange={(value) => updateForm("benefits_subtitle", value)} />
+              <InputField label="Ingredients Title" value={form.ingredients_title} onChange={(value) => updateForm("ingredients_title", value)} />
+              <InputField label="Ingredients Subtitle" value={form.ingredients_subtitle} onChange={(value) => updateForm("ingredients_subtitle", value)} />
+              <InputField label="Best For Title" value={form.best_for_title} onChange={(value) => updateForm("best_for_title", value)} />
+              <InputField label="Best For Subtitle" value={form.best_for_subtitle} onChange={(value) => updateForm("best_for_subtitle", value)} />
+              <TextAreaField label="Why It Stands Out Cards" value={form.standout_points} onChange={(value) => updateForm("standout_points", value)} placeholder="Title | Description | icon, one per line" rows={4} />
+              <TextAreaField label="Best For Cards" value={form.best_for_items} onChange={(value) => updateForm("best_for_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
+            </CmsSection>
+
+            <CmsSection title="Safety, FAQ & Verdict">
+              <InputField label="Safety Title" value={form.safety_title} onChange={(value) => updateForm("safety_title", value)} />
+              <InputField label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateForm("safety_subtitle", value)} />
+              <InputField label="Pros & Cons Title" value={form.pros_cons_title} onChange={(value) => updateForm("pros_cons_title", value)} />
+              <InputField label="Pros & Cons Subtitle" value={form.pros_cons_subtitle} onChange={(value) => updateForm("pros_cons_subtitle", value)} />
+              <InputField label="FAQ Title" value={form.faq_title} onChange={(value) => updateForm("faq_title", value)} />
+              <InputField label="FAQ Subtitle" value={form.faq_subtitle} onChange={(value) => updateForm("faq_subtitle", value)} />
+              <TextAreaField label="Safety Items" value={form.safety_items} onChange={(value) => updateForm("safety_items", value)} placeholder="side_effect | Title | Description | icon" className="lg:col-span-2" rows={5} />
+              <InputField label="Verdict Title" value={form.verdict_title} onChange={(value) => updateForm("verdict_title", value)} />
+              <InputField label="Verdict Subtitle" value={form.verdict_subtitle} onChange={(value) => updateForm("verdict_subtitle", value)} />
+              <TextAreaField label="Verdict Summary" value={form.verdict_summary} onChange={(value) => updateForm("verdict_summary", value)} rows={4} />
+              <TextAreaField label="Verdict Recommendation" value={form.verdict_recommendation} onChange={(value) => updateForm("verdict_recommendation", value)} rows={4} />
+              <InputField label="Verdict Best For" value={form.verdict_best_for} onChange={(value) => updateForm("verdict_best_for", value)} />
+              <InputField label="Verdict Not Ideal For" value={form.verdict_not_ideal_for} onChange={(value) => updateForm("verdict_not_ideal_for", value)} />
+            </CmsSection>
+
+            <CmsSection title="Buying Guide, Sidebar & Navigation">
+              <InputField label="Buying Guide Title" value={form.buying_guide_title} onChange={(value) => updateForm("buying_guide_title", value)} />
+              <InputField label="Buying Guide Subtitle" value={form.buying_guide_subtitle} onChange={(value) => updateForm("buying_guide_subtitle", value)} />
+              <InputField label="Buying CTA Label" value={form.buying_cta_label} onChange={(value) => updateForm("buying_cta_label", value)} />
+              <InputField label="Sidebar CTA Label" value={form.sidebar_cta_label} onChange={(value) => updateForm("sidebar_cta_label", value)} />
+              <TextAreaField label="Buying Guide Items" value={form.buying_guide_items} onChange={(value) => updateForm("buying_guide_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
+              <TextAreaField label="Sidebar Facts" value={form.sidebar_facts} onChange={(value) => updateForm("sidebar_facts", value)} placeholder="Label | Value | icon, one per line" rows={4} />
+              <InputField label="Sidebar CTA Title" value={form.sidebar_cta_title} onChange={(value) => updateForm("sidebar_cta_title", value)} />
+              <InputField label="Sidebar CTA Description" value={form.sidebar_cta_description} onChange={(value) => updateForm("sidebar_cta_description", value)} />
+            </CmsSection>
+
+            <CmsSection title="Related Content">
+              <InputField label="Related Ingredients Title" value={form.related_ingredients_title} onChange={(value) => updateForm("related_ingredients_title", value)} />
+              <InputField label="Related Ingredients Subtitle" value={form.related_ingredients_subtitle} onChange={(value) => updateForm("related_ingredients_subtitle", value)} />
+              <InputField label="Related Blogs Title" value={form.related_blogs_title} onChange={(value) => updateForm("related_blogs_title", value)} />
+              <InputField label="Related Blogs Subtitle" value={form.related_blogs_subtitle} onChange={(value) => updateForm("related_blogs_subtitle", value)} />
+              <InputField label="Compare Title" value={form.compare_title} onChange={(value) => updateForm("compare_title", value)} />
+              <InputField label="Compare Subtitle" value={form.compare_subtitle} onChange={(value) => updateForm("compare_subtitle", value)} />
+              <InputField label="Related Products Title" value={form.related_products_title} onChange={(value) => updateForm("related_products_title", value)} />
+              <InputField label="Related Products Subtitle" value={form.related_products_subtitle} onChange={(value) => updateForm("related_products_subtitle", value)} />
+              <InputField label="Health Needs Title" value={form.health_needs_title} onChange={(value) => updateForm("health_needs_title", value)} />
+              <InputField label="Health Needs Subtitle" value={form.health_needs_subtitle} onChange={(value) => updateForm("health_needs_subtitle", value)} />
+              <RelationshipMultiSelect
+                label="Related Products"
+                options={products
+                  .filter((product) => product.id !== editingProduct?.id)
+                  .map((product) => ({
+                    id: product.id,
+                    label: product.title,
+                    description: product.slug,
+                  }))}
+                selectedIds={form.related_product_ids}
+                onChange={(value) => updateForm("related_product_ids", value)}
+              />
+              <RelationshipMultiSelect
+                label="Compare Alternatives"
+                options={products
+                  .filter((product) => product.id !== editingProduct?.id)
+                  .map((product) => ({
+                    id: product.id,
+                    label: product.title,
+                    description: product.slug,
+                  }))}
+                selectedIds={form.compare_product_ids}
+                onChange={(value) => updateForm("compare_product_ids", value)}
+              />
+              <RelationshipMultiSelect
+                label="Related Blogs"
+                isLoading={isBlogsLoading}
+                options={blogs.map((blog) => ({
+                  id: blog.id,
+                  label: blog.title,
+                  description: blog.slug,
+                }))}
+                selectedIds={form.related_blog_ids}
+                onChange={(value) => updateForm("related_blog_ids", value)}
+              />
+              <RelationshipMultiSelect
+                label="Related Ingredients"
+                isLoading={isIngredientsLoading}
+                options={ingredients.map((ingredient) => ({
+                  id: ingredient.id,
+                  label: ingredient.name,
+                  description: ingredient.slug,
+                }))}
+                selectedIds={form.related_ingredient_ids}
+                onChange={(value) => updateForm("related_ingredient_ids", value)}
+              />
+              <TextAreaField label="Ingredient Display Overrides" value={form.ingredient_overrides} onChange={(value) => updateForm("ingredient_overrides", value)} placeholder="ingredient_id | Purpose | Dosage | Description override" className="lg:col-span-2" rows={4} />
+            </CmsSection>
+
+            <CmsSection title="Advanced SEO">
+              <InputField label="Canonical URL" value={form.seo_canonical_url} onChange={(value) => updateForm("seo_canonical_url", value)} />
+              <InputField label="Open Graph Title" value={form.seo_og_title} onChange={(value) => updateForm("seo_og_title", value)} />
+              <InputField label="Open Graph Description" value={form.seo_og_description} onChange={(value) => updateForm("seo_og_description", value)} />
+              <InputField label="Open Graph Image" value={form.seo_og_image} onChange={(value) => updateForm("seo_og_image", value)} />
+              <CheckboxField label="Noindex product page" checked={form.seo_noindex} onChange={(value) => updateForm("seo_noindex", value)} />
+              <TextAreaField label="Schema JSON Override" value={form.schema_json} onChange={(value) => updateForm("schema_json", value)} placeholder='{"@type":"Product"}' className="lg:col-span-2" rows={6} />
+            </CmsSection>
+
             <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
               <button
                 type="submit"
@@ -655,6 +1308,189 @@ function InputField({
         required={required}
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+    </label>
+  );
+}
+
+function CmsSection({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="grid gap-4 rounded-[26px] border border-border-light bg-soft-green/35 p-4 lg:col-span-2 lg:grid-cols-2">
+      <div className="lg:col-span-2">
+        <h3 className="font-heading text-base font-extrabold text-text-dark">{title}</h3>
+        {description ? <p className="mt-1 text-sm text-muted">{description}</p> : null}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function CheckboxField({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (value: boolean) => void;
+}) {
+  return (
+    <label className="flex min-h-12 items-center gap-3 rounded-[18px] border border-border-light bg-white px-4 text-sm font-semibold text-text-dark">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
+        className="size-4 accent-primary"
+      />
+      {label}
+    </label>
+  );
+}
+
+function RelationshipMultiSelect({
+  label,
+  options,
+  selectedIds,
+  onChange,
+  isLoading = false,
+}: {
+  label: string;
+  options: Array<{ id: string; label: string; description?: string }>;
+  selectedIds: string[];
+  onChange: (value: string[]) => void;
+  isLoading?: boolean;
+}) {
+  const [query, setQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const selectedIdSet = useMemo(() => new Set(selectedIds), [selectedIds]);
+  const selectedOptions = useMemo(
+    () => selectedIds.map((id) => options.find((option) => option.id === id)).filter(Boolean) as Array<{ id: string; label: string; description?: string }>,
+    [options, selectedIds],
+  );
+  const filteredOptions = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+
+    return options.filter((option) => {
+      if (selectedIdSet.has(option.id)) {
+        return false;
+      }
+
+      if (!normalizedQuery) {
+        return true;
+      }
+
+      return [option.label, option.description ?? ""]
+        .join(" ")
+        .toLowerCase()
+        .includes(normalizedQuery);
+    });
+  }, [options, query, selectedIdSet]);
+
+  function addOption(id: string) {
+    if (selectedIdSet.has(id)) {
+      return;
+    }
+
+    onChange([...selectedIds, id]);
+    setQuery("");
+    setIsOpen(true);
+  }
+
+  function removeOption(id: string) {
+    onChange(selectedIds.filter((selectedId) => selectedId !== id));
+  }
+
+  return (
+    <label className="relative grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <div className="rounded-[18px] border border-border-light bg-white p-3">
+        {selectedOptions.length ? (
+          <div className="mb-3 flex flex-wrap gap-2">
+            {selectedOptions.map((option) => (
+              <span
+                key={option.id}
+                className="inline-flex items-center gap-2 rounded-pill bg-soft-green px-3 py-2 text-xs font-semibold text-primary"
+              >
+                <span>{option.label}</span>
+                <button
+                  type="button"
+                  onClick={() => removeOption(option.id)}
+                  className="rounded-full text-primary/80 transition hover:text-primary"
+                  aria-label={`Remove ${option.label}`}
+                >
+                  <X className="size-3.5" />
+                </button>
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p className="mb-3 text-sm text-muted">No {label.toLowerCase()} selected.</p>
+        )}
+        <div className="relative">
+          <Search
+            className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-primary"
+            aria-hidden="true"
+          />
+          <input
+            value={query}
+            onBlur={() => {
+              window.setTimeout(() => {
+                setIsOpen(false);
+                setQuery("");
+              }, 120);
+            }}
+            onChange={(event) => {
+              setQuery(event.target.value);
+              setIsOpen(true);
+            }}
+            onFocus={() => setIsOpen(true)}
+            placeholder={isLoading ? `Loading ${label.toLowerCase()}...` : `Search ${label.toLowerCase()}`}
+            className="min-h-12 w-full rounded-[14px] border border-border-light bg-white px-11 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80"
+          />
+        </div>
+        {isOpen ? (
+          <div className="mt-3 max-h-64 overflow-y-auto rounded-[18px] border border-border-light bg-white p-2 shadow-[0_20px_52px_rgba(15,23,42,0.12)]">
+            {isLoading ? (
+              <div className="flex items-center gap-2 px-3 py-3 text-sm text-muted">
+                <Loader2 className="size-4 animate-spin text-primary" />
+                Loading...
+              </div>
+            ) : filteredOptions.length ? (
+              filteredOptions.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  onMouseDown={(event) => event.preventDefault()}
+                  onClick={() => addOption(option.id)}
+                  className="flex w-full items-start justify-between gap-3 rounded-[14px] px-3 py-3 text-left transition hover:bg-soft-green"
+                >
+                  <span>
+                    <span className="block font-heading text-sm font-semibold text-text-dark">
+                      {option.label}
+                    </span>
+                    {option.description ? (
+                      <span className="block text-xs text-muted">{option.description}</span>
+                    ) : null}
+                  </span>
+                  <span className="text-xs font-semibold text-primary">Add</span>
+                </button>
+              ))
+            ) : (
+              <div className="px-3 py-3 text-sm text-muted">No options found.</div>
+            )}
+          </div>
+        ) : null}
+      </div>
+      <span className="text-xs text-muted">
+        {selectedIds.length} selected
+      </span>
     </label>
   );
 }

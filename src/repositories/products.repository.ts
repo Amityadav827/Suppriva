@@ -1,9 +1,49 @@
-import type { Product } from "@/lib/database/types";
+import type {
+  Product,
+  ProductCmsCard,
+  ProductCompareProduct,
+  ProductHowItWorksStep,
+  ProductIngredientOverride,
+  ProductRelatedBlog,
+  ProductRelatedIngredient,
+  ProductRelatedProduct,
+  ProductSafetyItem,
+  ProductSidebarFact,
+} from "@/lib/database/types";
 import { ContentStatus } from "@/lib/database/constants";
 import { DatabaseError } from "@/lib/errors/DatabaseError";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
-import type { ProductCreateInput, ProductUpdateInput } from "@/lib/validators/product.validator";
+import type {
+  ProductCmsCardInput,
+  ProductCompareProductInput,
+  ProductCreateInput,
+  ProductHowItWorksStepInput,
+  ProductIngredientOverrideInput,
+  ProductRelatedBlogInput,
+  ProductRelatedIngredientInput,
+  ProductRelatedProductInput,
+  ProductSafetyItemInput,
+  ProductSidebarFactInput,
+  ProductUpdateInput,
+} from "@/lib/validators/product.validator";
 import type { SlugRepository } from "./base.repository";
+
+type ProductCmsRelationInput = Partial<
+  Pick<
+    ProductCreateInput,
+    | "standout_points"
+    | "how_it_works_steps"
+    | "best_for_items"
+    | "safety_items"
+    | "buying_guide_items"
+    | "sidebar_facts"
+    | "ingredient_overrides"
+    | "related_product_relations"
+    | "compare_product_relations"
+    | "related_blog_relations"
+    | "related_ingredient_relations"
+  >
+>;
 
 export interface ProductsRepository extends SlugRepository<Product> {
   getAllProducts(): Promise<Product[]>;
@@ -13,6 +53,7 @@ export interface ProductsRepository extends SlugRepository<Product> {
   updateProduct(id: string, input: ProductUpdateInput): Promise<Product>;
   getProductIngredientIds(productId: string): Promise<string[]>;
   syncProductIngredients(productId: string, ingredientIds: string[]): Promise<void>;
+  syncProductCmsRelations(productId: string, input: ProductCmsRelationInput): Promise<void>;
   deleteProductIngredients(productId: string): Promise<void>;
   deleteProduct(id: string): Promise<void>;
 }
@@ -30,7 +71,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return this.attachIngredientIds((data ?? []) as Product[]);
+    return this.attachProductData((data ?? []) as Product[]);
   }
 
   async getProductById(id: string): Promise<Product | null> {
@@ -46,7 +87,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return this.attachIngredientIdsToProduct((data as Product | null) ?? null);
+    return this.attachProductDataToProduct((data as Product | null) ?? null);
   }
 
   async getProductBySlug(slug: string): Promise<Product | null> {
@@ -62,7 +103,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return this.attachIngredientIdsToProduct((data as Product | null) ?? null);
+    return this.attachProductDataToProduct((data as Product | null) ?? null);
   }
 
   async createProduct(input: ProductCreateInput): Promise<Product> {
@@ -77,7 +118,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return (await this.attachIngredientIdsToProduct(data as Product)) as Product;
+    return (await this.attachProductDataToProduct(data as Product)) as Product;
   }
 
   async updateProduct(id: string, input: ProductUpdateInput): Promise<Product> {
@@ -94,7 +135,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       throw new DatabaseError(error.message);
     }
 
-    return (await this.attachIngredientIdsToProduct(data as Product)) as Product;
+    return (await this.attachProductDataToProduct(data as Product)) as Product;
   }
 
   async getProductIngredientIds(productId: string): Promise<string[]> {
@@ -160,6 +201,144 @@ export class SupabaseProductsRepository implements ProductsRepository {
     }
   }
 
+  async syncProductCmsRelations(productId: string, input: ProductCmsRelationInput): Promise<void> {
+    const syncJobs: Array<Promise<void>> = [];
+
+    if ("standout_points" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_standout_points",
+          productId,
+          (input.standout_points ?? []).map((item, index) =>
+            this.cmsCardToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("how_it_works_steps" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_how_it_works_steps",
+          productId,
+          (input.how_it_works_steps ?? []).map((item, index) =>
+            this.howItWorksStepToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("best_for_items" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_best_for_items",
+          productId,
+          (input.best_for_items ?? []).map((item, index) =>
+            this.cmsCardToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("safety_items" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_safety_items",
+          productId,
+          (input.safety_items ?? []).map((item, index) =>
+            this.safetyItemToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("buying_guide_items" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_buying_guide_items",
+          productId,
+          (input.buying_guide_items ?? []).map((item, index) =>
+            this.cmsCardToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("sidebar_facts" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_sidebar_facts",
+          productId,
+          (input.sidebar_facts ?? []).map((item, index) =>
+            this.sidebarFactToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("ingredient_overrides" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_ingredient_overrides",
+          productId,
+          (input.ingredient_overrides ?? []).map((item, index) =>
+            this.ingredientOverrideToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("related_product_relations" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_related_products",
+          productId,
+          (input.related_product_relations ?? []).map((item, index) =>
+            this.relatedProductToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("compare_product_relations" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_compare_products",
+          productId,
+          (input.compare_product_relations ?? []).map((item, index) =>
+            this.compareProductToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("related_blog_relations" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_related_blogs",
+          productId,
+          (input.related_blog_relations ?? []).map((item, index) =>
+            this.relatedBlogToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    if ("related_ingredient_relations" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_related_ingredients",
+          productId,
+          (input.related_ingredient_relations ?? []).map((item, index) =>
+            this.relatedIngredientToRow(productId, item, index),
+          ),
+        ),
+      );
+    }
+
+    await Promise.all(syncJobs);
+  }
+
   async deleteProductIngredients(productId: string): Promise<void> {
     const supabase = await createSupabaseServerClient();
     const { error } = await supabase
@@ -217,6 +396,20 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("reviewer_id" in input) payload.reviewer_id = input.reviewer_id ?? null;
     if ("title" in input) payload.title = input.title;
     if ("slug" in input) payload.slug = input.slug;
+    if ("hero_badge" in input) payload.hero_badge = input.hero_badge ?? null;
+    if ("hero_title" in input) payload.hero_title = input.hero_title ?? null;
+    if ("hero_subtitle" in input) payload.hero_subtitle = input.hero_subtitle ?? null;
+    if ("hero_description" in input) payload.hero_description = input.hero_description ?? null;
+    if ("hero_image_alt" in input) payload.hero_image_alt = input.hero_image_alt ?? null;
+    if ("hero_cta_label" in input) payload.hero_cta_label = input.hero_cta_label ?? null;
+    if ("hero_secondary_cta_label" in input) {
+      payload.hero_secondary_cta_label = input.hero_secondary_cta_label ?? null;
+    }
+    if ("hero_checklist" in input) payload.hero_checklist = input.hero_checklist ?? [];
+    if ("hero_show_rating" in input) payload.hero_show_rating = input.hero_show_rating ?? true;
+    if ("hero_show_badge" in input) payload.hero_show_badge = input.hero_show_badge ?? true;
+    if ("review_count" in input) payload.review_count = input.review_count ?? null;
+    if ("rating_label" in input) payload.rating_label = input.rating_label ?? null;
     if ("short_description" in input) {
       payload.short_description = input.short_description ?? null;
     }
@@ -232,10 +425,223 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("faq" in input) payload.faq = input.faq ?? [];
     if ("status" in input) payload.status = input.status ?? ContentStatus.Draft;
     if ("published_at" in input) payload.published_at = input.published_at ?? null;
+    if ("overview_title" in input) payload.overview_title = input.overview_title ?? null;
+    if ("overview_subtitle" in input) payload.overview_subtitle = input.overview_subtitle ?? null;
+    if ("overview_content" in input) payload.overview_content = input.overview_content ?? null;
+    if ("how_it_works_title" in input) payload.how_it_works_title = input.how_it_works_title ?? null;
+    if ("how_it_works_subtitle" in input) {
+      payload.how_it_works_subtitle = input.how_it_works_subtitle ?? null;
+    }
+    if ("how_it_works_content" in input) payload.how_it_works_content = input.how_it_works_content ?? null;
+    if ("benefits_title" in input) payload.benefits_title = input.benefits_title ?? null;
+    if ("benefits_subtitle" in input) payload.benefits_subtitle = input.benefits_subtitle ?? null;
+    if ("ingredients_title" in input) payload.ingredients_title = input.ingredients_title ?? null;
+    if ("ingredients_subtitle" in input) payload.ingredients_subtitle = input.ingredients_subtitle ?? null;
+    if ("best_for_title" in input) payload.best_for_title = input.best_for_title ?? null;
+    if ("best_for_subtitle" in input) payload.best_for_subtitle = input.best_for_subtitle ?? null;
+    if ("safety_title" in input) payload.safety_title = input.safety_title ?? null;
+    if ("safety_subtitle" in input) payload.safety_subtitle = input.safety_subtitle ?? null;
+    if ("pros_cons_title" in input) payload.pros_cons_title = input.pros_cons_title ?? null;
+    if ("pros_cons_subtitle" in input) payload.pros_cons_subtitle = input.pros_cons_subtitle ?? null;
+    if ("faq_title" in input) payload.faq_title = input.faq_title ?? null;
+    if ("faq_subtitle" in input) payload.faq_subtitle = input.faq_subtitle ?? null;
+    if ("verdict_title" in input) payload.verdict_title = input.verdict_title ?? null;
+    if ("verdict_subtitle" in input) payload.verdict_subtitle = input.verdict_subtitle ?? null;
+    if ("verdict_summary" in input) payload.verdict_summary = input.verdict_summary ?? null;
+    if ("verdict_best_for" in input) payload.verdict_best_for = input.verdict_best_for ?? null;
+    if ("verdict_not_ideal_for" in input) {
+      payload.verdict_not_ideal_for = input.verdict_not_ideal_for ?? null;
+    }
+    if ("verdict_recommendation" in input) {
+      payload.verdict_recommendation = input.verdict_recommendation ?? null;
+    }
+    if ("buying_guide_title" in input) payload.buying_guide_title = input.buying_guide_title ?? null;
+    if ("buying_guide_subtitle" in input) {
+      payload.buying_guide_subtitle = input.buying_guide_subtitle ?? null;
+    }
+    if ("buying_cta_label" in input) payload.buying_cta_label = input.buying_cta_label ?? null;
+    if ("related_ingredients_title" in input) {
+      payload.related_ingredients_title = input.related_ingredients_title ?? null;
+    }
+    if ("related_ingredients_subtitle" in input) {
+      payload.related_ingredients_subtitle = input.related_ingredients_subtitle ?? null;
+    }
+    if ("related_blogs_title" in input) payload.related_blogs_title = input.related_blogs_title ?? null;
+    if ("related_blogs_subtitle" in input) {
+      payload.related_blogs_subtitle = input.related_blogs_subtitle ?? null;
+    }
+    if ("compare_title" in input) payload.compare_title = input.compare_title ?? null;
+    if ("compare_subtitle" in input) payload.compare_subtitle = input.compare_subtitle ?? null;
+    if ("related_products_title" in input) {
+      payload.related_products_title = input.related_products_title ?? null;
+    }
+    if ("related_products_subtitle" in input) {
+      payload.related_products_subtitle = input.related_products_subtitle ?? null;
+    }
+    if ("health_needs_title" in input) payload.health_needs_title = input.health_needs_title ?? null;
+    if ("health_needs_subtitle" in input) {
+      payload.health_needs_subtitle = input.health_needs_subtitle ?? null;
+    }
+    if ("sidebar_cta_title" in input) payload.sidebar_cta_title = input.sidebar_cta_title ?? null;
+    if ("sidebar_cta_description" in input) {
+      payload.sidebar_cta_description = input.sidebar_cta_description ?? null;
+    }
+    if ("sidebar_cta_label" in input) payload.sidebar_cta_label = input.sidebar_cta_label ?? null;
     if ("seo_title" in input) payload.seo_title = input.seo_title ?? null;
     if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
+    if ("seo_canonical_url" in input) payload.seo_canonical_url = input.seo_canonical_url ?? null;
+    if ("seo_og_title" in input) payload.seo_og_title = input.seo_og_title ?? null;
+    if ("seo_og_description" in input) payload.seo_og_description = input.seo_og_description ?? null;
+    if ("seo_og_image" in input) payload.seo_og_image = input.seo_og_image ?? null;
+    if ("seo_noindex" in input) payload.seo_noindex = input.seo_noindex ?? false;
+    if ("schema_json" in input) payload.schema_json = input.schema_json ?? {};
 
     return payload;
+  }
+
+  private cmsCardToRow(productId: string, item: ProductCmsCardInput, index: number) {
+    return {
+      product_id: productId,
+      title: item.title.trim(),
+      description: item.description?.trim() || null,
+      icon: item.icon?.trim() || null,
+      display_order: item.display_order ?? index,
+      is_active: item.is_active ?? true,
+    };
+  }
+
+  private howItWorksStepToRow(
+    productId: string,
+    item: ProductHowItWorksStepInput,
+    index: number,
+  ) {
+    return {
+      product_id: productId,
+      title: item.title?.trim() || null,
+      description: (item.description ?? "").trim(),
+      icon: item.icon?.trim() || null,
+      display_order: item.display_order ?? index,
+      is_active: item.is_active ?? true,
+    };
+  }
+
+  private safetyItemToRow(productId: string, item: ProductSafetyItemInput, index: number) {
+    return {
+      product_id: productId,
+      item_type: item.item_type,
+      title: item.title.trim(),
+      description: item.description?.trim() || null,
+      icon: item.icon?.trim() || null,
+      display_order: item.display_order ?? index,
+      is_active: item.is_active ?? true,
+    };
+  }
+
+  private sidebarFactToRow(productId: string, item: ProductSidebarFactInput, index: number) {
+    return {
+      product_id: productId,
+      label: item.label.trim(),
+      value: item.value.trim(),
+      icon: item.icon?.trim() || null,
+      display_order: item.display_order ?? index,
+      is_active: item.is_active ?? true,
+    };
+  }
+
+  private ingredientOverrideToRow(
+    productId: string,
+    item: ProductIngredientOverrideInput,
+    index: number,
+  ) {
+    return {
+      product_id: productId,
+      ingredient_id: item.ingredient_id,
+      display_order: item.display_order ?? index,
+      purpose: item.purpose?.trim() || null,
+      dosage: item.dosage?.trim() || null,
+      description_override: item.description_override?.trim() || null,
+    };
+  }
+
+  private relatedProductToRow(productId: string, item: ProductRelatedProductInput, index: number) {
+    return {
+      product_id: productId,
+      related_product_id: item.related_product_id,
+      display_order: item.display_order ?? index,
+      relationship_type: item.relationship_type?.trim() || "related",
+      title_override: item.title_override?.trim() || null,
+      description_override: item.description_override?.trim() || null,
+    };
+  }
+
+  private compareProductToRow(productId: string, item: ProductCompareProductInput, index: number) {
+    return {
+      product_id: productId,
+      compared_product_id: item.compared_product_id,
+      display_order: item.display_order ?? index,
+      title_override: item.title_override?.trim() || null,
+      description_override: item.description_override?.trim() || null,
+    };
+  }
+
+  private relatedBlogToRow(productId: string, item: ProductRelatedBlogInput, index: number) {
+    return {
+      product_id: productId,
+      blog_id: item.blog_id,
+      display_order: item.display_order ?? index,
+      title_override: item.title_override?.trim() || null,
+      description_override: item.description_override?.trim() || null,
+    };
+  }
+
+  private relatedIngredientToRow(
+    productId: string,
+    item: ProductRelatedIngredientInput,
+    index: number,
+  ) {
+    return {
+      product_id: productId,
+      ingredient_id: item.ingredient_id,
+      display_order: item.display_order ?? index,
+      title_override: item.title_override?.trim() || null,
+      description_override: item.description_override?.trim() || null,
+    };
+  }
+
+  private async replaceRows(table: string, productId: string, rows: Record<string, unknown>[]) {
+    const supabase = await createSupabaseServerClient();
+    const { error: deleteError } = await supabase
+      .from(table)
+      .delete()
+      .eq("product_id", productId);
+
+    if (deleteError) {
+      throw new DatabaseError(deleteError.message);
+    }
+
+    if (!rows.length) {
+      return;
+    }
+
+    const { error: insertError } = await supabase.from(table).insert(rows);
+
+    if (insertError) {
+      throw new DatabaseError(insertError.message);
+    }
+  }
+
+  private async attachProductData(products: Product[]): Promise<Product[]> {
+    const productsWithIngredientIds = await this.attachIngredientIds(products);
+    return this.attachProductCmsRelations(productsWithIngredientIds);
+  }
+
+  private async attachProductDataToProduct(product: Product | null): Promise<Product | null> {
+    if (!product) {
+      return null;
+    }
+
+    const [productWithData] = await this.attachProductData([product]);
+    return productWithData ?? null;
   }
 
   private async attachIngredientIds(products: Product[]): Promise<Product[]> {
@@ -279,5 +685,78 @@ export class SupabaseProductsRepository implements ProductsRepository {
       ...product,
       ingredient_ids: ingredientIds,
     };
+  }
+
+  private async attachProductCmsRelations(products: Product[]): Promise<Product[]> {
+    if (!products.length) {
+      return [];
+    }
+
+    const productIds = products.map((product) => product.id);
+    const [
+      standoutPoints,
+      howItWorksSteps,
+      bestForItems,
+      safetyItems,
+      buyingGuideItems,
+      sidebarFacts,
+      ingredientOverrides,
+      relatedProducts,
+      compareProducts,
+      relatedBlogs,
+      relatedIngredients,
+    ] = await Promise.all([
+      this.fetchProductRows<ProductCmsCard>("product_standout_points", productIds),
+      this.fetchProductRows<ProductHowItWorksStep>("product_how_it_works_steps", productIds),
+      this.fetchProductRows<ProductCmsCard>("product_best_for_items", productIds),
+      this.fetchProductRows<ProductSafetyItem>("product_safety_items", productIds),
+      this.fetchProductRows<ProductCmsCard>("product_buying_guide_items", productIds),
+      this.fetchProductRows<ProductSidebarFact>("product_sidebar_facts", productIds),
+      this.fetchProductRows<ProductIngredientOverride>("product_ingredient_overrides", productIds),
+      this.fetchProductRows<ProductRelatedProduct>("product_related_products", productIds),
+      this.fetchProductRows<ProductCompareProduct>("product_compare_products", productIds),
+      this.fetchProductRows<ProductRelatedBlog>("product_related_blogs", productIds),
+      this.fetchProductRows<ProductRelatedIngredient>("product_related_ingredients", productIds),
+    ]);
+
+    return products.map((product) => ({
+      ...product,
+      standout_points: this.rowsForProduct(standoutPoints, product.id),
+      how_it_works_steps: this.rowsForProduct(howItWorksSteps, product.id),
+      best_for_items: this.rowsForProduct(bestForItems, product.id),
+      safety_items: this.rowsForProduct(safetyItems, product.id),
+      buying_guide_items: this.rowsForProduct(buyingGuideItems, product.id),
+      sidebar_facts: this.rowsForProduct(sidebarFacts, product.id),
+      ingredient_overrides: this.rowsForProduct(ingredientOverrides, product.id),
+      related_product_relations: this.rowsForProduct(relatedProducts, product.id),
+      compare_product_relations: this.rowsForProduct(compareProducts, product.id),
+      related_blog_relations: this.rowsForProduct(relatedBlogs, product.id),
+      related_ingredient_relations: this.rowsForProduct(relatedIngredients, product.id),
+    }));
+  }
+
+  private async fetchProductRows<TRow extends { product_id: string }>(
+    table: string,
+    productIds: string[],
+  ): Promise<TRow[]> {
+    const supabase = await createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from(table)
+      .select("*")
+      .in("product_id", productIds)
+      .order("display_order", { ascending: true });
+
+    if (error) {
+      throw new DatabaseError(error.message);
+    }
+
+    return (data ?? []) as TRow[];
+  }
+
+  private rowsForProduct<TRow extends { product_id: string }>(
+    rows: TRow[],
+    productId: string,
+  ): TRow[] {
+    return rows.filter((row) => row.product_id === productId);
   }
 }

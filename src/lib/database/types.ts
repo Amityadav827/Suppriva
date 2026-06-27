@@ -90,6 +90,101 @@ export type ProductIngredientRelation = {
   created_at: Timestamp;
 };
 
+export type ProductCmsCard = {
+  id: string;
+  product_id: string;
+  title: string;
+  description: string | null;
+  icon: string | null;
+  display_order: number;
+  is_active: boolean;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductHowItWorksStep = Omit<ProductCmsCard, "title"> & {
+  title: string | null;
+};
+
+export type ProductSafetyItemType =
+  | "side_effect"
+  | "who_should_avoid"
+  | "interaction"
+  | "precaution";
+
+export type ProductSafetyItem = ProductCmsCard & {
+  item_type: ProductSafetyItemType;
+};
+
+export type ProductSidebarFact = {
+  id: string;
+  product_id: string;
+  label: string;
+  value: string;
+  icon: string | null;
+  display_order: number;
+  is_active: boolean;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductIngredientOverride = {
+  id: string;
+  product_id: string;
+  ingredient_id: string;
+  display_order: number;
+  purpose: string | null;
+  dosage: string | null;
+  description_override: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductRelatedProduct = {
+  id: string;
+  product_id: string;
+  related_product_id: string;
+  display_order: number;
+  relationship_type: string;
+  title_override: string | null;
+  description_override: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductCompareProduct = {
+  id: string;
+  product_id: string;
+  compared_product_id: string;
+  display_order: number;
+  title_override: string | null;
+  description_override: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductRelatedBlog = {
+  id: string;
+  product_id: string;
+  blog_id: string;
+  display_order: number;
+  title_override: string | null;
+  description_override: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductRelatedIngredient = {
+  id: string;
+  product_id: string;
+  ingredient_id: string;
+  display_order: number;
+  title_override: string | null;
+  description_override: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
 export type IngredientListResponse = {
   ingredients: Ingredient[];
   total: number;
@@ -120,6 +215,18 @@ export type Product = {
   title: string;
   name: string;
   slug: string;
+  hero_badge: string | null;
+  hero_title: string | null;
+  hero_subtitle: string | null;
+  hero_description: string | null;
+  hero_image_alt: string | null;
+  hero_cta_label: string | null;
+  hero_secondary_cta_label: string | null;
+  hero_checklist: string[];
+  hero_show_rating: boolean;
+  hero_show_badge: boolean;
+  review_count: number | null;
+  rating_label: string | null;
   short_description: string | null;
   full_description: string | null;
   image: string | null;
@@ -133,8 +240,65 @@ export type Product = {
   faq: FAQItem[];
   status: ContentStatus;
   published_at: Timestamp | null;
+  overview_title: string | null;
+  overview_subtitle: string | null;
+  overview_content: string | null;
+  how_it_works_title: string | null;
+  how_it_works_subtitle: string | null;
+  how_it_works_content: string | null;
+  benefits_title: string | null;
+  benefits_subtitle: string | null;
+  ingredients_title: string | null;
+  ingredients_subtitle: string | null;
+  best_for_title: string | null;
+  best_for_subtitle: string | null;
+  safety_title: string | null;
+  safety_subtitle: string | null;
+  pros_cons_title: string | null;
+  pros_cons_subtitle: string | null;
+  faq_title: string | null;
+  faq_subtitle: string | null;
+  verdict_title: string | null;
+  verdict_subtitle: string | null;
+  verdict_summary: string | null;
+  verdict_best_for: string | null;
+  verdict_not_ideal_for: string | null;
+  verdict_recommendation: string | null;
+  buying_guide_title: string | null;
+  buying_guide_subtitle: string | null;
+  buying_cta_label: string | null;
+  related_ingredients_title: string | null;
+  related_ingredients_subtitle: string | null;
+  related_blogs_title: string | null;
+  related_blogs_subtitle: string | null;
+  compare_title: string | null;
+  compare_subtitle: string | null;
+  related_products_title: string | null;
+  related_products_subtitle: string | null;
+  health_needs_title: string | null;
+  health_needs_subtitle: string | null;
+  sidebar_cta_title: string | null;
+  sidebar_cta_description: string | null;
+  sidebar_cta_label: string | null;
   seo_title: string | null;
   seo_description: string | null;
+  seo_canonical_url: string | null;
+  seo_og_title: string | null;
+  seo_og_description: string | null;
+  seo_og_image: string | null;
+  seo_noindex: boolean;
+  schema_json: JsonValue;
+  standout_points?: ProductCmsCard[];
+  how_it_works_steps?: ProductHowItWorksStep[];
+  best_for_items?: ProductCmsCard[];
+  safety_items?: ProductSafetyItem[];
+  buying_guide_items?: ProductCmsCard[];
+  sidebar_facts?: ProductSidebarFact[];
+  ingredient_overrides?: ProductIngredientOverride[];
+  related_product_relations?: ProductRelatedProduct[];
+  compare_product_relations?: ProductCompareProduct[];
+  related_blog_relations?: ProductRelatedBlog[];
+  related_ingredient_relations?: ProductRelatedIngredient[];
   created_at: Timestamp;
   updated_at: Timestamp;
   deleted_at: Timestamp | null;
@@ -354,6 +518,17 @@ export type Database = {
   seo: SEO;
   ingredients: Ingredient;
   product_ingredients: ProductIngredientRelation;
+  product_standout_points: ProductCmsCard;
+  product_how_it_works_steps: ProductHowItWorksStep;
+  product_best_for_items: ProductCmsCard;
+  product_safety_items: ProductSafetyItem;
+  product_buying_guide_items: ProductCmsCard;
+  product_sidebar_facts: ProductSidebarFact;
+  product_ingredient_overrides: ProductIngredientOverride;
+  product_related_products: ProductRelatedProduct;
+  product_compare_products: ProductCompareProduct;
+  product_related_blogs: ProductRelatedBlog;
+  product_related_ingredients: ProductRelatedIngredient;
   newsletter_subscribers: NewsletterSubscriber;
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
