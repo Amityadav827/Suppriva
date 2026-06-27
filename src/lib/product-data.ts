@@ -8,10 +8,29 @@ export type ProductDetail = {
   image?: string;
   gallery?: string[];
   name: string;
+  heroTitle: string;
+  heroBadge?: string | null;
+  heroImageAlt?: string | null;
+  heroCtaLabel: string;
+  heroCtaTarget: "_self" | "_blank";
+  heroSecondaryCtaLabel: string;
+  heroSecondaryCtaTarget: "_self" | "_blank";
+  heroChecklist: {
+    icon?: string | null;
+    text: string;
+  }[];
+  heroHighlights: {
+    icon?: string | null;
+    title: string;
+    description?: string | null;
+  }[];
+  heroShowRating: boolean;
+  heroShowBadge: boolean;
   category: string;
   categorySlug?: string;
   rating: string;
   ratingValue: number;
+  ratingScaleLabel: string;
   reviewCount: number;
   subtitle: string;
   description: string;

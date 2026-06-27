@@ -68,6 +68,34 @@ function benefitIcon(title: string) {
   return Leaf;
 }
 
+const heroIconMap = new Map(
+  [
+    ["badge", BadgeCheck],
+    ["beaker", Beaker],
+    ["book", BookOpenText],
+    ["check", Check],
+    ["alert", CircleAlert],
+    ["clipboard", ClipboardList],
+    ["flask", FlaskConical],
+    ["heart", HeartPulse],
+    ["leaf", Leaf],
+    ["package", PackageCheck],
+    ["pill", Pill],
+    ["shield", ShieldCheck],
+    ["sparkles", Sparkles],
+    ["star", Star],
+    ["users", Users],
+  ].map(([key, icon]) => [key, icon as typeof Check]),
+);
+
+function heroIcon(icon?: string | null) {
+  if (!icon) {
+    return Check;
+  }
+
+  return heroIconMap.get(icon.trim().toLowerCase()) ?? Check;
+}
+
 function sectionCardClasses(tone: "white" | "cream" = "white") {
   return tone === "white"
     ? "rounded-[30px] border border-black/5 bg-white/92 p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] md:p-8"
@@ -183,6 +211,9 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                   <SingleProductImageCard
                     productName={product.name}
                     image={heroImage}
+                    imageAlt={product.heroImageAlt}
+                    badge={product.heroBadge}
+                    showBadge={product.heroShowBadge}
                   />
                   <FadeIn className="mx-auto w-full max-w-[520px] px-2 pt-1 md:px-3">
                     <div className="space-y-3 text-left">
@@ -191,25 +222,28 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           productId={product.productId}
                           productSlug={product.slug}
                           affiliateUrl={product.affiliateUrl}
-                          label="Visit Official Website"
+                          label={product.heroCtaLabel}
+                          target={product.heroCtaTarget}
                           variant="solid"
                           className="mx-auto min-h-11 !px-5 !text-[10.5px] sm:min-h-11"
                         />
                       </div>
-                      <div className="space-y-2.5">
-                        {[
-                          "Fast access to official ordering",
-                          "Quality and safety details are easy to review",
-                          "Checkout is handled on the official product page",
-                        ].map((item) => (
-                          <div key={item} className="flex items-start gap-3">
-                            <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                              <Check className="size-4" aria-hidden="true" />
-                            </span>
-                            <p className="text-sm leading-6 text-muted">{item}</p>
-                          </div>
-                        ))}
-                      </div>
+                      {product.heroChecklist.length ? (
+                        <div className="space-y-2.5">
+                          {product.heroChecklist.map((item) => {
+                            const ChecklistIcon = heroIcon(item.icon);
+
+                            return (
+                              <div key={item.text} className="flex items-start gap-3">
+                                <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                  <ChecklistIcon className="size-4" aria-hidden="true" />
+                                </span>
+                                <p className="text-sm leading-6 text-muted">{item.text}</p>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : null}
                     </div>
                   </FadeIn>
                 </div>
@@ -231,31 +265,33 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
 
                     <div className="space-y-3">
                       <h1 className="font-heading text-5xl font-extrabold leading-[0.98] text-text-dark md:text-6xl xl:text-[4.15rem]">
-                        {product.name}
+                        {product.heroTitle}
                       </h1>
                       <span className="block max-w-3xl text-[1.02rem] font-semibold leading-8 text-primary">
                         {product.subtitle}
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4 border-y border-black/6 py-4">
-                      <div className="inline-flex items-center gap-2">
-                        <span className="flex items-center gap-1 text-gold">
-                          {Array.from({ length: 5 }).map((_, index) => (
-                            <Star
-                              key={`star-${index + 1}`}
-                              className={`size-4 ${index < Math.round(product.ratingValue) ? "fill-gold text-gold" : "text-gold/35"}`}
-                            />
-                          ))}
-                        </span>
-                        <span className="font-heading text-base font-bold text-text-dark">
-                          {product.rating}
-                        </span>
-                        <span className="text-sm text-muted">
-                          out of 5 ({product.reviewCount} reviews)
-                        </span>
+                    {product.heroShowRating ? (
+                      <div className="flex flex-wrap items-center gap-4 border-y border-black/6 py-4">
+                        <div className="inline-flex items-center gap-2">
+                          <span className="flex items-center gap-1 text-gold">
+                            {Array.from({ length: 5 }).map((_, index) => (
+                              <Star
+                                key={`star-${index + 1}`}
+                                className={`size-4 ${index < Math.round(product.ratingValue) ? "fill-gold text-gold" : "text-gold/35"}`}
+                              />
+                            ))}
+                          </span>
+                          <span className="font-heading text-base font-bold text-text-dark">
+                            {product.rating}
+                          </span>
+                          <span className="text-sm text-muted">
+                            {product.ratingScaleLabel} ({product.reviewCount} reviews)
+                          </span>
+                        </div>
                       </div>
-                    </div>
+                    ) : null}
 
                     <p className="max-w-3xl text-lg leading-8 text-muted">
                       {product.description}
@@ -263,19 +299,28 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                   </FadeIn>
 
                   <FadeIn className="grid gap-3 md:grid-cols-2">
-                    {product.bullets.map((bullet) => (
-                      <div
-                        key={bullet}
-                        className="flex items-start gap-3 rounded-[20px] bg-cream/70 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
-                      >
-                        <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                          <Check className="size-4.5" aria-hidden="true" />
-                        </span>
-                        <span className="text-sm font-medium leading-7 text-text-dark">
-                          {bullet}
-                        </span>
-                      </div>
-                    ))}
+                    {product.heroHighlights.map((highlight) => {
+                      const HighlightIcon = heroIcon(highlight.icon);
+
+                      return (
+                        <div
+                          key={highlight.title}
+                          className="flex items-start gap-3 rounded-[20px] bg-cream/70 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
+                        >
+                          <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <HighlightIcon className="size-4.5" aria-hidden="true" />
+                          </span>
+                          <span className="text-sm font-medium leading-7 text-text-dark">
+                            {highlight.title}
+                            {highlight.description ? (
+                              <span className="block pt-1 text-xs font-normal leading-6 text-muted">
+                                {highlight.description}
+                              </span>
+                            ) : null}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </FadeIn>
 
                   <FadeIn className="pt-1">
@@ -283,7 +328,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       productId={product.productId}
                       productSlug={product.slug}
                       affiliateUrl={product.affiliateUrl}
-                      label="Buy Now"
+                      label={product.heroSecondaryCtaLabel}
+                      target={product.heroSecondaryCtaTarget}
                       className="mt-0 min-h-12 px-6 text-xs sm:w-auto"
                     />
                   </FadeIn>
@@ -910,9 +956,15 @@ function ContentPanel({ paragraphs }: { paragraphs: string[] }) {
 function SingleProductImageCard({
   productName,
   image,
+  imageAlt,
+  badge,
+  showBadge,
 }: {
   productName: string;
   image: string;
+  imageAlt?: string | null;
+  badge?: string | null;
+  showBadge: boolean;
 }) {
   return (
     <FadeIn className="rounded-[32px] border border-border-light bg-white p-5 shadow-premium lg:p-6">
@@ -921,9 +973,11 @@ function SingleProductImageCard({
           aria-hidden="true"
           className="absolute size-72 rounded-full bg-gold/18 blur-3xl transition duration-500"
         />
-        <span className="absolute left-5 top-4 z-10 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-          Best Seller
-        </span>
+        {showBadge && badge ? (
+          <span className="absolute left-5 top-4 z-10 rounded-pill border border-primary/14 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+            {badge}
+          </span>
+        ) : null}
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
@@ -931,7 +985,7 @@ function SingleProductImageCard({
         >
           <Image
             src={image}
-            alt={`${productName} supplement product image`}
+            alt={imageAlt || `${productName} supplement product image`}
             fill
             priority
             sizes="(max-width: 768px) 320px, 420px"

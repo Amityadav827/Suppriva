@@ -24,6 +24,7 @@ export function AffiliateCtaButton({
   productSlug,
   affiliateUrl = "/products",
   label = "Visit Official Website",
+  target,
   className = "",
   variant = "solid",
 }: {
@@ -31,6 +32,7 @@ export function AffiliateCtaButton({
   productSlug: string;
   affiliateUrl?: string;
   label?: string;
+  target?: "_self" | "_blank";
   className?: string;
   variant?: "solid" | "outline";
 }) {
@@ -72,6 +74,7 @@ export function AffiliateCtaButton({
     >
       <AffiliateLink
         href={affiliateUrl}
+        target={target}
         onClick={() => void trackClick()}
         className={`${baseClasses} ${variantClasses} ${className}`.trim()}
       >

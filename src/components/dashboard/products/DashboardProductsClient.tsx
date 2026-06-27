@@ -30,7 +30,9 @@ type ProductFormState = {
   hero_description: string;
   hero_image_alt: string;
   hero_cta_label: string;
+  hero_cta_target: "_self" | "_blank";
   hero_secondary_cta_label: string;
+  hero_secondary_cta_target: "_self" | "_blank";
   hero_checklist: string;
   hero_show_rating: boolean;
   hero_show_badge: boolean;
@@ -148,7 +150,9 @@ const emptyForm: ProductFormState = {
   hero_description: "",
   hero_image_alt: "",
   hero_cta_label: "",
+  hero_cta_target: "_blank",
   hero_secondary_cta_label: "",
+  hero_secondary_cta_target: "_blank",
   hero_checklist: "",
   hero_show_rating: true,
   hero_show_badge: true,
@@ -448,7 +452,9 @@ function productToForm(product: Product): ProductFormState {
     hero_description: product.hero_description ?? "",
     hero_image_alt: product.hero_image_alt ?? "",
     hero_cta_label: product.hero_cta_label ?? "",
+    hero_cta_target: product.hero_cta_target ?? "_blank",
     hero_secondary_cta_label: product.hero_secondary_cta_label ?? "",
+    hero_secondary_cta_target: product.hero_secondary_cta_target ?? "_blank",
     hero_checklist: product.hero_checklist.join("\n"),
     hero_show_rating: product.hero_show_rating,
     hero_show_badge: product.hero_show_badge,
@@ -561,7 +567,9 @@ function formToPayload(form: ProductFormState) {
     hero_description: form.hero_description || null,
     hero_image_alt: form.hero_image_alt || null,
     hero_cta_label: form.hero_cta_label || null,
+    hero_cta_target: form.hero_cta_target,
     hero_secondary_cta_label: form.hero_secondary_cta_label || null,
+    hero_secondary_cta_target: form.hero_secondary_cta_target,
     hero_checklist: lines(form.hero_checklist),
     hero_show_rating: form.hero_show_rating,
     hero_show_badge: form.hero_show_badge,
@@ -1132,12 +1140,23 @@ export function DashboardProductsClient() {
               <InputField label="Hero Title Override" value={form.hero_title} onChange={(value) => updateForm("hero_title", value)} />
               <InputField label="Hero Subtitle" value={form.hero_subtitle} onChange={(value) => updateForm("hero_subtitle", value)} />
               <InputField label="Hero CTA Label" value={form.hero_cta_label} onChange={(value) => updateForm("hero_cta_label", value)} />
+              <TargetSelect
+                label="Hero CTA Target"
+                value={form.hero_cta_target}
+                onChange={(value) => updateForm("hero_cta_target", value)}
+              />
               <InputField label="Secondary CTA Label" value={form.hero_secondary_cta_label} onChange={(value) => updateForm("hero_secondary_cta_label", value)} />
+              <TargetSelect
+                label="Secondary CTA Target"
+                value={form.hero_secondary_cta_target}
+                onChange={(value) => updateForm("hero_secondary_cta_target", value)}
+              />
               <InputField label="Rating Label" value={form.rating_label} onChange={(value) => updateForm("rating_label", value)} />
               <InputField label="Review Count" value={form.review_count} onChange={(value) => updateForm("review_count", value)} />
               <InputField label="Hero Image Alt Text" value={form.hero_image_alt} onChange={(value) => updateForm("hero_image_alt", value)} />
               <TextAreaField label="Hero Description" value={form.hero_description} onChange={(value) => updateForm("hero_description", value)} className="lg:col-span-2" rows={4} />
-              <TextAreaField label="Hero Checklist" value={form.hero_checklist} onChange={(value) => updateForm("hero_checklist", value)} placeholder="One checklist item per line" />
+              <TextAreaField label="Hero Checklist" value={form.hero_checklist} onChange={(value) => updateForm("hero_checklist", value)} placeholder="Icon | Text, one checklist item per line" />
+              <TextAreaField label="Hero Highlight Cards" value={form.standout_points} onChange={(value) => updateForm("standout_points", value)} placeholder="Title | Description | icon, one per line" rows={4} />
               <div className="grid gap-3">
                 <CheckboxField label="Show Rating" checked={form.hero_show_rating} onChange={(value) => updateForm("hero_show_rating", value)} />
                 <CheckboxField label="Show Hero Badge" checked={form.hero_show_badge} onChange={(value) => updateForm("hero_show_badge", value)} />
@@ -1161,7 +1180,6 @@ export function DashboardProductsClient() {
               <InputField label="Ingredients Subtitle" value={form.ingredients_subtitle} onChange={(value) => updateForm("ingredients_subtitle", value)} />
               <InputField label="Best For Title" value={form.best_for_title} onChange={(value) => updateForm("best_for_title", value)} />
               <InputField label="Best For Subtitle" value={form.best_for_subtitle} onChange={(value) => updateForm("best_for_subtitle", value)} />
-              <TextAreaField label="Why It Stands Out Cards" value={form.standout_points} onChange={(value) => updateForm("standout_points", value)} placeholder="Title | Description | icon, one per line" rows={4} />
               <TextAreaField label="Best For Cards" value={form.best_for_items} onChange={(value) => updateForm("best_for_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
             </CmsSection>
 
@@ -1308,6 +1326,30 @@ function InputField({
         required={required}
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+    </label>
+  );
+}
+
+function TargetSelect({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: "_self" | "_blank";
+  onChange: (value: "_self" | "_blank") => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value as "_self" | "_blank")}
+        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+      >
+        <option value="_blank">New tab</option>
+        <option value="_self">Same tab</option>
+      </select>
     </label>
   );
 }

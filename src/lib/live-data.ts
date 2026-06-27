@@ -38,6 +38,7 @@ import type {
   Ingredient,
   JsonValue,
   Product,
+  ProductCmsCard,
   ProductIngredient,
 } from "@/lib/database/types";
 
@@ -211,6 +212,32 @@ function splitSentences(value?: string | null) {
 
 function uniqueStrings(values: Array<string | null | undefined>) {
   return [...new Set(values.map((value) => value?.trim()).filter(Boolean) as string[])];
+}
+
+function parseHeroChecklist(items: string[]): ProductDetail["heroChecklist"] {
+  return items
+    .map((item) => {
+      const parts = item.split("|").map((part) => part.trim());
+
+      if (parts.length >= 2) {
+        return { icon: parts[0] || null, text: parts.slice(1).join(" | ") };
+      }
+
+      return { icon: null, text: item.trim() };
+    })
+    .filter((item) => item.text);
+}
+
+function cmsCardsToHeroHighlights(items?: ProductCmsCard[]): ProductDetail["heroHighlights"] {
+  return (items ?? [])
+    .filter((item) => item.is_active)
+    .sort((first, second) => first.display_order - second.display_order)
+    .map((item) => ({
+      icon: item.icon,
+      title: item.title,
+      description: item.description,
+    }))
+    .filter((item) => item.title.trim());
 }
 
 function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
@@ -414,12 +441,13 @@ export function productToDetail(
     .filter((item) => item.slug !== product.slug)
     .slice(0, 6)
     .map((item) => item.slug);
-  const ratingValue = Number((product.rating ?? 4.8).toFixed(1));
-  const reviewCount = Math.max(24, ingredients.length * 9 + benefits.length * 13);
+  const ratingValue = Number((product.rating ?? 0).toFixed(1));
+  const reviewCount = product.review_count ?? 0;
   const relatedProducts = related
     .map((slug) => products.find((item) => item.slug === slug))
     .filter(Boolean)
     .map((item, index) => productToCard(item as Product, categories, index));
+  const heroHighlights = cmsCardsToHeroHighlights(product.standout_points);
   const standoutPoints = buildStandoutPoints(product, benefits, ingredients);
   const whoItsBestFor = buildAudience(product, categoryLabel, benefits, ingredients);
   const bestFor = whoItsBestFor[0] || `${categoryLabel} support`;
@@ -432,16 +460,36 @@ export function productToDetail(
     productId: product.id,
     affiliateUrl: product.affiliate_url ?? undefined,
     name,
+    heroTitle: product.hero_title || name,
+    heroBadge: product.hero_badge,
+    heroImageAlt: product.hero_image_alt,
+    heroCtaLabel: product.hero_cta_label || "Visit Official Website",
+    heroCtaTarget: product.hero_cta_target ?? "_blank",
+    heroSecondaryCtaLabel: product.hero_secondary_cta_label || "Buy Now",
+    heroSecondaryCtaTarget: product.hero_secondary_cta_target ?? "_blank",
+    heroChecklist: parseHeroChecklist(product.hero_checklist),
+    heroHighlights: heroHighlights.length
+      ? heroHighlights
+      : benefits.slice(0, 4).map((benefit) => ({
+          icon: null,
+          title: benefit.title,
+          description: benefit.description,
+        })),
+    heroShowRating: product.hero_show_rating,
+    heroShowBadge: product.hero_show_badge,
     category: categoryLabel,
     categorySlug: category?.slug,
     rating: ratingValue.toFixed(1),
     ratingValue,
+    ratingScaleLabel: product.rating_label || "out of 5",
     reviewCount,
     subtitle:
+      product.hero_subtitle ||
       product.short_description ||
       splitSentences(product.full_description)[0] ||
       `${name} is positioned for focused ${categoryLabel.toLowerCase()} support.`,
     description:
+      product.hero_description ||
       product.short_description ||
       product.full_description ||
       "A premium supplement formula prepared for focused wellness research and product comparison.",

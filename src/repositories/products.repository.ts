@@ -402,8 +402,12 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("hero_description" in input) payload.hero_description = input.hero_description ?? null;
     if ("hero_image_alt" in input) payload.hero_image_alt = input.hero_image_alt ?? null;
     if ("hero_cta_label" in input) payload.hero_cta_label = input.hero_cta_label ?? null;
+    if ("hero_cta_target" in input) payload.hero_cta_target = input.hero_cta_target ?? null;
     if ("hero_secondary_cta_label" in input) {
       payload.hero_secondary_cta_label = input.hero_secondary_cta_label ?? null;
+    }
+    if ("hero_secondary_cta_target" in input) {
+      payload.hero_secondary_cta_target = input.hero_secondary_cta_target ?? null;
     }
     if ("hero_checklist" in input) payload.hero_checklist = input.hero_checklist ?? [];
     if ("hero_show_rating" in input) payload.hero_show_rating = input.hero_show_rating ?? true;

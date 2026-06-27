@@ -221,7 +221,9 @@ export type Product = {
   hero_description: string | null;
   hero_image_alt: string | null;
   hero_cta_label: string | null;
+  hero_cta_target: "_self" | "_blank" | null;
   hero_secondary_cta_label: string | null;
+  hero_secondary_cta_target: "_self" | "_blank" | null;
   hero_checklist: string[];
   hero_show_rating: boolean;
   hero_show_badge: boolean;

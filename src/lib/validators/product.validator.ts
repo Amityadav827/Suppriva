@@ -78,7 +78,9 @@ export type ProductCreateInput = {
   hero_description?: string | null;
   hero_image_alt?: string | null;
   hero_cta_label?: string | null;
+  hero_cta_target?: "_self" | "_blank" | null;
   hero_secondary_cta_label?: string | null;
+  hero_secondary_cta_target?: "_self" | "_blank" | null;
   hero_checklist?: string[];
   hero_show_rating?: boolean;
   hero_show_badge?: boolean;
@@ -383,6 +385,17 @@ export function validateProductInput<TInput extends ProductValidationInput>(
   if ("hero_show_badge" in input && input.hero_show_badge !== undefined && !isBoolean(input.hero_show_badge)) {
     errors.push("Hero badge visibility must be true or false.");
   }
+
+  const targetFields = [
+    ["hero_cta_target", input.hero_cta_target],
+    ["hero_secondary_cta_target", input.hero_secondary_cta_target],
+  ] as const;
+
+  targetFields.forEach(([field, value]) => {
+    if (field in input && value && value !== "_self" && value !== "_blank") {
+      errors.push(`${field} must be _self or _blank.`);
+    }
+  });
 
   if (
     "review_count" in input &&
