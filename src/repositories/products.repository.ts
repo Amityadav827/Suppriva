@@ -108,34 +108,75 @@ export class SupabaseProductsRepository implements ProductsRepository {
 
   async createProduct(input: ProductCreateInput): Promise<Product> {
     const supabase = await createSupabaseServerClient();
-    const { data, error } = await supabase
-      .from("products")
-      .insert(this.toDatabaseInput(input))
-      .select("*")
-      .single();
+    const payload = this.toDatabaseInput(input);
+    let pendingPayload = { ...payload };
 
-    if (error) {
-      throw new DatabaseError(error.message);
+    for (let attempt = 0; attempt <= Object.keys(payload).length; attempt += 1) {
+      const { data, error } = await supabase
+        .from("products")
+        .insert(pendingPayload)
+        .select("*")
+        .single();
+
+      if (!error) {
+        return (await this.attachProductDataToProduct(data as Product)) as Product;
+      }
+
+      const missingColumn = this.getMissingSchemaColumn(error.message);
+
+      if (!missingColumn || !(missingColumn in pendingPayload)) {
+        throw new DatabaseError(error.message);
+      }
+
+      pendingPayload = this.omitPayloadColumn(pendingPayload, missingColumn);
     }
 
-    return (await this.attachProductDataToProduct(data as Product)) as Product;
+    throw new DatabaseError("Could not create product because the products schema is out of date.");
   }
 
   async updateProduct(id: string, input: ProductUpdateInput): Promise<Product> {
     const supabase = await createSupabaseServerClient();
-    const { data, error } = await supabase
-      .from("products")
-      .update(this.toDatabaseInput(input))
-      .eq("id", id)
-      .is("deleted_at", null)
-      .select("*")
-      .single();
+    const payload = this.toDatabaseInput(input);
+    let pendingPayload = { ...payload };
 
-    if (error) {
-      throw new DatabaseError(error.message);
+    for (let attempt = 0; attempt <= Object.keys(payload).length; attempt += 1) {
+      if (!Object.keys(pendingPayload).length) {
+        const { data: existingData, error: existingError } = await supabase
+          .from("products")
+          .select("*")
+          .eq("id", id)
+          .is("deleted_at", null)
+          .single();
+
+        if (existingError) {
+          throw new DatabaseError(existingError.message);
+        }
+
+        return (await this.attachProductDataToProduct(existingData as Product)) as Product;
+      }
+
+      const { data, error } = await supabase
+        .from("products")
+        .update(pendingPayload)
+        .eq("id", id)
+        .is("deleted_at", null)
+        .select("*")
+        .single();
+
+      if (!error) {
+        return (await this.attachProductDataToProduct(data as Product)) as Product;
+      }
+
+      const missingColumn = this.getMissingSchemaColumn(error.message);
+
+      if (!missingColumn || !(missingColumn in pendingPayload)) {
+        throw new DatabaseError(error.message);
+      }
+
+      pendingPayload = this.omitPayloadColumn(pendingPayload, missingColumn);
     }
 
-    return (await this.attachProductDataToProduct(data as Product)) as Product;
+    throw new DatabaseError("Could not update product because the products schema is out of date.");
   }
 
   async getProductIngredientIds(productId: string): Promise<string[]> {
@@ -212,6 +253,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.standout_points ?? []).map((item, index) =>
             this.cmsCardToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -224,6 +266,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.how_it_works_steps ?? []).map((item, index) =>
             this.howItWorksStepToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -236,6 +279,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.best_for_items ?? []).map((item, index) =>
             this.cmsCardToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -248,6 +292,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.safety_items ?? []).map((item, index) =>
             this.safetyItemToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -260,6 +305,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.buying_guide_items ?? []).map((item, index) =>
             this.cmsCardToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -272,6 +318,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.sidebar_facts ?? []).map((item, index) =>
             this.sidebarFactToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -284,6 +331,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.ingredient_overrides ?? []).map((item, index) =>
             this.ingredientOverrideToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -296,6 +344,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.related_product_relations ?? []).map((item, index) =>
             this.relatedProductToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -308,6 +357,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.compare_product_relations ?? []).map((item, index) =>
             this.compareProductToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -320,6 +370,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.related_blog_relations ?? []).map((item, index) =>
             this.relatedBlogToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -332,6 +383,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
           (input.related_ingredient_relations ?? []).map((item, index) =>
             this.relatedIngredientToRow(productId, item, index),
           ),
+          true,
         ),
       );
     }
@@ -617,7 +669,12 @@ export class SupabaseProductsRepository implements ProductsRepository {
     };
   }
 
-  private async replaceRows(table: string, productId: string, rows: Record<string, unknown>[]) {
+  private async replaceRows(
+    table: string,
+    productId: string,
+    rows: Record<string, unknown>[],
+    optional = false,
+  ) {
     const supabase = await createSupabaseServerClient();
     const { error: deleteError } = await supabase
       .from(table)
@@ -625,6 +682,10 @@ export class SupabaseProductsRepository implements ProductsRepository {
       .eq("product_id", productId);
 
     if (deleteError) {
+      if (optional && this.isMissingOptionalCmsRelation(deleteError.message)) {
+        return;
+      }
+
       throw new DatabaseError(deleteError.message);
     }
 
@@ -632,9 +693,30 @@ export class SupabaseProductsRepository implements ProductsRepository {
       return;
     }
 
-    const { error: insertError } = await supabase.from(table).insert(rows);
+    let pendingRows = rows.map((row) => ({ ...row }));
 
-    if (insertError) {
+    for (let attempt = 0; attempt <= Object.keys(rows[0] ?? {}).length; attempt += 1) {
+      const { error: insertError } = await supabase.from(table).insert(pendingRows);
+
+      if (!insertError) {
+        return;
+      }
+
+      const missingColumn = this.getMissingSchemaColumn(insertError.message);
+
+      if (
+        optional &&
+        missingColumn &&
+        pendingRows.some((row) => missingColumn in row)
+      ) {
+        pendingRows = pendingRows.map((row) => this.omitPayloadColumn(row, missingColumn));
+        continue;
+      }
+
+      if (optional && this.isMissingOptionalCmsRelation(insertError.message)) {
+        return;
+      }
+
       throw new DatabaseError(insertError.message);
     }
   }
@@ -775,6 +857,20 @@ export class SupabaseProductsRepository implements ProductsRepository {
       (normalized.includes("could not find the table") ||
         normalized.includes("could not find the column"))
     );
+  }
+
+  private getMissingSchemaColumn(message: string) {
+    if (!this.isMissingOptionalCmsRelation(message)) {
+      return null;
+    }
+
+    return /Could not find the '([^']+)' column/i.exec(message)?.[1] ?? null;
+  }
+
+  private omitPayloadColumn(payload: Record<string, unknown>, column: string) {
+    const { [column]: _removedColumn, ...nextPayload } = payload;
+    void _removedColumn;
+    return nextPayload;
   }
 
   private rowsForProduct<TRow extends { product_id: string }>(
