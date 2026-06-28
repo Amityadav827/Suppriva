@@ -243,6 +243,18 @@ function lines(value: string) {
     .filter(Boolean);
 }
 
+function safeArray<T>(value: T[] | null | undefined): T[] {
+  return Array.isArray(value) ? value : [];
+}
+
+function safeStringArray(value: string[] | null | undefined): string[] {
+  return safeArray(value).filter((item): item is string => typeof item === "string");
+}
+
+function safeJsonArray(value: JsonValue[] | null | undefined): JsonValue[] {
+  return Array.isArray(value) ? value : [];
+}
+
 function parseBenefits(value: string): JsonValue[] {
   return lines(value).map((item, index) => {
     const [title, description = "", icon = ""] = item.split("|").map((part) => part.trim());
@@ -464,6 +476,18 @@ function parseSchemaJson(value: string): JsonValue {
 }
 
 function productToForm(product: Product): ProductFormState {
+  const heroChecklist = safeStringArray(product.hero_checklist);
+  const gallery = safeStringArray(product.gallery);
+  const benefits = safeJsonArray(product.benefits);
+  const pros = safeStringArray(product.pros);
+  const cons = safeStringArray(product.cons);
+  const faq = safeArray(product.faq);
+  const ingredientIds = safeStringArray(product.ingredient_ids);
+  const relatedProductRelations = safeArray(product.related_product_relations);
+  const compareProductRelations = safeArray(product.compare_product_relations);
+  const relatedBlogRelations = safeArray(product.related_blog_relations);
+  const relatedIngredientRelations = safeArray(product.related_ingredient_relations);
+
   return {
     title: product.title,
     slug: product.slug,
@@ -476,7 +500,7 @@ function productToForm(product: Product): ProductFormState {
     hero_cta_target: product.hero_cta_target ?? "_blank",
     hero_secondary_cta_label: product.hero_secondary_cta_label ?? "",
     hero_secondary_cta_target: product.hero_secondary_cta_target ?? "_blank",
-    hero_checklist: product.hero_checklist.join("\n"),
+    hero_checklist: heroChecklist.join("\n"),
     hero_show_rating: product.hero_show_rating,
     hero_show_badge: product.hero_show_badge,
     review_count: product.review_count?.toString() ?? "",
@@ -484,14 +508,14 @@ function productToForm(product: Product): ProductFormState {
     category_id: product.category_id ?? "",
     author_id: product.author_id ?? "",
     reviewer_id: product.reviewer_id ?? "",
-    ingredient_ids: product.ingredient_ids ?? [],
+    ingredient_ids: ingredientIds,
     short_description: product.short_description ?? "",
     full_description: product.full_description ?? "",
     image: product.image ?? "",
-    gallery: product.gallery,
+    gallery,
     rating: product.rating?.toString() ?? "",
     affiliate_url: product.affiliate_url ?? "",
-    benefits: product.benefits
+    benefits: benefits
       .map((item) => {
         if (typeof item === "object" && item !== null && !Array.isArray(item)) {
           const title = "title" in item && typeof item.title === "string" ? item.title : "";
@@ -509,9 +533,9 @@ function productToForm(product: Product): ProductFormState {
         return String(item ?? "");
       })
       .join("\n"),
-    pros: product.pros.join("\n"),
-    cons: product.cons.join("\n"),
-    faq: product.faq
+    pros: pros.join("\n"),
+    cons: cons.join("\n"),
+    faq: faq
       .map((item) =>
         [
           item.question,
@@ -556,12 +580,12 @@ function productToForm(product: Product): ProductFormState {
     buying_cta_label: product.buying_cta_label ?? "",
     buying_guide_items: serializeCmsCards(product.buying_guide_items),
     related_product_ids:
-      product.related_product_relations?.map((item) => item.related_product_id) ?? [],
+      relatedProductRelations.map((item) => item.related_product_id).filter(Boolean),
     compare_product_ids:
-      product.compare_product_relations?.map((item) => item.compared_product_id) ?? [],
-    related_blog_ids: product.related_blog_relations?.map((item) => item.blog_id) ?? [],
+      compareProductRelations.map((item) => item.compared_product_id).filter(Boolean),
+    related_blog_ids: relatedBlogRelations.map((item) => item.blog_id).filter(Boolean),
     related_ingredient_ids:
-      product.related_ingredient_relations?.map((item) => item.ingredient_id) ?? [],
+      relatedIngredientRelations.map((item) => item.ingredient_id).filter(Boolean),
     related_ingredients_title: product.related_ingredients_title ?? "",
     related_ingredients_subtitle: product.related_ingredients_subtitle ?? "",
     related_blogs_title: product.related_blogs_title ?? "",
@@ -593,6 +617,13 @@ function productToForm(product: Product): ProductFormState {
 }
 
 function formToPayload(form: ProductFormState) {
+  const gallery = safeStringArray(form.gallery);
+  const ingredientIds = safeStringArray(form.ingredient_ids);
+  const relatedProductIds = safeStringArray(form.related_product_ids);
+  const compareProductIds = safeStringArray(form.compare_product_ids);
+  const relatedBlogIds = safeStringArray(form.related_blog_ids);
+  const relatedIngredientIds = safeStringArray(form.related_ingredient_ids);
+
   return {
     title: form.title,
     slug: form.slug || undefined,
@@ -613,11 +644,11 @@ function formToPayload(form: ProductFormState) {
     category_id: form.category_id || null,
     author_id: form.author_id || null,
     reviewer_id: form.reviewer_id || null,
-    ingredient_ids: form.ingredient_ids,
+    ingredient_ids: ingredientIds,
     short_description: form.short_description || null,
     full_description: form.full_description || null,
     image: form.image || null,
-    gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
+    gallery: [...new Set(gallery.map((item) => item.trim()).filter(Boolean))],
     rating: form.rating ? Number(form.rating) : null,
     affiliate_url: form.affiliate_url || null,
     benefits: parseBenefits(form.benefits),
@@ -657,26 +688,26 @@ function formToPayload(form: ProductFormState) {
     buying_guide_subtitle: form.buying_guide_subtitle || null,
     buying_cta_label: form.buying_cta_label || null,
     buying_guide_items: parseCmsCards(form.buying_guide_items),
-    related_product_relations: form.related_product_ids.map((productId, index) => ({
+    related_product_relations: relatedProductIds.map((productId, index) => ({
       related_product_id: productId,
       relationship_type: "related",
       display_order: index,
       title_override: null,
       description_override: null,
     })),
-    compare_product_relations: form.compare_product_ids.map((productId, index) => ({
+    compare_product_relations: compareProductIds.map((productId, index) => ({
       compared_product_id: productId,
       display_order: index,
       title_override: null,
       description_override: null,
     })),
-    related_blog_relations: form.related_blog_ids.map((blogId, index) => ({
+    related_blog_relations: relatedBlogIds.map((blogId, index) => ({
       blog_id: blogId,
       display_order: index,
       title_override: null,
       description_override: null,
     })),
-    related_ingredient_relations: form.related_ingredient_ids.map((ingredientId, index) => ({
+    related_ingredient_relations: relatedIngredientIds.map((ingredientId, index) => ({
       ingredient_id: ingredientId,
       display_order: index,
       title_override: null,
