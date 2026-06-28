@@ -27,7 +27,7 @@ import type { ProductCardData } from "@/components/product/ProductCard";
 import type { ShowcaseProductData } from "@/components/product/SupplementShowcaseCard";
 import type { SearchResult } from "@/lib/search-data";
 import type { CategoryDetail, CategoryProduct } from "@/lib/category-data";
-import type { ProductDetail } from "@/lib/product-data";
+import type { ProductDetail, ProductDetailCmsCard } from "@/lib/product-data";
 import { ContentStatus } from "@/lib/database/constants";
 import { buildProductPath } from "@/lib/products/url";
 import type {
@@ -39,7 +39,10 @@ import type {
   JsonValue,
   Product,
   ProductCmsCard,
+  ProductHowItWorksStep,
   ProductIngredient,
+  ProductIngredientOverride,
+  ProductSafetyItem,
 } from "@/lib/database/types";
 
 const accentPairs = [
@@ -240,14 +243,47 @@ function cmsCardsToHeroHighlights(items?: ProductCmsCard[]): ProductDetail["hero
     .filter((item) => item.title.trim());
 }
 
+function cmsCardsToDetailCards(items?: ProductCmsCard[]): ProductDetailCmsCard[] {
+  return (items ?? [])
+    .filter((item) => item.is_active && item.title.trim())
+    .sort((first, second) => first.display_order - second.display_order)
+    .map((item) => ({
+      icon: item.icon,
+      title: item.title,
+      description: item.description,
+    }));
+}
+
+function howItWorksStepsToCards(items?: ProductHowItWorksStep[]): ProductDetailCmsCard[] {
+  return (items ?? [])
+    .filter((item) => item.is_active && (item.title?.trim() || item.description?.trim()))
+    .sort((first, second) => first.display_order - second.display_order)
+    .map((item, index) => ({
+      icon: item.icon,
+      title: item.title?.trim() || `Step ${index + 1}`,
+      description: item.description,
+    }));
+}
+
+function safetyItemsToCards(items?: ProductSafetyItem[]): ProductDetailCmsCard[] {
+  return (items ?? [])
+    .filter((item) => item.is_active && item.title.trim())
+    .sort((first, second) => first.display_order - second.display_order)
+    .map((item) => ({
+      icon: item.icon || item.item_type,
+      title: item.title,
+      description: item.description,
+    }));
+}
+
 function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
   const values = Array.isArray(product.benefits) ? product.benefits : [];
-  const benefits = values
+  return values
     .map((value, index) => {
       if (typeof value === "string") {
         return {
           title: value,
-          description: "Supports a clean, consistent daily wellness routine.",
+          description: "",
         };
       }
 
@@ -259,34 +295,15 @@ function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
 
       return {
         title: textFromValue(record.title, `Benefit ${index + 1}`),
-        description: textFromValue(
-          record.description ?? record.benefit,
-          "Supports a premium wellness routine when used as directed.",
-        ),
+        description: textFromValue(record.description ?? record.benefit, ""),
+        icon: textFromValue(record.icon, "") || null,
       };
     })
     .filter(Boolean) as ProductDetail["benefits"];
+}
 
-  return benefits.length
-    ? benefits
-    : [
-        {
-          title: "Daily wellness support",
-          description: "Designed to support consistent supplement habits.",
-        },
-        {
-          title: "Premium ingredient focus",
-          description: "Built around a clear supplement positioning and ingredient profile.",
-        },
-        {
-          title: "Routine friendly",
-          description: "Easy to compare and add to a health-focused daily plan.",
-        },
-        {
-          title: "Goal-focused formula",
-          description: "Created for shoppers researching targeted wellness support.",
-        },
-      ];
+function createIngredientOverrideMap(overrides?: ProductIngredientOverride[]) {
+  return new Map((overrides ?? []).map((override) => [override.ingredient_id, override]));
 }
 
 function ingredientsFromProduct(
@@ -294,27 +311,47 @@ function ingredientsFromProduct(
   linkedIngredients: Ingredient[] = [],
 ): ProductDetail["ingredients"] {
   if (linkedIngredients.length) {
-    return linkedIngredients.map((ingredient) => ({
-      name: ingredient.name,
-      benefit:
-        ingredient.short_description ||
-        ingredient.full_description ||
-        "Explore this ingredient in the Suppriva ingredient library.",
-      slug: ingredient.slug,
-      purpose:
-        ingredient.best_for ||
-        ingredient.ingredient_category ||
-        ingredient.ingredient_form ||
-        "Supplement support",
-      description:
-        ingredient.overview_content ||
-        ingredient.short_description ||
-        ingredient.full_description ||
-        "Explore this ingredient in the Suppriva ingredient library.",
-      image: ingredient.image_url || ingredient.featured_image || undefined,
-      category: ingredient.ingredient_category || undefined,
-      scientificName: ingredient.scientific_name,
-    }));
+    const overrides = createIngredientOverrideMap(product.ingredient_overrides);
+
+    return linkedIngredients
+      .map((ingredient, index) => ({
+        ingredient,
+        override: overrides.get(ingredient.id),
+        index,
+      }))
+      .sort(
+        (first, second) =>
+          (first.override?.display_order ?? first.index) -
+          (second.override?.display_order ?? second.index),
+      )
+      .map(({ ingredient, override }) => ({
+        id: ingredient.id,
+        name: ingredient.name,
+        benefit:
+          override?.description_override ||
+          ingredient.short_description ||
+          ingredient.full_description ||
+          "",
+        slug: ingredient.slug,
+        purpose:
+          override?.purpose ||
+          ingredient.best_for ||
+          ingredient.ingredient_category ||
+          ingredient.ingredient_form ||
+          "",
+        dosage: override?.dosage ?? null,
+        customNote: override?.custom_note ?? null,
+        isHighlighted: override?.is_highlighted ?? false,
+        description:
+          override?.description_override ||
+          ingredient.overview_content ||
+          ingredient.short_description ||
+          ingredient.full_description ||
+          "",
+        image: ingredient.image_url || ingredient.featured_image || undefined,
+        category: ingredient.ingredient_category || undefined,
+        scientificName: ingredient.scientific_name,
+      }));
   }
 
   const ingredients = (product.ingredients ?? [])
@@ -323,107 +360,25 @@ function ingredientsFromProduct(
       benefit:
         ingredient.description ||
         ingredient.amount ||
-        "Included as part of the product's premium wellness formula.",
+        "",
       purpose: ingredient.amount || "Formula support",
       description:
         ingredient.description ||
-        "Included as part of the product's premium wellness formula.",
+        "",
     }))
     .filter((ingredient) => ingredient.name);
 
-  return ingredients.length
-    ? ingredients
-    : [
-        {
-          name: "Premium Formula Blend",
-          benefit: "Review the official label for complete ingredient details and serving guidance.",
-          purpose: "Label transparency",
-          description: "Review the official label for complete ingredient details and serving guidance.",
-        },
-      ];
+  return ingredients;
 }
 
-function buildStandoutPoints(
-  product: Product,
-  benefits: ProductDetail["benefits"],
-  ingredients: ProductDetail["ingredients"],
-) {
-  return uniqueStrings([
-    ...(product.pros ?? []),
-    ...benefits.slice(0, 2).map((benefit) => benefit.title),
-    ...ingredients.slice(0, 2).map((ingredient) => `${ingredient.name} included in the formula`),
-    product.short_description ? splitSentences(product.short_description)[0] : null,
-  ]).slice(0, 5);
-}
-
-function buildHowItWorks(product: Product, ingredients: ProductDetail["ingredients"]) {
-  const fullDescriptionParagraphs = splitParagraphs(product.full_description);
-
-  if (fullDescriptionParagraphs.length) {
-    return fullDescriptionParagraphs.slice(0, 3);
-  }
-
-  const shortDescriptionSentences = splitSentences(product.short_description);
-  if (shortDescriptionSentences.length) {
-    return shortDescriptionSentences.slice(0, 3);
-  }
-
-  if (ingredients.length) {
-    return ingredients
-      .slice(0, 3)
-      .map(
-        (ingredient) =>
-          `${ingredient.name} supports the formula through ${ingredient.purpose?.toLowerCase() || "its targeted role"} and ${ingredient.benefit.toLowerCase()}.`,
-      );
-  }
-
-  return [
-    "This formula is positioned as a targeted daily supplement for shoppers researching focused wellness support.",
-  ];
-}
-
-function buildAudience(
-  product: Product,
-  categoryLabel: string,
-  benefits: ProductDetail["benefits"],
-  ingredients: ProductDetail["ingredients"],
-) {
-  return uniqueStrings([
-    `${categoryLabel} support seekers`,
-    ...benefits.slice(0, 3).map((benefit) => benefit.title),
-    ...ingredients.slice(0, 2).map((ingredient) => ingredient.purpose || ingredient.name),
-    product.short_description ? splitSentences(product.short_description)[0] : null,
-  ])
-    .map((item) => item.replace(/\.$/, ""))
-    .slice(0, 4);
-}
-
-function buildSafety(
-  product: Product,
-  ingredients: ProductDetail["ingredients"],
-): ProductDetail["safety"] {
-  return {
-    sideEffects: uniqueStrings([
-      product.cons?.[0],
-      product.cons?.[1],
-      "Tolerance can vary by individual, especially with concentrated supplement blends.",
-    ]).slice(0, 4),
-    whoShouldAvoid: uniqueStrings([
-      "People with known sensitivities to any listed ingredient.",
-      "Anyone who has been advised to avoid new supplements without professional guidance.",
-    ]).slice(0, 3),
-    drugInteractions: uniqueStrings([
-      ingredients[0]?.name
-        ? `Review the official label and discuss ${ingredients[0].name} with your healthcare provider if you take prescription medication.`
-        : "Consult your healthcare provider if you take prescription medication.",
-      "Use extra caution if you already follow a supplement-heavy routine.",
-    ]).slice(0, 3),
-    precautions: uniqueStrings([
-      "Follow the serving directions on the official label.",
-      "Keep supplements out of reach of children and store them as directed.",
-      "Use supplements as part of a balanced diet and health routine.",
-    ]),
-  };
+function visibleFaqs(items?: FAQItem[]) {
+  return (items ?? [])
+    .filter((item) => item.is_visible !== false && item.question.trim() && item.answer.trim())
+    .sort((first, second) => (first.display_order ?? 0) - (second.display_order ?? 0))
+    .map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    }));
 }
 
 export function productToDetail(
@@ -448,11 +403,16 @@ export function productToDetail(
     .filter(Boolean)
     .map((item, index) => productToCard(item as Product, categories, index));
   const heroHighlights = cmsCardsToHeroHighlights(product.standout_points);
-  const standoutPoints = buildStandoutPoints(product, benefits, ingredients);
-  const whoItsBestFor = buildAudience(product, categoryLabel, benefits, ingredients);
-  const bestFor = whoItsBestFor[0] || `${categoryLabel} support`;
-  const safety = buildSafety(product, ingredients);
+  const standoutPoints = cmsCardsToDetailCards(product.standout_points);
+  const howItWorks = howItWorksStepsToCards(product.how_it_works_steps);
+  const howItWorksIntro = splitParagraphs(product.how_it_works_content);
+  const whoItsBestFor = cmsCardsToDetailCards(product.best_for_items);
+  const safetyItems = safetyItemsToCards(product.safety_items);
+  const buyingGuidance = cmsCardsToDetailCards(product.buying_guide_items);
+  const bestFor = product.verdict_best_for || whoItsBestFor[0]?.title || "";
   const name = product.title || product.name;
+  const overviewParagraphs = splitParagraphs(product.overview_content);
+  const faqs = visibleFaqs(product.faq);
 
   return {
     slug: product.slug,
@@ -502,48 +462,57 @@ export function productToDetail(
       `${categoryLabel} category match`,
       product.status === ContentStatus.Published ? "Published profile" : null,
     ]).slice(0, 4),
+    whatIs: {
+      title: product.overview_title || `What Is ${name}?`,
+      subtitle: product.overview_subtitle || "",
+      paragraphs: overviewParagraphs,
+    },
+    standoutTitle: "Why This Product Stands Out",
+    standoutSubtitle: "",
     standoutPoints,
-    howItWorks: buildHowItWorks(product, ingredients),
+    howItWorksTitle: product.how_it_works_title || `How ${name} Works`,
+    howItWorksSubtitle: product.how_it_works_subtitle || "",
+    howItWorksIntro,
+    howItWorks,
+    benefitsTitle: product.benefits_title || "Key Benefits",
+    benefitsSubtitle: product.benefits_subtitle || "",
     whoItsBestFor,
+    whoItsBestForTitle: product.best_for_title || "Who Is It Best For?",
+    whoItsBestForSubtitle: product.best_for_subtitle || "",
     bestFor,
     benefits,
+    ingredientsTitle: product.ingredients_title || "Ingredient Breakdown",
+    ingredientsSubtitle: product.ingredients_subtitle || "",
     ingredients,
-    safety,
-    pros: product.pros?.length
-      ? product.pros
-      : ["Clear wellness positioning", "Premium supplement profile", "Easy routine fit"],
-    cons: product.cons?.length
-      ? product.cons
-      : ["Results vary by lifestyle", "Review label before use", "Not a replacement for medical care"],
-    faqs: product.faq?.length
-      ? product.faq
-      : [
-          {
-            question: `How do I use ${product.title || product.name}?`,
-            answer: "Follow the official product directions and review the label before use.",
-          },
-          {
-            question: "Is this supplement right for everyone?",
-            answer:
-              "Suitability depends on health status, medications, and personal goals. Consult a qualified professional when unsure.",
-          },
-        ],
-    verdict: {
-      summary:
-        product.short_description ||
-        `${name} is a focused ${categoryLabel.toLowerCase()} supplement that stands out for its ingredient profile and research-friendly positioning.`,
-      bestFor,
-      notIdealFor:
-        product.cons?.[0] ||
-        "Shoppers looking for medical treatment rather than a supplement research option.",
-      recommendation:
-        `${name} is best researched through its ingredient list, benefit profile, and official label before purchase.`,
+    safetyTitle: product.safety_title || "Safety Information",
+    safetySubtitle: product.safety_subtitle || "",
+    safetyItems,
+    safety: {
+      sideEffects: [],
+      whoShouldAvoid: [],
+      drugInteractions: [],
+      precautions: [],
     },
-    buyingGuidance: [
-      "Use the official website for the most current pricing, offers, and label details.",
-      "Review serving guidance, ingredient transparency, and refund information before checkout.",
-      "Affiliate links help support Suppriva research at no extra cost to the reader.",
-    ],
+    pros: product.pros ?? [],
+    cons: product.cons ?? [],
+    prosConsTitle: product.pros_cons_title || "Pros & Cons",
+    prosConsSubtitle: product.pros_cons_subtitle || "",
+    faqTitle: product.faq_title || "Frequently Asked Questions",
+    faqSubtitle: product.faq_subtitle || "",
+    faqs,
+    verdictTitle: product.verdict_title || "SuppRiva Verdict",
+    verdictSubtitle: product.verdict_subtitle || "",
+    verdict: {
+      summary: product.verdict_summary || "",
+      bestFor,
+      notIdealFor: product.verdict_not_ideal_for || "",
+      recommendation: product.verdict_recommendation || "",
+      conclusion: product.verdict_conclusion,
+    },
+    buyingGuideTitle: product.buying_guide_title || `Where To Buy ${name}`,
+    buyingGuideSubtitle: product.buying_guide_subtitle || "",
+    buyingCtaLabel: product.buying_cta_label || "Visit Official Website",
+    buyingGuidance,
     relatedIngredients: ingredients
       .filter((ingredient) => ingredient.slug)
       .slice(0, 6)

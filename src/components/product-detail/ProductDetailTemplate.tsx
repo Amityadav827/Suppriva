@@ -106,15 +106,19 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
   const faqColumns = splitIntoColumns(product.faqs, 2);
   const heroImage =
     product.image || product.gallery?.[0] || "/assets/hero-supplements.webp";
-  const whatIsParagraphs = [
-    product.description,
-    `${product.name} is positioned in the ${product.category.toLowerCase()} category and is typically considered by readers comparing ingredient depth, benefit focus, and day-to-day usability.`,
-    `Consumers usually evaluate ${product.name} around goals like ${product.bestFor.toLowerCase()} while reviewing ingredient transparency and overall formula support.`,
-  ].filter(hasText) as string[];
+  const whatIsParagraphs = product.whatIs.paragraphs.filter(hasText);
+  const hasVerdict =
+    hasText(product.verdict.summary) ||
+    hasText(product.verdict.bestFor) ||
+    hasText(product.verdict.notIdealFor) ||
+    hasText(product.verdict.recommendation) ||
+    hasText(product.verdict.conclusion);
 
   const sections: IngredientSectionLink[] = [
     { id: "hero", label: "Overview" },
-    { id: "what-is-product", label: `What Is ${product.name}?` },
+    ...(whatIsParagraphs.length
+      ? [{ id: "what-is-product", label: product.whatIs.title }]
+      : []),
     ...(product.standoutPoints.length
       ? [{ id: "why-it-stands-out", label: "Why It Stands Out" }]
       : []),
@@ -124,16 +128,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     ...(product.whoItsBestFor.length
       ? [{ id: "who-is-it-best-for", label: "Who Is It Best For" }]
       : []),
-    ...(product.safety.sideEffects.length ||
-    product.safety.whoShouldAvoid.length ||
-    product.safety.drugInteractions.length ||
-    product.safety.precautions.length
-      ? [{ id: "safety", label: "Safety Information" }]
+    ...(product.safetyItems.length
+      ? [{ id: "safety", label: product.safetyTitle }]
       : []),
     ...(product.pros.length || product.cons.length ? [{ id: "pros-cons", label: "Pros & Cons" }] : []),
-    ...(product.faqs.length ? [{ id: "faq", label: "FAQ" }] : []),
-    ...(hasText(product.verdict.summary) ? [{ id: "verdict", label: "SuppRiva Verdict" }] : []),
-    { id: "where-to-buy", label: "Where To Buy" },
+    ...(product.faqs.length ? [{ id: "faq", label: product.faqTitle }] : []),
+    ...(hasVerdict ? [{ id: "verdict", label: product.verdictTitle }] : []),
+    ...(product.buyingGuidance.length ? [{ id: "where-to-buy", label: product.buyingGuideTitle }] : []),
     ...(product.relatedIngredients.length
       ? [{ id: "related-ingredients", label: "Related Ingredients" }]
       : []),
@@ -346,34 +347,46 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               />
             </div>
 
-            <ReviewSection
-              id="what-is-product"
-              icon={PackageCheck}
-              title={`What Is ${product.name}?`}
-              subtitle="A clean, SEO-friendly review section that explains purpose, positioning, and how this supplement is typically researched by shoppers."
-            >
-              <ContentPanel paragraphs={whatIsParagraphs} />
-            </ReviewSection>
+            {whatIsParagraphs.length ? (
+              <ReviewSection
+                id="what-is-product"
+                icon={PackageCheck}
+                title={product.whatIs.title}
+                subtitle={product.whatIs.subtitle}
+              >
+                <ContentPanel paragraphs={whatIsParagraphs} />
+              </ReviewSection>
+            ) : null}
 
             {product.standoutPoints.length ? (
               <ReviewSection
                 id="why-it-stands-out"
                 icon={Sparkles}
-                title="Why This Product Stands Out"
-                subtitle="Positioned for readers who want a stronger understanding of the formula, ingredient emphasis, and practical differentiators."
+                title={product.standoutTitle}
+                subtitle={product.standoutSubtitle}
                 tone="cream"
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                   {product.standoutPoints.map((point, index) => (
                     <FadeIn
-                      key={point}
+                      key={`${point.title}-${index + 1}`}
                       delay={index * 0.05}
                       className="rounded-[24px] bg-white p-5 shadow-[0_14px_38px_rgba(15,23,42,0.05)] ring-1 ring-black/5"
                     >
                       <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
-                        <Sparkles className="size-5" aria-hidden="true" />
+                        {(() => {
+                          const Icon = heroIcon(point.icon);
+                          return <Icon className="size-5" aria-hidden="true" />;
+                        })()}
                       </span>
-                      <p className="mt-4 text-base leading-7 text-text-dark">{point}</p>
+                      <h3 className="mt-4 font-heading text-lg font-extrabold text-text-dark">
+                        {point.title}
+                      </h3>
+                      {point.description ? (
+                        <p className="mt-3 text-sm leading-7 text-muted">
+                          {point.description}
+                        </p>
+                      ) : null}
                     </FadeIn>
                   ))}
                 </div>
@@ -384,13 +397,16 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="how-it-works"
                 icon={FlaskConical}
-                title={`How ${product.name} Works`}
-                subtitle="Mechanism and ingredient interaction are presented in a cleaner research-oriented layout without changing the underlying data model."
+                title={product.howItWorksTitle}
+                subtitle={product.howItWorksSubtitle}
               >
                 <div className="space-y-4">
-                  {product.howItWorks.map((paragraph, index) => (
+                  {product.howItWorksIntro.length ? (
+                    <ContentPanel paragraphs={product.howItWorksIntro} />
+                  ) : null}
+                  {product.howItWorks.map((step, index) => (
                     <FadeIn
-                      key={`${paragraph.slice(0, 36)}-${index + 1}`}
+                      key={`${step.title}-${index + 1}`}
                       delay={index * 0.05}
                       className="rounded-[24px] bg-cream/70 p-5 ring-1 ring-black/5"
                     >
@@ -398,7 +414,16 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                         <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white font-heading text-base font-bold text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
                           {index + 1}
                         </span>
-                        <p className="w-full text-base leading-8 text-muted">{paragraph}</p>
+                        <div className="w-full">
+                          <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                            {step.title}
+                          </h3>
+                          {step.description ? (
+                            <p className="mt-2 text-base leading-8 text-muted">
+                              {step.description}
+                            </p>
+                          ) : null}
+                        </div>
                       </div>
                     </FadeIn>
                   ))}
@@ -410,13 +435,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="benefits"
                 icon={ShieldCheck}
-                title="Key Benefits"
-                subtitle="Dynamic benefit cards with clearer hierarchy, stronger spacing, and better scanning for readers comparing formulas."
+                title={product.benefitsTitle}
+                subtitle={product.benefitsSubtitle}
                 tone="cream"
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                   {product.benefits.map((benefit, index) => {
-                    const Icon = benefitIcon(benefit.title);
+                    const Icon = benefit.icon ? heroIcon(benefit.icon) : benefitIcon(benefit.title);
 
                     return (
                       <FadeIn
@@ -430,9 +455,11 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                         <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
                           {benefit.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-7 text-muted">
-                          {benefit.description}
-                        </p>
+                        {benefit.description ? (
+                          <p className="mt-3 text-sm leading-7 text-muted">
+                            {benefit.description}
+                          </p>
+                        ) : null}
                       </FadeIn>
                     );
                   })}
@@ -444,8 +471,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="ingredients"
                 icon={Beaker}
-                title="Ingredient Breakdown"
-                subtitle="A professional table-style section built for internal linking, SEO depth, and easier ingredient-level comparison."
+                title={product.ingredientsTitle}
+                subtitle={product.ingredientsSubtitle}
               >
                 <div className="overflow-hidden rounded-[26px] bg-white ring-1 ring-black/5">
                   <div className="hidden grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(0,1.4fr)_160px] gap-4 border-b border-black/6 bg-cream/70 px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-muted lg:grid">
@@ -470,8 +497,20 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           </div>
                           <p className="text-sm leading-7 text-muted">
                             {ingredient.purpose || ingredient.category || "Formula support"}
+                            {ingredient.dosage ? (
+                              <span className="mt-2 block text-xs font-semibold text-primary">
+                                {ingredient.dosage}
+                              </span>
+                            ) : null}
                           </p>
-                          <p className="text-sm leading-7 text-muted">{ingredient.benefit}</p>
+                          <p className="text-sm leading-7 text-muted">
+                            {ingredient.benefit}
+                            {ingredient.customNote ? (
+                              <span className="mt-2 block rounded-[14px] bg-soft-green/70 px-3 py-2 text-xs font-medium text-primary">
+                                {ingredient.customNote}
+                              </span>
+                            ) : null}
+                          </p>
                           {ingredient.slug ? (
                             <Link
                               href={`/ingredient/${ingredient.slug}`}
@@ -499,10 +538,20 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           <InfoLine
                             label="Purpose"
                             value={
-                              ingredient.purpose || ingredient.category || "Formula support"
+                              [
+                                ingredient.purpose || ingredient.category || "Formula support",
+                                ingredient.dosage,
+                              ]
+                                .filter(Boolean)
+                                .join(" - ")
                             }
                           />
-                          <InfoLine label="Benefits" value={ingredient.benefit} />
+                          <InfoLine
+                            label="Benefits"
+                            value={[ingredient.benefit, ingredient.customNote]
+                              .filter(Boolean)
+                              .join(" - ")}
+                          />
                           {ingredient.slug ? (
                             <Link
                               href={`/ingredient/${ingredient.slug}`}
@@ -524,22 +573,34 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="who-is-it-best-for"
                 icon={Users}
-                title="Who Is It Best For?"
-                subtitle="A clean reader-friendly section showing the most likely use cases and shopper intent behind the formula."
+                title={product.whoItsBestForTitle}
+                subtitle={product.whoItsBestForSubtitle}
                 tone="cream"
               >
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                   {product.whoItsBestFor.map((item, index) => (
                     <FadeIn
-                      key={item}
+                      key={`${item.title}-${index + 1}`}
                       delay={index * 0.04}
                       className="rounded-[24px] bg-white p-5 ring-1 ring-black/5"
                     >
                       <div className="flex items-start gap-3">
                         <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                          <Check className="size-4.5" />
+                          {(() => {
+                            const Icon = heroIcon(item.icon);
+                            return <Icon className="size-4.5" />;
+                          })()}
                         </span>
-                        <p className="text-sm leading-7 text-text-dark">{item}</p>
+                        <div>
+                          <h3 className="font-heading text-base font-extrabold text-text-dark">
+                            {item.title}
+                          </h3>
+                          {item.description ? (
+                            <p className="mt-2 text-sm leading-7 text-muted">
+                              {item.description}
+                            </p>
+                          ) : null}
+                        </div>
                       </div>
                     </FadeIn>
                   ))}
@@ -547,52 +608,44 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            <ReviewSection
-              id="safety"
-              icon={ShieldAlert}
-              title="Safety Information"
-              subtitle="Trust-focused safety cards help readers review side effects, who should avoid the product, possible interactions, and general precautions."
-            >
-              <div className="grid items-stretch gap-5 xl:grid-cols-2 2xl:grid-cols-4">
-                <SafetyCard
-                  title="Possible Side Effects"
-                  icon={CircleAlert}
-                  items={product.safety.sideEffects}
-                />
-                <SafetyCard
-                  title="Who Should Avoid"
-                  icon={Users}
-                  items={product.safety.whoShouldAvoid}
-                />
-                <SafetyCard
-                  title="Drug Interactions"
-                  icon={Pill}
-                  items={product.safety.drugInteractions}
-                />
-                <SafetyCard
-                  title="General Precautions"
-                  icon={ShieldCheck}
-                  items={product.safety.precautions}
-                />
-              </div>
-            </ReviewSection>
+            {product.safetyItems.length ? (
+              <ReviewSection
+                id="safety"
+                icon={ShieldAlert}
+                title={product.safetyTitle}
+                subtitle={product.safetySubtitle}
+              >
+                <div className="grid items-stretch gap-5 xl:grid-cols-2 2xl:grid-cols-4">
+                  {product.safetyItems.map((item, index) => (
+                    <SafetyCard
+                      key={`${item.title}-${index + 1}`}
+                      title={item.title}
+                      icon={heroIcon(item.icon)}
+                      items={item.description ? [item.description] : []}
+                    />
+                  ))}
+                </div>
+              </ReviewSection>
+            ) : null}
 
-            <ReviewSection
-              id="pros-cons"
-              icon={BadgeCheck}
-              title="Pros & Cons"
-              subtitle="A faster comparison layout for readers balancing upside, tradeoffs, and buying fit."
-              tone="cream"
-            >
-              <ProsCons pros={product.pros} cons={product.cons} />
-            </ReviewSection>
+            {product.pros.length || product.cons.length ? (
+              <ReviewSection
+                id="pros-cons"
+                icon={BadgeCheck}
+                title={product.prosConsTitle}
+                subtitle={product.prosConsSubtitle}
+                tone="cream"
+              >
+                <ProsCons pros={product.pros} cons={product.cons} />
+              </ReviewSection>
+            ) : null}
 
             {product.faqs.length ? (
               <ReviewSection
                 id="faq"
                 icon={BookOpenText}
-                title="Frequently Asked Questions"
-                subtitle="Smooth accordion interactions with section IDs, deep-link friendly structure, and schema-ready content."
+                title={product.faqTitle}
+                subtitle={product.faqSubtitle}
               >
                 <div className="grid gap-5 xl:grid-cols-2">
                   {faqColumns.map((column, index) => (
@@ -607,13 +660,14 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            <ReviewSection
-              id="verdict"
-              icon={Star}
-              title="SuppRiva Verdict"
-              subtitle="A premium summary section that helps readers decide whether this product belongs on their shortlist."
-              tone="cream"
-            >
+            {hasVerdict ? (
+              <ReviewSection
+                id="verdict"
+                icon={Star}
+                title={product.verdictTitle}
+                subtitle={product.verdictSubtitle}
+                tone="cream"
+              >
               <div className="grid gap-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:items-stretch">
                 <div className="flex h-full flex-col items-center justify-center rounded-[24px] bg-white p-5 text-center ring-1 ring-black/5">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
@@ -631,37 +685,64 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     ))}
                   </div>
                 </div>
-                  <div className="flex h-full flex-col justify-center space-y-5">
-                  <p className="text-lg leading-8 text-muted">{product.verdict.summary}</p>
+                <div className="flex h-full flex-col justify-center space-y-5">
+                  {product.verdict.summary ? (
+                    <p className="text-lg leading-8 text-muted">{product.verdict.summary}</p>
+                  ) : null}
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    <VerdictFact label="Best For" value={product.verdict.bestFor} />
-                    <VerdictFact
-                      label="Not Ideal For"
-                      value={product.verdict.notIdealFor}
-                    />
-                    <VerdictFact
-                      label="Recommendation"
-                      value={product.verdict.recommendation}
-                    />
+                    {product.verdict.bestFor ? (
+                      <VerdictFact label="Best For" value={product.verdict.bestFor} />
+                    ) : null}
+                    {product.verdict.notIdealFor ? (
+                      <VerdictFact
+                        label="Not Ideal For"
+                        value={product.verdict.notIdealFor}
+                      />
+                    ) : null}
+                    {product.verdict.recommendation ? (
+                      <VerdictFact
+                        label="Recommendation"
+                        value={product.verdict.recommendation}
+                      />
+                    ) : null}
                   </div>
+                  {product.verdict.conclusion ? (
+                    <p className="text-base leading-8 text-muted">
+                      {product.verdict.conclusion}
+                    </p>
+                  ) : null}
                 </div>
               </div>
-            </ReviewSection>
+              </ReviewSection>
+            ) : null}
 
-            <ReviewSection
-              id="where-to-buy"
-              icon={PackageCheck}
-              title={`Where To Buy ${product.name}`}
-              subtitle="A dedicated purchase section with official-website guidance and a direct action path for readers ready to review the offer."
-            >
+            {product.buyingGuidance.length ? (
+              <ReviewSection
+                id="where-to-buy"
+                icon={PackageCheck}
+                title={product.buyingGuideTitle}
+                subtitle={product.buyingGuideSubtitle}
+              >
               <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
                 <div className="space-y-4">
                   {product.buyingGuidance.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
+                    <div key={item.title} className="flex items-start gap-3">
                       <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Check className="size-4.5" />
+                        {(() => {
+                          const Icon = heroIcon(item.icon);
+                          return <Icon className="size-4.5" />;
+                        })()}
                       </span>
-                      <p className="text-sm leading-7 text-muted">{item}</p>
+                      <div>
+                        <h3 className="font-heading text-sm font-bold text-text-dark">
+                          {item.title}
+                        </h3>
+                        {item.description ? (
+                          <p className="mt-1 text-sm leading-7 text-muted">
+                            {item.description}
+                          </p>
+                        ) : null}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -670,10 +751,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     productId={product.productId}
                     productSlug={product.slug}
                     affiliateUrl={product.affiliateUrl}
+                    label={product.buyingCtaLabel}
                   />
                 </div>
               </FadeIn>
-            </ReviewSection>
+              </ReviewSection>
+            ) : null}
 
             {product.relatedIngredients.length ? (
               <ReviewSection
@@ -833,7 +916,7 @@ function SidebarColumn({
   sidebarFacts: Array<{
     label: string;
     value: string;
-    icon: typeof ClipboardList;
+    icon: typeof Check;
   }>;
   product: ProductDetail;
 }) {
@@ -895,7 +978,7 @@ function ReviewSection({
   children,
 }: {
   id: string;
-  icon: typeof ShieldCheck;
+  icon: typeof Check;
   title: string;
   subtitle: string;
   tone?: "white" | "cream";
@@ -914,7 +997,7 @@ function SectionHeading({
   title,
   subtitle,
 }: {
-  icon: typeof ShieldCheck;
+  icon: typeof Check;
   title: string;
   subtitle: string;
 }) {
@@ -1014,7 +1097,7 @@ function SafetyCard({
   items,
 }: {
   title: string;
-  icon: typeof ShieldAlert;
+  icon: typeof Check;
   items: string[];
 }) {
   if (!items.length) {

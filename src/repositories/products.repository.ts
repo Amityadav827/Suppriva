@@ -459,6 +459,9 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("verdict_recommendation" in input) {
       payload.verdict_recommendation = input.verdict_recommendation ?? null;
     }
+    if ("verdict_conclusion" in input) {
+      payload.verdict_conclusion = input.verdict_conclusion ?? null;
+    }
     if ("buying_guide_title" in input) payload.buying_guide_title = input.buying_guide_title ?? null;
     if ("buying_guide_subtitle" in input) {
       payload.buying_guide_subtitle = input.buying_guide_subtitle ?? null;
@@ -564,6 +567,8 @@ export class SupabaseProductsRepository implements ProductsRepository {
       purpose: item.purpose?.trim() || null,
       dosage: item.dosage?.trim() || null,
       description_override: item.description_override?.trim() || null,
+      custom_note: item.custom_note?.trim() || null,
+      is_highlighted: item.is_highlighted ?? false,
     };
   }
 

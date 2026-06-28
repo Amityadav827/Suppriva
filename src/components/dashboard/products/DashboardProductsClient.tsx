@@ -80,6 +80,7 @@ type ProductFormState = {
   verdict_best_for: string;
   verdict_not_ideal_for: string;
   verdict_recommendation: string;
+  verdict_conclusion: string;
   buying_guide_title: string;
   buying_guide_subtitle: string;
   buying_cta_label: string;
@@ -200,6 +201,7 @@ const emptyForm: ProductFormState = {
   verdict_best_for: "",
   verdict_not_ideal_for: "",
   verdict_recommendation: "",
+  verdict_conclusion: "",
   buying_guide_title: "",
   buying_guide_subtitle: "",
   buying_cta_label: "",
@@ -242,18 +244,21 @@ function lines(value: string) {
 }
 
 function parseBenefits(value: string): JsonValue[] {
-  return lines(value).map((item) => {
-    const [title, description = ""] = item.split("|").map((part) => part.trim());
+  return lines(value).map((item, index) => {
+    const [title, description = "", icon = ""] = item.split("|").map((part) => part.trim());
 
-    return { title, description };
+    return { title, description, icon: icon || null, display_order: index, is_active: true };
   });
 }
 
 function parseFaq(value: string): FAQItem[] {
-  return lines(value).map((item) => {
-    const [question, answer = ""] = item.split("|").map((part) => part.trim());
+  return lines(value).map((item, index) => {
+    const [question, answer = "", visibility = "visible"] = item
+      .split("|")
+      .map((part) => part.trim());
+    const isHidden = ["false", "hidden", "no", "0"].includes(visibility.toLowerCase());
 
-    return { question, answer };
+    return { question, answer, display_order: index, is_visible: !isHidden };
   });
 }
 
@@ -400,6 +405,8 @@ function serializeIngredientOverrides(
     purpose?: string | null;
     dosage?: string | null;
     description_override?: string | null;
+    custom_note?: string | null;
+    is_highlighted?: boolean | null;
   }>,
 ) {
   return (items ?? [])
@@ -409,6 +416,8 @@ function serializeIngredientOverrides(
         item.purpose ?? "",
         item.dosage ?? "",
         item.description_override ?? "",
+        item.custom_note ?? "",
+        item.is_highlighted ? "highlighted" : "",
       ]
         .map((part) => part.trim())
         .join(" | ")
@@ -420,15 +429,27 @@ function serializeIngredientOverrides(
 
 function parseIngredientOverrides(value: string) {
   return lines(value).map((item, index) => {
-    const [ingredientId, purpose = "", dosage = "", descriptionOverride = ""] = item
+    const [
+      ingredientId,
+      purpose = "",
+      dosage = "",
+      descriptionOverride = "",
+      customNote = "",
+      highlighted = "",
+    ] = item
       .split("|")
       .map((part) => part.trim());
+    const isHighlighted = ["true", "yes", "1", "highlight", "highlighted"].includes(
+      highlighted.toLowerCase(),
+    );
 
     return {
       ingredient_id: ingredientId,
       purpose: purpose || null,
       dosage: dosage || null,
       description_override: descriptionOverride || null,
+      custom_note: customNote || null,
+      is_highlighted: isHighlighted,
       display_order: index,
     };
   });
@@ -478,8 +499,11 @@ function productToForm(product: Product): ProductFormState {
             "description" in item && typeof item.description === "string"
               ? item.description
               : "";
+          const icon = "icon" in item && typeof item.icon === "string" ? item.icon : "";
 
-          return `${title}${description ? ` | ${description}` : ""}`;
+          return [title, description, icon]
+            .filter(Boolean)
+            .join(" | ");
         }
 
         return String(item ?? "");
@@ -487,7 +511,17 @@ function productToForm(product: Product): ProductFormState {
       .join("\n"),
     pros: product.pros.join("\n"),
     cons: product.cons.join("\n"),
-    faq: product.faq.map((item) => `${item.question} | ${item.answer}`).join("\n"),
+    faq: product.faq
+      .map((item) =>
+        [
+          item.question,
+          item.answer,
+          item.is_visible === false ? "hidden" : "",
+        ]
+          .filter(Boolean)
+          .join(" | "),
+      )
+      .join("\n"),
     overview_title: product.overview_title ?? "",
     overview_subtitle: product.overview_subtitle ?? "",
     overview_content: product.overview_content ?? "",
@@ -516,6 +550,7 @@ function productToForm(product: Product): ProductFormState {
     verdict_best_for: product.verdict_best_for ?? "",
     verdict_not_ideal_for: product.verdict_not_ideal_for ?? "",
     verdict_recommendation: product.verdict_recommendation ?? "",
+    verdict_conclusion: product.verdict_conclusion ?? "",
     buying_guide_title: product.buying_guide_title ?? "",
     buying_guide_subtitle: product.buying_guide_subtitle ?? "",
     buying_cta_label: product.buying_cta_label ?? "",
@@ -617,6 +652,7 @@ function formToPayload(form: ProductFormState) {
     verdict_best_for: form.verdict_best_for || null,
     verdict_not_ideal_for: form.verdict_not_ideal_for || null,
     verdict_recommendation: form.verdict_recommendation || null,
+    verdict_conclusion: form.verdict_conclusion || null,
     buying_guide_title: form.buying_guide_title || null,
     buying_guide_subtitle: form.buying_guide_subtitle || null,
     buying_cta_label: form.buying_cta_label || null,
@@ -1129,8 +1165,8 @@ export function DashboardProductsClient() {
             />
             <TextAreaField label="Pros" value={form.pros} onChange={(value) => updateForm("pros", value)} placeholder="One item per line" />
             <TextAreaField label="Cons" value={form.cons} onChange={(value) => updateForm("cons", value)} placeholder="One item per line" />
-            <TextAreaField label="Benefits" value={form.benefits} onChange={(value) => updateForm("benefits", value)} placeholder="Title | Description, one per line" />
-            <TextAreaField label="FAQ" value={form.faq} onChange={(value) => updateForm("faq", value)} placeholder="Question | Answer, one per line" />
+            <TextAreaField label="Benefits" value={form.benefits} onChange={(value) => updateForm("benefits", value)} placeholder="Title | Description | icon, one per line" />
+            <TextAreaField label="FAQ" value={form.faq} onChange={(value) => updateForm("faq", value)} placeholder="Question | Answer | visible, one per line" />
 
             <CmsSection
               title="Hero"
@@ -1197,6 +1233,7 @@ export function DashboardProductsClient() {
               <TextAreaField label="Verdict Recommendation" value={form.verdict_recommendation} onChange={(value) => updateForm("verdict_recommendation", value)} rows={4} />
               <InputField label="Verdict Best For" value={form.verdict_best_for} onChange={(value) => updateForm("verdict_best_for", value)} />
               <InputField label="Verdict Not Ideal For" value={form.verdict_not_ideal_for} onChange={(value) => updateForm("verdict_not_ideal_for", value)} />
+              <TextAreaField label="Verdict Conclusion" value={form.verdict_conclusion} onChange={(value) => updateForm("verdict_conclusion", value)} className="lg:col-span-2" rows={3} />
             </CmsSection>
 
             <CmsSection title="Buying Guide, Sidebar & Navigation">
@@ -1267,7 +1304,7 @@ export function DashboardProductsClient() {
                 selectedIds={form.related_ingredient_ids}
                 onChange={(value) => updateForm("related_ingredient_ids", value)}
               />
-              <TextAreaField label="Ingredient Display Overrides" value={form.ingredient_overrides} onChange={(value) => updateForm("ingredient_overrides", value)} placeholder="ingredient_id | Purpose | Dosage | Description override" className="lg:col-span-2" rows={4} />
+              <TextAreaField label="Ingredient Display Overrides" value={form.ingredient_overrides} onChange={(value) => updateForm("ingredient_overrides", value)} placeholder="ingredient_id | Purpose | Dosage | Description override | Custom note | highlighted" className="lg:col-span-2" rows={4} />
             </CmsSection>
 
             <CmsSection title="Advanced SEO">

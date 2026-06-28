@@ -29,6 +29,8 @@ export type SocialLinks = {
 export type FAQItem = {
   question: string;
   answer: string;
+  display_order?: number;
+  is_visible?: boolean;
 };
 
 export type ProductIngredient = {
@@ -136,6 +138,8 @@ export type ProductIngredientOverride = {
   purpose: string | null;
   dosage: string | null;
   description_override: string | null;
+  custom_note: string | null;
+  is_highlighted: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
 };
@@ -266,6 +270,7 @@ export type Product = {
   verdict_best_for: string | null;
   verdict_not_ideal_for: string | null;
   verdict_recommendation: string | null;
+  verdict_conclusion: string | null;
   buying_guide_title: string | null;
   buying_guide_subtitle: string | null;
   buying_cta_label: string | null;

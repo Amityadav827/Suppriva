@@ -1,5 +1,11 @@
 import type { ExpertAttribution } from "@/lib/database/types";
 
+export type ProductDetailCmsCard = {
+  icon?: string | null;
+  title: string;
+  description?: string | null;
+};
+
 export type ProductDetail = {
   slug: string;
   path: string;
@@ -36,24 +42,48 @@ export type ProductDetail = {
   description: string;
   bullets: string[];
   trustBadges: string[];
-  standoutPoints: string[];
-  howItWorks: string[];
-  whoItsBestFor: string[];
+  whatIs: {
+    title: string;
+    subtitle: string;
+    paragraphs: string[];
+  };
+  standoutTitle: string;
+  standoutSubtitle: string;
+  standoutPoints: ProductDetailCmsCard[];
+  howItWorksTitle: string;
+  howItWorksSubtitle: string;
+  howItWorksIntro: string[];
+  howItWorks: ProductDetailCmsCard[];
+  benefitsTitle: string;
+  benefitsSubtitle: string;
+  whoItsBestForTitle: string;
+  whoItsBestForSubtitle: string;
+  whoItsBestFor: ProductDetailCmsCard[];
   bestFor: string;
   benefits: {
+    icon?: string | null;
     title: string;
     description: string;
   }[];
+  ingredientsTitle: string;
+  ingredientsSubtitle: string;
   ingredients: {
+    id?: string;
     name: string;
     benefit: string;
     slug?: string;
     purpose?: string;
+    dosage?: string | null;
+    customNote?: string | null;
+    isHighlighted?: boolean;
     description?: string;
     image?: string;
     category?: string;
     scientificName?: string | null;
   }[];
+  safetyTitle: string;
+  safetySubtitle: string;
+  safetyItems: ProductDetailCmsCard[];
   safety: {
     sideEffects: string[];
     whoShouldAvoid: string[];
@@ -62,17 +92,27 @@ export type ProductDetail = {
   };
   pros: string[];
   cons: string[];
+  prosConsTitle: string;
+  prosConsSubtitle: string;
+  faqTitle: string;
+  faqSubtitle: string;
   faqs: {
     question: string;
     answer: string;
   }[];
+  verdictTitle: string;
+  verdictSubtitle: string;
   verdict: {
     summary: string;
     bestFor: string;
     notIdealFor: string;
     recommendation: string;
+    conclusion?: string | null;
   };
-  buyingGuidance: string[];
+  buyingGuideTitle: string;
+  buyingGuideSubtitle: string;
+  buyingCtaLabel: string;
+  buyingGuidance: ProductDetailCmsCard[];
   relatedIngredients: {
     name: string;
     slug?: string;

@@ -38,7 +38,13 @@ export type ProductSidebarFactInput = Pick<
 
 export type ProductIngredientOverrideInput = Pick<
   ProductIngredientOverride,
-  "ingredient_id" | "display_order" | "purpose" | "dosage" | "description_override"
+  | "ingredient_id"
+  | "display_order"
+  | "purpose"
+  | "dosage"
+  | "description_override"
+  | "custom_note"
+  | "is_highlighted"
 >;
 
 export type ProductRelatedProductInput = Pick<
@@ -123,6 +129,7 @@ export type ProductCreateInput = {
   verdict_best_for?: string | null;
   verdict_not_ideal_for?: string | null;
   verdict_recommendation?: string | null;
+  verdict_conclusion?: string | null;
   buying_guide_title?: string | null;
   buying_guide_subtitle?: string | null;
   buying_cta_label?: string | null;
@@ -187,7 +194,9 @@ function isFaqArray(value: unknown): value is FAQItem[] {
         "question" in item &&
         "answer" in item &&
         typeof item.question === "string" &&
-        typeof item.answer === "string",
+        typeof item.answer === "string" &&
+        (item.display_order === undefined || typeof item.display_order === "number") &&
+        (item.is_visible === undefined || typeof item.is_visible === "boolean"),
     )
   );
 }
