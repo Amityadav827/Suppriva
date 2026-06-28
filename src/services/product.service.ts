@@ -158,6 +158,8 @@ export class ProductService {
       safety_items: input.safety_items ?? [],
       buying_guide_items: input.buying_guide_items ?? [],
       sidebar_facts: input.sidebar_facts ?? [],
+      sidebar_trust_badges: input.sidebar_trust_badges ?? [],
+      toc_items: input.toc_items ?? [],
       ingredient_overrides: input.ingredient_overrides ?? [],
       related_product_relations: input.related_product_relations ?? [],
       compare_product_relations: input.compare_product_relations ?? [],

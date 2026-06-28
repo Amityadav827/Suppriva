@@ -114,7 +114,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     hasText(product.verdict.recommendation) ||
     hasText(product.verdict.conclusion);
 
-  const sections: IngredientSectionLink[] = [
+  const defaultSections: IngredientSectionLink[] = [
     { id: "hero", label: "Overview" },
     ...(whatIsParagraphs.length
       ? [{ id: "what-is-product", label: product.whatIs.title }]
@@ -149,23 +149,9 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
       ? [{ id: "explore-health-needs", label: "Explore By Health Needs" }]
       : []),
   ];
-
-  const sidebarFacts = [
-    { label: "Category", value: product.category, icon: ClipboardList },
-    { label: "Best For", value: product.bestFor, icon: ShieldCheck },
-    { label: "Ingredient Count", value: String(product.ingredients.length), icon: Beaker },
-    { label: "Rating", value: `${product.rating} / 5`, icon: Star },
-    {
-      label: "Related Articles",
-      value: String(product.relatedArticles.length),
-      icon: BookOpenText,
-    },
-    {
-      label: "Related Ingredients",
-      value: String(product.relatedIngredients.length),
-      icon: Leaf,
-    },
-  ];
+  const sections: IngredientSectionLink[] = product.tocItems.length
+    ? product.tocItems
+    : defaultSections;
 
   return (
     <main className="relative overflow-x-clip bg-cream">
@@ -340,11 +326,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
             </section>
 
             <div className="hidden md:block lg:hidden">
-              <SidebarColumn
-                sections={sections}
-                sidebarFacts={sidebarFacts}
-                product={product}
-              />
+              <SidebarColumn sections={sections} product={product} />
             </div>
 
             {whatIsParagraphs.length ? (
@@ -898,8 +880,12 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
             ) : null}
           </div>
 
-          <aside className="hidden lg:block lg:self-start lg:sticky lg:top-28">
-            <SidebarColumn sections={sections} sidebarFacts={sidebarFacts} product={product} />
+          <aside
+            className={`hidden lg:block lg:self-start ${
+              product.sidebar.stickyEnabled ? "lg:sticky lg:top-28" : ""
+            }`}
+          >
+            <SidebarColumn sections={sections} product={product} />
           </aside>
         </div>
       </div>
@@ -909,15 +895,9 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
 
 function SidebarColumn({
   sections,
-  sidebarFacts,
   product,
 }: {
   sections: IngredientSectionLink[];
-  sidebarFacts: Array<{
-    label: string;
-    value: string;
-    icon: typeof Check;
-  }>;
   product: ProductDetail;
 }) {
   return (
@@ -926,46 +906,124 @@ function SidebarColumn({
 
       <FadeIn className={sectionCardClasses()}>
         <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-          At A Glance
+          {product.sidebar.heading}
         </p>
+        {product.sidebar.description ? (
+          <p className="mt-3 text-sm leading-7 text-muted">{product.sidebar.description}</p>
+        ) : null}
         <div className="mt-5 space-y-3">
-          {sidebarFacts.map((item) => (
-            <div
-              key={item.label}
-              className="flex items-start gap-3 rounded-[18px] bg-cream/60 px-4 py-3 ring-1 ring-black/5"
-            >
-              <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
-                <item.icon className="size-4.5" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
-                  {item.label}
-                </p>
-                <p className="mt-1 font-heading text-sm font-bold leading-6 text-text-dark">
-                  {item.value}
-                </p>
+          {product.sidebar.facts.map((item) => {
+            const Icon = heroIcon(item.icon);
+
+            return (
+              <div
+                key={item.label}
+                className="flex items-start gap-3 rounded-[18px] bg-cream/60 px-4 py-3 ring-1 ring-black/5"
+              >
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
+                  <Icon className="size-4.5" />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
+                    {item.label}
+                  </p>
+                  <p className="mt-1 font-heading text-sm font-bold leading-6 text-text-dark">
+                    {item.value}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
+          {product.sidebar.trustBadges.map((item) => {
+            const Icon = heroIcon(item.icon);
+
+            return (
+              <div
+                key={item.title}
+                className="flex items-start gap-3 rounded-[18px] bg-soft-green/55 px-4 py-3 ring-1 ring-primary/10"
+              >
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
+                  <Icon className="size-4.5" />
+                </span>
+                <div className="min-w-0">
+                  <p className="font-heading text-sm font-bold leading-6 text-text-dark">
+                    {item.title}
+                  </p>
+                  {item.description ? (
+                    <p className="mt-1 text-xs leading-5 text-muted">{item.description}</p>
+                  ) : null}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </FadeIn>
 
       <FadeIn className={sectionCardClasses()}>
         <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-          Official Website
+          {product.sidebar.ctaTitle}
         </p>
         <p className="mt-4 text-sm leading-7 text-muted">
-          For the latest pricing, serving details, and label transparency, use the official
-          website before purchase.
+          {product.sidebar.ctaDescription}
         </p>
-        <AffiliateCtaButton
-          productId={product.productId}
-          productSlug={product.slug}
-          affiliateUrl={product.affiliateUrl}
-          className="mt-6"
-        />
+        <SidebarActionButton product={product} />
       </FadeIn>
     </div>
+  );
+}
+
+function SidebarActionButton({ product }: { product: ProductDetail }) {
+  const ctaUrl =
+    product.sidebar.ctaType === "ask_expert"
+      ? "/ask-expert"
+      : product.sidebar.ctaUrl || product.affiliateUrl || "/products";
+
+  if (product.sidebar.ctaType === "affiliate") {
+    return (
+      <AffiliateCtaButton
+        productId={product.productId}
+        productSlug={product.slug}
+        affiliateUrl={ctaUrl}
+        label={product.sidebar.ctaLabel}
+        className="mt-6"
+      />
+    );
+  }
+
+  const className =
+    "mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-5 font-heading text-[12px] font-semibold uppercase tracking-[0.06em] text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)] sm:min-h-14 sm:w-auto sm:px-6";
+
+  const content = (
+    <>
+      {product.sidebar.ctaLabel}
+      <ChevronRight className="size-4" aria-hidden="true" />
+    </>
+  );
+
+  if (product.sidebar.ctaType === "external") {
+    return (
+      <motion.div
+        whileHover={{ scale: 1.025, y: -2 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.3 }}
+      >
+        <a href={ctaUrl} target="_blank" rel="nofollow noopener noreferrer" className={className}>
+          {content}
+        </a>
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.025, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Link href={ctaUrl} className={className}>
+        {content}
+      </Link>
+    </motion.div>
   );
 }
 

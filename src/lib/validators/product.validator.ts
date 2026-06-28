@@ -14,6 +14,8 @@ import type {
   ProductSafetyItem,
   ProductSafetyItemType,
   ProductSidebarFact,
+  ProductSidebarTrustBadge,
+  ProductTocItem,
 } from "@/lib/database/types";
 
 export type ProductCmsCardInput = Pick<
@@ -34,6 +36,16 @@ export type ProductSafetyItemInput = Pick<
 export type ProductSidebarFactInput = Pick<
   ProductSidebarFact,
   "label" | "value" | "icon" | "display_order" | "is_active"
+>;
+
+export type ProductSidebarTrustBadgeInput = Pick<
+  ProductSidebarTrustBadge,
+  "title" | "description" | "icon" | "display_order" | "is_active"
+>;
+
+export type ProductTocItemInput = Pick<
+  ProductTocItem,
+  "label" | "anchor_id" | "icon" | "display_order" | "is_visible" | "is_active"
 >;
 
 export type ProductIngredientOverrideInput = Pick<
@@ -144,9 +156,14 @@ export type ProductCreateInput = {
   related_products_subtitle?: string | null;
   health_needs_title?: string | null;
   health_needs_subtitle?: string | null;
+  sidebar_heading?: string | null;
+  sidebar_description?: string | null;
   sidebar_cta_title?: string | null;
   sidebar_cta_description?: string | null;
   sidebar_cta_label?: string | null;
+  sidebar_cta_url?: string | null;
+  sidebar_cta_type?: "affiliate" | "internal" | "external" | "ask_expert" | null;
+  sidebar_sticky_enabled?: boolean;
   seo_title?: string | null;
   seo_description?: string | null;
   seo_canonical_url?: string | null;
@@ -161,6 +178,8 @@ export type ProductCreateInput = {
   safety_items?: ProductSafetyItemInput[];
   buying_guide_items?: ProductCmsCardInput[];
   sidebar_facts?: ProductSidebarFactInput[];
+  sidebar_trust_badges?: ProductSidebarTrustBadgeInput[];
+  toc_items?: ProductTocItemInput[];
   ingredient_overrides?: ProductIngredientOverrideInput[];
   related_product_relations?: ProductRelatedProductInput[];
   compare_product_relations?: ProductCompareProductInput[];
@@ -313,6 +332,40 @@ function isSidebarFactArray(value: unknown): value is ProductSidebarFactInput[] 
   );
 }
 
+function isSidebarTrustBadgeArray(value: unknown): value is ProductSidebarTrustBadgeInput[] {
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        isPlainObject(item) &&
+        typeof item.title === "string" &&
+        (item.description === undefined ||
+          item.description === null ||
+          typeof item.description === "string") &&
+        (item.icon === undefined || item.icon === null || typeof item.icon === "string") &&
+        (item.display_order === undefined || typeof item.display_order === "number") &&
+        isOptionalBoolean(item.is_active),
+    )
+  );
+}
+
+function isTocItemArray(value: unknown): value is ProductTocItemInput[] {
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        isPlainObject(item) &&
+        typeof item.label === "string" &&
+        typeof item.anchor_id === "string" &&
+        /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.anchor_id) &&
+        (item.icon === undefined || item.icon === null || typeof item.icon === "string") &&
+        (item.display_order === undefined || typeof item.display_order === "number") &&
+        isOptionalBoolean(item.is_visible) &&
+        isOptionalBoolean(item.is_active),
+    )
+  );
+}
+
 function idsAreUnique(values: string[]) {
   return new Set(values).size === values.length;
 }
@@ -432,6 +485,26 @@ export function validateProductInput<TInput extends ProductValidationInput>(
     }
   });
 
+  if ("sidebar_cta_url" in input && input.sidebar_cta_url && !isUrlLike(input.sidebar_cta_url)) {
+    errors.push("Sidebar CTA URL must be a valid URL or internal path.");
+  }
+
+  if (
+    "sidebar_cta_type" in input &&
+    input.sidebar_cta_type &&
+    !["affiliate", "internal", "external", "ask_expert"].includes(input.sidebar_cta_type)
+  ) {
+    errors.push("Sidebar CTA type is invalid.");
+  }
+
+  if (
+    "sidebar_sticky_enabled" in input &&
+    input.sidebar_sticky_enabled !== undefined &&
+    !isBoolean(input.sidebar_sticky_enabled)
+  ) {
+    errors.push("Sticky sidebar setting must be true or false.");
+  }
+
   if ("pros" in input && input.pros !== undefined && !isStringArray(input.pros)) {
     errors.push("Pros must be a list of text items.");
   }
@@ -474,6 +547,27 @@ export function validateProductInput<TInput extends ProductValidationInput>(
 
   if ("sidebar_facts" in input && input.sidebar_facts !== undefined && !isSidebarFactArray(input.sidebar_facts)) {
     errors.push("Sidebar facts must include a label and value.");
+  }
+
+  if ("sidebar_trust_badges" in input && input.sidebar_trust_badges !== undefined && !isSidebarTrustBadgeArray(input.sidebar_trust_badges)) {
+    errors.push("Sidebar trust badges must include a title.");
+  }
+
+  if ("toc_items" in input && input.toc_items !== undefined) {
+    if (!isTocItemArray(input.toc_items)) {
+      errors.push("Table of contents items must include a label and valid anchor ID.");
+    } else {
+      const labels = input.toc_items.map((item) => item.label.trim().toLowerCase()).filter(Boolean);
+      const anchors = input.toc_items.map((item) => item.anchor_id.trim().toLowerCase()).filter(Boolean);
+
+      if (!idsAreUnique(labels)) {
+        errors.push("Duplicate table of contents labels are not allowed.");
+      }
+
+      if (!idsAreUnique(anchors)) {
+        errors.push("Duplicate table of contents anchor IDs are not allowed.");
+      }
+    }
   }
 
   if ("ingredient_overrides" in input && input.ingredient_overrides !== undefined) {

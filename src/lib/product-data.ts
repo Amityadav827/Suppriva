@@ -6,6 +6,18 @@ export type ProductDetailCmsCard = {
   description?: string | null;
 };
 
+export type ProductDetailSidebarFact = {
+  icon?: string | null;
+  label: string;
+  value: string;
+};
+
+export type ProductDetailTocItem = {
+  id: string;
+  label: string;
+  icon?: string | null;
+};
+
 export type ProductDetail = {
   slug: string;
   path: string;
@@ -113,6 +125,19 @@ export type ProductDetail = {
   buyingGuideSubtitle: string;
   buyingCtaLabel: string;
   buyingGuidance: ProductDetailCmsCard[];
+  sidebar: {
+    heading: string;
+    description: string;
+    ctaTitle: string;
+    ctaDescription: string;
+    ctaLabel: string;
+    ctaUrl?: string;
+    ctaType: "affiliate" | "internal" | "external" | "ask_expert";
+    stickyEnabled: boolean;
+    facts: ProductDetailSidebarFact[];
+    trustBadges: ProductDetailCmsCard[];
+  };
+  tocItems: ProductDetailTocItem[];
   relatedIngredients: {
     name: string;
     slug?: string;

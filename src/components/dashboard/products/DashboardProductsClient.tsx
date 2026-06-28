@@ -113,10 +113,17 @@ type ProductFormState = {
   related_products_subtitle: string;
   health_needs_title: string;
   health_needs_subtitle: string;
+  sidebar_heading: string;
+  sidebar_description: string;
   sidebar_facts: string;
   sidebar_cta_title: string;
   sidebar_cta_description: string;
   sidebar_cta_label: string;
+  sidebar_cta_url: string;
+  sidebar_cta_type: "affiliate" | "internal" | "external" | "ask_expert";
+  sidebar_sticky_enabled: boolean;
+  sidebar_trust_badges: string;
+  toc_items: string;
   ingredient_overrides: string;
   status: ContentStatus;
   seo_title: string;
@@ -238,10 +245,17 @@ const emptyForm: ProductFormState = {
   related_products_subtitle: "",
   health_needs_title: "",
   health_needs_subtitle: "",
+  sidebar_heading: "",
+  sidebar_description: "",
   sidebar_facts: "",
   sidebar_cta_title: "",
   sidebar_cta_description: "",
   sidebar_cta_label: "",
+  sidebar_cta_url: "",
+  sidebar_cta_type: "affiliate",
+  sidebar_sticky_enabled: true,
+  sidebar_trust_badges: "",
+  toc_items: "",
   ingredient_overrides: "",
   status: ContentStatus.Draft,
   seo_title: "",
@@ -402,11 +416,17 @@ function serializeSidebarFacts(
     label?: string | null;
     value?: string | null;
     icon?: string | null;
+    is_active?: boolean;
   }>,
 ) {
   return (items ?? [])
     .map((item) =>
-      [item.label ?? "", item.value ?? "", item.icon ?? ""]
+      [
+        item.label ?? "",
+        item.value ?? "",
+        item.icon ?? "",
+        item.is_active === false ? "hidden" : "",
+      ]
         .map((part) => part.trim())
         .join(" | ")
         .replace(/(?:\s\|\s)*$/g, ""),
@@ -417,14 +437,99 @@ function serializeSidebarFacts(
 
 function parseSidebarFacts(value: string) {
   return lines(value).map((item, index) => {
-    const [label, factValue = "", icon = ""] = item.split("|").map((part) => part.trim());
+    const [label, factValue = "", icon = "", status = ""] = item.split("|").map((part) => part.trim());
+    const isActive = !["hidden", "inactive", "false", "0"].includes(status.toLowerCase());
 
     return {
       label,
       value: factValue,
       icon: icon || null,
       display_order: index,
-      is_active: true,
+      is_active: isActive,
+    };
+  });
+}
+
+function serializeSidebarTrustBadges(
+  items?: Array<{
+    title?: string | null;
+    description?: string | null;
+    icon?: string | null;
+    is_active?: boolean;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [
+        item.title ?? "",
+        item.description ?? "",
+        item.icon ?? "",
+        item.is_active === false ? "hidden" : "",
+      ]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseSidebarTrustBadges(value: string) {
+  return lines(value).map((item, index) => {
+    const [title, description = "", icon = "", status = ""] = item
+      .split("|")
+      .map((part) => part.trim());
+    const isActive = !["hidden", "inactive", "false", "0"].includes(status.toLowerCase());
+
+    return {
+      title,
+      description: description || null,
+      icon: icon || null,
+      display_order: index,
+      is_active: isActive,
+    };
+  });
+}
+
+function serializeTocItems(
+  items?: Array<{
+    label?: string | null;
+    anchor_id?: string | null;
+    icon?: string | null;
+    is_visible?: boolean;
+    is_active?: boolean;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [
+        item.label ?? "",
+        item.anchor_id ?? "",
+        item.icon ?? "",
+        item.is_visible === false || item.is_active === false ? "hidden" : "",
+      ]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, ""),
+    )
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseTocItems(value: string) {
+  return lines(value).map((item, index) => {
+    const [label, anchorId = "", icon = "", status = ""] = item
+      .split("|")
+      .map((part) => part.trim());
+    const isVisible = !["hidden", "inactive", "false", "0"].includes(status.toLowerCase());
+
+    return {
+      label,
+      anchor_id: anchorId,
+      icon: icon || null,
+      display_order: index,
+      is_visible: isVisible,
+      is_active: isVisible,
     };
   });
 }
@@ -630,10 +735,17 @@ function productToForm(product: Product): ProductFormState {
     related_products_subtitle: product.related_products_subtitle ?? "",
     health_needs_title: product.health_needs_title ?? "",
     health_needs_subtitle: product.health_needs_subtitle ?? "",
+    sidebar_heading: product.sidebar_heading ?? "",
+    sidebar_description: product.sidebar_description ?? "",
     sidebar_facts: serializeSidebarFacts(product.sidebar_facts),
     sidebar_cta_title: product.sidebar_cta_title ?? "",
     sidebar_cta_description: product.sidebar_cta_description ?? "",
     sidebar_cta_label: product.sidebar_cta_label ?? "",
+    sidebar_cta_url: product.sidebar_cta_url ?? "",
+    sidebar_cta_type: product.sidebar_cta_type ?? "affiliate",
+    sidebar_sticky_enabled: product.sidebar_sticky_enabled ?? true,
+    sidebar_trust_badges: serializeSidebarTrustBadges(product.sidebar_trust_badges),
+    toc_items: serializeTocItems(product.toc_items),
     ingredient_overrides: serializeIngredientOverrides(product.ingredient_overrides),
     status: product.status,
     seo_title: product.seo_title ?? "",
@@ -765,10 +877,17 @@ function formToPayload(form: ProductFormState) {
     related_products_subtitle: form.related_products_subtitle || null,
     health_needs_title: form.health_needs_title || null,
     health_needs_subtitle: form.health_needs_subtitle || null,
+    sidebar_heading: form.sidebar_heading || null,
+    sidebar_description: form.sidebar_description || null,
     sidebar_facts: parseSidebarFacts(form.sidebar_facts),
     sidebar_cta_title: form.sidebar_cta_title || null,
     sidebar_cta_description: form.sidebar_cta_description || null,
     sidebar_cta_label: form.sidebar_cta_label || null,
+    sidebar_cta_url: form.sidebar_cta_url || null,
+    sidebar_cta_type: form.sidebar_cta_type,
+    sidebar_sticky_enabled: form.sidebar_sticky_enabled,
+    sidebar_trust_badges: parseSidebarTrustBadges(form.sidebar_trust_badges),
+    toc_items: parseTocItems(form.toc_items),
     ingredient_overrides: parseIngredientOverrides(form.ingredient_overrides),
     status: form.status,
     seo_title: form.seo_title || null,
@@ -1313,11 +1432,18 @@ export function DashboardProductsClient() {
               <InputField label="Buying Guide Title" value={form.buying_guide_title} onChange={(value) => updateForm("buying_guide_title", value)} />
               <InputField label="Buying Guide Subtitle" value={form.buying_guide_subtitle} onChange={(value) => updateForm("buying_guide_subtitle", value)} />
               <InputField label="Buying CTA Label" value={form.buying_cta_label} onChange={(value) => updateForm("buying_cta_label", value)} />
-              <InputField label="Sidebar CTA Label" value={form.sidebar_cta_label} onChange={(value) => updateForm("sidebar_cta_label", value)} />
               <TextAreaField label="Buying Guide Items" value={form.buying_guide_items} onChange={(value) => updateForm("buying_guide_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
-              <TextAreaField label="Sidebar Facts" value={form.sidebar_facts} onChange={(value) => updateForm("sidebar_facts", value)} placeholder="Label | Value | icon, one per line" rows={4} />
+              <TextAreaField label="Table of Contents Items" value={form.toc_items} onChange={(value) => updateForm("toc_items", value)} placeholder="Section name | anchor-id | icon | hidden" rows={4} />
+              <InputField label="Sidebar Heading" value={form.sidebar_heading} onChange={(value) => updateForm("sidebar_heading", value)} />
+              <InputField label="Sidebar Description" value={form.sidebar_description} onChange={(value) => updateForm("sidebar_description", value)} />
               <InputField label="Sidebar CTA Title" value={form.sidebar_cta_title} onChange={(value) => updateForm("sidebar_cta_title", value)} />
               <InputField label="Sidebar CTA Description" value={form.sidebar_cta_description} onChange={(value) => updateForm("sidebar_cta_description", value)} />
+              <InputField label="Sidebar CTA Label" value={form.sidebar_cta_label} onChange={(value) => updateForm("sidebar_cta_label", value)} />
+              <InputField label="Sidebar CTA URL" value={form.sidebar_cta_url} onChange={(value) => updateForm("sidebar_cta_url", value)} placeholder="/ask-expert or https://example.com" />
+              <SidebarCtaTypeSelect value={form.sidebar_cta_type} onChange={(value) => updateForm("sidebar_cta_type", value)} />
+              <CheckboxField label="Enable sticky desktop sidebar" checked={form.sidebar_sticky_enabled} onChange={(value) => updateForm("sidebar_sticky_enabled", value)} />
+              <TextAreaField label="Sidebar Facts" value={form.sidebar_facts} onChange={(value) => updateForm("sidebar_facts", value)} placeholder="Label | Value | icon | hidden" rows={4} />
+              <TextAreaField label="Sidebar Trust Badges" value={form.sidebar_trust_badges} onChange={(value) => updateForm("sidebar_trust_badges", value)} placeholder="Title | Description | icon | hidden" rows={4} />
             </CmsSection>
 
             <CmsSection title="Related Content">
@@ -1488,6 +1614,32 @@ function TargetSelect({
       >
         <option value="_blank">New tab</option>
         <option value="_self">Same tab</option>
+      </select>
+    </label>
+  );
+}
+
+function SidebarCtaTypeSelect({
+  value,
+  onChange,
+}: {
+  value: ProductFormState["sidebar_cta_type"];
+  onChange: (value: ProductFormState["sidebar_cta_type"]) => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">Sidebar CTA Type</span>
+      <select
+        value={value}
+        onChange={(event) =>
+          onChange(event.target.value as ProductFormState["sidebar_cta_type"])
+        }
+        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+      >
+        <option value="affiliate">Affiliate</option>
+        <option value="internal">Internal</option>
+        <option value="external">External</option>
+        <option value="ask_expert">Ask Expert</option>
       </select>
     </label>
   );

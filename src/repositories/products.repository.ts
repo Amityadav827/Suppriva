@@ -9,6 +9,8 @@ import type {
   ProductRelatedProduct,
   ProductSafetyItem,
   ProductSidebarFact,
+  ProductSidebarTrustBadge,
+  ProductTocItem,
 } from "@/lib/database/types";
 import { ContentStatus } from "@/lib/database/constants";
 import { DatabaseError } from "@/lib/errors/DatabaseError";
@@ -24,6 +26,8 @@ import type {
   ProductRelatedProductInput,
   ProductSafetyItemInput,
   ProductSidebarFactInput,
+  ProductSidebarTrustBadgeInput,
+  ProductTocItemInput,
   ProductUpdateInput,
 } from "@/lib/validators/product.validator";
 import type { SlugRepository } from "./base.repository";
@@ -37,6 +41,8 @@ type ProductCmsRelationInput = Partial<
     | "safety_items"
     | "buying_guide_items"
     | "sidebar_facts"
+    | "sidebar_trust_badges"
+    | "toc_items"
     | "ingredient_overrides"
     | "related_product_relations"
     | "compare_product_relations"
@@ -323,6 +329,32 @@ export class SupabaseProductsRepository implements ProductsRepository {
       );
     }
 
+    if ("sidebar_trust_badges" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_sidebar_trust_badges",
+          productId,
+          (input.sidebar_trust_badges ?? []).map((item, index) =>
+            this.sidebarTrustBadgeToRow(productId, item, index),
+          ),
+          true,
+        ),
+      );
+    }
+
+    if ("toc_items" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_toc_items",
+          productId,
+          (input.toc_items ?? []).map((item, index) =>
+            this.tocItemToRow(productId, item, index),
+          ),
+          true,
+        ),
+      );
+    }
+
     if ("ingredient_overrides" in input) {
       syncJobs.push(
         this.replaceRows(
@@ -541,11 +573,20 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("health_needs_subtitle" in input) {
       payload.health_needs_subtitle = input.health_needs_subtitle ?? null;
     }
+    if ("sidebar_heading" in input) payload.sidebar_heading = input.sidebar_heading ?? null;
+    if ("sidebar_description" in input) {
+      payload.sidebar_description = input.sidebar_description ?? null;
+    }
     if ("sidebar_cta_title" in input) payload.sidebar_cta_title = input.sidebar_cta_title ?? null;
     if ("sidebar_cta_description" in input) {
       payload.sidebar_cta_description = input.sidebar_cta_description ?? null;
     }
     if ("sidebar_cta_label" in input) payload.sidebar_cta_label = input.sidebar_cta_label ?? null;
+    if ("sidebar_cta_url" in input) payload.sidebar_cta_url = input.sidebar_cta_url ?? null;
+    if ("sidebar_cta_type" in input) payload.sidebar_cta_type = input.sidebar_cta_type ?? null;
+    if ("sidebar_sticky_enabled" in input) {
+      payload.sidebar_sticky_enabled = input.sidebar_sticky_enabled ?? true;
+    }
     if ("seo_title" in input) payload.seo_title = input.seo_title ?? null;
     if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
     if ("seo_canonical_url" in input) payload.seo_canonical_url = input.seo_canonical_url ?? null;
@@ -603,6 +644,33 @@ export class SupabaseProductsRepository implements ProductsRepository {
       value: item.value.trim(),
       icon: item.icon?.trim() || null,
       display_order: item.display_order ?? index,
+      is_active: item.is_active ?? true,
+    };
+  }
+
+  private sidebarTrustBadgeToRow(
+    productId: string,
+    item: ProductSidebarTrustBadgeInput,
+    index: number,
+  ) {
+    return {
+      product_id: productId,
+      title: item.title.trim(),
+      description: item.description?.trim() || null,
+      icon: item.icon?.trim() || null,
+      display_order: item.display_order ?? index,
+      is_active: item.is_active ?? true,
+    };
+  }
+
+  private tocItemToRow(productId: string, item: ProductTocItemInput, index: number) {
+    return {
+      product_id: productId,
+      label: item.label.trim(),
+      anchor_id: item.anchor_id.trim(),
+      icon: item.icon?.trim() || null,
+      display_order: item.display_order ?? index,
+      is_visible: item.is_visible ?? true,
       is_active: item.is_active ?? true,
     };
   }
@@ -795,6 +863,8 @@ export class SupabaseProductsRepository implements ProductsRepository {
       safetyItems,
       buyingGuideItems,
       sidebarFacts,
+      sidebarTrustBadges,
+      tocItems,
       ingredientOverrides,
       relatedProducts,
       compareProducts,
@@ -807,6 +877,8 @@ export class SupabaseProductsRepository implements ProductsRepository {
       this.fetchProductRows<ProductSafetyItem>("product_safety_items", productIds, true),
       this.fetchProductRows<ProductCmsCard>("product_buying_guide_items", productIds, true),
       this.fetchProductRows<ProductSidebarFact>("product_sidebar_facts", productIds, true),
+      this.fetchProductRows<ProductSidebarTrustBadge>("product_sidebar_trust_badges", productIds, true),
+      this.fetchProductRows<ProductTocItem>("product_toc_items", productIds, true),
       this.fetchProductRows<ProductIngredientOverride>("product_ingredient_overrides", productIds, true),
       this.fetchProductRows<ProductRelatedProduct>("product_related_products", productIds, true),
       this.fetchProductRows<ProductCompareProduct>("product_compare_products", productIds, true),
@@ -822,6 +894,8 @@ export class SupabaseProductsRepository implements ProductsRepository {
       safety_items: this.rowsForProduct(safetyItems, product.id),
       buying_guide_items: this.rowsForProduct(buyingGuideItems, product.id),
       sidebar_facts: this.rowsForProduct(sidebarFacts, product.id),
+      sidebar_trust_badges: this.rowsForProduct(sidebarTrustBadges, product.id),
+      toc_items: this.rowsForProduct(tocItems, product.id),
       ingredient_overrides: this.rowsForProduct(ingredientOverrides, product.id),
       related_product_relations: this.rowsForProduct(relatedProducts, product.id),
       compare_product_relations: this.rowsForProduct(compareProducts, product.id),

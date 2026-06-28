@@ -130,6 +130,31 @@ export type ProductSidebarFact = {
   updated_at: Timestamp;
 };
 
+export type ProductSidebarTrustBadge = {
+  id: string;
+  product_id: string;
+  title: string;
+  description: string | null;
+  icon: string | null;
+  display_order: number;
+  is_active: boolean;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductTocItem = {
+  id: string;
+  product_id: string;
+  label: string;
+  anchor_id: string;
+  icon: string | null;
+  display_order: number;
+  is_visible: boolean;
+  is_active: boolean;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
 export type ProductIngredientOverride = {
   id: string;
   product_id: string;
@@ -288,9 +313,14 @@ export type Product = {
   related_products_subtitle: string | null;
   health_needs_title: string | null;
   health_needs_subtitle: string | null;
+  sidebar_heading: string | null;
+  sidebar_description: string | null;
   sidebar_cta_title: string | null;
   sidebar_cta_description: string | null;
   sidebar_cta_label: string | null;
+  sidebar_cta_url: string | null;
+  sidebar_cta_type: "affiliate" | "internal" | "external" | "ask_expert" | null;
+  sidebar_sticky_enabled: boolean;
   seo_title: string | null;
   seo_description: string | null;
   seo_canonical_url: string | null;
@@ -305,6 +335,8 @@ export type Product = {
   safety_items?: ProductSafetyItem[];
   buying_guide_items?: ProductCmsCard[];
   sidebar_facts?: ProductSidebarFact[];
+  sidebar_trust_badges?: ProductSidebarTrustBadge[];
+  toc_items?: ProductTocItem[];
   ingredient_overrides?: ProductIngredientOverride[];
   related_product_relations?: ProductRelatedProduct[];
   compare_product_relations?: ProductCompareProduct[];
@@ -535,6 +567,8 @@ export type Database = {
   product_safety_items: ProductSafetyItem;
   product_buying_guide_items: ProductCmsCard;
   product_sidebar_facts: ProductSidebarFact;
+  product_sidebar_trust_badges: ProductSidebarTrustBadge;
+  product_toc_items: ProductTocItem;
   product_ingredient_overrides: ProductIngredientOverride;
   product_related_products: ProductRelatedProduct;
   product_compare_products: ProductCompareProduct;

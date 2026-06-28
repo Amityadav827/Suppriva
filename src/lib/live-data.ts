@@ -27,7 +27,12 @@ import type { ProductCardData } from "@/components/product/ProductCard";
 import type { ShowcaseProductData } from "@/components/product/SupplementShowcaseCard";
 import type { SearchResult } from "@/lib/search-data";
 import type { CategoryDetail, CategoryProduct } from "@/lib/category-data";
-import type { ProductDetail, ProductDetailCmsCard } from "@/lib/product-data";
+import type {
+  ProductDetail,
+  ProductDetailCmsCard,
+  ProductDetailSidebarFact,
+  ProductDetailTocItem,
+} from "@/lib/product-data";
 import { ContentStatus } from "@/lib/database/constants";
 import { buildProductPath } from "@/lib/products/url";
 import type {
@@ -379,6 +384,38 @@ function safetyItemsToCards(items?: ProductSafetyItem[]): ProductDetailCmsCard[]
     }));
 }
 
+function sidebarFactsToDetailFacts(items: Product["sidebar_facts"]): ProductDetailSidebarFact[] {
+  return activeSortedRelations(items)
+    .filter((item) => item.label.trim() && item.value.trim())
+    .map((item) => ({
+      icon: item.icon,
+      label: item.label,
+      value: item.value,
+    }));
+}
+
+function sidebarTrustBadgesToCards(
+  items: Product["sidebar_trust_badges"],
+): ProductDetailCmsCard[] {
+  return activeSortedRelations(items)
+    .filter((item) => item.title.trim())
+    .map((item) => ({
+      icon: item.icon,
+      title: item.title,
+      description: item.description,
+    }));
+}
+
+function tocItemsToDetail(items: Product["toc_items"]): ProductDetailTocItem[] {
+  return activeSortedRelations(items)
+    .filter((item) => item.is_visible !== false && item.label.trim() && item.anchor_id.trim())
+    .map((item) => ({
+      id: item.anchor_id,
+      label: item.label,
+      icon: item.icon,
+    }));
+}
+
 function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
   const values = Array.isArray(product.benefits) ? product.benefits : [];
   return values
@@ -531,6 +568,22 @@ export function productToDetail(
   const name = product.title || product.name;
   const overviewParagraphs = splitParagraphs(product.overview_content);
   const faqs = visibleFaqs(product.faq);
+  const manualSidebarFacts = sidebarFactsToDetailFacts(product.sidebar_facts);
+  const sidebarFacts = manualSidebarFacts.length
+    ? manualSidebarFacts
+    : [
+        { label: "Category", value: categoryLabel, icon: "clipboard" },
+        { label: "Best For", value: bestFor, icon: "shield" },
+        { label: "Ingredient Count", value: String(ingredients.length), icon: "beaker" },
+        { label: "Rating", value: `${ratingValue.toFixed(1)} / 5`, icon: "star" },
+        { label: "Related Articles", value: "0", icon: "book" },
+        {
+          label: "Related Ingredients",
+          value: String(manualIngredients.length || ingredients.length),
+          icon: "leaf",
+        },
+      ].filter((item) => item.value.trim());
+  const sidebarCtaType = product.sidebar_cta_type || "affiliate";
 
   return {
     slug: product.slug,
@@ -631,6 +684,25 @@ export function productToDetail(
     buyingGuideSubtitle: product.buying_guide_subtitle || "",
     buyingCtaLabel: product.buying_cta_label || "Visit Official Website",
     buyingGuidance,
+    sidebar: {
+      heading: product.sidebar_heading || "At A Glance",
+      description: product.sidebar_description || "",
+      ctaTitle: product.sidebar_cta_title || "Official Website",
+      ctaDescription:
+        product.sidebar_cta_description ||
+        "For the latest pricing, serving details, and label transparency, use the official website before purchase.",
+      ctaLabel:
+        product.sidebar_cta_label ||
+        product.buying_cta_label ||
+        product.hero_cta_label ||
+        "Visit Official Website",
+      ctaUrl: product.sidebar_cta_url || product.affiliate_url || undefined,
+      ctaType: sidebarCtaType,
+      stickyEnabled: product.sidebar_sticky_enabled ?? true,
+      facts: sidebarFacts,
+      trustBadges: sidebarTrustBadgesToCards(product.sidebar_trust_badges),
+    },
+    tocItems: tocItemsToDetail(product.toc_items),
     relatedIngredients: manualIngredients.length ? manualIngredients : ingredients
       .filter((ingredient) => ingredient.slug)
       .slice(0, 6)
