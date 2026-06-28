@@ -152,6 +152,7 @@ export type ProductRelatedProduct = {
   relationship_type: string;
   title_override: string | null;
   description_override: string | null;
+  is_active: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
 };
@@ -163,6 +164,7 @@ export type ProductCompareProduct = {
   display_order: number;
   title_override: string | null;
   description_override: string | null;
+  is_active: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
 };
@@ -174,6 +176,7 @@ export type ProductRelatedBlog = {
   display_order: number;
   title_override: string | null;
   description_override: string | null;
+  is_active: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
 };
@@ -185,6 +188,7 @@ export type ProductRelatedIngredient = {
   display_order: number;
   title_override: string | null;
   description_override: string | null;
+  is_active: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
 };

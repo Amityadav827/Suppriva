@@ -225,6 +225,101 @@ function uniqueStrings(values: Array<string | null | undefined>) {
   return [...new Set(values.map((value) => value?.trim()).filter(Boolean) as string[])];
 }
 
+function activeSortedRelations<TRelation extends { display_order: number; is_active?: boolean }>(
+  relations: TRelation[] | null | undefined,
+) {
+  return safeArray(relations)
+    .filter((relation) => relation.is_active !== false)
+    .sort((first, second) => first.display_order - second.display_order);
+}
+
+function applyProductRelationOverrides(
+  card: ProductCardData,
+  overrides: { title_override?: string | null; description_override?: string | null },
+): ProductCardData {
+  return {
+    ...card,
+    name: overrides.title_override || card.name,
+    subtitle: overrides.description_override || card.subtitle,
+  };
+}
+
+function manualProductCards(
+  relations: Product["related_product_relations"],
+  products: Product[],
+  categories: Map<string, Category>,
+): ProductCardData[] {
+  const productMap = new Map(products.map((item) => [item.id, item]));
+
+  return activeSortedRelations(relations)
+    .map((relation, index) => {
+      const relatedProduct = productMap.get(relation.related_product_id);
+
+      if (!relatedProduct) {
+        return null;
+      }
+
+      return applyProductRelationOverrides(
+        productToCard(relatedProduct, categories, index),
+        relation,
+      );
+    })
+    .filter(Boolean) as ProductCardData[];
+}
+
+function manualCompareProductCards(
+  relations: Product["compare_product_relations"],
+  products: Product[],
+  categories: Map<string, Category>,
+): ProductDetail["comparisonProducts"] {
+  const productMap = new Map(products.map((item) => [item.id, item]));
+
+  return activeSortedRelations(relations)
+    .map((relation, index) => {
+      const comparedProduct = productMap.get(relation.compared_product_id);
+
+      if (!comparedProduct) {
+        return null;
+      }
+
+      return applyProductRelationOverrides(
+        productToCard(comparedProduct, categories, index),
+        relation,
+      );
+    })
+    .filter(Boolean) as ProductDetail["comparisonProducts"];
+}
+
+function manualRelatedIngredients(
+  relations: Product["related_ingredient_relations"],
+  ingredients: Ingredient[],
+): ProductDetail["relatedIngredients"] {
+  const ingredientMap = new Map(ingredients.map((ingredient) => [ingredient.id, ingredient]));
+
+  return activeSortedRelations(relations)
+    .map((relation) => {
+      const ingredient = ingredientMap.get(relation.ingredient_id);
+
+      if (!ingredient) {
+        return null;
+      }
+
+      return {
+        name: relation.title_override || ingredient.name,
+        slug: ingredient.slug,
+        benefit:
+          relation.description_override ||
+          ingredient.short_description ||
+          ingredient.full_description ||
+          undefined,
+        image: ingredient.image_url || ingredient.featured_image || undefined,
+        category: ingredient.ingredient_category || undefined,
+        scientificName: ingredient.scientific_name,
+      };
+    })
+    .filter(Boolean) as ProductDetail["relatedIngredients"];
+}
+
 function parseHeroChecklist(items?: string[] | null): ProductDetail["heroChecklist"] {
   return safeStringArray(items)
     .map((item) => {
@@ -395,6 +490,7 @@ export function productToDetail(
   categories: Map<string, Category>,
   expertAttribution: ExpertAttribution,
   linkedIngredients: Ingredient[] = [],
+  allIngredients: Ingredient[] = linkedIngredients,
 ): ProductDetail {
   const benefits = benefitsFromProduct(product);
   const ingredients = ingredientsFromProduct(product, linkedIngredients);
@@ -410,6 +506,20 @@ export function productToDetail(
     .map((slug) => products.find((item) => item.slug === slug))
     .filter(Boolean)
     .map((item, index) => productToCard(item as Product, categories, index));
+  const manualRelatedProducts = manualProductCards(
+    product.related_product_relations,
+    products,
+    categories,
+  );
+  const manualComparisonProducts = manualCompareProductCards(
+    product.compare_product_relations,
+    products,
+    categories,
+  );
+  const manualIngredients = manualRelatedIngredients(
+    product.related_ingredient_relations,
+    allIngredients,
+  );
   const heroHighlights = cmsCardsToHeroHighlights(product.standout_points);
   const standoutPoints = cmsCardsToDetailCards(product.standout_points);
   const howItWorks = howItWorksStepsToCards(product.how_it_works_steps);
@@ -521,7 +631,7 @@ export function productToDetail(
     buyingGuideSubtitle: product.buying_guide_subtitle || "",
     buyingCtaLabel: product.buying_cta_label || "Visit Official Website",
     buyingGuidance,
-    relatedIngredients: ingredients
+    relatedIngredients: manualIngredients.length ? manualIngredients : ingredients
       .filter((ingredient) => ingredient.slug)
       .slice(0, 6)
       .map((ingredient) => ({
@@ -535,8 +645,10 @@ export function productToDetail(
     relatedArticles: [],
     healthNeeds: [],
     related,
-    comparisonProducts: relatedProducts.slice(0, 4),
-    relatedProducts,
+    comparisonProducts: manualComparisonProducts.length
+      ? manualComparisonProducts
+      : relatedProducts.slice(0, 4),
+    relatedProducts: manualRelatedProducts.length ? manualRelatedProducts : relatedProducts,
     expertAttribution,
   };
 }

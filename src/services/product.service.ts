@@ -305,8 +305,15 @@ export class ProductService {
       ),
     );
 
-    if (ingredients.some((ingredient) => !ingredient)) {
-      throw new ValidationError("One or more CMS ingredient relationships are invalid.");
+    if (
+      ingredients.some(
+        (ingredient) =>
+          !ingredient ||
+          ingredient.deleted_at !== null ||
+          ingredient.status !== ContentStatus.Published,
+      )
+    ) {
+      throw new ValidationError("One or more CMS ingredient relationships are invalid or unpublished.");
     }
   }
 
@@ -321,8 +328,15 @@ export class ProductService {
       uniqueProductIds.map((productId) => this.productsRepository.getProductById(productId)),
     );
 
-    if (products.some((product) => !product)) {
-      throw new ValidationError("One or more related product relationships are invalid.");
+    if (
+      products.some(
+        (product) =>
+          !product ||
+          product.deleted_at !== null ||
+          product.status !== ContentStatus.Published,
+      )
+    ) {
+      throw new ValidationError("One or more related product relationships are invalid or unpublished.");
     }
   }
 
@@ -337,8 +351,12 @@ export class ProductService {
       uniqueBlogIds.map((blogId) => this.blogsRepository.getBlogById(blogId)),
     );
 
-    if (blogs.some((blog) => !blog)) {
-      throw new ValidationError("One or more related blog relationships are invalid.");
+    if (
+      blogs.some(
+        (blog) => !blog || blog.deleted_at !== null || blog.status !== ContentStatus.Published,
+      )
+    ) {
+      throw new ValidationError("One or more related blog relationships are invalid or unpublished.");
     }
   }
 

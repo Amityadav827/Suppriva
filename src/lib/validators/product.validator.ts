@@ -54,21 +54,22 @@ export type ProductRelatedProductInput = Pick<
   | "relationship_type"
   | "title_override"
   | "description_override"
+  | "is_active"
 >;
 
 export type ProductCompareProductInput = Pick<
   ProductCompareProduct,
-  "compared_product_id" | "display_order" | "title_override" | "description_override"
+  "compared_product_id" | "display_order" | "title_override" | "description_override" | "is_active"
 >;
 
 export type ProductRelatedBlogInput = Pick<
   ProductRelatedBlog,
-  "blog_id" | "display_order" | "title_override" | "description_override"
+  "blog_id" | "display_order" | "title_override" | "description_override" | "is_active"
 >;
 
 export type ProductRelatedIngredientInput = Pick<
   ProductRelatedIngredient,
-  "ingredient_id" | "display_order" | "title_override" | "description_override"
+  "ingredient_id" | "display_order" | "title_override" | "description_override" | "is_active"
 >;
 
 export type ProductCreateInput = {
@@ -220,6 +221,10 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 
 function isBoolean(value: unknown): value is boolean {
   return typeof value === "boolean";
+}
+
+function isOptionalBoolean(value: unknown): value is boolean | undefined {
+  return value === undefined || typeof value === "boolean";
 }
 
 function isUrlLike(value: string) {
@@ -496,6 +501,9 @@ export function validateProductInput<TInput extends ProductValidationInput>(
       if (!idsAreUnique(productIds)) {
         errors.push("Duplicate related products are not allowed.");
       }
+      if (input.related_product_relations.some((item) => !isOptionalBoolean(item.is_active))) {
+        errors.push("Related product active flags must be true or false.");
+      }
     }
   }
 
@@ -509,6 +517,9 @@ export function validateProductInput<TInput extends ProductValidationInput>(
       }
       if (!idsAreUnique(productIds)) {
         errors.push("Duplicate compare products are not allowed.");
+      }
+      if (input.compare_product_relations.some((item) => !isOptionalBoolean(item.is_active))) {
+        errors.push("Compare product active flags must be true or false.");
       }
     }
   }
@@ -524,6 +535,9 @@ export function validateProductInput<TInput extends ProductValidationInput>(
       if (!idsAreUnique(blogIds)) {
         errors.push("Duplicate related blogs are not allowed.");
       }
+      if (input.related_blog_relations.some((item) => !isOptionalBoolean(item.is_active))) {
+        errors.push("Related blog active flags must be true or false.");
+      }
     }
   }
 
@@ -537,6 +551,9 @@ export function validateProductInput<TInput extends ProductValidationInput>(
       }
       if (!idsAreUnique(ingredientIds)) {
         errors.push("Duplicate related ingredients are not allowed.");
+      }
+      if (input.related_ingredient_relations.some((item) => !isOptionalBoolean(item.is_active))) {
+        errors.push("Related ingredient active flags must be true or false.");
       }
     }
   }

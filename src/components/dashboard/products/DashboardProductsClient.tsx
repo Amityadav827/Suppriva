@@ -17,7 +17,17 @@ import type {
   Reviewer,
 } from "@/lib/database/types";
 import { motion } from "framer-motion";
-import { Loader2, Pencil, Plus, RefreshCw, Search, Trash2, X } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUp,
+  Loader2,
+  Pencil,
+  Plus,
+  RefreshCw,
+  Search,
+  Trash2,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 
@@ -86,9 +96,13 @@ type ProductFormState = {
   buying_cta_label: string;
   buying_guide_items: string;
   related_product_ids: string[];
+  related_product_inactive_ids: string[];
   compare_product_ids: string[];
+  compare_product_inactive_ids: string[];
   related_blog_ids: string[];
+  related_blog_inactive_ids: string[];
   related_ingredient_ids: string[];
+  related_ingredient_inactive_ids: string[];
   related_ingredients_title: string;
   related_ingredients_subtitle: string;
   related_blogs_title: string;
@@ -207,9 +221,13 @@ const emptyForm: ProductFormState = {
   buying_cta_label: "",
   buying_guide_items: "",
   related_product_ids: [],
+  related_product_inactive_ids: [],
   compare_product_ids: [],
+  compare_product_inactive_ids: [],
   related_blog_ids: [],
+  related_blog_inactive_ids: [],
   related_ingredient_ids: [],
+  related_ingredient_inactive_ids: [],
   related_ingredients_title: "",
   related_ingredients_subtitle: "",
   related_blogs_title: "",
@@ -581,11 +599,27 @@ function productToForm(product: Product): ProductFormState {
     buying_guide_items: serializeCmsCards(product.buying_guide_items),
     related_product_ids:
       relatedProductRelations.map((item) => item.related_product_id).filter(Boolean),
+    related_product_inactive_ids: relatedProductRelations
+      .filter((item) => item.is_active === false)
+      .map((item) => item.related_product_id)
+      .filter(Boolean),
     compare_product_ids:
       compareProductRelations.map((item) => item.compared_product_id).filter(Boolean),
+    compare_product_inactive_ids: compareProductRelations
+      .filter((item) => item.is_active === false)
+      .map((item) => item.compared_product_id)
+      .filter(Boolean),
     related_blog_ids: relatedBlogRelations.map((item) => item.blog_id).filter(Boolean),
+    related_blog_inactive_ids: relatedBlogRelations
+      .filter((item) => item.is_active === false)
+      .map((item) => item.blog_id)
+      .filter(Boolean),
     related_ingredient_ids:
       relatedIngredientRelations.map((item) => item.ingredient_id).filter(Boolean),
+    related_ingredient_inactive_ids: relatedIngredientRelations
+      .filter((item) => item.is_active === false)
+      .map((item) => item.ingredient_id)
+      .filter(Boolean),
     related_ingredients_title: product.related_ingredients_title ?? "",
     related_ingredients_subtitle: product.related_ingredients_subtitle ?? "",
     related_blogs_title: product.related_blogs_title ?? "",
@@ -620,9 +654,13 @@ function formToPayload(form: ProductFormState) {
   const gallery = safeStringArray(form.gallery);
   const ingredientIds = safeStringArray(form.ingredient_ids);
   const relatedProductIds = safeStringArray(form.related_product_ids);
+  const inactiveRelatedProductIds = new Set(safeStringArray(form.related_product_inactive_ids));
   const compareProductIds = safeStringArray(form.compare_product_ids);
+  const inactiveCompareProductIds = new Set(safeStringArray(form.compare_product_inactive_ids));
   const relatedBlogIds = safeStringArray(form.related_blog_ids);
+  const inactiveRelatedBlogIds = new Set(safeStringArray(form.related_blog_inactive_ids));
   const relatedIngredientIds = safeStringArray(form.related_ingredient_ids);
+  const inactiveRelatedIngredientIds = new Set(safeStringArray(form.related_ingredient_inactive_ids));
 
   return {
     title: form.title,
@@ -694,24 +732,28 @@ function formToPayload(form: ProductFormState) {
       display_order: index,
       title_override: null,
       description_override: null,
+      is_active: !inactiveRelatedProductIds.has(productId),
     })),
     compare_product_relations: compareProductIds.map((productId, index) => ({
       compared_product_id: productId,
       display_order: index,
       title_override: null,
       description_override: null,
+      is_active: !inactiveCompareProductIds.has(productId),
     })),
     related_blog_relations: relatedBlogIds.map((blogId, index) => ({
       blog_id: blogId,
       display_order: index,
       title_override: null,
       description_override: null,
+      is_active: !inactiveRelatedBlogIds.has(blogId),
     })),
     related_ingredient_relations: relatedIngredientIds.map((ingredientId, index) => ({
       ingredient_id: ingredientId,
       display_order: index,
       title_override: null,
       description_override: null,
+      is_active: !inactiveRelatedIngredientIds.has(ingredientId),
     })),
     related_ingredients_title: form.related_ingredients_title || null,
     related_ingredients_subtitle: form.related_ingredients_subtitle || null,
@@ -1292,7 +1334,12 @@ export function DashboardProductsClient() {
               <RelationshipMultiSelect
                 label="Related Products"
                 options={products
-                  .filter((product) => product.id !== editingProduct?.id)
+                  .filter(
+                    (product) =>
+                      product.id !== editingProduct?.id &&
+                      product.status === ContentStatus.Published &&
+                      product.deleted_at === null,
+                  )
                   .map((product) => ({
                     id: product.id,
                     label: product.title,
@@ -1300,11 +1347,18 @@ export function DashboardProductsClient() {
                   }))}
                 selectedIds={form.related_product_ids}
                 onChange={(value) => updateForm("related_product_ids", value)}
+                inactiveIds={form.related_product_inactive_ids}
+                onInactiveChange={(value) => updateForm("related_product_inactive_ids", value)}
               />
               <RelationshipMultiSelect
                 label="Compare Alternatives"
                 options={products
-                  .filter((product) => product.id !== editingProduct?.id)
+                  .filter(
+                    (product) =>
+                      product.id !== editingProduct?.id &&
+                      product.status === ContentStatus.Published &&
+                      product.deleted_at === null,
+                  )
                   .map((product) => ({
                     id: product.id,
                     label: product.title,
@@ -1312,28 +1366,45 @@ export function DashboardProductsClient() {
                   }))}
                 selectedIds={form.compare_product_ids}
                 onChange={(value) => updateForm("compare_product_ids", value)}
+                inactiveIds={form.compare_product_inactive_ids}
+                onInactiveChange={(value) => updateForm("compare_product_inactive_ids", value)}
               />
               <RelationshipMultiSelect
                 label="Related Blogs"
                 isLoading={isBlogsLoading}
-                options={blogs.map((blog) => ({
-                  id: blog.id,
-                  label: blog.title,
-                  description: blog.slug,
-                }))}
+                options={blogs
+                  .filter(
+                    (blog) =>
+                      blog.status === ContentStatus.Published && blog.deleted_at === null,
+                  )
+                  .map((blog) => ({
+                    id: blog.id,
+                    label: blog.title,
+                    description: blog.slug,
+                  }))}
                 selectedIds={form.related_blog_ids}
                 onChange={(value) => updateForm("related_blog_ids", value)}
+                inactiveIds={form.related_blog_inactive_ids}
+                onInactiveChange={(value) => updateForm("related_blog_inactive_ids", value)}
               />
               <RelationshipMultiSelect
                 label="Related Ingredients"
                 isLoading={isIngredientsLoading}
-                options={ingredients.map((ingredient) => ({
-                  id: ingredient.id,
-                  label: ingredient.name,
-                  description: ingredient.slug,
-                }))}
+                options={ingredients
+                  .filter(
+                    (ingredient) =>
+                      ingredient.status === ContentStatus.Published &&
+                      ingredient.deleted_at === null,
+                  )
+                  .map((ingredient) => ({
+                    id: ingredient.id,
+                    label: ingredient.name,
+                    description: ingredient.slug,
+                  }))}
                 selectedIds={form.related_ingredient_ids}
                 onChange={(value) => updateForm("related_ingredient_ids", value)}
+                inactiveIds={form.related_ingredient_inactive_ids}
+                onInactiveChange={(value) => updateForm("related_ingredient_inactive_ids", value)}
               />
               <TextAreaField label="Ingredient Display Overrides" value={form.ingredient_overrides} onChange={(value) => updateForm("ingredient_overrides", value)} placeholder="ingredient_id | Purpose | Dosage | Description override | Custom note | highlighted" className="lg:col-span-2" rows={4} />
             </CmsSection>
@@ -1469,17 +1540,22 @@ function RelationshipMultiSelect({
   options,
   selectedIds,
   onChange,
+  inactiveIds = [],
+  onInactiveChange,
   isLoading = false,
 }: {
   label: string;
   options: Array<{ id: string; label: string; description?: string }>;
   selectedIds: string[];
   onChange: (value: string[]) => void;
+  inactiveIds?: string[];
+  onInactiveChange?: (value: string[]) => void;
   isLoading?: boolean;
 }) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const selectedIdSet = useMemo(() => new Set(selectedIds), [selectedIds]);
+  const inactiveIdSet = useMemo(() => new Set(inactiveIds), [inactiveIds]);
   const selectedOptions = useMemo(
     () => selectedIds.map((id) => options.find((option) => option.id === id)).filter(Boolean) as Array<{ id: string; label: string; description?: string }>,
     [options, selectedIds],
@@ -1509,12 +1585,40 @@ function RelationshipMultiSelect({
     }
 
     onChange([...selectedIds, id]);
+    onInactiveChange?.(inactiveIds.filter((inactiveId) => inactiveId !== id));
     setQuery("");
     setIsOpen(true);
   }
 
   function removeOption(id: string) {
     onChange(selectedIds.filter((selectedId) => selectedId !== id));
+    onInactiveChange?.(inactiveIds.filter((inactiveId) => inactiveId !== id));
+  }
+
+  function moveOption(id: string, direction: -1 | 1) {
+    const currentIndex = selectedIds.indexOf(id);
+    const nextIndex = currentIndex + direction;
+
+    if (currentIndex < 0 || nextIndex < 0 || nextIndex >= selectedIds.length) {
+      return;
+    }
+
+    const nextIds = [...selectedIds];
+    [nextIds[currentIndex], nextIds[nextIndex]] = [nextIds[nextIndex], nextIds[currentIndex]];
+    onChange(nextIds);
+  }
+
+  function toggleActive(id: string, isActive: boolean) {
+    if (!onInactiveChange) {
+      return;
+    }
+
+    if (isActive) {
+      onInactiveChange(inactiveIds.filter((inactiveId) => inactiveId !== id));
+      return;
+    }
+
+    onInactiveChange([...new Set([...inactiveIds, id])]);
   }
 
   return (
@@ -1522,23 +1626,56 @@ function RelationshipMultiSelect({
       <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
       <div className="rounded-[18px] border border-border-light bg-white p-3">
         {selectedOptions.length ? (
-          <div className="mb-3 flex flex-wrap gap-2">
-            {selectedOptions.map((option) => (
-              <span
+          <div className="mb-3 grid gap-2">
+            {selectedOptions.map((option, index) => {
+              const isActive = !inactiveIdSet.has(option.id);
+
+              return (
+              <div
                 key={option.id}
-                className="inline-flex items-center gap-2 rounded-pill bg-soft-green px-3 py-2 text-xs font-semibold text-primary"
+                className="flex flex-wrap items-center justify-between gap-2 rounded-[16px] bg-soft-green px-3 py-2 text-xs font-semibold text-primary"
               >
-                <span>{option.label}</span>
+                <span className="min-w-0 flex-1 truncate">{option.label}</span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => moveOption(option.id, -1)}
+                    disabled={index === 0}
+                    className="inline-flex size-7 items-center justify-center rounded-full bg-white text-primary transition hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                    aria-label={`Move ${option.label} up`}
+                  >
+                    <ArrowUp className="size-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => moveOption(option.id, 1)}
+                    disabled={index === selectedOptions.length - 1}
+                    className="inline-flex size-7 items-center justify-center rounded-full bg-white text-primary transition hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                    aria-label={`Move ${option.label} down`}
+                  >
+                    <ArrowDown className="size-3.5" />
+                  </button>
+                  <label className="inline-flex items-center gap-1.5 rounded-pill bg-white px-2.5 py-1 text-[11px] text-text-dark">
+                    <input
+                      type="checkbox"
+                      checked={isActive}
+                      onChange={(event) => toggleActive(option.id, event.target.checked)}
+                      className="size-3 accent-primary"
+                    />
+                    Active
+                  </label>
                 <button
                   type="button"
                   onClick={() => removeOption(option.id)}
-                  className="rounded-full text-primary/80 transition hover:text-primary"
+                    className="inline-flex size-7 items-center justify-center rounded-full bg-white text-primary/80 transition hover:bg-red-50 hover:text-red-600"
                   aria-label={`Remove ${option.label}`}
                 >
                   <X className="size-3.5" />
                 </button>
-              </span>
-            ))}
+                </div>
+              </div>
+              );
+            })}
           </div>
         ) : (
           <p className="mb-3 text-sm text-muted">No {label.toLowerCase()} selected.</p>

@@ -632,6 +632,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       relationship_type: item.relationship_type?.trim() || "related",
       title_override: item.title_override?.trim() || null,
       description_override: item.description_override?.trim() || null,
+      is_active: item.is_active ?? true,
     };
   }
 
@@ -642,6 +643,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       display_order: item.display_order ?? index,
       title_override: item.title_override?.trim() || null,
       description_override: item.description_override?.trim() || null,
+      is_active: item.is_active ?? true,
     };
   }
 
@@ -652,6 +654,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       display_order: item.display_order ?? index,
       title_override: item.title_override?.trim() || null,
       description_override: item.description_override?.trim() || null,
+      is_active: item.is_active ?? true,
     };
   }
 
@@ -666,6 +669,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       display_order: item.display_order ?? index,
       title_override: item.title_override?.trim() || null,
       description_override: item.description_override?.trim() || null,
+      is_active: item.is_active ?? true,
     };
   }
 
