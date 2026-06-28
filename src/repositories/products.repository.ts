@@ -11,6 +11,7 @@ import type {
   ProductSidebarFact,
   ProductSidebarTrustBadge,
   ProductTocItem,
+  ProductLayoutSection,
 } from "@/lib/database/types";
 import { ContentStatus } from "@/lib/database/constants";
 import { DatabaseError } from "@/lib/errors/DatabaseError";
@@ -28,6 +29,7 @@ import type {
   ProductSidebarFactInput,
   ProductSidebarTrustBadgeInput,
   ProductTocItemInput,
+  ProductLayoutSectionInput,
   ProductUpdateInput,
 } from "@/lib/validators/product.validator";
 import type { SlugRepository } from "./base.repository";
@@ -43,6 +45,7 @@ type ProductCmsRelationInput = Partial<
     | "sidebar_facts"
     | "sidebar_trust_badges"
     | "toc_items"
+    | "product_layout_sections"
     | "ingredient_overrides"
     | "related_product_relations"
     | "compare_product_relations"
@@ -349,6 +352,19 @@ export class SupabaseProductsRepository implements ProductsRepository {
           productId,
           (input.toc_items ?? []).map((item, index) =>
             this.tocItemToRow(productId, item, index),
+          ),
+          true,
+        ),
+      );
+    }
+
+    if ("product_layout_sections" in input) {
+      syncJobs.push(
+        this.replaceRows(
+          "product_layout_sections",
+          productId,
+          (input.product_layout_sections ?? []).map((item, index) =>
+            this.productLayoutSectionToRow(productId, item, index),
           ),
           true,
         ),
@@ -675,6 +691,23 @@ export class SupabaseProductsRepository implements ProductsRepository {
     };
   }
 
+  private productLayoutSectionToRow(
+    productId: string,
+    item: ProductLayoutSectionInput,
+    index: number,
+  ) {
+    return {
+      product_id: productId,
+      section_key: item.section_key,
+      is_visible: item.is_visible,
+      sort_order: item.sort_order ?? index,
+      title_override: item.title_override?.trim() || null,
+      subtitle_override: item.subtitle_override?.trim() || null,
+      background_style: item.background_style || "default",
+      animation_enabled: item.animation_enabled,
+    };
+  }
+
   private ingredientOverrideToRow(
     productId: string,
     item: ProductIngredientOverrideInput,
@@ -865,6 +898,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       sidebarFacts,
       sidebarTrustBadges,
       tocItems,
+      productLayoutSections,
       ingredientOverrides,
       relatedProducts,
       compareProducts,
@@ -879,6 +913,12 @@ export class SupabaseProductsRepository implements ProductsRepository {
       this.fetchProductRows<ProductSidebarFact>("product_sidebar_facts", productIds, true),
       this.fetchProductRows<ProductSidebarTrustBadge>("product_sidebar_trust_badges", productIds, true),
       this.fetchProductRows<ProductTocItem>("product_toc_items", productIds, true),
+      this.fetchProductRows<ProductLayoutSection>(
+        "product_layout_sections",
+        productIds,
+        true,
+        "sort_order",
+      ),
       this.fetchProductRows<ProductIngredientOverride>("product_ingredient_overrides", productIds, true),
       this.fetchProductRows<ProductRelatedProduct>("product_related_products", productIds, true),
       this.fetchProductRows<ProductCompareProduct>("product_compare_products", productIds, true),
@@ -896,6 +936,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
       sidebar_facts: this.rowsForProduct(sidebarFacts, product.id),
       sidebar_trust_badges: this.rowsForProduct(sidebarTrustBadges, product.id),
       toc_items: this.rowsForProduct(tocItems, product.id),
+      product_layout_sections: this.rowsForProduct(productLayoutSections, product.id),
       ingredient_overrides: this.rowsForProduct(ingredientOverrides, product.id),
       related_product_relations: this.rowsForProduct(relatedProducts, product.id),
       compare_product_relations: this.rowsForProduct(compareProducts, product.id),
@@ -908,13 +949,14 @@ export class SupabaseProductsRepository implements ProductsRepository {
     table: string,
     productIds: string[],
     optional = false,
+    orderColumn = "display_order",
   ): Promise<TRow[]> {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
       .from(table)
       .select("*")
       .in("product_id", productIds)
-      .order("display_order", { ascending: true });
+      .order(orderColumn, { ascending: true });
 
     if (error) {
       if (optional && this.isMissingOptionalCmsRelation(error.message)) {

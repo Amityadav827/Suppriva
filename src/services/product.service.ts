@@ -160,6 +160,7 @@ export class ProductService {
       sidebar_facts: input.sidebar_facts ?? [],
       sidebar_trust_badges: input.sidebar_trust_badges ?? [],
       toc_items: input.toc_items ?? [],
+      product_layout_sections: input.product_layout_sections ?? [],
       ingredient_overrides: input.ingredient_overrides ?? [],
       related_product_relations: input.related_product_relations ?? [],
       compare_product_relations: input.compare_product_relations ?? [],

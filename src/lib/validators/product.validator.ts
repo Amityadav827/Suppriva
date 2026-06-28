@@ -16,7 +16,12 @@ import type {
   ProductSidebarFact,
   ProductSidebarTrustBadge,
   ProductTocItem,
+  ProductLayoutSection,
 } from "@/lib/database/types";
+import {
+  PRODUCT_LAYOUT_SECTION_KEYS,
+  type ProductLayoutSectionKey,
+} from "@/lib/product-layout";
 
 export type ProductCmsCardInput = Pick<
   ProductCmsCard,
@@ -46,6 +51,17 @@ export type ProductSidebarTrustBadgeInput = Pick<
 export type ProductTocItemInput = Pick<
   ProductTocItem,
   "label" | "anchor_id" | "icon" | "display_order" | "is_visible" | "is_active"
+>;
+
+export type ProductLayoutSectionInput = Pick<
+  ProductLayoutSection,
+  | "section_key"
+  | "is_visible"
+  | "sort_order"
+  | "title_override"
+  | "subtitle_override"
+  | "background_style"
+  | "animation_enabled"
 >;
 
 export type ProductIngredientOverrideInput = Pick<
@@ -180,6 +196,7 @@ export type ProductCreateInput = {
   sidebar_facts?: ProductSidebarFactInput[];
   sidebar_trust_badges?: ProductSidebarTrustBadgeInput[];
   toc_items?: ProductTocItemInput[];
+  product_layout_sections?: ProductLayoutSectionInput[];
   ingredient_overrides?: ProductIngredientOverrideInput[];
   related_product_relations?: ProductRelatedProductInput[];
   compare_product_relations?: ProductCompareProductInput[];
@@ -362,6 +379,30 @@ function isTocItemArray(value: unknown): value is ProductTocItemInput[] {
         (item.display_order === undefined || typeof item.display_order === "number") &&
         isOptionalBoolean(item.is_visible) &&
         isOptionalBoolean(item.is_active),
+    )
+  );
+}
+
+function isProductLayoutSectionArray(value: unknown): value is ProductLayoutSectionInput[] {
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        isPlainObject(item) &&
+        typeof item.section_key === "string" &&
+        PRODUCT_LAYOUT_SECTION_KEYS.includes(item.section_key as ProductLayoutSectionKey) &&
+        typeof item.is_visible === "boolean" &&
+        typeof item.sort_order === "number" &&
+        Number.isInteger(item.sort_order) &&
+        item.sort_order >= 0 &&
+        (item.title_override === undefined ||
+          item.title_override === null ||
+          typeof item.title_override === "string") &&
+        (item.subtitle_override === undefined ||
+          item.subtitle_override === null ||
+          typeof item.subtitle_override === "string") &&
+        (item.background_style === undefined || item.background_style === "default") &&
+        typeof item.animation_enabled === "boolean",
     )
   );
 }
@@ -566,6 +607,30 @@ export function validateProductInput<TInput extends ProductValidationInput>(
 
       if (!idsAreUnique(anchors)) {
         errors.push("Duplicate table of contents anchor IDs are not allowed.");
+      }
+    }
+  }
+
+  if ("product_layout_sections" in input && input.product_layout_sections !== undefined) {
+    if (!isProductLayoutSectionArray(input.product_layout_sections)) {
+      errors.push("Product layout sections must include valid section keys, visibility, and sort order.");
+    } else {
+      const sectionKeys = input.product_layout_sections.map((item) => item.section_key);
+      const sortOrders = input.product_layout_sections.map((item) => String(item.sort_order));
+      const missingSectionKeys = PRODUCT_LAYOUT_SECTION_KEYS.filter(
+        (sectionKey) => !sectionKeys.includes(sectionKey),
+      );
+
+      if (missingSectionKeys.length) {
+        errors.push("Product layout is missing required sections.");
+      }
+
+      if (!idsAreUnique(sectionKeys)) {
+        errors.push("Duplicate product layout sections are not allowed.");
+      }
+
+      if (!idsAreUnique(sortOrders)) {
+        errors.push("Duplicate product layout sort orders are not allowed.");
       }
     }
   }

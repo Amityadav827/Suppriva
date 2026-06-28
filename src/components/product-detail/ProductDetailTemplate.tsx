@@ -36,6 +36,8 @@ import {
 import type { ProductDetail } from "@/lib/product-data";
 import { getCategoryIcon } from "@/lib/live-data";
 
+type LayoutSectionKey = ProductDetail["layoutSections"][number]["sectionKey"];
+
 function splitIntoColumns<T>(items: T[], columns: number) {
   return Array.from({ length: columns }, (_, columnIndex) =>
     items.filter((_, itemIndex) => itemIndex % columns === columnIndex),
@@ -113,45 +115,63 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     hasText(product.verdict.notIdealFor) ||
     hasText(product.verdict.recommendation) ||
     hasText(product.verdict.conclusion);
+  const layoutByKey = new Map(
+    product.layoutSections.map((section) => [section.sectionKey, section]),
+  );
+  const sectionLayout = (sectionKey: LayoutSectionKey) => layoutByKey.get(sectionKey);
+  const sectionVisible = (sectionKey: LayoutSectionKey) =>
+    sectionLayout(sectionKey)?.isVisible !== false;
+  const sectionOrder = (sectionKey: LayoutSectionKey) =>
+    sectionLayout(sectionKey)?.sortOrder ?? 0;
+  const sectionTitle = (sectionKey: LayoutSectionKey, fallback: string) =>
+    sectionLayout(sectionKey)?.titleOverride?.trim() || fallback;
+  const sectionSubtitle = (sectionKey: LayoutSectionKey, fallback: string) =>
+    sectionLayout(sectionKey)?.subtitleOverride?.trim() || fallback;
+  const tocLabels = new Map(product.tocItems.map((item) => [item.id, item.label]));
 
-  const defaultSections: IngredientSectionLink[] = [
-    { id: "hero", label: "Overview" },
-    ...(whatIsParagraphs.length
-      ? [{ id: "what-is-product", label: product.whatIs.title }]
+  const defaultSections: Array<IngredientSectionLink & { order: number }> = [
+    ...(sectionVisible("hero")
+      ? [{ id: "hero", label: sectionTitle("hero", "Overview"), order: sectionOrder("hero") }]
       : []),
-    ...(product.standoutPoints.length
-      ? [{ id: "why-it-stands-out", label: "Why It Stands Out" }]
+    ...(sectionVisible("overview") && whatIsParagraphs.length
+      ? [{ id: "what-is-product", label: sectionTitle("overview", product.whatIs.title), order: sectionOrder("overview") }]
       : []),
-    ...(product.howItWorks.length ? [{ id: "how-it-works", label: "How It Works" }] : []),
-    ...(product.benefits.length ? [{ id: "benefits", label: "Key Benefits" }] : []),
-    ...(product.ingredients.length ? [{ id: "ingredients", label: "Ingredient Breakdown" }] : []),
-    ...(product.whoItsBestFor.length
-      ? [{ id: "who-is-it-best-for", label: "Who Is It Best For" }]
+    ...(sectionVisible("standout") && product.standoutPoints.length
+      ? [{ id: "why-it-stands-out", label: sectionTitle("standout", "Why It Stands Out"), order: sectionOrder("standout") }]
       : []),
-    ...(product.safetyItems.length
-      ? [{ id: "safety", label: product.safetyTitle }]
+    ...(sectionVisible("how_it_works") && product.howItWorks.length ? [{ id: "how-it-works", label: sectionTitle("how_it_works", "How It Works"), order: sectionOrder("how_it_works") }] : []),
+    ...(sectionVisible("benefits") && product.benefits.length ? [{ id: "benefits", label: sectionTitle("benefits", "Key Benefits"), order: sectionOrder("benefits") }] : []),
+    ...(sectionVisible("ingredients") && product.ingredients.length ? [{ id: "ingredients", label: sectionTitle("ingredients", "Ingredient Breakdown"), order: sectionOrder("ingredients") }] : []),
+    ...(sectionVisible("best_for") && product.whoItsBestFor.length
+      ? [{ id: "who-is-it-best-for", label: sectionTitle("best_for", "Who Is It Best For"), order: sectionOrder("best_for") }]
       : []),
-    ...(product.pros.length || product.cons.length ? [{ id: "pros-cons", label: "Pros & Cons" }] : []),
-    ...(product.faqs.length ? [{ id: "faq", label: product.faqTitle }] : []),
-    ...(hasVerdict ? [{ id: "verdict", label: product.verdictTitle }] : []),
-    ...(product.buyingGuidance.length ? [{ id: "where-to-buy", label: product.buyingGuideTitle }] : []),
-    ...(product.relatedIngredients.length
-      ? [{ id: "related-ingredients", label: "Related Ingredients" }]
+    ...(sectionVisible("safety") && product.safetyItems.length
+      ? [{ id: "safety", label: sectionTitle("safety", product.safetyTitle), order: sectionOrder("safety") }]
       : []),
-    ...(product.relatedArticles.length ? [{ id: "learn-more", label: "Learn More" }] : []),
-    ...(product.comparisonProducts.length
-      ? [{ id: "compare-alternatives", label: "Compare Alternatives" }]
+    ...(sectionVisible("pros_cons") && (product.pros.length || product.cons.length) ? [{ id: "pros-cons", label: sectionTitle("pros_cons", "Pros & Cons"), order: sectionOrder("pros_cons") }] : []),
+    ...(sectionVisible("faq") && product.faqs.length ? [{ id: "faq", label: sectionTitle("faq", product.faqTitle), order: sectionOrder("faq") }] : []),
+    ...(sectionVisible("verdict") && hasVerdict ? [{ id: "verdict", label: sectionTitle("verdict", product.verdictTitle), order: sectionOrder("verdict") }] : []),
+    ...(sectionVisible("buying") && product.buyingGuidance.length ? [{ id: "where-to-buy", label: sectionTitle("buying", product.buyingGuideTitle), order: sectionOrder("buying") }] : []),
+    ...(sectionVisible("related_ingredients") && product.relatedIngredients.length
+      ? [{ id: "related-ingredients", label: sectionTitle("related_ingredients", "Related Ingredients"), order: sectionOrder("related_ingredients") }]
       : []),
-    ...(product.relatedProducts?.length
-      ? [{ id: "related-products", label: "Related Products" }]
+    ...(sectionVisible("related_blogs") && product.relatedArticles.length ? [{ id: "learn-more", label: sectionTitle("related_blogs", "Learn More"), order: sectionOrder("related_blogs") }] : []),
+    ...(sectionVisible("compare") && product.comparisonProducts.length
+      ? [{ id: "compare-alternatives", label: sectionTitle("compare", "Compare Alternatives"), order: sectionOrder("compare") }]
       : []),
-    ...(product.healthNeeds.length
-      ? [{ id: "explore-health-needs", label: "Explore By Health Needs" }]
+    ...(sectionVisible("related_products") && product.relatedProducts?.length
+      ? [{ id: "related-products", label: sectionTitle("related_products", "Related Products"), order: sectionOrder("related_products") }]
+      : []),
+    ...(sectionVisible("health_needs") && product.healthNeeds.length
+      ? [{ id: "explore-health-needs", label: sectionTitle("health_needs", "Explore By Health Needs"), order: sectionOrder("health_needs") }]
       : []),
   ];
-  const sections: IngredientSectionLink[] = product.tocItems.length
-    ? product.tocItems
-    : defaultSections;
+  const sections: IngredientSectionLink[] = defaultSections
+    .sort((first, second) => first.order - second.order)
+    .map((section) => ({
+      id: section.id,
+      label: tocLabels.get(section.id) ?? section.label,
+    }));
 
   return (
     <main className="relative overflow-x-clip bg-cream">
@@ -188,11 +208,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
         </nav>
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-          <div className="min-w-0 space-y-8 md:space-y-10">
-            <section
-              id="hero"
-              className={sectionCardClasses()}
-            >
+          <div className="flex min-w-0 flex-col gap-8 md:gap-10">
+            {sectionVisible("hero") ? (
+              <section
+                id="hero"
+                className={sectionCardClasses()}
+                style={{ order: sectionOrder("hero") }}
+              >
               <div className="grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)] lg:items-start">
                 <div className="min-w-0 space-y-4">
                   <SingleProductImageCard
@@ -252,11 +274,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
 
                     <div className="space-y-3">
                       <h1 className="font-heading text-5xl font-extrabold leading-[0.98] text-text-dark md:text-6xl xl:text-[4.15rem]">
-                        {product.heroTitle}
+                        {sectionTitle("hero", product.heroTitle)}
                       </h1>
-                      <span className="block max-w-3xl text-[1.02rem] font-semibold leading-8 text-primary">
-                        {product.subtitle}
-                      </span>
+                      {sectionSubtitle("hero", product.subtitle) ? (
+                        <span className="block max-w-3xl text-[1.02rem] font-semibold leading-8 text-primary">
+                          {sectionSubtitle("hero", product.subtitle)}
+                        </span>
+                      ) : null}
                     </div>
 
                     {product.heroShowRating ? (
@@ -323,30 +347,33 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
 
                 </div>
               </div>
-            </section>
+              </section>
+            ) : null}
 
-            <div className="hidden md:block lg:hidden">
+            <div className="hidden md:block lg:hidden" style={{ order: sectionOrder("hero") + 1 }}>
               <SidebarColumn sections={sections} product={product} />
             </div>
 
-            {whatIsParagraphs.length ? (
+            {sectionVisible("overview") && whatIsParagraphs.length ? (
               <ReviewSection
                 id="what-is-product"
                 icon={PackageCheck}
-                title={product.whatIs.title}
-                subtitle={product.whatIs.subtitle}
+                title={sectionTitle("overview", product.whatIs.title)}
+                subtitle={sectionSubtitle("overview", product.whatIs.subtitle)}
+                order={sectionOrder("overview")}
               >
                 <ContentPanel paragraphs={whatIsParagraphs} />
               </ReviewSection>
             ) : null}
 
-            {product.standoutPoints.length ? (
+            {sectionVisible("standout") && product.standoutPoints.length ? (
               <ReviewSection
                 id="why-it-stands-out"
                 icon={Sparkles}
-                title={product.standoutTitle}
-                subtitle={product.standoutSubtitle}
+                title={sectionTitle("standout", product.standoutTitle)}
+                subtitle={sectionSubtitle("standout", product.standoutSubtitle)}
                 tone="cream"
+                order={sectionOrder("standout")}
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                   {product.standoutPoints.map((point, index) => (
@@ -375,12 +402,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.howItWorks.length ? (
+            {sectionVisible("how_it_works") && product.howItWorks.length ? (
               <ReviewSection
                 id="how-it-works"
                 icon={FlaskConical}
-                title={product.howItWorksTitle}
-                subtitle={product.howItWorksSubtitle}
+                title={sectionTitle("how_it_works", product.howItWorksTitle)}
+                subtitle={sectionSubtitle("how_it_works", product.howItWorksSubtitle)}
+                order={sectionOrder("how_it_works")}
               >
                 <div className="space-y-4">
                   {product.howItWorksIntro.length ? (
@@ -413,13 +441,14 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.benefits.length ? (
+            {sectionVisible("benefits") && product.benefits.length ? (
               <ReviewSection
                 id="benefits"
                 icon={ShieldCheck}
-                title={product.benefitsTitle}
-                subtitle={product.benefitsSubtitle}
+                title={sectionTitle("benefits", product.benefitsTitle)}
+                subtitle={sectionSubtitle("benefits", product.benefitsSubtitle)}
                 tone="cream"
+                order={sectionOrder("benefits")}
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                   {product.benefits.map((benefit, index) => {
@@ -449,12 +478,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.ingredients.length ? (
+            {sectionVisible("ingredients") && product.ingredients.length ? (
               <ReviewSection
                 id="ingredients"
                 icon={Beaker}
-                title={product.ingredientsTitle}
-                subtitle={product.ingredientsSubtitle}
+                title={sectionTitle("ingredients", product.ingredientsTitle)}
+                subtitle={sectionSubtitle("ingredients", product.ingredientsSubtitle)}
+                order={sectionOrder("ingredients")}
               >
                 <div className="overflow-hidden rounded-[26px] bg-white ring-1 ring-black/5">
                   <div className="hidden grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(0,1.4fr)_160px] gap-4 border-b border-black/6 bg-cream/70 px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-muted lg:grid">
@@ -551,13 +581,14 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.whoItsBestFor.length ? (
+            {sectionVisible("best_for") && product.whoItsBestFor.length ? (
               <ReviewSection
                 id="who-is-it-best-for"
                 icon={Users}
-                title={product.whoItsBestForTitle}
-                subtitle={product.whoItsBestForSubtitle}
+                title={sectionTitle("best_for", product.whoItsBestForTitle)}
+                subtitle={sectionSubtitle("best_for", product.whoItsBestForSubtitle)}
                 tone="cream"
+                order={sectionOrder("best_for")}
               >
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                   {product.whoItsBestFor.map((item, index) => (
@@ -590,12 +621,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.safetyItems.length ? (
+            {sectionVisible("safety") && product.safetyItems.length ? (
               <ReviewSection
                 id="safety"
                 icon={ShieldAlert}
-                title={product.safetyTitle}
-                subtitle={product.safetySubtitle}
+                title={sectionTitle("safety", product.safetyTitle)}
+                subtitle={sectionSubtitle("safety", product.safetySubtitle)}
+                order={sectionOrder("safety")}
               >
                 <div className="grid items-stretch gap-5 xl:grid-cols-2 2xl:grid-cols-4">
                   {product.safetyItems.map((item, index) => (
@@ -610,24 +642,26 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.pros.length || product.cons.length ? (
+            {sectionVisible("pros_cons") && (product.pros.length || product.cons.length) ? (
               <ReviewSection
                 id="pros-cons"
                 icon={BadgeCheck}
-                title={product.prosConsTitle}
-                subtitle={product.prosConsSubtitle}
+                title={sectionTitle("pros_cons", product.prosConsTitle)}
+                subtitle={sectionSubtitle("pros_cons", product.prosConsSubtitle)}
                 tone="cream"
+                order={sectionOrder("pros_cons")}
               >
                 <ProsCons pros={product.pros} cons={product.cons} />
               </ReviewSection>
             ) : null}
 
-            {product.faqs.length ? (
+            {sectionVisible("faq") && product.faqs.length ? (
               <ReviewSection
                 id="faq"
                 icon={BookOpenText}
-                title={product.faqTitle}
-                subtitle={product.faqSubtitle}
+                title={sectionTitle("faq", product.faqTitle)}
+                subtitle={sectionSubtitle("faq", product.faqSubtitle)}
+                order={sectionOrder("faq")}
               >
                 <div className="grid gap-5 xl:grid-cols-2">
                   {faqColumns.map((column, index) => (
@@ -642,13 +676,14 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {hasVerdict ? (
+            {sectionVisible("verdict") && hasVerdict ? (
               <ReviewSection
                 id="verdict"
                 icon={Star}
-                title={product.verdictTitle}
-                subtitle={product.verdictSubtitle}
+                title={sectionTitle("verdict", product.verdictTitle)}
+                subtitle={sectionSubtitle("verdict", product.verdictSubtitle)}
                 tone="cream"
+                order={sectionOrder("verdict")}
               >
               <div className="grid gap-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:items-stretch">
                 <div className="flex h-full flex-col items-center justify-center rounded-[24px] bg-white p-5 text-center ring-1 ring-black/5">
@@ -698,12 +733,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.buyingGuidance.length ? (
+            {sectionVisible("buying") && product.buyingGuidance.length ? (
               <ReviewSection
                 id="where-to-buy"
                 icon={PackageCheck}
-                title={product.buyingGuideTitle}
-                subtitle={product.buyingGuideSubtitle}
+                title={sectionTitle("buying", product.buyingGuideTitle)}
+                subtitle={sectionSubtitle("buying", product.buyingGuideSubtitle)}
+                order={sectionOrder("buying")}
               >
               <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
                 <div className="space-y-4">
@@ -740,13 +776,17 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.relatedIngredients.length ? (
+            {sectionVisible("related_ingredients") && product.relatedIngredients.length ? (
               <ReviewSection
                 id="related-ingredients"
                 icon={Leaf}
-                title="Related Ingredients"
-                subtitle="Internal linking support for ingredient-level research, comparison, and topical SEO depth."
+                title={sectionTitle("related_ingredients", "Related Ingredients")}
+                subtitle={sectionSubtitle(
+                  "related_ingredients",
+                  "Internal linking support for ingredient-level research, comparison, and topical SEO depth.",
+                )}
                 tone="cream"
+                order={sectionOrder("related_ingredients")}
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                   {product.relatedIngredients.map((ingredient, index) => (
@@ -759,12 +799,16 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.relatedArticles.length ? (
+            {sectionVisible("related_blogs") && product.relatedArticles.length ? (
               <ReviewSection
                 id="learn-more"
                 icon={BookOpenText}
-                title="Learn More"
-                subtitle="Related editorial resources connected through matching topics, categories, and ingredient language."
+                title={sectionTitle("related_blogs", "Learn More")}
+                subtitle={sectionSubtitle(
+                  "related_blogs",
+                  "Related editorial resources connected through matching topics, categories, and ingredient language.",
+                )}
+                order={sectionOrder("related_blogs")}
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                   {product.relatedArticles.map((article) => (
@@ -774,13 +818,17 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.comparisonProducts.length ? (
+            {sectionVisible("compare") && product.comparisonProducts.length ? (
               <ReviewSection
                 id="compare-alternatives"
                 icon={PackageCheck}
-                title="Compare Alternatives"
-                subtitle="A stronger comparison-ready section for visitors who want to evaluate similar products before clicking out."
+                title={sectionTitle("compare", "Compare Alternatives")}
+                subtitle={sectionSubtitle(
+                  "compare",
+                  "A stronger comparison-ready section for visitors who want to evaluate similar products before clicking out.",
+                )}
                 tone="cream"
+                order={sectionOrder("compare")}
               >
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                   {product.comparisonProducts.map((item) => (
@@ -816,24 +864,32 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {product.relatedProducts?.length ? (
+            {sectionVisible("related_products") && product.relatedProducts?.length ? (
               <ReviewSection
                 id="related-products"
                 icon={PackageCheck}
-                title="Related Products"
-                subtitle="The current related product carousel remains intact, now sitting inside a stronger long-form review architecture."
+                title={sectionTitle("related_products", "Related Products")}
+                subtitle={sectionSubtitle(
+                  "related_products",
+                  "The current related product carousel remains intact, now sitting inside a stronger long-form review architecture.",
+                )}
+                order={sectionOrder("related_products")}
               >
                 <RelatedProductsSlider products={product.relatedProducts} />
               </ReviewSection>
             ) : null}
 
-            {product.healthNeeds.length ? (
+            {sectionVisible("health_needs") && product.healthNeeds.length ? (
               <ReviewSection
                 id="explore-health-needs"
                 icon={HeartPulse}
-                title="Explore By Health Needs"
-                subtitle="Discover wellness categories related to this product and explore solutions for other health goals."
+                title={sectionTitle("health_needs", "Explore By Health Needs")}
+                subtitle={sectionSubtitle(
+                  "health_needs",
+                  "Discover wellness categories related to this product and explore solutions for other health goals.",
+                )}
                 tone="cream"
+                order={sectionOrder("health_needs")}
               >
                 <motion.div
                   initial="hidden"
@@ -1033,6 +1089,7 @@ function ReviewSection({
   title,
   subtitle,
   tone = "white",
+  order,
   children,
 }: {
   id: string;
@@ -1040,10 +1097,11 @@ function ReviewSection({
   title: string;
   subtitle: string;
   tone?: "white" | "cream";
+  order?: number;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={`${sectionCardClasses(tone)} scroll-mt-28`}>
+    <section id={id} className={`${sectionCardClasses(tone)} scroll-mt-28`} style={{ order }}>
       <SectionHeading icon={Icon} title={title} subtitle={subtitle} />
       {children}
     </section>

@@ -1,4 +1,5 @@
 import type { ExpertAttribution } from "@/lib/database/types";
+import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type ProductDetailCmsCard = {
   icon?: string | null;
@@ -16,6 +17,18 @@ export type ProductDetailTocItem = {
   id: string;
   label: string;
   icon?: string | null;
+};
+
+export type ProductDetailLayoutSection = {
+  sectionKey: ProductLayoutSectionKey;
+  anchorId: string;
+  name: string;
+  isVisible: boolean;
+  sortOrder: number;
+  titleOverride?: string | null;
+  subtitleOverride?: string | null;
+  backgroundStyle: "default";
+  animationEnabled: boolean;
 };
 
 export type ProductDetail = {
@@ -138,6 +151,7 @@ export type ProductDetail = {
     trustBadges: ProductDetailCmsCard[];
   };
   tocItems: ProductDetailTocItem[];
+  layoutSections: ProductDetailLayoutSection[];
   relatedIngredients: {
     name: string;
     slug?: string;

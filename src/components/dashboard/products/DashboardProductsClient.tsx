@@ -20,6 +20,7 @@ import { motion } from "framer-motion";
 import {
   ArrowDown,
   ArrowUp,
+  GripVertical,
   Loader2,
   Pencil,
   Plus,
@@ -30,6 +31,21 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  PRODUCT_LAYOUT_SECTION_DEFINITIONS,
+  type ProductLayoutSectionKey,
+} from "@/lib/product-layout";
+
+type ProductLayoutFormItem = {
+  section_key: ProductLayoutSectionKey;
+  section_name: string;
+  is_visible: boolean;
+  sort_order: number;
+  title_override: string;
+  subtitle_override: string;
+  background_style: "default";
+  animation_enabled: boolean;
+};
 
 type ProductFormState = {
   title: string;
@@ -46,6 +62,7 @@ type ProductFormState = {
   hero_checklist: string;
   hero_show_rating: boolean;
   hero_show_badge: boolean;
+  product_layout_sections: ProductLayoutFormItem[];
   review_count: string;
   rating_label: string;
   category_id: string;
@@ -163,6 +180,49 @@ type ExpertProfilesResponse = {
   error?: string;
 };
 
+function createDefaultLayoutFormItems(): ProductLayoutFormItem[] {
+  return PRODUCT_LAYOUT_SECTION_DEFINITIONS.map((section, index) => ({
+    section_key: section.key,
+    section_name: section.name,
+    is_visible: true,
+    sort_order: index,
+    title_override: "",
+    subtitle_override: "",
+    background_style: "default",
+    animation_enabled: true,
+  }));
+}
+
+function normalizeLayoutFormItems(items: ProductLayoutFormItem[]) {
+  return [...items]
+    .sort((first, second) => first.sort_order - second.sort_order)
+    .map((item, index) => ({ ...item, sort_order: index }));
+}
+
+function productLayoutToForm(
+  items?: Product["product_layout_sections"],
+): ProductLayoutFormItem[] {
+  const savedItemsByKey = new Map((items ?? []).map((item) => [item.section_key, item]));
+
+  return createDefaultLayoutFormItems().map((item) => {
+    const savedItem = savedItemsByKey.get(item.section_key);
+
+    if (!savedItem) {
+      return item;
+    }
+
+    return {
+      ...item,
+      is_visible: savedItem.is_visible,
+      sort_order: savedItem.sort_order,
+      title_override: savedItem.title_override ?? "",
+      subtitle_override: savedItem.subtitle_override ?? "",
+      background_style: savedItem.background_style ?? "default",
+      animation_enabled: savedItem.animation_enabled,
+    };
+  }).sort((first, second) => first.sort_order - second.sort_order);
+}
+
 const emptyForm: ProductFormState = {
   title: "",
   slug: "",
@@ -178,6 +238,7 @@ const emptyForm: ProductFormState = {
   hero_checklist: "",
   hero_show_rating: true,
   hero_show_badge: true,
+  product_layout_sections: createDefaultLayoutFormItems(),
   review_count: "",
   rating_label: "",
   category_id: "",
@@ -626,6 +687,7 @@ function productToForm(product: Product): ProductFormState {
     hero_checklist: heroChecklist.join("\n"),
     hero_show_rating: product.hero_show_rating,
     hero_show_badge: product.hero_show_badge,
+    product_layout_sections: productLayoutToForm(product.product_layout_sections),
     review_count: product.review_count?.toString() ?? "",
     rating_label: product.rating_label ?? "",
     category_id: product.category_id ?? "",
@@ -789,6 +851,17 @@ function formToPayload(form: ProductFormState) {
     hero_checklist: lines(form.hero_checklist),
     hero_show_rating: form.hero_show_rating,
     hero_show_badge: form.hero_show_badge,
+    product_layout_sections: normalizeLayoutFormItems(form.product_layout_sections).map(
+      (item) => ({
+        section_key: item.section_key,
+        is_visible: item.is_visible,
+        sort_order: item.sort_order,
+        title_override: item.title_override || null,
+        subtitle_override: item.subtitle_override || null,
+        background_style: item.background_style,
+        animation_enabled: item.animation_enabled,
+      }),
+    ),
     review_count: form.review_count ? Number(form.review_count) : null,
     rating_label: form.rating_label || null,
     category_id: form.category_id || null,
@@ -1391,6 +1464,16 @@ export function DashboardProductsClient() {
               </div>
             </CmsSection>
 
+            <CmsSection
+              title="Product Layout"
+              description="Control product page section visibility, order, and heading overrides."
+            >
+              <ProductLayoutEditor
+                items={form.product_layout_sections}
+                onChange={(value) => updateForm("product_layout_sections", value)}
+              />
+            </CmsSection>
+
             <CmsSection title="Overview & Education">
               <InputField label="Overview Title" value={form.overview_title} onChange={(value) => updateForm("overview_title", value)} />
               <InputField label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateForm("overview_subtitle", value)} />
@@ -1684,6 +1767,151 @@ function CheckboxField({
       />
       {label}
     </label>
+  );
+}
+
+function ProductLayoutEditor({
+  items,
+  onChange,
+}: {
+  items: ProductLayoutFormItem[];
+  onChange: (value: ProductLayoutFormItem[]) => void;
+}) {
+  const normalizedItems = normalizeLayoutFormItems(items.length ? items : createDefaultLayoutFormItems());
+
+  function updateItem(
+    sectionKey: ProductLayoutSectionKey,
+    updates: Partial<ProductLayoutFormItem>,
+  ) {
+    onChange(
+      normalizedItems.map((item) =>
+        item.section_key === sectionKey ? { ...item, ...updates } : item,
+      ),
+    );
+  }
+
+  function moveItem(sectionKey: ProductLayoutSectionKey, direction: -1 | 1) {
+    const currentIndex = normalizedItems.findIndex((item) => item.section_key === sectionKey);
+    const nextIndex = currentIndex + direction;
+
+    if (currentIndex < 0 || nextIndex < 0 || nextIndex >= normalizedItems.length) {
+      return;
+    }
+
+    const nextItems = [...normalizedItems];
+    const [selectedItem] = nextItems.splice(currentIndex, 1);
+    nextItems.splice(nextIndex, 0, selectedItem);
+    onChange(normalizeLayoutFormItems(nextItems));
+  }
+
+  function updateSortOrder(sectionKey: ProductLayoutSectionKey, value: string) {
+    const nextSortOrder = Number(value);
+
+    if (!Number.isInteger(nextSortOrder) || nextSortOrder < 0) {
+      return;
+    }
+
+    onChange(
+      normalizeLayoutFormItems(
+        normalizedItems.map((item) =>
+          item.section_key === sectionKey ? { ...item, sort_order: nextSortOrder } : item,
+        ),
+      ),
+    );
+  }
+
+  return (
+    <div className="lg:col-span-2">
+      <div className="overflow-hidden rounded-[22px] border border-border-light bg-white">
+        <div className="hidden grid-cols-[52px_minmax(150px,0.9fr)_110px_120px_minmax(180px,1fr)_minmax(180px,1fr)_140px] gap-3 bg-soft-green/70 px-4 py-3 font-heading text-xs font-bold uppercase tracking-[0.12em] text-primary xl:grid">
+          <span>Move</span>
+          <span>Section</span>
+          <span>Visible</span>
+          <span>Order</span>
+          <span>Title Override</span>
+          <span>Subtitle Override</span>
+          <span>Animation</span>
+        </div>
+        <div className="divide-y divide-border-light">
+          {normalizedItems.map((item, index) => (
+            <div
+              key={item.section_key}
+              className="grid gap-3 px-4 py-4 xl:grid-cols-[52px_minmax(150px,0.9fr)_110px_120px_minmax(180px,1fr)_minmax(180px,1fr)_140px] xl:items-center"
+            >
+              <div className="flex items-center gap-1">
+                <GripVertical className="size-5 text-muted" aria-hidden="true" />
+                <div className="flex flex-col">
+                  <button
+                    type="button"
+                    onClick={() => moveItem(item.section_key, -1)}
+                    disabled={index === 0}
+                    className="rounded-full p-1 text-primary transition hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-30"
+                    aria-label={`Move ${item.section_name} up`}
+                  >
+                    <ArrowUp className="size-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => moveItem(item.section_key, 1)}
+                    disabled={index === normalizedItems.length - 1}
+                    className="rounded-full p-1 text-primary transition hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-30"
+                    aria-label={`Move ${item.section_name} down`}
+                  >
+                    <ArrowDown className="size-4" />
+                  </button>
+                </div>
+              </div>
+              <div>
+                <p className="font-heading text-sm font-extrabold text-text-dark">
+                  {item.section_name}
+                </p>
+                <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+                  {item.section_key}
+                </p>
+              </div>
+              <CheckboxField
+                label="Visible"
+                checked={item.is_visible}
+                onChange={(value) => updateItem(item.section_key, { is_visible: value })}
+              />
+              <label className="grid gap-2">
+                <span className="font-heading text-xs font-semibold text-muted xl:hidden">
+                  Sort Order
+                </span>
+                <input
+                  type="number"
+                  min={0}
+                  value={item.sort_order}
+                  onChange={(event) => updateSortOrder(item.section_key, event.target.value)}
+                  className="min-h-11 rounded-[16px] border border-border-light bg-cream/40 px-3 text-sm font-semibold text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+                />
+              </label>
+              <input
+                value={item.title_override}
+                onChange={(event) =>
+                  updateItem(item.section_key, { title_override: event.target.value })
+                }
+                placeholder="Use default title"
+                className="min-h-11 rounded-[16px] border border-border-light bg-white px-3 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+              />
+              <input
+                value={item.subtitle_override}
+                onChange={(event) =>
+                  updateItem(item.section_key, { subtitle_override: event.target.value })
+                }
+                placeholder="Use default subtitle"
+                className="min-h-11 rounded-[16px] border border-border-light bg-white px-3 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
+              />
+              <CheckboxField
+                label="Animate"
+                checked={item.animation_enabled}
+                onChange={(value) => updateItem(item.section_key, { animation_enabled: value })}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -35,6 +35,10 @@ import type {
 } from "@/lib/product-data";
 import { ContentStatus } from "@/lib/database/constants";
 import { buildProductPath } from "@/lib/products/url";
+import {
+  PRODUCT_LAYOUT_SECTION_DEFINITIONS,
+  getProductLayoutDefinition,
+} from "@/lib/product-layout";
 import type {
   Blog,
   Category,
@@ -416,6 +420,36 @@ function tocItemsToDetail(items: Product["toc_items"]): ProductDetailTocItem[] {
     }));
 }
 
+function productLayoutSectionsToDetail(
+  items: Product["product_layout_sections"],
+): ProductDetail["layoutSections"] {
+  const sectionMap = new Map(
+    safeArray(items)
+      .sort((first, second) => first.sort_order - second.sort_order)
+      .flatMap((item) =>
+        getProductLayoutDefinition(item.section_key)
+          ? ([[item.section_key, item]] as const)
+          : [],
+      ),
+  );
+
+  return PRODUCT_LAYOUT_SECTION_DEFINITIONS.map((definition, index) => {
+    const savedSection = sectionMap.get(definition.key);
+
+    return {
+      sectionKey: definition.key,
+      anchorId: definition.anchorId,
+      name: definition.name,
+      isVisible: savedSection?.is_visible ?? true,
+      sortOrder: savedSection?.sort_order ?? index,
+      titleOverride: savedSection?.title_override,
+      subtitleOverride: savedSection?.subtitle_override,
+      backgroundStyle: savedSection?.background_style ?? "default",
+      animationEnabled: savedSection?.animation_enabled ?? true,
+    };
+  }).sort((first, second) => first.sortOrder - second.sortOrder);
+}
+
 function benefitsFromProduct(product: Product): ProductDetail["benefits"] {
   const values = Array.isArray(product.benefits) ? product.benefits : [];
   return values
@@ -703,6 +737,7 @@ export function productToDetail(
       trustBadges: sidebarTrustBadgesToCards(product.sidebar_trust_badges),
     },
     tocItems: tocItemsToDetail(product.toc_items),
+    layoutSections: productLayoutSectionsToDetail(product.product_layout_sections),
     relatedIngredients: manualIngredients.length ? manualIngredients : ingredients
       .filter((ingredient) => ingredient.slug)
       .slice(0, 6)

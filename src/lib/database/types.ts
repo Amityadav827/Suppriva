@@ -6,6 +6,7 @@ import {
   UserRole,
   UserStatus,
 } from "./constants";
+import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
   | string
@@ -151,6 +152,20 @@ export type ProductTocItem = {
   display_order: number;
   is_visible: boolean;
   is_active: boolean;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
+export type ProductLayoutSection = {
+  id: string;
+  product_id: string;
+  section_key: ProductLayoutSectionKey;
+  is_visible: boolean;
+  sort_order: number;
+  title_override: string | null;
+  subtitle_override: string | null;
+  background_style: "default";
+  animation_enabled: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
 };
@@ -337,6 +352,7 @@ export type Product = {
   sidebar_facts?: ProductSidebarFact[];
   sidebar_trust_badges?: ProductSidebarTrustBadge[];
   toc_items?: ProductTocItem[];
+  product_layout_sections?: ProductLayoutSection[];
   ingredient_overrides?: ProductIngredientOverride[];
   related_product_relations?: ProductRelatedProduct[];
   compare_product_relations?: ProductCompareProduct[];
@@ -569,6 +585,7 @@ export type Database = {
   product_sidebar_facts: ProductSidebarFact;
   product_sidebar_trust_badges: ProductSidebarTrustBadge;
   product_toc_items: ProductTocItem;
+  product_layout_sections: ProductLayoutSection;
   product_ingredient_overrides: ProductIngredientOverride;
   product_related_products: ProductRelatedProduct;
   product_compare_products: ProductCompareProduct;
