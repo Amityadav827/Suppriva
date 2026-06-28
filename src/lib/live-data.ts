@@ -213,12 +213,20 @@ function splitSentences(value?: string | null) {
     .filter(Boolean);
 }
 
+function safeArray<T>(value: T[] | null | undefined): T[] {
+  return Array.isArray(value) ? value : [];
+}
+
+function safeStringArray(value: string[] | null | undefined): string[] {
+  return safeArray(value).filter((item): item is string => typeof item === "string");
+}
+
 function uniqueStrings(values: Array<string | null | undefined>) {
   return [...new Set(values.map((value) => value?.trim()).filter(Boolean) as string[])];
 }
 
-function parseHeroChecklist(items: string[]): ProductDetail["heroChecklist"] {
-  return items
+function parseHeroChecklist(items?: string[] | null): ProductDetail["heroChecklist"] {
+  return safeStringArray(items)
     .map((item) => {
       const parts = item.split("|").map((part) => part.trim());
 
@@ -354,7 +362,7 @@ function ingredientsFromProduct(
       }));
   }
 
-  const ingredients = (product.ingredients ?? [])
+  const ingredients = safeArray(product.ingredients)
     .map((ingredient: ProductIngredient, index) => ({
       name: ingredient.name || `Ingredient ${index + 1}`,
       benefit:
@@ -435,8 +443,8 @@ export function productToDetail(
           title: benefit.title,
           description: benefit.description,
         })),
-    heroShowRating: product.hero_show_rating,
-    heroShowBadge: product.hero_show_badge,
+    heroShowRating: product.hero_show_rating ?? true,
+    heroShowBadge: product.hero_show_badge ?? true,
     category: categoryLabel,
     categorySlug: category?.slug,
     rating: ratingValue.toFixed(1),
@@ -454,7 +462,7 @@ export function productToDetail(
       product.full_description ||
       "A premium supplement formula prepared for focused wellness research and product comparison.",
     image: product.image || product.gallery?.[0],
-    gallery: [product.image, ...(product.gallery ?? [])].filter(Boolean) as string[],
+    gallery: [product.image, ...safeStringArray(product.gallery)].filter(Boolean) as string[],
     bullets: benefits.slice(0, 4).map((benefit) => benefit.title),
     trustBadges: uniqueStrings([
       `${ingredients.length} ingredient${ingredients.length === 1 ? "" : "s"} profiled`,
@@ -493,8 +501,8 @@ export function productToDetail(
       drugInteractions: [],
       precautions: [],
     },
-    pros: product.pros ?? [],
-    cons: product.cons ?? [],
+    pros: safeStringArray(product.pros),
+    cons: safeStringArray(product.cons),
     prosConsTitle: product.pros_cons_title || "Pros & Cons",
     prosConsSubtitle: product.pros_cons_subtitle || "",
     faqTitle: product.faq_title || "Frequently Asked Questions",
