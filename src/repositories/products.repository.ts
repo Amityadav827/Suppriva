@@ -715,17 +715,17 @@ export class SupabaseProductsRepository implements ProductsRepository {
       relatedBlogs,
       relatedIngredients,
     ] = await Promise.all([
-      this.fetchProductRows<ProductCmsCard>("product_standout_points", productIds),
-      this.fetchProductRows<ProductHowItWorksStep>("product_how_it_works_steps", productIds),
-      this.fetchProductRows<ProductCmsCard>("product_best_for_items", productIds),
-      this.fetchProductRows<ProductSafetyItem>("product_safety_items", productIds),
-      this.fetchProductRows<ProductCmsCard>("product_buying_guide_items", productIds),
-      this.fetchProductRows<ProductSidebarFact>("product_sidebar_facts", productIds),
-      this.fetchProductRows<ProductIngredientOverride>("product_ingredient_overrides", productIds),
-      this.fetchProductRows<ProductRelatedProduct>("product_related_products", productIds),
-      this.fetchProductRows<ProductCompareProduct>("product_compare_products", productIds),
-      this.fetchProductRows<ProductRelatedBlog>("product_related_blogs", productIds),
-      this.fetchProductRows<ProductRelatedIngredient>("product_related_ingredients", productIds),
+      this.fetchProductRows<ProductCmsCard>("product_standout_points", productIds, true),
+      this.fetchProductRows<ProductHowItWorksStep>("product_how_it_works_steps", productIds, true),
+      this.fetchProductRows<ProductCmsCard>("product_best_for_items", productIds, true),
+      this.fetchProductRows<ProductSafetyItem>("product_safety_items", productIds, true),
+      this.fetchProductRows<ProductCmsCard>("product_buying_guide_items", productIds, true),
+      this.fetchProductRows<ProductSidebarFact>("product_sidebar_facts", productIds, true),
+      this.fetchProductRows<ProductIngredientOverride>("product_ingredient_overrides", productIds, true),
+      this.fetchProductRows<ProductRelatedProduct>("product_related_products", productIds, true),
+      this.fetchProductRows<ProductCompareProduct>("product_compare_products", productIds, true),
+      this.fetchProductRows<ProductRelatedBlog>("product_related_blogs", productIds, true),
+      this.fetchProductRows<ProductRelatedIngredient>("product_related_ingredients", productIds, true),
     ]);
 
     return products.map((product) => ({
@@ -747,6 +747,7 @@ export class SupabaseProductsRepository implements ProductsRepository {
   private async fetchProductRows<TRow extends { product_id: string }>(
     table: string,
     productIds: string[],
+    optional = false,
   ): Promise<TRow[]> {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
@@ -756,10 +757,24 @@ export class SupabaseProductsRepository implements ProductsRepository {
       .order("display_order", { ascending: true });
 
     if (error) {
+      if (optional && this.isMissingOptionalCmsRelation(error.message)) {
+        return [];
+      }
+
       throw new DatabaseError(error.message);
     }
 
     return (data ?? []) as TRow[];
+  }
+
+  private isMissingOptionalCmsRelation(message: string) {
+    const normalized = message.toLowerCase();
+
+    return (
+      normalized.includes("schema cache") &&
+      (normalized.includes("could not find the table") ||
+        normalized.includes("could not find the column"))
+    );
   }
 
   private rowsForProduct<TRow extends { product_id: string }>(
