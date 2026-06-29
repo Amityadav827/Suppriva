@@ -242,91 +242,90 @@ function activeSortedRelations<TRelation extends { display_order: number; is_act
     .sort((first, second) => first.display_order - second.display_order);
 }
 
-function applyProductRelationOverrides(
-  card: ProductCardData,
-  overrides: { title_override?: string | null; description_override?: string | null },
-): ProductCardData {
-  return {
-    ...card,
-    name: overrides.title_override || card.name,
-    subtitle: overrides.description_override || card.subtitle,
-  };
+function productKeywordSet(product: Product, categories: Map<string, Category>) {
+  const category = product.category_id ? categories.get(product.category_id) : null;
+  const benefitWords = benefitsFromProduct(product)
+    .flatMap((benefit) => [benefit.title, benefit.description])
+    .join(" ");
+  const source = [
+    product.title,
+    product.name,
+    product.short_description ?? "",
+    product.full_description ?? "",
+    categoryTitle(category),
+    benefitWords,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return new Set(source.match(/[a-z0-9]+/g)?.filter((word) => word.length > 3) ?? []);
 }
 
-function manualProductCards(
-  relations: Product["related_product_relations"],
+function sharedCount(first: Set<string>, second: Set<string>) {
+  let count = 0;
+
+  first.forEach((item) => {
+    if (second.has(item)) {
+      count += 1;
+    }
+  });
+
+  return count;
+}
+
+function productIngredientSet(product: Product) {
+  return new Set(safeStringArray(product.ingredient_ids));
+}
+
+function relationshipScore(
+  product: Product,
+  candidate: Product,
+  categories: Map<string, Category>,
+) {
+  const sameCategory = product.category_id && product.category_id === candidate.category_id ? 70 : 0;
+  const sharedIngredients =
+    sharedCount(productIngredientSet(product), productIngredientSet(candidate)) * 18;
+  const sharedKeywords = sharedCount(
+    productKeywordSet(product, categories),
+    productKeywordSet(candidate, categories),
+  );
+  const candidateRating = candidate.rating ?? 0;
+
+  return sameCategory + sharedIngredients + Math.min(sharedKeywords, 12) * 3 + candidateRating;
+}
+
+function automaticProductCards(
+  product: Product,
   products: Product[],
   categories: Map<string, Category>,
+  limit: number,
 ): ProductCardData[] {
-  const productMap = new Map(products.map((item) => [item.id, item]));
+  const candidates = products.filter(
+    (item) =>
+      item.id !== product.id &&
+      item.slug !== product.slug &&
+      item.status === ContentStatus.Published &&
+      item.deleted_at === null,
+  );
 
-  return activeSortedRelations(relations)
-    .map((relation, index) => {
-      const relatedProduct = productMap.get(relation.related_product_id);
-
-      if (!relatedProduct) {
-        return null;
+  const ranked = candidates
+    .map((candidate) => ({
+      candidate,
+      score: relationshipScore(product, candidate, categories),
+    }))
+    .sort((first, second) => {
+      if (second.score !== first.score) {
+        return second.score - first.score;
       }
 
-      return applyProductRelationOverrides(
-        productToCard(relatedProduct, categories, index),
-        relation,
-      );
-    })
-    .filter(Boolean) as ProductCardData[];
-}
+      return (second.candidate.rating ?? 0) - (first.candidate.rating ?? 0);
+    });
 
-function manualCompareProductCards(
-  relations: Product["compare_product_relations"],
-  products: Product[],
-  categories: Map<string, Category>,
-): ProductDetail["comparisonProducts"] {
-  const productMap = new Map(products.map((item) => [item.id, item]));
+  const sameCategory = ranked.filter(({ candidate }) => candidate.category_id === product.category_id);
+  const others = ranked.filter(({ candidate }) => candidate.category_id !== product.category_id);
+  const selected = [...sameCategory, ...others].slice(0, limit);
 
-  return activeSortedRelations(relations)
-    .map((relation, index) => {
-      const comparedProduct = productMap.get(relation.compared_product_id);
-
-      if (!comparedProduct) {
-        return null;
-      }
-
-      return applyProductRelationOverrides(
-        productToCard(comparedProduct, categories, index),
-        relation,
-      );
-    })
-    .filter(Boolean) as ProductDetail["comparisonProducts"];
-}
-
-function manualRelatedIngredients(
-  relations: Product["related_ingredient_relations"],
-  ingredients: Ingredient[],
-): ProductDetail["relatedIngredients"] {
-  const ingredientMap = new Map(ingredients.map((ingredient) => [ingredient.id, ingredient]));
-
-  return activeSortedRelations(relations)
-    .map((relation) => {
-      const ingredient = ingredientMap.get(relation.ingredient_id);
-
-      if (!ingredient) {
-        return null;
-      }
-
-      return {
-        name: relation.title_override || ingredient.name,
-        slug: ingredient.slug,
-        benefit:
-          relation.description_override ||
-          ingredient.short_description ||
-          ingredient.full_description ||
-          undefined,
-        image: ingredient.image_url || ingredient.featured_image || undefined,
-        category: ingredient.ingredient_category || undefined,
-        scientificName: ingredient.scientific_name,
-      };
-    })
-    .filter(Boolean) as ProductDetail["relatedIngredients"];
+  return selected.map(({ candidate }, index) => productToCard(candidate, categories, index));
 }
 
 function parseHeroChecklist(items?: string[] | null): ProductDetail["heroChecklist"] {
@@ -561,36 +560,27 @@ export function productToDetail(
   categories: Map<string, Category>,
   expertAttribution: ExpertAttribution,
   linkedIngredients: Ingredient[] = [],
-  allIngredients: Ingredient[] = linkedIngredients,
 ): ProductDetail {
   const benefits = benefitsFromProduct(product);
   const ingredients = ingredientsFromProduct(product, linkedIngredients);
   const category = product.category_id ? categories.get(product.category_id) : null;
   const categoryLabel = categoryTitle(category);
-  const related = products
-    .filter((item) => item.slug !== product.slug)
-    .slice(0, 6)
-    .map((item) => item.slug);
   const ratingValue = Number((product.rating ?? 0).toFixed(1));
   const reviewCount = product.review_count ?? 0;
-  const relatedProducts = related
-    .map((slug) => products.find((item) => item.slug === slug))
-    .filter(Boolean)
-    .map((item, index) => productToCard(item as Product, categories, index));
-  const manualRelatedProducts = manualProductCards(
-    product.related_product_relations,
-    products,
-    categories,
-  );
-  const manualComparisonProducts = manualCompareProductCards(
-    product.compare_product_relations,
-    products,
-    categories,
-  );
-  const manualIngredients = manualRelatedIngredients(
-    product.related_ingredient_relations,
-    allIngredients,
-  );
+  const relatedProducts = automaticProductCards(product, products, categories, 4);
+  const comparisonProducts = automaticProductCards(product, products, categories, 4);
+  const related = relatedProducts.map((item) => item.slug).filter(Boolean) as string[];
+  const relatedIngredients = ingredients
+    .filter((ingredient) => ingredient.slug)
+    .slice(0, 6)
+    .map((ingredient) => ({
+      name: ingredient.name,
+      slug: ingredient.slug,
+      benefit: ingredient.benefit,
+      image: ingredient.image,
+      category: ingredient.category,
+      scientificName: ingredient.scientificName,
+    }));
   const heroHighlights = cmsCardsToHeroHighlights(product.standout_points);
   const standoutPoints = cmsCardsToDetailCards(product.standout_points);
   const howItWorks = howItWorksStepsToCards(product.how_it_works_steps);
@@ -613,7 +603,7 @@ export function productToDetail(
         { label: "Related Articles", value: "0", icon: "book" },
         {
           label: "Related Ingredients",
-          value: String(manualIngredients.length || ingredients.length),
+          value: String(relatedIngredients.length || ingredients.length),
           icon: "leaf",
         },
       ].filter((item) => item.value.trim());
@@ -718,6 +708,26 @@ export function productToDetail(
     buyingGuideSubtitle: product.buying_guide_subtitle || "",
     buyingCtaLabel: product.buying_cta_label || "Visit Official Website",
     buyingGuidance,
+    relatedIngredientsTitle: product.related_ingredients_title || "Related Ingredients",
+    relatedIngredientsSubtitle:
+      product.related_ingredients_subtitle ||
+      "Internal linking support for ingredient-level research, comparison, and topical SEO depth.",
+    relatedArticlesTitle: product.related_blogs_title || "Learn More",
+    relatedArticlesSubtitle:
+      product.related_blogs_subtitle ||
+      "Related editorial resources connected through matching topics, categories, and ingredient language.",
+    compareTitle: product.compare_title || "Compare Alternatives",
+    compareSubtitle:
+      product.compare_subtitle ||
+      "A stronger comparison-ready section for visitors who want to evaluate similar products before clicking out.",
+    relatedProductsTitle: product.related_products_title || "Related Products",
+    relatedProductsSubtitle:
+      product.related_products_subtitle ||
+      "The current related product carousel remains intact, now sitting inside a stronger long-form review architecture.",
+    healthNeedsTitle: product.health_needs_title || "Explore By Health Needs",
+    healthNeedsSubtitle:
+      product.health_needs_subtitle ||
+      "Discover wellness categories related to this product and explore solutions for other health goals.",
     sidebar: {
       heading: product.sidebar_heading || "At A Glance",
       description: product.sidebar_description || "",
@@ -738,24 +748,12 @@ export function productToDetail(
     },
     tocItems: tocItemsToDetail(product.toc_items),
     layoutSections: productLayoutSectionsToDetail(product.product_layout_sections),
-    relatedIngredients: manualIngredients.length ? manualIngredients : ingredients
-      .filter((ingredient) => ingredient.slug)
-      .slice(0, 6)
-      .map((ingredient) => ({
-        name: ingredient.name,
-        slug: ingredient.slug,
-        benefit: ingredient.benefit,
-        image: ingredient.image,
-        category: ingredient.category,
-        scientificName: ingredient.scientificName,
-      })),
+    relatedIngredients,
     relatedArticles: [],
     healthNeeds: [],
     related,
-    comparisonProducts: manualComparisonProducts.length
-      ? manualComparisonProducts
-      : relatedProducts.slice(0, 4),
-    relatedProducts: manualRelatedProducts.length ? manualRelatedProducts : relatedProducts,
+    comparisonProducts,
+    relatedProducts,
     expertAttribution,
   };
 }

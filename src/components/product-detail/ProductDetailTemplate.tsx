@@ -153,17 +153,17 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     ...(sectionVisible("verdict") && hasVerdict ? [{ id: "verdict", label: sectionTitle("verdict", product.verdictTitle), order: sectionOrder("verdict") }] : []),
     ...(sectionVisible("buying") && product.buyingGuidance.length ? [{ id: "where-to-buy", label: sectionTitle("buying", product.buyingGuideTitle), order: sectionOrder("buying") }] : []),
     ...(sectionVisible("related_ingredients") && product.relatedIngredients.length
-      ? [{ id: "related-ingredients", label: sectionTitle("related_ingredients", "Related Ingredients"), order: sectionOrder("related_ingredients") }]
+      ? [{ id: "related-ingredients", label: sectionTitle("related_ingredients", product.relatedIngredientsTitle), order: sectionOrder("related_ingredients") }]
       : []),
-    ...(sectionVisible("related_blogs") && product.relatedArticles.length ? [{ id: "learn-more", label: sectionTitle("related_blogs", "Learn More"), order: sectionOrder("related_blogs") }] : []),
+    ...(sectionVisible("related_blogs") && product.relatedArticles.length ? [{ id: "learn-more", label: sectionTitle("related_blogs", product.relatedArticlesTitle), order: sectionOrder("related_blogs") }] : []),
     ...(sectionVisible("compare") && product.comparisonProducts.length
-      ? [{ id: "compare-alternatives", label: sectionTitle("compare", "Compare Alternatives"), order: sectionOrder("compare") }]
+      ? [{ id: "compare-alternatives", label: sectionTitle("compare", product.compareTitle), order: sectionOrder("compare") }]
       : []),
     ...(sectionVisible("related_products") && product.relatedProducts?.length
-      ? [{ id: "related-products", label: sectionTitle("related_products", "Related Products"), order: sectionOrder("related_products") }]
+      ? [{ id: "related-products", label: sectionTitle("related_products", product.relatedProductsTitle), order: sectionOrder("related_products") }]
       : []),
     ...(sectionVisible("health_needs") && product.healthNeeds.length
-      ? [{ id: "explore-health-needs", label: sectionTitle("health_needs", "Explore By Health Needs"), order: sectionOrder("health_needs") }]
+      ? [{ id: "explore-health-needs", label: sectionTitle("health_needs", product.healthNeedsTitle), order: sectionOrder("health_needs") }]
       : []),
   ];
   const sections: IngredientSectionLink[] = defaultSections
@@ -780,10 +780,10 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="related-ingredients"
                 icon={Leaf}
-                title={sectionTitle("related_ingredients", "Related Ingredients")}
+                title={sectionTitle("related_ingredients", product.relatedIngredientsTitle)}
                 subtitle={sectionSubtitle(
                   "related_ingredients",
-                  "Internal linking support for ingredient-level research, comparison, and topical SEO depth.",
+                  product.relatedIngredientsSubtitle,
                 )}
                 tone="cream"
                 order={sectionOrder("related_ingredients")}
@@ -803,10 +803,10 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="learn-more"
                 icon={BookOpenText}
-                title={sectionTitle("related_blogs", "Learn More")}
+                title={sectionTitle("related_blogs", product.relatedArticlesTitle)}
                 subtitle={sectionSubtitle(
                   "related_blogs",
-                  "Related editorial resources connected through matching topics, categories, and ingredient language.",
+                  product.relatedArticlesSubtitle,
                 )}
                 order={sectionOrder("related_blogs")}
               >
@@ -822,10 +822,10 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="compare-alternatives"
                 icon={PackageCheck}
-                title={sectionTitle("compare", "Compare Alternatives")}
+                title={sectionTitle("compare", product.compareTitle)}
                 subtitle={sectionSubtitle(
                   "compare",
-                  "A stronger comparison-ready section for visitors who want to evaluate similar products before clicking out.",
+                  product.compareSubtitle,
                 )}
                 tone="cream"
                 order={sectionOrder("compare")}
@@ -868,10 +868,10 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="related-products"
                 icon={PackageCheck}
-                title={sectionTitle("related_products", "Related Products")}
+                title={sectionTitle("related_products", product.relatedProductsTitle)}
                 subtitle={sectionSubtitle(
                   "related_products",
-                  "The current related product carousel remains intact, now sitting inside a stronger long-form review architecture.",
+                  product.relatedProductsSubtitle,
                 )}
                 order={sectionOrder("related_products")}
               >
@@ -883,10 +883,10 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="explore-health-needs"
                 icon={HeartPulse}
-                title={sectionTitle("health_needs", "Explore By Health Needs")}
+                title={sectionTitle("health_needs", product.healthNeedsTitle)}
                 subtitle={sectionSubtitle(
                   "health_needs",
-                  "Discover wellness categories related to this product and explore solutions for other health goals.",
+                  product.healthNeedsSubtitle,
                 )}
                 tone="cream"
                 order={sectionOrder("health_needs")}

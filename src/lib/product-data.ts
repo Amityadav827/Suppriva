@@ -160,6 +160,8 @@ export type ProductDetail = {
     category?: string;
     scientificName?: string | null;
   }[];
+  relatedIngredientsTitle: string;
+  relatedIngredientsSubtitle: string;
   relatedArticles: {
     slug?: string;
     title: string;
@@ -169,12 +171,18 @@ export type ProductDetail = {
     readingTime: string;
     image: string;
   }[];
+  relatedArticlesTitle: string;
+  relatedArticlesSubtitle: string;
   healthNeeds: {
     label: string;
     slug?: string;
     description: string;
   }[];
+  healthNeedsTitle: string;
+  healthNeedsSubtitle: string;
   related: string[];
+  compareTitle: string;
+  compareSubtitle: string;
   comparisonProducts: {
     slug?: string;
     href?: string;
@@ -186,6 +194,8 @@ export type ProductDetail = {
     glow: string;
     accent: string;
   }[];
+  relatedProductsTitle: string;
+  relatedProductsSubtitle: string;
   relatedProducts?: {
     slug?: string;
     href?: string;
