@@ -141,7 +141,40 @@ type ProductFormState = {
   seo_og_description: string;
   seo_og_image: string;
   seo_noindex: boolean;
+  seo_focus_keyword: string;
+  seo_nofollow: boolean;
+  seo_twitter_title: string;
+  seo_twitter_description: string;
+  seo_twitter_image: string;
+  schema_brand: string;
+  schema_sku: string;
+  schema_mpn: string;
+  schema_gtin: string;
+  schema_price: string;
+  schema_currency: string;
+  schema_availability: string;
+  schema_aggregate_rating: string;
+  schema_review_count: string;
+  schema_offer_url: string;
+  schema_enable_product: boolean;
+  schema_enable_faq: boolean;
+  schema_enable_breadcrumb: boolean;
+  schema_enable_review: boolean;
+  schema_enable_organization: boolean;
   schema_json: string;
+  product_image_title: string;
+  product_image_alt: string;
+  product_image_caption: string;
+  product_image_description: string;
+  product_image_credit: string;
+  product_image_license: string;
+  product_image_photographer: string;
+  product_image_keywords: string;
+  product_image_focus_keyword: string;
+  product_image_source_url: string;
+  product_image_enable_indexing: boolean;
+  product_image_generate_filename: boolean;
+  gallery_image_metadata: string;
 };
 
 type ProductsResponse = {
@@ -304,7 +337,40 @@ const emptyForm: ProductFormState = {
   seo_og_description: "",
   seo_og_image: "",
   seo_noindex: false,
+  seo_focus_keyword: "",
+  seo_nofollow: false,
+  seo_twitter_title: "",
+  seo_twitter_description: "",
+  seo_twitter_image: "",
+  schema_brand: "",
+  schema_sku: "",
+  schema_mpn: "",
+  schema_gtin: "",
+  schema_price: "",
+  schema_currency: "USD",
+  schema_availability: "",
+  schema_aggregate_rating: "",
+  schema_review_count: "",
+  schema_offer_url: "",
+  schema_enable_product: true,
+  schema_enable_faq: true,
+  schema_enable_breadcrumb: true,
+  schema_enable_review: true,
+  schema_enable_organization: true,
   schema_json: "",
+  product_image_title: "",
+  product_image_alt: "",
+  product_image_caption: "",
+  product_image_description: "",
+  product_image_credit: "",
+  product_image_license: "",
+  product_image_photographer: "",
+  product_image_keywords: "",
+  product_image_focus_keyword: "",
+  product_image_source_url: "",
+  product_image_enable_indexing: true,
+  product_image_generate_filename: false,
+  gallery_image_metadata: "",
 };
 
 function lines(value: string) {
@@ -637,6 +703,137 @@ function parseSchemaJson(value: string): JsonValue {
   return JSON.parse(value) as JsonValue;
 }
 
+function safeMetadataRecord(value: unknown) {
+  return typeof value === "object" && value !== null && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : {};
+}
+
+function metadataString(value: unknown) {
+  return typeof value === "string" ? value : "";
+}
+
+function metadataBoolean(value: unknown, fallback: boolean) {
+  return typeof value === "boolean" ? value : fallback;
+}
+
+function metadataKeywords(value: unknown) {
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === "string").join("\n")
+    : "";
+}
+
+function serializeGalleryImageMetadata(items?: Product["gallery_image_metadata"]) {
+  return safeArray(items)
+    .map((item) => {
+      const metadata = safeMetadataRecord(item);
+      return [
+        metadataString(metadata.url),
+        metadataString(metadata.alt),
+        metadataString(metadata.title),
+        metadataString(metadata.caption),
+        metadataString(metadata.description),
+      ]
+        .map((part) => part.trim())
+        .join(" | ")
+        .replace(/(?:\s\|\s)*$/g, "");
+    })
+    .filter(Boolean)
+    .join("\n");
+}
+
+function parseGalleryImageMetadata(value: string) {
+  return lines(value)
+    .map((item) => {
+      const [url = "", alt = "", title = "", caption = "", description = ""] = item
+        .split("|")
+        .map((part) => part.trim());
+
+      return {
+        url,
+        alt: alt || null,
+        title: title || null,
+        caption: caption || null,
+        description: description || null,
+      };
+    })
+    .filter((item) => item.url);
+}
+
+function getSeoPreviewUrl(form: ProductFormState) {
+  if (form.seo_canonical_url) {
+    return form.seo_canonical_url;
+  }
+
+  const slug = form.slug || "product-slug";
+  return `https://suppriva.vercel.app/product/${slug}`;
+}
+
+function getSeoChecks(form: ProductFormState) {
+  const title = form.seo_title || form.title;
+  const description = form.seo_description || form.short_description;
+  const canonical = form.seo_canonical_url;
+  const checks = [
+    { label: "Title", ok: title.length >= 30 && title.length <= 60 },
+    { label: "Description", ok: description.length >= 70 && description.length <= 160 },
+    { label: "Canonical", ok: Boolean(canonical) },
+    { label: "Schema", ok: form.schema_enable_product || form.schema_enable_faq },
+    { label: "OG Image", ok: Boolean(form.seo_og_image || form.image) },
+    { label: "Focus Keyword", ok: Boolean(form.seo_focus_keyword) },
+    { label: "Twitter Image", ok: Boolean(form.seo_twitter_image || form.seo_og_image || form.image) },
+  ];
+
+  return checks;
+}
+
+function getSeoWarnings(form: ProductFormState) {
+  const title = form.seo_title || form.title;
+  const description = form.seo_description || form.short_description;
+  const warnings: string[] = [];
+
+  if (title.length < 30) warnings.push("SEO title may be too short.");
+  if (title.length > 60) warnings.push("SEO title may be too long.");
+  if (!description) warnings.push("SEO description is missing.");
+  if (description.length > 160) warnings.push("SEO description may be too long.");
+  if (!form.seo_canonical_url) warnings.push("Canonical URL override is empty.");
+  if (!form.seo_focus_keyword) warnings.push("Focus keyword is missing.");
+  if (!form.seo_og_image && !form.image) warnings.push("Open Graph image is missing.");
+  if (!form.seo_twitter_image && !form.seo_og_image && !form.image) {
+    warnings.push("Twitter image is missing.");
+  }
+  if (!form.schema_enable_product) warnings.push("Product schema is disabled.");
+
+  [
+    ["Canonical URL", form.seo_canonical_url],
+    ["Open Graph image", form.seo_og_image],
+    ["Twitter image", form.seo_twitter_image],
+    ["Schema offer URL", form.schema_offer_url],
+    ["Original image source URL", form.product_image_source_url],
+  ].forEach(([label, value]) => {
+    try {
+      if (value) {
+        new URL(value);
+      }
+    } catch {
+      warnings.push(`${label} is invalid.`);
+    }
+  });
+
+  try {
+    parseSchemaJson(form.schema_json);
+  } catch {
+    warnings.push("Custom JSON-LD is invalid.");
+  }
+
+  return warnings;
+}
+
+function getSeoScore(form: ProductFormState) {
+  const checks = getSeoChecks(form);
+  const passed = checks.filter((item) => item.ok).length;
+  return Math.round((passed / checks.length) * 100);
+}
+
 function productToForm(product: Product): ProductFormState {
   const heroChecklist = safeStringArray(product.hero_checklist);
   const gallery = safeStringArray(product.gallery);
@@ -645,6 +842,7 @@ function productToForm(product: Product): ProductFormState {
   const cons = safeStringArray(product.cons);
   const faq = safeArray(product.faq);
   const ingredientIds = safeStringArray(product.ingredient_ids);
+  const imageMetadata = safeMetadataRecord(product.product_image_metadata);
 
   return {
     title: product.title,
@@ -767,11 +965,44 @@ function productToForm(product: Product): ProductFormState {
     seo_og_title: product.seo_og_title ?? "",
     seo_og_description: product.seo_og_description ?? "",
     seo_og_image: product.seo_og_image ?? "",
-    seo_noindex: product.seo_noindex,
+    seo_noindex: product.seo_noindex ?? false,
+    seo_focus_keyword: product.seo_focus_keyword ?? "",
+    seo_nofollow: product.seo_nofollow ?? false,
+    seo_twitter_title: product.seo_twitter_title ?? "",
+    seo_twitter_description: product.seo_twitter_description ?? "",
+    seo_twitter_image: product.seo_twitter_image ?? "",
+    schema_brand: product.schema_brand ?? "",
+    schema_sku: product.schema_sku ?? "",
+    schema_mpn: product.schema_mpn ?? "",
+    schema_gtin: product.schema_gtin ?? "",
+    schema_price: product.schema_price?.toString() ?? "",
+    schema_currency: product.schema_currency ?? "USD",
+    schema_availability: product.schema_availability ?? "",
+    schema_aggregate_rating: product.schema_aggregate_rating?.toString() ?? "",
+    schema_review_count: product.schema_review_count?.toString() ?? "",
+    schema_offer_url: product.schema_offer_url ?? "",
+    schema_enable_product: product.schema_enable_product ?? true,
+    schema_enable_faq: product.schema_enable_faq ?? true,
+    schema_enable_breadcrumb: product.schema_enable_breadcrumb ?? true,
+    schema_enable_review: product.schema_enable_review ?? true,
+    schema_enable_organization: product.schema_enable_organization ?? true,
     schema_json:
       product.schema_json && typeof product.schema_json === "object"
         ? JSON.stringify(product.schema_json, null, 2)
         : "",
+    product_image_title: metadataString(imageMetadata.title),
+    product_image_alt: metadataString(imageMetadata.alt) || product.hero_image_alt || "",
+    product_image_caption: metadataString(imageMetadata.caption),
+    product_image_description: metadataString(imageMetadata.description),
+    product_image_credit: metadataString(imageMetadata.credit),
+    product_image_license: metadataString(imageMetadata.license),
+    product_image_photographer: metadataString(imageMetadata.photographer),
+    product_image_keywords: metadataKeywords(imageMetadata.keywords),
+    product_image_focus_keyword: metadataString(imageMetadata.focus_keyword),
+    product_image_source_url: metadataString(imageMetadata.source_url),
+    product_image_enable_indexing: metadataBoolean(imageMetadata.enable_indexing, true),
+    product_image_generate_filename: metadataBoolean(imageMetadata.generate_filename, false),
+    gallery_image_metadata: serializeGalleryImageMetadata(product.gallery_image_metadata),
   };
 }
 
@@ -884,7 +1115,45 @@ function formToPayload(form: ProductFormState) {
     seo_og_description: form.seo_og_description || null,
     seo_og_image: form.seo_og_image || null,
     seo_noindex: form.seo_noindex,
+    seo_focus_keyword: form.seo_focus_keyword || null,
+    seo_nofollow: form.seo_nofollow,
+    seo_twitter_title: form.seo_twitter_title || null,
+    seo_twitter_description: form.seo_twitter_description || null,
+    seo_twitter_image: form.seo_twitter_image || null,
+    schema_brand: form.schema_brand || null,
+    schema_sku: form.schema_sku || null,
+    schema_mpn: form.schema_mpn || null,
+    schema_gtin: form.schema_gtin || null,
+    schema_price: form.schema_price ? Number(form.schema_price) : null,
+    schema_currency: form.schema_currency || null,
+    schema_availability: form.schema_availability || null,
+    schema_aggregate_rating: form.schema_aggregate_rating
+      ? Number(form.schema_aggregate_rating)
+      : null,
+    schema_review_count: form.schema_review_count ? Number(form.schema_review_count) : null,
+    schema_offer_url: form.schema_offer_url || null,
+    schema_enable_product: form.schema_enable_product,
+    schema_enable_faq: form.schema_enable_faq,
+    schema_enable_breadcrumb: form.schema_enable_breadcrumb,
+    schema_enable_review: form.schema_enable_review,
+    schema_enable_organization: form.schema_enable_organization,
     schema_json: parseSchemaJson(form.schema_json),
+    product_image_metadata: {
+      url: form.image || null,
+      title: form.product_image_title || null,
+      alt: form.product_image_alt || form.hero_image_alt || null,
+      caption: form.product_image_caption || null,
+      description: form.product_image_description || null,
+      credit: form.product_image_credit || null,
+      license: form.product_image_license || null,
+      photographer: form.product_image_photographer || null,
+      keywords: lines(form.product_image_keywords),
+      focus_keyword: form.product_image_focus_keyword || null,
+      source_url: form.product_image_source_url || null,
+      enable_indexing: form.product_image_enable_indexing,
+      generate_filename: form.product_image_generate_filename,
+    },
+    gallery_image_metadata: parseGalleryImageMetadata(form.gallery_image_metadata),
   };
 }
 
@@ -910,6 +1179,7 @@ export function DashboardProductsClient() {
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(true);
   const [isIngredientsLoading, setIsIngredientsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [isImageMetadataOpen, setIsImageMetadataOpen] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -1034,6 +1304,7 @@ export function DashboardProductsClient() {
   function openCreateForm() {
     setEditingProduct(null);
     setForm(emptyForm);
+    setIsImageMetadataOpen(false);
     setError("");
     setSuccess("");
     setIsFormOpen(true);
@@ -1042,6 +1313,7 @@ export function DashboardProductsClient() {
   function openEditForm(product: Product) {
     setEditingProduct(product);
     setForm(productToForm(product));
+    setIsImageMetadataOpen(false);
     setError("");
     setSuccess("");
     setIsFormOpen(true);
@@ -1285,8 +1557,35 @@ export function DashboardProductsClient() {
               className="lg:col-span-2"
               helperText="Select a primary product visual from the Media Library."
             />
+            <div className="lg:col-span-2">
+              <button
+                type="button"
+                onClick={() => setIsImageMetadataOpen((current) => !current)}
+                className="inline-flex min-h-11 items-center gap-2 rounded-pill border border-border-light bg-white px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
+              >
+                <Pencil className="size-4" />
+                {isImageMetadataOpen ? "Hide Metadata" : "Edit Metadata"}
+              </button>
+            </div>
+            {isImageMetadataOpen ? (
+              <div className="grid gap-4 rounded-[24px] border border-border-light bg-cream/40 p-4 lg:col-span-2 lg:grid-cols-2">
+                <InputField label="Image Title" value={form.product_image_title} onChange={(value) => updateForm("product_image_title", value)} />
+                <InputField label="Alt Text" value={form.product_image_alt} onChange={(value) => updateForm("product_image_alt", value)} />
+                <InputField label="Caption" value={form.product_image_caption} onChange={(value) => updateForm("product_image_caption", value)} />
+                <InputField label="Photographer" value={form.product_image_photographer} onChange={(value) => updateForm("product_image_photographer", value)} />
+                <InputField label="Image Credit" value={form.product_image_credit} onChange={(value) => updateForm("product_image_credit", value)} />
+                <InputField label="Image License" value={form.product_image_license} onChange={(value) => updateForm("product_image_license", value)} />
+                <InputField label="Image Focus Keyword" value={form.product_image_focus_keyword} onChange={(value) => updateForm("product_image_focus_keyword", value)} />
+                <InputField label="Original Source URL" value={form.product_image_source_url} onChange={(value) => updateForm("product_image_source_url", value)} />
+                <TextAreaField label="Image Description" value={form.product_image_description} onChange={(value) => updateForm("product_image_description", value)} rows={3} />
+                <TextAreaField label="Image Keywords" value={form.product_image_keywords} onChange={(value) => updateForm("product_image_keywords", value)} placeholder="One keyword per line" rows={3} />
+                <div className="grid gap-3">
+                  <CheckboxField label="Enable Image Indexing" checked={form.product_image_enable_indexing} onChange={(value) => updateForm("product_image_enable_indexing", value)} />
+                  <CheckboxField label="Generate Filename From Product" checked={form.product_image_generate_filename} onChange={(value) => updateForm("product_image_generate_filename", value)} />
+                </div>
+              </div>
+            ) : null}
             <InputField label="Affiliate URL" value={form.affiliate_url} onChange={(value) => updateForm("affiliate_url", value)} />
-            <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
             <label className="grid gap-2">
               <span className="font-heading text-sm font-semibold text-text-dark">Status</span>
               <select
@@ -1300,13 +1599,19 @@ export function DashboardProductsClient() {
               </select>
             </label>
             <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateForm("short_description", value)} />
-            <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} />
             <TextAreaField label="Full Description" value={form.full_description} onChange={(value) => updateForm("full_description", value)} className="lg:col-span-2" rows={4} />
             <MediaGalleryField
               label="Product Gallery"
               values={form.gallery}
               onChange={(value) => updateForm("gallery", value)}
               helperText="Optional secondary product images pulled directly from the Media Library."
+            />
+            <TextAreaField
+              label="Gallery Image Metadata"
+              value={form.gallery_image_metadata}
+              onChange={(value) => updateForm("gallery_image_metadata", value)}
+              placeholder="Image URL | Alt text | Title | Caption | Description"
+              helperText="One gallery image per line. URL is required; other fields are optional."
             />
             <IngredientMultiSelect
               ingredients={ingredients}
@@ -1433,13 +1738,68 @@ export function DashboardProductsClient() {
               <InputField label="Health Needs Subtitle" value={form.health_needs_subtitle} onChange={(value) => updateForm("health_needs_subtitle", value)} />
             </CmsSection>
 
-            <CmsSection title="Advanced SEO">
-              <InputField label="Canonical URL" value={form.seo_canonical_url} onChange={(value) => updateForm("seo_canonical_url", value)} />
-              <InputField label="Open Graph Title" value={form.seo_og_title} onChange={(value) => updateForm("seo_og_title", value)} />
-              <InputField label="Open Graph Description" value={form.seo_og_description} onChange={(value) => updateForm("seo_og_description", value)} />
-              <InputField label="Open Graph Image" value={form.seo_og_image} onChange={(value) => updateForm("seo_og_image", value)} />
-              <CheckboxField label="Noindex product page" checked={form.seo_noindex} onChange={(value) => updateForm("seo_noindex", value)} />
-              <TextAreaField label="Schema JSON Override" value={form.schema_json} onChange={(value) => updateForm("schema_json", value)} placeholder='{"@type":"Product"}' className="lg:col-span-2" rows={6} />
+            <CmsSection
+              title="Advanced SEO"
+              description="Control product metadata, social previews, schema fields, and SEO warnings from the dashboard."
+            >
+              <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
+              <InputField label="Focus Keyword" value={form.seo_focus_keyword} onChange={(value) => updateForm("seo_focus_keyword", value)} />
+              <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} rows={3} />
+              <InputField label="Canonical URL Override" value={form.seo_canonical_url} onChange={(value) => updateForm("seo_canonical_url", value)} />
+              <div className="grid gap-3">
+                <CheckboxField label="No Index" checked={form.seo_noindex} onChange={(value) => updateForm("seo_noindex", value)} />
+                <CheckboxField label="No Follow" checked={form.seo_nofollow} onChange={(value) => updateForm("seo_nofollow", value)} />
+              </div>
+
+              <div className="grid gap-4 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-2">
+                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-2">
+                  Open Graph
+                </h4>
+                <InputField label="OG Title" value={form.seo_og_title} onChange={(value) => updateForm("seo_og_title", value)} />
+                <InputField label="OG Description" value={form.seo_og_description} onChange={(value) => updateForm("seo_og_description", value)} />
+                <MediaLibraryField label="OG Image" value={form.seo_og_image} onChange={(value) => updateForm("seo_og_image", value)} className="lg:col-span-2" />
+              </div>
+
+              <div className="grid gap-4 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-2">
+                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-2">
+                  Twitter
+                </h4>
+                <InputField label="Twitter Title" value={form.seo_twitter_title} onChange={(value) => updateForm("seo_twitter_title", value)} />
+                <InputField label="Twitter Description" value={form.seo_twitter_description} onChange={(value) => updateForm("seo_twitter_description", value)} />
+                <MediaLibraryField label="Twitter Image" value={form.seo_twitter_image} onChange={(value) => updateForm("seo_twitter_image", value)} className="lg:col-span-2" />
+              </div>
+
+              <div className="grid gap-4 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-2">
+                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-2">
+                  Product Schema
+                </h4>
+                <InputField label="Brand" value={form.schema_brand} onChange={(value) => updateForm("schema_brand", value)} />
+                <InputField label="SKU" value={form.schema_sku} onChange={(value) => updateForm("schema_sku", value)} />
+                <InputField label="MPN" value={form.schema_mpn} onChange={(value) => updateForm("schema_mpn", value)} />
+                <InputField label="GTIN" value={form.schema_gtin} onChange={(value) => updateForm("schema_gtin", value)} />
+                <InputField label="Price" value={form.schema_price} onChange={(value) => updateForm("schema_price", value)} />
+                <InputField label="Currency" value={form.schema_currency} onChange={(value) => updateForm("schema_currency", value)} />
+                <InputField label="Availability" value={form.schema_availability} onChange={(value) => updateForm("schema_availability", value)} />
+                <InputField label="Offer URL" value={form.schema_offer_url} onChange={(value) => updateForm("schema_offer_url", value)} />
+                <InputField label="Aggregate Rating" value={form.schema_aggregate_rating} onChange={(value) => updateForm("schema_aggregate_rating", value)} />
+                <InputField label="Review Count" value={form.schema_review_count} onChange={(value) => updateForm("schema_review_count", value)} />
+              </div>
+
+              <div className="grid gap-3 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-3">
+                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-3">
+                  Schema Controls
+                </h4>
+                <CheckboxField label="Enable Product Schema" checked={form.schema_enable_product} onChange={(value) => updateForm("schema_enable_product", value)} />
+                <CheckboxField label="Enable FAQ Schema" checked={form.schema_enable_faq} onChange={(value) => updateForm("schema_enable_faq", value)} />
+                <CheckboxField label="Enable Breadcrumb Schema" checked={form.schema_enable_breadcrumb} onChange={(value) => updateForm("schema_enable_breadcrumb", value)} />
+                <CheckboxField label="Enable Review Schema" checked={form.schema_enable_review} onChange={(value) => updateForm("schema_enable_review", value)} />
+                <CheckboxField label="Enable Organization Schema" checked={form.schema_enable_organization} onChange={(value) => updateForm("schema_enable_organization", value)} />
+              </div>
+
+              <TextAreaField label="Custom JSON-LD" value={form.schema_json} onChange={(value) => updateForm("schema_json", value)} placeholder='{"@type":"Product"}' className="lg:col-span-2" rows={6} />
+              <SeoPreviewPanel form={form} />
+              <SocialPreviewPanel form={form} />
+              <SeoScorePanel form={form} />
             </CmsSection>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
@@ -1461,6 +1821,105 @@ export function DashboardProductsClient() {
             </div>
           </form>
         </motion.div>
+      ) : null}
+    </div>
+  );
+}
+
+function SeoPreviewPanel({ form }: { form: ProductFormState }) {
+  const title = form.seo_title || form.title || "SEO title preview";
+  const description =
+    form.seo_description || form.short_description || "SEO description preview will appear here.";
+
+  return (
+    <div className="grid gap-3 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2">
+      <div className="flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary">
+          Google Preview
+        </h4>
+        <span className="text-xs font-semibold text-muted">{title.length}/60</span>
+      </div>
+      <div className="rounded-[18px] border border-border-light bg-white p-4">
+        <p className="text-xs text-emerald-700">{getSeoPreviewUrl(form)}</p>
+        <p className="mt-1 text-lg font-medium text-blue-700">{title}</p>
+        <p className="mt-1 text-sm leading-6 text-muted">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function SocialPreviewPanel({ form }: { form: ProductFormState }) {
+  const title = form.seo_og_title || form.seo_title || form.title || "Social preview title";
+  const description =
+    form.seo_og_description ||
+    form.seo_description ||
+    form.short_description ||
+    "Social preview description.";
+  const image = form.seo_og_image || form.seo_twitter_image || form.image;
+
+  return (
+    <div className="grid gap-3 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2">
+      <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary">
+        Social Preview
+      </h4>
+      <div className="overflow-hidden rounded-[18px] border border-border-light">
+        <div
+          className="aspect-[1.91/1] bg-cream bg-cover bg-center"
+          style={image ? { backgroundImage: `url(${image})` } : undefined}
+        >
+          {!image ? (
+            <div className="flex h-full items-center justify-center text-sm text-muted">
+              No social image selected
+            </div>
+          ) : null}
+        </div>
+        <div className="grid gap-1 bg-white p-4">
+          <p className="text-xs uppercase tracking-[0.16em] text-muted">suppriva.vercel.app</p>
+          <p className="font-heading text-base font-extrabold text-text-dark">{title}</p>
+          <p className="text-sm leading-6 text-muted">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SeoScorePanel({ form }: { form: ProductFormState }) {
+  const score = getSeoScore(form);
+  const checks = getSeoChecks(form);
+  const warnings = getSeoWarnings(form);
+
+  return (
+    <div className="grid gap-4 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary">
+            SEO Score
+          </h4>
+          <p className="mt-1 text-sm text-muted">Realtime guidance. Warnings do not block saving.</p>
+        </div>
+        <span className="rounded-pill bg-soft-green px-4 py-2 font-heading text-xl font-extrabold text-primary">
+          {score} / 100
+        </span>
+      </div>
+      <div className="grid gap-2 sm:grid-cols-2">
+        {checks.map((item) => (
+          <span
+            key={item.label}
+            className="rounded-pill border border-border-light bg-cream/40 px-4 py-2 text-sm font-semibold text-text-dark"
+          >
+            {item.ok ? "OK" : "Warning"} {item.label}
+          </span>
+        ))}
+      </div>
+      {warnings.length ? (
+        <div className="rounded-[18px] border border-gold/30 bg-gold/10 p-4">
+          <p className="font-heading text-sm font-extrabold text-text-dark">Warnings</p>
+          <ul className="mt-2 grid gap-1 text-sm text-muted">
+            {warnings.map((warning) => (
+              <li key={warning}>{warning}</li>
+            ))}
+          </ul>
+        </div>
       ) : null}
     </div>
   );
@@ -2039,6 +2498,7 @@ function TextAreaField({
   value,
   onChange,
   placeholder,
+  helperText,
   rows = 3,
   className = "",
 }: {
@@ -2046,6 +2506,7 @@ function TextAreaField({
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  helperText?: string;
   rows?: number;
   className?: string;
 }) {
@@ -2059,6 +2520,7 @@ function TextAreaField({
         rows={rows}
         className="rounded-[18px] border border-border-light bg-white px-4 py-3 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+      {helperText ? <span className="text-xs text-muted">{helperText}</span> : null}
     </label>
   );
 }

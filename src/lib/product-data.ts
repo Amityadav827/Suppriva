@@ -1,4 +1,4 @@
-import type { ExpertAttribution } from "@/lib/database/types";
+import type { ExpertAttribution, JsonValue, ProductImageMetadata } from "@/lib/database/types";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type ProductDetailCmsCard = {
@@ -38,6 +38,8 @@ export type ProductDetail = {
   affiliateUrl?: string;
   image?: string;
   gallery?: string[];
+  imageMetadata?: ProductImageMetadata | null;
+  galleryImageMetadata?: ProductImageMetadata[];
   name: string;
   heroTitle: string;
   heroBadge?: string | null;
@@ -208,4 +210,36 @@ export type ProductDetail = {
     accent: string;
   }[];
   expertAttribution: ExpertAttribution;
+  seo: {
+    title?: string | null;
+    description?: string | null;
+    focusKeyword?: string | null;
+    canonicalUrl?: string | null;
+    ogTitle?: string | null;
+    ogDescription?: string | null;
+    ogImage?: string | null;
+    noindex?: boolean;
+    nofollow?: boolean;
+    twitterTitle?: string | null;
+    twitterDescription?: string | null;
+    twitterImage?: string | null;
+  };
+  schema: {
+    brand?: string | null;
+    sku?: string | null;
+    mpn?: string | null;
+    gtin?: string | null;
+    price?: number | null;
+    currency?: string | null;
+    availability?: string | null;
+    aggregateRating?: number | null;
+    reviewCount?: number | null;
+    offerUrl?: string | null;
+    enableProduct: boolean;
+    enableFaq: boolean;
+    enableBreadcrumb: boolean;
+    enableReview: boolean;
+    enableOrganization: boolean;
+    customJsonLd?: JsonValue;
+  };
 };

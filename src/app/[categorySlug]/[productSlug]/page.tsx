@@ -11,6 +11,7 @@ import { buildSeoMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
+  buildOrganizationJsonLd,
   buildPersonJsonLd,
   buildProductJsonLd,
 } from "@/lib/seo/structured-data";
@@ -41,13 +42,24 @@ export async function generateMetadata({
   }
 
   return buildSeoMetadata(PageType.Product, productSlug, {
-    title: `${payload.product.seo_title || payload.product.title || payload.product.name} Review | Suppriva`,
+    title:
+      payload.productDetail.seo.title ||
+      `${payload.product.title || payload.product.name} Review | Suppriva`,
     description:
-      payload.product.seo_description ||
+      payload.productDetail.seo.description ||
       payload.product.short_description ||
       "Premium Suppriva supplement review.",
-    canonicalPath: payload.productDetail.path,
+    canonicalPath: payload.productDetail.seo.canonicalUrl || payload.productDetail.path,
     image: payload.product.image || payload.product.gallery?.[0],
+    imageAlt: payload.productDetail.heroImageAlt,
+    openGraphTitle: payload.productDetail.seo.ogTitle,
+    openGraphDescription: payload.productDetail.seo.ogDescription,
+    openGraphImage: payload.productDetail.seo.ogImage,
+    twitterTitle: payload.productDetail.seo.twitterTitle,
+    twitterDescription: payload.productDetail.seo.twitterDescription,
+    twitterImage: payload.productDetail.seo.twitterImage,
+    noindex: payload.productDetail.seo.noindex,
+    nofollow: payload.productDetail.seo.nofollow,
   });
 }
 
@@ -66,17 +78,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const faqs = payload.productDetail.faqs.filter(
     (faq) => faq.question?.trim() && faq.answer?.trim(),
   );
-
-  return (
-    <>
-      <JsonLdScript
-        pageType={PageType.Product}
-        pageSlug={productSlug}
-        schema={[
-          buildProductJsonLd(payload.productDetail),
-          buildPersonJsonLd(payload.productDetail.expertAttribution.author, "author"),
-          buildPersonJsonLd(payload.productDetail.expertAttribution.reviewer, "reviewer"),
-          ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
+  const customJsonLd = payload.productDetail.schema.customJsonLd;
+  const hasCustomJsonLd =
+    (Array.isArray(customJsonLd) && customJsonLd.length > 0) ||
+    (typeof customJsonLd === "object" &&
+      customJsonLd !== null &&
+      !Array.isArray(customJsonLd) &&
+      Object.keys(customJsonLd).length > 0);
+  const schema = [
+    ...(payload.productDetail.schema.enableProduct
+      ? [buildProductJsonLd(payload.productDetail)]
+      : []),
+    buildPersonJsonLd(payload.productDetail.expertAttribution.author, "author"),
+    buildPersonJsonLd(payload.productDetail.expertAttribution.reviewer, "reviewer"),
+    ...(payload.productDetail.schema.enableFaq && faqs.length ? [buildFaqJsonLd(faqs)] : []),
+    ...(payload.productDetail.schema.enableBreadcrumb
+      ? [
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "Categories", path: "/categories" },
@@ -88,7 +105,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
             },
             { name: payload.productDetail.name, path: payload.productDetail.path },
           ]),
-        ]}
+        ]
+      : []),
+    ...(payload.productDetail.schema.enableOrganization ? [buildOrganizationJsonLd()] : []),
+    ...(hasCustomJsonLd ? [customJsonLd] : []),
+  ];
+
+  return (
+    <>
+      <JsonLdScript
+        pageType={PageType.Product}
+        pageSlug={productSlug}
+        schema={schema}
       />
       <Navbar />
       <ProductDetailTemplate product={payload.productDetail} />

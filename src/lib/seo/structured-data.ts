@@ -177,9 +177,32 @@ export function buildOrganizationJsonLd() {
 
 export function buildProductJsonLd(product: ProductDetail) {
   const image = product.image || product.gallery?.[0];
-  const offerUrl = product.affiliateUrl || product.path;
+  const imageMetadata = product.imageMetadata;
+  const offerUrl = product.schema.offerUrl || product.affiliateUrl || product.path;
   const author = buildPersonReference(product.expertAttribution.author, "author");
   const reviewer = buildPersonReference(product.expertAttribution.reviewer, "reviewer");
+  const ratingValue = product.schema.aggregateRating ?? product.ratingValue;
+  const reviewCount = product.schema.reviewCount ?? product.reviewCount;
+  const availability = product.schema.availability?.startsWith("http")
+    ? product.schema.availability
+    : `https://schema.org/${product.schema.availability || "InStock"}`;
+  const imageObject =
+    image && imageMetadata
+      ? {
+          "@type": "ImageObject",
+          url: absoluteUrl(image),
+          ...(imageMetadata.title ? { name: imageMetadata.title } : {}),
+          ...(imageMetadata.alt ? { alternateName: imageMetadata.alt } : {}),
+          ...(imageMetadata.caption ? { caption: imageMetadata.caption } : {}),
+          ...(imageMetadata.description ? { description: imageMetadata.description } : {}),
+          ...(imageMetadata.credit ? { creditText: imageMetadata.credit } : {}),
+          ...(imageMetadata.license ? { license: imageMetadata.license } : {}),
+          ...(imageMetadata.photographer
+            ? { creator: { "@type": "Person", name: imageMetadata.photographer } }
+            : {}),
+          ...(imageMetadata.source_url ? { contentUrl: imageMetadata.source_url } : {}),
+        }
+      : null;
 
   return {
     "@context": "https://schema.org",
@@ -188,19 +211,22 @@ export function buildProductJsonLd(product: ProductDetail) {
     description: product.description,
     category: product.category,
     url: absoluteUrl(product.path),
-    ...(image ? { image: [absoluteUrl(image)] } : {}),
+    ...(imageObject ? { image: [imageObject] } : image ? { image: [absoluteUrl(image)] } : {}),
     brand: {
       "@type": "Brand",
-      name: SITE_NAME,
+      name: product.schema.brand || SITE_NAME,
     },
+    ...(product.schema.sku ? { sku: product.schema.sku } : {}),
+    ...(product.schema.mpn ? { mpn: product.schema.mpn } : {}),
+    ...(product.schema.gtin ? { gtin: product.schema.gtin } : {}),
     ...(author ? { author } : {}),
     ...(reviewer ? { reviewedBy: reviewer } : {}),
-    ...(product.ratingValue
+    ...(product.schema.enableReview && ratingValue
       ? {
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: product.ratingValue,
-            reviewCount: product.reviewCount,
+            ratingValue,
+            reviewCount,
             bestRating: 5,
             worstRating: 1,
           },
@@ -209,8 +235,11 @@ export function buildProductJsonLd(product: ProductDetail) {
     offers: {
       "@type": "Offer",
       url: absoluteUrl(offerUrl),
-      availability: "https://schema.org/InStock",
-      priceCurrency: "USD",
+      availability,
+      ...(product.schema.price !== null && product.schema.price !== undefined
+        ? { price: product.schema.price }
+        : {}),
+      priceCurrency: product.schema.currency || "USD",
       seller: {
         "@type": "Organization",
         name: SITE_NAME,

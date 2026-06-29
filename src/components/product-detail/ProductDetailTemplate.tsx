@@ -221,6 +221,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     productName={product.name}
                     image={heroImage}
                     imageAlt={product.heroImageAlt}
+                    imageTitle={product.imageMetadata?.title}
                     badge={product.heroBadge}
                     showBadge={product.heroShowBadge}
                   />
@@ -1156,12 +1157,14 @@ function SingleProductImageCard({
   productName,
   image,
   imageAlt,
+  imageTitle,
   badge,
   showBadge,
 }: {
   productName: string;
   image: string;
   imageAlt?: string | null;
+  imageTitle?: string | null;
   badge?: string | null;
   showBadge: boolean;
 }) {
@@ -1185,6 +1188,7 @@ function SingleProductImageCard({
           <Image
             src={image}
             alt={imageAlt || `${productName} supplement product image`}
+            title={imageTitle || undefined}
             fill
             priority
             sizes="(max-width: 768px) 320px, 420px"

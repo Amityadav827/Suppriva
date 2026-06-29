@@ -6,6 +6,7 @@ import type {
   ProductCmsCard,
   ProductCompareProduct,
   ProductHowItWorksStep,
+  ProductImageMetadata,
   ProductIngredient,
   ProductIngredientOverride,
   ProductRelatedBlog,
@@ -74,6 +75,8 @@ export type ProductIngredientOverrideInput = Pick<
   | "custom_note"
   | "is_highlighted"
 >;
+
+export type ProductImageMetadataInput = ProductImageMetadata;
 
 export type ProductRelatedProductInput = Pick<
   ProductRelatedProduct,
@@ -187,7 +190,29 @@ export type ProductCreateInput = {
   seo_og_description?: string | null;
   seo_og_image?: string | null;
   seo_noindex?: boolean;
+  seo_focus_keyword?: string | null;
+  seo_nofollow?: boolean;
+  seo_twitter_title?: string | null;
+  seo_twitter_description?: string | null;
+  seo_twitter_image?: string | null;
+  schema_brand?: string | null;
+  schema_sku?: string | null;
+  schema_mpn?: string | null;
+  schema_gtin?: string | null;
+  schema_price?: number | null;
+  schema_currency?: string | null;
+  schema_availability?: string | null;
+  schema_aggregate_rating?: number | null;
+  schema_review_count?: number | null;
+  schema_offer_url?: string | null;
+  schema_enable_product?: boolean;
+  schema_enable_faq?: boolean;
+  schema_enable_breadcrumb?: boolean;
+  schema_enable_review?: boolean;
+  schema_enable_organization?: boolean;
   schema_json?: JsonValue;
+  product_image_metadata?: ProductImageMetadataInput;
+  gallery_image_metadata?: ProductImageMetadataInput[];
   standout_points?: ProductCmsCardInput[];
   how_it_works_steps?: ProductHowItWorksStepInput[];
   best_for_items?: ProductCmsCardInput[];
@@ -274,6 +299,41 @@ function isUrlLike(value: string) {
   } catch {
     return false;
   }
+}
+
+function isProductImageMetadata(value: unknown): value is ProductImageMetadataInput {
+  if (!isPlainObject(value)) {
+    return false;
+  }
+
+  const textFields = [
+    "url",
+    "title",
+    "alt",
+    "caption",
+    "description",
+    "credit",
+    "license",
+    "photographer",
+    "focus_keyword",
+    "source_url",
+  ];
+
+  return (
+    textFields.every((field) => {
+      const fieldValue = value[field];
+      return fieldValue === undefined || fieldValue === null || typeof fieldValue === "string";
+    }) &&
+    (value.keywords === undefined ||
+      (Array.isArray(value.keywords) &&
+        value.keywords.every((keyword) => typeof keyword === "string"))) &&
+    (value.enable_indexing === undefined || typeof value.enable_indexing === "boolean") &&
+    (value.generate_filename === undefined || typeof value.generate_filename === "boolean")
+  );
+}
+
+function isProductImageMetadataArray(value: unknown): value is ProductImageMetadataInput[] {
+  return Array.isArray(value) && value.every(isProductImageMetadata);
 }
 
 function isCmsCardArray(value: unknown): value is ProductCmsCardInput[] {
@@ -518,6 +578,8 @@ export function validateProductInput<TInput extends ProductValidationInput>(
     ["affiliate_url", input.affiliate_url],
     ["seo_canonical_url", input.seo_canonical_url],
     ["seo_og_image", input.seo_og_image],
+    ["seo_twitter_image", input.seo_twitter_image],
+    ["schema_offer_url", input.schema_offer_url],
   ] as const;
 
   urlFields.forEach(([field, value]) => {
@@ -719,6 +781,73 @@ export function validateProductInput<TInput extends ProductValidationInput>(
 
   if ("seo_noindex" in input && input.seo_noindex !== undefined && !isBoolean(input.seo_noindex)) {
     errors.push("SEO noindex must be true or false.");
+  }
+
+  if (
+    "seo_nofollow" in input &&
+    input.seo_nofollow !== undefined &&
+    !isBoolean(input.seo_nofollow)
+  ) {
+    errors.push("SEO nofollow must be true or false.");
+  }
+
+  const schemaToggles = [
+    ["schema_enable_product", input.schema_enable_product],
+    ["schema_enable_faq", input.schema_enable_faq],
+    ["schema_enable_breadcrumb", input.schema_enable_breadcrumb],
+    ["schema_enable_review", input.schema_enable_review],
+    ["schema_enable_organization", input.schema_enable_organization],
+  ] as const;
+
+  schemaToggles.forEach(([field, value]) => {
+    if (field in input && value !== undefined && !isBoolean(value)) {
+      errors.push(`${field} must be true or false.`);
+    }
+  });
+
+  if (
+    "schema_price" in input &&
+    input.schema_price !== undefined &&
+    input.schema_price !== null &&
+    (typeof input.schema_price !== "number" || input.schema_price < 0)
+  ) {
+    errors.push("Schema price must be a non-negative number.");
+  }
+
+  if (
+    "schema_aggregate_rating" in input &&
+    input.schema_aggregate_rating !== undefined &&
+    input.schema_aggregate_rating !== null &&
+    (typeof input.schema_aggregate_rating !== "number" ||
+      input.schema_aggregate_rating < 0 ||
+      input.schema_aggregate_rating > 5)
+  ) {
+    errors.push("Schema aggregate rating must be between 0 and 5.");
+  }
+
+  if (
+    "schema_review_count" in input &&
+    input.schema_review_count !== undefined &&
+    input.schema_review_count !== null &&
+    (!Number.isInteger(input.schema_review_count) || input.schema_review_count < 0)
+  ) {
+    errors.push("Schema review count must be a non-negative whole number.");
+  }
+
+  if (
+    "product_image_metadata" in input &&
+    input.product_image_metadata !== undefined &&
+    !isProductImageMetadata(input.product_image_metadata)
+  ) {
+    errors.push("Product image metadata must be a valid metadata object.");
+  }
+
+  if (
+    "gallery_image_metadata" in input &&
+    input.gallery_image_metadata !== undefined &&
+    !isProductImageMetadataArray(input.gallery_image_metadata)
+  ) {
+    errors.push("Gallery image metadata must be a valid metadata list.");
   }
 
   return {

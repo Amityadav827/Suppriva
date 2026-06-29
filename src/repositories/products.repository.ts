@@ -610,7 +610,45 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("seo_og_description" in input) payload.seo_og_description = input.seo_og_description ?? null;
     if ("seo_og_image" in input) payload.seo_og_image = input.seo_og_image ?? null;
     if ("seo_noindex" in input) payload.seo_noindex = input.seo_noindex ?? false;
+    if ("seo_focus_keyword" in input) payload.seo_focus_keyword = input.seo_focus_keyword ?? null;
+    if ("seo_nofollow" in input) payload.seo_nofollow = input.seo_nofollow ?? false;
+    if ("seo_twitter_title" in input) payload.seo_twitter_title = input.seo_twitter_title ?? null;
+    if ("seo_twitter_description" in input) {
+      payload.seo_twitter_description = input.seo_twitter_description ?? null;
+    }
+    if ("seo_twitter_image" in input) payload.seo_twitter_image = input.seo_twitter_image ?? null;
+    if ("schema_brand" in input) payload.schema_brand = input.schema_brand ?? null;
+    if ("schema_sku" in input) payload.schema_sku = input.schema_sku ?? null;
+    if ("schema_mpn" in input) payload.schema_mpn = input.schema_mpn ?? null;
+    if ("schema_gtin" in input) payload.schema_gtin = input.schema_gtin ?? null;
+    if ("schema_price" in input) payload.schema_price = input.schema_price ?? null;
+    if ("schema_currency" in input) payload.schema_currency = input.schema_currency ?? null;
+    if ("schema_availability" in input) payload.schema_availability = input.schema_availability ?? null;
+    if ("schema_aggregate_rating" in input) {
+      payload.schema_aggregate_rating = input.schema_aggregate_rating ?? null;
+    }
+    if ("schema_review_count" in input) payload.schema_review_count = input.schema_review_count ?? null;
+    if ("schema_offer_url" in input) payload.schema_offer_url = input.schema_offer_url ?? null;
+    if ("schema_enable_product" in input) {
+      payload.schema_enable_product = input.schema_enable_product ?? true;
+    }
+    if ("schema_enable_faq" in input) payload.schema_enable_faq = input.schema_enable_faq ?? true;
+    if ("schema_enable_breadcrumb" in input) {
+      payload.schema_enable_breadcrumb = input.schema_enable_breadcrumb ?? true;
+    }
+    if ("schema_enable_review" in input) {
+      payload.schema_enable_review = input.schema_enable_review ?? true;
+    }
+    if ("schema_enable_organization" in input) {
+      payload.schema_enable_organization = input.schema_enable_organization ?? true;
+    }
     if ("schema_json" in input) payload.schema_json = input.schema_json ?? {};
+    if ("product_image_metadata" in input) {
+      payload.product_image_metadata = input.product_image_metadata ?? {};
+    }
+    if ("gallery_image_metadata" in input) {
+      payload.gallery_image_metadata = input.gallery_image_metadata ?? [];
+    }
 
     return payload;
   }

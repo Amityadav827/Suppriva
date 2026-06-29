@@ -21,6 +21,15 @@ export type SeoMetadataFallback = {
   description: string;
   canonicalPath?: string;
   image?: string | null;
+  imageAlt?: string | null;
+  openGraphTitle?: string | null;
+  openGraphDescription?: string | null;
+  openGraphImage?: string | null;
+  twitterTitle?: string | null;
+  twitterDescription?: string | null;
+  twitterImage?: string | null;
+  noindex?: boolean;
+  nofollow?: boolean;
   type?: "website" | "article";
 };
 
@@ -56,7 +65,16 @@ export async function buildSeoMetadata(
   const description = seo?.meta_description || fallback.description;
   const canonical = seo?.canonical_url || fallback.canonicalPath || "/";
   const canonicalUrl = absoluteUrl(canonical);
-  const imageUrl = absoluteUrl(fallback.image || DEFAULT_OG_IMAGE);
+  const ogTitle = fallback.openGraphTitle || title;
+  const ogDescription = fallback.openGraphDescription || description;
+  const twitterTitle = fallback.twitterTitle || ogTitle;
+  const twitterDescription = fallback.twitterDescription || ogDescription;
+  const imageUrl = absoluteUrl(fallback.openGraphImage || fallback.image || DEFAULT_OG_IMAGE);
+  const twitterImageUrl = absoluteUrl(
+    fallback.twitterImage || fallback.openGraphImage || fallback.image || DEFAULT_OG_IMAGE,
+  );
+  const shouldIndex = !fallback.noindex;
+  const shouldFollow = !fallback.nofollow;
 
   return {
     title,
@@ -66,16 +84,16 @@ export async function buildSeoMetadata(
       canonical,
     },
     robots: {
-      index: true,
-      follow: true,
+      index: shouldIndex,
+      follow: shouldFollow,
       googleBot: {
-        index: true,
-        follow: true,
+        index: shouldIndex,
+        follow: shouldFollow,
       },
     },
     openGraph: {
-      title,
-      description,
+      title: ogTitle,
+      description: ogDescription,
       url: canonicalUrl,
       siteName: SITE_NAME,
       type: fallback.type || "website",
@@ -84,15 +102,15 @@ export async function buildSeoMetadata(
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: fallback.imageAlt || ogTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
-      images: [imageUrl],
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [twitterImageUrl],
     },
   };
 }

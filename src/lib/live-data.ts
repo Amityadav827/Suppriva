@@ -608,6 +608,9 @@ export function productToDetail(
         },
       ].filter((item) => item.value.trim());
   const sidebarCtaType = product.sidebar_cta_type || "affiliate";
+  const imageMetadata = (asRecord(product.product_image_metadata as unknown as JsonValue) ??
+    {}) as Record<string, JsonValue>;
+  const imageMetadataAlt = textFromValue(imageMetadata.alt, "");
 
   return {
     slug: product.slug,
@@ -617,7 +620,7 @@ export function productToDetail(
     name,
     heroTitle: product.hero_title || name,
     heroBadge: product.hero_badge,
-    heroImageAlt: product.hero_image_alt,
+    heroImageAlt: imageMetadataAlt || product.hero_image_alt,
     heroCtaLabel: product.hero_cta_label || "Visit Official Website",
     heroCtaTarget: product.hero_cta_target ?? "_blank",
     heroSecondaryCtaLabel: product.hero_secondary_cta_label || "Buy Now",
@@ -649,6 +652,8 @@ export function productToDetail(
       product.full_description ||
       "A premium supplement formula prepared for focused wellness research and product comparison.",
     image: product.image || product.gallery?.[0],
+    imageMetadata: product.product_image_metadata ?? null,
+    galleryImageMetadata: product.gallery_image_metadata ?? [],
     gallery: [product.image, ...safeStringArray(product.gallery)].filter(Boolean) as string[],
     bullets: benefits.slice(0, 4).map((benefit) => benefit.title),
     trustBadges: uniqueStrings([
@@ -755,6 +760,38 @@ export function productToDetail(
     comparisonProducts,
     relatedProducts,
     expertAttribution,
+    seo: {
+      title: product.seo_title,
+      description: product.seo_description,
+      focusKeyword: product.seo_focus_keyword,
+      canonicalUrl: product.seo_canonical_url,
+      ogTitle: product.seo_og_title,
+      ogDescription: product.seo_og_description,
+      ogImage: product.seo_og_image,
+      noindex: product.seo_noindex ?? false,
+      nofollow: product.seo_nofollow ?? false,
+      twitterTitle: product.seo_twitter_title,
+      twitterDescription: product.seo_twitter_description,
+      twitterImage: product.seo_twitter_image,
+    },
+    schema: {
+      brand: product.schema_brand,
+      sku: product.schema_sku,
+      mpn: product.schema_mpn,
+      gtin: product.schema_gtin,
+      price: product.schema_price,
+      currency: product.schema_currency,
+      availability: product.schema_availability,
+      aggregateRating: product.schema_aggregate_rating,
+      reviewCount: product.schema_review_count,
+      offerUrl: product.schema_offer_url,
+      enableProduct: product.schema_enable_product ?? true,
+      enableFaq: product.schema_enable_faq ?? true,
+      enableBreadcrumb: product.schema_enable_breadcrumb ?? true,
+      enableReview: product.schema_enable_review ?? true,
+      enableOrganization: product.schema_enable_organization ?? true,
+      customJsonLd: product.schema_json,
+    },
   };
 }
 

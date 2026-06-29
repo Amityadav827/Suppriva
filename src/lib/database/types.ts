@@ -184,6 +184,22 @@ export type ProductIngredientOverride = {
   updated_at: Timestamp;
 };
 
+export type ProductImageMetadata = {
+  url?: string | null;
+  title?: string | null;
+  alt?: string | null;
+  caption?: string | null;
+  description?: string | null;
+  credit?: string | null;
+  license?: string | null;
+  photographer?: string | null;
+  keywords?: string[];
+  focus_keyword?: string | null;
+  source_url?: string | null;
+  enable_indexing?: boolean;
+  generate_filename?: boolean;
+};
+
 export type ProductRelatedProduct = {
   id: string;
   product_id: string;
@@ -343,7 +359,29 @@ export type Product = {
   seo_og_description: string | null;
   seo_og_image: string | null;
   seo_noindex: boolean;
+  seo_focus_keyword: string | null;
+  seo_nofollow: boolean;
+  seo_twitter_title: string | null;
+  seo_twitter_description: string | null;
+  seo_twitter_image: string | null;
+  schema_brand: string | null;
+  schema_sku: string | null;
+  schema_mpn: string | null;
+  schema_gtin: string | null;
+  schema_price: number | null;
+  schema_currency: string | null;
+  schema_availability: string | null;
+  schema_aggregate_rating: number | null;
+  schema_review_count: number | null;
+  schema_offer_url: string | null;
+  schema_enable_product: boolean;
+  schema_enable_faq: boolean;
+  schema_enable_breadcrumb: boolean;
+  schema_enable_review: boolean;
+  schema_enable_organization: boolean;
   schema_json: JsonValue;
+  product_image_metadata: ProductImageMetadata;
+  gallery_image_metadata: ProductImageMetadata[];
   standout_points?: ProductCmsCard[];
   how_it_works_steps?: ProductHowItWorksStep[];
   best_for_items?: ProductCmsCard[];
