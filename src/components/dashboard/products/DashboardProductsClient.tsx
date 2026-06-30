@@ -1572,16 +1572,8 @@ export function DashboardProductsClient() {
                 <InputField label="Image Title" value={form.product_image_title} onChange={(value) => updateForm("product_image_title", value)} />
                 <InputField label="Alt Text" value={form.product_image_alt} onChange={(value) => updateForm("product_image_alt", value)} />
                 <InputField label="Caption" value={form.product_image_caption} onChange={(value) => updateForm("product_image_caption", value)} />
-                <InputField label="Photographer" value={form.product_image_photographer} onChange={(value) => updateForm("product_image_photographer", value)} />
-                <InputField label="Image Credit" value={form.product_image_credit} onChange={(value) => updateForm("product_image_credit", value)} />
-                <InputField label="Image License" value={form.product_image_license} onChange={(value) => updateForm("product_image_license", value)} />
-                <InputField label="Image Focus Keyword" value={form.product_image_focus_keyword} onChange={(value) => updateForm("product_image_focus_keyword", value)} />
-                <InputField label="Original Source URL" value={form.product_image_source_url} onChange={(value) => updateForm("product_image_source_url", value)} />
-                <TextAreaField label="Image Description" value={form.product_image_description} onChange={(value) => updateForm("product_image_description", value)} rows={3} />
-                <TextAreaField label="Image Keywords" value={form.product_image_keywords} onChange={(value) => updateForm("product_image_keywords", value)} placeholder="One keyword per line" rows={3} />
                 <div className="grid gap-3">
                   <CheckboxField label="Enable Image Indexing" checked={form.product_image_enable_indexing} onChange={(value) => updateForm("product_image_enable_indexing", value)} />
-                  <CheckboxField label="Generate Filename From Product" checked={form.product_image_generate_filename} onChange={(value) => updateForm("product_image_generate_filename", value)} />
                 </div>
               </div>
             ) : null}
