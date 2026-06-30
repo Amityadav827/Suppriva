@@ -1648,7 +1648,7 @@ export function DashboardProductsClient() {
 
             <CmsSection
               title="Advanced SEO"
-              description="Control product metadata, social previews, schema fields, and SEO warnings from the dashboard."
+              description="Control product metadata, social previews, and SEO settings from the dashboard."
             >
               <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
               <InputField label="Focus Keyword" value={form.seo_focus_keyword} onChange={(value) => updateForm("seo_focus_keyword", value)} />
@@ -1677,34 +1677,6 @@ export function DashboardProductsClient() {
                 <MediaLibraryField label="Twitter Image" value={form.seo_twitter_image} onChange={(value) => updateForm("seo_twitter_image", value)} className="lg:col-span-2" />
               </div>
 
-              <div className="grid gap-4 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-2">
-                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-2">
-                  Product Schema
-                </h4>
-                <InputField label="Brand" value={form.schema_brand} onChange={(value) => updateForm("schema_brand", value)} />
-                <InputField label="SKU" value={form.schema_sku} onChange={(value) => updateForm("schema_sku", value)} />
-                <InputField label="MPN" value={form.schema_mpn} onChange={(value) => updateForm("schema_mpn", value)} />
-                <InputField label="GTIN" value={form.schema_gtin} onChange={(value) => updateForm("schema_gtin", value)} />
-                <InputField label="Price" value={form.schema_price} onChange={(value) => updateForm("schema_price", value)} />
-                <InputField label="Currency" value={form.schema_currency} onChange={(value) => updateForm("schema_currency", value)} />
-                <InputField label="Availability" value={form.schema_availability} onChange={(value) => updateForm("schema_availability", value)} />
-                <InputField label="Offer URL" value={form.schema_offer_url} onChange={(value) => updateForm("schema_offer_url", value)} />
-                <InputField label="Aggregate Rating" value={form.schema_aggregate_rating} onChange={(value) => updateForm("schema_aggregate_rating", value)} />
-                <InputField label="Review Count" value={form.schema_review_count} onChange={(value) => updateForm("schema_review_count", value)} />
-              </div>
-
-              <div className="grid gap-3 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-3">
-                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-3">
-                  Schema Controls
-                </h4>
-                <CheckboxField label="Enable Product Schema" checked={form.schema_enable_product} onChange={(value) => updateForm("schema_enable_product", value)} />
-                <CheckboxField label="Enable FAQ Schema" checked={form.schema_enable_faq} onChange={(value) => updateForm("schema_enable_faq", value)} />
-                <CheckboxField label="Enable Breadcrumb Schema" checked={form.schema_enable_breadcrumb} onChange={(value) => updateForm("schema_enable_breadcrumb", value)} />
-                <CheckboxField label="Enable Review Schema" checked={form.schema_enable_review} onChange={(value) => updateForm("schema_enable_review", value)} />
-                <CheckboxField label="Enable Organization Schema" checked={form.schema_enable_organization} onChange={(value) => updateForm("schema_enable_organization", value)} />
-              </div>
-
-              <TextAreaField label="Custom JSON-LD" value={form.schema_json} onChange={(value) => updateForm("schema_json", value)} placeholder='{"@type":"Product"}' className="lg:col-span-2" rows={6} />
               <SeoPreviewPanel form={form} />
               <SocialPreviewPanel form={form} />
             </CmsSection>
