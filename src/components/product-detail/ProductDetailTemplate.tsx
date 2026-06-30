@@ -775,49 +775,40 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 subtitle={buyingSectionSubtitle}
                 order={buyingSectionOrder}
               >
-                <FadeIn className="overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#F4FAF6_0%,#FFFFFF_58%,rgba(217,165,32,0.10)_100%)] p-5 ring-1 ring-primary/10 md:p-6">
-                  <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_280px] xl:items-stretch">
-                    <div className="grid gap-4 md:grid-cols-3">
-                      {buyingGuidance.map((item, index) => (
-                        <div
-                          key={`${item.title}-${index + 1}`}
-                          className="rounded-[22px] bg-white/88 p-4 shadow-[0_14px_34px_rgba(15,23,42,0.05)] ring-1 ring-black/5"
-                        >
-                          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            {(() => {
-                              const Icon = heroIcon(item.icon);
-                              return <Icon className="size-4.5" aria-hidden="true" />;
-                            })()}
-                          </span>
-                          <h3 className="mt-4 font-heading text-base font-extrabold text-text-dark">
-                            {item.title}
-                          </h3>
-                          {item.description ? (
-                            <RichText
-                              text={item.description}
-                              className="mt-2 text-sm leading-7 text-muted"
-                            />
-                          ) : null}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex h-full flex-col justify-center rounded-[24px] bg-white p-5 shadow-[0_16px_42px_rgba(11,93,59,0.08)] ring-1 ring-primary/10">
-                      <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                        Official Purchase Path
-                      </p>
-                      <p className="mt-3 text-sm leading-7 text-muted">
-                        Use the current product link to confirm pricing, availability, and checkout details.
-                      </p>
-                      <div className="mt-5">
-                        <AffiliateCtaButton
-                          productId={product.productId}
-                          productSlug={product.slug}
-                          affiliateUrl={product.affiliateUrl}
-                          label={product.buyingCtaLabel}
-                          className="w-full"
-                        />
+                <FadeIn className="-mt-3 mb-6">
+                  <AffiliateCtaButton
+                    productId={product.productId}
+                    productSlug={product.slug}
+                    affiliateUrl={product.affiliateUrl}
+                    label={product.buyingCtaLabel}
+                    className="w-full sm:w-auto"
+                  />
+                </FadeIn>
+
+                <FadeIn className="rounded-[26px] bg-white p-6 ring-1 ring-black/5 md:p-8">
+                  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    {buyingGuidance.map((item, index) => (
+                      <div
+                        key={`${item.title}-${index + 1}`}
+                        className="rounded-[22px] bg-cream/45 p-5 ring-1 ring-black/5"
+                      >
+                        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                          {(() => {
+                            const Icon = heroIcon(item.icon);
+                            return <Icon className="size-4.5" aria-hidden="true" />;
+                          })()}
+                        </span>
+                        <h3 className="mt-4 font-heading text-base font-extrabold text-text-dark">
+                          {item.title}
+                        </h3>
+                        {item.description ? (
+                          <RichText
+                            text={item.description}
+                            className="mt-2 text-sm leading-7 text-muted"
+                          />
+                        ) : null}
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </FadeIn>
               </ReviewSection>
