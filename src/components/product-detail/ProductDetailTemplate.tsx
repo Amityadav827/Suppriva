@@ -159,8 +159,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     ? product.buyingGuidance
     : fallbackBuyingGuidance;
   const hasBuyingSection = sectionVisible("buying") && Boolean(buyingGuidance.length);
-  const buyingSectionOrder = sectionVisible("faq")
-    ? sectionOrder("faq") - 0.1
+  const buyingSectionOrder = sectionVisible("pros_cons")
+    ? sectionOrder("pros_cons") + 0.1
     : sectionOrder("buying");
   const tocLabels = new Map(product.tocItems.map((item) => [item.id, item.label]));
 
