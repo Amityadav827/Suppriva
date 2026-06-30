@@ -554,6 +554,19 @@ function visibleFaqs(items?: FAQItem[]) {
     }));
 }
 
+function buyingGuideItemsToRichText(items?: Product["buying_guide_items"]) {
+  return (items ?? [])
+    .filter((item) => item.is_active !== false && (item.title?.trim() || item.description?.trim()))
+    .sort((first, second) => (first.display_order ?? 0) - (second.display_order ?? 0))
+    .map((item) =>
+      [item.title ? `**${item.title.trim()}**` : "", item.description?.trim() ?? ""]
+        .filter(Boolean)
+        .join("\n"),
+    )
+    .filter(Boolean)
+    .join("\n\n");
+}
+
 export function productToDetail(
   product: Product,
   products: Product[],
@@ -588,6 +601,8 @@ export function productToDetail(
   const whoItsBestFor = cmsCardsToDetailCards(product.best_for_items);
   const safetyItems = safetyItemsToCards(product.safety_items);
   const buyingGuidance = cmsCardsToDetailCards(product.buying_guide_items);
+  const buyingGuidanceContent =
+    product.buying_guidance_content || buyingGuideItemsToRichText(product.buying_guide_items);
   const bestFor = product.verdict_best_for || whoItsBestFor[0]?.title || "";
   const name = product.title || product.name;
   const overviewParagraphs = splitParagraphs(product.overview_content);
@@ -712,6 +727,7 @@ export function productToDetail(
     buyingGuideTitle: product.buying_guide_title || `Where To Buy ${name}`,
     buyingGuideSubtitle: product.buying_guide_subtitle || "",
     buyingCtaLabel: product.buying_cta_label || "Visit Official Website",
+    buyingGuidanceContent,
     buyingGuidance,
     relatedIngredientsTitle: product.related_ingredients_title || "Related Ingredients",
     relatedIngredientsSubtitle:

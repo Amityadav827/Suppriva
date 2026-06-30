@@ -137,30 +137,20 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     sectionLayout(sectionKey)?.titleOverride?.trim() || fallback;
   const sectionSubtitle = (sectionKey: LayoutSectionKey, fallback: string) =>
     sectionLayout(sectionKey)?.subtitleOverride?.trim() || fallback;
-  const fallbackBuyingGuidance = [
-    {
-      icon: "package",
-      title: "Use the official product source",
-      description:
-        "Check the latest pricing, serving details, label information, and availability before purchase.",
-    },
-    {
-      icon: "shield",
-      title: "Review the label before buying",
-      description:
-        "Compare ingredients, dosage instructions, and any safety notes so the product fits your wellness routine.",
-    },
-    {
-      icon: "check",
-      title: "Confirm purchase details",
-      description:
-        "Look for current offers, shipping information, refund terms, and customer support options on the checkout page.",
-    },
-  ];
-  const buyingGuidance = product.buyingGuidance.length
-    ? product.buyingGuidance
-    : fallbackBuyingGuidance;
-  const hasBuyingSection = sectionVisible("buying") && Boolean(buyingGuidance.length);
+  const fallbackBuyingGuidanceContent = [
+    "**Use the official product source**",
+    "Check the latest pricing, serving details, label information, and availability before purchase.",
+    "",
+    "**Review the label before buying**",
+    "Compare ingredients, dosage instructions, and any safety notes so the product fits your wellness routine.",
+    "",
+    "**Confirm purchase details**",
+    "Look for current offers, shipping information, refund terms, and customer support options on the checkout page.",
+  ].join("\n");
+  const buyingGuidanceContent =
+    product.buyingGuidanceContent.trim() || fallbackBuyingGuidanceContent;
+  const buyingGuidanceParagraphs = splitContentParagraphs(buyingGuidanceContent);
+  const hasBuyingSection = sectionVisible("buying") && Boolean(buyingGuidanceParagraphs.length);
   const buyingSectionTitle = product.buyingGuideTitle;
   const buyingSectionSubtitle = product.buyingGuideSubtitle;
   const buyingSectionOrder = sectionVisible("pros_cons")
@@ -775,40 +765,15 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 subtitle={buyingSectionSubtitle}
                 order={buyingSectionOrder}
               >
-                <FadeIn className="rounded-[26px] bg-white p-6 ring-1 ring-black/5 md:p-8">
-                  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                    {buyingGuidance.map((item, index) => (
-                      <div
-                        key={`${item.title}-${index + 1}`}
-                        className="rounded-[22px] bg-cream/45 p-5 ring-1 ring-black/5"
-                      >
-                        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                          {(() => {
-                            const Icon = heroIcon(item.icon);
-                            return <Icon className="size-4.5" aria-hidden="true" />;
-                          })()}
-                        </span>
-                        <h3 className="mt-4 font-heading text-base font-extrabold text-text-dark">
-                          {item.title}
-                        </h3>
-                        {item.description ? (
-                          <RichText
-                            text={item.description}
-                            className="mt-2 text-sm leading-7 text-muted"
-                          />
-                        ) : null}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6">
-                    <AffiliateCtaButton
-                      productId={product.productId}
-                      productSlug={product.slug}
-                      affiliateUrl={product.affiliateUrl}
-                      label={product.buyingCtaLabel}
-                      className="w-full sm:w-auto"
-                    />
-                  </div>
+                <ContentPanel paragraphs={buyingGuidanceParagraphs} />
+                <FadeIn className="mt-6">
+                  <AffiliateCtaButton
+                    productId={product.productId}
+                    productSlug={product.slug}
+                    affiliateUrl={product.affiliateUrl}
+                    label={product.buyingCtaLabel}
+                    className="w-full sm:w-auto"
+                  />
                 </FadeIn>
               </ReviewSection>
             ) : null}
@@ -1126,6 +1091,13 @@ function ContentPanel({ paragraphs }: { paragraphs: string[] }) {
   );
 }
 
+function splitContentParagraphs(value: string) {
+  return value
+    .split(/\n{2,}/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -1151,8 +1123,17 @@ function formatRichText(value: string) {
     .map((line) => {
       const trimmedLine = line.trim();
 
+      if (/^#{1,3}\s+/.test(trimmedLine)) {
+        return `<strong>${formatInlineMarkdown(trimmedLine.replace(/^#{1,3}\s+/, ""))}</strong>`;
+      }
+
       if (/^[-*]\s+/.test(trimmedLine)) {
         return `&bull; ${formatInlineMarkdown(trimmedLine.replace(/^[-*]\s+/, ""))}`;
+      }
+
+      if (/^\d+\.\s+/.test(trimmedLine)) {
+        const marker = trimmedLine.match(/^\d+\./)?.[0] ?? "1.";
+        return `${marker} ${formatInlineMarkdown(trimmedLine.replace(/^\d+\.\s+/, ""))}`;
       }
 
       return formatInlineMarkdown(line);
@@ -1165,7 +1146,9 @@ function plainTextFromRichText(value: string) {
     .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, "$1")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/^#{1,3}\s+/gm, "")
     .replace(/^[-*]\s+/gm, "")
+    .replace(/^\d+\.\s+/gm, "")
     .trim();
 }
 

@@ -139,6 +139,7 @@ export type ProductDetail = {
   buyingGuideTitle: string;
   buyingGuideSubtitle: string;
   buyingCtaLabel: string;
+  buyingGuidanceContent: string;
   buyingGuidance: ProductDetailCmsCard[];
   sidebar: {
     heading: string;

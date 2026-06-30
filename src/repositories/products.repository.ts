@@ -566,6 +566,9 @@ export class SupabaseProductsRepository implements ProductsRepository {
     if ("buying_guide_subtitle" in input) {
       payload.buying_guide_subtitle = input.buying_guide_subtitle ?? null;
     }
+    if ("buying_guidance_content" in input) {
+      payload.buying_guidance_content = input.buying_guidance_content ?? null;
+    }
     if ("buying_cta_label" in input) payload.buying_cta_label = input.buying_cta_label ?? null;
     if ("related_ingredients_title" in input) {
       payload.related_ingredients_title = input.related_ingredients_title ?? null;

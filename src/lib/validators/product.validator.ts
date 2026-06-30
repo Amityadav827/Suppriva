@@ -164,6 +164,7 @@ export type ProductCreateInput = {
   verdict_conclusion?: string | null;
   buying_guide_title?: string | null;
   buying_guide_subtitle?: string | null;
+  buying_guidance_content?: string | null;
   buying_cta_label?: string | null;
   related_ingredients_title?: string | null;
   related_ingredients_subtitle?: string | null;

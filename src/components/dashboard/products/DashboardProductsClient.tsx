@@ -15,9 +15,11 @@ import type {
 import { motion } from "framer-motion";
 import {
   Bold,
+  Heading2,
   Italic,
   Link as LinkIcon,
   List,
+  ListOrdered,
   Loader2,
   Pencil,
   Plus,
@@ -107,8 +109,8 @@ type ProductFormState = {
   verdict_conclusion: string;
   buying_guide_title: string;
   buying_guide_subtitle: string;
+  buying_guidance_content: string;
   buying_cta_label: string;
-  buying_guide_items: string;
   related_ingredients_title: string;
   related_ingredients_subtitle: string;
   related_blogs_title: string;
@@ -303,8 +305,8 @@ const emptyForm: ProductFormState = {
   verdict_conclusion: "",
   buying_guide_title: "",
   buying_guide_subtitle: "",
+  buying_guidance_content: "",
   buying_cta_label: "",
-  buying_guide_items: "",
   related_ingredients_title: "",
   related_ingredients_subtitle: "",
   related_blogs_title: "",
@@ -425,6 +427,22 @@ function serializeCmsCards(
     )
     .filter(Boolean)
     .join("\n");
+}
+
+function serializeCmsCardsAsRichText(
+  items?: Array<{
+    title?: string | null;
+    description?: string | null;
+  }>,
+) {
+  return (items ?? [])
+    .map((item) =>
+      [item.title ? `**${item.title.trim()}**` : "", item.description?.trim() ?? ""]
+        .filter(Boolean)
+        .join("\n"),
+    )
+    .filter(Boolean)
+    .join("\n\n");
 }
 
 function parseCmsCards(value: string) {
@@ -867,8 +885,9 @@ function productToForm(product: Product): ProductFormState {
     verdict_conclusion: product.verdict_conclusion ?? "",
     buying_guide_title: product.buying_guide_title ?? "",
     buying_guide_subtitle: product.buying_guide_subtitle ?? "",
+    buying_guidance_content:
+      product.buying_guidance_content ?? serializeCmsCardsAsRichText(product.buying_guide_items),
     buying_cta_label: product.buying_cta_label ?? "",
-    buying_guide_items: serializeCmsCards(product.buying_guide_items),
     related_ingredients_title: product.related_ingredients_title ?? "",
     related_ingredients_subtitle: product.related_ingredients_subtitle ?? "",
     related_blogs_title: product.related_blogs_title ?? "",
@@ -1016,8 +1035,8 @@ function formToPayload(form: ProductFormState) {
     verdict_conclusion: form.verdict_conclusion || null,
     buying_guide_title: form.buying_guide_title || null,
     buying_guide_subtitle: form.buying_guide_subtitle || null,
+    buying_guidance_content: form.buying_guidance_content || null,
     buying_cta_label: form.buying_cta_label || null,
-    buying_guide_items: parseCmsCards(form.buying_guide_items),
     related_ingredients_title: form.related_ingredients_title || null,
     related_ingredients_subtitle: form.related_ingredients_subtitle || null,
     related_blogs_title: form.related_blogs_title || null,
@@ -1616,13 +1635,16 @@ export function DashboardProductsClient() {
               <InputField label="Where To Buy Title" value={form.buying_guide_title} onChange={(value) => updateForm("buying_guide_title", value)} />
               <InputField label="Where To Buy Subtitle" value={form.buying_guide_subtitle} onChange={(value) => updateForm("buying_guide_subtitle", value)} />
               <InputField label="Button Label" value={form.buying_cta_label} onChange={(value) => updateForm("buying_cta_label", value)} />
-              <TextAreaField
-                label="Purchase Guidance Cards"
-                value={form.buying_guide_items}
-                onChange={(value) => updateForm("buying_guide_items", value)}
-                placeholder="Title | Description | icon, one per line"
-                helperText="One card per line. These cards render in the Where To Buy section."
-                rows={4}
+              <RichTextEditor
+                label="Purchase Guidance Content"
+                value={form.buying_guidance_content}
+                onChange={(value) => updateForm("buying_guidance_content", value)}
+                placeholder={`Buy from the Official Website
+
+Purchase directly from the official website to help ensure you receive an authentic product and the latest available offers.`}
+                helperText="Rich content shown in the Where To Buy section. Use paragraphs, lists, and links as needed."
+                className="lg:col-span-2"
+                rows={8}
               />
             </CmsSection>
 
@@ -2212,6 +2234,25 @@ function RichTextEditor({
     });
   }
 
+  function insertNumberedList() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "List item";
+    const listText = selectedText
+      .split("\n")
+      .map((line, index) => `${index + 1}. ${line.replace(/^\d+\.\s*/, "")}`)
+      .join("\n");
+    const nextValue = `${value.slice(0, start)}${listText}${value.slice(end)}`;
+
+    onChange(nextValue);
+
+    window.requestAnimationFrame(() => {
+      textarea?.focus();
+      textarea?.setSelectionRange(start, start + listText.length);
+    });
+  }
+
   return (
     <label className={`grid gap-2 ${className}`}>
       <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
@@ -2223,8 +2264,14 @@ function RichTextEditor({
           <EditorButton label="Italic" onClick={() => insertMarkup("*", "*", "italic text")}>
             <Italic className="size-4" />
           </EditorButton>
+          <EditorButton label="Heading" onClick={() => insertMarkup("## ", "", "Heading")}>
+            <Heading2 className="size-4" />
+          </EditorButton>
           <EditorButton label="Bullet list" onClick={insertBulletList}>
             <List className="size-4" />
+          </EditorButton>
+          <EditorButton label="Numbered list" onClick={insertNumberedList}>
+            <ListOrdered className="size-4" />
           </EditorButton>
           <EditorButton label="Link" onClick={() => insertMarkup("[", "](https://example.com)", "link text")}>
             <LinkIcon className="size-4" />
