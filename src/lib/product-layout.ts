@@ -63,6 +63,13 @@ export const PRODUCT_LAYOUT_SECTION_DEFINITIONS = [
     defaultSubtitle: "",
   },
   {
+    key: "buying",
+    anchorId: "where-to-buy",
+    name: "Where To Buy",
+    defaultTitle: "Where To Buy",
+    defaultSubtitle: "",
+  },
+  {
     key: "faq",
     anchorId: "faq",
     name: "FAQ",
@@ -74,13 +81,6 @@ export const PRODUCT_LAYOUT_SECTION_DEFINITIONS = [
     anchorId: "verdict",
     name: "Verdict",
     defaultTitle: "SuppRiva Verdict",
-    defaultSubtitle: "",
-  },
-  {
-    key: "buying",
-    anchorId: "where-to-buy",
-    name: "Where To Buy",
-    defaultTitle: "Where To Buy",
     defaultSubtitle: "",
   },
   {

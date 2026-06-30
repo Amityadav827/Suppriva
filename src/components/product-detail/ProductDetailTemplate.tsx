@@ -127,43 +127,70 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     sectionLayout(sectionKey)?.titleOverride?.trim() || fallback;
   const sectionSubtitle = (sectionKey: LayoutSectionKey, fallback: string) =>
     sectionLayout(sectionKey)?.subtitleOverride?.trim() || fallback;
+  const fallbackBuyingGuidance = [
+    {
+      icon: "package",
+      title: "Use the official product source",
+      description:
+        "Check the latest pricing, serving details, label information, and availability before purchase.",
+    },
+    {
+      icon: "shield",
+      title: "Review the label before buying",
+      description:
+        "Compare ingredients, dosage instructions, and any safety notes so the product fits your wellness routine.",
+    },
+    {
+      icon: "check",
+      title: "Confirm purchase details",
+      description:
+        "Look for current offers, shipping information, refund terms, and customer support options on the checkout page.",
+    },
+  ];
+  const buyingGuidance = product.buyingGuidance.length
+    ? product.buyingGuidance
+    : fallbackBuyingGuidance;
+  const hasBuyingSection = sectionVisible("buying") && Boolean(buyingGuidance.length);
+  const buyingSectionOrder = sectionVisible("faq")
+    ? sectionOrder("faq") - 0.1
+    : sectionOrder("buying");
   const tocLabels = new Map(product.tocItems.map((item) => [item.id, item.label]));
 
   const defaultSections: Array<IngredientSectionLink & { order: number }> = [
     ...(sectionVisible("hero")
-      ? [{ id: "hero", label: sectionTitle("hero", "Overview"), order: sectionOrder("hero") }]
+      ? [{ id: "hero", label: plainTextFromRichText(sectionTitle("hero", "Overview")), order: sectionOrder("hero") }]
       : []),
     ...(sectionVisible("overview") && whatIsParagraphs.length
-      ? [{ id: "what-is-product", label: sectionTitle("overview", product.whatIs.title), order: sectionOrder("overview") }]
+      ? [{ id: "what-is-product", label: plainTextFromRichText(sectionTitle("overview", product.whatIs.title)), order: sectionOrder("overview") }]
       : []),
     ...(sectionVisible("standout") && product.standoutPoints.length
-      ? [{ id: "why-it-stands-out", label: sectionTitle("standout", "Why It Stands Out"), order: sectionOrder("standout") }]
+      ? [{ id: "why-it-stands-out", label: plainTextFromRichText(sectionTitle("standout", "Why It Stands Out")), order: sectionOrder("standout") }]
       : []),
-    ...(sectionVisible("how_it_works") && product.howItWorks.length ? [{ id: "how-it-works", label: sectionTitle("how_it_works", "How It Works"), order: sectionOrder("how_it_works") }] : []),
-    ...(sectionVisible("benefits") && product.benefits.length ? [{ id: "benefits", label: sectionTitle("benefits", "Key Benefits"), order: sectionOrder("benefits") }] : []),
-    ...(sectionVisible("ingredients") && product.ingredients.length ? [{ id: "ingredients", label: sectionTitle("ingredients", "Ingredient Breakdown"), order: sectionOrder("ingredients") }] : []),
+    ...(sectionVisible("how_it_works") && product.howItWorks.length ? [{ id: "how-it-works", label: plainTextFromRichText(sectionTitle("how_it_works", "How It Works")), order: sectionOrder("how_it_works") }] : []),
+    ...(sectionVisible("benefits") && product.benefits.length ? [{ id: "benefits", label: plainTextFromRichText(sectionTitle("benefits", "Key Benefits")), order: sectionOrder("benefits") }] : []),
+    ...(sectionVisible("ingredients") && product.ingredients.length ? [{ id: "ingredients", label: plainTextFromRichText(sectionTitle("ingredients", "Ingredient Breakdown")), order: sectionOrder("ingredients") }] : []),
     ...(sectionVisible("best_for") && product.whoItsBestFor.length
-      ? [{ id: "who-is-it-best-for", label: sectionTitle("best_for", "Who Is It Best For"), order: sectionOrder("best_for") }]
+      ? [{ id: "who-is-it-best-for", label: plainTextFromRichText(sectionTitle("best_for", "Who Is It Best For")), order: sectionOrder("best_for") }]
       : []),
     ...(sectionVisible("safety") && product.safetyItems.length
-      ? [{ id: "safety", label: sectionTitle("safety", product.safetyTitle), order: sectionOrder("safety") }]
+      ? [{ id: "safety", label: plainTextFromRichText(sectionTitle("safety", product.safetyTitle)), order: sectionOrder("safety") }]
       : []),
-    ...(sectionVisible("pros_cons") && (product.pros.length || product.cons.length) ? [{ id: "pros-cons", label: sectionTitle("pros_cons", "Pros & Cons"), order: sectionOrder("pros_cons") }] : []),
-    ...(sectionVisible("faq") && product.faqs.length ? [{ id: "faq", label: sectionTitle("faq", product.faqTitle), order: sectionOrder("faq") }] : []),
-    ...(sectionVisible("verdict") && hasVerdict ? [{ id: "verdict", label: sectionTitle("verdict", product.verdictTitle), order: sectionOrder("verdict") }] : []),
-    ...(sectionVisible("buying") && product.buyingGuidance.length ? [{ id: "where-to-buy", label: sectionTitle("buying", product.buyingGuideTitle), order: sectionOrder("buying") }] : []),
+    ...(sectionVisible("pros_cons") && (product.pros.length || product.cons.length) ? [{ id: "pros-cons", label: plainTextFromRichText(sectionTitle("pros_cons", "Pros & Cons")), order: sectionOrder("pros_cons") }] : []),
+    ...(hasBuyingSection ? [{ id: "where-to-buy", label: plainTextFromRichText(sectionTitle("buying", product.buyingGuideTitle)), order: buyingSectionOrder }] : []),
+    ...(sectionVisible("faq") && product.faqs.length ? [{ id: "faq", label: plainTextFromRichText(sectionTitle("faq", product.faqTitle)), order: sectionOrder("faq") }] : []),
+    ...(sectionVisible("verdict") && hasVerdict ? [{ id: "verdict", label: plainTextFromRichText(sectionTitle("verdict", product.verdictTitle)), order: sectionOrder("verdict") }] : []),
     ...(sectionVisible("related_ingredients") && product.relatedIngredients.length
-      ? [{ id: "related-ingredients", label: sectionTitle("related_ingredients", product.relatedIngredientsTitle), order: sectionOrder("related_ingredients") }]
+      ? [{ id: "related-ingredients", label: plainTextFromRichText(sectionTitle("related_ingredients", product.relatedIngredientsTitle)), order: sectionOrder("related_ingredients") }]
       : []),
-    ...(sectionVisible("related_blogs") && product.relatedArticles.length ? [{ id: "learn-more", label: sectionTitle("related_blogs", product.relatedArticlesTitle), order: sectionOrder("related_blogs") }] : []),
+    ...(sectionVisible("related_blogs") && product.relatedArticles.length ? [{ id: "learn-more", label: plainTextFromRichText(sectionTitle("related_blogs", product.relatedArticlesTitle)), order: sectionOrder("related_blogs") }] : []),
     ...(sectionVisible("compare") && product.comparisonProducts.length
-      ? [{ id: "compare-alternatives", label: sectionTitle("compare", product.compareTitle), order: sectionOrder("compare") }]
+      ? [{ id: "compare-alternatives", label: plainTextFromRichText(sectionTitle("compare", product.compareTitle)), order: sectionOrder("compare") }]
       : []),
     ...(sectionVisible("related_products") && product.relatedProducts?.length
-      ? [{ id: "related-products", label: sectionTitle("related_products", product.relatedProductsTitle), order: sectionOrder("related_products") }]
+      ? [{ id: "related-products", label: plainTextFromRichText(sectionTitle("related_products", product.relatedProductsTitle)), order: sectionOrder("related_products") }]
       : []),
     ...(sectionVisible("health_needs") && product.healthNeeds.length
-      ? [{ id: "explore-health-needs", label: sectionTitle("health_needs", product.healthNeedsTitle), order: sectionOrder("health_needs") }]
+      ? [{ id: "explore-health-needs", label: plainTextFromRichText(sectionTitle("health_needs", product.healthNeedsTitle)), order: sectionOrder("health_needs") }]
       : []),
   ];
   const sections: IngredientSectionLink[] = defaultSections
@@ -728,46 +755,59 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               </ReviewSection>
             ) : null}
 
-            {sectionVisible("buying") && product.buyingGuidance.length ? (
+            {hasBuyingSection ? (
               <ReviewSection
                 id="where-to-buy"
                 icon={PackageCheck}
                 title={sectionTitle("buying", product.buyingGuideTitle)}
                 subtitle={sectionSubtitle("buying", product.buyingGuideSubtitle)}
-                order={sectionOrder("buying")}
+                order={buyingSectionOrder}
               >
-              <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
-                <div className="space-y-4">
-                  {product.buyingGuidance.map((item) => (
-                    <div key={item.title} className="flex items-start gap-3">
-                      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        {(() => {
-                          const Icon = heroIcon(item.icon);
-                          return <Icon className="size-4.5" />;
-                        })()}
-                      </span>
-                      <div>
-                        <h3 className="font-heading text-sm font-bold text-text-dark">
-                          {item.title}
-                        </h3>
-                        {item.description ? (
-                          <p className="mt-1 text-sm leading-7 text-muted">
-                            {item.description}
-                          </p>
-                        ) : null}
+                <FadeIn className="overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#F4FAF6_0%,#FFFFFF_58%,rgba(217,165,32,0.10)_100%)] p-5 ring-1 ring-primary/10 md:p-6">
+                  <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_280px] xl:items-stretch">
+                    <div className="grid gap-4 md:grid-cols-3">
+                      {buyingGuidance.map((item, index) => (
+                        <div
+                          key={`${item.title}-${index + 1}`}
+                          className="rounded-[22px] bg-white/88 p-4 shadow-[0_14px_34px_rgba(15,23,42,0.05)] ring-1 ring-black/5"
+                        >
+                          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            {(() => {
+                              const Icon = heroIcon(item.icon);
+                              return <Icon className="size-4.5" aria-hidden="true" />;
+                            })()}
+                          </span>
+                          <h3 className="mt-4 font-heading text-base font-extrabold text-text-dark">
+                            {item.title}
+                          </h3>
+                          {item.description ? (
+                            <RichText
+                              text={item.description}
+                              className="mt-2 text-sm leading-7 text-muted"
+                            />
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex h-full flex-col justify-center rounded-[24px] bg-white p-5 shadow-[0_16px_42px_rgba(11,93,59,0.08)] ring-1 ring-primary/10">
+                      <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                        Official Purchase Path
+                      </p>
+                      <p className="mt-3 text-sm leading-7 text-muted">
+                        Use the current product link to confirm pricing, availability, and checkout details.
+                      </p>
+                      <div className="mt-5">
+                        <AffiliateCtaButton
+                          productId={product.productId}
+                          productSlug={product.slug}
+                          affiliateUrl={product.affiliateUrl}
+                          label={product.buyingCtaLabel}
+                          className="w-full"
+                        />
                       </div>
                     </div>
-                  ))}
-                </div>
-                <div className="mt-6">
-                  <AffiliateCtaButton
-                    productId={product.productId}
-                    productSlug={product.slug}
-                    affiliateUrl={product.affiliateUrl}
-                    label={product.buyingCtaLabel}
-                  />
-                </div>
-              </FadeIn>
+                  </div>
+                </FadeIn>
               </ReviewSection>
             ) : null}
 
@@ -1053,10 +1093,14 @@ function SectionHeading({
         <Icon className="size-5 md:size-6" aria-hidden="true" />
       </span>
       <div className="min-w-0 max-w-3xl w-full flex-1">
-        <h2 className="font-heading text-[1.95rem] font-extrabold leading-[1.08] text-text-dark sm:text-[2.2rem] md:text-4xl">
-          {title}
-        </h2>
-        <p className="mt-3 text-base leading-7 text-muted">{subtitle}</p>
+        <RichText
+          text={title}
+          as="h2"
+          className="font-heading text-[1.95rem] font-extrabold leading-[1.08] text-text-dark sm:text-[2.2rem] md:text-4xl"
+        />
+        {subtitle ? (
+          <RichText text={subtitle} className="mt-3 text-base leading-7 text-muted" />
+        ) : null}
       </div>
     </FadeIn>
   );
@@ -1114,6 +1158,15 @@ function formatRichText(value: string) {
     .join("<br />");
 }
 
+function plainTextFromRichText(value: string) {
+  return value
+    .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/^[-*]\s+/gm, "")
+    .trim();
+}
+
 function RichText({
   text,
   className,
@@ -1121,16 +1174,19 @@ function RichText({
 }: {
   text: string;
   className: string;
-  as?: "p" | "span";
+  as?: "p" | "span" | "h2";
 }) {
-  const Component = as;
+  const formattedText = formatRichText(text);
 
-  return (
-    <Component
-      className={className}
-      dangerouslySetInnerHTML={{ __html: formatRichText(text) }}
-    />
-  );
+  if (as === "h2") {
+    return <h2 className={className} dangerouslySetInnerHTML={{ __html: formattedText }} />;
+  }
+
+  if (as === "span") {
+    return <span className={className} dangerouslySetInnerHTML={{ __html: formattedText }} />;
+  }
+
+  return <p className={className} dangerouslySetInnerHTML={{ __html: formattedText }} />;
 }
 
 function SingleProductImageCard({

@@ -1651,41 +1651,41 @@ export function DashboardProductsClient() {
             </CmsSection>
 
             <CmsSection title="Overview & Education">
-              <InputField label="Overview Title" value={form.overview_title} onChange={(value) => updateForm("overview_title", value)} />
-              <InputField label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateForm("overview_subtitle", value)} />
+              <RichTextEditor label="Overview Title" value={form.overview_title} onChange={(value) => updateForm("overview_title", value)} rows={2} />
+              <RichTextEditor label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateForm("overview_subtitle", value)} rows={2} />
               <RichTextEditor label="Overview Content" value={form.overview_content} onChange={(value) => updateForm("overview_content", value)} className="lg:col-span-2" rows={5} />
-              <InputField label="How It Works Title" value={form.how_it_works_title} onChange={(value) => updateForm("how_it_works_title", value)} />
-              <InputField label="How It Works Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateForm("how_it_works_subtitle", value)} />
+              <RichTextEditor label="How It Works Title" value={form.how_it_works_title} onChange={(value) => updateForm("how_it_works_title", value)} rows={2} />
+              <RichTextEditor label="How It Works Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateForm("how_it_works_subtitle", value)} rows={2} />
               <RichTextEditor label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateForm("how_it_works_content", value)} rows={4} />
               <TextAreaField label="How It Works Steps" value={form.how_it_works_steps} onChange={(value) => updateForm("how_it_works_steps", value)} placeholder="Title | Description | icon, one per line" rows={4} />
             </CmsSection>
 
             <CmsSection title="Content Sections">
-              <InputField label="Best For Title" value={form.best_for_title} onChange={(value) => updateForm("best_for_title", value)} />
-              <InputField label="Best For Subtitle" value={form.best_for_subtitle} onChange={(value) => updateForm("best_for_subtitle", value)} />
+              <RichTextEditor label="Best For Title" value={form.best_for_title} onChange={(value) => updateForm("best_for_title", value)} rows={2} />
+              <RichTextEditor label="Best For Subtitle" value={form.best_for_subtitle} onChange={(value) => updateForm("best_for_subtitle", value)} rows={2} />
               <TextAreaField label="Best For Cards" value={form.best_for_items} onChange={(value) => updateForm("best_for_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
             </CmsSection>
 
             <CmsSection title="Safety, FAQ & Verdict">
-              <InputField label="Safety Title" value={form.safety_title} onChange={(value) => updateForm("safety_title", value)} />
-              <InputField label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateForm("safety_subtitle", value)} />
+              <RichTextEditor label="Safety Title" value={form.safety_title} onChange={(value) => updateForm("safety_title", value)} rows={2} />
+              <RichTextEditor label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateForm("safety_subtitle", value)} rows={2} />
               <TextAreaField label="Safety Items" value={form.safety_items} onChange={(value) => updateForm("safety_items", value)} placeholder="side_effect | Title | Description | icon" className="lg:col-span-2" rows={5} />
-              <InputField label="Verdict Title" value={form.verdict_title} onChange={(value) => updateForm("verdict_title", value)} />
-              <InputField label="Verdict Subtitle" value={form.verdict_subtitle} onChange={(value) => updateForm("verdict_subtitle", value)} />
+              <RichTextEditor label="Verdict Title" value={form.verdict_title} onChange={(value) => updateForm("verdict_title", value)} rows={2} />
+              <RichTextEditor label="Verdict Subtitle" value={form.verdict_subtitle} onChange={(value) => updateForm("verdict_subtitle", value)} rows={2} />
               <RichTextEditor label="Verdict Summary" value={form.verdict_summary} onChange={(value) => updateForm("verdict_summary", value)} rows={4} />
               <RichTextEditor label="Verdict Recommendation" value={form.verdict_recommendation} onChange={(value) => updateForm("verdict_recommendation", value)} rows={4} />
-              <InputField label="Verdict Best For" value={form.verdict_best_for} onChange={(value) => updateForm("verdict_best_for", value)} />
-              <InputField label="Verdict Not Ideal For" value={form.verdict_not_ideal_for} onChange={(value) => updateForm("verdict_not_ideal_for", value)} />
+              <RichTextEditor label="Verdict Best For" value={form.verdict_best_for} onChange={(value) => updateForm("verdict_best_for", value)} rows={2} />
+              <RichTextEditor label="Verdict Not Ideal For" value={form.verdict_not_ideal_for} onChange={(value) => updateForm("verdict_not_ideal_for", value)} rows={2} />
               <RichTextEditor label="Verdict Conclusion" value={form.verdict_conclusion} onChange={(value) => updateForm("verdict_conclusion", value)} className="lg:col-span-2" rows={3} />
             </CmsSection>
 
             <CmsSection title="Buying Guide, Sidebar & Navigation">
-              <InputField label="Buying Guide Title" value={form.buying_guide_title} onChange={(value) => updateForm("buying_guide_title", value)} />
-              <InputField label="Buying Guide Subtitle" value={form.buying_guide_subtitle} onChange={(value) => updateForm("buying_guide_subtitle", value)} />
+              <RichTextEditor label="Buying Guide Title" value={form.buying_guide_title} onChange={(value) => updateForm("buying_guide_title", value)} rows={2} />
+              <RichTextEditor label="Buying Guide Subtitle" value={form.buying_guide_subtitle} onChange={(value) => updateForm("buying_guide_subtitle", value)} rows={2} />
               <InputField label="Buying CTA Label" value={form.buying_cta_label} onChange={(value) => updateForm("buying_cta_label", value)} />
               <TextAreaField label="Buying Guide Items" value={form.buying_guide_items} onChange={(value) => updateForm("buying_guide_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
               <TextAreaField label="Table of Contents Items" value={form.toc_items} onChange={(value) => updateForm("toc_items", value)} placeholder="Section name | anchor-id | icon | hidden" rows={4} />
-              <InputField label="Sidebar Heading" value={form.sidebar_heading} onChange={(value) => updateForm("sidebar_heading", value)} />
+              <RichTextEditor label="Sidebar Heading" value={form.sidebar_heading} onChange={(value) => updateForm("sidebar_heading", value)} rows={2} />
               <RichTextEditor label="Sidebar Description" value={form.sidebar_description} onChange={(value) => updateForm("sidebar_description", value)} />
               <CheckboxField label="Enable sticky desktop sidebar" checked={form.sidebar_sticky_enabled} onChange={(value) => updateForm("sidebar_sticky_enabled", value)} />
               <TextAreaField label="Sidebar Facts" value={form.sidebar_facts} onChange={(value) => updateForm("sidebar_facts", value)} placeholder="Label | Value | icon | hidden" rows={4} />
@@ -1693,14 +1693,14 @@ export function DashboardProductsClient() {
             </CmsSection>
 
             <CmsSection title="Related Content">
-              <InputField label="Related Ingredients Title" value={form.related_ingredients_title} onChange={(value) => updateForm("related_ingredients_title", value)} />
-              <InputField label="Related Ingredients Subtitle" value={form.related_ingredients_subtitle} onChange={(value) => updateForm("related_ingredients_subtitle", value)} />
-              <InputField label="Compare Title" value={form.compare_title} onChange={(value) => updateForm("compare_title", value)} />
-              <InputField label="Compare Subtitle" value={form.compare_subtitle} onChange={(value) => updateForm("compare_subtitle", value)} />
-              <InputField label="Related Products Title" value={form.related_products_title} onChange={(value) => updateForm("related_products_title", value)} />
-              <InputField label="Related Products Subtitle" value={form.related_products_subtitle} onChange={(value) => updateForm("related_products_subtitle", value)} />
-              <InputField label="Health Needs Title" value={form.health_needs_title} onChange={(value) => updateForm("health_needs_title", value)} />
-              <InputField label="Health Needs Subtitle" value={form.health_needs_subtitle} onChange={(value) => updateForm("health_needs_subtitle", value)} />
+              <RichTextEditor label="Related Ingredients Title" value={form.related_ingredients_title} onChange={(value) => updateForm("related_ingredients_title", value)} rows={2} />
+              <RichTextEditor label="Related Ingredients Subtitle" value={form.related_ingredients_subtitle} onChange={(value) => updateForm("related_ingredients_subtitle", value)} rows={2} />
+              <RichTextEditor label="Compare Title" value={form.compare_title} onChange={(value) => updateForm("compare_title", value)} rows={2} />
+              <RichTextEditor label="Compare Subtitle" value={form.compare_subtitle} onChange={(value) => updateForm("compare_subtitle", value)} rows={2} />
+              <RichTextEditor label="Related Products Title" value={form.related_products_title} onChange={(value) => updateForm("related_products_title", value)} rows={2} />
+              <RichTextEditor label="Related Products Subtitle" value={form.related_products_subtitle} onChange={(value) => updateForm("related_products_subtitle", value)} rows={2} />
+              <RichTextEditor label="Health Needs Title" value={form.health_needs_title} onChange={(value) => updateForm("health_needs_title", value)} rows={2} />
+              <RichTextEditor label="Health Needs Subtitle" value={form.health_needs_subtitle} onChange={(value) => updateForm("health_needs_subtitle", value)} rows={2} />
             </CmsSection>
 
             <CmsSection
@@ -1709,7 +1709,7 @@ export function DashboardProductsClient() {
             >
               <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
               <InputField label="Focus Keyword" value={form.seo_focus_keyword} onChange={(value) => updateForm("seo_focus_keyword", value)} />
-              <RichTextEditor label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} rows={3} />
+              <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} rows={3} />
               <InputField label="Canonical URL Override" value={form.seo_canonical_url} onChange={(value) => updateForm("seo_canonical_url", value)} />
               <div className="grid gap-3">
                 <CheckboxField label="No Index" checked={form.seo_noindex} onChange={(value) => updateForm("seo_noindex", value)} />
