@@ -767,71 +767,6 @@ function getSeoPreviewUrl(form: ProductFormState) {
   return `https://suppriva.vercel.app/product/${slug}`;
 }
 
-function getSeoChecks(form: ProductFormState) {
-  const title = form.seo_title || form.title;
-  const description = form.seo_description || form.short_description;
-  const canonical = form.seo_canonical_url;
-  const checks = [
-    { label: "Title", ok: title.length >= 30 && title.length <= 60 },
-    { label: "Description", ok: description.length >= 70 && description.length <= 160 },
-    { label: "Canonical", ok: Boolean(canonical) },
-    { label: "Schema", ok: form.schema_enable_product || form.schema_enable_faq },
-    { label: "OG Image", ok: Boolean(form.seo_og_image || form.image) },
-    { label: "Focus Keyword", ok: Boolean(form.seo_focus_keyword) },
-    { label: "Twitter Image", ok: Boolean(form.seo_twitter_image || form.seo_og_image || form.image) },
-  ];
-
-  return checks;
-}
-
-function getSeoWarnings(form: ProductFormState) {
-  const title = form.seo_title || form.title;
-  const description = form.seo_description || form.short_description;
-  const warnings: string[] = [];
-
-  if (title.length < 30) warnings.push("SEO title may be too short.");
-  if (title.length > 60) warnings.push("SEO title may be too long.");
-  if (!description) warnings.push("SEO description is missing.");
-  if (description.length > 160) warnings.push("SEO description may be too long.");
-  if (!form.seo_canonical_url) warnings.push("Canonical URL override is empty.");
-  if (!form.seo_focus_keyword) warnings.push("Focus keyword is missing.");
-  if (!form.seo_og_image && !form.image) warnings.push("Open Graph image is missing.");
-  if (!form.seo_twitter_image && !form.seo_og_image && !form.image) {
-    warnings.push("Twitter image is missing.");
-  }
-  if (!form.schema_enable_product) warnings.push("Product schema is disabled.");
-
-  [
-    ["Canonical URL", form.seo_canonical_url],
-    ["Open Graph image", form.seo_og_image],
-    ["Twitter image", form.seo_twitter_image],
-    ["Schema offer URL", form.schema_offer_url],
-    ["Original image source URL", form.product_image_source_url],
-  ].forEach(([label, value]) => {
-    try {
-      if (value) {
-        new URL(value);
-      }
-    } catch {
-      warnings.push(`${label} is invalid.`);
-    }
-  });
-
-  try {
-    parseSchemaJson(form.schema_json);
-  } catch {
-    warnings.push("Custom JSON-LD is invalid.");
-  }
-
-  return warnings;
-}
-
-function getSeoScore(form: ProductFormState) {
-  const checks = getSeoChecks(form);
-  const passed = checks.filter((item) => item.ok).length;
-  return Math.round((passed / checks.length) * 100);
-}
-
 function productToForm(product: Product): ProductFormState {
   const heroChecklist = safeStringArray(product.hero_checklist);
   const gallery = safeStringArray(product.gallery);
@@ -1772,7 +1707,6 @@ export function DashboardProductsClient() {
               <TextAreaField label="Custom JSON-LD" value={form.schema_json} onChange={(value) => updateForm("schema_json", value)} placeholder='{"@type":"Product"}' className="lg:col-span-2" rows={6} />
               <SeoPreviewPanel form={form} />
               <SocialPreviewPanel form={form} />
-              <SeoScorePanel form={form} />
             </CmsSection>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
@@ -1852,48 +1786,6 @@ function SocialPreviewPanel({ form }: { form: ProductFormState }) {
           <p className="text-sm leading-6 text-muted">{description}</p>
         </div>
       </div>
-    </div>
-  );
-}
-
-function SeoScorePanel({ form }: { form: ProductFormState }) {
-  const score = getSeoScore(form);
-  const checks = getSeoChecks(form);
-  const warnings = getSeoWarnings(form);
-
-  return (
-    <div className="grid gap-4 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary">
-            SEO Score
-          </h4>
-          <p className="mt-1 text-sm text-muted">Realtime guidance. Warnings do not block saving.</p>
-        </div>
-        <span className="rounded-pill bg-soft-green px-4 py-2 font-heading text-xl font-extrabold text-primary">
-          {score} / 100
-        </span>
-      </div>
-      <div className="grid gap-2 sm:grid-cols-2">
-        {checks.map((item) => (
-          <span
-            key={item.label}
-            className="rounded-pill border border-border-light bg-cream/40 px-4 py-2 text-sm font-semibold text-text-dark"
-          >
-            {item.ok ? "OK" : "Warning"} {item.label}
-          </span>
-        ))}
-      </div>
-      {warnings.length ? (
-        <div className="rounded-[18px] border border-gold/30 bg-gold/10 p-4">
-          <p className="font-heading text-sm font-extrabold text-text-dark">Warnings</p>
-          <ul className="mt-2 grid gap-1 text-sm text-muted">
-            {warnings.map((warning) => (
-              <li key={warning}>{warning}</li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
     </div>
   );
 }

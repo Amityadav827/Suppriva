@@ -775,16 +775,6 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 subtitle={buyingSectionSubtitle}
                 order={buyingSectionOrder}
               >
-                <FadeIn className="-mt-3 mb-6">
-                  <AffiliateCtaButton
-                    productId={product.productId}
-                    productSlug={product.slug}
-                    affiliateUrl={product.affiliateUrl}
-                    label={product.buyingCtaLabel}
-                    className="w-full sm:w-auto"
-                  />
-                </FadeIn>
-
                 <FadeIn className="rounded-[26px] bg-white p-6 ring-1 ring-black/5 md:p-8">
                   <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                     {buyingGuidance.map((item, index) => (
@@ -809,6 +799,15 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                         ) : null}
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6">
+                    <AffiliateCtaButton
+                      productId={product.productId}
+                      productSlug={product.slug}
+                      affiliateUrl={product.affiliateUrl}
+                      label={product.buyingCtaLabel}
+                      className="w-full sm:w-auto"
+                    />
                   </div>
                 </FadeIn>
               </ReviewSection>
