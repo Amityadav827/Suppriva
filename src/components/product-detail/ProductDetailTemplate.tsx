@@ -10,9 +10,11 @@ import {
   Check,
   ChevronRight,
   CircleAlert,
+  ClipboardCheck,
   ClipboardList,
   FlaskConical,
   HeartPulse,
+  Info,
   Leaf,
   PackageCheck,
   Pill,
@@ -20,6 +22,7 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
+  Stethoscope,
   Users,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -78,14 +81,19 @@ const heroIconMap = new Map(
     ["check", Check],
     ["alert", CircleAlert],
     ["clipboard", ClipboardList],
+    ["clipboard-check", ClipboardCheck],
     ["flask", FlaskConical],
     ["heart", HeartPulse],
+    ["info", Info],
     ["leaf", Leaf],
     ["package", PackageCheck],
     ["pill", Pill],
+    ["precaution", ShieldCheck],
     ["shield", ShieldCheck],
+    ["shield-check", ShieldCheck],
     ["sparkles", Sparkles],
     ["star", Star],
+    ["stethoscope", Stethoscope],
     ["users", Users],
   ].map(([key, icon]) => [key, icon as typeof Check]),
 );
@@ -1260,35 +1268,24 @@ function SafetyCard({
     return null;
   }
 
-  const visibleItems = items.slice(0, 2);
-
   return (
-    <FadeIn className="flex h-full flex-col rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5">
-      <div className="min-h-[116px]">
-        <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-white text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
-          <Icon className="size-6" aria-hidden="true" />
+    <FadeIn className="flex h-full flex-col rounded-[24px] bg-white p-5 shadow-[0_16px_42px_rgba(15,23,42,0.05)] ring-1 ring-primary/10 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_54px_rgba(11,93,59,0.10)] md:p-6">
+      <div>
+        <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-soft-green text-primary shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
+          <Icon className="size-5.5" aria-hidden="true" />
         </span>
-        <h3 className="mt-4 font-heading text-xl font-extrabold leading-[1.2] text-text-dark">
+        <h3 className="mt-4 font-heading text-xl font-extrabold leading-[1.18] text-text-dark">
           {title}
         </h3>
       </div>
-      <ul className="mt-5 grid flex-1 auto-rows-fr gap-3">
-        {visibleItems.map((item) => (
+      <ul className="mt-5 grid gap-3">
+        {items.map((item) => (
           <li
             key={item}
-            className="flex h-full min-h-[112px] items-start gap-3 rounded-[18px] bg-white px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
+            className="flex items-start gap-3 rounded-[18px] bg-cream/70 px-4 py-3 text-sm leading-7 text-muted ring-1 ring-black/5"
           >
             <Check className="mt-1 size-4 shrink-0 text-primary" />
-            <span
-              style={{
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
-                WebkitLineClamp: 2,
-                overflow: "hidden",
-              }}
-            >
-              {item}
-            </span>
+            <span>{item}</span>
           </li>
         ))}
       </ul>

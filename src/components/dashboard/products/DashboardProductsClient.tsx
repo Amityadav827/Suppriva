@@ -1666,10 +1666,18 @@ export function DashboardProductsClient() {
               <TextAreaField label="Best For Cards" value={form.best_for_items} onChange={(value) => updateForm("best_for_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
             </CmsSection>
 
-            <CmsSection title="Safety, FAQ & Verdict">
+            <CmsSection title="Safety Information">
               <InputField label="Safety Title" value={form.safety_title} onChange={(value) => updateForm("safety_title", value)} />
               <InputField label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateForm("safety_subtitle", value)} />
-              <TextAreaField label="Safety Items" value={form.safety_items} onChange={(value) => updateForm("safety_items", value)} placeholder="side_effect | Title | Description | icon" className="lg:col-span-2" rows={5} />
+              <TextAreaField
+                label="Safety Items"
+                value={form.safety_items}
+                onChange={(value) => updateForm("safety_items", value)}
+                placeholder="precaution | Dietary Supplement | Full safety description | shield-check"
+                helperText="One item per line. Format: type | title | description | icon. Types: precaution, side_effect, who_should_avoid, interaction."
+                className="lg:col-span-2"
+                rows={5}
+              />
               <InputField label="Verdict Title" value={form.verdict_title} onChange={(value) => updateForm("verdict_title", value)} />
               <InputField label="Verdict Subtitle" value={form.verdict_subtitle} onChange={(value) => updateForm("verdict_subtitle", value)} />
               <RichTextEditor label="Verdict Summary" value={form.verdict_summary} onChange={(value) => updateForm("verdict_summary", value)} rows={4} />
