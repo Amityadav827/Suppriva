@@ -305,9 +305,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                       </div>
                     ) : null}
 
-                    <p className="max-w-3xl text-lg leading-8 text-muted">
-                      {product.description}
-                    </p>
+                    <RichText text={product.description} className="max-w-3xl text-lg leading-8 text-muted" />
                   </FadeIn>
 
                   <FadeIn className="grid gap-3 md:grid-cols-2">
@@ -325,9 +323,11 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           <span className="text-sm font-medium leading-7 text-text-dark">
                             {highlight.title}
                             {highlight.description ? (
-                              <span className="block pt-1 text-xs font-normal leading-6 text-muted">
-                                {highlight.description}
-                              </span>
+                              <RichText
+                                text={highlight.description}
+                                className="block pt-1 text-xs font-normal leading-6 text-muted"
+                                as="span"
+                              />
                             ) : null}
                           </span>
                         </div>
@@ -393,9 +393,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                         {point.title}
                       </h3>
                       {point.description ? (
-                        <p className="mt-3 text-sm leading-7 text-muted">
-                          {point.description}
-                        </p>
+                        <RichText text={point.description} className="mt-3 text-sm leading-7 text-muted" />
                       ) : null}
                     </FadeIn>
                   ))}
@@ -430,9 +428,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                             {step.title}
                           </h3>
                           {step.description ? (
-                            <p className="mt-2 text-base leading-8 text-muted">
-                              {step.description}
-                            </p>
+                            <RichText text={step.description} className="mt-2 text-base leading-8 text-muted" />
                           ) : null}
                         </div>
                       </div>
@@ -705,7 +701,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                 </div>
                 <div className="flex h-full flex-col justify-center space-y-5">
                   {product.verdict.summary ? (
-                    <p className="text-lg leading-8 text-muted">{product.verdict.summary}</p>
+                    <RichText text={product.verdict.summary} className="text-lg leading-8 text-muted" />
                   ) : null}
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {product.verdict.bestFor ? (
@@ -725,9 +721,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                     ) : null}
                   </div>
                   {product.verdict.conclusion ? (
-                    <p className="text-base leading-8 text-muted">
-                      {product.verdict.conclusion}
-                    </p>
+                    <RichText text={product.verdict.conclusion} className="text-base leading-8 text-muted" />
                   ) : null}
                 </div>
               </div>
@@ -966,7 +960,7 @@ function SidebarColumn({
           {product.sidebar.heading}
         </p>
         {product.sidebar.description ? (
-          <p className="mt-3 text-sm leading-7 text-muted">{product.sidebar.description}</p>
+          <RichText text={product.sidebar.description} className="mt-3 text-sm leading-7 text-muted" />
         ) : null}
         <div className="mt-5 space-y-3">
           {product.sidebar.facts.map((item) => {
@@ -1015,72 +1009,7 @@ function SidebarColumn({
           })}
         </div>
       </FadeIn>
-
-      <FadeIn className={sectionCardClasses()}>
-        <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-          {product.sidebar.ctaTitle}
-        </p>
-        <p className="mt-4 text-sm leading-7 text-muted">
-          {product.sidebar.ctaDescription}
-        </p>
-        <SidebarActionButton product={product} />
-      </FadeIn>
     </div>
-  );
-}
-
-function SidebarActionButton({ product }: { product: ProductDetail }) {
-  const ctaUrl =
-    product.sidebar.ctaType === "ask_expert"
-      ? "/ask-expert"
-      : product.sidebar.ctaUrl || product.affiliateUrl || "/products";
-
-  if (product.sidebar.ctaType === "affiliate") {
-    return (
-      <AffiliateCtaButton
-        productId={product.productId}
-        productSlug={product.slug}
-        affiliateUrl={ctaUrl}
-        label={product.sidebar.ctaLabel}
-        className="mt-6"
-      />
-    );
-  }
-
-  const className =
-    "mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-5 font-heading text-[12px] font-semibold uppercase tracking-[0.06em] text-white shadow-[0_18px_46px_rgba(11,93,59,0.26)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.24)] sm:min-h-14 sm:w-auto sm:px-6";
-
-  const content = (
-    <>
-      {product.sidebar.ctaLabel}
-      <ChevronRight className="size-4" aria-hidden="true" />
-    </>
-  );
-
-  if (product.sidebar.ctaType === "external") {
-    return (
-      <motion.div
-        whileHover={{ scale: 1.025, y: -2 }}
-        whileTap={{ scale: 0.98 }}
-        transition={{ duration: 0.3 }}
-      >
-        <a href={ctaUrl} target="_blank" rel="nofollow noopener noreferrer" className={className}>
-          {content}
-        </a>
-      </motion.div>
-    );
-  }
-
-  return (
-    <motion.div
-      whileHover={{ scale: 1.025, y: -2 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.3 }}
-    >
-      <Link href={ctaUrl} className={className}>
-        {content}
-      </Link>
-    </motion.div>
   );
 }
 
@@ -1144,12 +1073,63 @@ function ContentPanel({ paragraphs }: { paragraphs: string[] }) {
     <FadeIn className="rounded-[24px] bg-cream/70 p-6 ring-1 ring-black/5 md:p-8">
       <div className="space-y-5">
         {visibleParagraphs.map((paragraph) => (
-          <p key={paragraph} className="text-base leading-8 text-muted">
-            {paragraph}
-          </p>
+          <RichText key={paragraph} text={paragraph} className="text-base leading-8 text-muted" />
         ))}
       </div>
     </FadeIn>
+  );
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function formatInlineMarkdown(value: string) {
+  return escapeHtml(value)
+    .replace(
+      /\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g,
+      '<a href="$2" target="_blank" rel="nofollow noopener noreferrer" class="font-semibold text-primary underline underline-offset-4">$1</a>',
+    )
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+}
+
+function formatRichText(value: string) {
+  return value
+    .split("\n")
+    .map((line) => {
+      const trimmedLine = line.trim();
+
+      if (/^[-*]\s+/.test(trimmedLine)) {
+        return `&bull; ${formatInlineMarkdown(trimmedLine.replace(/^[-*]\s+/, ""))}`;
+      }
+
+      return formatInlineMarkdown(line);
+    })
+    .join("<br />");
+}
+
+function RichText({
+  text,
+  className,
+  as = "p",
+}: {
+  text: string;
+  className: string;
+  as?: "p" | "span";
+}) {
+  const Component = as;
+
+  return (
+    <Component
+      className={className}
+      dangerouslySetInnerHTML={{ __html: formatRichText(text) }}
+    />
   );
 }
 
@@ -1206,7 +1186,7 @@ function InfoLine({ label, value }: { label: string; value: string }) {
       <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
         {label}
       </p>
-      <p className="mt-2 text-sm leading-7 text-text-dark">{value}</p>
+      <RichText text={value} className="mt-2 text-sm leading-7 text-text-dark" />
     </div>
   );
 }

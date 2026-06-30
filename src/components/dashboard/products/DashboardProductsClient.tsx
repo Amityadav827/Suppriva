@@ -16,7 +16,11 @@ import { motion } from "framer-motion";
 import {
   ArrowDown,
   ArrowUp,
+  Bold,
   GripVertical,
+  Italic,
+  Link as LinkIcon,
+  List,
   Loader2,
   Pencil,
   Plus,
@@ -26,7 +30,7 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
-import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   PRODUCT_LAYOUT_SECTION_DEFINITIONS,
   type ProductLayoutSectionKey,
@@ -1587,7 +1591,7 @@ export function DashboardProductsClient() {
                 <option value={ContentStatus.Archived}>Archived</option>
               </select>
             </label>
-            <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateForm("short_description", value)} />
+            <RichTextEditor label="Short Description" value={form.short_description} onChange={(value) => updateForm("short_description", value)} />
             <IngredientMultiSelect
               ingredients={ingredients}
               isLoading={isIngredientsLoading}
@@ -1627,7 +1631,7 @@ export function DashboardProductsClient() {
               <InputField label="Rating Label" value={form.rating_label} onChange={(value) => updateForm("rating_label", value)} />
               <InputField label="Review Count" value={form.review_count} onChange={(value) => updateForm("review_count", value)} />
               <InputField label="Hero Image Alt Text" value={form.hero_image_alt} onChange={(value) => updateForm("hero_image_alt", value)} />
-              <TextAreaField label="Hero Description" value={form.hero_description} onChange={(value) => updateForm("hero_description", value)} className="lg:col-span-2" rows={4} />
+              <RichTextEditor label="Hero Description" value={form.hero_description} onChange={(value) => updateForm("hero_description", value)} className="lg:col-span-2" rows={4} />
               <TextAreaField label="Hero Checklist" value={form.hero_checklist} onChange={(value) => updateForm("hero_checklist", value)} placeholder="Icon | Text, one checklist item per line" />
               <TextAreaField label="Hero Highlight Cards" value={form.standout_points} onChange={(value) => updateForm("standout_points", value)} placeholder="Title | Description | icon, one per line" rows={4} />
               <div className="grid gap-3">
@@ -1649,17 +1653,14 @@ export function DashboardProductsClient() {
             <CmsSection title="Overview & Education">
               <InputField label="Overview Title" value={form.overview_title} onChange={(value) => updateForm("overview_title", value)} />
               <InputField label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateForm("overview_subtitle", value)} />
-              <TextAreaField label="Overview Content" value={form.overview_content} onChange={(value) => updateForm("overview_content", value)} className="lg:col-span-2" rows={5} />
+              <RichTextEditor label="Overview Content" value={form.overview_content} onChange={(value) => updateForm("overview_content", value)} className="lg:col-span-2" rows={5} />
               <InputField label="How It Works Title" value={form.how_it_works_title} onChange={(value) => updateForm("how_it_works_title", value)} />
               <InputField label="How It Works Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateForm("how_it_works_subtitle", value)} />
-              <TextAreaField label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateForm("how_it_works_content", value)} rows={4} />
+              <RichTextEditor label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateForm("how_it_works_content", value)} rows={4} />
               <TextAreaField label="How It Works Steps" value={form.how_it_works_steps} onChange={(value) => updateForm("how_it_works_steps", value)} placeholder="Title | Description | icon, one per line" rows={4} />
             </CmsSection>
 
             <CmsSection title="Content Sections">
-              <InputField label="Ingredients Title" value={form.ingredients_title} onChange={(value) => updateForm("ingredients_title", value)} />
-              <InputField label="Ingredients Subtitle" value={form.ingredients_subtitle} onChange={(value) => updateForm("ingredients_subtitle", value)} />
-              <TextAreaField label="Ingredient Display Overrides" value={form.ingredient_overrides} onChange={(value) => updateForm("ingredient_overrides", value)} placeholder="ingredient_id | Purpose | Dosage | Description override | Custom note | highlighted" className="lg:col-span-2" rows={4} />
               <InputField label="Best For Title" value={form.best_for_title} onChange={(value) => updateForm("best_for_title", value)} />
               <InputField label="Best For Subtitle" value={form.best_for_subtitle} onChange={(value) => updateForm("best_for_subtitle", value)} />
               <TextAreaField label="Best For Cards" value={form.best_for_items} onChange={(value) => updateForm("best_for_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
@@ -1671,11 +1672,11 @@ export function DashboardProductsClient() {
               <TextAreaField label="Safety Items" value={form.safety_items} onChange={(value) => updateForm("safety_items", value)} placeholder="side_effect | Title | Description | icon" className="lg:col-span-2" rows={5} />
               <InputField label="Verdict Title" value={form.verdict_title} onChange={(value) => updateForm("verdict_title", value)} />
               <InputField label="Verdict Subtitle" value={form.verdict_subtitle} onChange={(value) => updateForm("verdict_subtitle", value)} />
-              <TextAreaField label="Verdict Summary" value={form.verdict_summary} onChange={(value) => updateForm("verdict_summary", value)} rows={4} />
-              <TextAreaField label="Verdict Recommendation" value={form.verdict_recommendation} onChange={(value) => updateForm("verdict_recommendation", value)} rows={4} />
+              <RichTextEditor label="Verdict Summary" value={form.verdict_summary} onChange={(value) => updateForm("verdict_summary", value)} rows={4} />
+              <RichTextEditor label="Verdict Recommendation" value={form.verdict_recommendation} onChange={(value) => updateForm("verdict_recommendation", value)} rows={4} />
               <InputField label="Verdict Best For" value={form.verdict_best_for} onChange={(value) => updateForm("verdict_best_for", value)} />
               <InputField label="Verdict Not Ideal For" value={form.verdict_not_ideal_for} onChange={(value) => updateForm("verdict_not_ideal_for", value)} />
-              <TextAreaField label="Verdict Conclusion" value={form.verdict_conclusion} onChange={(value) => updateForm("verdict_conclusion", value)} className="lg:col-span-2" rows={3} />
+              <RichTextEditor label="Verdict Conclusion" value={form.verdict_conclusion} onChange={(value) => updateForm("verdict_conclusion", value)} className="lg:col-span-2" rows={3} />
             </CmsSection>
 
             <CmsSection title="Buying Guide, Sidebar & Navigation">
@@ -1685,12 +1686,7 @@ export function DashboardProductsClient() {
               <TextAreaField label="Buying Guide Items" value={form.buying_guide_items} onChange={(value) => updateForm("buying_guide_items", value)} placeholder="Title | Description | icon, one per line" rows={4} />
               <TextAreaField label="Table of Contents Items" value={form.toc_items} onChange={(value) => updateForm("toc_items", value)} placeholder="Section name | anchor-id | icon | hidden" rows={4} />
               <InputField label="Sidebar Heading" value={form.sidebar_heading} onChange={(value) => updateForm("sidebar_heading", value)} />
-              <InputField label="Sidebar Description" value={form.sidebar_description} onChange={(value) => updateForm("sidebar_description", value)} />
-              <InputField label="Sidebar CTA Title" value={form.sidebar_cta_title} onChange={(value) => updateForm("sidebar_cta_title", value)} />
-              <InputField label="Sidebar CTA Description" value={form.sidebar_cta_description} onChange={(value) => updateForm("sidebar_cta_description", value)} />
-              <InputField label="Sidebar CTA Label" value={form.sidebar_cta_label} onChange={(value) => updateForm("sidebar_cta_label", value)} />
-              <InputField label="Sidebar CTA URL" value={form.sidebar_cta_url} onChange={(value) => updateForm("sidebar_cta_url", value)} placeholder="/ask-expert or https://example.com" />
-              <SidebarCtaTypeSelect value={form.sidebar_cta_type} onChange={(value) => updateForm("sidebar_cta_type", value)} />
+              <RichTextEditor label="Sidebar Description" value={form.sidebar_description} onChange={(value) => updateForm("sidebar_description", value)} />
               <CheckboxField label="Enable sticky desktop sidebar" checked={form.sidebar_sticky_enabled} onChange={(value) => updateForm("sidebar_sticky_enabled", value)} />
               <TextAreaField label="Sidebar Facts" value={form.sidebar_facts} onChange={(value) => updateForm("sidebar_facts", value)} placeholder="Label | Value | icon | hidden" rows={4} />
               <TextAreaField label="Sidebar Trust Badges" value={form.sidebar_trust_badges} onChange={(value) => updateForm("sidebar_trust_badges", value)} placeholder="Title | Description | icon | hidden" rows={4} />
@@ -1713,7 +1709,7 @@ export function DashboardProductsClient() {
             >
               <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
               <InputField label="Focus Keyword" value={form.seo_focus_keyword} onChange={(value) => updateForm("seo_focus_keyword", value)} />
-              <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} rows={3} />
+              <RichTextEditor label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} rows={3} />
               <InputField label="Canonical URL Override" value={form.seo_canonical_url} onChange={(value) => updateForm("seo_canonical_url", value)} />
               <div className="grid gap-3">
                 <CheckboxField label="No Index" checked={form.seo_noindex} onChange={(value) => updateForm("seo_noindex", value)} />
@@ -1940,32 +1936,6 @@ function TargetSelect({
       >
         <option value="_blank">New tab</option>
         <option value="_self">Same tab</option>
-      </select>
-    </label>
-  );
-}
-
-function SidebarCtaTypeSelect({
-  value,
-  onChange,
-}: {
-  value: ProductFormState["sidebar_cta_type"];
-  onChange: (value: ProductFormState["sidebar_cta_type"]) => void;
-}) {
-  return (
-    <label className="grid gap-2">
-      <span className="font-heading text-sm font-semibold text-text-dark">Sidebar CTA Type</span>
-      <select
-        value={value}
-        onChange={(event) =>
-          onChange(event.target.value as ProductFormState["sidebar_cta_type"])
-        }
-        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
-      >
-        <option value="affiliate">Affiliate</option>
-        <option value="internal">Internal</option>
-        <option value="external">External</option>
-        <option value="ask_expert">Ask Expert</option>
       </select>
     </label>
   );
@@ -2459,6 +2429,113 @@ function IngredientMultiSelect({
         {errorMessage ? <span className="font-semibold text-red-600">{errorMessage}</span> : null}
       </div>
     </label>
+  );
+}
+
+function RichTextEditor({
+  label,
+  value,
+  onChange,
+  placeholder,
+  helperText,
+  rows = 4,
+  className = "",
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  helperText?: string;
+  rows?: number;
+  className?: string;
+}) {
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  function insertMarkup(prefix: string, suffix = prefix, fallback = "text") {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || fallback;
+    const nextValue = `${value.slice(0, start)}${prefix}${selectedText}${suffix}${value.slice(end)}`;
+
+    onChange(nextValue);
+
+    window.requestAnimationFrame(() => {
+      textarea?.focus();
+      textarea?.setSelectionRange(start + prefix.length, start + prefix.length + selectedText.length);
+    });
+  }
+
+  function insertBulletList() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "List item";
+    const listText = selectedText
+      .split("\n")
+      .map((line) => `- ${line.replace(/^[-*]\s*/, "")}`)
+      .join("\n");
+    const nextValue = `${value.slice(0, start)}${listText}${value.slice(end)}`;
+
+    onChange(nextValue);
+
+    window.requestAnimationFrame(() => {
+      textarea?.focus();
+      textarea?.setSelectionRange(start, start + listText.length);
+    });
+  }
+
+  return (
+    <label className={`grid gap-2 ${className}`}>
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <div className="overflow-hidden rounded-[18px] border border-border-light bg-white focus-within:border-gold/80 focus-within:ring-4 focus-within:ring-gold/10">
+        <div className="flex flex-wrap gap-2 border-b border-border-light bg-cream/50 px-3 py-2">
+          <EditorButton label="Bold" onClick={() => insertMarkup("**", "**", "bold text")}>
+            <Bold className="size-4" />
+          </EditorButton>
+          <EditorButton label="Italic" onClick={() => insertMarkup("*", "*", "italic text")}>
+            <Italic className="size-4" />
+          </EditorButton>
+          <EditorButton label="Bullet list" onClick={insertBulletList}>
+            <List className="size-4" />
+          </EditorButton>
+          <EditorButton label="Link" onClick={() => insertMarkup("[", "](https://example.com)", "link text")}>
+            <LinkIcon className="size-4" />
+          </EditorButton>
+        </div>
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={(event) => onChange(event.target.value)}
+          placeholder={placeholder}
+          rows={rows}
+          className="w-full resize-y border-0 bg-white px-4 py-3 text-sm text-text-dark outline-none placeholder:text-muted/70"
+        />
+      </div>
+      {helperText ? <span className="text-xs text-muted">{helperText}</span> : null}
+    </label>
+  );
+}
+
+function EditorButton({
+  label,
+  onClick,
+  children,
+}: {
+  label: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={label}
+      aria-label={label}
+      className="inline-flex size-9 items-center justify-center rounded-full border border-border-light bg-white text-primary transition hover:border-gold/70 hover:bg-soft-green"
+    >
+      {children}
+    </button>
   );
 }
 
