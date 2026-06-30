@@ -1,10 +1,7 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
-import {
-  MediaGalleryField,
-  MediaLibraryField,
-} from "@/components/dashboard/media/MediaLibraryField";
+import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type {
   Author,
@@ -1591,20 +1588,6 @@ export function DashboardProductsClient() {
               </select>
             </label>
             <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateForm("short_description", value)} />
-            <TextAreaField label="Full Description" value={form.full_description} onChange={(value) => updateForm("full_description", value)} className="lg:col-span-2" rows={4} />
-            <MediaGalleryField
-              label="Product Gallery"
-              values={form.gallery}
-              onChange={(value) => updateForm("gallery", value)}
-              helperText="Optional secondary product images pulled directly from the Media Library."
-            />
-            <TextAreaField
-              label="Gallery Image Metadata"
-              value={form.gallery_image_metadata}
-              onChange={(value) => updateForm("gallery_image_metadata", value)}
-              placeholder="Image URL | Alt text | Title | Caption | Description"
-              helperText="One gallery image per line. URL is required; other fields are optional."
-            />
             <IngredientMultiSelect
               ingredients={ingredients}
               isLoading={isIngredientsLoading}
@@ -1674,8 +1657,6 @@ export function DashboardProductsClient() {
             </CmsSection>
 
             <CmsSection title="Content Sections">
-              <InputField label="Benefits Title" value={form.benefits_title} onChange={(value) => updateForm("benefits_title", value)} />
-              <InputField label="Benefits Subtitle" value={form.benefits_subtitle} onChange={(value) => updateForm("benefits_subtitle", value)} />
               <InputField label="Ingredients Title" value={form.ingredients_title} onChange={(value) => updateForm("ingredients_title", value)} />
               <InputField label="Ingredients Subtitle" value={form.ingredients_subtitle} onChange={(value) => updateForm("ingredients_subtitle", value)} />
               <TextAreaField label="Ingredient Display Overrides" value={form.ingredient_overrides} onChange={(value) => updateForm("ingredient_overrides", value)} placeholder="ingredient_id | Purpose | Dosage | Description override | Custom note | highlighted" className="lg:col-span-2" rows={4} />
@@ -1687,10 +1668,6 @@ export function DashboardProductsClient() {
             <CmsSection title="Safety, FAQ & Verdict">
               <InputField label="Safety Title" value={form.safety_title} onChange={(value) => updateForm("safety_title", value)} />
               <InputField label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateForm("safety_subtitle", value)} />
-              <InputField label="Pros & Cons Title" value={form.pros_cons_title} onChange={(value) => updateForm("pros_cons_title", value)} />
-              <InputField label="Pros & Cons Subtitle" value={form.pros_cons_subtitle} onChange={(value) => updateForm("pros_cons_subtitle", value)} />
-              <InputField label="FAQ Title" value={form.faq_title} onChange={(value) => updateForm("faq_title", value)} />
-              <InputField label="FAQ Subtitle" value={form.faq_subtitle} onChange={(value) => updateForm("faq_subtitle", value)} />
               <TextAreaField label="Safety Items" value={form.safety_items} onChange={(value) => updateForm("safety_items", value)} placeholder="side_effect | Title | Description | icon" className="lg:col-span-2" rows={5} />
               <InputField label="Verdict Title" value={form.verdict_title} onChange={(value) => updateForm("verdict_title", value)} />
               <InputField label="Verdict Subtitle" value={form.verdict_subtitle} onChange={(value) => updateForm("verdict_subtitle", value)} />
