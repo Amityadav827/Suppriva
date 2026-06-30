@@ -161,6 +161,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
     ? product.buyingGuidance
     : fallbackBuyingGuidance;
   const hasBuyingSection = sectionVisible("buying") && Boolean(buyingGuidance.length);
+  const buyingSectionTitle = product.buyingGuideTitle;
+  const buyingSectionSubtitle = product.buyingGuideSubtitle;
   const buyingSectionOrder = sectionVisible("pros_cons")
     ? sectionDisplayOrder("pros_cons") + 1
     : sectionDisplayOrder("buying");
@@ -186,7 +188,7 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
       ? [{ id: "safety", label: plainTextFromRichText(sectionTitle("safety", product.safetyTitle)), order: sectionDisplayOrder("safety") }]
       : []),
     ...(sectionVisible("pros_cons") && (product.pros.length || product.cons.length) ? [{ id: "pros-cons", label: plainTextFromRichText(sectionTitle("pros_cons", "Pros & Cons")), order: sectionDisplayOrder("pros_cons") }] : []),
-    ...(hasBuyingSection ? [{ id: "where-to-buy", label: plainTextFromRichText(sectionTitle("buying", product.buyingGuideTitle)), order: buyingSectionOrder }] : []),
+    ...(hasBuyingSection ? [{ id: "where-to-buy", label: plainTextFromRichText(buyingSectionTitle), order: buyingSectionOrder }] : []),
     ...(sectionVisible("faq") && product.faqs.length ? [{ id: "faq", label: plainTextFromRichText(sectionTitle("faq", product.faqTitle)), order: sectionDisplayOrder("faq") }] : []),
     ...(sectionVisible("verdict") && hasVerdict ? [{ id: "verdict", label: plainTextFromRichText(sectionTitle("verdict", product.verdictTitle)), order: sectionDisplayOrder("verdict") }] : []),
     ...(sectionVisible("related_ingredients") && product.relatedIngredients.length
@@ -769,8 +771,8 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
               <ReviewSection
                 id="where-to-buy"
                 icon={PackageCheck}
-                title={sectionTitle("buying", product.buyingGuideTitle)}
-                subtitle={sectionSubtitle("buying", product.buyingGuideSubtitle)}
+                title={buyingSectionTitle}
+                subtitle={buyingSectionSubtitle}
                 order={buyingSectionOrder}
               >
                 <FadeIn className="overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#F4FAF6_0%,#FFFFFF_58%,rgba(217,165,32,0.10)_100%)] p-5 ring-1 ring-primary/10 md:p-6">
