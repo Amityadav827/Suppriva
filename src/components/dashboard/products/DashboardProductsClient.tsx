@@ -1699,6 +1699,18 @@ Purchase directly from the official website to help ensure you receive an authen
                 <MediaLibraryField label="Twitter Image" value={form.seo_twitter_image} onChange={(value) => updateForm("seo_twitter_image", value)} className="lg:col-span-2" />
               </div>
 
+              <div className="grid gap-3 rounded-[22px] border border-border-light bg-white p-4 lg:col-span-2 lg:grid-cols-3">
+                <h4 className="font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary lg:col-span-3">
+                  Schema Controls
+                </h4>
+                <CheckboxField label="Enable Product Schema" checked={form.schema_enable_product} onChange={(value) => updateForm("schema_enable_product", value)} />
+                <CheckboxField label="Enable FAQ Schema" checked={form.schema_enable_faq} onChange={(value) => updateForm("schema_enable_faq", value)} />
+                <CheckboxField label="Enable Breadcrumb Schema" checked={form.schema_enable_breadcrumb} onChange={(value) => updateForm("schema_enable_breadcrumb", value)} />
+                <CheckboxField label="Enable Review Schema" checked={form.schema_enable_review} onChange={(value) => updateForm("schema_enable_review", value)} />
+                <CheckboxField label="Enable Organization Schema" checked={form.schema_enable_organization} onChange={(value) => updateForm("schema_enable_organization", value)} />
+              </div>
+
+              <TextAreaField label="Custom JSON-LD" value={form.schema_json} onChange={(value) => updateForm("schema_json", value)} placeholder='{"@type":"Product"}' className="lg:col-span-2" rows={6} />
               <SeoPreviewPanel form={form} />
               <SocialPreviewPanel form={form} />
             </CmsSection>
