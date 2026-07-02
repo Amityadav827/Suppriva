@@ -94,7 +94,7 @@ export const PRODUCT_LAYOUT_SECTION_DEFINITIONS = [
     key: "related_blogs",
     anchorId: "learn-more",
     name: "Related Blogs",
-    defaultTitle: "Learn More",
+    defaultTitle: "Related Blogs",
     defaultSubtitle: "",
   },
   {

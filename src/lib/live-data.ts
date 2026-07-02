@@ -733,10 +733,10 @@ export function productToDetail(
     relatedIngredientsSubtitle:
       product.related_ingredients_subtitle ||
       "Internal linking support for ingredient-level research, comparison, and topical SEO depth.",
-    relatedArticlesTitle: product.related_blogs_title || "Learn More",
+    relatedArticlesTitle: product.related_blogs_title || "Related Blogs",
     relatedArticlesSubtitle:
       product.related_blogs_subtitle ||
-      "Related editorial resources connected through matching topics, categories, and ingredient language.",
+      "Explore related Suppriva blog guides connected to this product, its category, and key ingredients.",
     compareTitle: product.compare_title || "Compare Alternatives",
     compareSubtitle:
       product.compare_subtitle ||
