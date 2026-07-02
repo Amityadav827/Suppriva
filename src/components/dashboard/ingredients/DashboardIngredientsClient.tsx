@@ -1,7 +1,6 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
-import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type {
   Author,
@@ -57,7 +56,6 @@ type IngredientFormState = {
   reviewer_id: string;
   scientific_name: string;
   ingredient_category: string;
-  image_url: string;
   rating: string;
   evidence_level: string;
   origin_country: string;
@@ -149,7 +147,6 @@ const emptyForm: IngredientFormState = {
   reviewer_id: "",
   scientific_name: "",
   ingredient_category: "",
-  image_url: "",
   rating: "",
   evidence_level: "",
   origin_country: "",
@@ -306,7 +303,6 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     reviewer_id: ingredient.reviewer_id ?? "",
     scientific_name: ingredient.scientific_name ?? "",
     ingredient_category: ingredient.ingredient_category ?? "",
-    image_url: ingredient.image_url ?? ingredient.featured_image ?? "",
     rating: ingredient.rating !== null ? String(ingredient.rating) : "",
     evidence_level: ingredient.evidence_level ?? "",
     origin_country: ingredient.origin_country ?? "",
@@ -388,7 +384,6 @@ async function getRelatedProductIdsForIngredient(slug: string) {
 
 function formToPayload(form: IngredientFormState) {
   const normalizedSlug = form.slug.trim() || slugify(form.name);
-  const primaryImage = cleanText(form.image_url);
   const seoTitle = cleanText(form.seo_title);
   const seoDescription = cleanText(form.seo_description);
   const benefitsJson = serializeTitleDescriptionItems(form.benefits_json);
@@ -405,7 +400,6 @@ function formToPayload(form: IngredientFormState) {
     reviewer_id: form.reviewer_id || null,
     scientific_name: cleanText(form.scientific_name),
     ingredient_category: cleanText(form.ingredient_category),
-    image_url: primaryImage,
     rating: form.rating.trim() ? Number(form.rating) : null,
     evidence_level: cleanText(form.evidence_level),
     origin_country: cleanText(form.origin_country),
@@ -434,7 +428,6 @@ function formToPayload(form: IngredientFormState) {
     side_effects: sideEffectsJson.map((item) => item.title),
     dosage: typicalDose,
     scientific_notes: howItWorksContent || overviewContent,
-    featured_image: primaryImage,
     meta_title: seoTitle,
     meta_description: seoDescription,
   };
@@ -1159,10 +1152,9 @@ export function DashboardIngredientsClient() {
           </div>
         ) : filteredIngredients.length ? (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[980px] border-separate border-spacing-y-3 text-left">
+            <table className="w-full min-w-[900px] border-separate border-spacing-y-3 text-left">
               <thead>
                 <tr className="text-xs uppercase tracking-[0.14em] text-muted">
-                  <th className="px-4 py-2">Image</th>
                   <th className="px-4 py-2">Name</th>
                   <th className="px-4 py-2">Scientific Name</th>
                   <th className="px-4 py-2">Category</th>
@@ -1174,7 +1166,6 @@ export function DashboardIngredientsClient() {
               </thead>
               <tbody>
                 {filteredIngredients.map((ingredient) => {
-                  const image = ingredient.image_url ?? ingredient.featured_image;
                   const warnings =
                     ingredientQualitySummary.warningMap.get(ingredient.id) ?? [];
 
@@ -1184,14 +1175,6 @@ export function DashboardIngredientsClient() {
                       className="rounded-[20px] bg-cream text-sm shadow-[0_12px_28px_rgba(15,23,42,0.04)]"
                     >
                       <td className="rounded-l-[20px] px-4 py-4">
-                        <div
-                          className="grid h-14 w-14 place-items-center rounded-[18px] border border-border-light bg-white bg-cover bg-center text-[10px] font-bold uppercase tracking-[0.14em] text-primary"
-                          style={image ? { backgroundImage: `url("${image}")` } : undefined}
-                        >
-                          {image ? <span className="sr-only">{ingredient.name}</span> : "ING"}
-                        </div>
-                      </td>
-                      <td className="px-4 py-4">
                         <div className="space-y-1">
                           <p className="font-heading font-semibold text-text-dark">{ingredient.name}</p>
                           <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
@@ -1291,7 +1274,7 @@ export function DashboardIngredientsClient() {
           <form onSubmit={submitIngredient} className="space-y-6">
             <FormSection
               title="Basic Information"
-              description="Core identity and primary image data."
+              description="Core identity and categorization data."
             >
               <InputField label="Name" value={form.name} onChange={(value) => updateTextField("name", value)} required />
               <InputField label="Slug" value={form.slug} onChange={(value) => updateTextField("slug", slugify(value))} required />
@@ -1319,13 +1302,6 @@ export function DashboardIngredientsClient() {
               />
               <InputField label="Scientific Name" value={form.scientific_name} onChange={(value) => updateTextField("scientific_name", value)} />
               <InputField label="Ingredient Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
-              <MediaLibraryField
-                label="Ingredient Image"
-                value={form.image_url}
-                onChange={(value) => updateTextField("image_url", value)}
-                className="lg:col-span-2"
-                helperText="Use the Media Library for the primary ingredient hero image."
-              />
             </FormSection>
 
             <FormSection

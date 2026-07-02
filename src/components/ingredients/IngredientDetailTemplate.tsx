@@ -211,10 +211,15 @@ function RichTextContent({ content }: { content?: string | null }) {
 
 function buildQuickFacts(ingredient: Ingredient) {
   return [
-    { label: "Typical Dose", value: ingredient.typical_dose ?? "", icon: Pill },
-    { label: "Best For", value: ingredient.best_for ?? "", icon: ShieldCheck },
-    { label: "Safety Level", value: ingredient.safety_level ?? "", icon: ShieldAlert },
-  ].filter((item) => item.value);
+    { label: "Type", value: ingredient.ingredient_category || "Not specified", icon: Leaf },
+    { label: "Typical Dose", value: ingredient.typical_dose || "Not specified", icon: Pill },
+    { label: "Best For", value: ingredient.best_for || "Not specified", icon: ShieldCheck },
+    { label: "Safety Level", value: ingredient.safety_level || "Not specified", icon: ShieldAlert },
+    { label: "Origin", value: ingredient.origin_country || "Not specified", icon: MapPin },
+    { label: "Part Used", value: ingredient.part_used || "Not specified", icon: Leaf },
+    { label: "Form", value: ingredient.ingredient_form || "Not specified", icon: Beaker },
+    { label: "Taste", value: ingredient.taste_profile || "Not specified", icon: Sparkles },
+  ];
 }
 
 export function IngredientDetailTemplate(props: {
@@ -242,14 +247,7 @@ export function IngredientDetailTemplate(props: {
   const whoShouldAvoid = parseStringList(ingredient.who_should_avoid_json);
   const faqs = normalizeFaqs(ingredient.faq_json ?? []);
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
-  const heroImage = ingredient.image_url || ingredient.featured_image;
   const faqColumns = splitIntoColumns(faqs, 2);
-  const metadataStrip = [
-    { label: "Origin", value: ingredient.origin_country ?? "", icon: MapPin },
-    { label: "Part Used", value: ingredient.part_used ?? "", icon: Leaf },
-    { label: "Form", value: ingredient.ingredient_form ?? "", icon: Beaker },
-    { label: "Taste", value: ingredient.taste_profile ?? "", icon: Sparkles },
-  ].filter((item) => item.value);
   const atAGlanceItems = [
     { label: "Evidence Level", value: ingredient.evidence_level || "Not specified" },
     { label: "Found In Products", value: String(relatedProducts.length) },
@@ -299,60 +297,24 @@ export function IngredientDetailTemplate(props: {
             </span>
           </nav>
 
-          <div className="grid gap-8 xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.08fr)_300px] xl:items-start">
-            <div className="space-y-5 xl:col-start-1">
-              <div className="group relative overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.10)]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.16),transparent_42%)] opacity-80" />
-                <span className="absolute left-5 top-5 z-10 inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
-                  Ingredient Library
-                </span>
-                <div className="relative h-[320px] md:h-[430px] xl:h-[520px]">
-                  <IngredientSmartImage
-                    src={heroImage}
-                    alt={ingredient.name}
-                    priority
-                    sizes="(max-width: 1279px) 100vw, 32vw"
-                    className="object-contain p-5 group-hover:scale-[1.03] md:p-7 xl:p-8"
-                  />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0D0D1A]/24 via-transparent to-transparent" />
-                </div>
-              </div>
-
-              <div className="space-y-4 px-1">
-                {(ingredient.rating || ingredient.evidence_level) ? (
-                  <div className="flex flex-wrap items-center gap-5 border-y border-black/6 py-4">
-                    {ingredient.rating ? (
-                      <div className="inline-flex items-center gap-2">
-                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                          Rating
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-sm font-bold text-text-dark">
-                          <Star className="size-4 fill-gold text-gold" />
-                          {ingredient.rating.toFixed(1)}
-                        </span>
-                      </div>
-                    ) : null}
-                    {ingredient.evidence_level ? (
-                      <div className="inline-flex items-center gap-2">
-                        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
-                          Evidence
-                        </span>
-                        <span className="inline-flex rounded-pill bg-primary/8 px-3 py-1.5 font-heading text-sm font-bold text-primary">
-                          {ingredient.evidence_level}
-                        </span>
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div>
-            </div>
-
-            <div className="space-y-6 xl:col-start-2">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
+            <div className="space-y-6 xl:col-start-1">
               <div className="space-y-5">
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   {ingredient.ingredient_category ? (
                     <span className="inline-flex items-center gap-2 rounded-pill border border-[#8B5CF6]/18 bg-[#8B5CF6]/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]">
                       {ingredient.ingredient_category}
+                    </span>
+                  ) : null}
+                  {ingredient.rating ? (
+                    <span className="inline-flex items-center gap-1.5 rounded-pill bg-gold/10 px-3 py-1.5 font-heading text-sm font-bold text-text-dark">
+                      <Star className="size-4 fill-gold text-gold" />
+                      {ingredient.rating.toFixed(1)}
+                    </span>
+                  ) : null}
+                  {ingredient.evidence_level ? (
+                    <span className="inline-flex rounded-pill bg-primary/8 px-3 py-1.5 font-heading text-sm font-bold text-primary">
+                      {ingredient.evidence_level}
                     </span>
                   ) : null}
                 </div>
@@ -385,18 +347,11 @@ export function IngredientDetailTemplate(props: {
                         <p className="text-sm text-muted">Fast comparison fields for research.</p>
                       </div>
                     </div>
-                    <div className="grid gap-3 md:grid-cols-2">
-                      {[
-                        {
-                          label: "Type",
-                          value: ingredient.ingredient_category ?? "General wellness",
-                          icon: Leaf,
-                        },
-                        ...quickFacts,
-                      ].map((fact) => (
+                    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                      {quickFacts.map((fact) => (
                         <div
                           key={fact.label}
-                          className="flex min-h-[84px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                          className="flex min-h-[118px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
                         >
                           <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                             <fact.icon className="size-4.5" aria-hidden="true" />
@@ -414,32 +369,6 @@ export function IngredientDetailTemplate(props: {
                     </div>
                   </div>
                 ) : null}
-
-                {metadataStrip.length ? (
-                  <div className="mt-5">
-                    <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
-                      {metadataStrip.map((item) => (
-                        <div
-                          key={item.label}
-                          className="flex min-h-[68px] items-start gap-2.5 rounded-2xl bg-white/78 px-3.5 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.04)] ring-1 ring-black/5"
-                        >
-                          <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            <item.icon className="size-4" aria-hidden="true" />
-                          </span>
-                          <div className="min-w-0 flex-1">
-                            <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted">
-                              {item.label}
-                            </p>
-                            <p className="mt-1 line-clamp-2 font-heading text-[0.95rem] font-bold leading-5 text-text-dark">
-                              {item.value}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-
               </div>
             </div>
 
