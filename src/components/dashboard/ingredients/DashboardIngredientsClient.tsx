@@ -19,10 +19,6 @@ import {
   parseIngredientCsv,
   slugify,
 } from "@/lib/ingredients/csv";
-import {
-  INGREDIENT_LAYOUT_SECTION_DEFINITIONS,
-  createDefaultIngredientLayoutSections,
-} from "@/lib/ingredient-layout";
 import { getIngredientQualityWarnings } from "@/lib/ingredients/data-quality";
 import { motion } from "framer-motion";
 import {
@@ -56,16 +52,6 @@ type TitleDescriptionItem = {
 type RelatedIngredientItem = {
   name: string;
   slug: string;
-};
-
-type LayoutFormItem = {
-  section_key: string;
-  name: string;
-  is_visible: boolean;
-  sort_order: string;
-  title_override: string;
-  subtitle_override: string;
-  animation_enabled: boolean;
 };
 
 type IngredientFormState = {
@@ -138,7 +124,6 @@ type IngredientFormState = {
   schema_json: string;
   seo_noindex: boolean;
   seo_nofollow: boolean;
-  ingredient_layout_sections: LayoutFormItem[];
   is_featured: boolean;
   product_ids: string[];
 };
@@ -195,81 +180,12 @@ const emptyFaqItem = (): FAQItem => ({
   answer: "",
 });
 
-function createDefaultLayoutFormItems(): LayoutFormItem[] {
-  return createDefaultIngredientLayoutSections().map((item) => ({
-    section_key: item.section_key,
-    name:
-      INGREDIENT_LAYOUT_SECTION_DEFINITIONS.find(
-        (section) => section.key === item.section_key,
-      )?.name ?? item.section_key,
-    is_visible: item.is_visible,
-    sort_order: String(item.sort_order),
-    title_override: "",
-    subtitle_override: "",
-    animation_enabled: item.animation_enabled,
-  }));
-}
-
 function parseSchemaJson(value: JsonValue | undefined) {
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     return "{}";
   }
 
   return JSON.stringify(value, null, 2);
-}
-
-function layoutToForm(value: JsonValue[] | undefined): LayoutFormItem[] {
-  const savedItems = Array.isArray(value) ? value : [];
-  const savedByKey = new Map(
-    savedItems
-      .filter(isRecord)
-      .map((item) => [typeof item.section_key === "string" ? item.section_key : "", item]),
-  );
-
-  return createDefaultLayoutFormItems().map((fallback) => {
-    const saved = savedByKey.get(fallback.section_key);
-
-    if (!saved) {
-      return fallback;
-    }
-
-    return {
-      ...fallback,
-      is_visible: typeof saved.is_visible === "boolean" ? saved.is_visible : fallback.is_visible,
-      sort_order:
-        typeof saved.sort_order === "number" && Number.isFinite(saved.sort_order)
-          ? String(saved.sort_order)
-          : fallback.sort_order,
-      title_override:
-        typeof saved.title_override === "string" ? saved.title_override : "",
-      subtitle_override:
-        typeof saved.subtitle_override === "string" ? saved.subtitle_override : "",
-      animation_enabled:
-        typeof saved.animation_enabled === "boolean"
-          ? saved.animation_enabled
-          : fallback.animation_enabled,
-    };
-  });
-}
-
-function normalizeLayoutFormItems(items: LayoutFormItem[]) {
-  return createDefaultLayoutFormItems().map((fallback) => {
-    const item = items.find((candidate) => candidate.section_key === fallback.section_key);
-    const parsedOrder = Number(item?.sort_order ?? fallback.sort_order);
-
-    return {
-      section_key: fallback.section_key,
-      is_visible: item?.is_visible ?? true,
-      sort_order:
-        Number.isInteger(parsedOrder) && parsedOrder >= 0
-          ? parsedOrder
-          : Number(fallback.sort_order),
-      title_override: cleanText(item?.title_override ?? ""),
-      subtitle_override: cleanText(item?.subtitle_override ?? ""),
-      background_style: "default" as const,
-      animation_enabled: item?.animation_enabled ?? true,
-    };
-  });
 }
 
 const emptyForm: IngredientFormState = {
@@ -342,7 +258,6 @@ const emptyForm: IngredientFormState = {
   schema_json: "{}",
   seo_noindex: false,
   seo_nofollow: false,
-  ingredient_layout_sections: createDefaultLayoutFormItems(),
   is_featured: false,
   product_ids: [],
 };
@@ -531,7 +446,6 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     schema_json: parseSchemaJson(ingredient.schema_json),
     seo_noindex: ingredient.seo_noindex ?? false,
     seo_nofollow: ingredient.seo_nofollow ?? false,
-    ingredient_layout_sections: layoutToForm(ingredient.ingredient_layout_sections),
     is_featured: ingredient.is_featured,
     product_ids: [],
   };
@@ -671,7 +585,6 @@ function formToPayload(form: IngredientFormState) {
     seo_noindex: form.seo_noindex,
     seo_nofollow: form.seo_nofollow,
     schema_json: schemaJson,
-    ingredient_layout_sections: normalizeLayoutFormItems(form.ingredient_layout_sections),
     is_featured: form.is_featured,
     product_ids: form.product_ids,
     benefits: benefitsJson.map((item) => item.title),
@@ -946,22 +859,6 @@ export function DashboardIngredientsClient() {
       ...currentForm,
       faq_json: currentForm.faq_json.filter((_, currentIndex) => currentIndex !== index),
     }));
-  }
-
-  function updateLayoutItem(
-    index: number,
-    field: keyof LayoutFormItem,
-    value: string | boolean,
-  ) {
-    setForm((currentForm) => {
-      const items = [...currentForm.ingredient_layout_sections];
-      items[index] = { ...items[index], [field]: value };
-
-      return {
-        ...currentForm,
-        ingredient_layout_sections: items,
-      };
-    });
   }
 
   function toggleProduct(productId: string) {
@@ -1717,27 +1614,6 @@ export function DashboardIngredientsClient() {
                   onRemove={removeFaqItem}
                   onChange={updateFaqItem}
                 />
-              </div>
-            </FormSection>
-
-            <FormSection
-              title="Ingredient Layout"
-              description="Control visibility, order, title overrides, subtitles, and animation for CMS sections. Automatic sections stay automatic."
-            >
-              <div className="lg:col-span-2 overflow-hidden rounded-[20px] border border-border-light bg-white">
-                {form.ingredient_layout_sections.map((item, index) => (
-                  <div key={item.section_key} className="grid gap-3 border-b border-border-light p-4 last:border-b-0 xl:grid-cols-[1.3fr_120px_100px_1fr_1fr_120px] xl:items-center">
-                    <div>
-                      <p className="font-heading text-sm font-bold text-text-dark">{item.name}</p>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">{item.section_key}</p>
-                    </div>
-                    <ToggleField label="Visible" checked={item.is_visible} onChange={(checked) => updateLayoutItem(index, "is_visible", checked)} />
-                    <InputField label="Order" value={item.sort_order} onChange={(value) => updateLayoutItem(index, "sort_order", value)} />
-                    <InputField label="Title Override" value={item.title_override} onChange={(value) => updateLayoutItem(index, "title_override", value)} />
-                    <InputField label="Subtitle Override" value={item.subtitle_override} onChange={(value) => updateLayoutItem(index, "subtitle_override", value)} />
-                    <ToggleField label="Animate" checked={item.animation_enabled} onChange={(checked) => updateLayoutItem(index, "animation_enabled", checked)} />
-                  </div>
-                ))}
               </div>
             </FormSection>
 

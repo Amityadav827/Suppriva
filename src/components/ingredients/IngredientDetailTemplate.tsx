@@ -23,7 +23,6 @@ import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { IngredientSectionNav, type IngredientSectionLink } from "@/components/ingredients/IngredientSectionNav";
 import { IngredientSmartImage } from "@/components/ingredients/IngredientSmartImage";
-import { CategoryPill } from "@/components/category/CategoryPill";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
 import type { CategoryProduct } from "@/lib/category-data";
 import type {
@@ -848,18 +847,31 @@ export function IngredientDetailTemplate(props: {
             />
             <div className="flex flex-wrap justify-center gap-4">
               {healthNeeds.map((category) => (
-                <CategoryPill
-                  key={category.slug}
-                  label={category.label}
-                  href={`/category/${category.slug}`}
-                  icon={getCategoryIcon(category.label)}
-                />
+                <HealthNeedPill key={category.slug} category={category} />
               ))}
             </div>
           </SectionWrapper>
         ) : null}
       </div>
     </main>
+  );
+}
+
+function HealthNeedPill({ category }: { category: HealthNeedLink }) {
+  const Icon = getCategoryIcon(category.label);
+
+  return (
+    <Link
+      href={`/category/${category.slug}`}
+      className="group flex min-h-14 items-center justify-center gap-2 rounded-pill border border-primary/10 bg-soft-green px-4 py-3 text-center shadow-[0_12px_34px_rgba(6,57,33,0.06)] transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-[#dceee1] hover:shadow-[0_18px_46px_rgba(6,57,33,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold md:justify-start md:px-5"
+    >
+      <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white text-primary shadow-[0_8px_20px_rgba(6,57,33,0.08)] transition duration-300 group-hover:text-dark-green">
+        <Icon className="size-4" strokeWidth={1.9} aria-hidden="true" />
+      </span>
+      <span className="font-heading text-xs font-semibold leading-4 text-text-dark sm:text-sm">
+        {category.label}
+      </span>
+    </Link>
   );
 }
 

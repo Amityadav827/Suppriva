@@ -188,7 +188,7 @@ function resolveRelatedArticles(
         blog.content && typeof blog.content === "object" && !Array.isArray(blog.content) && "body" in blog.content && typeof blog.content.body === "string"
           ? blog.content.body
           : "",
-        blog.tags.join(" "),
+        Array.isArray(blog.tags) ? blog.tags.join(" ") : "",
       ]
         .join(" ")
         .toLowerCase();

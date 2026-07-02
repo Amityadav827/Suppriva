@@ -1,13 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, FlaskConical, Sparkles, Star } from "lucide-react";
 import type { Ingredient } from "@/lib/database/types";
 
 export function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
-  const image = ingredient.image_url || ingredient.featured_image;
   const category = ingredient.ingredient_category?.trim() || "General Wellness";
 
   return (
@@ -19,17 +17,9 @@ export function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
     >
       <Link href={`/ingredient/${ingredient.slug}`} className="flex h-full flex-col">
         <div className="relative flex h-[220px] items-center justify-center overflow-hidden bg-gradient-to-br from-soft-green to-gold/[0.14]">
-          {image ? (
-            <Image
-              src={image}
-              alt={ingredient.name}
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover transition duration-700 group-hover:scale-110"
-            />
-          ) : (
-            <FlaskConical className="size-16 text-primary" aria-hidden="true" />
-          )}
+          <span className="inline-flex size-20 items-center justify-center rounded-full bg-white/90 text-primary shadow-[0_18px_45px_rgba(6,57,33,0.12)] transition duration-500 group-hover:scale-105">
+            <FlaskConical className="size-9" aria-hidden="true" />
+          </span>
           {ingredient.is_featured ? (
             <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill bg-white/92 px-3 py-1.5 font-heading text-xs font-semibold text-primary shadow-[0_12px_30px_rgba(15,23,42,0.12)]">
               <Sparkles className="size-3.5 text-gold" aria-hidden="true" />
