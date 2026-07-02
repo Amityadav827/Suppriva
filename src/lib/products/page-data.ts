@@ -13,31 +13,42 @@ function isRecord(value: JsonValue): value is Record<string, JsonValue> {
 
 function resolveRelatedArticles(
   searchTerms: string[],
+  categoryId: string | null,
   blogs: Awaited<ReturnType<BlogService["getAllBlogs"]>>,
   categoryMap: ReturnType<typeof createCategoryMap>,
 ): BlogPostCard[] {
   const normalizedTerms = searchTerms
     .map((term) => term.trim().toLowerCase())
     .filter(Boolean);
+  const publishedBlogs = onlyPublished(blogs);
 
-  return onlyPublished(blogs)
+  const matchedBlogs = publishedBlogs
     .filter((blog) => {
       const categoryTitle = blog.category_id ? categoryMap.get(blog.category_id)?.title ?? "" : "";
       const haystack = [
         blog.title,
         blog.excerpt ?? "",
         blog.seo_description ?? "",
+        Array.isArray(blog.seo_keywords) ? blog.seo_keywords.join(" ") : "",
         categoryTitle,
-        blog.tags.join(" "),
+        Array.isArray(blog.tags) ? blog.tags.join(" ") : "",
         isRecord(blog.content) && typeof blog.content.body === "string" ? blog.content.body : "",
       ]
         .join(" ")
         .toLowerCase();
 
       return normalizedTerms.some((term) => haystack.includes(term));
-    })
-    .slice(0, 4)
-    .map((blog) => blogToCard(blog, categoryMap));
+    });
+
+  const categoryFallbackBlogs = categoryId
+    ? publishedBlogs.filter((blog) => blog.category_id === categoryId)
+    : [];
+
+  const relatedBlogs = [...matchedBlogs, ...categoryFallbackBlogs, ...publishedBlogs].filter(
+    (blog, index, list) => list.findIndex((item) => item.id === blog.id) === index,
+  );
+
+  return relatedBlogs.slice(0, 4).map((blog) => blogToCard(blog, categoryMap));
 }
 
 export async function getProductPageData(slug: string) {
@@ -78,6 +89,7 @@ export async function getProductPageData(slug: string) {
       ...linkedIngredients.map((ingredient) => ingredient.name),
       ...linkedIngredients.map((ingredient) => ingredient.scientific_name ?? ""),
     ],
+    product.category_id,
     blogs,
     categoryMap,
   );
