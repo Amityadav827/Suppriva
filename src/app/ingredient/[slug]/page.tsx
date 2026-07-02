@@ -43,7 +43,7 @@ function resolveRelatedIngredients(
     ? ingredient.related_ingredients_json
     : [];
 
-  return relatedEntries
+  const manualMatches = relatedEntries
     .map((entry) => {
       if (!isRecord(entry)) {
         return null;
@@ -89,6 +89,78 @@ function resolveRelatedIngredients(
       };
     })
     .filter(Boolean) as RelatedIngredientCardData[];
+
+  const automaticMatches = ingredients
+    .filter((item) => {
+      if (item.id === ingredient.id) {
+        return false;
+      }
+
+      if (seen.has(item.id)) {
+        return false;
+      }
+
+      return item.ingredient_category === ingredient.ingredient_category;
+    })
+    .slice(0, Math.max(0, 6 - manualMatches.length))
+    .map((item) => {
+      seen.add(item.id);
+
+      return ingredientToRelatedCard(item);
+    });
+
+  return [...manualMatches, ...automaticMatches].slice(0, 6);
+}
+
+function ingredientToRelatedCard(ingredient: Ingredient): RelatedIngredientCardData {
+  return {
+    name: ingredient.name,
+    slug: ingredient.slug,
+    scientificName: ingredient.scientific_name || null,
+    category: ingredient.ingredient_category || null,
+    image: ingredient.image_url || ingredient.featured_image || null,
+    description: ingredient.short_description || ingredient.seo_description || null,
+  };
+}
+
+function resolveCompareAlternatives(
+  ingredient: Ingredient,
+  ingredients: Ingredient[],
+): RelatedIngredientCardData[] {
+  const terms = [
+    ingredient.ingredient_category,
+    ingredient.best_for,
+    ingredient.safety_level,
+    ingredient.taste_profile,
+  ]
+    .map((term) => term?.trim().toLowerCase())
+    .filter(Boolean) as string[];
+
+  return ingredients
+    .filter((item) => item.id !== ingredient.id)
+    .map((item) => {
+      const haystack = [
+        item.ingredient_category,
+        item.best_for,
+        item.safety_level,
+        item.taste_profile,
+        item.short_description,
+        item.seo_description,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      const score =
+        (item.ingredient_category === ingredient.ingredient_category ? 4 : 0) +
+        terms.reduce((total, term) => total + (haystack.includes(term) ? 1 : 0), 0);
+
+      return { item, score };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || a.item.name.localeCompare(b.item.name))
+    .slice(0, 6)
+    .map(({ item }) => ingredientToRelatedCard(item));
 }
 
 function resolveRelatedArticles(
@@ -104,7 +176,8 @@ function resolveRelatedArticles(
     .map((term) => term.trim().toLowerCase())
     .filter(Boolean);
 
-  return onlyPublished(blogs)
+  const publishedBlogs = onlyPublished(blogs);
+  const matchedBlogs = publishedBlogs
     .filter((blog) => {
       const categoryTitle = blog.category_id ? categoryMap.get(blog.category_id)?.title ?? "" : "";
       const haystack = [
@@ -122,6 +195,23 @@ function resolveRelatedArticles(
 
       return searchTerms.some((term) => haystack.includes(term));
     })
+    .slice(0, 3);
+
+  if (matchedBlogs.length) {
+    return matchedBlogs.map((blog) => blogToCard(blog, categoryMap));
+  }
+
+  const sameCategoryBlogs = ingredient.ingredient_category
+    ? publishedBlogs.filter((blog) => {
+        const categoryTitle = blog.category_id
+          ? categoryMap.get(blog.category_id)?.title ?? ""
+          : "";
+
+        return categoryTitle.toLowerCase() === ingredient.ingredient_category?.toLowerCase();
+      })
+    : [];
+
+  return (sameCategoryBlogs.length ? sameCategoryBlogs : publishedBlogs)
     .slice(0, 3)
     .map((blog) => blogToCard(blog, categoryMap));
 }
@@ -146,8 +236,21 @@ export async function generateMetadata({ params }: IngredientPageProps): Promise
       ingredient.short_description ||
       ingredient.full_description ||
       `Research ${ingredient.name}, benefits, dosage, safety notes, and related products.`,
-    canonicalPath: `/ingredient/${ingredient.slug}`,
-    image: ingredient.image_url || ingredient.featured_image,
+    canonicalPath: ingredient.seo_canonical_url || `/ingredient/${ingredient.slug}`,
+    image:
+      ingredient.seo_og_image ||
+      ingredient.seo_twitter_image ||
+      ingredient.meta_image ||
+      ingredient.image_url ||
+      ingredient.featured_image,
+    openGraphTitle: ingredient.seo_og_title,
+    openGraphDescription: ingredient.seo_og_description,
+    openGraphImage: ingredient.seo_og_image || ingredient.meta_image,
+    twitterTitle: ingredient.seo_twitter_title,
+    twitterDescription: ingredient.seo_twitter_description,
+    twitterImage: ingredient.seo_twitter_image || ingredient.seo_og_image || ingredient.meta_image,
+    noindex: ingredient.seo_noindex,
+    nofollow: ingredient.seo_nofollow,
     type: "article",
   });
 }
@@ -175,6 +278,11 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
   );
   const articleCards: BlogPostCard[] = resolveRelatedArticles(ingredient, blogs, categoryMap);
   const relatedIngredients = resolveRelatedIngredients(ingredient, allIngredients);
+  const compareAlternatives = resolveCompareAlternatives(ingredient, allIngredients);
+  const healthNeeds = publishedCategories.map((category) => ({
+    label: category.title || category.name,
+    slug: category.slug,
+  }));
   const expertAttribution = await resolveExpertAttribution({
     authorId: ingredient.author_id,
     reviewerId: ingredient.reviewer_id,
@@ -194,6 +302,12 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
           buildIngredientDefinedTermJsonLd(ingredient, productCards, expertAttribution),
           buildPersonJsonLd(expertAttribution.author, "author"),
           buildPersonJsonLd(expertAttribution.reviewer, "reviewer"),
+          ...(ingredient.schema_json &&
+          typeof ingredient.schema_json === "object" &&
+          !Array.isArray(ingredient.schema_json) &&
+          Object.keys(ingredient.schema_json).length
+            ? [ingredient.schema_json]
+            : []),
           ...(faqs.length ? [buildFaqJsonLd(faqs)] : []),
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
@@ -209,6 +323,8 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
         relatedProducts={productCards}
         relatedIngredients={relatedIngredients}
         relatedArticles={articleCards}
+        compareAlternatives={compareAlternatives}
+        healthNeeds={healthNeeds}
       />
       <PremiumFooter />
       <BackToTopButton />

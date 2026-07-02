@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 export type IngredientSectionLink = {
   id: string;
   label: string;
+  order?: number;
 };
 
 type IngredientSectionNavProps = {
@@ -23,8 +24,15 @@ export function IngredientSectionNav({
   mobile = false,
 }: IngredientSectionNavProps) {
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const orderedSections = useMemo(
+    () => [...sections].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)),
+    [sections],
+  );
 
-  const sectionIds = useMemo(() => sections.map((section) => section.id), [sections]);
+  const sectionIds = useMemo(
+    () => orderedSections.map((section) => section.id),
+    [orderedSections],
+  );
 
   useEffect(() => {
     if (!sectionIds.length) {
@@ -86,7 +94,7 @@ export function IngredientSectionNav({
         On This Page
       </p>
       <div className={mobile ? "mt-4 flex gap-2 overflow-x-auto pb-1" : "mt-5 space-y-1.5"}>
-        {sections.map((section) => {
+        {orderedSections.map((section) => {
           const isActive = section.id === activeId;
 
           return (

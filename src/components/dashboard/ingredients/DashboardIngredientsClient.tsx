@@ -19,14 +19,24 @@ import {
   parseIngredientCsv,
   slugify,
 } from "@/lib/ingredients/csv";
+import {
+  INGREDIENT_LAYOUT_SECTION_DEFINITIONS,
+  createDefaultIngredientLayoutSections,
+} from "@/lib/ingredient-layout";
 import { getIngredientQualityWarnings } from "@/lib/ingredients/data-quality";
 import { motion } from "framer-motion";
 import {
   AlertTriangle,
+  Bold,
   Download,
   FileDown,
   FileUp,
   FlaskConical,
+  Heading2,
+  Italic,
+  Link as LinkIcon,
+  List,
+  ListOrdered,
   Loader2,
   Pencil,
   Plus,
@@ -48,6 +58,16 @@ type RelatedIngredientItem = {
   slug: string;
 };
 
+type LayoutFormItem = {
+  section_key: string;
+  name: string;
+  is_visible: boolean;
+  sort_order: string;
+  title_override: string;
+  subtitle_override: string;
+  animation_enabled: boolean;
+};
+
 type IngredientFormState = {
   name: string;
   slug: string;
@@ -56,6 +76,7 @@ type IngredientFormState = {
   reviewer_id: string;
   scientific_name: string;
   ingredient_category: string;
+  hero_badge: string;
   rating: string;
   evidence_level: string;
   origin_country: string;
@@ -65,11 +86,39 @@ type IngredientFormState = {
   typical_dose: string;
   best_for: string;
   safety_level: string;
+  overview_title: string;
+  overview_subtitle: string;
   short_description: string;
   full_description: string;
   overview_content: string;
+  how_it_works_title: string;
+  how_it_works_subtitle: string;
   how_it_works_content: string;
   interesting_fact: string;
+  benefits_title: string;
+  benefits_subtitle: string;
+  uses_title: string;
+  uses_subtitle: string;
+  uses_content: string;
+  uses_json: TitleDescriptionItem[];
+  food_sources_title: string;
+  food_sources_subtitle: string;
+  food_sources_content: string;
+  food_sources_json: TitleDescriptionItem[];
+  dosage_title: string;
+  dosage_subtitle: string;
+  dosage_content: string;
+  safety_title: string;
+  safety_subtitle: string;
+  research_title: string;
+  research_subtitle: string;
+  research_content: string;
+  research_json: TitleDescriptionItem[];
+  references_title: string;
+  references_subtitle: string;
+  references_json: TitleDescriptionItem[];
+  faq_title: string;
+  faq_subtitle: string;
   benefits_json: TitleDescriptionItem[];
   side_effects_json: TitleDescriptionItem[];
   drug_interactions_json: string[];
@@ -78,6 +127,18 @@ type IngredientFormState = {
   related_ingredients_json: RelatedIngredientItem[];
   seo_title: string;
   seo_description: string;
+  seo_canonical_url: string;
+  seo_og_title: string;
+  seo_og_description: string;
+  seo_og_image: string;
+  seo_twitter_title: string;
+  seo_twitter_description: string;
+  seo_twitter_image: string;
+  meta_image: string;
+  schema_json: string;
+  seo_noindex: boolean;
+  seo_nofollow: boolean;
+  ingredient_layout_sections: LayoutFormItem[];
   is_featured: boolean;
   product_ids: string[];
 };
@@ -134,10 +195,82 @@ const emptyFaqItem = (): FAQItem => ({
   answer: "",
 });
 
-const emptyRelatedIngredientItem = (): RelatedIngredientItem => ({
-  name: "",
-  slug: "",
-});
+function createDefaultLayoutFormItems(): LayoutFormItem[] {
+  return createDefaultIngredientLayoutSections().map((item) => ({
+    section_key: item.section_key,
+    name:
+      INGREDIENT_LAYOUT_SECTION_DEFINITIONS.find(
+        (section) => section.key === item.section_key,
+      )?.name ?? item.section_key,
+    is_visible: item.is_visible,
+    sort_order: String(item.sort_order),
+    title_override: "",
+    subtitle_override: "",
+    animation_enabled: item.animation_enabled,
+  }));
+}
+
+function parseSchemaJson(value: JsonValue | undefined) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return "{}";
+  }
+
+  return JSON.stringify(value, null, 2);
+}
+
+function layoutToForm(value: JsonValue[] | undefined): LayoutFormItem[] {
+  const savedItems = Array.isArray(value) ? value : [];
+  const savedByKey = new Map(
+    savedItems
+      .filter(isRecord)
+      .map((item) => [typeof item.section_key === "string" ? item.section_key : "", item]),
+  );
+
+  return createDefaultLayoutFormItems().map((fallback) => {
+    const saved = savedByKey.get(fallback.section_key);
+
+    if (!saved) {
+      return fallback;
+    }
+
+    return {
+      ...fallback,
+      is_visible: typeof saved.is_visible === "boolean" ? saved.is_visible : fallback.is_visible,
+      sort_order:
+        typeof saved.sort_order === "number" && Number.isFinite(saved.sort_order)
+          ? String(saved.sort_order)
+          : fallback.sort_order,
+      title_override:
+        typeof saved.title_override === "string" ? saved.title_override : "",
+      subtitle_override:
+        typeof saved.subtitle_override === "string" ? saved.subtitle_override : "",
+      animation_enabled:
+        typeof saved.animation_enabled === "boolean"
+          ? saved.animation_enabled
+          : fallback.animation_enabled,
+    };
+  });
+}
+
+function normalizeLayoutFormItems(items: LayoutFormItem[]) {
+  return createDefaultLayoutFormItems().map((fallback) => {
+    const item = items.find((candidate) => candidate.section_key === fallback.section_key);
+    const parsedOrder = Number(item?.sort_order ?? fallback.sort_order);
+
+    return {
+      section_key: fallback.section_key,
+      is_visible: item?.is_visible ?? true,
+      sort_order:
+        Number.isInteger(parsedOrder) && parsedOrder >= 0
+          ? parsedOrder
+          : Number(fallback.sort_order),
+      title_override: cleanText(item?.title_override ?? ""),
+      subtitle_override: cleanText(item?.subtitle_override ?? ""),
+      background_style: "default" as const,
+      animation_enabled: item?.animation_enabled ?? true,
+    };
+  });
+}
 
 const emptyForm: IngredientFormState = {
   name: "",
@@ -147,6 +280,7 @@ const emptyForm: IngredientFormState = {
   reviewer_id: "",
   scientific_name: "",
   ingredient_category: "",
+  hero_badge: "",
   rating: "",
   evidence_level: "",
   origin_country: "",
@@ -156,11 +290,39 @@ const emptyForm: IngredientFormState = {
   typical_dose: "",
   best_for: "",
   safety_level: "",
+  overview_title: "",
+  overview_subtitle: "",
   short_description: "",
   full_description: "",
   overview_content: "",
+  how_it_works_title: "",
+  how_it_works_subtitle: "",
   how_it_works_content: "",
   interesting_fact: "",
+  benefits_title: "",
+  benefits_subtitle: "",
+  uses_title: "",
+  uses_subtitle: "",
+  uses_content: "",
+  uses_json: [],
+  food_sources_title: "",
+  food_sources_subtitle: "",
+  food_sources_content: "",
+  food_sources_json: [],
+  dosage_title: "",
+  dosage_subtitle: "",
+  dosage_content: "",
+  safety_title: "",
+  safety_subtitle: "",
+  research_title: "",
+  research_subtitle: "",
+  research_content: "",
+  research_json: [],
+  references_title: "",
+  references_subtitle: "",
+  references_json: [],
+  faq_title: "",
+  faq_subtitle: "",
   benefits_json: [],
   side_effects_json: [],
   drug_interactions_json: [],
@@ -169,6 +331,18 @@ const emptyForm: IngredientFormState = {
   related_ingredients_json: [],
   seo_title: "",
   seo_description: "",
+  seo_canonical_url: "",
+  seo_og_title: "",
+  seo_og_description: "",
+  seo_og_image: "",
+  seo_twitter_title: "",
+  seo_twitter_description: "",
+  seo_twitter_image: "",
+  meta_image: "",
+  schema_json: "{}",
+  seo_noindex: false,
+  seo_nofollow: false,
+  ingredient_layout_sections: createDefaultLayoutFormItems(),
   is_featured: false,
   product_ids: [],
 };
@@ -199,17 +373,6 @@ function serializeFaqItems(items: FAQItem[]) {
       answer: item.answer.trim(),
     }))
     .filter((item) => item.question && item.answer);
-}
-
-function serializeRelatedIngredients(items: RelatedIngredientItem[]) {
-  return items
-    .map((item) => {
-      const name = item.name.trim();
-      const slug = item.slug.trim() || (name ? slugify(name) : "");
-
-      return { name, slug };
-    })
-    .filter((item) => item.name);
 }
 
 function downloadCsv(filename: string, csv: string) {
@@ -303,6 +466,7 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     reviewer_id: ingredient.reviewer_id ?? "",
     scientific_name: ingredient.scientific_name ?? "",
     ingredient_category: ingredient.ingredient_category ?? "",
+    hero_badge: ingredient.hero_badge ?? "",
     rating: ingredient.rating !== null ? String(ingredient.rating) : "",
     evidence_level: ingredient.evidence_level ?? "",
     origin_country: ingredient.origin_country ?? "",
@@ -312,11 +476,39 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     typical_dose: ingredient.typical_dose ?? ingredient.dosage ?? "",
     best_for: ingredient.best_for ?? "",
     safety_level: ingredient.safety_level ?? "",
+    overview_title: ingredient.overview_title ?? "",
+    overview_subtitle: ingredient.overview_subtitle ?? "",
     short_description: ingredient.short_description ?? "",
     full_description: ingredient.full_description ?? "",
     overview_content: ingredient.overview_content ?? "",
+    how_it_works_title: ingredient.how_it_works_title ?? "",
+    how_it_works_subtitle: ingredient.how_it_works_subtitle ?? "",
     how_it_works_content: ingredient.how_it_works_content ?? ingredient.scientific_notes ?? "",
     interesting_fact: ingredient.interesting_fact ?? "",
+    benefits_title: ingredient.benefits_title ?? "",
+    benefits_subtitle: ingredient.benefits_subtitle ?? "",
+    uses_title: ingredient.uses_title ?? "",
+    uses_subtitle: ingredient.uses_subtitle ?? "",
+    uses_content: ingredient.uses_content ?? "",
+    uses_json: parseTitleDescriptionItems(ingredient.uses_json, []),
+    food_sources_title: ingredient.food_sources_title ?? "",
+    food_sources_subtitle: ingredient.food_sources_subtitle ?? "",
+    food_sources_content: ingredient.food_sources_content ?? "",
+    food_sources_json: parseTitleDescriptionItems(ingredient.food_sources_json, []),
+    dosage_title: ingredient.dosage_title ?? "",
+    dosage_subtitle: ingredient.dosage_subtitle ?? "",
+    dosage_content: ingredient.dosage_content ?? ingredient.dosage ?? "",
+    safety_title: ingredient.safety_title ?? "",
+    safety_subtitle: ingredient.safety_subtitle ?? "",
+    research_title: ingredient.research_title ?? "",
+    research_subtitle: ingredient.research_subtitle ?? "",
+    research_content: ingredient.research_content ?? "",
+    research_json: parseTitleDescriptionItems(ingredient.research_json, []),
+    references_title: ingredient.references_title ?? "",
+    references_subtitle: ingredient.references_subtitle ?? "",
+    references_json: parseTitleDescriptionItems(ingredient.references_json, []),
+    faq_title: ingredient.faq_title ?? "",
+    faq_subtitle: ingredient.faq_subtitle ?? "",
     benefits_json: parseTitleDescriptionItems(ingredient.benefits_json, ingredient.benefits),
     side_effects_json: parseTitleDescriptionItems(
       ingredient.side_effects_json,
@@ -328,6 +520,18 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     related_ingredients_json: parseRelatedIngredients(ingredient.related_ingredients_json),
     seo_title: ingredient.seo_title ?? ingredient.meta_title ?? "",
     seo_description: ingredient.seo_description ?? ingredient.meta_description ?? "",
+    seo_canonical_url: ingredient.seo_canonical_url ?? "",
+    seo_og_title: ingredient.seo_og_title ?? "",
+    seo_og_description: ingredient.seo_og_description ?? "",
+    seo_og_image: ingredient.seo_og_image ?? "",
+    seo_twitter_title: ingredient.seo_twitter_title ?? "",
+    seo_twitter_description: ingredient.seo_twitter_description ?? "",
+    seo_twitter_image: ingredient.seo_twitter_image ?? "",
+    meta_image: ingredient.meta_image ?? "",
+    schema_json: parseSchemaJson(ingredient.schema_json),
+    seo_noindex: ingredient.seo_noindex ?? false,
+    seo_nofollow: ingredient.seo_nofollow ?? false,
+    ingredient_layout_sections: layoutToForm(ingredient.ingredient_layout_sections),
     is_featured: ingredient.is_featured,
     product_ids: [],
   };
@@ -357,11 +561,10 @@ function validateStructuredForm(form: IngredientFormState) {
     errors.push("Each FAQ needs both a question and answer.");
   }
 
-  const invalidRelatedIngredients = form.related_ingredients_json.some(
-    (item) => (item.name.trim() || item.slug.trim()) && !item.name.trim(),
-  );
-  if (invalidRelatedIngredients) {
-    errors.push("Related ingredients need a name.");
+  try {
+    JSON.parse(form.schema_json || "{}");
+  } catch {
+    errors.push("Schema JSON must be valid JSON.");
   }
 
   return errors;
@@ -391,6 +594,13 @@ function formToPayload(form: IngredientFormState) {
   const howItWorksContent = cleanText(form.how_it_works_content);
   const overviewContent = cleanText(form.overview_content);
   const typicalDose = cleanText(form.typical_dose);
+  let schemaJson: JsonValue = {};
+
+  try {
+    schemaJson = form.schema_json.trim() ? (JSON.parse(form.schema_json) as JsonValue) : {};
+  } catch {
+    schemaJson = {};
+  }
 
   return {
     name: form.name.trim(),
@@ -400,6 +610,7 @@ function formToPayload(form: IngredientFormState) {
     reviewer_id: form.reviewer_id || null,
     scientific_name: cleanText(form.scientific_name),
     ingredient_category: cleanText(form.ingredient_category),
+    hero_badge: cleanText(form.hero_badge),
     rating: form.rating.trim() ? Number(form.rating) : null,
     evidence_level: cleanText(form.evidence_level),
     origin_country: cleanText(form.origin_country),
@@ -409,19 +620,58 @@ function formToPayload(form: IngredientFormState) {
     typical_dose: typicalDose,
     best_for: cleanText(form.best_for),
     safety_level: cleanText(form.safety_level),
+    overview_title: cleanText(form.overview_title),
+    overview_subtitle: cleanText(form.overview_subtitle),
     short_description: cleanText(form.short_description),
     full_description: cleanText(form.full_description),
     overview_content: overviewContent,
+    how_it_works_title: cleanText(form.how_it_works_title),
+    how_it_works_subtitle: cleanText(form.how_it_works_subtitle),
     how_it_works_content: howItWorksContent,
     interesting_fact: cleanText(form.interesting_fact),
+    benefits_title: cleanText(form.benefits_title),
+    benefits_subtitle: cleanText(form.benefits_subtitle),
+    uses_title: cleanText(form.uses_title),
+    uses_subtitle: cleanText(form.uses_subtitle),
+    uses_content: cleanText(form.uses_content),
+    uses_json: serializeTitleDescriptionItems(form.uses_json),
+    food_sources_title: cleanText(form.food_sources_title),
+    food_sources_subtitle: cleanText(form.food_sources_subtitle),
+    food_sources_content: cleanText(form.food_sources_content),
+    food_sources_json: serializeTitleDescriptionItems(form.food_sources_json),
+    dosage_title: cleanText(form.dosage_title),
+    dosage_subtitle: cleanText(form.dosage_subtitle),
+    dosage_content: cleanText(form.dosage_content),
+    safety_title: cleanText(form.safety_title),
+    safety_subtitle: cleanText(form.safety_subtitle),
+    research_title: cleanText(form.research_title),
+    research_subtitle: cleanText(form.research_subtitle),
+    research_content: cleanText(form.research_content),
+    research_json: serializeTitleDescriptionItems(form.research_json),
+    references_title: cleanText(form.references_title),
+    references_subtitle: cleanText(form.references_subtitle),
+    references_json: serializeTitleDescriptionItems(form.references_json),
+    faq_title: cleanText(form.faq_title),
+    faq_subtitle: cleanText(form.faq_subtitle),
     benefits_json: benefitsJson,
     side_effects_json: sideEffectsJson,
     drug_interactions_json: serializeStringList(form.drug_interactions_json),
     who_should_avoid_json: serializeStringList(form.who_should_avoid_json),
     faq_json: serializeFaqItems(form.faq_json),
-    related_ingredients_json: serializeRelatedIngredients(form.related_ingredients_json),
     seo_title: seoTitle,
     seo_description: seoDescription,
+    seo_canonical_url: cleanText(form.seo_canonical_url),
+    seo_og_title: cleanText(form.seo_og_title),
+    seo_og_description: cleanText(form.seo_og_description),
+    seo_og_image: cleanText(form.seo_og_image),
+    seo_twitter_title: cleanText(form.seo_twitter_title),
+    seo_twitter_description: cleanText(form.seo_twitter_description),
+    seo_twitter_image: cleanText(form.seo_twitter_image),
+    meta_image: cleanText(form.meta_image),
+    seo_noindex: form.seo_noindex,
+    seo_nofollow: form.seo_nofollow,
+    schema_json: schemaJson,
+    ingredient_layout_sections: normalizeLayoutFormItems(form.ingredient_layout_sections),
     is_featured: form.is_featured,
     product_ids: form.product_ids,
     benefits: benefitsJson.map((item) => item.title),
@@ -619,7 +869,13 @@ export function DashboardIngredientsClient() {
   }
 
   function updateTitleDescriptionItem(
-    key: "benefits_json" | "side_effects_json",
+    key:
+      | "benefits_json"
+      | "side_effects_json"
+      | "uses_json"
+      | "food_sources_json"
+      | "research_json"
+      | "references_json",
     index: number,
     field: keyof TitleDescriptionItem,
     value: string,
@@ -635,7 +891,15 @@ export function DashboardIngredientsClient() {
     });
   }
 
-  function addTitleDescriptionItem(key: "benefits_json" | "side_effects_json") {
+  function addTitleDescriptionItem(
+    key:
+      | "benefits_json"
+      | "side_effects_json"
+      | "uses_json"
+      | "food_sources_json"
+      | "research_json"
+      | "references_json",
+  ) {
     setForm((currentForm) => ({
       ...currentForm,
       [key]: [...currentForm[key], emptyTitleDescriptionItem()],
@@ -643,7 +907,13 @@ export function DashboardIngredientsClient() {
   }
 
   function removeTitleDescriptionItem(
-    key: "benefits_json" | "side_effects_json",
+    key:
+      | "benefits_json"
+      | "side_effects_json"
+      | "uses_json"
+      | "food_sources_json"
+      | "research_json"
+      | "references_json",
     index: number,
   ) {
     setForm((currentForm) => ({
@@ -678,40 +948,20 @@ export function DashboardIngredientsClient() {
     }));
   }
 
-  function updateRelatedIngredientItem(
+  function updateLayoutItem(
     index: number,
-    field: keyof RelatedIngredientItem,
-    value: string,
+    field: keyof LayoutFormItem,
+    value: string | boolean,
   ) {
     setForm((currentForm) => {
-      const items = [...currentForm.related_ingredients_json];
+      const items = [...currentForm.ingredient_layout_sections];
       items[index] = { ...items[index], [field]: value };
-
-      if (field === "name" && !items[index].slug.trim()) {
-        items[index].slug = slugify(value);
-      }
 
       return {
         ...currentForm,
-        related_ingredients_json: items,
+        ingredient_layout_sections: items,
       };
     });
-  }
-
-  function addRelatedIngredientItem() {
-    setForm((currentForm) => ({
-      ...currentForm,
-      related_ingredients_json: [...currentForm.related_ingredients_json, emptyRelatedIngredientItem()],
-    }));
-  }
-
-  function removeRelatedIngredientItem(index: number) {
-    setForm((currentForm) => ({
-      ...currentForm,
-      related_ingredients_json: currentForm.related_ingredients_json.filter(
-        (_, currentIndex) => currentIndex !== index,
-      ),
-    }));
   }
 
   function toggleProduct(productId: string) {
@@ -1302,6 +1552,7 @@ export function DashboardIngredientsClient() {
               />
               <InputField label="Scientific Name" value={form.scientific_name} onChange={(value) => updateTextField("scientific_name", value)} />
               <InputField label="Ingredient Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
+              <InputField label="Hero Badge" value={form.hero_badge} onChange={(value) => updateTextField("hero_badge", value)} className="lg:col-span-2" placeholder="Ingredient Library" />
             </FormSection>
 
             <FormSection
@@ -1331,32 +1582,79 @@ export function DashboardIngredientsClient() {
             </FormSection>
 
             <FormSection
-              title="Content"
-              description="Editorial blocks for the premium ingredient page."
+              title="Overview"
+              description="Dashboard-driven overview content for the ingredient detail page."
             >
-              <TextAreaField label="Short Description" value={form.short_description} onChange={(value) => updateTextField("short_description", value)} />
-              <TextAreaField label="Full Description" value={form.full_description} onChange={(value) => updateTextField("full_description", value)} />
-              <TextAreaField label="Overview Content" value={form.overview_content} onChange={(value) => updateTextField("overview_content", value)} className="lg:col-span-2" rows={5} />
-              <TextAreaField label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
-              <TextAreaField label="Interesting Fact" value={form.interesting_fact} onChange={(value) => updateTextField("interesting_fact", value)} className="lg:col-span-2" rows={3} />
+              <RichTextEditor label="Short Description" value={form.short_description} onChange={(value) => updateTextField("short_description", value)} />
+              <RichTextEditor label="Full Description" value={form.full_description} onChange={(value) => updateTextField("full_description", value)} />
+              <InputField label="Overview Title" value={form.overview_title} onChange={(value) => updateTextField("overview_title", value)} />
+              <InputField label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateTextField("overview_subtitle", value)} />
+              <RichTextEditor label="Overview Content" value={form.overview_content} onChange={(value) => updateTextField("overview_content", value)} className="lg:col-span-2" rows={6} />
+              <RichTextEditor label="Interesting Fact" value={form.interesting_fact} onChange={(value) => updateTextField("interesting_fact", value)} className="lg:col-span-2" rows={3} />
             </FormSection>
 
             <FormSection
-              title="Structured Sections"
-              description="Repeatable content blocks without raw JSON editing."
+              title="Benefits"
+              description="Benefits are editable repeatable CMS cards."
             >
+              <InputField label="Benefits Title" value={form.benefits_title} onChange={(value) => updateTextField("benefits_title", value)} />
+              <InputField label="Benefits Subtitle" value={form.benefits_subtitle} onChange={(value) => updateTextField("benefits_subtitle", value)} />
+              <RepeatableTitleDescriptionField
+                label="Benefits"
+                items={form.benefits_json}
+                addLabel="Add Benefit"
+                emptyLabel="No benefits added yet."
+                onAdd={() => addTitleDescriptionItem("benefits_json")}
+                onRemove={(index) => removeTitleDescriptionItem("benefits_json", index)}
+                onChange={(index, field, value) =>
+                  updateTitleDescriptionItem("benefits_json", index, field, value)
+                }
+              />
+            </FormSection>
+
+            <FormSection
+              title="How It Works, Uses & Sources"
+              description="Educational ingredient sections with rich text and repeatable cards."
+            >
+              <InputField label="How It Works Title" value={form.how_it_works_title} onChange={(value) => updateTextField("how_it_works_title", value)} />
+              <InputField label="How It Works Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateTextField("how_it_works_subtitle", value)} />
+              <RichTextEditor label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
+              <InputField label="Uses Title" value={form.uses_title} onChange={(value) => updateTextField("uses_title", value)} />
+              <InputField label="Uses Subtitle" value={form.uses_subtitle} onChange={(value) => updateTextField("uses_subtitle", value)} />
+              <RichTextEditor label="Uses Content" value={form.uses_content} onChange={(value) => updateTextField("uses_content", value)} className="lg:col-span-2" rows={4} />
+              <RepeatableTitleDescriptionField
+                label="Use Cards"
+                items={form.uses_json}
+                addLabel="Add Use"
+                emptyLabel="No use cards added yet."
+                onAdd={() => addTitleDescriptionItem("uses_json")}
+                onRemove={(index) => removeTitleDescriptionItem("uses_json", index)}
+                onChange={(index, field, value) => updateTitleDescriptionItem("uses_json", index, field, value)}
+              />
+              <InputField label="Food Sources Title" value={form.food_sources_title} onChange={(value) => updateTextField("food_sources_title", value)} />
+              <InputField label="Food Sources Subtitle" value={form.food_sources_subtitle} onChange={(value) => updateTextField("food_sources_subtitle", value)} />
+              <RichTextEditor label="Food Sources Content" value={form.food_sources_content} onChange={(value) => updateTextField("food_sources_content", value)} className="lg:col-span-2" rows={4} />
+              <RepeatableTitleDescriptionField
+                label="Food Source Cards"
+                items={form.food_sources_json}
+                addLabel="Add Source"
+                emptyLabel="No food source cards added yet."
+                onAdd={() => addTitleDescriptionItem("food_sources_json")}
+                onRemove={(index) => removeTitleDescriptionItem("food_sources_json", index)}
+                onChange={(index, field, value) => updateTitleDescriptionItem("food_sources_json", index, field, value)}
+              />
+            </FormSection>
+
+            <FormSection
+              title="Dosage, Safety, Research & FAQ"
+              description="Safety and research content remains fully dashboard editable."
+            >
+              <InputField label="Dosage Title" value={form.dosage_title} onChange={(value) => updateTextField("dosage_title", value)} />
+              <InputField label="Dosage Subtitle" value={form.dosage_subtitle} onChange={(value) => updateTextField("dosage_subtitle", value)} />
+              <RichTextEditor label="Dosage Content" value={form.dosage_content} onChange={(value) => updateTextField("dosage_content", value)} className="lg:col-span-2" rows={4} />
+              <InputField label="Safety Title" value={form.safety_title} onChange={(value) => updateTextField("safety_title", value)} />
+              <InputField label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateTextField("safety_subtitle", value)} />
               <div className="grid gap-4 lg:col-span-2 xl:grid-cols-2">
-                <RepeatableTitleDescriptionField
-                  label="Benefits"
-                  items={form.benefits_json}
-                  addLabel="Add Benefit"
-                  emptyLabel="No benefits added yet."
-                  onAdd={() => addTitleDescriptionItem("benefits_json")}
-                  onRemove={(index) => removeTitleDescriptionItem("benefits_json", index)}
-                  onChange={(index, field, value) =>
-                    updateTitleDescriptionItem("benefits_json", index, field, value)
-                  }
-                />
                 <RepeatableTitleDescriptionField
                   label="Side Effects"
                   items={form.side_effects_json}
@@ -1368,8 +1666,6 @@ export function DashboardIngredientsClient() {
                     updateTitleDescriptionItem("side_effects_json", index, field, value)
                   }
                 />
-              </div>
-              <div className="grid gap-4 lg:col-span-2 xl:grid-cols-2">
                 <RepeatableStringField
                   label="Drug Interactions"
                   items={form.drug_interactions_json}
@@ -1379,16 +1675,41 @@ export function DashboardIngredientsClient() {
                   onRemove={(index) => removeListValue("drug_interactions_json", index)}
                   onChange={(index, value) => updateListValue("drug_interactions_json", index, value)}
                 />
-                <RepeatableStringField
-                  label="Who Should Avoid"
-                  items={form.who_should_avoid_json}
-                  addLabel="Add Avoidance Note"
-                  emptyLabel="No avoidance notes added yet."
-                  onAdd={() => addListValue("who_should_avoid_json")}
-                  onRemove={(index) => removeListValue("who_should_avoid_json", index)}
-                  onChange={(index, value) => updateListValue("who_should_avoid_json", index, value)}
-                />
               </div>
+              <RepeatableStringField
+                label="Who Should Avoid"
+                items={form.who_should_avoid_json}
+                addLabel="Add Avoidance Note"
+                emptyLabel="No avoidance notes added yet."
+                onAdd={() => addListValue("who_should_avoid_json")}
+                onRemove={(index) => removeListValue("who_should_avoid_json", index)}
+                onChange={(index, value) => updateListValue("who_should_avoid_json", index, value)}
+              />
+              <InputField label="Research Title" value={form.research_title} onChange={(value) => updateTextField("research_title", value)} />
+              <InputField label="Research Subtitle" value={form.research_subtitle} onChange={(value) => updateTextField("research_subtitle", value)} />
+              <RichTextEditor label="Research Content" value={form.research_content} onChange={(value) => updateTextField("research_content", value)} className="lg:col-span-2" rows={4} />
+              <RepeatableTitleDescriptionField
+                label="Research Points"
+                items={form.research_json}
+                addLabel="Add Research Point"
+                emptyLabel="No research points added yet."
+                onAdd={() => addTitleDescriptionItem("research_json")}
+                onRemove={(index) => removeTitleDescriptionItem("research_json", index)}
+                onChange={(index, field, value) => updateTitleDescriptionItem("research_json", index, field, value)}
+              />
+              <InputField label="References Title" value={form.references_title} onChange={(value) => updateTextField("references_title", value)} />
+              <InputField label="References Subtitle" value={form.references_subtitle} onChange={(value) => updateTextField("references_subtitle", value)} />
+              <RepeatableTitleDescriptionField
+                label="References"
+                items={form.references_json}
+                addLabel="Add Reference"
+                emptyLabel="No references added yet."
+                onAdd={() => addTitleDescriptionItem("references_json")}
+                onRemove={(index) => removeTitleDescriptionItem("references_json", index)}
+                onChange={(index, field, value) => updateTitleDescriptionItem("references_json", index, field, value)}
+              />
+              <InputField label="FAQ Title" value={form.faq_title} onChange={(value) => updateTextField("faq_title", value)} />
+              <InputField label="FAQ Subtitle" value={form.faq_subtitle} onChange={(value) => updateTextField("faq_subtitle", value)} />
               <div className="lg:col-span-2">
                 <RepeatableFaqField
                   items={form.faq_json}
@@ -1397,22 +1718,46 @@ export function DashboardIngredientsClient() {
                   onChange={updateFaqItem}
                 />
               </div>
-              <div className="lg:col-span-2">
-                <RepeatableRelatedIngredientsField
-                  items={form.related_ingredients_json}
-                  onAdd={addRelatedIngredientItem}
-                  onRemove={removeRelatedIngredientItem}
-                  onChange={updateRelatedIngredientItem}
-                />
+            </FormSection>
+
+            <FormSection
+              title="Ingredient Layout"
+              description="Control visibility, order, title overrides, subtitles, and animation for CMS sections. Automatic sections stay automatic."
+            >
+              <div className="lg:col-span-2 overflow-hidden rounded-[20px] border border-border-light bg-white">
+                {form.ingredient_layout_sections.map((item, index) => (
+                  <div key={item.section_key} className="grid gap-3 border-b border-border-light p-4 last:border-b-0 xl:grid-cols-[1.3fr_120px_100px_1fr_1fr_120px] xl:items-center">
+                    <div>
+                      <p className="font-heading text-sm font-bold text-text-dark">{item.name}</p>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">{item.section_key}</p>
+                    </div>
+                    <ToggleField label="Visible" checked={item.is_visible} onChange={(checked) => updateLayoutItem(index, "is_visible", checked)} />
+                    <InputField label="Order" value={item.sort_order} onChange={(value) => updateLayoutItem(index, "sort_order", value)} />
+                    <InputField label="Title Override" value={item.title_override} onChange={(value) => updateLayoutItem(index, "title_override", value)} />
+                    <InputField label="Subtitle Override" value={item.subtitle_override} onChange={(value) => updateLayoutItem(index, "subtitle_override", value)} />
+                    <ToggleField label="Animate" checked={item.animation_enabled} onChange={(checked) => updateLayoutItem(index, "animation_enabled", checked)} />
+                  </div>
+                ))}
               </div>
             </FormSection>
 
             <FormSection
               title="SEO"
-              description="New SEO fields are mirrored to legacy metadata for backward compatibility."
+              description="Ingredient metadata, social preview fields, canonical URL, and schema extension JSON."
             >
-              <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateTextField("seo_title", value)} className="lg:col-span-2" />
-              <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateTextField("seo_description", value)} className="lg:col-span-2" />
+              <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateTextField("seo_title", value)} />
+              <InputField label="Canonical URL" value={form.seo_canonical_url} onChange={(value) => updateTextField("seo_canonical_url", value)} />
+              <RichTextEditor label="SEO Description" value={form.seo_description} onChange={(value) => updateTextField("seo_description", value)} className="lg:col-span-2" rows={3} />
+              <InputField label="OG Title" value={form.seo_og_title} onChange={(value) => updateTextField("seo_og_title", value)} />
+              <InputField label="OG Image" value={form.seo_og_image} onChange={(value) => updateTextField("seo_og_image", value)} />
+              <RichTextEditor label="OG Description" value={form.seo_og_description} onChange={(value) => updateTextField("seo_og_description", value)} className="lg:col-span-2" rows={3} />
+              <InputField label="Twitter Title" value={form.seo_twitter_title} onChange={(value) => updateTextField("seo_twitter_title", value)} />
+              <InputField label="Twitter Image" value={form.seo_twitter_image} onChange={(value) => updateTextField("seo_twitter_image", value)} />
+              <RichTextEditor label="Twitter Description" value={form.seo_twitter_description} onChange={(value) => updateTextField("seo_twitter_description", value)} className="lg:col-span-2" rows={3} />
+              <InputField label="Meta Image" value={form.meta_image} onChange={(value) => updateTextField("meta_image", value)} />
+              <ToggleField label="No Index" checked={form.seo_noindex} onChange={(checked) => updateForm("seo_noindex", checked)} />
+              <ToggleField label="No Follow" checked={form.seo_nofollow} onChange={(checked) => updateForm("seo_nofollow", checked)} />
+              <TextAreaField label="Schema JSON" value={form.schema_json} onChange={(value) => updateTextField("schema_json", value)} className="lg:col-span-2" rows={6} />
             </FormSection>
 
             {publishWarnings.length ? (
@@ -1549,6 +1894,123 @@ function TextAreaField({
         className="rounded-[18px] border border-border-light bg-white px-4 py-3 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
     </label>
+  );
+}
+
+function RichTextEditor({
+  label,
+  value,
+  onChange,
+  placeholder,
+  rows = 4,
+  className = "",
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  rows?: number;
+  className?: string;
+}) {
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  function insertMarkup(prefix: string, suffix = prefix, fallback = "text") {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || fallback;
+    const nextValue = `${value.slice(0, start)}${prefix}${selectedText}${suffix}${value.slice(end)}`;
+
+    onChange(nextValue);
+
+    window.requestAnimationFrame(() => {
+      textarea?.focus();
+      textarea?.setSelectionRange(start + prefix.length, start + prefix.length + selectedText.length);
+    });
+  }
+
+  function insertBulletList() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "List item";
+    const listText = selectedText
+      .split("\n")
+      .map((line) => `- ${line.replace(/^[-*]\s*/, "")}`)
+      .join("\n");
+
+    onChange(`${value.slice(0, start)}${listText}${value.slice(end)}`);
+  }
+
+  function insertNumberedList() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "List item";
+    const listText = selectedText
+      .split("\n")
+      .map((line, index) => `${index + 1}. ${line.replace(/^\d+[.)]\s*/, "")}`)
+      .join("\n");
+
+    onChange(`${value.slice(0, start)}${listText}${value.slice(end)}`);
+  }
+
+  return (
+    <label className={`grid gap-2 ${className}`}>
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <div className="overflow-hidden rounded-[18px] border border-border-light bg-white focus-within:border-gold/80 focus-within:ring-4 focus-within:ring-gold/10">
+        <div className="flex flex-wrap gap-2 border-b border-border-light bg-cream/50 px-3 py-2">
+          <EditorButton label="Bold" onClick={() => insertMarkup("**", "**", "bold text")}>
+            <Bold className="size-4" />
+          </EditorButton>
+          <EditorButton label="Italic" onClick={() => insertMarkup("*", "*", "italic text")}>
+            <Italic className="size-4" />
+          </EditorButton>
+          <EditorButton label="Heading" onClick={() => insertMarkup("## ", "", "Heading")}>
+            <Heading2 className="size-4" />
+          </EditorButton>
+          <EditorButton label="Bullet list" onClick={insertBulletList}>
+            <List className="size-4" />
+          </EditorButton>
+          <EditorButton label="Numbered list" onClick={insertNumberedList}>
+            <ListOrdered className="size-4" />
+          </EditorButton>
+          <EditorButton label="Link" onClick={() => insertMarkup("[", "](https://example.com)", "link text")}>
+            <LinkIcon className="size-4" />
+          </EditorButton>
+        </div>
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={(event) => onChange(event.target.value)}
+          placeholder={placeholder}
+          rows={rows}
+          className="w-full resize-y border-0 bg-white px-4 py-3 text-sm text-text-dark outline-none placeholder:text-muted/70"
+        />
+      </div>
+    </label>
+  );
+}
+
+function EditorButton({
+  label,
+  onClick,
+  children,
+}: {
+  label: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={label}
+      aria-label={label}
+      className="inline-flex size-9 items-center justify-center rounded-full border border-border-light bg-white text-primary transition hover:border-gold/70 hover:bg-soft-green"
+    >
+      {children}
+    </button>
   );
 }
 
@@ -1832,66 +2294,6 @@ function RepeatableFaqField({
           ))
         ) : (
           <p className="text-sm text-muted">No FAQs added yet.</p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function RepeatableRelatedIngredientsField({
-  items,
-  onAdd,
-  onRemove,
-  onChange,
-}: {
-  items: RelatedIngredientItem[];
-  onAdd: () => void;
-  onRemove: (index: number) => void;
-  onChange: (index: number, field: keyof RelatedIngredientItem, value: string) => void;
-}) {
-  return (
-    <div className="rounded-[20px] border border-border-light bg-white p-4">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h4 className="font-heading text-sm font-semibold text-text-dark">Related Ingredients</h4>
-        <button
-          type="button"
-          onClick={onAdd}
-          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
-        >
-          <Plus className="size-3.5" />
-          Add Related Ingredient
-        </button>
-      </div>
-      <div className="space-y-3">
-        {items.length ? (
-          items.map((item, index) => (
-            <div key={`related-${index}`} className="rounded-[18px] border border-border-light bg-cream p-3">
-              <div className="mb-2 flex justify-end">
-                <button
-                  type="button"
-                  onClick={() => onRemove(index)}
-                  className="rounded-full border border-red-200 p-1.5 text-red-600 transition hover:bg-red-50"
-                  aria-label={`Remove related ingredient ${index + 1}`}
-                >
-                  <Trash2 className="size-3.5" />
-                </button>
-              </div>
-              <div className="grid gap-3 md:grid-cols-2">
-                <InputField
-                  label="Name"
-                  value={item.name}
-                  onChange={(value) => onChange(index, "name", value)}
-                />
-                <InputField
-                  label="Slug"
-                  value={item.slug}
-                  onChange={(value) => onChange(index, "slug", slugify(value))}
-                />
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="text-sm text-muted">No related ingredients added yet.</p>
         )}
       </div>
     </div>

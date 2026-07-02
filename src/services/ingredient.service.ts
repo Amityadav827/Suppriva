@@ -7,6 +7,7 @@ import { INGREDIENT_IMPORT_BATCH_SIZE, type IngredientCsvRow, csvRowToIngredient
 import { getIngredientQualityWarnings } from "@/lib/ingredients/data-quality";
 import {
   type IngredientCreateInput,
+  type IngredientLayoutSectionInput,
   type IngredientUpdateInput,
   validateIngredientInput,
 } from "@/lib/validators/ingredient.validator";
@@ -324,6 +325,7 @@ export class IngredientService {
       reviewer_id: await this.reviewersService.resolveAssignedProfileId(input.reviewer_id),
       scientific_name: this.cleanText(input.scientific_name),
       ingredient_category: this.cleanText(input.ingredient_category),
+      hero_badge: this.cleanText(input.hero_badge),
       short_description: this.cleanText(input.short_description),
       full_description: this.cleanText(input.full_description),
       image_url: this.cleanText(input.image_url),
@@ -336,9 +338,37 @@ export class IngredientService {
       typical_dose: this.cleanText(input.typical_dose),
       best_for: this.cleanText(input.best_for),
       safety_level: this.cleanText(input.safety_level),
+      overview_title: this.cleanText(input.overview_title),
+      overview_subtitle: this.cleanText(input.overview_subtitle),
       overview_content: this.cleanText(input.overview_content),
+      how_it_works_title: this.cleanText(input.how_it_works_title),
+      how_it_works_subtitle: this.cleanText(input.how_it_works_subtitle),
       how_it_works_content: this.cleanText(input.how_it_works_content),
       interesting_fact: this.cleanText(input.interesting_fact),
+      benefits_title: this.cleanText(input.benefits_title),
+      benefits_subtitle: this.cleanText(input.benefits_subtitle),
+      uses_title: this.cleanText(input.uses_title),
+      uses_subtitle: this.cleanText(input.uses_subtitle),
+      uses_content: this.cleanText(input.uses_content),
+      uses_json: this.cleanJsonArray(input.uses_json),
+      food_sources_title: this.cleanText(input.food_sources_title),
+      food_sources_subtitle: this.cleanText(input.food_sources_subtitle),
+      food_sources_content: this.cleanText(input.food_sources_content),
+      food_sources_json: this.cleanJsonArray(input.food_sources_json),
+      dosage_title: this.cleanText(input.dosage_title),
+      dosage_subtitle: this.cleanText(input.dosage_subtitle),
+      dosage_content: this.cleanText(input.dosage_content),
+      safety_title: this.cleanText(input.safety_title),
+      safety_subtitle: this.cleanText(input.safety_subtitle),
+      research_title: this.cleanText(input.research_title),
+      research_subtitle: this.cleanText(input.research_subtitle),
+      research_content: this.cleanText(input.research_content),
+      research_json: this.cleanJsonArray(input.research_json),
+      references_title: this.cleanText(input.references_title),
+      references_subtitle: this.cleanText(input.references_subtitle),
+      references_json: this.cleanJsonArray(input.references_json),
+      faq_title: this.cleanText(input.faq_title),
+      faq_subtitle: this.cleanText(input.faq_subtitle),
       benefits: this.cleanList(input.benefits),
       side_effects: this.cleanList(input.side_effects),
       dosage: this.cleanText(input.dosage),
@@ -354,6 +384,18 @@ export class IngredientService {
       meta_description: this.cleanText(input.meta_description),
       seo_title: this.cleanText(input.seo_title),
       seo_description: this.cleanText(input.seo_description),
+      seo_canonical_url: this.cleanText(input.seo_canonical_url),
+      seo_og_title: this.cleanText(input.seo_og_title),
+      seo_og_description: this.cleanText(input.seo_og_description),
+      seo_og_image: this.cleanText(input.seo_og_image),
+      seo_twitter_title: this.cleanText(input.seo_twitter_title),
+      seo_twitter_description: this.cleanText(input.seo_twitter_description),
+      seo_twitter_image: this.cleanText(input.seo_twitter_image),
+      meta_image: this.cleanText(input.meta_image),
+      seo_noindex: input.seo_noindex ?? false,
+      seo_nofollow: input.seo_nofollow ?? false,
+      schema_json: input.schema_json ?? {},
+      ingredient_layout_sections: this.cleanLayoutSections(input.ingredient_layout_sections),
       is_featured: input.is_featured ?? false,
       product_ids: this.cleanList(input.product_ids),
     };
@@ -388,6 +430,7 @@ export class IngredientService {
       ...("ingredient_category" in input
         ? { ingredient_category: this.cleanText(input.ingredient_category) }
         : {}),
+      ...("hero_badge" in input ? { hero_badge: this.cleanText(input.hero_badge) } : {}),
       ...("short_description" in input
         ? { short_description: this.cleanText(input.short_description) }
         : {}),
@@ -416,14 +459,92 @@ export class IngredientService {
       ...("safety_level" in input
         ? { safety_level: this.cleanText(input.safety_level) }
         : {}),
+      ...("overview_title" in input
+        ? { overview_title: this.cleanText(input.overview_title) }
+        : {}),
+      ...("overview_subtitle" in input
+        ? { overview_subtitle: this.cleanText(input.overview_subtitle) }
+        : {}),
       ...("overview_content" in input
         ? { overview_content: this.cleanText(input.overview_content) }
+        : {}),
+      ...("how_it_works_title" in input
+        ? { how_it_works_title: this.cleanText(input.how_it_works_title) }
+        : {}),
+      ...("how_it_works_subtitle" in input
+        ? { how_it_works_subtitle: this.cleanText(input.how_it_works_subtitle) }
         : {}),
       ...("how_it_works_content" in input
         ? { how_it_works_content: this.cleanText(input.how_it_works_content) }
         : {}),
       ...("interesting_fact" in input
         ? { interesting_fact: this.cleanText(input.interesting_fact) }
+        : {}),
+      ...("benefits_title" in input
+        ? { benefits_title: this.cleanText(input.benefits_title) }
+        : {}),
+      ...("benefits_subtitle" in input
+        ? { benefits_subtitle: this.cleanText(input.benefits_subtitle) }
+        : {}),
+      ...("uses_title" in input ? { uses_title: this.cleanText(input.uses_title) } : {}),
+      ...("uses_subtitle" in input
+        ? { uses_subtitle: this.cleanText(input.uses_subtitle) }
+        : {}),
+      ...("uses_content" in input
+        ? { uses_content: this.cleanText(input.uses_content) }
+        : {}),
+      ...("uses_json" in input ? { uses_json: this.cleanJsonArray(input.uses_json) } : {}),
+      ...("food_sources_title" in input
+        ? { food_sources_title: this.cleanText(input.food_sources_title) }
+        : {}),
+      ...("food_sources_subtitle" in input
+        ? { food_sources_subtitle: this.cleanText(input.food_sources_subtitle) }
+        : {}),
+      ...("food_sources_content" in input
+        ? { food_sources_content: this.cleanText(input.food_sources_content) }
+        : {}),
+      ...("food_sources_json" in input
+        ? { food_sources_json: this.cleanJsonArray(input.food_sources_json) }
+        : {}),
+      ...("dosage_title" in input
+        ? { dosage_title: this.cleanText(input.dosage_title) }
+        : {}),
+      ...("dosage_subtitle" in input
+        ? { dosage_subtitle: this.cleanText(input.dosage_subtitle) }
+        : {}),
+      ...("dosage_content" in input
+        ? { dosage_content: this.cleanText(input.dosage_content) }
+        : {}),
+      ...("safety_title" in input
+        ? { safety_title: this.cleanText(input.safety_title) }
+        : {}),
+      ...("safety_subtitle" in input
+        ? { safety_subtitle: this.cleanText(input.safety_subtitle) }
+        : {}),
+      ...("research_title" in input
+        ? { research_title: this.cleanText(input.research_title) }
+        : {}),
+      ...("research_subtitle" in input
+        ? { research_subtitle: this.cleanText(input.research_subtitle) }
+        : {}),
+      ...("research_content" in input
+        ? { research_content: this.cleanText(input.research_content) }
+        : {}),
+      ...("research_json" in input
+        ? { research_json: this.cleanJsonArray(input.research_json) }
+        : {}),
+      ...("references_title" in input
+        ? { references_title: this.cleanText(input.references_title) }
+        : {}),
+      ...("references_subtitle" in input
+        ? { references_subtitle: this.cleanText(input.references_subtitle) }
+        : {}),
+      ...("references_json" in input
+        ? { references_json: this.cleanJsonArray(input.references_json) }
+        : {}),
+      ...("faq_title" in input ? { faq_title: this.cleanText(input.faq_title) } : {}),
+      ...("faq_subtitle" in input
+        ? { faq_subtitle: this.cleanText(input.faq_subtitle) }
         : {}),
       ...("benefits" in input ? { benefits: this.cleanList(input.benefits) } : {}),
       ...("side_effects" in input
@@ -459,6 +580,34 @@ export class IngredientService {
       ...("seo_title" in input ? { seo_title: this.cleanText(input.seo_title) } : {}),
       ...("seo_description" in input
         ? { seo_description: this.cleanText(input.seo_description) }
+        : {}),
+      ...("seo_canonical_url" in input
+        ? { seo_canonical_url: this.cleanText(input.seo_canonical_url) }
+        : {}),
+      ...("seo_og_title" in input
+        ? { seo_og_title: this.cleanText(input.seo_og_title) }
+        : {}),
+      ...("seo_og_description" in input
+        ? { seo_og_description: this.cleanText(input.seo_og_description) }
+        : {}),
+      ...("seo_og_image" in input
+        ? { seo_og_image: this.cleanText(input.seo_og_image) }
+        : {}),
+      ...("seo_twitter_title" in input
+        ? { seo_twitter_title: this.cleanText(input.seo_twitter_title) }
+        : {}),
+      ...("seo_twitter_description" in input
+        ? { seo_twitter_description: this.cleanText(input.seo_twitter_description) }
+        : {}),
+      ...("seo_twitter_image" in input
+        ? { seo_twitter_image: this.cleanText(input.seo_twitter_image) }
+        : {}),
+      ...("meta_image" in input ? { meta_image: this.cleanText(input.meta_image) } : {}),
+      ...("seo_noindex" in input ? { seo_noindex: input.seo_noindex ?? false } : {}),
+      ...("seo_nofollow" in input ? { seo_nofollow: input.seo_nofollow ?? false } : {}),
+      ...("schema_json" in input ? { schema_json: input.schema_json ?? {} } : {}),
+      ...("ingredient_layout_sections" in input
+        ? { ingredient_layout_sections: this.cleanLayoutSections(input.ingredient_layout_sections) }
         : {}),
       ...("product_ids" in input ? { product_ids: this.cleanList(input.product_ids) } : {}),
     };
@@ -515,6 +664,10 @@ export class IngredientService {
   }
 
   private cleanJsonArray(values: JsonValue[] | undefined) {
+    return Array.isArray(values) ? [...values] : [];
+  }
+
+  private cleanLayoutSections(values: IngredientLayoutSectionInput[] | undefined) {
     return Array.isArray(values) ? [...values] : [];
   }
 

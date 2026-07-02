@@ -1,5 +1,9 @@
 import { ContentStatus } from "@/lib/database/constants";
-import type { FAQItem, JsonValue } from "@/lib/database/types";
+import type { FAQItem, IngredientLayoutSection, JsonValue } from "@/lib/database/types";
+import {
+  INGREDIENT_LAYOUT_SECTION_KEYS,
+  type IngredientLayoutSectionKey,
+} from "@/lib/ingredient-layout";
 
 export type IngredientCreateInput = {
   name: string;
@@ -9,6 +13,7 @@ export type IngredientCreateInput = {
   reviewer_id?: string | null;
   scientific_name?: string | null;
   ingredient_category?: string | null;
+  hero_badge?: string | null;
   short_description?: string | null;
   full_description?: string | null;
   image_url?: string | null;
@@ -21,9 +26,37 @@ export type IngredientCreateInput = {
   typical_dose?: string | null;
   best_for?: string | null;
   safety_level?: string | null;
+  overview_title?: string | null;
+  overview_subtitle?: string | null;
   overview_content?: string | null;
+  how_it_works_title?: string | null;
+  how_it_works_subtitle?: string | null;
   how_it_works_content?: string | null;
   interesting_fact?: string | null;
+  benefits_title?: string | null;
+  benefits_subtitle?: string | null;
+  uses_title?: string | null;
+  uses_subtitle?: string | null;
+  uses_content?: string | null;
+  uses_json?: JsonValue[];
+  food_sources_title?: string | null;
+  food_sources_subtitle?: string | null;
+  food_sources_content?: string | null;
+  food_sources_json?: JsonValue[];
+  dosage_title?: string | null;
+  dosage_subtitle?: string | null;
+  dosage_content?: string | null;
+  safety_title?: string | null;
+  safety_subtitle?: string | null;
+  research_title?: string | null;
+  research_subtitle?: string | null;
+  research_content?: string | null;
+  research_json?: JsonValue[];
+  references_title?: string | null;
+  references_subtitle?: string | null;
+  references_json?: JsonValue[];
+  faq_title?: string | null;
+  faq_subtitle?: string | null;
   benefits?: string[];
   side_effects?: string[];
   dosage?: string | null;
@@ -39,9 +72,32 @@ export type IngredientCreateInput = {
   meta_description?: string | null;
   seo_title?: string | null;
   seo_description?: string | null;
+  seo_canonical_url?: string | null;
+  seo_og_title?: string | null;
+  seo_og_description?: string | null;
+  seo_og_image?: string | null;
+  seo_twitter_title?: string | null;
+  seo_twitter_description?: string | null;
+  seo_twitter_image?: string | null;
+  meta_image?: string | null;
+  seo_noindex?: boolean;
+  seo_nofollow?: boolean;
+  schema_json?: JsonValue;
+  ingredient_layout_sections?: IngredientLayoutSectionInput[];
   is_featured?: boolean;
   product_ids?: string[];
 };
+
+export type IngredientLayoutSectionInput = Pick<
+  IngredientLayoutSection,
+  | "section_key"
+  | "is_visible"
+  | "sort_order"
+  | "title_override"
+  | "subtitle_override"
+  | "background_style"
+  | "animation_enabled"
+>;
 
 export type IngredientUpdateInput = Partial<IngredientCreateInput>;
 
@@ -130,6 +186,34 @@ function isRelatedIngredientsArray(value: unknown) {
         typeof item.name === "string" &&
         item.name.trim().length > 0 &&
         (!("slug" in item) || typeof item.slug === "string"),
+    )
+  );
+}
+
+function isIngredientLayoutSectionArray(value: unknown): value is IngredientLayoutSectionInput[] {
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        typeof item === "object" &&
+        item !== null &&
+        "section_key" in item &&
+        INGREDIENT_LAYOUT_SECTION_KEYS.includes(item.section_key as IngredientLayoutSectionKey) &&
+        "is_visible" in item &&
+        typeof item.is_visible === "boolean" &&
+        "sort_order" in item &&
+        typeof item.sort_order === "number" &&
+        Number.isInteger(item.sort_order) &&
+        item.sort_order >= 0 &&
+        (!("title_override" in item) ||
+          item.title_override === null ||
+          typeof item.title_override === "string") &&
+        (!("subtitle_override" in item) ||
+          item.subtitle_override === null ||
+          typeof item.subtitle_override === "string") &&
+        (!("background_style" in item) ||
+          item.background_style === "default") &&
+        (!("animation_enabled" in item) || typeof item.animation_enabled === "boolean"),
     )
   );
 }
@@ -235,6 +319,39 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
 
   if ("faq_json" in input && input.faq_json !== undefined && !isFaqArray(input.faq_json)) {
     errors.push("FAQ JSON must be a list of question and answer items.");
+  }
+
+  for (const key of [
+    "uses_json",
+    "food_sources_json",
+    "research_json",
+    "references_json",
+  ] as const) {
+    if (key in input && input[key] !== undefined && !isJsonArray(input[key])) {
+      errors.push(`${key} must be a valid list.`);
+    }
+  }
+
+  if (
+    "schema_json" in input &&
+    input.schema_json !== undefined &&
+    !isJsonValue(input.schema_json)
+  ) {
+    errors.push("Schema JSON must be valid JSON.");
+  }
+
+  if (
+    "ingredient_layout_sections" in input &&
+    input.ingredient_layout_sections !== undefined
+  ) {
+    if (!isIngredientLayoutSectionArray(input.ingredient_layout_sections)) {
+      errors.push("Ingredient layout sections must be valid dashboard layout rows.");
+    } else {
+      const keys = input.ingredient_layout_sections.map((item) => item.section_key);
+      if (new Set(keys).size !== keys.length) {
+        errors.push("Ingredient layout sections cannot contain duplicate sections.");
+      }
+    }
   }
 
   if (

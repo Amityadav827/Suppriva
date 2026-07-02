@@ -6,6 +6,7 @@ import {
   UserRole,
   UserStatus,
 } from "./constants";
+import type { IngredientLayoutSectionKey } from "@/lib/ingredient-layout";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
@@ -50,6 +51,7 @@ export type Ingredient = {
   reviewer_id: string | null;
   scientific_name: string | null;
   ingredient_category: string | null;
+  hero_badge: string | null;
   short_description: string | null;
   full_description: string | null;
   image_url: string | null;
@@ -63,8 +65,36 @@ export type Ingredient = {
   best_for: string | null;
   safety_level: string | null;
   overview_content: string | null;
+  overview_title: string | null;
+  overview_subtitle: string | null;
   how_it_works_content: string | null;
+  how_it_works_title: string | null;
+  how_it_works_subtitle: string | null;
   interesting_fact: string | null;
+  benefits_title: string | null;
+  benefits_subtitle: string | null;
+  uses_title: string | null;
+  uses_subtitle: string | null;
+  uses_content: string | null;
+  uses_json: JsonValue[];
+  food_sources_title: string | null;
+  food_sources_subtitle: string | null;
+  food_sources_content: string | null;
+  food_sources_json: JsonValue[];
+  dosage_title: string | null;
+  dosage_subtitle: string | null;
+  dosage_content: string | null;
+  safety_title: string | null;
+  safety_subtitle: string | null;
+  research_title: string | null;
+  research_subtitle: string | null;
+  research_content: string | null;
+  research_json: JsonValue[];
+  references_title: string | null;
+  references_subtitle: string | null;
+  references_json: JsonValue[];
+  faq_title: string | null;
+  faq_subtitle: string | null;
   benefits: string[];
   side_effects: string[];
   dosage: string | null;
@@ -80,10 +110,32 @@ export type Ingredient = {
   meta_description: string | null;
   seo_title: string | null;
   seo_description: string | null;
+  seo_canonical_url: string | null;
+  seo_og_title: string | null;
+  seo_og_description: string | null;
+  seo_og_image: string | null;
+  seo_twitter_title: string | null;
+  seo_twitter_description: string | null;
+  seo_twitter_image: string | null;
+  meta_image: string | null;
+  seo_noindex: boolean;
+  seo_nofollow: boolean;
+  schema_json: JsonValue;
+  ingredient_layout_sections: IngredientLayoutSection[];
   is_featured: boolean;
   created_at: Timestamp;
   updated_at: Timestamp;
   deleted_at: Timestamp | null;
+};
+
+export type IngredientLayoutSection = {
+  section_key: IngredientLayoutSectionKey;
+  is_visible: boolean;
+  sort_order: number;
+  title_override: string | null;
+  subtitle_override: string | null;
+  background_style: "default";
+  animation_enabled: boolean;
 };
 
 export type ProductIngredientRelation = {

@@ -23,14 +23,21 @@ import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { IngredientSectionNav, type IngredientSectionLink } from "@/components/ingredients/IngredientSectionNav";
 import { IngredientSmartImage } from "@/components/ingredients/IngredientSmartImage";
+import { CategoryPill } from "@/components/category/CategoryPill";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
 import type { CategoryProduct } from "@/lib/category-data";
 import type {
   ExpertAttribution,
   FAQItem,
   Ingredient,
+  IngredientLayoutSection,
   JsonValue,
 } from "@/lib/database/types";
+import {
+  INGREDIENT_LAYOUT_SECTION_DEFINITIONS,
+  getIngredientLayoutDefinition,
+} from "@/lib/ingredient-layout";
+import { getCategoryIcon } from "@/lib/live-data";
 
 export type RelatedIngredientCardData = {
   name: string;
@@ -44,6 +51,11 @@ export type RelatedIngredientCardData = {
 type TitleDescriptionItem = {
   title: string;
   description: string;
+};
+
+type HealthNeedLink = {
+  label: string;
+  slug: string;
 };
 
 function isRecord(value: JsonValue): value is Record<string, JsonValue> {
@@ -92,6 +104,39 @@ function parseStringList(items: JsonValue[] | undefined) {
   return items
     .map((item) => (typeof item === "string" ? item.trim() : ""))
     .filter(Boolean);
+}
+
+function parseIngredientLayoutSections(value: Ingredient["ingredient_layout_sections"]) {
+  if (!Array.isArray(value)) {
+    return new Map<string, IngredientLayoutSection>();
+  }
+
+  return new Map(
+    value
+      .filter((item): item is IngredientLayoutSection => {
+        return Boolean(item && typeof item.section_key === "string");
+      })
+      .map((item) => [item.section_key, item]),
+  );
+}
+
+function getSectionSettings(
+  layoutMap: Map<string, IngredientLayoutSection>,
+  sectionKey: IngredientLayoutSection["section_key"],
+) {
+  const definition = getIngredientLayoutDefinition(sectionKey);
+  const saved = layoutMap.get(sectionKey);
+
+  return {
+    visible: saved?.is_visible ?? true,
+    order:
+      saved?.sort_order ??
+      (definition
+        ? INGREDIENT_LAYOUT_SECTION_DEFINITIONS.findIndex((item) => item.key === definition.key)
+        : 0),
+    title: saved?.title_override?.trim() || definition?.defaultTitle || "",
+    subtitle: saved?.subtitle_override?.trim() || definition?.defaultSubtitle || "",
+  };
 }
 
 function normalizeFaqs(items: FAQItem[]) {
@@ -228,8 +273,28 @@ export function IngredientDetailTemplate(props: {
   relatedProducts: CategoryProduct[];
   relatedIngredients: RelatedIngredientCardData[];
   relatedArticles: BlogPostCard[];
+  compareAlternatives: RelatedIngredientCardData[];
+  healthNeeds: HealthNeedLink[];
 }) {
-  const { ingredient, relatedProducts, relatedIngredients, relatedArticles } = props;
+  const {
+    ingredient,
+    relatedProducts,
+    relatedIngredients,
+    relatedArticles,
+    compareAlternatives,
+    healthNeeds,
+  } = props;
+  const layoutMap = parseIngredientLayoutSections(ingredient.ingredient_layout_sections);
+  const overviewSection = getSectionSettings(layoutMap, "overview");
+  const howItWorksSection = getSectionSettings(layoutMap, "how_it_works");
+  const benefitsSection = getSectionSettings(layoutMap, "benefits");
+  const usesSection = getSectionSettings(layoutMap, "uses");
+  const foodSourcesSection = getSectionSettings(layoutMap, "food_sources");
+  const dosageSection = getSectionSettings(layoutMap, "dosage");
+  const safetySection = getSectionSettings(layoutMap, "safety");
+  const researchSection = getSectionSettings(layoutMap, "research");
+  const referencesSection = getSectionSettings(layoutMap, "references");
+  const faqSection = getSectionSettings(layoutMap, "faq");
   const quickFacts = buildQuickFacts(ingredient);
   const overviewContent =
     ingredient.overview_content || ingredient.full_description || ingredient.short_description;
@@ -245,6 +310,10 @@ export function IngredientDetailTemplate(props: {
   );
   const drugInteractions = parseStringList(ingredient.drug_interactions_json);
   const whoShouldAvoid = parseStringList(ingredient.who_should_avoid_json);
+  const useItems = parseTitleDescriptionItems(ingredient.uses_json);
+  const foodSourceItems = parseTitleDescriptionItems(ingredient.food_sources_json);
+  const researchItems = parseTitleDescriptionItems(ingredient.research_json);
+  const referenceItems = parseTitleDescriptionItems(ingredient.references_json);
   const faqs = normalizeFaqs(ingredient.faq_json ?? []);
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
   const faqColumns = splitIntoColumns(faqs, 2);
@@ -256,20 +325,45 @@ export function IngredientDetailTemplate(props: {
   ];
 
   const sections: IngredientSectionLink[] = [
-    ...(hasVisibleText(overviewContent) ? [{ id: "overview", label: "Overview" }] : []),
-    ...(hasVisibleText(howItWorksContent)
-      ? [{ id: "how-it-works", label: "How It Works" }]
+    ...(overviewSection.visible && hasVisibleText(overviewContent)
+      ? [{ id: "overview", label: overviewSection.title, order: overviewSection.order }]
       : []),
-    ...(benefitItems.length ? [{ id: "benefits", label: "Benefits" }] : []),
-    ...(sideEffects.length || drugInteractions.length || whoShouldAvoid.length
-      ? [{ id: "safety-information", label: "Safety Information" }]
+    ...(howItWorksSection.visible && hasVisibleText(howItWorksContent)
+      ? [{ id: "how-it-works", label: howItWorksSection.title, order: howItWorksSection.order }]
       : []),
-    ...(faqs.length ? [{ id: "faq", label: "FAQ" }] : []),
-    ...(relatedProducts.length ? [{ id: "found-in-products", label: "Found In Products" }] : []),
+    ...(benefitsSection.visible && benefitItems.length
+      ? [{ id: "benefits", label: benefitsSection.title, order: benefitsSection.order }]
+      : []),
+    ...(usesSection.visible && (hasVisibleText(ingredient.uses_content) || useItems.length)
+      ? [{ id: "uses", label: usesSection.title, order: usesSection.order }]
+      : []),
+    ...(foodSourcesSection.visible &&
+    (hasVisibleText(ingredient.food_sources_content) || foodSourceItems.length)
+      ? [{ id: "food-sources", label: foodSourcesSection.title, order: foodSourcesSection.order }]
+      : []),
+    ...(dosageSection.visible && (hasVisibleText(ingredient.dosage_content) || hasVisibleText(ingredient.dosage))
+      ? [{ id: "dosage", label: dosageSection.title, order: dosageSection.order }]
+      : []),
+    ...(safetySection.visible &&
+    (sideEffects.length || drugInteractions.length || whoShouldAvoid.length)
+      ? [{ id: "safety-information", label: safetySection.title, order: safetySection.order }]
+      : []),
+    ...(researchSection.visible && (hasVisibleText(ingredient.research_content) || researchItems.length)
+      ? [{ id: "research", label: researchSection.title, order: researchSection.order }]
+      : []),
+    ...(referencesSection.visible && referenceItems.length
+      ? [{ id: "references", label: referencesSection.title, order: referencesSection.order }]
+      : []),
+    ...(faqSection.visible && faqs.length ? [{ id: "faq", label: faqSection.title, order: faqSection.order }] : []),
+    ...(relatedProducts.length ? [{ id: "found-in-products", label: "Found In Products", order: 100 }] : []),
     ...(relatedIngredients.length
-      ? [{ id: "related-ingredients", label: "Related Ingredients" }]
+      ? [{ id: "related-ingredients", label: "Related Ingredients", order: 101 }]
       : []),
-    ...(relatedArticles.length ? [{ id: "related-articles", label: "Related Articles" }] : []),
+    ...(relatedArticles.length ? [{ id: "related-blogs", label: "Related Blogs", order: 102 }] : []),
+    ...(compareAlternatives.length
+      ? [{ id: "compare-alternatives", label: "Compare Alternatives", order: 103 }]
+      : []),
+    ...(healthNeeds.length ? [{ id: "explore-health-needs", label: "Explore Health Needs", order: 104 }] : []),
   ];
 
   return (
@@ -301,6 +395,11 @@ export function IngredientDetailTemplate(props: {
             <div className="space-y-6 xl:col-start-1">
               <div className="space-y-5">
                 <div className="flex flex-wrap items-center gap-3 pt-2">
+                  {ingredient.hero_badge ? (
+                    <span className="inline-flex items-center gap-2 rounded-pill border border-gold/24 bg-gold/12 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+                      {ingredient.hero_badge}
+                    </span>
+                  ) : null}
                   {ingredient.ingredient_category ? (
                     <span className="inline-flex items-center gap-2 rounded-pill border border-[#8B5CF6]/18 bg-[#8B5CF6]/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#6D28D9]">
                       {ingredient.ingredient_category}
@@ -414,13 +513,13 @@ export function IngredientDetailTemplate(props: {
         </div>
       </section>
 
-      <div className="relative">
-        {hasVisibleText(overviewContent) ? (
-          <SectionWrapper id="overview" tone="white" className="scroll-mt-28">
+      <div className="relative flex flex-col">
+        {overviewSection.visible && hasVisibleText(overviewContent) ? (
+          <SectionWrapper id="overview" tone="white" className="scroll-mt-28" style={{ order: overviewSection.order }}>
             <SectionHeading
               icon={Leaf}
-              title="Overview"
-              subtitle="A practical medical-style summary of what this ingredient is and how it is commonly used."
+              title={ingredient.overview_title || overviewSection.title}
+              subtitle={ingredient.overview_subtitle || overviewSection.subtitle}
             />
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
               <ContentPanel content={overviewContent} />
@@ -438,12 +537,12 @@ export function IngredientDetailTemplate(props: {
           </SectionWrapper>
         ) : null}
 
-        {hasVisibleText(howItWorksContent) ? (
-          <SectionWrapper id="how-it-works" className="scroll-mt-28">
+        {howItWorksSection.visible && hasVisibleText(howItWorksContent) ? (
+          <SectionWrapper id="how-it-works" className="scroll-mt-28" style={{ order: howItWorksSection.order }}>
             <SectionHeading
               icon={BadgeInfo}
-              title="How It Works"
-              subtitle="The page turns your stored ingredient explanation into a premium visual flow without hardcoded steps."
+              title={ingredient.how_it_works_title || howItWorksSection.title}
+              subtitle={ingredient.how_it_works_subtitle || howItWorksSection.subtitle}
             />
             <div className="space-y-8">
               {howItWorksSteps.length ? (
@@ -474,8 +573,8 @@ export function IngredientDetailTemplate(props: {
           </SectionWrapper>
         ) : null}
 
-        {hasVisibleText(ingredient.interesting_fact) ? (
-          <SectionWrapper tone="white">
+        {overviewSection.visible && hasVisibleText(ingredient.interesting_fact) ? (
+          <SectionWrapper tone="white" style={{ order: overviewSection.order }}>
             <FadeIn className="rounded-[32px] border border-gold/18 bg-white p-6 shadow-[0_22px_64px_rgba(15,23,42,0.06)] md:p-8">
               <div className="grid gap-5 lg:grid-cols-[88px_minmax(0,1fr)] lg:items-center">
                 <span className="inline-flex size-16 items-center justify-center rounded-full bg-gold/12 text-gold">
@@ -494,12 +593,12 @@ export function IngredientDetailTemplate(props: {
           </SectionWrapper>
         ) : null}
 
-        {benefitItems.length ? (
-          <SectionWrapper id="benefits" className="scroll-mt-28">
+        {benefitsSection.visible && benefitItems.length ? (
+          <SectionWrapper id="benefits" className="scroll-mt-28" style={{ order: benefitsSection.order }}>
             <SectionHeading
               icon={ShieldCheck}
-              title="Benefits"
-              subtitle="Responsive benefit cards generated directly from the ingredient record."
+              title={ingredient.benefits_title || benefitsSection.title}
+              subtitle={ingredient.benefits_subtitle || benefitsSection.subtitle}
             />
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {benefitItems.map((benefit, index) => (
@@ -525,12 +624,58 @@ export function IngredientDetailTemplate(props: {
           </SectionWrapper>
         ) : null}
 
-        {sideEffects.length || drugInteractions.length || whoShouldAvoid.length ? (
-          <SectionWrapper id="safety-information" tone="white" className="scroll-mt-28">
+        {usesSection.visible && (hasVisibleText(ingredient.uses_content) || useItems.length) ? (
+          <SectionWrapper id="uses" tone="white" className="scroll-mt-28" style={{ order: usesSection.order }}>
+            <SectionHeading
+              icon={Sparkles}
+              title={ingredient.uses_title || usesSection.title}
+              subtitle={ingredient.uses_subtitle || usesSection.subtitle}
+            />
+            <div className="space-y-6">
+              <ContentPanel content={ingredient.uses_content} />
+              {useItems.length ? (
+                <InfoCardGrid items={useItems} icon={Sparkles} />
+              ) : null}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {foodSourcesSection.visible &&
+        (hasVisibleText(ingredient.food_sources_content) || foodSourceItems.length) ? (
+          <SectionWrapper id="food-sources" className="scroll-mt-28" style={{ order: foodSourcesSection.order }}>
+            <SectionHeading
+              icon={Leaf}
+              title={ingredient.food_sources_title || foodSourcesSection.title}
+              subtitle={ingredient.food_sources_subtitle || foodSourcesSection.subtitle}
+            />
+            <div className="space-y-6">
+              <ContentPanel content={ingredient.food_sources_content} />
+              {foodSourceItems.length ? (
+                <InfoCardGrid items={foodSourceItems} icon={Leaf} />
+              ) : null}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {dosageSection.visible &&
+        (hasVisibleText(ingredient.dosage_content) || hasVisibleText(ingredient.dosage)) ? (
+          <SectionWrapper id="dosage" tone="white" className="scroll-mt-28" style={{ order: dosageSection.order }}>
+            <SectionHeading
+              icon={Pill}
+              title={ingredient.dosage_title || dosageSection.title}
+              subtitle={ingredient.dosage_subtitle || dosageSection.subtitle}
+            />
+            <ContentPanel content={ingredient.dosage_content || ingredient.dosage} />
+          </SectionWrapper>
+        ) : null}
+
+        {safetySection.visible &&
+        (sideEffects.length || drugInteractions.length || whoShouldAvoid.length) ? (
+          <SectionWrapper id="safety-information" tone="white" className="scroll-mt-28" style={{ order: safetySection.order }}>
             <SectionHeading
               icon={ShieldAlert}
-              title="Safety Information"
-              subtitle="Separate evidence-oriented cards for side effects, interactions, and avoidance notes."
+              title={ingredient.safety_title || safetySection.title}
+              subtitle={ingredient.safety_subtitle || safetySection.subtitle}
             />
             <div className="grid gap-5 xl:grid-cols-3">
               {sideEffects.length ? (
@@ -560,12 +705,54 @@ export function IngredientDetailTemplate(props: {
           </SectionWrapper>
         ) : null}
 
-        {faqs.length ? (
-          <SectionWrapper id="faq" className="scroll-mt-28">
+        {researchSection.visible && (hasVisibleText(ingredient.research_content) || researchItems.length) ? (
+          <SectionWrapper id="research" className="scroll-mt-28" style={{ order: researchSection.order }}>
+            <SectionHeading
+              icon={TestTube2}
+              title={ingredient.research_title || researchSection.title}
+              subtitle={ingredient.research_subtitle || researchSection.subtitle}
+            />
+            <div className="space-y-6">
+              <ContentPanel content={ingredient.research_content} />
+              {researchItems.length ? (
+                <InfoCardGrid items={researchItems} icon={TestTube2} />
+              ) : null}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {referencesSection.visible && referenceItems.length ? (
+          <SectionWrapper id="references" tone="white" className="scroll-mt-28" style={{ order: referencesSection.order }}>
+            <SectionHeading
+              icon={BookOpenText}
+              title={ingredient.references_title || referencesSection.title}
+              subtitle={ingredient.references_subtitle || referencesSection.subtitle}
+            />
+            <div className="grid gap-4 md:grid-cols-2">
+              {referenceItems.map((reference, index) => (
+                <FadeIn
+                  key={`${reference.title}-${index}`}
+                  delay={index * 0.04}
+                  className="rounded-[22px] bg-white/92 p-5 shadow-[0_14px_36px_rgba(15,23,42,0.05)] ring-1 ring-black/5"
+                >
+                  <p className="font-heading text-lg font-extrabold text-text-dark">
+                    {reference.title}
+                  </p>
+                  {reference.description ? (
+                    <p className="mt-2 text-sm leading-7 text-muted">{reference.description}</p>
+                  ) : null}
+                </FadeIn>
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {faqSection.visible && faqs.length ? (
+          <SectionWrapper id="faq" className="scroll-mt-28" style={{ order: faqSection.order }}>
             <SectionHeading
               icon={HelpCircle}
-              title="Frequently Asked Questions"
-              subtitle="Accordion answers built from the ingredient FAQ data for readers and schema output."
+              title={ingredient.faq_title || faqSection.title}
+              subtitle={ingredient.faq_subtitle || faqSection.subtitle}
               actionHref="/ingredients"
               actionLabel="View All FAQs"
             />
@@ -583,7 +770,7 @@ export function IngredientDetailTemplate(props: {
         ) : null}
 
         {relatedProducts.length ? (
-          <SectionWrapper id="found-in-products" tone="white" className="scroll-mt-28">
+          <SectionWrapper id="found-in-products" tone="white" className="scroll-mt-28" style={{ order: 100 }}>
             <SectionHeading
               icon={Pill}
               title="Found In Products"
@@ -602,11 +789,11 @@ export function IngredientDetailTemplate(props: {
         ) : null}
 
         {relatedIngredients.length ? (
-          <SectionWrapper id="related-ingredients" className="scroll-mt-28">
+          <SectionWrapper id="related-ingredients" className="scroll-mt-28" style={{ order: 101 }}>
             <SectionHeading
               icon={Leaf}
               title="Related Ingredients"
-              subtitle="Nearby ingredient profiles referenced directly from the ingredient record."
+              subtitle="Automatically matched ingredient profiles with similar wellness context."
             />
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {relatedIngredients.map((item, index) => (
@@ -620,15 +807,53 @@ export function IngredientDetailTemplate(props: {
         ) : null}
 
         {relatedArticles.length ? (
-          <SectionWrapper id="related-articles" tone="white" className="scroll-mt-28">
+          <SectionWrapper id="related-blogs" tone="white" className="scroll-mt-28" style={{ order: 102 }}>
             <SectionHeading
               icon={BookOpenText}
-              title="Related Articles"
-              subtitle="Editorial coverage surfaced through the current article relation logic."
+              title="Related Blogs"
+              subtitle="Editorial resources automatically matched by ingredient, category, and wellness topic language."
             />
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {relatedArticles.map((article) => (
                 <RelatedArticleCard key={article.slug || article.title} article={article} />
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {compareAlternatives.length ? (
+          <SectionWrapper id="compare-alternatives" className="scroll-mt-28" style={{ order: 103 }}>
+            <SectionHeading
+              icon={TestTube2}
+              title="Compare Alternatives"
+              subtitle="Similar ingredients surfaced automatically from matching wellness categories and ingredient language."
+            />
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {compareAlternatives.map((item, index) => (
+                <RelatedIngredientCard
+                  key={`${item.slug || item.name}-compare-${index}`}
+                  item={item}
+                />
+              ))}
+            </div>
+          </SectionWrapper>
+        ) : null}
+
+        {healthNeeds.length ? (
+          <SectionWrapper id="explore-health-needs" tone="white" className="scroll-mt-28" style={{ order: 104 }}>
+            <SectionHeading
+              icon={ShieldCheck}
+              title="Explore By Health Needs"
+              subtitle="Browse live wellness categories connected to broader supplement goals."
+            />
+            <div className="flex flex-wrap justify-center gap-4">
+              {healthNeeds.map((category) => (
+                <CategoryPill
+                  key={category.slug}
+                  label={category.label}
+                  href={`/category/${category.slug}`}
+                  icon={getCategoryIcon(category.label)}
+                />
               ))}
             </div>
           </SectionWrapper>
@@ -647,7 +872,7 @@ function SectionHeading({
 }: {
   icon: typeof Leaf;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   actionHref?: string;
   actionLabel?: string;
 }) {
@@ -661,9 +886,11 @@ function SectionHeading({
           <h2 className="font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl">
             {title}
           </h2>
-          <p className="mt-3 text-base leading-7 text-muted">
-            {subtitle}
-          </p>
+          {subtitle ? (
+            <p className="mt-3 text-base leading-7 text-muted">
+              {subtitle}
+            </p>
+          ) : null}
         </div>
       </div>
       {actionHref && actionLabel ? (
@@ -676,6 +903,36 @@ function SectionHeading({
         </Link>
       ) : null}
     </FadeIn>
+  );
+}
+
+function InfoCardGrid({
+  items,
+  icon: Icon,
+}: {
+  items: TitleDescriptionItem[];
+  icon: typeof Leaf;
+}) {
+  return (
+    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {items.map((item, index) => (
+        <FadeIn
+          key={`${item.title}-${index}`}
+          delay={index * 0.04}
+          className="h-full rounded-[24px] bg-white/92 p-5 shadow-[0_14px_38px_rgba(15,23,42,0.05)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+        >
+          <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
+            <Icon className="size-5" aria-hidden="true" />
+          </span>
+          <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
+            {item.title}
+          </h3>
+          {item.description ? (
+            <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+          ) : null}
+        </FadeIn>
+      ))}
+    </div>
   );
 }
 

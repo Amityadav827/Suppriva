@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type SectionWrapperProps = {
@@ -6,6 +6,7 @@ type SectionWrapperProps = {
   children: ReactNode;
   className?: string;
   tone?: "cream" | "white";
+  style?: CSSProperties;
 };
 
 export function SectionWrapper({
@@ -13,10 +14,12 @@ export function SectionWrapper({
   children,
   className,
   tone = "cream",
+  style,
 }: SectionWrapperProps) {
   return (
     <section
       id={id}
+      style={style}
       className={cn(
         "relative isolate overflow-hidden py-[72px] md:py-[92px] lg:py-[100px]",
         tone === "cream" ? "bg-cream" : "bg-white",
