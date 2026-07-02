@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, FlaskConical, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import type { Ingredient } from "@/lib/database/types";
 
 export function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
@@ -16,28 +16,24 @@ export function IngredientCard({ ingredient }: { ingredient: Ingredient }) {
       className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border-light bg-white shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:border-gold/70 hover:shadow-premium-hover"
     >
       <Link href={`/ingredient/${ingredient.slug}`} className="flex h-full flex-col">
-        <div className="relative flex h-[220px] items-center justify-center overflow-hidden bg-gradient-to-br from-soft-green to-gold/[0.14]">
-          <span className="inline-flex size-20 items-center justify-center rounded-full bg-white/90 text-primary shadow-[0_18px_45px_rgba(6,57,33,0.12)] transition duration-500 group-hover:scale-105">
-            <FlaskConical className="size-9" aria-hidden="true" />
-          </span>
-          {ingredient.is_featured ? (
-            <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill bg-white/92 px-3 py-1.5 font-heading text-xs font-semibold text-primary shadow-[0_12px_30px_rgba(15,23,42,0.12)]">
-              <Sparkles className="size-3.5 text-gold" aria-hidden="true" />
-              Featured
-            </span>
-          ) : null}
-          <span className="absolute bottom-4 left-4 inline-flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-pill bg-white/92 px-3 py-1.5 text-xs font-semibold text-text-dark shadow-[0_12px_30px_rgba(15,23,42,0.12)]">
-            <span className="truncate">{category}</span>
-            {ingredient.rating ? (
-              <span className="inline-flex shrink-0 items-center gap-1 text-primary">
-                <Star className="size-3.5 fill-gold text-gold" aria-hidden="true" />
-                {ingredient.rating.toFixed(1)}
+        <div className="flex flex-1 flex-col p-6">
+          <div className="mb-5 flex flex-wrap items-center gap-2">
+            {ingredient.is_featured ? (
+              <span className="inline-flex items-center gap-1.5 rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary shadow-[0_10px_24px_rgba(6,57,33,0.06)]">
+                <Sparkles className="size-3.5 text-gold" aria-hidden="true" />
+                Featured
               </span>
             ) : null}
-          </span>
-        </div>
-
-        <div className="flex flex-1 flex-col p-6">
+            <span className="inline-flex max-w-full items-center gap-2 rounded-pill bg-gold/10 px-3 py-1.5 text-xs font-semibold text-text-dark">
+              <span className="truncate">{category}</span>
+              {ingredient.rating ? (
+                <span className="inline-flex shrink-0 items-center gap-1 text-primary">
+                  <Star className="size-3.5 fill-gold text-gold" aria-hidden="true" />
+                  {ingredient.rating.toFixed(1)}
+                </span>
+              ) : null}
+            </span>
+          </div>
           <p className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-primary/70">
             Ingredient Profile
           </p>
