@@ -368,15 +368,18 @@ export function IngredientDetailTemplate(props: {
 
   return (
     <main>
-      <section className="relative isolate overflow-hidden bg-cream pb-14 pt-8 md:pb-20 lg:pb-24">
+      <section className="relative isolate bg-cream py-12 md:py-16 lg:py-20">
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(234,244,236,0.95)_0%,rgba(247,246,242,0)_32%),radial-gradient(circle_at_86%_34%,rgba(217,165,32,0.15)_0%,rgba(247,246,242,0)_28%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_22%,rgba(234,244,236,0.55)_0%,rgba(247,246,242,0)_31%),radial-gradient(circle_at_84%_30%,rgba(217,165,32,0.1)_0%,rgba(247,246,242,0)_28%)]"
         />
         <div className="site-container">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
+            <div className="relative flex flex-col gap-8">
+        <div className="space-y-8 pb-2">
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex flex-wrap items-center gap-2 text-sm text-muted"
+            className="flex flex-wrap items-center gap-2 text-sm text-muted"
           >
             <Link href="/" className="transition hover:text-primary">
               Home
@@ -436,16 +439,7 @@ export function IngredientDetailTemplate(props: {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="relative isolate bg-cream py-12 md:py-16 lg:py-20">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_22%,rgba(234,244,236,0.55)_0%,rgba(247,246,242,0)_31%),radial-gradient(circle_at_84%_30%,rgba(217,165,32,0.1)_0%,rgba(247,246,242,0)_28%)]"
-        />
-        <div className="site-container">
-          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
-            <div className="relative flex flex-col gap-8">
         {overviewSection.visible && hasVisibleText(overviewContent) ? (
           <SectionWrapper id="overview" tone="white" className="scroll-mt-28" style={{ order: overviewSection.order }}>
             <SectionHeading
