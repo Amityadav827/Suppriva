@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties, ReactNode } from "react";
 import {
   ArrowUpRight,
   BadgeInfo,
@@ -19,8 +20,7 @@ import {
   TestTube2,
 } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { FAQAccordion } from "@/components/product-detail/FAQAccordion";
-import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import { IngredientFAQAccordion } from "@/components/ingredients/IngredientFAQAccordion";
 import { IngredientSectionNav, type IngredientSectionLink } from "@/components/ingredients/IngredientSectionNav";
 import { IngredientSmartImage } from "@/components/ingredients/IngredientSmartImage";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
@@ -37,6 +37,7 @@ import {
   getIngredientLayoutDefinition,
 } from "@/lib/ingredient-layout";
 import { getCategoryIcon } from "@/lib/live-data";
+import { cn } from "@/lib/utils";
 
 export type RelatedIngredientCardData = {
   name: string;
@@ -390,8 +391,8 @@ export function IngredientDetailTemplate(props: {
             </span>
           </nav>
 
-          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
-            <div className="space-y-6 xl:col-start-1">
+          <div className="max-w-4xl">
+            <div className="space-y-6">
               <div className="space-y-5">
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   {ingredient.hero_badge ? (
@@ -431,88 +432,20 @@ export function IngredientDetailTemplate(props: {
                     ingredient.seo_description ||
                     "A premium Suppriva ingredient profile for supplement research, safety review, and product discovery."}
                 </p>
-
-                {quickFacts.length ? (
-                  <div className="rounded-[24px] bg-white/80 p-4 shadow-[0_18px_42px_rgba(15,23,42,0.05)] ring-1 ring-black/5">
-                    <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <BadgeInfo className="size-5" aria-hidden="true" />
-                      </span>
-                      <div>
-                        <h2 className="font-heading text-xl font-extrabold text-text-dark">
-                          Quick Facts
-                        </h2>
-                        <p className="text-sm text-muted">Fast comparison fields for research.</p>
-                      </div>
-                    </div>
-                    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                      {quickFacts.map((fact) => (
-                        <div
-                          key={fact.label}
-                          className="flex min-h-[118px] items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
-                        >
-                          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
-                            <fact.icon className="size-4.5" aria-hidden="true" />
-                          </span>
-                          <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-                              {fact.label}
-                            </p>
-                            <p className="mt-2 font-heading text-sm font-bold leading-6 text-text-dark">
-                              {fact.value}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
               </div>
             </div>
-
-            {sections.length ? (
-              <div className="space-y-5 xl:sticky xl:top-28">
-                <IngredientSectionNav sections={sections} />
-                <FadeIn className="rounded-[28px] bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
-                  <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                    At A Glance
-                  </p>
-                  <div className="mt-5 space-y-4">
-                    {atAGlanceItems.map((item) => (
-                      <div
-                        key={item.label}
-                        className="flex items-center justify-between gap-4 border-b border-black/6 pb-3 last:border-b-0 last:pb-0"
-                      >
-                        <span className="text-sm font-medium text-muted">
-                          {item.label}
-                        </span>
-                        <span className="text-right text-sm font-semibold text-text-dark">
-                          {item.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <Link
-                    href="/ingredients"
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-3 font-heading text-sm font-bold text-white transition hover:bg-primary/90"
-                  >
-                    Browse All Ingredients
-                    <ArrowUpRight className="size-4" />
-                  </Link>
-                </FadeIn>
-              </div>
-            ) : null}
-
           </div>
-          {sections.length ? (
-            <div className="mt-6 xl:hidden">
-              <IngredientSectionNav sections={sections} mobile />
-            </div>
-          ) : null}
         </div>
       </section>
 
-      <div className="relative flex flex-col">
+      <section className="relative isolate bg-cream py-12 md:py-16 lg:py-20">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_22%,rgba(234,244,236,0.55)_0%,rgba(247,246,242,0)_31%),radial-gradient(circle_at_84%_30%,rgba(217,165,32,0.1)_0%,rgba(247,246,242,0)_28%)]"
+        />
+        <div className="site-container">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
+            <div className="relative flex flex-col gap-8">
         {overviewSection.visible && hasVisibleText(overviewContent) ? (
           <SectionWrapper id="overview" tone="white" className="scroll-mt-28" style={{ order: overviewSection.order }}>
             <SectionHeading
@@ -520,19 +453,7 @@ export function IngredientDetailTemplate(props: {
               title={ingredient.overview_title || overviewSection.title}
               subtitle={ingredient.overview_subtitle || overviewSection.subtitle}
             />
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
-              <ContentPanel content={overviewContent} />
-              <AsideFactCard
-                icon={BookOpenText}
-                title="Profile Snapshot"
-                items={[
-                  ingredient.ingredient_category,
-                  ingredient.origin_country,
-                  ingredient.part_used,
-                  ingredient.ingredient_form,
-                ].filter(Boolean) as string[]}
-              />
-            </div>
+            <ContentPanel content={overviewContent} />
           </SectionWrapper>
         ) : null}
 
@@ -761,7 +682,7 @@ export function IngredientDetailTemplate(props: {
                   key={`faq-column-${index + 1}`}
                   className="rounded-[28px] bg-white/70 p-3 shadow-[0_20px_56px_rgba(15,23,42,0.06)] ring-1 ring-black/5"
                 >
-                  <FAQAccordion faqs={column} />
+                  <IngredientFAQAccordion faqs={column} />
                 </div>
               ))}
             </div>
@@ -852,7 +773,54 @@ export function IngredientDetailTemplate(props: {
             </div>
           </SectionWrapper>
         ) : null}
-      </div>
+            </div>
+
+            <aside className="space-y-5 xl:sticky xl:top-28 xl:self-start">
+              {sections.length ? <IngredientSectionNav sections={sections} /> : null}
+              <AsideFactCard
+                icon={BookOpenText}
+                title="Profile Snapshot"
+                items={[
+                  ingredient.ingredient_category,
+                  ingredient.origin_country,
+                  ingredient.part_used,
+                  ingredient.ingredient_form,
+                ].filter(Boolean) as string[]}
+              />
+              {quickFacts.length ? <QuickFactsSidebar facts={quickFacts} /> : null}
+              {atAGlanceItems.length ? (
+                <FadeIn className="rounded-[28px] bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
+                  <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                    At A Glance
+                  </p>
+                  <div className="mt-5 space-y-4">
+                    {atAGlanceItems.map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex items-center justify-between gap-4 border-b border-black/6 pb-3 last:border-b-0 last:pb-0"
+                      >
+                        <span className="text-sm font-medium text-muted">
+                          {item.label}
+                        </span>
+                        <span className="text-right text-sm font-semibold text-text-dark">
+                          {item.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href="/ingredients"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-3 font-heading text-sm font-bold text-white transition hover:bg-primary/90"
+                  >
+                    Browse All Ingredients
+                    <ArrowUpRight className="size-4" />
+                  </Link>
+                </FadeIn>
+              ) : null}
+            </aside>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
@@ -872,6 +840,86 @@ function HealthNeedPill({ category }: { category: HealthNeedLink }) {
         {category.label}
       </span>
     </Link>
+  );
+}
+
+type IngredientSectionWrapperProps = {
+  id?: string;
+  children: ReactNode;
+  className?: string;
+  tone?: "cream" | "white";
+  style?: CSSProperties;
+};
+
+function SectionWrapper({
+  id,
+  children,
+  className,
+  tone = "cream",
+  style,
+}: IngredientSectionWrapperProps) {
+  return (
+    <section
+      id={id}
+      style={style}
+      className={cn(
+        "relative isolate overflow-hidden py-[72px] md:py-[92px] lg:py-[100px]",
+        tone === "cream" ? "bg-cream" : "bg-white",
+        className,
+      )}
+    >
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_22%,rgba(234,244,236,0.82)_0%,rgba(247,246,242,0)_31%),radial-gradient(circle_at_84%_30%,rgba(217,165,32,0.14)_0%,rgba(247,246,242,0)_28%)]"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute left-4 top-20 -z-10 h-20 w-10 rotate-[-32deg] rounded-[100%_0_100%_0] bg-primary/8 blur-[1px] md:left-10 md:h-28 md:w-14"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute bottom-20 right-6 -z-10 h-24 w-12 rotate-[36deg] rounded-[100%_0_100%_0] bg-gold/10 blur-[1px] md:right-16 md:h-32 md:w-16"
+      />
+      {children}
+    </section>
+  );
+}
+
+function QuickFactsSidebar({ facts }: { facts: ReturnType<typeof buildQuickFacts> }) {
+  return (
+    <FadeIn className="rounded-[28px] bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
+      <div className="mb-4 flex items-center gap-3">
+        <span className="inline-flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <BadgeInfo className="size-5" aria-hidden="true" />
+        </span>
+        <div>
+          <h2 className="font-heading text-lg font-extrabold text-text-dark">
+            Quick Facts
+          </h2>
+          <p className="text-xs text-muted">Fast comparison fields for research.</p>
+        </div>
+      </div>
+      <div className="space-y-3">
+        {facts.map((fact) => (
+          <div
+            key={fact.label}
+            className="flex items-start gap-3 rounded-[20px] bg-cream/80 px-4 py-4 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+          >
+            <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+              <fact.icon className="size-4.5" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                {fact.label}
+              </p>
+              <p className="mt-1 font-heading text-sm font-bold leading-6 text-text-dark">
+                {fact.value}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </FadeIn>
   );
 }
 
