@@ -376,7 +376,7 @@ export function IngredientDetailTemplate(props: {
         <div className="site-container">
           <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
             <div className="relative flex flex-col gap-8">
-        <div className="space-y-8 pb-2">
+        <div className="ingredient-detail-hero space-y-8 rounded-[30px] bg-white/92 p-8 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
           <nav
             aria-label="Breadcrumb"
             className="flex flex-wrap items-center gap-2 text-sm text-muted"
