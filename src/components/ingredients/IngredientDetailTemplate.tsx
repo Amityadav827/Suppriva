@@ -857,7 +857,7 @@ function SectionWrapper({
       id={id}
       style={style}
       className={cn(
-        "relative isolate overflow-hidden py-[72px] md:py-[92px] lg:py-[100px]",
+        "relative isolate overflow-hidden rounded-[30px] p-8 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5",
         tone === "cream" ? "bg-cream" : "bg-white",
         className,
       )}
