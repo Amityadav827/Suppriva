@@ -170,7 +170,8 @@ function isTitleDescriptionArray(value: unknown) {
         item.title.trim().length > 0 &&
         "description" in item &&
         typeof item.description === "string" &&
-        item.description.trim().length > 0,
+        item.description.trim().length > 0 &&
+        (!("icon" in item) || typeof item.icon === "string"),
     )
   );
 }
@@ -319,6 +320,13 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
 
   if ("faq_json" in input && input.faq_json !== undefined && !isFaqArray(input.faq_json)) {
     errors.push("FAQ JSON must be a list of question and answer items.");
+  }
+
+  if ("faq_json" in input && input.faq_json !== undefined && isFaqArray(input.faq_json)) {
+    const questions = input.faq_json.map((item) => item.question.trim().toLowerCase());
+    if (new Set(questions).size !== questions.length) {
+      errors.push("FAQ JSON cannot contain duplicate questions.");
+    }
   }
 
   for (const key of [

@@ -3,12 +3,10 @@
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { ContentStatus } from "@/lib/database/constants";
 import type {
-  Author,
   FAQItem,
   Ingredient,
   JsonValue,
   Product,
-  Reviewer,
 } from "@/lib/database/types";
 import {
   INGREDIENT_CSV_COLUMNS,
@@ -45,6 +43,7 @@ import {
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type TitleDescriptionItem = {
+  icon?: string;
   title: string;
   description: string;
 };
@@ -135,17 +134,6 @@ type IngredientsResponse = {
   error?: string;
 };
 
-type ProductsResponse = {
-  products?: Product[];
-  error?: string;
-};
-
-type ExpertProfilesResponse = {
-  authors?: Author[];
-  reviewers?: Reviewer[];
-  error?: string;
-};
-
 type IngredientImportSummary = {
   totalRows: number;
   batchesProcessed: number;
@@ -171,6 +159,7 @@ type IngredientImportResponse = {
 };
 
 const emptyTitleDescriptionItem = (): TitleDescriptionItem => ({
+  icon: "",
   title: "",
   description: "",
 });
@@ -275,10 +264,12 @@ function serializeStringList(values: string[]) {
 function serializeTitleDescriptionItems(items: TitleDescriptionItem[]) {
   return items
     .map((item) => ({
+      icon: item.icon?.trim() ?? "",
       title: item.title.trim(),
       description: item.description.trim(),
     }))
-    .filter((item) => item.title && item.description);
+    .filter((item) => item.title && item.description)
+    .map((item) => (item.icon ? item : { title: item.title, description: item.description }));
 }
 
 function serializeFaqItems(items: FAQItem[]) {
@@ -312,10 +303,11 @@ function parseTitleDescriptionItems(value: JsonValue[] | undefined, fallback: st
     const items = value
       .map((item) => {
         if (isRecord(item)) {
+          const icon = typeof item.icon === "string" ? item.icon : "";
           const title = typeof item.title === "string" ? item.title : "";
           const description = typeof item.description === "string" ? item.description : "";
 
-          return { title, description };
+          return { icon, title, description };
         }
 
         return null;
@@ -327,7 +319,7 @@ function parseTitleDescriptionItems(value: JsonValue[] | undefined, fallback: st
     }
   }
 
-  return fallback.map((item) => ({ title: item, description: "" }));
+  return fallback.map((item) => ({ icon: "", title: item, description: item }));
 }
 
 function parseStringItems(value: JsonValue[] | undefined) {
@@ -461,18 +453,18 @@ function validateStructuredForm(form: IngredientFormState) {
     errors.push("Each benefit needs both a title and description.");
   }
 
-  const invalidSideEffects = form.side_effects_json.some(
-    (item) => (item.title.trim() || item.description.trim()) && !(item.title.trim() && item.description.trim()),
-  );
-  if (invalidSideEffects) {
-    errors.push("Each side effect needs both a title and description.");
-  }
-
   const invalidFaqs = form.faq_json.some(
     (item) => (item.question.trim() || item.answer.trim()) && !(item.question.trim() && item.answer.trim()),
   );
   if (invalidFaqs) {
     errors.push("Each FAQ needs both a question and answer.");
+  }
+
+  const faqQuestions = form.faq_json
+    .map((item) => item.question.trim().toLowerCase())
+    .filter(Boolean);
+  if (new Set(faqQuestions).size !== faqQuestions.length) {
+    errors.push("FAQ questions must be unique.");
   }
 
   try {
@@ -598,9 +590,6 @@ function formToPayload(form: IngredientFormState) {
 
 export function DashboardIngredientsClient() {
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  const [products, setProducts] = useState<Product[]>([]);
-  const [authors, setAuthors] = useState<Author[]>([]);
-  const [reviewers, setReviewers] = useState<Reviewer[]>([]);
   const [form, setForm] = useState<IngredientFormState>(emptyForm);
   const importInputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
@@ -620,23 +609,14 @@ export function DashboardIngredientsClient() {
     setError("");
 
     try {
-      const [ingredientResponse, productResponse] = await Promise.all([
-        fetch("/api/ingredients", { cache: "no-store" }),
-        fetch("/api/products", { cache: "no-store" }),
-      ]);
+      const ingredientResponse = await fetch("/api/ingredients", { cache: "no-store" });
       const ingredientPayload = (await ingredientResponse.json()) as IngredientsResponse;
-      const productPayload = (await productResponse.json()) as ProductsResponse;
 
       if (!ingredientResponse.ok) {
         throw new Error(ingredientPayload.error ?? "Unable to load ingredients.");
       }
 
-      if (!productResponse.ok) {
-        throw new Error(productPayload.error ?? "Unable to load products.");
-      }
-
       setIngredients(ingredientPayload.ingredients ?? []);
-      setProducts(productPayload.products ?? []);
     } catch (fetchError) {
       setError(fetchError instanceof Error ? fetchError.message : "Unable to load ingredients.");
     } finally {
@@ -644,34 +624,9 @@ export function DashboardIngredientsClient() {
     }
   }, []);
 
-  const fetchExpertProfiles = useCallback(async () => {
-    try {
-      const [authorsResponse, reviewersResponse] = await Promise.all([
-        fetch("/api/authors?active=true", { cache: "no-store" }),
-        fetch("/api/reviewers?active=true", { cache: "no-store" }),
-      ]);
-      const authorsPayload = (await authorsResponse.json()) as ExpertProfilesResponse;
-      const reviewersPayload = (await reviewersResponse.json()) as ExpertProfilesResponse;
-
-      if (!authorsResponse.ok) {
-        throw new Error(authorsPayload.error ?? "Unable to load authors.");
-      }
-
-      if (!reviewersResponse.ok) {
-        throw new Error(reviewersPayload.error ?? "Unable to load reviewers.");
-      }
-
-      setAuthors(authorsPayload.authors ?? []);
-      setReviewers(reviewersPayload.reviewers ?? []);
-    } catch (fetchError) {
-      setError(fetchError instanceof Error ? fetchError.message : "Unable to load EEAT profiles.");
-    }
-  }, []);
-
   useEffect(() => {
     void fetchData();
-    void fetchExpertProfiles();
-  }, [fetchData, fetchExpertProfiles]);
+  }, [fetchData]);
 
   const filteredIngredients = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -722,13 +677,6 @@ export function DashboardIngredientsClient() {
 
     return getIngredientQualityWarnings(formToPayload(form));
   }, [form]);
-
-  function updateForm<K extends keyof IngredientFormState>(
-    key: K,
-    value: IngredientFormState[K],
-  ) {
-    setForm((currentForm) => ({ ...currentForm, [key]: value }));
-  }
 
   function updateTextField<K extends keyof IngredientFormState>(
     key: K,
@@ -861,15 +809,6 @@ export function DashboardIngredientsClient() {
     }));
   }
 
-  function toggleProduct(productId: string) {
-    setForm((currentForm) => ({
-      ...currentForm,
-      product_ids: currentForm.product_ids.includes(productId)
-        ? currentForm.product_ids.filter((id) => id !== productId)
-        : [...currentForm.product_ids, productId],
-    }));
-  }
-
   function openCreateForm() {
     setEditingIngredient(null);
     setForm(emptyForm);
@@ -884,20 +823,6 @@ export function DashboardIngredientsClient() {
     setError("");
     setSuccess("");
     setIsFormOpen(true);
-
-    try {
-      const response = await fetch(`/api/ingredients/${ingredient.slug}`, { cache: "no-store" });
-      const payload = (await response.json()) as IngredientsResponse;
-
-      if (response.ok) {
-        setForm((currentForm) => ({
-          ...currentForm,
-          product_ids: (payload.relatedProducts ?? []).map((product) => product.id),
-        }));
-      }
-    } catch {
-      // Related products can fail independently without blocking edit mode.
-    }
   }
 
   async function submitIngredient(event: FormEvent<HTMLFormElement>) {
@@ -936,7 +861,11 @@ export function DashboardIngredientsClient() {
         throw new Error(structuredErrors.join(" "));
       }
 
-      const payload = formToPayload({ ...form, slug: normalizedSlug });
+      const { product_ids: ignoredProductIds, ...payload } = formToPayload({
+        ...form,
+        slug: normalizedSlug,
+      });
+      void ignoredProductIds;
       const response = await fetch(
         editingIngredient ? `/api/ingredients/${editingIngredient.id}` : "/api/ingredients",
         {
@@ -1419,88 +1348,56 @@ export function DashboardIngredientsClient() {
           </div>
 
           <form onSubmit={submitIngredient} className="space-y-6">
-            <FormSection
-              title="Basic Information"
-              description="Core identity and categorization data."
-            >
-              <InputField label="Name" value={form.name} onChange={(value) => updateTextField("name", value)} required />
-              <InputField label="Slug" value={form.slug} onChange={(value) => updateTextField("slug", slugify(value))} required />
-              <SelectField
-                label="Status"
-                value={form.status}
-                onChange={(value) => updateForm("status", value as ContentStatus)}
-                options={[
-                  { label: "Draft", value: ContentStatus.Draft },
-                  { label: "Published", value: ContentStatus.Published },
-                  { label: "Archived", value: ContentStatus.Archived },
-                ]}
-              />
-              <ProfileSelect
-                label="Author"
-                value={form.author_id}
-                options={authors}
-                onChange={(value) => updateForm("author_id", value)}
-              />
-              <ProfileSelect
-                label="Reviewer"
-                value={form.reviewer_id}
-                options={reviewers}
-                onChange={(value) => updateForm("reviewer_id", value)}
-              />
+            <FormSection title="Hero" description="Only the visible hero copy for the ingredient detail page.">
+              <InputField label="Ingredient Name" value={form.name} onChange={(value) => updateTextField("name", value)} required />
               <InputField label="Scientific Name" value={form.scientific_name} onChange={(value) => updateTextField("scientific_name", value)} />
-              <InputField label="Ingredient Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
-              <InputField label="Hero Badge" value={form.hero_badge} onChange={(value) => updateTextField("hero_badge", value)} className="lg:col-span-2" placeholder="Ingredient Library" />
-            </FormSection>
-
-            <FormSection
-              title="Hero Section"
-              description="High-level authority signals shown above the fold."
-            >
-              <InputField label="Rating" value={form.rating} onChange={(value) => updateTextField("rating", value)} placeholder="4.8" />
-              <InputField label="Evidence Level" value={form.evidence_level} onChange={(value) => updateTextField("evidence_level", value)} placeholder="Moderate" />
-              <InputField label="Origin Country" value={form.origin_country} onChange={(value) => updateTextField("origin_country", value)} />
-              <InputField label="Part Used" value={form.part_used} onChange={(value) => updateTextField("part_used", value)} />
-              <InputField label="Ingredient Form" value={form.ingredient_form} onChange={(value) => updateTextField("ingredient_form", value)} placeholder="Extract, powder, oil" />
-              <InputField label="Taste Profile" value={form.taste_profile} onChange={(value) => updateTextField("taste_profile", value)} />
-            </FormSection>
-
-            <FormSection
-              title="Quick Facts"
-              description="Fast-scan detail cards and summary badges."
-            >
-              <InputField label="Typical Dose" value={form.typical_dose} onChange={(value) => updateTextField("typical_dose", value)} />
-              <InputField label="Best For" value={form.best_for} onChange={(value) => updateTextField("best_for", value)} />
-              <InputField label="Safety Level" value={form.safety_level} onChange={(value) => updateTextField("safety_level", value)} />
-              <ToggleField
-                label="Featured Ingredient"
-                checked={form.is_featured}
-                onChange={(checked) => updateForm("is_featured", checked)}
+              <RichTextEditor
+                label="Hero Description"
+                value={form.short_description}
+                onChange={(value) => updateTextField("short_description", value)}
+                className="lg:col-span-2"
+                rows={4}
               />
             </FormSection>
 
             <FormSection
               title="Overview"
-              description="Dashboard-driven overview content for the ingredient detail page."
+              description="Section heading and long-form overview content."
             >
-              <RichTextEditor label="Short Description" value={form.short_description} onChange={(value) => updateTextField("short_description", value)} />
-              <RichTextEditor label="Full Description" value={form.full_description} onChange={(value) => updateTextField("full_description", value)} />
-              <InputField label="Overview Title" value={form.overview_title} onChange={(value) => updateTextField("overview_title", value)} />
-              <InputField label="Overview Subtitle" value={form.overview_subtitle} onChange={(value) => updateTextField("overview_subtitle", value)} />
+              <InputField label="Section Title" value={form.overview_title} onChange={(value) => updateTextField("overview_title", value)} />
+              <InputField label="Section Subtitle" value={form.overview_subtitle} onChange={(value) => updateTextField("overview_subtitle", value)} />
               <RichTextEditor label="Overview Content" value={form.overview_content} onChange={(value) => updateTextField("overview_content", value)} className="lg:col-span-2" rows={6} />
-              <RichTextEditor label="Interesting Fact" value={form.interesting_fact} onChange={(value) => updateTextField("interesting_fact", value)} className="lg:col-span-2" rows={3} />
+            </FormSection>
+
+            <FormSection
+              title="Interesting Fact"
+              description="Short educational callout shown near the overview."
+            >
+              <ReadOnlyField label="Label" value="Interesting Fact" />
+              <RichTextEditor label="Interesting Fact Content" value={form.interesting_fact} onChange={(value) => updateTextField("interesting_fact", value)} className="lg:col-span-2" rows={3} />
+            </FormSection>
+
+            <FormSection
+              title="How It Works"
+              description="Mechanism education and highlighted explanation content."
+            >
+              <InputField label="Section Title" value={form.how_it_works_title} onChange={(value) => updateTextField("how_it_works_title", value)} />
+              <InputField label="Section Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateTextField("how_it_works_subtitle", value)} />
+              <RichTextEditor label="Highlight Card / Rich Text Editor" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
             </FormSection>
 
             <FormSection
               title="Benefits"
               description="Benefits are editable repeatable CMS cards."
             >
-              <InputField label="Benefits Title" value={form.benefits_title} onChange={(value) => updateTextField("benefits_title", value)} />
-              <InputField label="Benefits Subtitle" value={form.benefits_subtitle} onChange={(value) => updateTextField("benefits_subtitle", value)} />
+              <InputField label="Section Title" value={form.benefits_title} onChange={(value) => updateTextField("benefits_title", value)} />
+              <InputField label="Section Subtitle" value={form.benefits_subtitle} onChange={(value) => updateTextField("benefits_subtitle", value)} />
               <RepeatableTitleDescriptionField
                 label="Benefits"
                 items={form.benefits_json}
                 addLabel="Add Benefit"
                 emptyLabel="No benefits added yet."
+                showIcon
                 onAdd={() => addTitleDescriptionItem("benefits_json")}
                 onRemove={(index) => removeTitleDescriptionItem("benefits_json", index)}
                 onChange={(index, field, value) =>
@@ -1510,49 +1407,22 @@ export function DashboardIngredientsClient() {
             </FormSection>
 
             <FormSection
-              title="How It Works, Uses & Sources"
-              description="Educational ingredient sections with rich text and repeatable cards."
+              title="Typical Dosage"
+              description="Dosage section title, intro, and rich explanatory content."
             >
-              <InputField label="How It Works Title" value={form.how_it_works_title} onChange={(value) => updateTextField("how_it_works_title", value)} />
-              <InputField label="How It Works Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateTextField("how_it_works_subtitle", value)} />
-              <RichTextEditor label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
-              <InputField label="Uses Title" value={form.uses_title} onChange={(value) => updateTextField("uses_title", value)} />
-              <InputField label="Uses Subtitle" value={form.uses_subtitle} onChange={(value) => updateTextField("uses_subtitle", value)} />
-              <RichTextEditor label="Uses Content" value={form.uses_content} onChange={(value) => updateTextField("uses_content", value)} className="lg:col-span-2" rows={4} />
-              <RepeatableTitleDescriptionField
-                label="Use Cards"
-                items={form.uses_json}
-                addLabel="Add Use"
-                emptyLabel="No use cards added yet."
-                onAdd={() => addTitleDescriptionItem("uses_json")}
-                onRemove={(index) => removeTitleDescriptionItem("uses_json", index)}
-                onChange={(index, field, value) => updateTitleDescriptionItem("uses_json", index, field, value)}
-              />
-              <InputField label="Food Sources Title" value={form.food_sources_title} onChange={(value) => updateTextField("food_sources_title", value)} />
-              <InputField label="Food Sources Subtitle" value={form.food_sources_subtitle} onChange={(value) => updateTextField("food_sources_subtitle", value)} />
-              <RichTextEditor label="Food Sources Content" value={form.food_sources_content} onChange={(value) => updateTextField("food_sources_content", value)} className="lg:col-span-2" rows={4} />
-              <RepeatableTitleDescriptionField
-                label="Food Source Cards"
-                items={form.food_sources_json}
-                addLabel="Add Source"
-                emptyLabel="No food source cards added yet."
-                onAdd={() => addTitleDescriptionItem("food_sources_json")}
-                onRemove={(index) => removeTitleDescriptionItem("food_sources_json", index)}
-                onChange={(index, field, value) => updateTitleDescriptionItem("food_sources_json", index, field, value)}
-              />
+              <InputField label="Section Title" value={form.dosage_title} onChange={(value) => updateTextField("dosage_title", value)} />
+              <InputField label="Section Subtitle" value={form.dosage_subtitle} onChange={(value) => updateTextField("dosage_subtitle", value)} />
+              <RichTextEditor label="Dosage Content" value={form.dosage_content} onChange={(value) => updateTextField("dosage_content", value)} className="lg:col-span-2" rows={4} />
             </FormSection>
 
             <FormSection
-              title="Dosage, Safety, Research & FAQ"
-              description="Safety and research content remains fully dashboard editable."
+              title="Safety Information"
+              description="Safety heading plus the three public safety repeaters."
             >
-              <InputField label="Dosage Title" value={form.dosage_title} onChange={(value) => updateTextField("dosage_title", value)} />
-              <InputField label="Dosage Subtitle" value={form.dosage_subtitle} onChange={(value) => updateTextField("dosage_subtitle", value)} />
-              <RichTextEditor label="Dosage Content" value={form.dosage_content} onChange={(value) => updateTextField("dosage_content", value)} className="lg:col-span-2" rows={4} />
-              <InputField label="Safety Title" value={form.safety_title} onChange={(value) => updateTextField("safety_title", value)} />
-              <InputField label="Safety Subtitle" value={form.safety_subtitle} onChange={(value) => updateTextField("safety_subtitle", value)} />
+              <InputField label="Section Title" value={form.safety_title} onChange={(value) => updateTextField("safety_title", value)} />
+              <InputField label="Subtitle" value={form.safety_subtitle} onChange={(value) => updateTextField("safety_subtitle", value)} />
               <div className="grid gap-4 lg:col-span-2 xl:grid-cols-2">
-                <RepeatableTitleDescriptionField
+                <RepeatableTextBackedField
                   label="Side Effects"
                   items={form.side_effects_json}
                   addLabel="Add Side Effect"
@@ -1582,31 +1452,9 @@ export function DashboardIngredientsClient() {
                 onRemove={(index) => removeListValue("who_should_avoid_json", index)}
                 onChange={(index, value) => updateListValue("who_should_avoid_json", index, value)}
               />
-              <InputField label="Research Title" value={form.research_title} onChange={(value) => updateTextField("research_title", value)} />
-              <InputField label="Research Subtitle" value={form.research_subtitle} onChange={(value) => updateTextField("research_subtitle", value)} />
-              <RichTextEditor label="Research Content" value={form.research_content} onChange={(value) => updateTextField("research_content", value)} className="lg:col-span-2" rows={4} />
-              <RepeatableTitleDescriptionField
-                label="Research Points"
-                items={form.research_json}
-                addLabel="Add Research Point"
-                emptyLabel="No research points added yet."
-                onAdd={() => addTitleDescriptionItem("research_json")}
-                onRemove={(index) => removeTitleDescriptionItem("research_json", index)}
-                onChange={(index, field, value) => updateTitleDescriptionItem("research_json", index, field, value)}
-              />
-              <InputField label="References Title" value={form.references_title} onChange={(value) => updateTextField("references_title", value)} />
-              <InputField label="References Subtitle" value={form.references_subtitle} onChange={(value) => updateTextField("references_subtitle", value)} />
-              <RepeatableTitleDescriptionField
-                label="References"
-                items={form.references_json}
-                addLabel="Add Reference"
-                emptyLabel="No references added yet."
-                onAdd={() => addTitleDescriptionItem("references_json")}
-                onRemove={(index) => removeTitleDescriptionItem("references_json", index)}
-                onChange={(index, field, value) => updateTitleDescriptionItem("references_json", index, field, value)}
-              />
-              <InputField label="FAQ Title" value={form.faq_title} onChange={(value) => updateTextField("faq_title", value)} />
-              <InputField label="FAQ Subtitle" value={form.faq_subtitle} onChange={(value) => updateTextField("faq_subtitle", value)} />
+            </FormSection>
+
+            <FormSection title="FAQ" description="Questions and answers shown in the public FAQ accordion.">
               <div className="lg:col-span-2">
                 <RepeatableFaqField
                   items={form.faq_json}
@@ -1617,23 +1465,17 @@ export function DashboardIngredientsClient() {
               </div>
             </FormSection>
 
-            <FormSection
-              title="SEO"
-              description="Ingredient metadata, social preview fields, canonical URL, and schema extension JSON."
-            >
-              <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateTextField("seo_title", value)} />
-              <InputField label="Canonical URL" value={form.seo_canonical_url} onChange={(value) => updateTextField("seo_canonical_url", value)} />
-              <RichTextEditor label="SEO Description" value={form.seo_description} onChange={(value) => updateTextField("seo_description", value)} className="lg:col-span-2" rows={3} />
-              <InputField label="OG Title" value={form.seo_og_title} onChange={(value) => updateTextField("seo_og_title", value)} />
-              <InputField label="OG Image" value={form.seo_og_image} onChange={(value) => updateTextField("seo_og_image", value)} />
-              <RichTextEditor label="OG Description" value={form.seo_og_description} onChange={(value) => updateTextField("seo_og_description", value)} className="lg:col-span-2" rows={3} />
-              <InputField label="Twitter Title" value={form.seo_twitter_title} onChange={(value) => updateTextField("seo_twitter_title", value)} />
-              <InputField label="Twitter Image" value={form.seo_twitter_image} onChange={(value) => updateTextField("seo_twitter_image", value)} />
-              <RichTextEditor label="Twitter Description" value={form.seo_twitter_description} onChange={(value) => updateTextField("seo_twitter_description", value)} className="lg:col-span-2" rows={3} />
-              <InputField label="Meta Image" value={form.meta_image} onChange={(value) => updateTextField("meta_image", value)} />
-              <ToggleField label="No Index" checked={form.seo_noindex} onChange={(checked) => updateForm("seo_noindex", checked)} />
-              <ToggleField label="No Follow" checked={form.seo_nofollow} onChange={(checked) => updateForm("seo_nofollow", checked)} />
-              <TextAreaField label="Schema JSON" value={form.schema_json} onChange={(value) => updateTextField("schema_json", value)} className="lg:col-span-2" rows={6} />
+            <FormSection title="Sidebar" description="Profile snapshot, quick facts, and at-a-glance signals.">
+              <InputField label="Profile Snapshot: Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
+              <InputField label="Profile Snapshot: Origin" value={form.origin_country} onChange={(value) => updateTextField("origin_country", value)} />
+              <InputField label="Profile Snapshot: Part Used" value={form.part_used} onChange={(value) => updateTextField("part_used", value)} />
+              <InputField label="Profile Snapshot: Form" value={form.ingredient_form} onChange={(value) => updateTextField("ingredient_form", value)} />
+              <InputField label="Quick Facts: Typical Dose" value={form.typical_dose} onChange={(value) => updateTextField("typical_dose", value)} />
+              <InputField label="Quick Facts: Best For" value={form.best_for} onChange={(value) => updateTextField("best_for", value)} />
+              <InputField label="Quick Facts: Safety Level" value={form.safety_level} onChange={(value) => updateTextField("safety_level", value)} />
+              <InputField label="Quick Facts: Taste" value={form.taste_profile} onChange={(value) => updateTextField("taste_profile", value)} />
+              <InputField label="At A Glance: Rating" value={form.rating} onChange={(value) => updateTextField("rating", value)} placeholder="4.8" />
+              <InputField label="At A Glance: Evidence Level" value={form.evidence_level} onChange={(value) => updateTextField("evidence_level", value)} placeholder="Moderate" />
             </FormSection>
 
             {publishWarnings.length ? (
@@ -1646,30 +1488,6 @@ export function DashboardIngredientsClient() {
                 </p>
               </div>
             ) : null}
-
-            <FormSection
-              title="Related Products"
-              description="Existing product relationships continue working unchanged."
-            >
-              <div className="lg:col-span-2">
-                <div className="grid max-h-56 gap-2 overflow-y-auto rounded-[18px] border border-border-light bg-cream p-3 md:grid-cols-2">
-                  {products.map((product) => (
-                    <label
-                      key={product.id}
-                      className="flex items-center gap-3 rounded-[14px] bg-white px-3 py-2 text-sm text-muted"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={form.product_ids.includes(product.id)}
-                        onChange={() => toggleProduct(product.id)}
-                        className="size-4 accent-primary"
-                      />
-                      <span>{product.title || product.name}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-            </FormSection>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <button
@@ -1741,6 +1559,17 @@ function InputField({
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
     </label>
+  );
+}
+
+function ReadOnlyField({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="grid gap-2">
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <div className="flex min-h-12 items-center rounded-[18px] border border-border-light bg-white px-4 text-sm font-semibold text-muted">
+        {value}
+      </div>
+    </div>
   );
 }
 
@@ -1890,90 +1719,6 @@ function EditorButton({
   );
 }
 
-function SelectField({
-  label,
-  value,
-  onChange,
-  options,
-  className = "",
-}: {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  options: Array<{ label: string; value: string }>;
-  className?: string;
-}) {
-  return (
-    <label className={`grid gap-2 ${className}`}>
-      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
-      <select
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-function ProfileSelect({
-  label,
-  value,
-  options,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  options: Array<Author | Reviewer>;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <label className="grid gap-2">
-      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
-      <select
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
-      >
-        <option value="">Use default profile</option>
-        {options.map((option) => (
-          <option key={option.id} value={option.id}>
-            {option.name}
-            {option.designation ? ` - ${option.designation}` : ""}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-function ToggleField({
-  label,
-  checked,
-  onChange,
-}: {
-  label: string;
-  checked: boolean;
-  onChange: (checked: boolean) => void;
-}) {
-  return (
-    <label className="flex min-h-12 items-center gap-3 rounded-[18px] border border-border-light bg-white px-4">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(event) => onChange(event.target.checked)}
-        className="size-4 accent-primary"
-      />
-      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
-    </label>
-  );
-}
-
 function StatusBadge({ status }: { status: ContentStatus }) {
   const palette =
     status === ContentStatus.Published
@@ -1994,6 +1739,7 @@ function RepeatableTitleDescriptionField({
   items,
   addLabel,
   emptyLabel,
+  showIcon = false,
   onAdd,
   onRemove,
   onChange,
@@ -2002,6 +1748,7 @@ function RepeatableTitleDescriptionField({
   items: TitleDescriptionItem[];
   addLabel: string;
   emptyLabel: string;
+  showIcon?: boolean;
   onAdd: () => void;
   onRemove: (index: number) => void;
   onChange: (index: number, field: keyof TitleDescriptionItem, value: string) => void;
@@ -2034,6 +1781,14 @@ function RepeatableTitleDescriptionField({
                 </button>
               </div>
               <div className="grid gap-3">
+                {showIcon ? (
+                  <InputField
+                    label="Icon"
+                    value={item.icon ?? ""}
+                    onChange={(value) => onChange(index, "icon", value)}
+                    placeholder="shield-check"
+                  />
+                ) : null}
                 <InputField
                   label="Title"
                   value={item.title}
@@ -2046,6 +1801,69 @@ function RepeatableTitleDescriptionField({
                   rows={3}
                 />
               </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted">{emptyLabel}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RepeatableTextBackedField({
+  label,
+  items,
+  addLabel,
+  emptyLabel,
+  onAdd,
+  onRemove,
+  onChange,
+}: {
+  label: string;
+  items: TitleDescriptionItem[];
+  addLabel: string;
+  emptyLabel: string;
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onChange: (index: number, field: keyof TitleDescriptionItem, value: string) => void;
+}) {
+  return (
+    <div className="rounded-[20px] border border-border-light bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-semibold text-text-dark">{label}</h4>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
+        >
+          <Plus className="size-3.5" />
+          {addLabel}
+        </button>
+      </div>
+      <div className="space-y-3">
+        {items.length ? (
+          items.map((item, index) => (
+            <div key={`${label}-${index}`} className="flex items-start gap-2">
+              <div className="flex-1">
+                <TextAreaField
+                  label={`${label} ${index + 1}`}
+                  value={item.description || item.title}
+                  onChange={(value) => {
+                    onChange(index, "title", value);
+                    onChange(index, "description", value);
+                  }}
+                  rows={3}
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => onRemove(index)}
+                className="mt-7 rounded-full border border-red-200 p-2 text-red-600 transition hover:bg-red-50"
+                aria-label={`Remove ${label} item ${index + 1}`}
+              >
+                <Trash2 className="size-3.5" />
+              </button>
             </div>
           ))
         ) : (
