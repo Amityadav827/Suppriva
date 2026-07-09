@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import {
+  Activity,
   ArrowUpRight,
   BadgeInfo,
   Beaker,
@@ -49,6 +50,7 @@ export type RelatedIngredientCardData = {
 };
 
 type TitleDescriptionItem = {
+  icon?: string;
   title: string;
   description: string;
 };
@@ -76,12 +78,13 @@ function parseTitleDescriptionItems(
         const title = typeof item.title === "string" ? item.title.trim() : "";
         const description =
           typeof item.description === "string" ? item.description.trim() : "";
+        const icon = typeof item.icon === "string" ? item.icon.trim() : "";
 
         if (!title) {
           return null;
         }
 
-        return { title, description };
+        return { icon, title, description };
       })
       .filter(Boolean) as TitleDescriptionItem[];
 
@@ -104,6 +107,36 @@ function parseStringList(items: JsonValue[] | undefined) {
   return items
     .map((item) => (typeof item === "string" ? item.trim() : ""))
     .filter(Boolean);
+}
+
+function getCmsIcon(icon: string | undefined, fallback: typeof ShieldCheck = ShieldCheck) {
+  const normalizedIcon = icon?.trim().toLowerCase();
+
+  if (!normalizedIcon) {
+    return fallback;
+  }
+
+  const iconMap = new Map<string, typeof ShieldCheck>([
+    ["activity", Activity],
+    ["badge-info", BadgeInfo],
+    ["beaker", Beaker],
+    ["book", BookOpenText],
+    ["book-open", BookOpenText],
+    ["check", Check],
+    ["help", CircleHelp],
+    ["info", BadgeInfo],
+    ["leaf", Leaf],
+    ["map-pin", MapPin],
+    ["pill", Pill],
+    ["shield", ShieldCheck],
+    ["shield-alert", ShieldAlert],
+    ["shield-check", ShieldCheck],
+    ["sparkles", Sparkles],
+    ["star", Star],
+    ["test-tube", TestTube2],
+  ]);
+
+  return iconMap.get(normalizedIcon) ?? fallback;
 }
 
 function parseIngredientLayoutSections(value: Ingredient["ingredient_layout_sections"]) {
@@ -537,23 +570,7 @@ export function IngredientDetailTemplate(props: {
             />
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {benefitItems.map((benefit, index) => (
-                <FadeIn
-                  key={benefit.title}
-                  delay={index * 0.04}
-                  className="h-full rounded-[24px] bg-white/92 p-5 shadow-[0_14px_38px_rgba(15,23,42,0.05)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
-                >
-                  <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
-                    <ShieldCheck className="size-5" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
-                    {benefit.title}
-                  </h3>
-                  {benefit.description ? (
-                    <p className="mt-3 text-sm leading-7 text-muted">
-                      {benefit.description}
-                    </p>
-                  ) : null}
-                </FadeIn>
+                <BenefitCard key={benefit.title} benefit={benefit} index={index} />
               ))}
             </div>
           </SectionWrapper>
@@ -617,9 +634,7 @@ export function IngredientDetailTemplate(props: {
                 <SafetyCard
                   title="Side Effects"
                   icon={ShieldAlert}
-                  items={sideEffects.map((item) =>
-                    item.description ? `${item.title}: ${item.description}` : item.title,
-                  )}
+                  items={sideEffects.map((item) => item.description || item.title)}
                 />
               ) : null}
               {drugInteractions.length ? (
@@ -1008,6 +1023,35 @@ function InfoCardGrid({
         </FadeIn>
       ))}
     </div>
+  );
+}
+
+function BenefitCard({
+  benefit,
+  index,
+}: {
+  benefit: TitleDescriptionItem;
+  index: number;
+}) {
+  const Icon = getCmsIcon(benefit.icon, ShieldCheck);
+
+  return (
+    <FadeIn
+      delay={index * 0.04}
+      className="h-full rounded-[24px] bg-white/92 p-5 shadow-[0_14px_38px_rgba(15,23,42,0.05)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_52px_rgba(15,23,42,0.08)]"
+    >
+      <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-soft-green/70 text-primary">
+        <Icon className="size-5" aria-hidden="true" />
+      </span>
+      <h3 className="mt-4 font-heading text-xl font-extrabold text-text-dark">
+        {benefit.title}
+      </h3>
+      {benefit.description ? (
+        <p className="mt-3 text-sm leading-7 text-muted">
+          {benefit.description}
+        </p>
+      ) : null}
+    </FadeIn>
   );
 }
 

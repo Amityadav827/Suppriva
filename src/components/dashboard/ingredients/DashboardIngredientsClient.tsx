@@ -20,6 +20,8 @@ import {
 import { getIngredientQualityWarnings } from "@/lib/ingredients/data-quality";
 import { motion } from "framer-motion";
 import {
+  ArrowDown,
+  ArrowUp,
   AlertTriangle,
   Bold,
   Download,
@@ -267,6 +269,28 @@ function serializeStringList(values: string[]) {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
 
+function hasDuplicateValues(values: string[]) {
+  const normalizedValues = values
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+
+  return new Set(normalizedValues).size !== normalizedValues.length;
+}
+
+function moveArrayItem<TItem>(items: TItem[], index: number, direction: -1 | 1) {
+  const nextIndex = index + direction;
+
+  if (nextIndex < 0 || nextIndex >= items.length) {
+    return items;
+  }
+
+  const nextItems = [...items];
+  const [item] = nextItems.splice(index, 1);
+  nextItems.splice(nextIndex, 0, item);
+
+  return nextItems;
+}
+
 function serializeTitleDescriptionItems(items: TitleDescriptionItem[]) {
   return items
     .map((item) => ({
@@ -456,10 +480,42 @@ function validateStructuredForm(form: IngredientFormState) {
   const errors: string[] = [];
 
   const invalidBenefits = form.benefits_json.some(
-    (item) => (item.title.trim() || item.description.trim()) && !(item.title.trim() && item.description.trim()),
+    (item) => !item.title.trim() || !item.description.trim(),
   );
   if (invalidBenefits) {
     errors.push("Each benefit needs both a title and description.");
+  }
+
+  if (hasDuplicateValues(form.benefits_json.map((item) => item.title))) {
+    errors.push("Benefit titles must be unique.");
+  }
+
+  const invalidSideEffects = form.side_effects_json.some(
+    (item) => !item.title.trim() && !item.description.trim(),
+  );
+  if (invalidSideEffects) {
+    errors.push("Side effects cannot contain empty items.");
+  }
+
+  const sideEffectTexts = form.side_effects_json.map((item) => item.description || item.title);
+  if (hasDuplicateValues(sideEffectTexts)) {
+    errors.push("Side effects cannot contain duplicate items.");
+  }
+
+  if (form.drug_interactions_json.some((item) => !item.trim())) {
+    errors.push("Drug interactions cannot contain empty items.");
+  }
+
+  if (hasDuplicateValues(form.drug_interactions_json)) {
+    errors.push("Drug interactions cannot contain duplicate items.");
+  }
+
+  if (form.who_should_avoid_json.some((item) => !item.trim())) {
+    errors.push("Who should avoid cannot contain empty items.");
+  }
+
+  if (hasDuplicateValues(form.who_should_avoid_json)) {
+    errors.push("Who should avoid cannot contain duplicate items.");
   }
 
   const invalidFaqs = form.faq_json.some(
@@ -741,6 +797,17 @@ export function DashboardIngredientsClient() {
     }));
   }
 
+  function moveListValue(
+    key: "drug_interactions_json" | "who_should_avoid_json",
+    index: number,
+    direction: -1 | 1,
+  ) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [key]: moveArrayItem(currentForm[key], index, direction),
+    }));
+  }
+
   function updateTitleDescriptionItem(
     key:
       | "benefits_json"
@@ -792,6 +859,23 @@ export function DashboardIngredientsClient() {
     setForm((currentForm) => ({
       ...currentForm,
       [key]: currentForm[key].filter((_, currentIndex) => currentIndex !== index),
+    }));
+  }
+
+  function moveTitleDescriptionItem(
+    key:
+      | "benefits_json"
+      | "side_effects_json"
+      | "uses_json"
+      | "food_sources_json"
+      | "research_json"
+      | "references_json",
+    index: number,
+    direction: -1 | 1,
+  ) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [key]: moveArrayItem(currentForm[key], index, direction),
     }));
   }
 
@@ -1414,6 +1498,7 @@ export function DashboardIngredientsClient() {
                 showIcon
                 onAdd={() => addTitleDescriptionItem("benefits_json")}
                 onRemove={(index) => removeTitleDescriptionItem("benefits_json", index)}
+                onMove={(index, direction) => moveTitleDescriptionItem("benefits_json", index, direction)}
                 onChange={(index, field, value) =>
                   updateTitleDescriptionItem("benefits_json", index, field, value)
                 }
@@ -1443,6 +1528,7 @@ export function DashboardIngredientsClient() {
                   emptyLabel="No side effects added yet."
                   onAdd={() => addTitleDescriptionItem("side_effects_json")}
                   onRemove={(index) => removeTitleDescriptionItem("side_effects_json", index)}
+                  onMove={(index, direction) => moveTitleDescriptionItem("side_effects_json", index, direction)}
                   onChange={(index, field, value) =>
                     updateTitleDescriptionItem("side_effects_json", index, field, value)
                   }
@@ -1454,6 +1540,7 @@ export function DashboardIngredientsClient() {
                   emptyLabel="No interactions added yet."
                   onAdd={() => addListValue("drug_interactions_json")}
                   onRemove={(index) => removeListValue("drug_interactions_json", index)}
+                  onMove={(index, direction) => moveListValue("drug_interactions_json", index, direction)}
                   onChange={(index, value) => updateListValue("drug_interactions_json", index, value)}
                 />
               </div>
@@ -1464,6 +1551,7 @@ export function DashboardIngredientsClient() {
                 emptyLabel="No avoidance notes added yet."
                 onAdd={() => addListValue("who_should_avoid_json")}
                 onRemove={(index) => removeListValue("who_should_avoid_json", index)}
+                onMove={(index, direction) => moveListValue("who_should_avoid_json", index, direction)}
                 onChange={(index, value) => updateListValue("who_should_avoid_json", index, value)}
               />
             </FormSection>
@@ -1745,6 +1833,7 @@ function RepeatableTitleDescriptionField({
   showIcon = false,
   onAdd,
   onRemove,
+  onMove,
   onChange,
 }: {
   label: string;
@@ -1754,6 +1843,7 @@ function RepeatableTitleDescriptionField({
   showIcon?: boolean;
   onAdd: () => void;
   onRemove: (index: number) => void;
+  onMove?: (index: number, direction: -1 | 1) => void;
   onChange: (index: number, field: keyof TitleDescriptionItem, value: string) => void;
 }) {
   return (
@@ -1773,7 +1863,29 @@ function RepeatableTitleDescriptionField({
         {items.length ? (
           items.map((item, index) => (
             <div key={`${label}-${index}`} className="rounded-[18px] border border-border-light bg-cream p-3">
-              <div className="mb-2 flex justify-end">
+              <div className="mb-2 flex justify-end gap-2">
+                {onMove ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => onMove(index, -1)}
+                      disabled={index === 0}
+                      className="rounded-full border border-border-light p-1.5 text-primary transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                      aria-label={`Move ${label} item ${index + 1} up`}
+                    >
+                      <ArrowUp className="size-3.5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onMove(index, 1)}
+                      disabled={index === items.length - 1}
+                      className="rounded-full border border-border-light p-1.5 text-primary transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                      aria-label={`Move ${label} item ${index + 1} down`}
+                    >
+                      <ArrowDown className="size-3.5" />
+                    </button>
+                  </>
+                ) : null}
                 <button
                   type="button"
                   onClick={() => onRemove(index)}
@@ -1821,6 +1933,7 @@ function RepeatableTextBackedField({
   emptyLabel,
   onAdd,
   onRemove,
+  onMove,
   onChange,
 }: {
   label: string;
@@ -1829,6 +1942,7 @@ function RepeatableTextBackedField({
   emptyLabel: string;
   onAdd: () => void;
   onRemove: (index: number) => void;
+  onMove?: (index: number, direction: -1 | 1) => void;
   onChange: (index: number, field: keyof TitleDescriptionItem, value: string) => void;
 }) {
   return (
@@ -1859,6 +1973,28 @@ function RepeatableTextBackedField({
                   rows={3}
                 />
               </div>
+              {onMove ? (
+                <div className="mt-7 flex flex-col gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => onMove(index, -1)}
+                    disabled={index === 0}
+                    className="rounded-full border border-border-light p-2 text-primary transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40"
+                    aria-label={`Move ${label} item ${index + 1} up`}
+                  >
+                    <ArrowUp className="size-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onMove(index, 1)}
+                    disabled={index === items.length - 1}
+                    className="rounded-full border border-border-light p-2 text-primary transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40"
+                    aria-label={`Move ${label} item ${index + 1} down`}
+                  >
+                    <ArrowDown className="size-3.5" />
+                  </button>
+                </div>
+              ) : null}
               <button
                 type="button"
                 onClick={() => onRemove(index)}
@@ -1884,6 +2020,7 @@ function RepeatableStringField({
   emptyLabel,
   onAdd,
   onRemove,
+  onMove,
   onChange,
 }: {
   label: string;
@@ -1892,6 +2029,7 @@ function RepeatableStringField({
   emptyLabel: string;
   onAdd: () => void;
   onRemove: (index: number) => void;
+  onMove?: (index: number, direction: -1 | 1) => void;
   onChange: (index: number, value: string) => void;
 }) {
   return (
@@ -1918,6 +2056,28 @@ function RepeatableStringField({
                   onChange={(value) => onChange(index, value)}
                 />
               </div>
+              {onMove ? (
+                <div className="mt-7 flex flex-col gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => onMove(index, -1)}
+                    disabled={index === 0}
+                    className="rounded-full border border-border-light p-2 text-primary transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40"
+                    aria-label={`Move ${label} item ${index + 1} up`}
+                  >
+                    <ArrowUp className="size-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onMove(index, 1)}
+                    disabled={index === items.length - 1}
+                    className="rounded-full border border-border-light p-2 text-primary transition hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40"
+                    aria-label={`Move ${label} item ${index + 1} down`}
+                  >
+                    <ArrowDown className="size-3.5" />
+                  </button>
+                </div>
+              ) : null}
               <button
                 type="button"
                 onClick={() => onRemove(index)}

@@ -112,6 +112,12 @@ export type IngredientValidationResult<TInput extends IngredientValidationInput>
   errors: string[];
 };
 
+type TitleDescriptionJsonItem = {
+  title: string;
+  description: string;
+  icon?: string;
+};
+
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -144,6 +150,18 @@ function isJsonArray(value: unknown): value is JsonValue[] {
   return Array.isArray(value) && value.every(isJsonValue);
 }
 
+function isStringJsonArray(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function hasDuplicateNormalizedValues(values: string[]) {
+  const normalizedValues = values
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+
+  return new Set(normalizedValues).size !== normalizedValues.length;
+}
+
 function isFaqArray(value: unknown): value is FAQItem[] {
   return (
     Array.isArray(value) &&
@@ -161,7 +179,7 @@ function isFaqArray(value: unknown): value is FAQItem[] {
   );
 }
 
-function isTitleDescriptionArray(value: unknown) {
+function isTitleDescriptionArray(value: unknown): value is TitleDescriptionJsonItem[] {
   return (
     Array.isArray(value) &&
     value.every(
@@ -303,6 +321,18 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
   }
 
   if (
+    "benefits_json" in input &&
+    input.benefits_json !== undefined &&
+    isTitleDescriptionArray(input.benefits_json)
+  ) {
+    const benefitTitles = input.benefits_json.map((item) => String(item.title));
+
+    if (hasDuplicateNormalizedValues(benefitTitles)) {
+      errors.push("Benefits JSON cannot contain duplicate titles.");
+    }
+  }
+
+  if (
     "side_effects_json" in input &&
     input.side_effects_json !== undefined &&
     !isTitleDescriptionArray(input.side_effects_json)
@@ -311,19 +341,61 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
   }
 
   if (
+    "side_effects_json" in input &&
+    input.side_effects_json !== undefined &&
+    isTitleDescriptionArray(input.side_effects_json)
+  ) {
+    const sideEffectTexts = input.side_effects_json.map((item) =>
+      String(item.description || item.title),
+    );
+
+    if (hasDuplicateNormalizedValues(sideEffectTexts)) {
+      errors.push("Side effects JSON cannot contain duplicate items.");
+    }
+  }
+
+  if (
     "drug_interactions_json" in input &&
     input.drug_interactions_json !== undefined &&
-    !isJsonArray(input.drug_interactions_json)
+    !isStringJsonArray(input.drug_interactions_json)
   ) {
-    errors.push("Drug interactions JSON must be a valid list.");
+    errors.push("Drug interactions JSON must be a valid list of text items.");
+  }
+
+  if (
+    "drug_interactions_json" in input &&
+    input.drug_interactions_json !== undefined &&
+    isStringJsonArray(input.drug_interactions_json)
+  ) {
+    if (input.drug_interactions_json.some((item) => !item.trim())) {
+      errors.push("Drug interactions JSON cannot contain empty items.");
+    }
+
+    if (hasDuplicateNormalizedValues(input.drug_interactions_json)) {
+      errors.push("Drug interactions JSON cannot contain duplicate items.");
+    }
   }
 
   if (
     "who_should_avoid_json" in input &&
     input.who_should_avoid_json !== undefined &&
-    !isJsonArray(input.who_should_avoid_json)
+    !isStringJsonArray(input.who_should_avoid_json)
   ) {
-    errors.push("Who should avoid JSON must be a valid list.");
+    errors.push("Who should avoid JSON must be a valid list of text items.");
+  }
+
+  if (
+    "who_should_avoid_json" in input &&
+    input.who_should_avoid_json !== undefined &&
+    isStringJsonArray(input.who_should_avoid_json)
+  ) {
+    if (input.who_should_avoid_json.some((item) => !item.trim())) {
+      errors.push("Who should avoid JSON cannot contain empty items.");
+    }
+
+    if (hasDuplicateNormalizedValues(input.who_should_avoid_json)) {
+      errors.push("Who should avoid JSON cannot contain duplicate items.");
+    }
   }
 
   if (
