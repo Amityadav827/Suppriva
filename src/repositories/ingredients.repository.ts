@@ -455,8 +455,18 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
     if ("how_it_works_subtitle" in input) {
       payload.how_it_works_subtitle = input.how_it_works_subtitle ?? null;
     }
+    if ("how_it_works_highlight_title" in input) {
+      payload.how_it_works_highlight_title = input.how_it_works_highlight_title ?? null;
+    }
+    if ("how_it_works_highlight_description" in input) {
+      payload.how_it_works_highlight_description =
+        input.how_it_works_highlight_description ?? null;
+    }
     if ("how_it_works_content" in input) {
       payload.how_it_works_content = input.how_it_works_content ?? null;
+    }
+    if ("interesting_fact_label" in input) {
+      payload.interesting_fact_label = input.interesting_fact_label ?? null;
     }
     if ("interesting_fact" in input) payload.interesting_fact = input.interesting_fact ?? null;
     if ("benefits_title" in input) payload.benefits_title = input.benefits_title ?? null;

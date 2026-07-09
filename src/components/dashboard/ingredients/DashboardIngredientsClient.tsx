@@ -78,7 +78,10 @@ type IngredientFormState = {
   overview_content: string;
   how_it_works_title: string;
   how_it_works_subtitle: string;
+  how_it_works_highlight_title: string;
+  how_it_works_highlight_description: string;
   how_it_works_content: string;
+  interesting_fact_label: string;
   interesting_fact: string;
   benefits_title: string;
   benefits_subtitle: string;
@@ -202,7 +205,10 @@ const emptyForm: IngredientFormState = {
   overview_content: "",
   how_it_works_title: "",
   how_it_works_subtitle: "",
+  how_it_works_highlight_title: "",
+  how_it_works_highlight_description: "",
   how_it_works_content: "",
+  interesting_fact_label: "Interesting Fact",
   interesting_fact: "",
   benefits_title: "",
   benefits_subtitle: "",
@@ -390,7 +396,10 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     overview_content: ingredient.overview_content ?? "",
     how_it_works_title: ingredient.how_it_works_title ?? "",
     how_it_works_subtitle: ingredient.how_it_works_subtitle ?? "",
+    how_it_works_highlight_title: ingredient.how_it_works_highlight_title ?? "",
+    how_it_works_highlight_description: ingredient.how_it_works_highlight_description ?? "",
     how_it_works_content: ingredient.how_it_works_content ?? ingredient.scientific_notes ?? "",
+    interesting_fact_label: ingredient.interesting_fact_label ?? "Interesting Fact",
     interesting_fact: ingredient.interesting_fact ?? "",
     benefits_title: ingredient.benefits_title ?? "",
     benefits_subtitle: ingredient.benefits_subtitle ?? "",
@@ -533,7 +542,10 @@ function formToPayload(form: IngredientFormState) {
     overview_content: overviewContent,
     how_it_works_title: cleanText(form.how_it_works_title),
     how_it_works_subtitle: cleanText(form.how_it_works_subtitle),
+    how_it_works_highlight_title: cleanText(form.how_it_works_highlight_title),
+    how_it_works_highlight_description: cleanText(form.how_it_works_highlight_description),
     how_it_works_content: howItWorksContent,
+    interesting_fact_label: cleanText(form.interesting_fact_label),
     interesting_fact: cleanText(form.interesting_fact),
     benefits_title: cleanText(form.benefits_title),
     benefits_subtitle: cleanText(form.benefits_subtitle),
@@ -1373,7 +1385,7 @@ export function DashboardIngredientsClient() {
               title="Interesting Fact"
               description="Short educational callout shown near the overview."
             >
-              <ReadOnlyField label="Label" value="Interesting Fact" />
+              <InputField label="Label" value={form.interesting_fact_label} onChange={(value) => updateTextField("interesting_fact_label", value)} />
               <RichTextEditor label="Interesting Fact Content" value={form.interesting_fact} onChange={(value) => updateTextField("interesting_fact", value)} className="lg:col-span-2" rows={3} />
             </FormSection>
 
@@ -1383,7 +1395,9 @@ export function DashboardIngredientsClient() {
             >
               <InputField label="Section Title" value={form.how_it_works_title} onChange={(value) => updateTextField("how_it_works_title", value)} />
               <InputField label="Section Subtitle" value={form.how_it_works_subtitle} onChange={(value) => updateTextField("how_it_works_subtitle", value)} />
-              <RichTextEditor label="Highlight Card / Rich Text Editor" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
+              <InputField label="Highlight Card Title" value={form.how_it_works_highlight_title} onChange={(value) => updateTextField("how_it_works_highlight_title", value)} />
+              <RichTextEditor label="Highlight Card Description" value={form.how_it_works_highlight_description} onChange={(value) => updateTextField("how_it_works_highlight_description", value)} rows={4} />
+              <RichTextEditor label="How It Works Content" value={form.how_it_works_content} onChange={(value) => updateTextField("how_it_works_content", value)} className="lg:col-span-2" rows={5} />
             </FormSection>
 
             <FormSection
@@ -1559,17 +1573,6 @@ function InputField({
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
     </label>
-  );
-}
-
-function ReadOnlyField({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="grid gap-2">
-      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
-      <div className="flex min-h-12 items-center rounded-[18px] border border-border-light bg-white px-4 text-sm font-semibold text-muted">
-        {value}
-      </div>
-    </div>
   );
 }
 

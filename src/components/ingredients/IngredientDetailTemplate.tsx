@@ -315,6 +315,13 @@ export function IngredientDetailTemplate(props: {
   const researchItems = parseTitleDescriptionItems(ingredient.research_json);
   const referenceItems = parseTitleDescriptionItems(ingredient.references_json);
   const faqs = normalizeFaqs(ingredient.faq_json ?? []);
+  const howItWorksHighlight =
+    ingredient.how_it_works_highlight_title && ingredient.how_it_works_highlight_description
+      ? {
+          title: ingredient.how_it_works_highlight_title,
+          description: ingredient.how_it_works_highlight_description,
+        }
+      : null;
   const howItWorksSteps = extractFlowSteps(howItWorksContent);
   const faqColumns = splitIntoColumns(faqs, 2);
   const atAGlanceItems = [
@@ -459,7 +466,21 @@ export function IngredientDetailTemplate(props: {
               subtitle={ingredient.how_it_works_subtitle || howItWorksSection.subtitle}
             />
             <div className="space-y-8">
-              {howItWorksSteps.length ? (
+              {howItWorksHighlight ? (
+                <div className="overflow-hidden rounded-[28px] bg-white/92 p-5 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
+                  <FadeIn className="rounded-[24px] bg-cream/70 p-5 ring-1 ring-black/5">
+                    <span className="mb-4 inline-flex size-12 items-center justify-center rounded-full bg-white text-primary shadow-[0_12px_28px_rgba(15,23,42,0.08)]">
+                      <BadgeInfo className="size-5" aria-hidden="true" />
+                    </span>
+                    <h3 className="font-heading text-xl font-extrabold text-text-dark">
+                      {howItWorksHighlight.title}
+                    </h3>
+                    <div className="mt-3 text-sm leading-7 text-text-dark">
+                      <RichTextContent content={howItWorksHighlight.description} />
+                    </div>
+                  </FadeIn>
+                </div>
+              ) : howItWorksSteps.length ? (
                 <div className="overflow-hidden rounded-[28px] bg-white/92 p-5 shadow-[0_18px_52px_rgba(15,23,42,0.06)] ring-1 ring-black/5">
                   <div className="grid gap-4 lg:grid-cols-[repeat(5,minmax(0,1fr))] lg:items-center">
                     {howItWorksSteps.map((step, index) => (
@@ -496,11 +517,11 @@ export function IngredientDetailTemplate(props: {
                 </span>
                 <div>
                   <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                    Interesting Fact
+                    {ingredient.interesting_fact_label || "Interesting Fact"}
                   </p>
-                  <p className="mt-3 text-lg leading-8 text-text-dark">
-                    {ingredient.interesting_fact}
-                  </p>
+                  <div className="mt-3 text-lg leading-8 text-text-dark">
+                    <RichTextContent content={ingredient.interesting_fact} />
+                  </div>
                 </div>
               </div>
             </FadeIn>

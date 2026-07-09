@@ -31,7 +31,10 @@ export type IngredientCreateInput = {
   overview_content?: string | null;
   how_it_works_title?: string | null;
   how_it_works_subtitle?: string | null;
+  how_it_works_highlight_title?: string | null;
+  how_it_works_highlight_description?: string | null;
   how_it_works_content?: string | null;
+  interesting_fact_label?: string | null;
   interesting_fact?: string | null;
   benefits_title?: string | null;
   benefits_subtitle?: string | null;
@@ -260,6 +263,19 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
     (typeof input.rating !== "number" || Number.isNaN(input.rating) || input.rating < 0)
   ) {
     errors.push("Rating must be a valid non-negative number.");
+  }
+
+  const hasHighlightTitle =
+    "how_it_works_highlight_title" in input &&
+    typeof input.how_it_works_highlight_title === "string" &&
+    input.how_it_works_highlight_title.trim().length > 0;
+  const hasHighlightDescription =
+    "how_it_works_highlight_description" in input &&
+    typeof input.how_it_works_highlight_description === "string" &&
+    input.how_it_works_highlight_description.trim().length > 0;
+
+  if (hasHighlightTitle !== hasHighlightDescription) {
+    errors.push("How it works highlight card needs both a title and description.");
   }
 
   if (

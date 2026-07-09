@@ -70,6 +70,9 @@ export type Ingredient = {
   how_it_works_content: string | null;
   how_it_works_title: string | null;
   how_it_works_subtitle: string | null;
+  how_it_works_highlight_title: string | null;
+  how_it_works_highlight_description: string | null;
+  interesting_fact_label: string | null;
   interesting_fact: string | null;
   benefits_title: string | null;
   benefits_subtitle: string | null;
