@@ -493,6 +493,18 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
     if ("references_json" in input) payload.references_json = input.references_json ?? [];
     if ("faq_title" in input) payload.faq_title = input.faq_title ?? null;
     if ("faq_subtitle" in input) payload.faq_subtitle = input.faq_subtitle ?? null;
+    if ("sidebar_profile_title" in input) {
+      payload.sidebar_profile_title = input.sidebar_profile_title ?? null;
+    }
+    if ("sidebar_profile_content" in input) {
+      payload.sidebar_profile_content = input.sidebar_profile_content ?? null;
+    }
+    if ("sidebar_quick_facts_json" in input) {
+      payload.sidebar_quick_facts_json = input.sidebar_quick_facts_json ?? [];
+    }
+    if ("sidebar_at_a_glance_content" in input) {
+      payload.sidebar_at_a_glance_content = input.sidebar_at_a_glance_content ?? null;
+    }
     if ("benefits" in input) payload.benefits = input.benefits ?? [];
     if ("side_effects" in input) payload.side_effects = input.side_effects ?? [];
     if ("dosage" in input) payload.dosage = input.dosage ?? null;

@@ -300,6 +300,33 @@ function buildQuickFacts(ingredient: Ingredient) {
   ];
 }
 
+function getSidebarQuickFactIcon(label: string) {
+  const normalizedLabel = label.trim().toLowerCase();
+
+  if (normalizedLabel.includes("dose")) return Pill;
+  if (normalizedLabel.includes("safety")) return ShieldAlert;
+  if (normalizedLabel.includes("origin")) return MapPin;
+  if (normalizedLabel.includes("form")) return Beaker;
+  if (normalizedLabel.includes("taste")) return Sparkles;
+  if (normalizedLabel.includes("best")) return ShieldCheck;
+
+  return BadgeInfo;
+}
+
+function parseSidebarQuickFacts(ingredient: Ingredient) {
+  const cmsFacts = Array.isArray(ingredient.sidebar_quick_facts_json)
+    ? ingredient.sidebar_quick_facts_json
+        .map((item) => ({
+          label: typeof item.label === "string" ? item.label.trim() : "",
+          value: typeof item.value === "string" ? item.value.trim() : "",
+          icon: getSidebarQuickFactIcon(typeof item.label === "string" ? item.label : ""),
+        }))
+        .filter((item) => item.label && item.value)
+    : [];
+
+  return cmsFacts.length ? cmsFacts : buildQuickFacts(ingredient);
+}
+
 export function IngredientDetailTemplate(props: {
   ingredient: Ingredient;
   expertAttribution: ExpertAttribution;
@@ -328,7 +355,7 @@ export function IngredientDetailTemplate(props: {
   const researchSection = getSectionSettings(layoutMap, "research");
   const referencesSection = getSectionSettings(layoutMap, "references");
   const faqSection = getSectionSettings(layoutMap, "faq");
-  const quickFacts = buildQuickFacts(ingredient);
+  const quickFacts = parseSidebarQuickFacts(ingredient);
   const overviewContent =
     ingredient.overview_content || ingredient.full_description || ingredient.short_description;
   const howItWorksContent =
@@ -363,6 +390,19 @@ export function IngredientDetailTemplate(props: {
     { label: "Related Ingredients", value: String(relatedIngredients.length) },
     { label: "Last Updated", value: formatLastUpdated(ingredient.updated_at) },
   ];
+  const profileSnapshotTitle = ingredient.sidebar_profile_title || "Profile Snapshot";
+  const profileSnapshotContent = hasVisibleText(ingredient.sidebar_profile_content)
+    ? ingredient.sidebar_profile_content
+    : null;
+  const profileSnapshotItems = [
+    ingredient.ingredient_category,
+    ingredient.origin_country,
+    ingredient.part_used,
+    ingredient.ingredient_form,
+  ].filter(Boolean) as string[];
+  const atAGlanceContent = hasVisibleText(ingredient.sidebar_at_a_glance_content)
+    ? ingredient.sidebar_at_a_glance_content
+    : null;
 
   const sections: IngredientSectionLink[] = [
     ...(overviewSection.visible && hasVisibleText(overviewContent)
@@ -809,35 +849,37 @@ export function IngredientDetailTemplate(props: {
               {sections.length ? <IngredientSectionNav sections={sections} /> : null}
               <AsideFactCard
                 icon={BookOpenText}
-                title="Profile Snapshot"
-                items={[
-                  ingredient.ingredient_category,
-                  ingredient.origin_country,
-                  ingredient.part_used,
-                  ingredient.ingredient_form,
-                ].filter(Boolean) as string[]}
+                title={profileSnapshotTitle}
+                content={profileSnapshotContent}
+                items={profileSnapshotItems}
               />
               {quickFacts.length ? <QuickFactsSidebar facts={quickFacts} /> : null}
-              {atAGlanceItems.length ? (
+              {atAGlanceContent || atAGlanceItems.length ? (
                 <FadeIn className="rounded-[28px] bg-white/92 p-5 shadow-[0_20px_48px_rgba(15,23,42,0.08)] ring-1 ring-black/5">
                   <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
                     At A Glance
                   </p>
-                  <div className="mt-5 space-y-4">
-                    {atAGlanceItems.map((item) => (
-                      <div
-                        key={item.label}
-                        className="flex items-center justify-between gap-4 border-b border-black/6 pb-3 last:border-b-0 last:pb-0"
-                      >
-                        <span className="text-sm font-medium text-muted">
-                          {item.label}
-                        </span>
-                        <span className="text-right text-sm font-semibold text-text-dark">
-                          {item.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                  {atAGlanceContent ? (
+                    <div className="mt-5 text-sm leading-7 text-muted">
+                      <RichTextContent content={atAGlanceContent} />
+                    </div>
+                  ) : (
+                    <div className="mt-5 space-y-4">
+                      {atAGlanceItems.map((item) => (
+                        <div
+                          key={item.label}
+                          className="flex items-center justify-between gap-4 border-b border-black/6 pb-3 last:border-b-0 last:pb-0"
+                        >
+                          <span className="text-sm font-medium text-muted">
+                            {item.label}
+                          </span>
+                          <span className="text-right text-sm font-semibold text-text-dark">
+                            {item.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <Link
                     href="/ingredients"
                     className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-3 font-heading text-sm font-bold text-white transition hover:bg-primary/90"
@@ -1071,12 +1113,14 @@ function AsideFactCard({
   icon: Icon,
   title,
   items,
+  content,
 }: {
   icon: typeof BookOpenText;
   title: string;
   items: string[];
+  content?: string | null;
 }) {
-  if (!items.length) {
+  if (!items.length && !hasVisibleText(content)) {
     return null;
   }
 
@@ -1086,16 +1130,22 @@ function AsideFactCard({
         <Icon className="size-6" aria-hidden="true" />
       </span>
       <h3 className="mt-5 font-heading text-xl font-extrabold text-text-dark">{title}</h3>
-      <div className="mt-5 space-y-3">
-        {items.map((item) => (
-          <div
-            key={item}
-            className="rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-6 text-muted ring-1 ring-black/5"
-          >
-            {item}
-          </div>
-        ))}
-      </div>
+      {hasVisibleText(content) ? (
+        <div className="mt-5 text-sm leading-7 text-muted">
+          <RichTextContent content={content} />
+        </div>
+      ) : (
+        <div className="mt-5 space-y-3">
+          {items.map((item) => (
+            <div
+              key={item}
+              className="rounded-[18px] bg-cream/60 px-4 py-3 text-sm leading-6 text-muted ring-1 ring-black/5"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      )}
     </FadeIn>
   );
 }

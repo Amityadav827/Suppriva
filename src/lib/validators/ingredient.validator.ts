@@ -1,5 +1,10 @@
 import { ContentStatus } from "@/lib/database/constants";
-import type { FAQItem, IngredientLayoutSection, JsonValue } from "@/lib/database/types";
+import type {
+  FAQItem,
+  IngredientLayoutSection,
+  IngredientSidebarQuickFact,
+  JsonValue,
+} from "@/lib/database/types";
 import {
   INGREDIENT_LAYOUT_SECTION_KEYS,
   type IngredientLayoutSectionKey,
@@ -60,6 +65,10 @@ export type IngredientCreateInput = {
   references_json?: JsonValue[];
   faq_title?: string | null;
   faq_subtitle?: string | null;
+  sidebar_profile_title?: string | null;
+  sidebar_profile_content?: string | null;
+  sidebar_quick_facts_json?: IngredientSidebarQuickFact[];
+  sidebar_at_a_glance_content?: string | null;
   benefits?: string[];
   side_effects?: string[];
   dosage?: string | null;
@@ -175,6 +184,23 @@ function isFaqArray(value: unknown): value is FAQItem[] {
         "answer" in item &&
         typeof item.answer === "string" &&
         item.answer.trim().length > 0,
+    )
+  );
+}
+
+function isSidebarQuickFactArray(value: unknown): value is IngredientSidebarQuickFact[] {
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        typeof item === "object" &&
+        item !== null &&
+        "label" in item &&
+        typeof item.label === "string" &&
+        item.label.trim().length > 0 &&
+        "value" in item &&
+        typeof item.value === "string" &&
+        item.value.trim().length > 0,
     )
   );
 }
@@ -414,6 +440,25 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
     const questions = input.faq_json.map((item) => item.question.trim().toLowerCase());
     if (new Set(questions).size !== questions.length) {
       errors.push("FAQ JSON cannot contain duplicate questions.");
+    }
+  }
+
+  if (
+    "sidebar_quick_facts_json" in input &&
+    input.sidebar_quick_facts_json !== undefined &&
+    !isSidebarQuickFactArray(input.sidebar_quick_facts_json)
+  ) {
+    errors.push("Sidebar quick facts must be a list of label and value items.");
+  }
+
+  if (
+    "sidebar_quick_facts_json" in input &&
+    input.sidebar_quick_facts_json !== undefined &&
+    isSidebarQuickFactArray(input.sidebar_quick_facts_json)
+  ) {
+    const labels = input.sidebar_quick_facts_json.map((item) => item.label);
+    if (hasDuplicateNormalizedValues(labels)) {
+      errors.push("Sidebar quick facts cannot contain duplicate labels.");
     }
   }
 

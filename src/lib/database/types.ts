@@ -98,6 +98,10 @@ export type Ingredient = {
   references_json: JsonValue[];
   faq_title: string | null;
   faq_subtitle: string | null;
+  sidebar_profile_title: string | null;
+  sidebar_profile_content: string | null;
+  sidebar_quick_facts_json: IngredientSidebarQuickFact[];
+  sidebar_at_a_glance_content: string | null;
   benefits: string[];
   side_effects: string[];
   dosage: string | null;
@@ -139,6 +143,11 @@ export type IngredientLayoutSection = {
   subtitle_override: string | null;
   background_style: "default";
   animation_enabled: boolean;
+};
+
+export type IngredientSidebarQuickFact = {
+  label: string;
+  value: string;
 };
 
 export type ProductIngredientRelation = {

@@ -5,6 +5,7 @@ import { ContentStatus } from "@/lib/database/constants";
 import type {
   FAQItem,
   Ingredient,
+  IngredientSidebarQuickFact,
   JsonValue,
   Product,
 } from "@/lib/database/types";
@@ -54,6 +55,8 @@ type RelatedIngredientItem = {
   name: string;
   slug: string;
 };
+
+type SidebarQuickFactItem = IngredientSidebarQuickFact;
 
 type IngredientFormState = {
   name: string;
@@ -109,6 +112,10 @@ type IngredientFormState = {
   references_json: TitleDescriptionItem[];
   faq_title: string;
   faq_subtitle: string;
+  sidebar_profile_title: string;
+  sidebar_profile_content: string;
+  sidebar_quick_facts_json: SidebarQuickFactItem[];
+  sidebar_at_a_glance_content: string;
   benefits_json: TitleDescriptionItem[];
   side_effects_json: TitleDescriptionItem[];
   drug_interactions_json: string[];
@@ -174,6 +181,11 @@ const emptyFaqItem = (): FAQItem => ({
   answer: "",
 });
 
+const emptySidebarQuickFactItem = (): SidebarQuickFactItem => ({
+  label: "",
+  value: "",
+});
+
 function parseSchemaJson(value: JsonValue | undefined) {
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     return "{}";
@@ -236,6 +248,10 @@ const emptyForm: IngredientFormState = {
   references_json: [],
   faq_title: "",
   faq_subtitle: "",
+  sidebar_profile_title: "",
+  sidebar_profile_content: "",
+  sidebar_quick_facts_json: [],
+  sidebar_at_a_glance_content: "",
   benefits_json: [],
   side_effects_json: [],
   drug_interactions_json: [],
@@ -311,6 +327,15 @@ function serializeFaqItems(items: FAQItem[]) {
     .filter((item) => item.question && item.answer);
 }
 
+function serializeSidebarQuickFacts(items: SidebarQuickFactItem[]) {
+  return items
+    .map((item) => ({
+      label: item.label.trim(),
+      value: item.value.trim(),
+    }))
+    .filter((item) => item.label && item.value);
+}
+
 function downloadCsv(filename: string, csv: string) {
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -373,6 +398,19 @@ function parseFaqItems(value: FAQItem[] | undefined) {
       answer: item.answer ?? "",
     }))
     .filter((item) => item.question || item.answer);
+}
+
+function parseSidebarQuickFacts(value: IngredientSidebarQuickFact[] | undefined) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value
+    .map((item) => ({
+      label: item.label ?? "",
+      value: item.value ?? "",
+    }))
+    .filter((item) => item.label || item.value);
 }
 
 function parseRelatedIngredients(value: JsonValue[] | undefined) {
@@ -449,6 +487,10 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     references_json: parseTitleDescriptionItems(ingredient.references_json, []),
     faq_title: ingredient.faq_title ?? "",
     faq_subtitle: ingredient.faq_subtitle ?? "",
+    sidebar_profile_title: ingredient.sidebar_profile_title ?? "",
+    sidebar_profile_content: ingredient.sidebar_profile_content ?? "",
+    sidebar_quick_facts_json: parseSidebarQuickFacts(ingredient.sidebar_quick_facts_json),
+    sidebar_at_a_glance_content: ingredient.sidebar_at_a_glance_content ?? "",
     benefits_json: parseTitleDescriptionItems(ingredient.benefits_json, ingredient.benefits),
     side_effects_json: parseTitleDescriptionItems(
       ingredient.side_effects_json,
@@ -530,6 +572,20 @@ function validateStructuredForm(form: IngredientFormState) {
     .filter(Boolean);
   if (new Set(faqQuestions).size !== faqQuestions.length) {
     errors.push("FAQ questions must be unique.");
+  }
+
+  const invalidSidebarQuickFacts = form.sidebar_quick_facts_json.some(
+    (item) => (item.label.trim() || item.value.trim()) && !(item.label.trim() && item.value.trim()),
+  );
+  if (invalidSidebarQuickFacts) {
+    errors.push("Each sidebar quick fact needs both a label and value.");
+  }
+
+  const sidebarQuickFactLabels = form.sidebar_quick_facts_json
+    .map((item) => item.label.trim().toLowerCase())
+    .filter(Boolean);
+  if (new Set(sidebarQuickFactLabels).size !== sidebarQuickFactLabels.length) {
+    errors.push("Sidebar quick fact labels must be unique.");
   }
 
   try {
@@ -627,6 +683,10 @@ function formToPayload(form: IngredientFormState) {
     references_json: serializeTitleDescriptionItems(form.references_json),
     faq_title: cleanText(form.faq_title),
     faq_subtitle: cleanText(form.faq_subtitle),
+    sidebar_profile_title: cleanText(form.sidebar_profile_title),
+    sidebar_profile_content: cleanText(form.sidebar_profile_content),
+    sidebar_quick_facts_json: serializeSidebarQuickFacts(form.sidebar_quick_facts_json),
+    sidebar_at_a_glance_content: cleanText(form.sidebar_at_a_glance_content),
     benefits_json: benefitsJson,
     side_effects_json: sideEffectsJson,
     drug_interactions_json: serializeStringList(form.drug_interactions_json),
@@ -898,10 +958,63 @@ export function DashboardIngredientsClient() {
     }));
   }
 
+  function moveFaqItem(index: number, direction: -1 | 1) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      faq_json: moveArrayItem(currentForm.faq_json, index, direction),
+    }));
+  }
+
   function removeFaqItem(index: number) {
     setForm((currentForm) => ({
       ...currentForm,
       faq_json: currentForm.faq_json.filter((_, currentIndex) => currentIndex !== index),
+    }));
+  }
+
+  function updateSidebarQuickFact(
+    index: number,
+    field: keyof SidebarQuickFactItem,
+    value: string,
+  ) {
+    setForm((currentForm) => {
+      const items = [...currentForm.sidebar_quick_facts_json];
+      items[index] = { ...items[index], [field]: value };
+
+      return {
+        ...currentForm,
+        sidebar_quick_facts_json: items,
+      };
+    });
+  }
+
+  function addSidebarQuickFact() {
+    setForm((currentForm) => ({
+      ...currentForm,
+      sidebar_quick_facts_json: [
+        ...currentForm.sidebar_quick_facts_json,
+        emptySidebarQuickFactItem(),
+      ],
+    }));
+  }
+
+  function moveSidebarQuickFact(index: number, direction: -1 | 1) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      sidebar_quick_facts_json: moveArrayItem(
+        currentForm.sidebar_quick_facts_json,
+        index,
+        direction,
+      ),
+    }));
+  }
+
+  function removeSidebarQuickFact(index: number) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      sidebar_quick_facts_json: currentForm.sidebar_quick_facts_json.filter(
+        (_, currentIndex) => currentIndex !== index,
+      ),
     }));
   }
 
@@ -1562,22 +1675,42 @@ export function DashboardIngredientsClient() {
                   items={form.faq_json}
                   onAdd={addFaqItem}
                   onRemove={removeFaqItem}
+                  onMove={moveFaqItem}
                   onChange={updateFaqItem}
                 />
               </div>
             </FormSection>
 
             <FormSection title="Sidebar" description="Profile snapshot, quick facts, and at-a-glance signals.">
-              <InputField label="Profile Snapshot: Category" value={form.ingredient_category} onChange={(value) => updateTextField("ingredient_category", value)} />
-              <InputField label="Profile Snapshot: Origin" value={form.origin_country} onChange={(value) => updateTextField("origin_country", value)} />
-              <InputField label="Profile Snapshot: Part Used" value={form.part_used} onChange={(value) => updateTextField("part_used", value)} />
-              <InputField label="Profile Snapshot: Form" value={form.ingredient_form} onChange={(value) => updateTextField("ingredient_form", value)} />
-              <InputField label="Quick Facts: Typical Dose" value={form.typical_dose} onChange={(value) => updateTextField("typical_dose", value)} />
-              <InputField label="Quick Facts: Best For" value={form.best_for} onChange={(value) => updateTextField("best_for", value)} />
-              <InputField label="Quick Facts: Safety Level" value={form.safety_level} onChange={(value) => updateTextField("safety_level", value)} />
-              <InputField label="Quick Facts: Taste" value={form.taste_profile} onChange={(value) => updateTextField("taste_profile", value)} />
-              <InputField label="At A Glance: Rating" value={form.rating} onChange={(value) => updateTextField("rating", value)} placeholder="4.8" />
-              <InputField label="At A Glance: Evidence Level" value={form.evidence_level} onChange={(value) => updateTextField("evidence_level", value)} placeholder="Moderate" />
+              <InputField
+                label="Profile Snapshot Title"
+                value={form.sidebar_profile_title}
+                onChange={(value) => updateTextField("sidebar_profile_title", value)}
+                placeholder="Profile Snapshot"
+              />
+              <RichTextEditor
+                label="Profile Snapshot Content"
+                value={form.sidebar_profile_content}
+                onChange={(value) => updateTextField("sidebar_profile_content", value)}
+                className="lg:col-span-2"
+                rows={4}
+              />
+              <div className="lg:col-span-2">
+                <RepeatableQuickFactField
+                  items={form.sidebar_quick_facts_json}
+                  onAdd={addSidebarQuickFact}
+                  onRemove={removeSidebarQuickFact}
+                  onMove={moveSidebarQuickFact}
+                  onChange={updateSidebarQuickFact}
+                />
+              </div>
+              <RichTextEditor
+                label="At A Glance Content"
+                value={form.sidebar_at_a_glance_content}
+                onChange={(value) => updateTextField("sidebar_at_a_glance_content", value)}
+                className="lg:col-span-2"
+                rows={4}
+              />
             </FormSection>
 
             {publishWarnings.length ? (
@@ -2100,11 +2233,13 @@ function RepeatableFaqField({
   items,
   onAdd,
   onRemove,
+  onMove,
   onChange,
 }: {
   items: FAQItem[];
   onAdd: () => void;
   onRemove: (index: number) => void;
+  onMove: (index: number, direction: -1 | 1) => void;
   onChange: (index: number, field: keyof FAQItem, value: string) => void;
 }) {
   return (
@@ -2124,7 +2259,25 @@ function RepeatableFaqField({
         {items.length ? (
           items.map((item, index) => (
             <div key={`faq-${index}`} className="rounded-[18px] border border-border-light bg-cream p-3">
-              <div className="mb-2 flex justify-end">
+              <div className="mb-2 flex justify-end gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => onMove(index, -1)}
+                  disabled={index === 0}
+                  className="rounded-full border border-border-light p-1.5 text-primary transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label={`Move FAQ ${index + 1} up`}
+                >
+                  <ArrowUp className="size-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onMove(index, 1)}
+                  disabled={index === items.length - 1}
+                  className="rounded-full border border-border-light p-1.5 text-primary transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label={`Move FAQ ${index + 1} down`}
+                >
+                  <ArrowDown className="size-3.5" />
+                </button>
                 <button
                   type="button"
                   onClick={() => onRemove(index)}
@@ -2151,6 +2304,89 @@ function RepeatableFaqField({
           ))
         ) : (
           <p className="text-sm text-muted">No FAQs added yet.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RepeatableQuickFactField({
+  items,
+  onAdd,
+  onRemove,
+  onMove,
+  onChange,
+}: {
+  items: SidebarQuickFactItem[];
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onMove: (index: number, direction: -1 | 1) => void;
+  onChange: (index: number, field: keyof SidebarQuickFactItem, value: string) => void;
+}) {
+  return (
+    <div className="rounded-[20px] border border-border-light bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h4 className="font-heading text-sm font-semibold text-text-dark">Quick Facts</h4>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="inline-flex items-center gap-1 rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70"
+        >
+          <Plus className="size-3.5" />
+          Add Fact
+        </button>
+      </div>
+      <div className="space-y-3">
+        {items.length ? (
+          items.map((item, index) => (
+            <div
+              key={`sidebar-quick-fact-${index}`}
+              className="rounded-[18px] border border-border-light bg-cream p-3"
+            >
+              <div className="mb-2 flex justify-end gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => onMove(index, -1)}
+                  disabled={index === 0}
+                  className="rounded-full border border-border-light p-1.5 text-primary transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label={`Move quick fact ${index + 1} up`}
+                >
+                  <ArrowUp className="size-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onMove(index, 1)}
+                  disabled={index === items.length - 1}
+                  className="rounded-full border border-border-light p-1.5 text-primary transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label={`Move quick fact ${index + 1} down`}
+                >
+                  <ArrowDown className="size-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onRemove(index)}
+                  className="rounded-full border border-red-200 p-1.5 text-red-600 transition hover:bg-red-50"
+                  aria-label={`Remove quick fact ${index + 1}`}
+                >
+                  <Trash2 className="size-3.5" />
+                </button>
+              </div>
+              <div className="grid gap-3 md:grid-cols-2">
+                <InputField
+                  label="Label"
+                  value={item.label}
+                  onChange={(value) => onChange(index, "label", value)}
+                />
+                <InputField
+                  label="Value"
+                  value={item.value}
+                  onChange={(value) => onChange(index, "value", value)}
+                />
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted">No sidebar quick facts added yet.</p>
         )}
       </div>
     </div>
