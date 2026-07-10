@@ -34,11 +34,29 @@ function isRecord(value: JsonValue): value is Record<string, JsonValue> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function uniqueBy<T>(items: T[], getKey: (item: T) => string | null | undefined) {
+  const seen = new Set<string>();
+
+  return items.filter((item) => {
+    const key = getKey(item)?.trim().toLowerCase();
+
+    if (!key || seen.has(key)) {
+      return false;
+    }
+
+    seen.add(key);
+    return true;
+  });
+}
+
 function resolveRelatedIngredients(
   ingredient: Ingredient,
   ingredients: Ingredient[],
 ): RelatedIngredientCardData[] {
   const seen = new Set<string>();
+  const publishedIngredients = onlyPublished(ingredients).filter(
+    (item) => item.id !== ingredient.id && item.slug !== ingredient.slug,
+  );
   const relatedEntries = Array.isArray(ingredient.related_ingredients_json)
     ? ingredient.related_ingredients_json
     : [];
@@ -52,11 +70,7 @@ function resolveRelatedIngredients(
       const slug = typeof entry.slug === "string" ? entry.slug.trim() : "";
       const name = typeof entry.name === "string" ? entry.name.trim() : "";
 
-      const match = ingredients.find((item) => {
-        if (item.id === ingredient.id) {
-          return false;
-        }
-
+      const match = publishedIngredients.find((item) => {
         if (slug) {
           return item.slug === slug;
         }
@@ -64,11 +78,11 @@ function resolveRelatedIngredients(
         return name ? item.name.toLowerCase() === name.toLowerCase() : false;
       });
 
-      if (!match && !name) {
+      if (!match) {
         return null;
       }
 
-      const key = match?.id || slug || name.toLowerCase();
+      const key = match.id;
 
       if (seen.has(key)) {
         return null;
@@ -77,25 +91,21 @@ function resolveRelatedIngredients(
       seen.add(key);
 
       return {
-        name: match?.name || name,
-        slug: match?.slug || slug || undefined,
-        scientificName: match?.scientific_name || null,
-        category: match?.ingredient_category || null,
-        image: match?.image_url || match?.featured_image || null,
+        name: match.name,
+        slug: match.slug,
+        scientificName: match.scientific_name || null,
+        category: match.ingredient_category || null,
+        image: match.image_url || match.featured_image || null,
         description:
-          match?.short_description ||
-          match?.seo_description ||
+          match.short_description ||
+          match.seo_description ||
           (typeof entry.description === "string" ? entry.description : null),
       };
     })
     .filter(Boolean) as RelatedIngredientCardData[];
 
-  const automaticMatches = ingredients
+  const automaticMatches = publishedIngredients
     .filter((item) => {
-      if (item.id === ingredient.id) {
-        return false;
-      }
-
       if (seen.has(item.id)) {
         return false;
       }
@@ -136,8 +146,12 @@ function resolveCompareAlternatives(
     .map((term) => term?.trim().toLowerCase())
     .filter(Boolean) as string[];
 
-  return ingredients
-    .filter((item) => item.id !== ingredient.id)
+  return uniqueBy(
+    onlyPublished(ingredients).filter(
+      (item) => item.id !== ingredient.id && item.slug !== ingredient.slug,
+    ),
+    (item) => item.slug || item.id,
+  )
     .map((item) => {
       const haystack = [
         item.ingredient_category,
@@ -177,7 +191,7 @@ function resolveRelatedArticles(
     .filter(Boolean);
 
   const publishedBlogs = onlyPublished(blogs);
-  const matchedBlogs = publishedBlogs
+  const matchedBlogs = uniqueBy(publishedBlogs, (blog) => blog.slug || blog.id)
     .filter((blog) => {
       const categoryTitle = blog.category_id ? categoryMap.get(blog.category_id)?.title ?? "" : "";
       const haystack = [
@@ -211,7 +225,7 @@ function resolveRelatedArticles(
       })
     : [];
 
-  return (sameCategoryBlogs.length ? sameCategoryBlogs : publishedBlogs)
+  return uniqueBy(sameCategoryBlogs.length ? sameCategoryBlogs : publishedBlogs, (blog) => blog.slug || blog.id)
     .slice(0, 3)
     .map((blog) => blogToCard(blog, categoryMap));
 }
@@ -273,16 +287,18 @@ export default async function IngredientPage({ params }: IngredientPageProps) {
 
   const publishedCategories = onlyPublished(categories);
   const categoryMap = createCategoryMap(publishedCategories);
-  const productCards = relatedProducts.map((product, index) =>
-    productToCategoryProduct(product, categoryMap, index),
+  const productCards = uniqueBy(relatedProducts, (product) => product.slug || product.id).map(
+    (product, index) => productToCategoryProduct(product, categoryMap, index),
   );
   const articleCards: BlogPostCard[] = resolveRelatedArticles(ingredient, blogs, categoryMap);
   const relatedIngredients = resolveRelatedIngredients(ingredient, allIngredients);
   const compareAlternatives = resolveCompareAlternatives(ingredient, allIngredients);
-  const healthNeeds = publishedCategories.map((category) => ({
-    label: category.title || category.name,
-    slug: category.slug,
-  }));
+  const healthNeeds = uniqueBy(publishedCategories, (category) => category.slug).map(
+    (category) => ({
+      label: category.title || category.name,
+      slug: category.slug,
+    }),
+  );
   const expertAttribution = await resolveExpertAttribution({
     authorId: ingredient.author_id,
     reviewerId: ingredient.reviewer_id,
