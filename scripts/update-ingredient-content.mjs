@@ -123,6 +123,10 @@ async function readPayload(filePath) {
   return payload;
 }
 
+function normalizeSupabaseUrl(value) {
+  return value.replace(/\/rest\/v1\/?$/i, "").replace(/\/+$/, "");
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   await loadLocalEnv();
@@ -148,8 +152,9 @@ async function main() {
     return;
   }
 
-  const supabaseUrl =
-    process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
+  const supabaseUrl = normalizeSupabaseUrl(
+    process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL ?? "",
+  );
   const serviceRoleKey =
     process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SERVICE_KEY;
 
