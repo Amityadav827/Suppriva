@@ -127,8 +127,10 @@ export async function generateMetadata({
     return buildSeoMetadata(PageType.Blog, slug, {
       title: `${blog.seo_title || blog.title} | Suppriva`,
       description: blog.seo_description || blog.excerpt || "Suppriva wellness guide.",
-      canonicalPath: `/blog/${slug}`,
+      canonicalPath: blog.seo_canonical_url || `/blog/${slug}`,
       image: blog.featured_image,
+      noindex: blog.seo_noindex,
+      nofollow: blog.seo_nofollow,
       type: "article",
     });
   } catch {

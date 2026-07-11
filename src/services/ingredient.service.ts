@@ -384,6 +384,7 @@ export class IngredientService {
       meta_description: this.cleanText(input.meta_description),
       seo_title: this.cleanText(input.seo_title),
       seo_description: this.cleanText(input.seo_description),
+      seo_focus_keyword: this.cleanText(input.seo_focus_keyword),
       seo_canonical_url: this.cleanText(input.seo_canonical_url),
       seo_og_title: this.cleanText(input.seo_og_title),
       seo_og_description: this.cleanText(input.seo_og_description),
@@ -580,6 +581,9 @@ export class IngredientService {
       ...("seo_title" in input ? { seo_title: this.cleanText(input.seo_title) } : {}),
       ...("seo_description" in input
         ? { seo_description: this.cleanText(input.seo_description) }
+        : {}),
+      ...("seo_focus_keyword" in input
+        ? { seo_focus_keyword: this.cleanText(input.seo_focus_keyword) }
         : {}),
       ...("seo_canonical_url" in input
         ? { seo_canonical_url: this.cleanText(input.seo_canonical_url) }

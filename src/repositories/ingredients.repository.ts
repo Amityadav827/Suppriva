@@ -526,6 +526,9 @@ export class SupabaseIngredientsRepository implements IngredientsRepository {
     if ("meta_description" in input) payload.meta_description = input.meta_description ?? null;
     if ("seo_title" in input) payload.seo_title = input.seo_title ?? null;
     if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
+    if ("seo_focus_keyword" in input) {
+      payload.seo_focus_keyword = input.seo_focus_keyword ?? null;
+    }
     if ("seo_canonical_url" in input) payload.seo_canonical_url = input.seo_canonical_url ?? null;
     if ("seo_og_title" in input) payload.seo_og_title = input.seo_og_title ?? null;
     if ("seo_og_description" in input) {

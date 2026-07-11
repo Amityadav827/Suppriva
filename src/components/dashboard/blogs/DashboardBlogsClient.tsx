@@ -55,7 +55,11 @@ type BlogFormState = {
   tags: string;
   status: ContentStatus;
   seo_title: string;
+  seo_focus_keyword: string;
   seo_description: string;
+  seo_canonical_url: string;
+  seo_noindex: boolean;
+  seo_nofollow: boolean;
   seo_keywords: string;
 };
 
@@ -109,7 +113,11 @@ const emptyForm: BlogFormState = {
   tags: "",
   status: ContentStatus.Draft,
   seo_title: "",
+  seo_focus_keyword: "",
   seo_description: "",
+  seo_canonical_url: "",
+  seo_noindex: false,
+  seo_nofollow: false,
   seo_keywords: "",
 };
 
@@ -260,6 +268,20 @@ function isValidImageUrl(value: string) {
   }
 }
 
+function isValidHttpUrl(value: string) {
+  if (!value) {
+    return true;
+  }
+
+  try {
+    const url = new URL(value);
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
 function validateBlogForm(form: BlogFormState) {
   const errors: string[] = [];
   const slug = form.slug.trim();
@@ -293,6 +315,10 @@ function validateBlogForm(form: BlogFormState) {
 
   if (form.featured_image && !form.featured_image_title.trim()) {
     errors.push("Featured image title is required.");
+  }
+
+  if (form.seo_canonical_url.trim() && !isValidHttpUrl(form.seo_canonical_url.trim())) {
+    errors.push("Canonical URL override must be a valid HTTP or HTTPS URL.");
   }
 
   const seenFaqs = new Set<string>();
@@ -511,7 +537,11 @@ function blogToForm(blog: Blog): BlogFormState {
     tags: blog.tags.join(", "),
     status: blog.status,
     seo_title: blog.seo_title ?? "",
+    seo_focus_keyword: blog.seo_focus_keyword ?? "",
     seo_description: blog.seo_description ?? "",
+    seo_canonical_url: blog.seo_canonical_url ?? "",
+    seo_noindex: blog.seo_noindex ?? false,
+    seo_nofollow: blog.seo_nofollow ?? false,
     seo_keywords: blog.seo_keywords.join(", "),
   };
 }
@@ -538,7 +568,11 @@ function formToPayload(form: BlogFormState) {
     tags: commaList(form.tags),
     status: form.status,
     seo_title: form.seo_title || null,
+    seo_focus_keyword: form.seo_focus_keyword || null,
     seo_description: form.seo_description || null,
+    seo_canonical_url: form.seo_canonical_url || null,
+    seo_noindex: form.seo_noindex,
+    seo_nofollow: form.seo_nofollow,
     seo_keywords: commaList(form.seo_keywords),
   };
 }
@@ -1131,10 +1165,7 @@ export function DashboardBlogsClient() {
                 <option value={ContentStatus.Archived}>Archived</option>
               </select>
             </label>
-            <InputField label="SEO Title" value={form.seo_title} onChange={(value) => updateForm("seo_title", value)} />
-            <InputField label="SEO Keywords" value={form.seo_keywords} onChange={(value) => updateForm("seo_keywords", value)} placeholder="supplements, health guide" />
             <TextAreaField label="Excerpt" value={form.excerpt} onChange={(value) => updateForm("excerpt", value)} />
-            <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} />
             <RichTextEditor
               label="Article Content"
               value={form.content}
@@ -1143,6 +1174,52 @@ export function DashboardBlogsClient() {
               rows={12}
               helperText="Use headings for real article sections. The blog table of contents is generated from H2 and H3 headings."
             />
+            <div className="grid gap-4 rounded-[24px] border border-border-light bg-cream/55 p-4 lg:col-span-2 lg:grid-cols-2">
+              <div className="lg:col-span-2">
+                <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                  Advanced SEO
+                </h3>
+                <p className="mt-1 text-sm text-muted">
+                  Control search metadata for this blog article.
+                </p>
+              </div>
+              <InputField
+                label="SEO Title"
+                value={form.seo_title}
+                onChange={(value) => updateForm("seo_title", value)}
+              />
+              <InputField
+                label="Focus Keyword"
+                value={form.seo_focus_keyword}
+                onChange={(value) => updateForm("seo_focus_keyword", value)}
+              />
+              <TextAreaField
+                label="SEO Description"
+                value={form.seo_description}
+                onChange={(value) => updateForm("seo_description", value)}
+                rows={3}
+                className="lg:col-span-2"
+              />
+              <InputField
+                label="Canonical URL Override"
+                value={form.seo_canonical_url}
+                onChange={(value) => updateForm("seo_canonical_url", value)}
+                placeholder="https://suppriva.vercel.app/blog/example"
+                className="lg:col-span-2"
+              />
+              <div className="grid gap-3 lg:col-span-2 md:grid-cols-2">
+                <CheckboxField
+                  label="No Index"
+                  checked={form.seo_noindex}
+                  onChange={(value) => updateForm("seo_noindex", value)}
+                />
+                <CheckboxField
+                  label="No Follow"
+                  checked={form.seo_nofollow}
+                  onChange={(value) => updateForm("seo_nofollow", value)}
+                />
+              </div>
+            </div>
             <div className="grid gap-3 rounded-[24px] border border-border-light bg-white/70 p-4 lg:col-span-2">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
@@ -1250,15 +1327,17 @@ function InputField({
   onChange,
   placeholder,
   required,
+  className = "",
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   required?: boolean;
+  className?: string;
 }) {
   return (
-    <label className="grid gap-2">
+    <label className={`grid gap-2 ${className}`}>
       <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
       <input
         value={value}
@@ -1267,6 +1346,28 @@ function InputField({
         required={required}
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+    </label>
+  );
+}
+
+function CheckboxField({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (value: boolean) => void;
+}) {
+  return (
+    <label className="flex min-h-12 items-center gap-3 rounded-[18px] border border-border-light bg-white px-4 text-sm font-semibold text-text-dark">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
+        className="size-4 accent-primary"
+      />
+      {label}
     </label>
   );
 }

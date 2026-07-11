@@ -84,6 +84,7 @@ export type IngredientCreateInput = {
   meta_description?: string | null;
   seo_title?: string | null;
   seo_description?: string | null;
+  seo_focus_keyword?: string | null;
   seo_canonical_url?: string | null;
   seo_og_title?: string | null;
   seo_og_description?: string | null;
@@ -132,6 +133,24 @@ const UUID_PATTERN =
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function isBoolean(value: unknown): value is boolean {
+  return typeof value === "boolean";
+}
+
+function isValidHttpUrl(value: string) {
+  if (!value) {
+    return true;
+  }
+
+  try {
+    const url = new URL(value);
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 function isJsonValue(value: unknown): value is JsonValue {
@@ -479,6 +498,36 @@ export function validateIngredientInput<TInput extends IngredientValidationInput
     !isJsonValue(input.schema_json)
   ) {
     errors.push("Schema JSON must be valid JSON.");
+  }
+
+  for (const [label, value] of [
+    ["SEO title", input.seo_title],
+    ["Focus keyword", input.seo_focus_keyword],
+    ["SEO description", input.seo_description],
+  ] as const) {
+    if (value !== undefined && value !== null && typeof value !== "string") {
+      errors.push(`${label} must be text.`);
+    }
+  }
+
+  if (
+    "seo_canonical_url" in input &&
+    input.seo_canonical_url &&
+    !isValidHttpUrl(input.seo_canonical_url)
+  ) {
+    errors.push("Canonical URL override must be a valid HTTP or HTTPS URL.");
+  }
+
+  if ("seo_noindex" in input && input.seo_noindex !== undefined && !isBoolean(input.seo_noindex)) {
+    errors.push("No Index must be true or false.");
+  }
+
+  if (
+    "seo_nofollow" in input &&
+    input.seo_nofollow !== undefined &&
+    !isBoolean(input.seo_nofollow)
+  ) {
+    errors.push("No Follow must be true or false.");
   }
 
   if (

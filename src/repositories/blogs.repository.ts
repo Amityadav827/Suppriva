@@ -148,6 +148,10 @@ export class SupabaseBlogsRepository implements BlogsRepository {
     if ("published_at" in input) payload.published_at = input.published_at ?? null;
     if ("seo_title" in input) payload.seo_title = input.seo_title ?? null;
     if ("seo_description" in input) payload.seo_description = input.seo_description ?? null;
+    if ("seo_focus_keyword" in input) payload.seo_focus_keyword = input.seo_focus_keyword ?? null;
+    if ("seo_canonical_url" in input) payload.seo_canonical_url = input.seo_canonical_url ?? null;
+    if ("seo_noindex" in input) payload.seo_noindex = input.seo_noindex ?? false;
+    if ("seo_nofollow" in input) payload.seo_nofollow = input.seo_nofollow ?? false;
     if ("seo_keywords" in input && input.seo_keywords?.length) {
       payload.seo_keywords = input.seo_keywords;
     }

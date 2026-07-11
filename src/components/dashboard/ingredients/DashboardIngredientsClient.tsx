@@ -124,6 +124,7 @@ type IngredientFormState = {
   related_ingredients_json: RelatedIngredientItem[];
   seo_title: string;
   seo_description: string;
+  seo_focus_keyword: string;
   seo_canonical_url: string;
   seo_og_title: string;
   seo_og_description: string;
@@ -260,6 +261,7 @@ const emptyForm: IngredientFormState = {
   related_ingredients_json: [],
   seo_title: "",
   seo_description: "",
+  seo_focus_keyword: "",
   seo_canonical_url: "",
   seo_og_title: "",
   seo_og_description: "",
@@ -279,6 +281,20 @@ function cleanText(value: string) {
   const normalizedValue = value.trim();
 
   return normalizedValue ? normalizedValue : null;
+}
+
+function isValidHttpUrl(value: string) {
+  if (!value) {
+    return true;
+  }
+
+  try {
+    const url = new URL(value);
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 function serializeStringList(values: string[]) {
@@ -502,6 +518,7 @@ function ingredientToForm(ingredient: Ingredient): IngredientFormState {
     related_ingredients_json: parseRelatedIngredients(ingredient.related_ingredients_json),
     seo_title: ingredient.seo_title ?? ingredient.meta_title ?? "",
     seo_description: ingredient.seo_description ?? ingredient.meta_description ?? "",
+    seo_focus_keyword: ingredient.seo_focus_keyword ?? "",
     seo_canonical_url: ingredient.seo_canonical_url ?? "",
     seo_og_title: ingredient.seo_og_title ?? "",
     seo_og_description: ingredient.seo_og_description ?? "",
@@ -588,6 +605,10 @@ function validateStructuredForm(form: IngredientFormState) {
     errors.push("Sidebar quick fact labels must be unique.");
   }
 
+  if (form.seo_canonical_url.trim() && !isValidHttpUrl(form.seo_canonical_url.trim())) {
+    errors.push("Canonical URL override must be a valid HTTP or HTTPS URL.");
+  }
+
   try {
     JSON.parse(form.schema_json || "{}");
   } catch {
@@ -616,6 +637,7 @@ function formToPayload(form: IngredientFormState) {
   const normalizedSlug = form.slug.trim() || slugify(form.name);
   const seoTitle = cleanText(form.seo_title);
   const seoDescription = cleanText(form.seo_description);
+  const seoFocusKeyword = cleanText(form.seo_focus_keyword);
   const benefitsJson = serializeTitleDescriptionItems(form.benefits_json);
   const sideEffectsJson = serializeTitleDescriptionItems(form.side_effects_json);
   const howItWorksContent = cleanText(form.how_it_works_content);
@@ -694,6 +716,7 @@ function formToPayload(form: IngredientFormState) {
     faq_json: serializeFaqItems(form.faq_json),
     seo_title: seoTitle,
     seo_description: seoDescription,
+    seo_focus_keyword: seoFocusKeyword,
     seo_canonical_url: cleanText(form.seo_canonical_url),
     seo_og_title: cleanText(form.seo_og_title),
     seo_og_description: cleanText(form.seo_og_description),
@@ -1713,6 +1736,48 @@ export function DashboardIngredientsClient() {
               />
             </FormSection>
 
+            <FormSection
+              title="Advanced SEO"
+              description="Control search metadata for this ingredient page."
+            >
+              <InputField
+                label="SEO Title"
+                value={form.seo_title}
+                onChange={(value) => updateTextField("seo_title", value)}
+              />
+              <InputField
+                label="Focus Keyword"
+                value={form.seo_focus_keyword}
+                onChange={(value) => updateTextField("seo_focus_keyword", value)}
+              />
+              <TextAreaField
+                label="SEO Description"
+                value={form.seo_description}
+                onChange={(value) => updateTextField("seo_description", value)}
+                className="lg:col-span-2"
+                rows={3}
+              />
+              <InputField
+                label="Canonical URL Override"
+                value={form.seo_canonical_url}
+                onChange={(value) => updateTextField("seo_canonical_url", value)}
+                placeholder="https://suppriva.vercel.app/ingredient/example"
+                className="lg:col-span-2"
+              />
+              <div className="grid gap-3 lg:col-span-2 md:grid-cols-2">
+                <CheckboxField
+                  label="No Index"
+                  checked={form.seo_noindex}
+                  onChange={(value) => updateTextField("seo_noindex", value)}
+                />
+                <CheckboxField
+                  label="No Follow"
+                  checked={form.seo_nofollow}
+                  onChange={(value) => updateTextField("seo_nofollow", value)}
+                />
+              </div>
+            </FormSection>
+
             {publishWarnings.length ? (
               <div className="rounded-[20px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
                 <p className="font-semibold">
@@ -1793,6 +1858,28 @@ function InputField({
         required={required}
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
+    </label>
+  );
+}
+
+function CheckboxField({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (value: boolean) => void;
+}) {
+  return (
+    <label className="flex min-h-12 items-center gap-3 rounded-[18px] border border-border-light bg-white px-4 text-sm font-semibold text-text-dark">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
+        className="size-4 accent-primary"
+      />
+      {label}
     </label>
   );
 }

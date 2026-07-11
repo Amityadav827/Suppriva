@@ -117,6 +117,7 @@ export type Ingredient = {
   meta_description: string | null;
   seo_title: string | null;
   seo_description: string | null;
+  seo_focus_keyword: string | null;
   seo_canonical_url: string | null;
   seo_og_title: string | null;
   seo_og_description: string | null;
@@ -328,6 +329,10 @@ export type Category = {
   status: ContentStatus;
   seo_title: string | null;
   seo_description: string | null;
+  seo_focus_keyword: string | null;
+  seo_canonical_url: string | null;
+  seo_noindex: boolean;
+  seo_nofollow: boolean;
   seo_keywords: string[];
   created_at: Timestamp;
   updated_at: Timestamp;
@@ -497,6 +502,10 @@ export type Blog = {
   status: ContentStatus;
   seo_title: string | null;
   seo_description: string | null;
+  seo_focus_keyword: string | null;
+  seo_canonical_url: string | null;
+  seo_noindex: boolean;
+  seo_nofollow: boolean;
   seo_keywords: string[];
   published_at: Timestamp | null;
   created_at: Timestamp;

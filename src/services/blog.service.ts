@@ -89,6 +89,12 @@ export class BlogService {
         input.status === ContentStatus.Published
           ? input.published_at ?? new Date().toISOString()
           : input.published_at ?? null,
+      seo_title: this.cleanText(input.seo_title),
+      seo_focus_keyword: this.cleanText(input.seo_focus_keyword),
+      seo_description: this.cleanText(input.seo_description),
+      seo_canonical_url: this.cleanText(input.seo_canonical_url),
+      seo_noindex: input.seo_noindex ?? false,
+      seo_nofollow: input.seo_nofollow ?? false,
       seo_keywords: input.seo_keywords,
     };
   }
@@ -118,6 +124,18 @@ export class BlogService {
       );
     }
     if ("tags" in input) normalizedInput.tags = input.tags ?? [];
+    if ("seo_title" in input) normalizedInput.seo_title = this.cleanText(input.seo_title);
+    if ("seo_focus_keyword" in input) {
+      normalizedInput.seo_focus_keyword = this.cleanText(input.seo_focus_keyword);
+    }
+    if ("seo_description" in input) {
+      normalizedInput.seo_description = this.cleanText(input.seo_description);
+    }
+    if ("seo_canonical_url" in input) {
+      normalizedInput.seo_canonical_url = this.cleanText(input.seo_canonical_url);
+    }
+    if ("seo_noindex" in input) normalizedInput.seo_noindex = input.seo_noindex ?? false;
+    if ("seo_nofollow" in input) normalizedInput.seo_nofollow = input.seo_nofollow ?? false;
     if ("seo_keywords" in input) normalizedInput.seo_keywords = input.seo_keywords ?? [];
 
     return normalizedInput;
@@ -150,5 +168,11 @@ export class BlogService {
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
+  }
+
+  private cleanText(value: string | null | undefined) {
+    const normalizedValue = value?.trim();
+
+    return normalizedValue ? normalizedValue : null;
   }
 }
