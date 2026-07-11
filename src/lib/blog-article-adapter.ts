@@ -11,11 +11,7 @@ type BlogContentObject = {
   featuredImageMetadata?: BlogArticle["imageMetadata"];
   toc?: BlogArticle["toc"];
   sections?: BlogArticle["sections"];
-  callouts?: BlogArticle["callouts"];
-  table?: BlogArticle["table"];
-  recommended?: string[];
   faqs?: BlogArticle["faqs"];
-  related?: string[];
 };
 
 function isRecord(value: JsonValue): value is Record<string, JsonValue> {
@@ -297,12 +293,6 @@ export function blogToArticle(
     imageMetadata: readImageMetadata(content, blog.title),
     toc: toc.length ? toc : sections.map((section) => ({ id: section.id, label: section.title })),
     sections,
-    callouts: [],
-    table: null,
-    recommended: Array.isArray(content.recommended)
-      ? content.recommended
-      : ["Java Burn", "Neuro Thrive", "GlucoTrust"],
     faqs: Array.isArray(content.faqs) ? content.faqs : [],
-    related: Array.isArray(content.related) ? content.related : [],
   };
 }

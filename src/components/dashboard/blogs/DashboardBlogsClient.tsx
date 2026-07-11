@@ -48,7 +48,6 @@ type BlogFormState = {
   featured_image_alt: string;
   featured_image_title: string;
   featured_image_caption: string;
-  gallery: string[];
   category_id: string;
   author_id: string;
   reviewer_id: string;
@@ -103,7 +102,6 @@ const emptyForm: BlogFormState = {
   featured_image_alt: "",
   featured_image_title: "",
   featured_image_caption: "",
-  gallery: [],
   category_id: "",
   author_id: "",
   reviewer_id: "",
@@ -176,20 +174,6 @@ function plainTextFromContent(content: Blog["content"]) {
   }
 
   return "";
-}
-
-function galleryFromContent(content: Blog["content"]) {
-  if (
-    typeof content === "object" &&
-    content !== null &&
-    !Array.isArray(content) &&
-    "gallery" in content &&
-    Array.isArray(content.gallery)
-  ) {
-    return content.gallery.filter((item): item is string => typeof item === "string");
-  }
-
-  return [];
 }
 
 function imageMetadataFromContent(content: Blog["content"]) {
@@ -520,7 +504,6 @@ function blogToForm(blog: Blog): BlogFormState {
     featured_image_alt: imageMetadata.alt,
     featured_image_title: imageMetadata.title,
     featured_image_caption: imageMetadata.caption,
-    gallery: galleryFromContent(blog.content),
     category_id: blog.category_id ?? "",
     author_id: blog.author_id ?? "",
     reviewer_id: blog.reviewer_id ?? "",
@@ -546,7 +529,6 @@ function formToPayload(form: BlogFormState) {
         title: form.featured_image_title.trim(),
         caption: form.featured_image_caption.trim(),
       },
-      gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
     },
     featured_image: form.featured_image || null,
     category_id: form.category_id || null,

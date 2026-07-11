@@ -25,6 +25,7 @@ import {
   buildFaqJsonLd,
   buildPersonJsonLd,
 } from "@/lib/seo/structured-data";
+import type { Blog, Product } from "@/lib/database/types";
 
 type BlogPageProps = {
   params: Promise<{
@@ -33,6 +34,83 @@ type BlogPageProps = {
 };
 
 export const dynamic = "force-dynamic";
+
+function normalizeTag(value: string) {
+  return value.trim().toLowerCase();
+}
+
+function latestTimestamp(record: Pick<Blog | Product, "updated_at" | "created_at">) {
+  return new Date(record.updated_at || record.created_at).getTime();
+}
+
+function scoreRelatedBlog(source: Blog, candidate: Blog) {
+  const sourceTags = new Set(source.tags.map(normalizeTag).filter(Boolean));
+  const candidateTags = candidate.tags.map(normalizeTag).filter(Boolean);
+  const searchableText = [candidate.title, candidate.excerpt, candidate.seo_description]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  let score = 0;
+
+  if (source.category_id && candidate.category_id === source.category_id) {
+    score += 6;
+  }
+
+  candidateTags.forEach((tag) => {
+    if (sourceTags.has(tag)) {
+      score += 3;
+    }
+  });
+
+  sourceTags.forEach((tag) => {
+    if (tag && searchableText.includes(tag)) {
+      score += 1;
+    }
+  });
+
+  return score;
+}
+
+function scoreRecommendedProduct(source: Blog, product: Product) {
+  const sourceTags = source.tags.map(normalizeTag).filter(Boolean);
+  const searchableText = [
+    product.title,
+    product.name,
+    product.short_description,
+    product.full_description,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  let score = 0;
+
+  if (source.category_id && product.category_id === source.category_id) {
+    score += 6;
+  }
+
+  sourceTags.forEach((tag) => {
+    if (tag && searchableText.includes(tag)) {
+      score += 2;
+    }
+  });
+
+  return score;
+}
+
+function sortByScoreThenFreshness<TRecord extends Blog | Product>(
+  records: TRecord[],
+  getScore: (record: TRecord) => number,
+) {
+  return [...records].sort((left, right) => {
+    const scoreDelta = getScore(right) - getScore(left);
+
+    if (scoreDelta !== 0) {
+      return scoreDelta;
+    }
+
+    return latestTimestamp(right) - latestTimestamp(left);
+  });
+}
 
 export async function generateMetadata({
   params,
@@ -86,12 +164,18 @@ export default async function BlogPage({ params }: BlogPageProps) {
       ...blogToArticle(blog, expertAttribution),
       category: categoryTitle(blog.category_id ? categoryMap.get(blog.category_id) : null),
     };
-    const relatedArticles = onlyPublished(blogs)
-      .filter((item) => item.slug !== blog.slug)
+    const publishedBlogs = onlyPublished(blogs).filter((item) => item.slug !== blog.slug);
+    const relatedArticles = sortByScoreThenFreshness(
+      publishedBlogs,
+      (item) => scoreRelatedBlog(blog, item),
+    )
       .slice(0, 6)
       .map((item) => blogToCard(item, categoryMap))
       .filter((item): item is typeof item & { slug: string } => Boolean(item.slug));
-    const recommendedProducts = onlyPublished(products)
+    const recommendedProducts = sortByScoreThenFreshness(
+      onlyPublished(products),
+      (product) => scoreRecommendedProduct(blog, product),
+    )
       .slice(0, 3)
       .map((product, index) => productToCard(product, categoryMap, index));
 

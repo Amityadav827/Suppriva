@@ -34,19 +34,8 @@ export type BlogArticle = {
     bullets?: string[];
     quote?: string;
   }[];
-  callouts: {
-    type: string;
-    title: string;
-    text: string;
-  }[];
-  table: {
-    title: string;
-    rows: string[][];
-  } | null;
-  recommended: string[];
   faqs: {
     question: string;
     answer: string;
   }[];
-  related: string[];
 };
