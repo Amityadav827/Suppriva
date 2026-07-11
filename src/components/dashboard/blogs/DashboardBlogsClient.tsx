@@ -1,9 +1,7 @@
 "use client";
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
-import {
-  MediaLibraryField,
-} from "@/components/dashboard/media/MediaLibraryField";
+import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
 import type { Author, Blog, Reviewer } from "@/lib/database/types";
 import { motion } from "framer-motion";
@@ -47,6 +45,9 @@ type BlogFormState = {
   content: string;
   faqs: BlogFaqItem[];
   featured_image: string;
+  featured_image_alt: string;
+  featured_image_title: string;
+  featured_image_caption: string;
   gallery: string[];
   category_id: string;
   author_id: string;
@@ -99,6 +100,9 @@ const emptyForm: BlogFormState = {
   content: "",
   faqs: [],
   featured_image: "",
+  featured_image_alt: "",
+  featured_image_title: "",
+  featured_image_caption: "",
   gallery: [],
   category_id: "",
   author_id: "",
@@ -188,6 +192,33 @@ function galleryFromContent(content: Blog["content"]) {
   return [];
 }
 
+function imageMetadataFromContent(content: Blog["content"]) {
+  if (typeof content === "object" && content !== null && !Array.isArray(content)) {
+    const record = content as Record<string, unknown>;
+    const metadataValue = record.featuredImageMetadata;
+
+    if (
+      typeof metadataValue === "object" &&
+      metadataValue !== null &&
+      !Array.isArray(metadataValue)
+    ) {
+      const metadata = metadataValue as Record<string, unknown>;
+
+      return {
+        alt: typeof metadata.alt === "string" ? metadata.alt : "",
+        title: typeof metadata.title === "string" ? metadata.title : "",
+        caption: typeof metadata.caption === "string" ? metadata.caption : "",
+      };
+    }
+  }
+
+  return {
+    alt: "",
+    title: "",
+    caption: "",
+  };
+}
+
 function faqsFromContent(content: Blog["content"]): BlogFaqItem[] {
   if (
     typeof content === "object" &&
@@ -227,6 +258,24 @@ function sanitizeFaqs(faqs: BlogFaqItem[]) {
     .filter((faq) => faq.question || faq.answer);
 }
 
+function isValidImageUrl(value: string) {
+  if (!value) {
+    return true;
+  }
+
+  if (value.startsWith("/")) {
+    return true;
+  }
+
+  try {
+    const url = new URL(value);
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
 function validateBlogForm(form: BlogFormState) {
   const errors: string[] = [];
   const slug = form.slug.trim();
@@ -248,6 +297,18 @@ function validateBlogForm(form: BlogFormState) {
 
   if (hasEmptyHeading) {
     errors.push("Article headings cannot be empty.");
+  }
+
+  if (form.featured_image && !isValidImageUrl(form.featured_image)) {
+    errors.push("Featured image must be a valid URL or site-relative path.");
+  }
+
+  if (form.featured_image && !form.featured_image_alt.trim()) {
+    errors.push("Featured image alt text is required.");
+  }
+
+  if (form.featured_image && !form.featured_image_title.trim()) {
+    errors.push("Featured image title is required.");
   }
 
   const seenFaqs = new Set<string>();
@@ -447,6 +508,8 @@ function parseBlogCsv(text: string) {
 }
 
 function blogToForm(blog: Blog): BlogFormState {
+  const imageMetadata = imageMetadataFromContent(blog.content);
+
   return {
     title: blog.title,
     slug: blog.slug,
@@ -454,6 +517,9 @@ function blogToForm(blog: Blog): BlogFormState {
     content: plainTextFromContent(blog.content),
     faqs: faqsFromContent(blog.content),
     featured_image: blog.featured_image ?? "",
+    featured_image_alt: imageMetadata.alt,
+    featured_image_title: imageMetadata.title,
+    featured_image_caption: imageMetadata.caption,
     gallery: galleryFromContent(blog.content),
     category_id: blog.category_id ?? "",
     author_id: blog.author_id ?? "",
@@ -475,6 +541,11 @@ function formToPayload(form: BlogFormState) {
     content: {
       body: form.content,
       faqs: sanitizeFaqs(form.faqs),
+      featuredImageMetadata: {
+        alt: form.featured_image_alt.trim(),
+        title: form.featured_image_title.trim(),
+        caption: form.featured_image_caption.trim(),
+      },
       gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
     },
     featured_image: form.featured_image || null,
@@ -500,6 +571,11 @@ function csvRowToPayload(row: BlogCsvRow) {
     content: {
       body: content,
       faqs: [],
+      featuredImageMetadata: {
+        alt: "",
+        title: "",
+        caption: "",
+      },
     },
     featured_image: row.featured_image_url || null,
     category_id: row.category_id || null,
@@ -1026,6 +1102,25 @@ export function DashboardBlogsClient() {
               onChange={(value) => updateForm("featured_image", value)}
               className="lg:col-span-2"
               helperText="Choose the primary blog hero image from the Media Library."
+            />
+            <InputField
+              label="Image Alt Text"
+              value={form.featured_image_alt}
+              onChange={(value) => updateForm("featured_image_alt", value)}
+              placeholder="Describe the featured image for accessibility"
+            />
+            <InputField
+              label="Image Title"
+              value={form.featured_image_title}
+              onChange={(value) => updateForm("featured_image_title", value)}
+              placeholder="Short image title"
+            />
+            <TextAreaField
+              label="Image Caption"
+              value={form.featured_image_caption}
+              onChange={(value) => updateForm("featured_image_caption", value)}
+              placeholder="Optional caption shown below the featured image"
+              className="lg:col-span-2"
             />
             <InputField label="Reading Time" value={form.reading_time} onChange={(value) => updateForm("reading_time", value)} placeholder="7 min read" />
             <InputField label="Category ID" value={form.category_id} onChange={(value) => updateForm("category_id", value)} placeholder="Optional UUID" />

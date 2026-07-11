@@ -8,6 +8,7 @@ type BlogContentObject = {
   readingTime?: string;
   publishDate?: string;
   image?: string;
+  featuredImageMetadata?: BlogArticle["imageMetadata"];
   toc?: BlogArticle["toc"];
   sections?: BlogArticle["sections"];
   callouts?: BlogArticle["callouts"];
@@ -27,6 +28,33 @@ function asContentObject(content: JsonValue): BlogContentObject {
   }
 
   return content as BlogContentObject;
+}
+
+function readImageMetadata(
+  content: BlogContentObject,
+  fallbackAlt: string,
+): BlogArticle["imageMetadata"] {
+  const metadata = content.featuredImageMetadata;
+
+  if (typeof metadata !== "object" || metadata === null || Array.isArray(metadata)) {
+    return {
+      alt: fallbackAlt,
+      title: fallbackAlt,
+      caption: "",
+    };
+  }
+
+  return {
+    alt: typeof metadata.alt === "string" && metadata.alt.trim() ? metadata.alt : fallbackAlt,
+    title:
+      typeof metadata.title === "string" && metadata.title.trim()
+        ? metadata.title
+        : fallbackAlt,
+    caption:
+      typeof metadata.caption === "string" && metadata.caption.trim()
+        ? metadata.caption
+        : "",
+  };
 }
 
 function formatDate(value: string | null) {
@@ -266,6 +294,7 @@ export function blogToArticle(
     },
     expertAttribution,
     image,
+    imageMetadata: readImageMetadata(content, blog.title),
     toc: toc.length ? toc : sections.map((section) => ({ id: section.id, label: section.title })),
     sections,
     callouts: [],

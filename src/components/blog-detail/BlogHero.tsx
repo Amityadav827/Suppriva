@@ -44,7 +44,8 @@ export function BlogHero({ article }: { article: BlogArticle }) {
         <div className="relative h-[330px] overflow-hidden rounded-[28px] bg-soft-green md:h-[460px]">
           <Image
             src={article.image}
-            alt={article.title}
+            alt={article.imageMetadata.alt}
+            title={article.imageMetadata.title}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 560px"
@@ -52,6 +53,11 @@ export function BlogHero({ article }: { article: BlogArticle }) {
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(217,165,32,0.24),transparent_36%),linear-gradient(180deg,rgba(6,57,33,0)_45%,rgba(6,57,33,0.25)_100%)]" />
         </div>
+        {article.imageMetadata.caption ? (
+          <p className="px-3 pb-1 pt-3 text-center text-sm leading-6 text-muted">
+            {article.imageMetadata.caption}
+          </p>
+        ) : null}
       </motion.div>
     </div>
   );

@@ -40,6 +40,24 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function isValidImageUrl(value: string) {
+  if (!value) {
+    return true;
+  }
+
+  if (value.startsWith("/")) {
+    return true;
+  }
+
+  try {
+    const url = new URL(value);
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
 function validateRichTextContent(content: JsonValue | undefined, errors: string[]) {
   if (content === undefined || content === null) {
     return;
@@ -64,6 +82,30 @@ function validateRichTextContent(content: JsonValue | undefined, errors: string[
 
   if (hasEmptyHeading) {
     errors.push("Blog content headings cannot be empty.");
+  }
+
+  if ("featuredImageMetadata" in content && content.featuredImageMetadata !== undefined) {
+    if (!isRecord(content.featuredImageMetadata)) {
+      errors.push("Featured image metadata must be a structured object.");
+    } else {
+      const metadata = content.featuredImageMetadata;
+
+      if ("alt" in metadata && metadata.alt !== undefined && typeof metadata.alt !== "string") {
+        errors.push("Featured image alt text must be text.");
+      }
+
+      if ("title" in metadata && metadata.title !== undefined && typeof metadata.title !== "string") {
+        errors.push("Featured image title must be text.");
+      }
+
+      if (
+        "caption" in metadata &&
+        metadata.caption !== undefined &&
+        typeof metadata.caption !== "string"
+      ) {
+        errors.push("Featured image caption must be text.");
+      }
+    }
   }
 
   if ("faqs" in content && content.faqs !== undefined) {
@@ -144,6 +186,35 @@ export function validateBlogInput<TInput extends BlogValidationInput>(
 
   if ("reviewer_id" in input && input.reviewer_id && !UUID_PATTERN.test(input.reviewer_id)) {
     errors.push("Reviewer ID must be a valid UUID.");
+  }
+
+  if (
+    "featured_image" in input &&
+    input.featured_image &&
+    !isValidImageUrl(input.featured_image)
+  ) {
+    errors.push("Featured image must be a valid URL or site-relative path.");
+  }
+
+  if ("featured_image" in input && input.featured_image && "content" in input) {
+    const content = input.content;
+
+    if (isRecord(content)) {
+      const metadata = content.featuredImageMetadata;
+
+      if (isRecord(metadata)) {
+        const alt = typeof metadata.alt === "string" ? metadata.alt.trim() : "";
+        const title = typeof metadata.title === "string" ? metadata.title.trim() : "";
+
+        if (!alt) {
+          errors.push("Featured image alt text is required.");
+        }
+
+        if (!title) {
+          errors.push("Featured image title is required.");
+        }
+      }
+    }
   }
 
   if (

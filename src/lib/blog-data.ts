@@ -15,6 +15,11 @@ export type BlogArticle = {
   };
   expertAttribution: ExpertAttribution;
   image: string;
+  imageMetadata: {
+    alt: string;
+    title: string;
+    caption: string;
+  };
   toc: {
     id: string;
     label: string;
