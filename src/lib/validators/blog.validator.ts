@@ -36,6 +36,39 @@ function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function validateRichTextContent(content: JsonValue | undefined, errors: string[]) {
+  if (content === undefined || content === null) {
+    return;
+  }
+
+  if (!isRecord(content)) {
+    errors.push("Blog content must be a structured rich text object.");
+    return;
+  }
+
+  if ("body" in content && content.body !== undefined && typeof content.body !== "string") {
+    errors.push("Blog content body must be text.");
+    return;
+  }
+
+  if (typeof content.body !== "string") {
+    return;
+  }
+
+  const hasEmptyHeading = content.body
+    .replace(/\r\n/g, "\n")
+    .split("\n")
+    .some((line) => /^#{1,6}\s*$/.test(line.trim()));
+
+  if (hasEmptyHeading) {
+    errors.push("Blog content headings cannot be empty.");
+  }
+}
+
 export function validateBlogInput<TInput extends BlogValidationInput>(
   input: TInput,
   mode: "create" | "update" = "create",
@@ -88,6 +121,10 @@ export function validateBlogInput<TInput extends BlogValidationInput>(
     !isStringArray(input.seo_keywords)
   ) {
     errors.push("SEO keywords must be a list of text items.");
+  }
+
+  if ("content" in input) {
+    validateRichTextContent(input.content, errors);
   }
 
   return {

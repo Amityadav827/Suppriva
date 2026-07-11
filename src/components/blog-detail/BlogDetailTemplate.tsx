@@ -60,24 +60,30 @@ export function BlogDetailTemplate({
           </div>
         </SectionWrapper>
 
-        <SectionWrapper id="recommended-products">
-          <SectionTitle title="Recommended Supplements" />
-          <div className="mt-12">
-            <RecommendedProducts products={recommendedProducts} />
-          </div>
-        </SectionWrapper>
+        {recommendedProducts.length ? (
+          <SectionWrapper id="recommended-products">
+            <SectionTitle title="Recommended Supplements" />
+            <div className="mt-12">
+              <RecommendedProducts products={recommendedProducts} />
+            </div>
+          </SectionWrapper>
+        ) : null}
 
-        <SectionWrapper id="faq" tone="white">
-          <SectionTitle title="Frequently Asked Questions" />
-          <div className="mt-12">
-            <FAQAccordion faqs={article.faqs} />
-          </div>
-        </SectionWrapper>
+        {article.faqs.length ? (
+          <SectionWrapper id="faq" tone="white">
+            <SectionTitle title="Frequently Asked Questions" />
+            <div className="mt-12">
+              <FAQAccordion faqs={article.faqs} />
+            </div>
+          </SectionWrapper>
+        ) : null}
 
-        <SectionWrapper id="related-articles" tone="white">
-          <SectionTitle title="Related Articles" />
-          <RelatedArticlesSlider articles={relatedArticles} />
-        </SectionWrapper>
+        {relatedArticles.length ? (
+          <SectionWrapper id="related-articles" tone="white">
+            <SectionTitle title="Related Articles" />
+            <RelatedArticlesSlider articles={relatedArticles} />
+          </SectionWrapper>
+        ) : null}
 
         <NewsletterSection />
       </main>

@@ -9,15 +9,34 @@ import { ContentStatus } from "@/lib/database/constants";
 import type { Author, Blog, Reviewer } from "@/lib/database/types";
 import { motion } from "framer-motion";
 import {
+  Bold,
   Download,
   FileDown,
   FilePlus2,
   FileUp,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  Image as ImageIcon,
+  Italic,
+  Link as LinkIcon,
+  List,
+  ListOrdered,
   Loader2,
+  Minus,
   Pencil,
+  Quote,
+  Redo2,
   RefreshCw,
   Search,
+  Strikethrough,
+  Table2,
   Trash2,
+  Underline,
+  Undo2,
   X,
 } from "lucide-react";
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -108,11 +127,35 @@ function plainTextFromContent(content: Blog["content"]) {
         .map((section) => {
           if (
             typeof section === "object" &&
-            section !== null &&
-            "intro" in section &&
-            typeof section.intro === "string"
+            section !== null
           ) {
-            return section.intro;
+            const title =
+              "title" in section &&
+              typeof section.title === "string" &&
+              !/^section\s+\d+$/i.test(section.title)
+                ? `## ${section.title}`
+                : "";
+            const intro =
+              "intro" in section && typeof section.intro === "string"
+                ? section.intro
+                : "";
+            const h3 =
+              "h3" in section && typeof section.h3 === "string"
+                ? `### ${section.h3}`
+                : "";
+            const bullets =
+              "bullets" in section && Array.isArray(section.bullets)
+                ? section.bullets
+                    .filter((item): item is string => typeof item === "string")
+                    .map((item) => `- ${item}`)
+                    .join("\n")
+                : "";
+            const quote =
+              "quote" in section && typeof section.quote === "string"
+                ? `> ${section.quote}`
+                : "";
+
+            return [title, intro, h3, bullets, quote].filter(Boolean).join("\n\n");
           }
 
           return "";
@@ -331,15 +374,6 @@ function formToPayload(form: BlogFormState) {
     content: {
       body: form.content,
       gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
-      sections: form.content
-        .split(/\n{2,}/)
-        .map((section) => section.trim())
-        .filter(Boolean)
-        .map((section, index) => ({
-          id: index === 0 ? "introduction" : `section-${index + 1}`,
-          title: index === 0 ? "Introduction" : `Section ${index + 1}`,
-          intro: section,
-        })),
     },
     featured_image: form.featured_image || null,
     category_id: form.category_id || null,
@@ -363,15 +397,6 @@ function csvRowToPayload(row: BlogCsvRow) {
     excerpt: row.excerpt || null,
     content: {
       body: content,
-      sections: content
-        .split(/\n{2,}/)
-        .map((section) => section.trim())
-        .filter(Boolean)
-        .map((section, index) => ({
-          id: index === 0 ? "introduction" : `section-${index + 1}`,
-          title: index === 0 ? "Introduction" : `Section ${index + 1}`,
-          intro: section,
-        })),
     },
     featured_image: row.featured_image_url || null,
     category_id: row.category_id || null,
@@ -892,7 +917,14 @@ export function DashboardBlogsClient() {
             <InputField label="SEO Keywords" value={form.seo_keywords} onChange={(value) => updateForm("seo_keywords", value)} placeholder="supplements, health guide" />
             <TextAreaField label="Excerpt" value={form.excerpt} onChange={(value) => updateForm("excerpt", value)} />
             <TextAreaField label="SEO Description" value={form.seo_description} onChange={(value) => updateForm("seo_description", value)} />
-            <TextAreaField label="Article Content" value={form.content} onChange={(value) => updateForm("content", value)} className="lg:col-span-2" rows={7} />
+            <RichTextEditor
+              label="Article Content"
+              value={form.content}
+              onChange={(value) => updateForm("content", value)}
+              className="lg:col-span-2"
+              rows={12}
+              helperText="Use headings for real article sections. The blog table of contents is generated from H2 and H3 headings."
+            />
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
               <button
@@ -942,6 +974,216 @@ function InputField({
         className="min-h-12 rounded-[18px] border border-border-light bg-white px-4 text-sm text-text-dark outline-none transition placeholder:text-muted/70 focus:border-gold/80 focus:ring-4 focus:ring-gold/10"
       />
     </label>
+  );
+}
+
+function RichTextEditor({
+  label,
+  value,
+  onChange,
+  placeholder,
+  helperText,
+  rows = 8,
+  className = "",
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  helperText?: string;
+  rows?: number;
+  className?: string;
+}) {
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  function replaceSelection(nextText: string, selectionOffset = 0, selectionLength = nextText.length) {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const nextValue = `${value.slice(0, start)}${nextText}${value.slice(end)}`;
+
+    onChange(nextValue);
+
+    window.requestAnimationFrame(() => {
+      textarea?.focus();
+      textarea?.setSelectionRange(start + selectionOffset, start + selectionOffset + selectionLength);
+    });
+  }
+
+  function insertMarkup(prefix: string, suffix = "", fallback = "text") {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || fallback;
+    const nextText = `${prefix}${selectedText}${suffix}`;
+
+    replaceSelection(nextText, prefix.length, selectedText.length);
+  }
+
+  function insertHeading(level: number) {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end).trim() || "Article heading";
+    const prefix = "#".repeat(level);
+    const needsLeadingBreak = start > 0 && !value.slice(0, start).endsWith("\n") ? "\n\n" : "";
+    const nextText = `${needsLeadingBreak}${prefix} ${selectedText}\n\n`;
+
+    replaceSelection(nextText, needsLeadingBreak.length + prefix.length + 1, selectedText.length);
+  }
+
+  function insertBulletList() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "List item";
+    const listText = selectedText
+      .split("\n")
+      .map((line) => `- ${line.replace(/^[-*]\s*/, "")}`)
+      .join("\n");
+
+    replaceSelection(listText, 0, listText.length);
+  }
+
+  function insertNumberedList() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "List item";
+    const listText = selectedText
+      .split("\n")
+      .map((line, index) => `${index + 1}. ${line.replace(/^\d+\.\s*/, "")}`)
+      .join("\n");
+
+    replaceSelection(listText, 0, listText.length);
+  }
+
+  function insertBlockQuote() {
+    const textarea = textareaRef.current;
+    const start = textarea?.selectionStart ?? value.length;
+    const end = textarea?.selectionEnd ?? value.length;
+    const selectedText = value.slice(start, end) || "Quote text";
+    const quoteText = selectedText
+      .split("\n")
+      .map((line) => `> ${line.replace(/^>\s*/, "")}`)
+      .join("\n");
+
+    replaceSelection(quoteText, 2, selectedText.length);
+  }
+
+  function insertTable() {
+    replaceSelection("| Column 1 | Column 2 |\n| --- | --- |\n| Value 1 | Value 2 |", 2, 8);
+  }
+
+  function insertImage() {
+    replaceSelection("![Image alt text](https://example.com/image.jpg)", 2, 14);
+  }
+
+  function insertHorizontalRule() {
+    replaceSelection("\n\n---\n\n", 2, 3);
+  }
+
+  function runNativeCommand(command: "undo" | "redo") {
+    textareaRef.current?.focus();
+    document.execCommand(command);
+  }
+
+  return (
+    <label className={`grid gap-2 ${className}`}>
+      <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
+      <div className="overflow-hidden rounded-[18px] border border-border-light bg-white focus-within:border-gold/80 focus-within:ring-4 focus-within:ring-gold/10">
+        <div className="flex flex-wrap gap-2 border-b border-border-light bg-cream/50 px-3 py-2">
+          <EditorButton label="H1" onClick={() => insertHeading(1)}>
+            <Heading1 className="size-4" />
+          </EditorButton>
+          <EditorButton label="H2" onClick={() => insertHeading(2)}>
+            <Heading2 className="size-4" />
+          </EditorButton>
+          <EditorButton label="H3" onClick={() => insertHeading(3)}>
+            <Heading3 className="size-4" />
+          </EditorButton>
+          <EditorButton label="H4" onClick={() => insertHeading(4)}>
+            <Heading4 className="size-4" />
+          </EditorButton>
+          <EditorButton label="H5" onClick={() => insertHeading(5)}>
+            <Heading5 className="size-4" />
+          </EditorButton>
+          <EditorButton label="H6" onClick={() => insertHeading(6)}>
+            <Heading6 className="size-4" />
+          </EditorButton>
+          <EditorButton label="Bold" onClick={() => insertMarkup("**", "**", "bold text")}>
+            <Bold className="size-4" />
+          </EditorButton>
+          <EditorButton label="Italic" onClick={() => insertMarkup("*", "*", "italic text")}>
+            <Italic className="size-4" />
+          </EditorButton>
+          <EditorButton label="Underline" onClick={() => insertMarkup("__", "__", "underlined text")}>
+            <Underline className="size-4" />
+          </EditorButton>
+          <EditorButton label="Strike" onClick={() => insertMarkup("~~", "~~", "struck text")}>
+            <Strikethrough className="size-4" />
+          </EditorButton>
+          <EditorButton label="Bullet list" onClick={insertBulletList}>
+            <List className="size-4" />
+          </EditorButton>
+          <EditorButton label="Numbered list" onClick={insertNumberedList}>
+            <ListOrdered className="size-4" />
+          </EditorButton>
+          <EditorButton label="Block quote" onClick={insertBlockQuote}>
+            <Quote className="size-4" />
+          </EditorButton>
+          <EditorButton label="Link" onClick={() => insertMarkup("[", "](https://example.com)", "link text")}>
+            <LinkIcon className="size-4" />
+          </EditorButton>
+          <EditorButton label="Table" onClick={insertTable}>
+            <Table2 className="size-4" />
+          </EditorButton>
+          <EditorButton label="Image" onClick={insertImage}>
+            <ImageIcon className="size-4" />
+          </EditorButton>
+          <EditorButton label="Horizontal rule" onClick={insertHorizontalRule}>
+            <Minus className="size-4" />
+          </EditorButton>
+          <EditorButton label="Undo" onClick={() => runNativeCommand("undo")}>
+            <Undo2 className="size-4" />
+          </EditorButton>
+          <EditorButton label="Redo" onClick={() => runNativeCommand("redo")}>
+            <Redo2 className="size-4" />
+          </EditorButton>
+        </div>
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={(event) => onChange(event.target.value)}
+          placeholder={placeholder ?? "Use headings, paragraphs, lists, links, tables, images, quotes, and dividers."}
+          rows={rows}
+          className="w-full resize-y border-0 bg-white px-4 py-3 text-sm text-text-dark outline-none placeholder:text-muted/70"
+        />
+      </div>
+      {helperText ? <span className="text-xs text-muted">{helperText}</span> : null}
+    </label>
+  );
+}
+
+function EditorButton({
+  label,
+  onClick,
+  children,
+}: {
+  label: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={label}
+      aria-label={label}
+      className="inline-flex size-9 items-center justify-center rounded-full border border-border-light bg-white text-primary transition hover:border-gold/70 hover:bg-soft-green"
+    >
+      {children}
+    </button>
   );
 }
 

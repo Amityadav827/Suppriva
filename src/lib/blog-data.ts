@@ -22,7 +22,9 @@ export type BlogArticle = {
   sections: {
     id: string;
     title: string;
-    intro: string;
+    content: string;
+    level?: number;
+    intro?: string;
     h3?: string;
     bullets?: string[];
     quote?: string;
@@ -35,7 +37,7 @@ export type BlogArticle = {
   table: {
     title: string;
     rows: string[][];
-  };
+  } | null;
   recommended: string[];
   faqs: {
     question: string;

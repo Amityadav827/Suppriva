@@ -41,31 +41,181 @@ function formatDate(value: string | null) {
   }).format(new Date(value));
 }
 
-function createDefaultSections(blog: Blog, body?: string): BlogArticle["sections"] {
-  const intro =
-    body ||
-    blog.excerpt ||
-    "This Suppriva guide is prepared for premium supplement research and wellness discovery.";
+function stripFormatting(value: string) {
+  return value
+    .replace(/<[^>]+>/g, "")
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_~`>#-]/g, "")
+    .trim();
+}
 
-  return [
-    {
-      id: "introduction",
-      title: "Introduction",
-      intro,
-    },
-    {
-      id: "benefits",
-      title: "Key Wellness Notes",
-      intro:
-        "Compare supplement positioning, ingredient clarity, usage guidance, and how the topic fits into a sustainable wellness routine.",
-    },
-    {
-      id: "usage",
-      title: "How To Use This Guide",
-      intro:
-        "Use this article as a starting point for research, then review official product labels and consult a qualified professional when needed.",
-    },
-  ];
+function createHeadingId(title: string, index: number) {
+  const slug = stripFormatting(title)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return slug || `blog-heading-${index + 1}`;
+}
+
+function normalizeLegacyTitle(title: string | undefined, fallbackTitle: string, index: number) {
+  const cleanTitle = stripFormatting(title ?? "");
+
+  if (!cleanTitle || /^section\s+\d+$/i.test(cleanTitle)) {
+    return index === 0 ? fallbackTitle : `${fallbackTitle} Notes`;
+  }
+
+  return cleanTitle;
+}
+
+function parseHeading(line: string) {
+  const match = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
+
+  if (!match) {
+    return null;
+  }
+
+  const title = stripFormatting(match[2]);
+
+  if (!title) {
+    return null;
+  }
+
+  return {
+    level: match[1].length,
+    title,
+  };
+}
+
+function parseBodySections(
+  body: string | undefined,
+  fallbackTitle: string,
+  fallbackContent: string,
+): BlogArticle["sections"] {
+  const source = body?.trim() || fallbackContent.trim();
+
+  if (!source) {
+    return [];
+  }
+
+  const lines = source.replace(/\r\n/g, "\n").split("\n");
+  const sections: BlogArticle["sections"] = [];
+  const introLines: string[] = [];
+  let current:
+    | {
+        id: string;
+        title: string;
+        level: number;
+        contentLines: string[];
+      }
+    | null = null;
+
+  function pushCurrent() {
+    if (!current) {
+      return;
+    }
+
+    sections.push({
+      id: current.id,
+      title: current.title,
+      level: current.level,
+      content: current.contentLines.join("\n").trim(),
+    });
+  }
+
+  for (const line of lines) {
+    const heading = parseHeading(line);
+
+    if (heading) {
+      pushCurrent();
+      current = {
+        id: createHeadingId(heading.title, sections.length),
+        title: heading.title,
+        level: heading.level,
+        contentLines: [],
+      };
+      continue;
+    }
+
+    if (current) {
+      current.contentLines.push(line);
+    } else {
+      introLines.push(line);
+    }
+  }
+
+  pushCurrent();
+
+  const intro = introLines.join("\n").trim();
+
+  if (!sections.length) {
+    return [
+      {
+        id: createHeadingId(fallbackTitle, 0),
+        title: fallbackTitle,
+        level: 2,
+        content: source,
+      },
+    ];
+  }
+
+  if (intro) {
+    sections[0] = {
+      ...sections[0],
+      content: [intro, sections[0].content].filter(Boolean).join("\n\n"),
+    };
+  }
+
+  return sections;
+}
+
+function legacySectionsToRichSections(
+  legacySections: BlogContentObject["sections"],
+  fallbackTitle: string,
+  fallbackContent: string,
+): BlogArticle["sections"] {
+  if (!Array.isArray(legacySections) || !legacySections.length) {
+    return parseBodySections(undefined, fallbackTitle, fallbackContent);
+  }
+
+  const richSections: BlogArticle["sections"] = [];
+
+  legacySections.forEach((section, index) => {
+    if (!isRecord(section as JsonValue)) {
+      return;
+    }
+
+    const title = normalizeLegacyTitle(
+      typeof section.title === "string" ? section.title : undefined,
+      fallbackTitle,
+      index,
+    );
+    const h3 = typeof section.h3 === "string" ? `### ${section.h3}` : "";
+    const bullets = Array.isArray(section.bullets)
+      ? section.bullets
+          .filter((item): item is string => typeof item === "string")
+          .map((item) => `- ${item}`)
+          .join("\n")
+      : "";
+    const quote = typeof section.quote === "string" ? `> ${section.quote}` : "";
+    const intro = typeof section.intro === "string" ? section.intro : "";
+    const content = [intro, h3, bullets, quote].filter(Boolean).join("\n\n");
+
+    richSections.push({
+      id:
+        typeof section.id === "string"
+          ? section.id
+          : createHeadingId(title, index),
+      title,
+      level: 2,
+      content,
+    });
+  });
+
+  return richSections;
 }
 
 export function blogToArticle(
@@ -79,17 +229,21 @@ export function blogToArticle(
     blog.featured_image ||
     (typeof content.image === "string" ? content.image : undefined) ||
     "/assets/blog-weight-loss.webp";
-  const sections = Array.isArray(content.sections)
-    ? content.sections
-    : createDefaultSections(blog, body);
+  const summary =
+    blog.excerpt ||
+    (typeof content.summary === "string" ? content.summary : undefined) ||
+    "A premium Suppriva wellness guide prepared for supplement research and smarter comparison.";
+  const sections = body?.trim()
+    ? parseBodySections(body, blog.title, summary)
+    : legacySectionsToRichSections(content.sections, blog.title, summary);
+  const toc = sections
+    .filter((section) => (section.level ?? 2) === 2 || (section.level ?? 2) === 3)
+    .map((section) => ({ id: section.id, label: section.title }));
 
   return {
     slug: blog.slug,
     title: blog.title,
-    summary:
-      blog.excerpt ||
-      (typeof content.summary === "string" ? content.summary : undefined) ||
-      "A premium Suppriva wellness guide prepared for supplement research and smarter comparison.",
+    summary,
     category: category || "Wellness Guide",
     readingTime:
       blog.reading_time ||
@@ -112,44 +266,14 @@ export function blogToArticle(
     },
     expertAttribution,
     image,
-    toc: Array.isArray(content.toc)
-      ? content.toc
-      : sections.map((section) => ({ id: section.id, label: section.title })),
+    toc: toc.length ? toc : sections.map((section) => ({ id: section.id, label: section.title })),
     sections,
-    callouts: Array.isArray(content.callouts)
-      ? content.callouts
-      : [
-          {
-            type: "Key Takeaway",
-            title: "Compare with context",
-            text: "Supplement decisions are strongest when ingredient quality, usage guidance, and lifestyle fit are reviewed together.",
-          },
-        ],
-    table: content.table ?? {
-      title: "Supplement Research Notes",
-      rows: [
-        ["Ingredient clarity", "Better comparison", "Review official labels"],
-        ["Usage fit", "Routine consistency", "Avoid over-stacking"],
-        ["Brand trust", "Confidence signal", "Check sourcing and claims"],
-      ],
-    },
+    callouts: Array.isArray(content.callouts) ? content.callouts : [],
+    table: content.table ?? null,
     recommended: Array.isArray(content.recommended)
       ? content.recommended
       : ["Java Burn", "Neuro Thrive", "GlucoTrust"],
-    faqs: Array.isArray(content.faqs)
-      ? content.faqs
-      : [
-          {
-            question: "How should I use this guide?",
-            answer:
-              "Use it as a research starting point and compare product labels, ingredient quality, and personal wellness needs.",
-          },
-          {
-            question: "Are supplements right for everyone?",
-            answer:
-              "No. Suitability depends on health status, medications, goals, and tolerance. Seek qualified advice when unsure.",
-          },
-        ],
+    faqs: Array.isArray(content.faqs) ? content.faqs : [],
     related: Array.isArray(content.related) ? content.related : [],
   };
 }
