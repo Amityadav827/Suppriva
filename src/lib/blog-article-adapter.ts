@@ -268,8 +268,8 @@ export function blogToArticle(
     image,
     toc: toc.length ? toc : sections.map((section) => ({ id: section.id, label: section.title })),
     sections,
-    callouts: Array.isArray(content.callouts) ? content.callouts : [],
-    table: content.table ?? null,
+    callouts: [],
+    table: null,
     recommended: Array.isArray(content.recommended)
       ? content.recommended
       : ["Java Burn", "Neuro Thrive", "GlucoTrust"],

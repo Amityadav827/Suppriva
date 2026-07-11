@@ -2,7 +2,6 @@
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import {
-  MediaGalleryField,
   MediaLibraryField,
 } from "@/components/dashboard/media/MediaLibraryField";
 import { ContentStatus } from "@/lib/database/constants";
@@ -46,6 +45,7 @@ type BlogFormState = {
   slug: string;
   excerpt: string;
   content: string;
+  faqs: BlogFaqItem[];
   featured_image: string;
   gallery: string[];
   category_id: string;
@@ -63,6 +63,11 @@ type BlogsResponse = {
   blogs?: Blog[];
   blog?: Blog;
   error?: string;
+};
+
+type BlogFaqItem = {
+  question: string;
+  answer: string;
 };
 
 type BlogCsvRow = Record<(typeof CSV_COLUMNS)[number], string>;
@@ -92,6 +97,7 @@ const emptyForm: BlogFormState = {
   slug: "",
   excerpt: "",
   content: "",
+  faqs: [],
   featured_image: "",
   gallery: [],
   category_id: "",
@@ -180,6 +186,100 @@ function galleryFromContent(content: Blog["content"]) {
   }
 
   return [];
+}
+
+function faqsFromContent(content: Blog["content"]): BlogFaqItem[] {
+  if (
+    typeof content === "object" &&
+    content !== null &&
+    !Array.isArray(content) &&
+    "faqs" in content &&
+    Array.isArray(content.faqs)
+  ) {
+    return content.faqs.reduce<BlogFaqItem[]>((items, item) => {
+      if (typeof item !== "object" || item === null || Array.isArray(item)) {
+        return items;
+      }
+
+      const record = item as Record<string, unknown>;
+      const faq = {
+        question: typeof record.question === "string" ? record.question : "",
+        answer: typeof record.answer === "string" ? record.answer : "",
+      };
+
+      if (faq.question.trim() || faq.answer.trim()) {
+        items.push(faq);
+      }
+
+      return items;
+    }, []);
+  }
+
+  return [];
+}
+
+function sanitizeFaqs(faqs: BlogFaqItem[]) {
+  return faqs
+    .map((faq) => ({
+      question: faq.question.trim(),
+      answer: faq.answer.trim(),
+    }))
+    .filter((faq) => faq.question || faq.answer);
+}
+
+function validateBlogForm(form: BlogFormState) {
+  const errors: string[] = [];
+  const slug = form.slug.trim();
+
+  if (!form.title.trim()) {
+    errors.push("Blog title is required.");
+  }
+
+  if (!slug) {
+    errors.push("Blog slug is required.");
+  } else if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    errors.push("Slug must use lowercase letters, numbers, and hyphens only.");
+  }
+
+  const hasEmptyHeading = form.content
+    .replace(/\r\n/g, "\n")
+    .split("\n")
+    .some((line) => /^#{1,6}\s*$/.test(line.trim()));
+
+  if (hasEmptyHeading) {
+    errors.push("Article headings cannot be empty.");
+  }
+
+  const seenFaqs = new Set<string>();
+
+  form.faqs.forEach((faq, index) => {
+    const question = faq.question.trim();
+    const answer = faq.answer.trim();
+
+    if (!question && !answer) {
+      return;
+    }
+
+    if (!question) {
+      errors.push(`FAQ ${index + 1}: question is required.`);
+    }
+
+    if (!answer) {
+      errors.push(`FAQ ${index + 1}: answer is required.`);
+    }
+
+    const normalizedQuestion = question.toLowerCase();
+
+    if (normalizedQuestion && seenFaqs.has(normalizedQuestion)) {
+      errors.push(`FAQ ${index + 1}: duplicate question.`);
+    }
+
+    if (normalizedQuestion) {
+      seenFaqs.add(normalizedQuestion);
+    }
+  });
+
+  return errors;
 }
 
 function slugify(value: string) {
@@ -352,6 +452,7 @@ function blogToForm(blog: Blog): BlogFormState {
     slug: blog.slug,
     excerpt: blog.excerpt ?? "",
     content: plainTextFromContent(blog.content),
+    faqs: faqsFromContent(blog.content),
     featured_image: blog.featured_image ?? "",
     gallery: galleryFromContent(blog.content),
     category_id: blog.category_id ?? "",
@@ -373,6 +474,7 @@ function formToPayload(form: BlogFormState) {
     excerpt: form.excerpt || null,
     content: {
       body: form.content,
+      faqs: sanitizeFaqs(form.faqs),
       gallery: [...new Set(form.gallery.map((item) => item.trim()).filter(Boolean))],
     },
     featured_image: form.featured_image || null,
@@ -397,6 +499,7 @@ function csvRowToPayload(row: BlogCsvRow) {
     excerpt: row.excerpt || null,
     content: {
       body: content,
+      faqs: [],
     },
     featured_image: row.featured_image_url || null,
     category_id: row.category_id || null,
@@ -492,6 +595,45 @@ export function DashboardBlogsClient() {
     setForm((currentForm) => ({ ...currentForm, [key]: value }));
   }
 
+  function updateFaq(index: number, key: keyof BlogFaqItem, value: string) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      faqs: currentForm.faqs.map((faq, faqIndex) =>
+        faqIndex === index ? { ...faq, [key]: value } : faq,
+      ),
+    }));
+  }
+
+  function addFaq() {
+    setForm((currentForm) => ({
+      ...currentForm,
+      faqs: [...currentForm.faqs, { question: "", answer: "" }],
+    }));
+  }
+
+  function removeFaq(index: number) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      faqs: currentForm.faqs.filter((_, faqIndex) => faqIndex !== index),
+    }));
+  }
+
+  function moveFaq(index: number, direction: -1 | 1) {
+    setForm((currentForm) => {
+      const nextIndex = index + direction;
+
+      if (nextIndex < 0 || nextIndex >= currentForm.faqs.length) {
+        return currentForm;
+      }
+
+      const faqs = [...currentForm.faqs];
+      const [item] = faqs.splice(index, 1);
+      faqs.splice(nextIndex, 0, item);
+
+      return { ...currentForm, faqs };
+    });
+  }
+
   function openCreateForm() {
     setEditingBlog(null);
     setForm(emptyForm);
@@ -515,6 +657,12 @@ export function DashboardBlogsClient() {
     setSuccess("");
 
     try {
+      const validationErrors = validateBlogForm(form);
+
+      if (validationErrors.length) {
+        throw new Error(validationErrors.join(" "));
+      }
+
       const response = await fetch(editingBlog ? `/api/blogs/${editingBlog.id}` : "/api/blogs", {
         method: editingBlog ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
@@ -879,13 +1027,6 @@ export function DashboardBlogsClient() {
               className="lg:col-span-2"
               helperText="Choose the primary blog hero image from the Media Library."
             />
-            <MediaGalleryField
-              label="Blog Gallery"
-              values={form.gallery}
-              onChange={(value) => updateForm("gallery", value)}
-              className="lg:col-span-2"
-              helperText="Optional supporting images stored in the blog content payload."
-            />
             <InputField label="Reading Time" value={form.reading_time} onChange={(value) => updateForm("reading_time", value)} placeholder="7 min read" />
             <InputField label="Category ID" value={form.category_id} onChange={(value) => updateForm("category_id", value)} placeholder="Optional UUID" />
             <ProfileSelect
@@ -925,6 +1066,82 @@ export function DashboardBlogsClient() {
               rows={12}
               helperText="Use headings for real article sections. The blog table of contents is generated from H2 and H3 headings."
             />
+            <div className="grid gap-3 rounded-[24px] border border-border-light bg-white/70 p-4 lg:col-span-2">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                    FAQ
+                  </h3>
+                  <p className="mt-1 text-sm text-muted">
+                    Add the questions shown in the Blog Detail FAQ accordion.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={addFaq}
+                  className="inline-flex min-h-10 items-center justify-center rounded-pill border border-border-light px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
+                >
+                  Add FAQ
+                </button>
+              </div>
+
+              {form.faqs.length ? (
+                <div className="grid gap-3">
+                  {form.faqs.map((faq, index) => (
+                    <div
+                      key={`blog-faq-${index}`}
+                      className="grid gap-3 rounded-[20px] border border-border-light bg-white p-4"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="font-heading text-sm font-bold text-primary">
+                          FAQ {index + 1}
+                        </span>
+                        <div className="flex flex-wrap gap-2">
+                          <button
+                            type="button"
+                            onClick={() => moveFaq(index, -1)}
+                            disabled={index === 0}
+                            className="rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70 disabled:cursor-not-allowed disabled:opacity-40"
+                          >
+                            Up
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => moveFaq(index, 1)}
+                            disabled={index === form.faqs.length - 1}
+                            className="rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70 disabled:cursor-not-allowed disabled:opacity-40"
+                          >
+                            Down
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => removeFaq(index)}
+                            className="rounded-pill border border-red-200 px-3 py-1.5 text-xs font-semibold text-red-600 transition hover:bg-red-50"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                      <InputField
+                        label="Question"
+                        value={faq.question}
+                        onChange={(value) => updateFaq(index, "question", value)}
+                      />
+                      <TextAreaField
+                        label="Answer"
+                        value={faq.answer}
+                        onChange={(value) => updateFaq(index, "answer", value)}
+                        rows={3}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="rounded-[18px] border border-dashed border-border-light bg-cream/40 px-4 py-6 text-center text-sm text-muted">
+                  No FAQ items yet. Add one if this article needs a FAQ section.
+                </div>
+              )}
+            </div>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
               <button

@@ -55,17 +55,56 @@ function validateRichTextContent(content: JsonValue | undefined, errors: string[
     return;
   }
 
-  if (typeof content.body !== "string") {
-    return;
-  }
-
-  const hasEmptyHeading = content.body
-    .replace(/\r\n/g, "\n")
-    .split("\n")
-    .some((line) => /^#{1,6}\s*$/.test(line.trim()));
+  const hasEmptyHeading =
+    typeof content.body === "string" &&
+    content.body
+      .replace(/\r\n/g, "\n")
+      .split("\n")
+      .some((line) => /^#{1,6}\s*$/.test(line.trim()));
 
   if (hasEmptyHeading) {
     errors.push("Blog content headings cannot be empty.");
+  }
+
+  if ("faqs" in content && content.faqs !== undefined) {
+    if (!Array.isArray(content.faqs)) {
+      errors.push("Blog FAQ must be a list of question and answer items.");
+      return;
+    }
+
+    const seenQuestions = new Set<string>();
+
+    content.faqs.forEach((item, index) => {
+      if (!isRecord(item)) {
+        errors.push(`Blog FAQ ${index + 1} must be a question and answer object.`);
+        return;
+      }
+
+      const question = typeof item.question === "string" ? item.question.trim() : "";
+      const answer = typeof item.answer === "string" ? item.answer.trim() : "";
+
+      if (!question && !answer) {
+        return;
+      }
+
+      if (!question) {
+        errors.push(`Blog FAQ ${index + 1} question is required.`);
+      }
+
+      if (!answer) {
+        errors.push(`Blog FAQ ${index + 1} answer is required.`);
+      }
+
+      const normalizedQuestion = question.toLowerCase();
+
+      if (normalizedQuestion && seenQuestions.has(normalizedQuestion)) {
+        errors.push(`Blog FAQ ${index + 1} duplicates another question.`);
+      }
+
+      if (normalizedQuestion) {
+        seenQuestions.add(normalizedQuestion);
+      }
+    });
   }
 }
 
@@ -85,6 +124,10 @@ export function validateBlogInput<TInput extends BlogValidationInput>(
 
   if ("slug" in input && input.slug && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input.slug)) {
     errors.push("Slug must use lowercase letters, numbers, and hyphens only.");
+  }
+
+  if ("slug" in input && input.slug !== undefined && !input.slug.trim()) {
+    errors.push("Blog slug is required.");
   }
 
   if (
