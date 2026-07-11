@@ -74,6 +74,10 @@ function stripFormatting(value: string) {
     .trim();
 }
 
+function looksLikeHtml(value: string) {
+  return /<\/?[a-z][\s\S]*>/i.test(value);
+}
+
 function createHeadingId(title: string, index: number) {
   const slug = stripFormatting(title)
     .toLowerCase()
@@ -83,6 +87,49 @@ function createHeadingId(title: string, index: number) {
     .replace(/^-+|-+$/g, "");
 
   return slug || `blog-heading-${index + 1}`;
+}
+
+function parseHtmlSections(
+  body: string,
+  fallbackTitle: string,
+  fallbackContent: string,
+): BlogArticle["sections"] {
+  const source = body.trim();
+
+  if (!source) {
+    return parseBodySections(undefined, fallbackTitle, fallbackContent);
+  }
+
+  const headingPattern = /<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/gi;
+  const matches = [...source.matchAll(headingPattern)];
+
+  if (!matches.length) {
+    return [
+      {
+        id: createHeadingId(fallbackTitle, 0),
+        title: fallbackTitle,
+        level: 2,
+        content: source,
+      },
+    ];
+  }
+
+  const intro = source.slice(0, matches[0].index).trim();
+
+  return matches.map((match, index) => {
+    const currentStart = (match.index ?? 0) + match[0].length;
+    const nextStart = matches[index + 1]?.index ?? source.length;
+    const title = stripFormatting(match[3]) || (index === 0 ? fallbackTitle : `${fallbackTitle} Notes`);
+    const idMatch = match[2].match(/\sid=["']([^"']+)["']/i);
+    const content = source.slice(currentStart, nextStart).trim();
+
+    return {
+      id: idMatch?.[1] || createHeadingId(title, index),
+      title,
+      level: Number(match[1]),
+      content: [index === 0 ? intro : "", content].filter(Boolean).join(""),
+    };
+  });
 }
 
 function normalizeLegacyTitle(title: string | undefined, fallbackTitle: string, index: number) {
@@ -258,7 +305,9 @@ export function blogToArticle(
     (typeof content.summary === "string" ? content.summary : undefined) ||
     "A premium Suppriva wellness guide prepared for supplement research and smarter comparison.";
   const sections = body?.trim()
-    ? parseBodySections(body, blog.title, summary)
+    ? looksLikeHtml(body)
+      ? parseHtmlSections(body, blog.title, summary)
+      : parseBodySections(body, blog.title, summary)
     : legacySectionsToRichSections(content.sections, blog.title, summary);
   const toc = sections
     .filter((section) => (section.level ?? 2) === 2 || (section.level ?? 2) === 3)

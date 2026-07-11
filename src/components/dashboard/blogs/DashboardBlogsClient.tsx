@@ -2,12 +2,21 @@
 
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { MediaLibraryField } from "@/components/dashboard/media/MediaLibraryField";
+import { MediaLibraryPickerModal } from "@/components/dashboard/media/MediaLibraryPickerModal";
 import { ContentStatus } from "@/lib/database/constants";
 import type { Author, Blog, Reviewer } from "@/lib/database/types";
+import { MEDIA_LIBRARY_ACCEPT, uploadMediaLibraryFile, validateMediaLibraryFile } from "@/lib/media/upload-client";
 import { motion } from "framer-motion";
 import {
+  AlignCenter,
+  AlignJustify,
+  AlignLeft,
+  AlignRight,
   Bold,
+  CheckSquare,
+  Code,
   Download,
+  Eraser,
   FileDown,
   FilePlus2,
   FileUp,
@@ -17,22 +26,30 @@ import {
   Heading4,
   Heading5,
   Heading6,
+  Highlighter,
   Image as ImageIcon,
+  Indent,
   Italic,
   Link as LinkIcon,
   List,
   ListOrdered,
   Loader2,
   Minus,
+  Outdent,
+  Palette,
   Pencil,
   Quote,
   Redo2,
   RefreshCw,
   Search,
+  Sigma,
   Strikethrough,
+  Subscript,
+  Superscript,
   Table2,
   Trash2,
   Underline,
+  Unlink,
   Undo2,
   X,
 } from "lucide-react";
@@ -43,7 +60,6 @@ type BlogFormState = {
   slug: string;
   excerpt: string;
   content: string;
-  faqs: BlogFaqItem[];
   featured_image: string;
   featured_image_alt: string;
   featured_image_title: string;
@@ -67,11 +83,6 @@ type BlogsResponse = {
   blogs?: Blog[];
   blog?: Blog;
   error?: string;
-};
-
-type BlogFaqItem = {
-  question: string;
-  answer: string;
 };
 
 type BlogCsvRow = Record<(typeof CSV_COLUMNS)[number], string>;
@@ -101,7 +112,6 @@ const emptyForm: BlogFormState = {
   slug: "",
   excerpt: "",
   content: "",
-  faqs: [],
   featured_image: "",
   featured_image_alt: "",
   featured_image_title: "",
@@ -130,58 +140,122 @@ function commaList(value: string) {
 
 function plainTextFromContent(content: Blog["content"]) {
   if (typeof content === "string") {
-    return content;
+    return contentToEditorHtml(content);
   }
 
   if (typeof content === "object" && content !== null && !Array.isArray(content)) {
     if ("body" in content && typeof content.body === "string") {
-      return content.body;
+      return contentToEditorHtml(content.body);
     }
 
     if ("sections" in content && Array.isArray(content.sections)) {
-      return content.sections
-        .map((section) => {
-          if (
-            typeof section === "object" &&
-            section !== null
-          ) {
-            const title =
-              "title" in section &&
-              typeof section.title === "string" &&
-              !/^section\s+\d+$/i.test(section.title)
-                ? `## ${section.title}`
-                : "";
-            const intro =
-              "intro" in section && typeof section.intro === "string"
-                ? section.intro
-                : "";
-            const h3 =
-              "h3" in section && typeof section.h3 === "string"
-                ? `### ${section.h3}`
-                : "";
-            const bullets =
-              "bullets" in section && Array.isArray(section.bullets)
-                ? section.bullets
-                    .filter((item): item is string => typeof item === "string")
-                    .map((item) => `- ${item}`)
-                    .join("\n")
-                : "";
-            const quote =
-              "quote" in section && typeof section.quote === "string"
-                ? `> ${section.quote}`
-                : "";
+      return contentToEditorHtml(
+        content.sections
+          .map((section) => {
+            if (typeof section !== "object" || section === null) {
+              return "";
+            }
+
+            const record = section as Record<string, unknown>;
+            const title = typeof record.title === "string" ? `## ${record.title}` : "";
+            const intro = typeof record.intro === "string" ? record.intro : "";
+            const h3 = typeof record.h3 === "string" ? `### ${record.h3}` : "";
+            const bullets = Array.isArray(record.bullets)
+              ? record.bullets
+                  .filter((item): item is string => typeof item === "string")
+                  .map((item) => `- ${item}`)
+                  .join("\n")
+              : "";
+            const quote = typeof record.quote === "string" ? `> ${record.quote}` : "";
 
             return [title, intro, h3, bullets, quote].filter(Boolean).join("\n\n");
-          }
-
-          return "";
-        })
-        .filter(Boolean)
-        .join("\n\n");
+          })
+          .filter(Boolean)
+          .join("\n\n"),
+      );
     }
   }
 
   return "";
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function looksLikeHtml(value: string) {
+  return /<\/?[a-z][\s\S]*>/i.test(value);
+}
+
+function markdownInlineToHtml(value: string) {
+  return escapeHtml(value)
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+    .replace(/__([^_]+)__/g, "<u>$1</u>")
+    .replace(/~~([^~]+)~~/g, "<s>$1</s>");
+}
+
+function contentToEditorHtml(value: string) {
+  const source = value.trim();
+
+  if (!source) {
+    return "";
+  }
+
+  if (looksLikeHtml(source)) {
+    return source;
+  }
+
+  const blocks = source.replace(/\r\n/g, "\n").split(/\n{2,}/);
+
+  return blocks
+    .map((block) => {
+      const lines = block.split("\n");
+      const firstLine = lines[0]?.trim() ?? "";
+      const heading = firstLine.match(/^(#{1,6})\s+(.+)$/);
+
+      if (heading) {
+        const level = Math.min(heading[1].length, 6);
+        const rest = lines.slice(1).join(" ").trim();
+        return [
+          `<h${level}>${markdownInlineToHtml(heading[2])}</h${level}>`,
+          rest ? `<p>${markdownInlineToHtml(rest)}</p>` : "",
+        ]
+          .filter(Boolean)
+          .join("");
+      }
+
+      if (lines.every((line) => /^[-*]\s+/.test(line.trim()))) {
+        return `<ul>${lines
+          .map((line) => `<li>${markdownInlineToHtml(line.trim().replace(/^[-*]\s+/, ""))}</li>`)
+          .join("")}</ul>`;
+      }
+
+      if (lines.every((line) => /^\d+\.\s+/.test(line.trim()))) {
+        return `<ol>${lines
+          .map((line) => `<li>${markdownInlineToHtml(line.trim().replace(/^\d+\.\s+/, ""))}</li>`)
+          .join("")}</ol>`;
+      }
+
+      if (lines.every((line) => /^>\s?/.test(line.trim()))) {
+        return `<blockquote>${lines
+          .map((line) => markdownInlineToHtml(line.trim().replace(/^>\s?/, "")))
+          .join("<br />")}</blockquote>`;
+      }
+
+      if (/^(-{3,}|\*{3,}|_{3,})$/.test(firstLine)) {
+        return "<hr />";
+      }
+
+      return `<p>${markdownInlineToHtml(lines.join(" "))}</p>`;
+    })
+    .join("");
 }
 
 function imageMetadataFromContent(content: Blog["content"]) {
@@ -209,45 +283,6 @@ function imageMetadataFromContent(content: Blog["content"]) {
     title: "",
     caption: "",
   };
-}
-
-function faqsFromContent(content: Blog["content"]): BlogFaqItem[] {
-  if (
-    typeof content === "object" &&
-    content !== null &&
-    !Array.isArray(content) &&
-    "faqs" in content &&
-    Array.isArray(content.faqs)
-  ) {
-    return content.faqs.reduce<BlogFaqItem[]>((items, item) => {
-      if (typeof item !== "object" || item === null || Array.isArray(item)) {
-        return items;
-      }
-
-      const record = item as Record<string, unknown>;
-      const faq = {
-        question: typeof record.question === "string" ? record.question : "",
-        answer: typeof record.answer === "string" ? record.answer : "",
-      };
-
-      if (faq.question.trim() || faq.answer.trim()) {
-        items.push(faq);
-      }
-
-      return items;
-    }, []);
-  }
-
-  return [];
-}
-
-function sanitizeFaqs(faqs: BlogFaqItem[]) {
-  return faqs
-    .map((faq) => ({
-      question: faq.question.trim(),
-      answer: faq.answer.trim(),
-    }))
-    .filter((faq) => faq.question || faq.answer);
 }
 
 function isValidImageUrl(value: string) {
@@ -282,6 +317,53 @@ function isValidHttpUrl(value: string) {
   }
 }
 
+function validateArticleHtml(html: string) {
+  const errors: string[] = [];
+
+  if (typeof window === "undefined" || !html.trim()) {
+    return errors;
+  }
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(`<article>${html}</article>`, "text/html");
+  const parserError = doc.querySelector("parsererror");
+
+  if (parserError) {
+    errors.push("Article HTML contains broken markup.");
+  }
+
+  doc.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach((heading) => {
+    if (!heading.textContent?.trim()) {
+      errors.push("Article headings cannot be empty.");
+    }
+  });
+
+  doc.querySelectorAll("img").forEach((image, index) => {
+    if (!image.getAttribute("src")?.trim()) {
+      errors.push(`Image ${index + 1}: source URL is required.`);
+    }
+  });
+
+  doc.querySelectorAll("a").forEach((link, index) => {
+    const href = link.getAttribute("href")?.trim() ?? "";
+
+    if (!href) {
+      errors.push(`Link ${index + 1}: URL is required.`);
+      return;
+    }
+
+    if (href.startsWith("#") || href.startsWith("/") || href.startsWith("mailto:")) {
+      return;
+    }
+
+    if (!isValidHttpUrl(href)) {
+      errors.push(`Link ${index + 1}: URL must be absolute HTTP/HTTPS or site-relative.`);
+    }
+  });
+
+  return [...new Set(errors)];
+}
+
 function validateBlogForm(form: BlogFormState) {
   const errors: string[] = [];
   const slug = form.slug.trim();
@@ -296,14 +378,7 @@ function validateBlogForm(form: BlogFormState) {
     errors.push("Slug must use lowercase letters, numbers, and hyphens only.");
   }
 
-  const hasEmptyHeading = form.content
-    .replace(/\r\n/g, "\n")
-    .split("\n")
-    .some((line) => /^#{1,6}\s*$/.test(line.trim()));
-
-  if (hasEmptyHeading) {
-    errors.push("Article headings cannot be empty.");
-  }
+  errors.push(...validateArticleHtml(form.content));
 
   if (form.featured_image && !isValidImageUrl(form.featured_image)) {
     errors.push("Featured image must be a valid URL or site-relative path.");
@@ -320,35 +395,6 @@ function validateBlogForm(form: BlogFormState) {
   if (form.seo_canonical_url.trim() && !isValidHttpUrl(form.seo_canonical_url.trim())) {
     errors.push("Canonical URL override must be a valid HTTP or HTTPS URL.");
   }
-
-  const seenFaqs = new Set<string>();
-
-  form.faqs.forEach((faq, index) => {
-    const question = faq.question.trim();
-    const answer = faq.answer.trim();
-
-    if (!question && !answer) {
-      return;
-    }
-
-    if (!question) {
-      errors.push(`FAQ ${index + 1}: question is required.`);
-    }
-
-    if (!answer) {
-      errors.push(`FAQ ${index + 1}: answer is required.`);
-    }
-
-    const normalizedQuestion = question.toLowerCase();
-
-    if (normalizedQuestion && seenFaqs.has(normalizedQuestion)) {
-      errors.push(`FAQ ${index + 1}: duplicate question.`);
-    }
-
-    if (normalizedQuestion) {
-      seenFaqs.add(normalizedQuestion);
-    }
-  });
 
   return errors;
 }
@@ -525,7 +571,6 @@ function blogToForm(blog: Blog): BlogFormState {
     slug: blog.slug,
     excerpt: blog.excerpt ?? "",
     content: plainTextFromContent(blog.content),
-    faqs: faqsFromContent(blog.content),
     featured_image: blog.featured_image ?? "",
     featured_image_alt: imageMetadata.alt,
     featured_image_title: imageMetadata.title,
@@ -553,7 +598,6 @@ function formToPayload(form: BlogFormState) {
     excerpt: form.excerpt || null,
     content: {
       body: form.content,
-      faqs: sanitizeFaqs(form.faqs),
       featuredImageMetadata: {
         alt: form.featured_image_alt.trim(),
         title: form.featured_image_title.trim(),
@@ -585,8 +629,7 @@ function csvRowToPayload(row: BlogCsvRow) {
     slug: row.slug || slugify(row.title),
     excerpt: row.excerpt || null,
     content: {
-      body: content,
-      faqs: [],
+      body: contentToEditorHtml(content),
       featuredImageMetadata: {
         alt: "",
         title: "",
@@ -685,45 +728,6 @@ export function DashboardBlogsClient() {
 
   function updateForm<K extends keyof BlogFormState>(key: K, value: BlogFormState[K]) {
     setForm((currentForm) => ({ ...currentForm, [key]: value }));
-  }
-
-  function updateFaq(index: number, key: keyof BlogFaqItem, value: string) {
-    setForm((currentForm) => ({
-      ...currentForm,
-      faqs: currentForm.faqs.map((faq, faqIndex) =>
-        faqIndex === index ? { ...faq, [key]: value } : faq,
-      ),
-    }));
-  }
-
-  function addFaq() {
-    setForm((currentForm) => ({
-      ...currentForm,
-      faqs: [...currentForm.faqs, { question: "", answer: "" }],
-    }));
-  }
-
-  function removeFaq(index: number) {
-    setForm((currentForm) => ({
-      ...currentForm,
-      faqs: currentForm.faqs.filter((_, faqIndex) => faqIndex !== index),
-    }));
-  }
-
-  function moveFaq(index: number, direction: -1 | 1) {
-    setForm((currentForm) => {
-      const nextIndex = index + direction;
-
-      if (nextIndex < 0 || nextIndex >= currentForm.faqs.length) {
-        return currentForm;
-      }
-
-      const faqs = [...currentForm.faqs];
-      const [item] = faqs.splice(index, 1);
-      faqs.splice(nextIndex, 0, item);
-
-      return { ...currentForm, faqs };
-    });
   }
 
   function openCreateForm() {
@@ -1220,83 +1224,6 @@ export function DashboardBlogsClient() {
                 />
               </div>
             </div>
-            <div className="grid gap-3 rounded-[24px] border border-border-light bg-white/70 p-4 lg:col-span-2">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h3 className="font-heading text-lg font-extrabold text-text-dark">
-                    FAQ
-                  </h3>
-                  <p className="mt-1 text-sm text-muted">
-                    Add the questions shown in the Blog Detail FAQ accordion.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={addFaq}
-                  className="inline-flex min-h-10 items-center justify-center rounded-pill border border-border-light px-4 font-heading text-sm font-semibold text-primary transition hover:border-gold/70"
-                >
-                  Add FAQ
-                </button>
-              </div>
-
-              {form.faqs.length ? (
-                <div className="grid gap-3">
-                  {form.faqs.map((faq, index) => (
-                    <div
-                      key={`blog-faq-${index}`}
-                      className="grid gap-3 rounded-[20px] border border-border-light bg-white p-4"
-                    >
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <span className="font-heading text-sm font-bold text-primary">
-                          FAQ {index + 1}
-                        </span>
-                        <div className="flex flex-wrap gap-2">
-                          <button
-                            type="button"
-                            onClick={() => moveFaq(index, -1)}
-                            disabled={index === 0}
-                            className="rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70 disabled:cursor-not-allowed disabled:opacity-40"
-                          >
-                            Up
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => moveFaq(index, 1)}
-                            disabled={index === form.faqs.length - 1}
-                            className="rounded-pill border border-border-light px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-gold/70 disabled:cursor-not-allowed disabled:opacity-40"
-                          >
-                            Down
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => removeFaq(index)}
-                            className="rounded-pill border border-red-200 px-3 py-1.5 text-xs font-semibold text-red-600 transition hover:bg-red-50"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                      <InputField
-                        label="Question"
-                        value={faq.question}
-                        onChange={(value) => updateFaq(index, "question", value)}
-                      />
-                      <TextAreaField
-                        label="Answer"
-                        value={faq.answer}
-                        onChange={(value) => updateFaq(index, "answer", value)}
-                        rows={3}
-                      />
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="rounded-[18px] border border-dashed border-border-light bg-cream/40 px-4 py-6 text-center text-sm text-muted">
-                  No FAQ items yet. Add one if this article needs a FAQ section.
-                </div>
-              )}
-            </div>
-
             <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:col-span-2">
               <button
                 type="submit"
@@ -1389,105 +1316,245 @@ function RichTextEditor({
   rows?: number;
   className?: string;
 }) {
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const editorRef = useRef<HTMLDivElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const savedRangeRef = useRef<Range | null>(null);
+  const [mode, setMode] = useState<"visual" | "html" | "preview">("visual");
+  const [isPickerOpen, setIsPickerOpen] = useState(false);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [editorError, setEditorError] = useState("");
 
-  function replaceSelection(nextText: string, selectionOffset = 0, selectionLength = nextText.length) {
-    const textarea = textareaRef.current;
-    const start = textarea?.selectionStart ?? value.length;
-    const end = textarea?.selectionEnd ?? value.length;
-    const nextValue = `${value.slice(0, start)}${nextText}${value.slice(end)}`;
+  useEffect(() => {
+    const editor = editorRef.current;
 
-    onChange(nextValue);
+    if (!editor || mode !== "visual") {
+      return;
+    }
 
-    window.requestAnimationFrame(() => {
-      textarea?.focus();
-      textarea?.setSelectionRange(start + selectionOffset, start + selectionOffset + selectionLength);
-    });
+    if (document.activeElement !== editor && editor.innerHTML !== value) {
+      editor.innerHTML = value;
+    }
+  }, [mode, value]);
+
+  function syncFromEditor() {
+    onChange(editorRef.current?.innerHTML ?? "");
   }
 
-  function insertMarkup(prefix: string, suffix = "", fallback = "text") {
-    const textarea = textareaRef.current;
-    const start = textarea?.selectionStart ?? value.length;
-    const end = textarea?.selectionEnd ?? value.length;
-    const selectedText = value.slice(start, end) || fallback;
-    const nextText = `${prefix}${selectedText}${suffix}`;
+  function saveSelection() {
+    const selection = window.getSelection();
 
-    replaceSelection(nextText, prefix.length, selectedText.length);
+    if (!selection || selection.rangeCount === 0) {
+      return;
+    }
+
+    const editor = editorRef.current;
+    const range = selection.getRangeAt(0);
+
+    if (editor && editor.contains(range.commonAncestorContainer)) {
+      savedRangeRef.current = range.cloneRange();
+    }
+  }
+
+  function restoreSelection() {
+    const editor = editorRef.current;
+
+    if (!editor) {
+      return;
+    }
+
+    editor.focus();
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+
+    if (savedRangeRef.current) {
+      selection?.addRange(savedRangeRef.current);
+      return;
+    }
+
+    const range = document.createRange();
+    range.selectNodeContents(editor);
+    range.collapse(false);
+    selection?.addRange(range);
+  }
+
+  function runCommand(command: string, commandValue?: string) {
+    restoreSelection();
+    document.execCommand(command, false, commandValue);
+    syncFromEditor();
+    saveSelection();
+  }
+
+  function insertHtml(html: string) {
+    restoreSelection();
+    document.execCommand("insertHTML", false, html);
+    syncFromEditor();
+    saveSelection();
   }
 
   function insertHeading(level: number) {
-    const textarea = textareaRef.current;
-    const start = textarea?.selectionStart ?? value.length;
-    const end = textarea?.selectionEnd ?? value.length;
-    const selectedText = value.slice(start, end).trim() || "Article heading";
-    const prefix = "#".repeat(level);
-    const needsLeadingBreak = start > 0 && !value.slice(0, start).endsWith("\n") ? "\n\n" : "";
-    const nextText = `${needsLeadingBreak}${prefix} ${selectedText}\n\n`;
-
-    replaceSelection(nextText, needsLeadingBreak.length + prefix.length + 1, selectedText.length);
+    runCommand("formatBlock", `H${level}`);
   }
 
-  function insertBulletList() {
-    const textarea = textareaRef.current;
-    const start = textarea?.selectionStart ?? value.length;
-    const end = textarea?.selectionEnd ?? value.length;
-    const selectedText = value.slice(start, end) || "List item";
-    const listText = selectedText
-      .split("\n")
-      .map((line) => `- ${line.replace(/^[-*]\s*/, "")}`)
-      .join("\n");
+  function insertLink() {
+    const href = window.prompt("Link URL");
 
-    replaceSelection(listText, 0, listText.length);
+    if (!href) {
+      return;
+    }
+
+    const title = window.prompt("Title attribute (optional)") ?? "";
+    const openNewTab = window.confirm("Open link in a new tab?");
+    const nofollow = window.confirm("Add nofollow?");
+    const sponsored = window.confirm("Add sponsored?");
+    const rel = [
+      openNewTab ? "noopener noreferrer" : "",
+      nofollow ? "nofollow" : "",
+      sponsored ? "sponsored" : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+    const selectedText = window.getSelection()?.toString() || href;
+    const attrs = [
+      `href="${escapeHtml(href)}"`,
+      title ? `title="${escapeHtml(title)}"` : "",
+      openNewTab ? 'target="_blank"' : "",
+      rel ? `rel="${rel}"` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    insertHtml(`<a ${attrs}>${escapeHtml(selectedText)}</a>`);
   }
 
-  function insertNumberedList() {
-    const textarea = textareaRef.current;
-    const start = textarea?.selectionStart ?? value.length;
-    const end = textarea?.selectionEnd ?? value.length;
-    const selectedText = value.slice(start, end) || "List item";
-    const listText = selectedText
-      .split("\n")
-      .map((line, index) => `${index + 1}. ${line.replace(/^\d+\.\s*/, "")}`)
-      .join("\n");
+  function insertImage(url: string) {
+    const alt = window.prompt("Image alt text", "") ?? "";
+    const title = window.prompt("Image title (optional)", "") ?? "";
+    const caption = window.prompt("Caption (optional)", "") ?? "";
+    const width = window.prompt("Width (optional, e.g. 720 or 100%)", "") ?? "";
+    const height = window.prompt("Height (optional)", "") ?? "";
+    const style = width
+      ? ` style="max-width:100%;width:${escapeHtml(width)};"`
+      : ' style="max-width:100%;height:auto;"';
+    const sizeAttrs = [
+      width && /^\d+$/.test(width) ? `width="${width}"` : "",
+      height && /^\d+$/.test(height) ? `height="${height}"` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+    const imageHtml = `<img src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" title="${escapeHtml(title)}" ${sizeAttrs}${style} />`;
 
-    replaceSelection(listText, 0, listText.length);
+    insertHtml(
+      caption
+        ? `<figure>${imageHtml}<figcaption>${escapeHtml(caption)}</figcaption></figure>`
+        : imageHtml,
+    );
   }
 
-  function insertBlockQuote() {
-    const textarea = textareaRef.current;
-    const start = textarea?.selectionStart ?? value.length;
-    const end = textarea?.selectionEnd ?? value.length;
-    const selectedText = value.slice(start, end) || "Quote text";
-    const quoteText = selectedText
-      .split("\n")
-      .map((line) => `> ${line.replace(/^>\s*/, "")}`)
-      .join("\n");
+  async function uploadAndInsertImage(file: File) {
+    setEditorError("");
+    setIsUploadingImage(true);
 
-    replaceSelection(quoteText, 2, selectedText.length);
+    try {
+      validateMediaLibraryFile(file);
+      const item = await uploadMediaLibraryFile({ file });
+      insertImage(item.file_url);
+    } catch (uploadError) {
+      setEditorError(uploadError instanceof Error ? uploadError.message : "Image upload failed.");
+    } finally {
+      setIsUploadingImage(false);
+    }
   }
 
   function insertTable() {
-    replaceSelection("| Column 1 | Column 2 |\n| --- | --- |\n| Value 1 | Value 2 |", 2, 8);
+    insertHtml(
+      '<table><thead><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr></thead><tbody><tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr><tr><td>Value 4</td><td>Value 5</td><td>Value 6</td></tr></tbody></table>',
+    );
   }
 
-  function insertImage() {
-    replaceSelection("![Image alt text](https://example.com/image.jpg)", 2, 14);
+  function insertChecklist() {
+    insertHtml('<ul data-list="checklist"><li><input type="checkbox" /> Checklist item</li></ul>');
+  }
+
+  function insertBlockQuote() {
+    insertHtml("<blockquote>Quote text</blockquote>");
   }
 
   function insertHorizontalRule() {
-    replaceSelection("\n\n---\n\n", 2, 3);
+    insertHtml("<hr />");
   }
 
-  function runNativeCommand(command: "undo" | "redo") {
-    textareaRef.current?.focus();
-    document.execCommand(command);
+  function insertSpecialCharacter() {
+    const character = window.prompt("Special character", "®");
+
+    if (character) {
+      insertHtml(escapeHtml(character));
+    }
+  }
+
+  function handlePaste(event: React.ClipboardEvent<HTMLDivElement>) {
+    const imageItem = Array.from(event.clipboardData.items).find((item) =>
+      item.type.startsWith("image/"),
+    );
+
+    if (!imageItem) {
+      return;
+    }
+
+    const file = imageItem.getAsFile();
+
+    if (file) {
+      event.preventDefault();
+      void uploadAndInsertImage(file);
+    }
+  }
+
+  function handleDrop(event: React.DragEvent<HTMLDivElement>) {
+    const file = Array.from(event.dataTransfer.files).find((item) =>
+      item.type.startsWith("image/"),
+    );
+
+    if (!file) {
+      return;
+    }
+
+    event.preventDefault();
+    void uploadAndInsertImage(file);
   }
 
   return (
-    <label className={`grid gap-2 ${className}`}>
+    <div className={`grid gap-2 ${className}`}>
       <span className="font-heading text-sm font-semibold text-text-dark">{label}</span>
-      <div className="overflow-hidden rounded-[18px] border border-border-light bg-white focus-within:border-gold/80 focus-within:ring-4 focus-within:ring-gold/10">
-        <div className="flex flex-wrap gap-2 border-b border-border-light bg-cream/50 px-3 py-2">
+      <div className="overflow-hidden rounded-[22px] border border-border-light bg-white shadow-[0_16px_38px_rgba(15,23,42,0.06)] focus-within:border-gold/80 focus-within:ring-4 focus-within:ring-gold/10">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border-light bg-cream/70 px-3 py-2">
+          <div className="flex flex-wrap gap-2">
+            {(["visual", "html", "preview"] as const).map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                onClick={() => {
+                  saveSelection();
+                  setMode(tab);
+                }}
+                className={`rounded-pill px-4 py-2 font-heading text-xs font-bold uppercase tracking-[0.18em] transition ${
+                  mode === tab
+                    ? "bg-primary text-white shadow-[0_10px_24px_rgba(11,93,59,0.18)]"
+                    : "bg-white text-primary hover:bg-soft-green"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+          {isUploadingImage ? (
+            <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary">
+              <Loader2 className="size-3.5 animate-spin" />
+              Uploading image
+            </span>
+          ) : null}
+        </div>
+
+        {mode === "visual" ? (
+        <div className="sticky top-0 z-10 flex flex-wrap gap-2 border-b border-border-light bg-cream/90 px-3 py-2 backdrop-blur">
           <EditorButton label="H1" onClick={() => insertHeading(1)}>
             <Heading1 className="size-4" />
           </EditorButton>
@@ -1506,57 +1573,172 @@ function RichTextEditor({
           <EditorButton label="H6" onClick={() => insertHeading(6)}>
             <Heading6 className="size-4" />
           </EditorButton>
-          <EditorButton label="Bold" onClick={() => insertMarkup("**", "**", "bold text")}>
+          <EditorButton label="Bold" onClick={() => runCommand("bold")}>
             <Bold className="size-4" />
           </EditorButton>
-          <EditorButton label="Italic" onClick={() => insertMarkup("*", "*", "italic text")}>
+          <EditorButton label="Italic" onClick={() => runCommand("italic")}>
             <Italic className="size-4" />
           </EditorButton>
-          <EditorButton label="Underline" onClick={() => insertMarkup("__", "__", "underlined text")}>
+          <EditorButton label="Underline" onClick={() => runCommand("underline")}>
             <Underline className="size-4" />
           </EditorButton>
-          <EditorButton label="Strike" onClick={() => insertMarkup("~~", "~~", "struck text")}>
+          <EditorButton label="Strike" onClick={() => runCommand("strikeThrough")}>
             <Strikethrough className="size-4" />
           </EditorButton>
-          <EditorButton label="Bullet list" onClick={insertBulletList}>
+          <EditorButton label="Superscript" onClick={() => runCommand("superscript")}>
+            <Superscript className="size-4" />
+          </EditorButton>
+          <EditorButton label="Subscript" onClick={() => runCommand("subscript")}>
+            <Subscript className="size-4" />
+          </EditorButton>
+          <EditorButton label="Text color" onClick={() => runCommand("foreColor", window.prompt("Text color", "#0B5D3B") || "#0B5D3B")}>
+            <Palette className="size-4" />
+          </EditorButton>
+          <EditorButton label="Background color" onClick={() => runCommand("hiliteColor", window.prompt("Background color", "#F4FAF6") || "#F4FAF6")}>
+            <Highlighter className="size-4" />
+          </EditorButton>
+          <EditorButton label="Align left" onClick={() => runCommand("justifyLeft")}>
+            <AlignLeft className="size-4" />
+          </EditorButton>
+          <EditorButton label="Align center" onClick={() => runCommand("justifyCenter")}>
+            <AlignCenter className="size-4" />
+          </EditorButton>
+          <EditorButton label="Align right" onClick={() => runCommand("justifyRight")}>
+            <AlignRight className="size-4" />
+          </EditorButton>
+          <EditorButton label="Justify" onClick={() => runCommand("justifyFull")}>
+            <AlignJustify className="size-4" />
+          </EditorButton>
+          <EditorButton label="Bullet list" onClick={() => runCommand("insertUnorderedList")}>
             <List className="size-4" />
           </EditorButton>
-          <EditorButton label="Numbered list" onClick={insertNumberedList}>
+          <EditorButton label="Numbered list" onClick={() => runCommand("insertOrderedList")}>
             <ListOrdered className="size-4" />
+          </EditorButton>
+          <EditorButton label="Checklist" onClick={insertChecklist}>
+            <CheckSquare className="size-4" />
+          </EditorButton>
+          <EditorButton label="Indent" onClick={() => runCommand("indent")}>
+            <Indent className="size-4" />
+          </EditorButton>
+          <EditorButton label="Outdent" onClick={() => runCommand("outdent")}>
+            <Outdent className="size-4" />
           </EditorButton>
           <EditorButton label="Block quote" onClick={insertBlockQuote}>
             <Quote className="size-4" />
           </EditorButton>
-          <EditorButton label="Link" onClick={() => insertMarkup("[", "](https://example.com)", "link text")}>
+          <EditorButton label="Link" onClick={insertLink}>
             <LinkIcon className="size-4" />
+          </EditorButton>
+          <EditorButton label="Unlink" onClick={() => runCommand("unlink")}>
+            <Unlink className="size-4" />
           </EditorButton>
           <EditorButton label="Table" onClick={insertTable}>
             <Table2 className="size-4" />
           </EditorButton>
-          <EditorButton label="Image" onClick={insertImage}>
+          <EditorButton
+            label="Image URL"
+            onClick={() => {
+              const url = window.prompt("Image URL");
+              if (url) insertImage(url);
+            }}
+          >
             <ImageIcon className="size-4" />
+          </EditorButton>
+          <EditorButton label="Upload image" onClick={() => fileInputRef.current?.click()}>
+            <FileUp className="size-4" />
+          </EditorButton>
+          <EditorButton label="Choose from media library" onClick={() => setIsPickerOpen(true)}>
+            <Search className="size-4" />
           </EditorButton>
           <EditorButton label="Horizontal rule" onClick={insertHorizontalRule}>
             <Minus className="size-4" />
           </EditorButton>
-          <EditorButton label="Undo" onClick={() => runNativeCommand("undo")}>
+          <EditorButton label="Code block" onClick={() => insertHtml("<pre><code>Code block</code></pre>")}>
+            <Code className="size-4" />
+          </EditorButton>
+          <EditorButton label="Inline code" onClick={() => insertHtml("<code>inline code</code>")}>
+            <Sigma className="size-4" />
+          </EditorButton>
+          <EditorButton label="Special character" onClick={insertSpecialCharacter}>
+            <span className="text-sm font-bold">Ω</span>
+          </EditorButton>
+          <EditorButton label="Clear formatting" onClick={() => runCommand("removeFormat")}>
+            <Eraser className="size-4" />
+          </EditorButton>
+          <EditorButton label="Undo" onClick={() => runCommand("undo")}>
             <Undo2 className="size-4" />
           </EditorButton>
-          <EditorButton label="Redo" onClick={() => runNativeCommand("redo")}>
+          <EditorButton label="Redo" onClick={() => runCommand("redo")}>
             <Redo2 className="size-4" />
           </EditorButton>
         </div>
-        <textarea
-          ref={textareaRef}
-          value={value}
-          onChange={(event) => onChange(event.target.value)}
-          placeholder={placeholder ?? "Use headings, paragraphs, lists, links, tables, images, quotes, and dividers."}
-          rows={rows}
-          className="w-full resize-y border-0 bg-white px-4 py-3 text-sm text-text-dark outline-none placeholder:text-muted/70"
-        />
+        ) : null}
+
+        {mode === "visual" ? (
+          <div
+            ref={editorRef}
+            contentEditable
+            suppressContentEditableWarning
+            onInput={syncFromEditor}
+            onKeyUp={saveSelection}
+            onMouseUp={saveSelection}
+            onBlur={saveSelection}
+            onPaste={handlePaste}
+            onDrop={handleDrop}
+            className="prose-editor max-h-[640px] min-h-[360px] overflow-y-auto bg-white px-5 py-4 text-base leading-8 text-text-dark outline-none"
+            style={{ minHeight: `${Math.max(rows, 10) * 34}px` }}
+            data-placeholder={placeholder ?? "Write the complete article with headings, tables, images, links, quotes, and FAQ content."}
+          />
+        ) : null}
+
+        {mode === "html" ? (
+          <textarea
+            value={value}
+            onChange={(event) => onChange(event.target.value)}
+            rows={Math.max(rows, 16)}
+            spellCheck={false}
+            className="min-h-[520px] w-full resize-y border-0 bg-slate-950 px-5 py-4 font-mono text-sm leading-7 text-slate-100 outline-none placeholder:text-slate-400"
+            placeholder="<h2>Section heading</h2><p>Article paragraph...</p>"
+          />
+        ) : null}
+
+        {mode === "preview" ? (
+          <div className="max-h-[640px] min-h-[360px] overflow-y-auto bg-white px-5 py-4">
+            <div
+              className="prose-editor text-base leading-8 text-text-dark"
+              dangerouslySetInnerHTML={{ __html: value || "<p>Preview will appear here.</p>" }}
+            />
+          </div>
+        ) : null}
       </div>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept={MEDIA_LIBRARY_ACCEPT}
+        className="hidden"
+        onChange={async (event) => {
+          const file = event.target.files?.[0];
+          event.target.value = "";
+
+          if (file) {
+            await uploadAndInsertImage(file);
+          }
+        }}
+      />
+      <MediaLibraryPickerModal
+        open={isPickerOpen}
+        onClose={() => setIsPickerOpen(false)}
+        onSelect={(items) => {
+          const item = items[0];
+          if (item) {
+            insertImage(item.file_url);
+          }
+        }}
+      />
+      {editorError ? <span className="text-xs font-medium text-red-700">{editorError}</span> : null}
       {helperText ? <span className="text-xs text-muted">{helperText}</span> : null}
-    </label>
+    </div>
   );
 }
 
@@ -1572,7 +1754,10 @@ function EditorButton({
   return (
     <button
       type="button"
-      onClick={onClick}
+      onMouseDown={(event) => {
+        event.preventDefault();
+        onClick();
+      }}
       title={label}
       aria-label={label}
       className="inline-flex size-9 items-center justify-center rounded-full border border-border-light bg-white text-primary transition hover:border-gold/70 hover:bg-soft-green"

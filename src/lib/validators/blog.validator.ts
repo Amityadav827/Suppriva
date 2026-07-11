@@ -95,15 +95,41 @@ function validateRichTextContent(content: JsonValue | undefined, errors: string[
     return;
   }
 
-  const hasEmptyHeading =
-    typeof content.body === "string" &&
-    content.body
+  if (typeof content.body === "string") {
+    const body = content.body;
+    const hasEmptyMarkdownHeading = body
       .replace(/\r\n/g, "\n")
       .split("\n")
       .some((line) => /^#{1,6}\s*$/.test(line.trim()));
+    const hasEmptyHtmlHeading = /<h[1-6][^>]*>\s*(<br\s*\/?>)?\s*<\/h[1-6]>/i.test(body);
+    const hasMissingImageSrc = /<img\b(?![^>]*\ssrc=["'][^"']+["'])[^>]*>/i.test(body);
+    const invalidHref = [...body.matchAll(/<a\b[^>]*\shref=["']([^"']*)["'][^>]*>/gi)].find(
+      (match) => {
+        const href = match[1].trim();
 
-  if (hasEmptyHeading) {
-    errors.push("Blog content headings cannot be empty.");
+        if (!href) {
+          return true;
+        }
+
+        if (href.startsWith("#") || href.startsWith("/") || href.startsWith("mailto:")) {
+          return false;
+        }
+
+        return !isValidHttpUrl(href);
+      },
+    );
+
+    if (hasEmptyMarkdownHeading || hasEmptyHtmlHeading) {
+      errors.push("Blog content headings cannot be empty.");
+    }
+
+    if (hasMissingImageSrc) {
+      errors.push("Blog content images must include a source URL.");
+    }
+
+    if (invalidHref) {
+      errors.push("Blog content links must use valid URLs.");
+    }
   }
 
   if ("featuredImageMetadata" in content && content.featuredImageMetadata !== undefined) {
@@ -128,47 +154,6 @@ function validateRichTextContent(content: JsonValue | undefined, errors: string[
         errors.push("Featured image caption must be text.");
       }
     }
-  }
-
-  if ("faqs" in content && content.faqs !== undefined) {
-    if (!Array.isArray(content.faqs)) {
-      errors.push("Blog FAQ must be a list of question and answer items.");
-      return;
-    }
-
-    const seenQuestions = new Set<string>();
-
-    content.faqs.forEach((item, index) => {
-      if (!isRecord(item)) {
-        errors.push(`Blog FAQ ${index + 1} must be a question and answer object.`);
-        return;
-      }
-
-      const question = typeof item.question === "string" ? item.question.trim() : "";
-      const answer = typeof item.answer === "string" ? item.answer.trim() : "";
-
-      if (!question && !answer) {
-        return;
-      }
-
-      if (!question) {
-        errors.push(`Blog FAQ ${index + 1} question is required.`);
-      }
-
-      if (!answer) {
-        errors.push(`Blog FAQ ${index + 1} answer is required.`);
-      }
-
-      const normalizedQuestion = question.toLowerCase();
-
-      if (normalizedQuestion && seenQuestions.has(normalizedQuestion)) {
-        errors.push(`Blog FAQ ${index + 1} duplicates another question.`);
-      }
-
-      if (normalizedQuestion) {
-        seenQuestions.add(normalizedQuestion);
-      }
-    });
   }
 }
 

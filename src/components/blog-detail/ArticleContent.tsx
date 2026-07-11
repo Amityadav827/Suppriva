@@ -181,7 +181,28 @@ function renderInline(text: string) {
   return parts.length ? parts : text;
 }
 
+function looksLikeHtml(value: string) {
+  return /<\/?[a-z][\s\S]*>/i.test(value);
+}
+
+function sanitizeHtml(value: string) {
+  return value
+    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+    .replace(/\son\w+=["'][^"']*["']/gi, "")
+    .replace(/\shref=["']javascript:[^"']*["']/gi, ' href="#"')
+    .replace(/\ssrc=["']javascript:[^"']*["']/gi, "");
+}
+
 function RichContent({ content }: { content: string }) {
+  if (looksLikeHtml(content)) {
+    return (
+      <div
+        className="mt-5 grid gap-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_h4]:font-heading [&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:text-base [&_p]:leading-8 [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:w-full [&_table]:min-w-[620px] [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-6 [&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-6 [&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3"
+        dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
+      />
+    );
+  }
+
   const blocks = parseRichBlocks(content);
 
   return (
