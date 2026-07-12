@@ -787,7 +787,7 @@ export function IngredientDetailTemplate(props: {
             />
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {relatedIngredients.map((item, index) => (
-                <RelatedIngredientCard
+                <RelatedIngredientTextCard
                   key={`${item.slug || item.name}-${index}`}
                   item={item}
                 />
@@ -1224,6 +1224,48 @@ function IngredientProductCard({
         </span>
       </div>
     </FadeIn>
+  );
+}
+
+function RelatedIngredientTextCard({ item }: { item: RelatedIngredientCardData }) {
+  const wrapperClasses =
+    "group relative flex min-h-[280px] h-full flex-col overflow-hidden rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover";
+  const content = (
+    <div className="flex h-full flex-col">
+      {item.category ? (
+        <span className="w-fit rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
+          {item.category}
+        </span>
+      ) : null}
+      <h3 className="mt-5 font-heading text-2xl font-extrabold leading-tight text-text-dark">
+        {item.name}
+      </h3>
+      {item.scientificName ? (
+        <p className="mt-2 text-sm italic text-primary">{item.scientificName}</p>
+      ) : null}
+      {item.description ? (
+        <p className="mt-4 line-clamp-3 text-sm leading-7 text-muted">{item.description}</p>
+      ) : null}
+      {item.slug ? (
+        <span className="mt-auto inline-flex items-center gap-2 pt-6 font-heading text-sm font-semibold text-primary">
+          Read More
+          <ArrowUpRight className="size-4" />
+        </span>
+      ) : null}
+    </div>
+  );
+
+  return item.slug ? (
+    <FadeIn className={wrapperClasses}>
+      <Link
+        href={`/ingredient/${item.slug}`}
+        className="absolute inset-0 z-20 rounded-[28px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        aria-label={`View ${item.name}`}
+      />
+      <div className="relative z-10 flex h-full flex-col">{content}</div>
+    </FadeIn>
+  ) : (
+    <FadeIn className={wrapperClasses}>{content}</FadeIn>
   );
 }
 

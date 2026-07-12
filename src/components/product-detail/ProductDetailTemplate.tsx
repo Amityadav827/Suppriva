@@ -1287,52 +1287,41 @@ function RelatedIngredientCard({
   ingredient: ProductDetail["relatedIngredients"][number];
 }) {
   const content = (
-    <>
-      <div className="relative h-[220px] overflow-hidden rounded-[24px] bg-gradient-to-br from-white to-soft-green">
-        <Image
-          src={ingredient.image || "/assets/hero-supplements.webp"}
-          alt={ingredient.name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition duration-700 group-hover:scale-105"
-        />
-      </div>
-      <div className="mt-5">
-        {ingredient.category ? (
-          <span className="rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
-            {ingredient.category}
-          </span>
-        ) : null}
-        <h3 className="mt-4 font-heading text-2xl font-extrabold text-text-dark">
-          {ingredient.name}
-        </h3>
-        {ingredient.scientificName ? (
-          <p className="mt-2 text-sm italic text-primary">{ingredient.scientificName}</p>
-        ) : null}
-        {ingredient.benefit ? (
-          <p className="mt-3 text-sm leading-7 text-muted">{ingredient.benefit}</p>
-        ) : null}
-        {ingredient.slug ? (
-          <span className="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold text-primary">
-            Explore ingredient
-            <ArrowUpRight className="size-4" />
-          </span>
-        ) : null}
-      </div>
-    </>
+    <div className="flex h-full flex-col">
+      {ingredient.category ? (
+        <span className="w-fit rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
+          {ingredient.category}
+        </span>
+      ) : null}
+      <h3 className="mt-5 font-heading text-2xl font-extrabold leading-tight text-text-dark">
+        {ingredient.name}
+      </h3>
+      {ingredient.scientificName ? (
+        <p className="mt-2 text-sm italic text-primary">{ingredient.scientificName}</p>
+      ) : null}
+      {ingredient.benefit ? (
+        <p className="mt-4 line-clamp-3 text-sm leading-7 text-muted">{ingredient.benefit}</p>
+      ) : null}
+      {ingredient.slug ? (
+        <span className="mt-auto inline-flex items-center gap-2 pt-6 font-heading text-sm font-semibold text-primary">
+          Read More
+          <ArrowUpRight className="size-4" />
+        </span>
+      ) : null}
+    </div>
   );
 
   return ingredient.slug ? (
-    <FadeIn className="group relative h-full overflow-hidden rounded-[26px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover">
+    <FadeIn className="group relative flex min-h-[280px] h-full flex-col overflow-hidden rounded-[26px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover">
       <Link
         href={`/ingredient/${ingredient.slug}`}
         className="absolute inset-0 z-20 rounded-[26px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         aria-label={`View ${ingredient.name}`}
       />
-      <div className="relative z-10">{content}</div>
+      <div className="relative z-10 flex h-full flex-col">{content}</div>
     </FadeIn>
   ) : (
-    <FadeIn className="group relative h-full overflow-hidden rounded-[26px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
+    <FadeIn className="group relative flex min-h-[280px] h-full flex-col overflow-hidden rounded-[26px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)]">
       {content}
     </FadeIn>
   );
