@@ -1,0 +1,212 @@
+{
+  "name": "Copper",
+  "scientific_name": "Cuprum",
+  "hero_badge": null,
+  "short_description": "Copper is reviewed in Suppriva's ingredient library for trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
+  "overview_title": "What Is Copper?",
+  "overview_subtitle": "A practical overview of copper and why it appears in modern supplement formulas.",
+  "overview_content": "Copper is commonly found in supplement formulas connected to trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating copper, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Copper may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding copper to a routine.",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "Copper and zinc are often discussed together because high intake of one mineral can influence the status of the other.",
+  "how_it_works_title": "How Copper Works",
+  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to copper.",
+  "how_it_works_highlight_title": "Essential Trace Mineral Context",
+  "how_it_works_highlight_description": "Copper is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
+  "how_it_works_content": "Copper does not work as a universal quick fix. It is typically discussed in relation to trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Copper is often compared with zinc, selenium, vitamin C, and iron.\n\nSafety context matters. Anyone with Wilson disease, high-copper status, liver disease, pregnancy, nursing, or mineral stacking should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
+  "benefits_title": "Potential Benefits of Copper",
+  "benefits_subtitle": "Educational benefits commonly discussed for copper in supplement routines and label comparison.",
+  "benefits_json": [
+    {
+      "icon": "shield-check",
+      "title": "Wellness Routine Support",
+      "description": "Copper is commonly researched or used in formulas connected to mineral balance, connective tissue, and antioxidant enzyme support."
+    },
+    {
+      "icon": "activity",
+      "title": "Label Comparison Value",
+      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
+    },
+    {
+      "icon": "leaf",
+      "title": "Formula Stacking Context",
+      "description": "Copper often appears alongside complementary ingredients such as zinc, selenium, vitamin C, and iron."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Everyday Education",
+      "description": "Understanding copper helps shoppers separate educational ingredient context from exaggerated supplement claims."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Targeted Category Fit",
+      "description": "Brands may include copper in products designed for trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Safety-Aware Selection",
+      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+    }
+  ],
+  "dosage_title": "Typical Dosage",
+  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
+  "typical_dose": "Often 0.5-2 mg per serving",
+  "dosage": "Often 0.5-2 mg per serving",
+  "dosage_content": "Often 0.5-2 mg per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain copper unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
+  "safety_title": "Safety Information",
+  "safety_subtitle": "Copper may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "side_effects": [
+    "Digestive discomfort",
+    "Headache or sensitivity",
+    "Unexpected tolerance changes",
+    "Allergic reaction in sensitive individuals"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive Discomfort",
+      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+    },
+    {
+      "icon": "activity",
+      "title": "Tolerance Varies",
+      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Sensitivity Reactions",
+      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Dose Awareness",
+      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review copper with a healthcare professional if you take prescription medication or manage a chronic condition.",
+    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing zinc, selenium, vitamin C, and iron.",
+    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
+    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+  ],
+  "who_should_avoid_json": [
+    "People with known allergy or sensitivity to copper or its source material.",
+    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
+    "People taking medication for Wilson disease, high-copper status, liver disease, pregnancy, nursing, or mineral stacking without professional review.",
+    "Children unless specifically directed by a qualified healthcare professional.",
+    "Anyone expecting copper to replace medical diagnosis, prescribed treatment, or emergency care."
+  ],
+  "faq_title": "Frequently Asked Questions",
+  "faq_subtitle": "Answers to common questions about copper, label comparison, dosage context, and safety.",
+  "faq_json": [
+    {
+      "question": "What is Copper?",
+      "answer": "Copper is a essential trace mineral commonly discussed in supplement education for trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function."
+    },
+    {
+      "question": "What is Copper commonly used for?",
+      "answer": "It is commonly researched or included in formulas related to mineral balance, connective tissue, and antioxidant enzyme support, depending on the product and dose."
+    },
+    {
+      "question": "Is Copper a medicine?",
+      "answer": "No. Copper supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
+    },
+    {
+      "question": "What dose of Copper is common?",
+      "answer": "Labels often list often 0.5-2 mg per serving, but product form, potency, and serving frequency should be compared carefully."
+    },
+    {
+      "question": "Can Copper cause side effects?",
+      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
+    },
+    {
+      "question": "Who should be cautious with Copper?",
+      "answer": "People with Wilson disease, high-copper status, liver disease, pregnancy, nursing, or mineral stacking should discuss use with a healthcare professional before starting."
+    },
+    {
+      "question": "Can Copper be combined with other supplements?",
+      "answer": "Some formulas combine it with ingredients such as zinc, selenium, vitamin C, and iron, but stacking should be reviewed for dose overlap and safety."
+    },
+    {
+      "question": "How should I compare Copper products?",
+      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
+    },
+    {
+      "question": "How long does Copper take to work?",
+      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
+    },
+    {
+      "question": "Is Copper safe for daily use?",
+      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+    }
+  ],
+  "sidebar_profile_title": "Copper Snapshot",
+  "sidebar_profile_content": "Copper is a essential trace mineral commonly reviewed for trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Essential trace mineral"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Often 0.5-2 mg per serving"
+    },
+    {
+      "label": "Best For",
+      "value": "Mineral balance, connective tissue, and antioxidant enzyme support"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review Wilson disease, high-copper status, liver disease, pregnancy, nursing, or mineral stacking"
+    },
+    {
+      "label": "Origin",
+      "value": "Mineral nutrient"
+    },
+    {
+      "label": "Part Used",
+      "value": "Mineral compound"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, multivitamin, or mineral complex"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral in capsules"
+    }
+  ],
+  "sidebar_at_a_glance_content": "- Essential trace mineral used in supplement education\n- Commonly discussed for trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function\n- Compare form, dose, and supporting ingredients\n- Often compared with zinc, selenium, vitamin C, and iron\n- Not a substitute for personal medical advice",
+  "full_description": "Copper is a essential trace mineral included in Suppriva's ingredient library for trace mineral balance, iron metabolism context, connective tissue support, and antioxidant enzyme function.",
+  "best_for": "Mineral balance, connective tissue, and antioxidant enzyme support",
+  "safety_level": "Review Wilson disease, high-copper status, liver disease, pregnancy, nursing, or mineral stacking",
+  "origin_country": "Mineral nutrient",
+  "part_used": "Mineral compound",
+  "ingredient_form": "Capsule, tablet, multivitamin, or mineral complex",
+  "taste_profile": "Neutral in capsules",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Copper Benefits, Dosage and Safety | Suppriva",
+  "seo_focus_keyword": "copper",
+  "seo_description": "Explore copper benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/copper",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Copper Benefits, Dosage and Safety | Suppriva",
+  "meta_description": "Explore copper benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+}

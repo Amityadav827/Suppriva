@@ -1,0 +1,212 @@
+{
+  "name": "Selenium",
+  "scientific_name": "Selenium",
+  "hero_badge": null,
+  "short_description": "Selenium is reviewed in Suppriva's ingredient library for thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
+  "overview_title": "What Is Selenium?",
+  "overview_subtitle": "A practical overview of selenium and why it appears in modern supplement formulas.",
+  "overview_content": "Selenium is commonly found in supplement formulas connected to thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating selenium, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Selenium may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding selenium to a routine.",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "Selenium is essential, but the tolerable upper intake limit is relatively close to some high-dose supplement labels.",
+  "how_it_works_title": "How Selenium Works",
+  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to selenium.",
+  "how_it_works_highlight_title": "Essential Trace Mineral Context",
+  "how_it_works_highlight_description": "Selenium is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
+  "how_it_works_content": "Selenium does not work as a universal quick fix. It is typically discussed in relation to thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Selenium is often compared with iodine, zinc, copper, and vitamin E.\n\nSafety context matters. Anyone with high-dose selenium intake, thyroid medication, pregnancy, nursing, or combining multiple mineral products should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
+  "benefits_title": "Potential Benefits of Selenium",
+  "benefits_subtitle": "Educational benefits commonly discussed for selenium in supplement routines and label comparison.",
+  "benefits_json": [
+    {
+      "icon": "shield-check",
+      "title": "Wellness Routine Support",
+      "description": "Selenium is commonly researched or used in formulas connected to thyroid, immune, and antioxidant enzyme support."
+    },
+    {
+      "icon": "activity",
+      "title": "Label Comparison Value",
+      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
+    },
+    {
+      "icon": "leaf",
+      "title": "Formula Stacking Context",
+      "description": "Selenium often appears alongside complementary ingredients such as iodine, zinc, copper, and vitamin E."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Everyday Education",
+      "description": "Understanding selenium helps shoppers separate educational ingredient context from exaggerated supplement claims."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Targeted Category Fit",
+      "description": "Brands may include selenium in products designed for thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Safety-Aware Selection",
+      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+    }
+  ],
+  "dosage_title": "Typical Dosage",
+  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
+  "typical_dose": "Often 55-200 mcg per serving",
+  "dosage": "Often 55-200 mcg per serving",
+  "dosage_content": "Often 55-200 mcg per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain selenium unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
+  "safety_title": "Safety Information",
+  "safety_subtitle": "Selenium may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "side_effects": [
+    "Digestive discomfort",
+    "Headache or sensitivity",
+    "Unexpected tolerance changes",
+    "Allergic reaction in sensitive individuals"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive Discomfort",
+      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+    },
+    {
+      "icon": "activity",
+      "title": "Tolerance Varies",
+      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Sensitivity Reactions",
+      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Dose Awareness",
+      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review selenium with a healthcare professional if you take prescription medication or manage a chronic condition.",
+    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing iodine, zinc, copper, and vitamin E.",
+    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
+    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+  ],
+  "who_should_avoid_json": [
+    "People with known allergy or sensitivity to selenium or its source material.",
+    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
+    "People taking medication for high-dose selenium intake, thyroid medication, pregnancy, nursing, or combining multiple mineral products without professional review.",
+    "Children unless specifically directed by a qualified healthcare professional.",
+    "Anyone expecting selenium to replace medical diagnosis, prescribed treatment, or emergency care."
+  ],
+  "faq_title": "Frequently Asked Questions",
+  "faq_subtitle": "Answers to common questions about selenium, label comparison, dosage context, and safety.",
+  "faq_json": [
+    {
+      "question": "What is Selenium?",
+      "answer": "Selenium is a essential trace mineral commonly discussed in supplement education for thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition."
+    },
+    {
+      "question": "What is Selenium commonly used for?",
+      "answer": "It is commonly researched or included in formulas related to thyroid, immune, and antioxidant enzyme support, depending on the product and dose."
+    },
+    {
+      "question": "Is Selenium a medicine?",
+      "answer": "No. Selenium supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
+    },
+    {
+      "question": "What dose of Selenium is common?",
+      "answer": "Labels often list often 55-200 mcg per serving, but product form, potency, and serving frequency should be compared carefully."
+    },
+    {
+      "question": "Can Selenium cause side effects?",
+      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
+    },
+    {
+      "question": "Who should be cautious with Selenium?",
+      "answer": "People with high-dose selenium intake, thyroid medication, pregnancy, nursing, or combining multiple mineral products should discuss use with a healthcare professional before starting."
+    },
+    {
+      "question": "Can Selenium be combined with other supplements?",
+      "answer": "Some formulas combine it with ingredients such as iodine, zinc, copper, and vitamin E, but stacking should be reviewed for dose overlap and safety."
+    },
+    {
+      "question": "How should I compare Selenium products?",
+      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
+    },
+    {
+      "question": "How long does Selenium take to work?",
+      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
+    },
+    {
+      "question": "Is Selenium safe for daily use?",
+      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+    }
+  ],
+  "sidebar_profile_title": "Selenium Snapshot",
+  "sidebar_profile_content": "Selenium is a essential trace mineral commonly reviewed for thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Essential trace mineral"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Often 55-200 mcg per serving"
+    },
+    {
+      "label": "Best For",
+      "value": "Thyroid, immune, and antioxidant enzyme support"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review high-dose selenium intake, thyroid medication, pregnancy, nursing, or combining multiple mineral products"
+    },
+    {
+      "label": "Origin",
+      "value": "Mineral nutrient"
+    },
+    {
+      "label": "Part Used",
+      "value": "Mineral compound"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, multivitamin, or mineral blend"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral in capsules"
+    }
+  ],
+  "sidebar_at_a_glance_content": "- Essential trace mineral used in supplement education\n- Commonly discussed for thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition\n- Compare form, dose, and supporting ingredients\n- Often compared with iodine, zinc, copper, and vitamin E\n- Not a substitute for personal medical advice",
+  "full_description": "Selenium is a essential trace mineral included in Suppriva's ingredient library for thyroid hormone metabolism context, antioxidant enzyme function, immune wellness, and mineral nutrition.",
+  "best_for": "Thyroid, immune, and antioxidant enzyme support",
+  "safety_level": "Review high-dose selenium intake, thyroid medication, pregnancy, nursing, or combining multiple mineral products",
+  "origin_country": "Mineral nutrient",
+  "part_used": "Mineral compound",
+  "ingredient_form": "Capsule, tablet, multivitamin, or mineral blend",
+  "taste_profile": "Neutral in capsules",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Selenium Benefits, Dosage and Safety | Suppriva",
+  "seo_focus_keyword": "selenium",
+  "seo_description": "Explore selenium benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/selenium",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Selenium Benefits, Dosage and Safety | Suppriva",
+  "meta_description": "Explore selenium benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+}
