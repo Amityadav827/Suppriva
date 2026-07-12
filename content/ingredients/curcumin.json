@@ -1,0 +1,212 @@
+{
+  "name": "Curcumin",
+  "scientific_name": "Curcuma longa",
+  "hero_badge": null,
+  "short_description": "Curcumin is the primary yellow polyphenol found in turmeric root. Suppriva reviews it as an educational ingredient for inflammation-response research, antioxidant support, joint comfort formulas, and supplement label comparison.",
+  "overview_title": "What Is Curcumin?",
+  "overview_subtitle": "A practical look at turmeric's best-known active compound and why it appears in joint, recovery, and wellness formulas.",
+  "overview_content": "Curcumin is a naturally occurring polyphenol found in turmeric, the golden-orange rhizome of Curcuma longa. Turmeric has a long history of culinary and traditional use, while curcumin is the concentrated compound most often discussed in modern supplement labels. Because curcumin is difficult for the body to absorb on its own, many supplements pair it with absorption technologies such as piperine, phospholipids, micelles, or other enhanced-delivery formats.\n\nIn supplement education, curcumin is usually discussed for its relationship to antioxidant activity, normal inflammatory response pathways, joint comfort, exercise recovery, and everyday wellness support. It should not be presented as a cure or replacement for medical treatment. Instead, it is best understood as a targeted botanical compound that shoppers can compare by dose, extract standardization, absorption support, safety cautions, and how it fits into a broader routine.\n\nQuality matters because turmeric powder and curcumin extract are not identical. A label should clearly state whether the product uses turmeric root powder, turmeric extract, curcuminoids, or a branded enhanced-absorption form. People taking medications, managing gallbladder concerns, preparing for surgery, pregnant or nursing individuals, and anyone using blood-thinning medication should review curcumin with a qualified healthcare professional before use.",
+  "interesting_fact_label": "Botanical Insight",
+  "interesting_fact": "Curcumin gives turmeric much of its vivid golden color, but typical turmeric spice contains only a small percentage of curcuminoids compared with concentrated supplement extracts.",
+  "how_it_works_title": "How Curcumin Works",
+  "how_it_works_subtitle": "Curcumin is researched for its role in antioxidant signaling and normal inflammation-response pathways.",
+  "how_it_works_highlight_title": "Polyphenol Signaling Support",
+  "how_it_works_highlight_description": "Curcumin is commonly studied as a plant polyphenol that may influence oxidative stress markers and normal inflammatory-response signaling. Absorption format strongly affects how a curcumin supplement is evaluated.",
+  "how_it_works_content": "Curcumin does not work like a stimulant or quick pain reliever. It is studied as a botanical compound that interacts with several cell-signaling pathways connected to oxidative stress and normal inflammatory response. This broad research interest explains why it appears in joint health, mobility, recovery, antioxidant, and general wellness formulas.\n\nA major consideration is bioavailability. Standard curcumin is poorly absorbed, rapidly metabolized, and quickly eliminated. Supplement brands often address this by adding black pepper extract, using phospholipid complexes, or using other delivery systems. For shoppers, the absorption strategy can be as important as the milligram amount on the label.\n\nCurcumin can still cause side effects or interactions. Higher amounts may upset the stomach, and people using anticoagulant or antiplatelet medication should be cautious. The most responsible way to evaluate curcumin is to compare evidence, dose transparency, absorption support, medication cautions, and whether the product makes realistic educational claims.",
+  "benefits_title": "Potential Benefits of Curcumin",
+  "benefits_subtitle": "Educational benefits commonly discussed for curcumin in joint, recovery, and antioxidant-focused supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "activity",
+      "title": "Inflammation-Response Research",
+      "description": "Curcumin is widely studied for pathways related to normal inflammatory response and everyday comfort."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Antioxidant Support Context",
+      "description": "As a plant polyphenol, curcumin is commonly discussed in relation to oxidative stress and cellular wellness."
+    },
+    {
+      "icon": "bone",
+      "title": "Joint Comfort Formulas",
+      "description": "Curcumin appears in many joint and mobility blends because shoppers often compare it with boswellia, collagen, and omega-3 ingredients."
+    },
+    {
+      "icon": "dumbbell",
+      "title": "Recovery Routine Fit",
+      "description": "Some active-lifestyle formulas include curcumin for recovery-focused routines where comfort and consistency matter."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Label Transparency",
+      "description": "Curcumin products can be compared by curcuminoid standardization, absorption support, dose, and safety cautions."
+    },
+    {
+      "icon": "leaf",
+      "title": "Botanical Wellness",
+      "description": "Curcumin helps readers understand the difference between culinary turmeric and concentrated botanical extracts."
+    }
+  ],
+  "dosage_title": "Typical Dosage",
+  "dosage_subtitle": "Serving amounts vary by extract strength and absorption technology; label context matters.",
+  "typical_dose": "Many curcumin supplements provide 250 mg to 1,000 mg per serving, depending on standardization and delivery format.",
+  "dosage": "Many curcumin supplements provide 250 mg to 1,000 mg per serving, depending on standardization and delivery format.",
+  "dosage_content": "Curcumin dosage depends on whether the product uses turmeric powder, turmeric extract, standardized curcuminoids, or an enhanced-absorption complex. Many labels list servings between 250 mg and 1,000 mg, but the meaningful comparison is not only the amount. Standardization, bioavailability support, serving frequency, and tolerance all matter.\n\nProducts with piperine or enhanced delivery systems may be positioned differently than plain turmeric powder. Follow the product label and avoid combining multiple high-dose curcumin products without professional guidance. People taking medication, especially blood thinners, or those with gallbladder concerns, upcoming surgery, pregnancy, or nursing should speak with a healthcare professional before using curcumin supplements.",
+  "safety_title": "Safety Information",
+  "safety_subtitle": "Curcumin is generally well tolerated by many adults, but dose, digestion, gallbladder status, and medication use should be reviewed.",
+  "side_effects": [
+    "Digestive discomfort",
+    "Nausea or loose stools",
+    "Headache in sensitive users",
+    "Possible reflux at higher amounts"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive Upset",
+      "description": "Curcumin can cause stomach discomfort, nausea, gas, reflux, or loose stools, especially at higher amounts."
+    },
+    {
+      "icon": "activity",
+      "title": "Tolerance Varies",
+      "description": "Some people tolerate enhanced-absorption forms differently from standard turmeric powder."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Gallbladder Caution",
+      "description": "People with gallbladder disease or bile duct concerns should discuss curcumin with a healthcare professional."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Bleeding-Risk Review",
+      "description": "Medication and surgery timing should be reviewed because curcumin may not be suitable for everyone."
+    }
+  ],
+  "drug_interactions_json": [
+    "Anticoagulant or antiplatelet medications should be reviewed with a healthcare professional before curcumin use.",
+    "Diabetes medications may require professional review because some turmeric or curcumin products may affect blood sugar-related monitoring.",
+    "Chemotherapy, immune-related therapies, or prescription anti-inflammatory routines should not be combined with curcumin without clinician guidance.",
+    "Products containing piperine may affect the way some medications are processed and should be checked against current prescriptions."
+  ],
+  "who_should_avoid_json": [
+    "People taking blood-thinning medication unless cleared by a clinician.",
+    "People scheduled for surgery unless a healthcare professional confirms appropriate timing.",
+    "People with gallbladder disease, bile duct obstruction, or significant digestive sensitivity.",
+    "Pregnant or nursing individuals unless advised by a qualified healthcare professional.",
+    "Anyone using multiple high-dose turmeric or curcumin products at the same time."
+  ],
+  "faq_title": "Frequently Asked Questions",
+  "faq_subtitle": "Answers to common questions about curcumin, turmeric extracts, absorption, and supplement safety.",
+  "faq_json": [
+    {
+      "question": "What is curcumin?",
+      "answer": "Curcumin is the main yellow polyphenol found in turmeric root. It is commonly used in supplements as a concentrated turmeric extract ingredient."
+    },
+    {
+      "question": "Is curcumin the same as turmeric?",
+      "answer": "No. Turmeric is the whole rhizome or spice, while curcumin is one of the active curcuminoid compounds found in turmeric."
+    },
+    {
+      "question": "Why do curcumin supplements include black pepper extract?",
+      "answer": "Black pepper extract, often standardized for piperine, is used in some formulas to support curcumin absorption. It may also affect medication processing, so interactions should be reviewed."
+    },
+    {
+      "question": "What is curcumin commonly used for?",
+      "answer": "Curcumin is commonly researched in joint comfort, antioxidant support, recovery, and normal inflammatory-response supplement routines."
+    },
+    {
+      "question": "Can curcumin replace medical treatment?",
+      "answer": "No. Curcumin supplements are not substitutes for diagnosis, prescribed treatment, or medical care."
+    },
+    {
+      "question": "What dose is common on curcumin labels?",
+      "answer": "Many labels list 250 mg to 1,000 mg per serving, but the extract type, curcuminoid standardization, and absorption system should also be compared."
+    },
+    {
+      "question": "Can curcumin upset the stomach?",
+      "answer": "Yes. Digestive discomfort, reflux, nausea, or loose stools can occur, especially with higher servings or sensitive digestion."
+    },
+    {
+      "question": "Who should be cautious with curcumin?",
+      "answer": "People taking blood thinners, preparing for surgery, pregnant or nursing individuals, and people with gallbladder concerns should seek professional guidance."
+    },
+    {
+      "question": "How should I compare curcumin products?",
+      "answer": "Compare the extract type, curcuminoid percentage, absorption support, serving size, added piperine, and caution statements."
+    },
+    {
+      "question": "Can curcumin be taken with boswellia?",
+      "answer": "Some formulas combine them, but stacking supplements should be reviewed for total dose, tolerance, medications, and personal health context."
+    }
+  ],
+  "sidebar_profile_title": "Curcumin Snapshot",
+  "sidebar_profile_content": "Curcumin is a concentrated turmeric polyphenol commonly researched for antioxidant activity, normal inflammatory-response pathways, joint comfort, and recovery-focused supplement routines.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Botanical polyphenol"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Often 250-1,000 mg per serving"
+    },
+    {
+      "label": "Best For",
+      "value": "Joint comfort and antioxidant research"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review medications and gallbladder history"
+    },
+    {
+      "label": "Origin",
+      "value": "Turmeric rhizome"
+    },
+    {
+      "label": "Part Used",
+      "value": "Rhizome extract"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, powder, or softgel"
+    },
+    {
+      "label": "Taste",
+      "value": "Earthy and bitter in powders"
+    }
+  ],
+  "sidebar_at_a_glance_content": "- Primary polyphenol associated with turmeric root\n- Often compared by curcuminoid standardization and absorption support\n- Common in joint, recovery, and antioxidant formulas\n- Piperine-enhanced products may need extra medication review\n- Educational profile only; not personal medical advice",
+  "full_description": "Curcumin is a turmeric-derived polyphenol commonly discussed for antioxidant support, normal inflammatory-response pathways, joint comfort, and recovery routines.",
+  "best_for": "Joint comfort and antioxidant research",
+  "safety_level": "Review medications and gallbladder history",
+  "origin_country": "South Asia",
+  "part_used": "Turmeric rhizome extract",
+  "ingredient_form": "Capsule, tablet, powder, or softgel",
+  "taste_profile": "Earthy and bitter in powders",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Curcumin Benefits, Dosage and Safety | Suppriva",
+  "seo_focus_keyword": "curcumin",
+  "seo_description": "Explore curcumin benefits, dosage context, turmeric extract forms, absorption notes, and safety considerations in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/curcumin",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Curcumin Benefits, Dosage and Safety | Suppriva",
+  "meta_description": "Explore curcumin benefits, dosage context, turmeric extract forms, absorption notes, and safety considerations in Suppriva's ingredient library."
+}

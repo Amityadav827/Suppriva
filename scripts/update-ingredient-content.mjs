@@ -127,6 +127,23 @@ function normalizeSupabaseUrl(value) {
   return value.replace(/\/rest\/v1\/?$/i, "").replace(/\/+$/, "");
 }
 
+function extractMissingColumn(message) {
+  const patterns = [
+    /Could not find the '([^']+)' column of 'ingredients'/i,
+    /column ingredients\.([a-z0-9_]+) does not exist/i,
+  ];
+
+  for (const pattern of patterns) {
+    const match = message.match(pattern);
+
+    if (match?.[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   await loadLocalEnv();
@@ -175,19 +192,36 @@ async function main() {
     },
   });
 
-  const { data, error } = await supabase
-    .from("ingredients")
-    .update({
-      ...payload,
-      updated_at: new Date().toISOString(),
-    })
-    .eq("slug", args.slug)
-    .is("deleted_at", null)
-    .select("id, slug, name, updated_at")
-    .maybeSingle();
+  const skippedFields = [];
+  let activePayload = { ...payload };
+  let data = null;
 
-  if (error) {
-    throw new Error(error.message);
+  while (true) {
+    const response = await supabase
+      .from("ingredients")
+      .update({
+        ...activePayload,
+        updated_at: new Date().toISOString(),
+      })
+      .eq("slug", args.slug)
+      .is("deleted_at", null)
+      .select("id, slug, name, updated_at")
+      .maybeSingle();
+
+    if (!response.error) {
+      data = response.data;
+      break;
+    }
+
+    const missingColumn = extractMissingColumn(response.error.message);
+
+    if (!missingColumn || !(missingColumn in activePayload)) {
+      throw new Error(response.error.message);
+    }
+
+    skippedFields.push(missingColumn);
+    const { [missingColumn]: _removed, ...remainingPayload } = activePayload;
+    activePayload = remainingPayload;
   }
 
   if (!data) {
@@ -200,6 +234,7 @@ async function main() {
         updated: true,
         ingredient: data,
         fields,
+        skippedFields,
       },
       null,
       2,
