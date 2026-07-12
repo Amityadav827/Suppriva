@@ -3,6 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2, Quote } from "lucide-react";
+import {
+  BlogArticleFaqAccordion,
+  type BlogArticleFaqItem,
+} from "@/components/blog-detail/BlogArticleFaqAccordion";
 import type { BlogArticle } from "@/lib/blog-data";
 
 type RichBlock =
@@ -193,13 +197,154 @@ function sanitizeHtml(value: string) {
     .replace(/\ssrc=["']javascript:[^"']*["']/gi, "");
 }
 
+type HtmlSegment =
+  | { type: "html"; html: string }
+  | { type: "faq"; heading: string; faqs: BlogArticleFaqItem[] };
+
+type HtmlBlock = {
+  tag: string;
+  html: string;
+  start: number;
+  end: number;
+};
+
+const articleHtmlClassName =
+  "mt-5 grid gap-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_h4]:font-heading [&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:text-base [&_p]:leading-8 [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:w-full [&_table]:min-w-[620px] [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-6 [&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-6 [&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3";
+
+function stripHtml(value: string) {
+  return value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getInnerHtml(value: string) {
+  return value.replace(/^<[^>]+>/i, "").replace(/<\/[^>]+>\s*$/i, "");
+}
+
+function isFaqHeading(block: HtmlBlock) {
+  return block.tag === "h2" && /frequently asked questions/i.test(stripHtml(block.html));
+}
+
+function parseHtmlBlocks(html: string) {
+  const blockRegex = /<(h[1-6]|p)\b[^>]*>[\s\S]*?<\/\1>/gi;
+  const blocks: HtmlBlock[] = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = blockRegex.exec(html)) !== null) {
+    blocks.push({
+      tag: match[1].toLowerCase(),
+      html: match[0],
+      start: match.index,
+      end: match.index + match[0].length,
+    });
+  }
+
+  return blocks;
+}
+
+function parseFaqSegments(html: string): HtmlSegment[] {
+  const segments: HtmlSegment[] = [];
+  const blocks = parseHtmlBlocks(html);
+  let cursor = 0;
+
+  for (let index = 0; index < blocks.length; index += 1) {
+    const headingBlock = blocks[index];
+
+    if (!isFaqHeading(headingBlock)) {
+      continue;
+    }
+
+    const faqs: BlogArticleFaqItem[] = [];
+    let faqEnd = headingBlock.end;
+    let nextIndex = index + 1;
+
+    while (nextIndex < blocks.length) {
+      const questionBlock = blocks[nextIndex];
+      const answerBlock = blocks[nextIndex + 1];
+
+      if (questionBlock.tag === "h1" || questionBlock.tag === "h2") {
+        break;
+      }
+
+      if (questionBlock.tag !== "h3" || !answerBlock || answerBlock.tag !== "p") {
+        break;
+      }
+
+      const question = stripHtml(questionBlock.html);
+      const answerHtml = getInnerHtml(answerBlock.html).trim();
+
+      if (!question || !answerHtml) {
+        break;
+      }
+
+      faqs.push({ question, answerHtml });
+      faqEnd = answerBlock.end;
+      nextIndex += 2;
+    }
+
+    if (!faqs.length) {
+      continue;
+    }
+
+    if (headingBlock.start > cursor) {
+      segments.push({ type: "html", html: html.slice(cursor, headingBlock.start) });
+    }
+
+    segments.push({
+      type: "faq",
+      heading: stripHtml(headingBlock.html) || "Frequently Asked Questions",
+      faqs,
+    });
+
+    cursor = faqEnd;
+    index = nextIndex - 1;
+  }
+
+  if (cursor < html.length) {
+    segments.push({ type: "html", html: html.slice(cursor) });
+  }
+
+  return segments.length ? segments : [{ type: "html", html }];
+}
+
 function RichContent({ content }: { content: string }) {
   if (looksLikeHtml(content)) {
+    const safeHtml = sanitizeHtml(content);
+    const segments = parseFaqSegments(safeHtml);
+
     return (
-      <div
-        className="mt-5 grid gap-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_h4]:font-heading [&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:text-base [&_p]:leading-8 [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:w-full [&_table]:min-w-[620px] [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-6 [&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-6 [&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3"
-        dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
-      />
+      <div className={articleHtmlClassName}>
+        {segments.map((segment, index) => {
+          if (segment.type === "faq") {
+            return (
+              <BlogArticleFaqAccordion
+                key={`faq-${segment.heading}-${index}`}
+                heading={segment.heading}
+                faqs={segment.faqs}
+              />
+            );
+          }
+
+          if (!segment.html.trim()) {
+            return null;
+          }
+
+          return (
+            <div
+              key={`html-${index}`}
+              className="grid gap-5"
+              dangerouslySetInnerHTML={{ __html: segment.html }}
+            />
+          );
+        })}
+      </div>
     );
   }
 
