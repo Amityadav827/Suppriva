@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2, Quote } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   BlogArticleFaqAccordion,
   type BlogArticleFaqItem,
@@ -201,126 +202,217 @@ type HtmlSegment =
   | { type: "html"; html: string }
   | { type: "faq"; heading: string; faqs: BlogArticleFaqItem[] };
 
-type HtmlBlock = {
-  tag: string;
-  html: string;
-  start: number;
-  end: number;
-};
-
 const articleHtmlClassName =
   "mt-5 grid gap-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_h4]:font-heading [&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:text-base [&_p]:leading-8 [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:w-full [&_table]:min-w-[620px] [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-6 [&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-6 [&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3";
 
-function stripHtml(value: string) {
-  return value
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function getInnerHtml(value: string) {
-  return value.replace(/^<[^>]+>/i, "").replace(/<\/[^>]+>\s*$/i, "");
-}
-
-function isFaqHeading(block: HtmlBlock) {
-  return block.tag === "h2" && /frequently asked questions/i.test(stripHtml(block.html));
-}
-
-function parseHtmlBlocks(html: string) {
-  const blockRegex = /<(h[1-6]|p)\b[^>]*>[\s\S]*?<\/\1>/gi;
-  const blocks: HtmlBlock[] = [];
-  let match: RegExpExecArray | null;
-
-  while ((match = blockRegex.exec(html)) !== null) {
-    blocks.push({
-      tag: match[1].toLowerCase(),
-      html: match[0],
-      start: match.index,
-      end: match.index + match[0].length,
-    });
+function parseFaqSegments(html: string): HtmlSegment[] {
+  if (typeof DOMParser === "undefined") {
+    return [{ type: "html", html }];
   }
 
-  return blocks;
-}
+  const parser = new DOMParser();
+  const document = parser.parseFromString(
+    "<!doctype html><html><body><article></article></body></html>",
+    "text/html",
+  );
+  const root = document.querySelector("article");
 
-function parseFaqSegments(html: string): HtmlSegment[] {
-  const segments: HtmlSegment[] = [];
-  const blocks = parseHtmlBlocks(html);
-  let cursor = 0;
+  if (!root) {
+    return [{ type: "html", html }];
+  }
+
+  root.innerHTML = html;
+
+  const blocks = Array.from(root.querySelectorAll("h1, h2, h3, p")) as HTMLElement[];
+  const faqSections: Array<{
+    marker: string;
+    heading: string;
+    faqs: BlogArticleFaqItem[];
+    headingElement: HTMLElement;
+    lastAnswerElement: HTMLElement;
+  }> = [];
 
   for (let index = 0; index < blocks.length; index += 1) {
-    const headingBlock = blocks[index];
+    const headingElement = blocks[index];
+    const tagName = headingElement.tagName.toLowerCase();
+    const headingText = headingElement.textContent?.replace(/\s+/g, " ").trim() ?? "";
 
-    if (!isFaqHeading(headingBlock)) {
+    if (tagName !== "h2" || !/frequently asked questions/i.test(headingText)) {
       continue;
     }
 
     const faqs: BlogArticleFaqItem[] = [];
-    let faqEnd = headingBlock.end;
-    let nextIndex = index + 1;
+    let cursor = index + 1;
+    let lastAnswerElement: HTMLElement | null = null;
 
-    while (nextIndex < blocks.length) {
-      const questionBlock = blocks[nextIndex];
-      const answerBlock = blocks[nextIndex + 1];
+    while (cursor < blocks.length) {
+      const questionElement = blocks[cursor];
+      const questionTag = questionElement.tagName.toLowerCase();
 
-      if (questionBlock.tag === "h1" || questionBlock.tag === "h2") {
+      if (questionTag === "h1" || questionTag === "h2") {
         break;
       }
 
-      if (questionBlock.tag !== "h3" || !answerBlock || answerBlock.tag !== "p") {
-        break;
+      if (questionTag !== "h3") {
+        cursor += 1;
+        continue;
       }
 
-      const question = stripHtml(questionBlock.html);
-      const answerHtml = getInnerHtml(answerBlock.html).trim();
+      let answerIndex = cursor + 1;
+      let answerElement: HTMLElement | null = null;
 
-      if (!question || !answerHtml) {
-        break;
+      while (answerIndex < blocks.length) {
+        const candidate = blocks[answerIndex];
+        const candidateTag = candidate.tagName.toLowerCase();
+
+        if (candidateTag === "h1" || candidateTag === "h2" || candidateTag === "h3") {
+          break;
+        }
+
+        if (candidateTag === "p") {
+          answerElement = candidate;
+          break;
+        }
+
+        answerIndex += 1;
       }
 
-      faqs.push({ question, answerHtml });
-      faqEnd = answerBlock.end;
-      nextIndex += 2;
+      if (!answerElement) {
+        cursor += 1;
+        continue;
+      }
+
+      const question = questionElement.textContent?.replace(/\s+/g, " ").trim() ?? "";
+      const answerHtml = answerElement.innerHTML.trim();
+
+      if (question && answerHtml) {
+        faqs.push({ question, answerHtml });
+        lastAnswerElement = answerElement;
+      }
+
+      cursor = answerIndex + 1;
     }
 
-    if (!faqs.length) {
+    if (!faqs.length || !lastAnswerElement) {
       continue;
     }
 
-    if (headingBlock.start > cursor) {
-      segments.push({ type: "html", html: html.slice(cursor, headingBlock.start) });
-    }
-
-    segments.push({
-      type: "faq",
-      heading: stripHtml(headingBlock.html) || "Frequently Asked Questions",
+    faqSections.push({
+      marker: `BLOG_FAQ_ACCORDION_${faqSections.length}`,
+      heading: headingText || "Frequently Asked Questions",
       faqs,
+      headingElement,
+      lastAnswerElement,
     });
 
-    cursor = faqEnd;
-    index = nextIndex - 1;
+    index = blocks.indexOf(lastAnswerElement);
   }
 
-  if (cursor < html.length) {
-    segments.push({ type: "html", html: html.slice(cursor) });
+  if (!faqSections.length) {
+    return [{ type: "html", html }];
+  }
+
+  for (const section of [...faqSections].reverse()) {
+    const marker = document.createComment(section.marker);
+    section.headingElement.before(marker);
+
+    const range = document.createRange();
+    range.setStartAfter(marker);
+    range.setEndAfter(section.lastAnswerElement);
+    range.deleteContents();
+    range.detach();
+  }
+
+  const serializedHtml = root.innerHTML;
+  const markerPattern = /<!--BLOG_FAQ_ACCORDION_(\d+)-->/g;
+  const segments: HtmlSegment[] = [];
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = markerPattern.exec(serializedHtml)) !== null) {
+    if (match.index > cursor) {
+      segments.push({ type: "html", html: serializedHtml.slice(cursor, match.index) });
+    }
+
+    const section = faqSections[Number(match[1])];
+
+    if (section) {
+      segments.push({
+        type: "faq",
+        heading: section.heading,
+        faqs: section.faqs,
+      });
+    }
+
+    cursor = markerPattern.lastIndex;
+  }
+
+  if (cursor < serializedHtml.length) {
+    segments.push({ type: "html", html: serializedHtml.slice(cursor) });
   }
 
   return segments.length ? segments : [{ type: "html", html }];
 }
 
-function RichContent({ content }: { content: string }) {
-  if (looksLikeHtml(content)) {
-    const safeHtml = sanitizeHtml(content);
-    const segments = parseFaqSegments(safeHtml);
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function containsFaqSegment(segments: HtmlSegment[]) {
+  return segments.some((segment) => segment.type === "faq");
+}
+
+function isFrequentlyAskedQuestionsTitle(value: string) {
+  return /frequently asked questions/i.test(value);
+}
+
+function RichContent({
+  content,
+  fallbackHeading,
+}: {
+  content: string;
+  fallbackHeading?: string;
+}) {
+  const isHtml = looksLikeHtml(content);
+  const safeHtml = sanitizeHtml(content);
+  const [segments, setSegments] = useState<HtmlSegment[]>([
+    { type: "html", html: safeHtml },
+  ]);
+
+  useEffect(() => {
+    if (isHtml) {
+      const parsedSegments = parseFaqSegments(safeHtml);
+
+      if (!containsFaqSegment(parsedSegments) && fallbackHeading) {
+        const syntheticFaqHtml = `<h2>${escapeHtml(fallbackHeading)}</h2>${safeHtml}`;
+        const syntheticSegments = parseFaqSegments(syntheticFaqHtml);
+
+        setSegments(
+          containsFaqSegment(syntheticSegments) ? syntheticSegments : parsedSegments,
+        );
+        return;
+      }
+
+      setSegments(parsedSegments);
+    }
+  }, [fallbackHeading, isHtml, safeHtml]);
+
+  if (isHtml) {
+    const hasFaqAccordion = containsFaqSegment(segments);
 
     return (
       <div className={articleHtmlClassName}>
+        {fallbackHeading && !hasFaqAccordion ? (
+          <h2 className="font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl">
+            {fallbackHeading}
+          </h2>
+        ) : null}
+
         {segments.map((segment, index) => {
           if (segment.type === "faq") {
             return (
@@ -352,6 +444,12 @@ function RichContent({ content }: { content: string }) {
 
   return (
     <div className="mt-5 grid gap-5 text-base leading-8 text-muted">
+      {fallbackHeading ? (
+        <h2 className="font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl">
+          {fallbackHeading}
+        </h2>
+      ) : null}
+
       {blocks.map((block, index) => {
         if (block.type === "heading") {
           const HeadingTag = `h${Math.min(Math.max(block.level, 2), 6)}` as
@@ -467,22 +565,32 @@ export function ArticleContent({ article }: { article: BlogArticle }) {
   return (
     <article className="min-w-0">
       <div className="grid gap-10">
-        {article.sections.map((section) => (
-          <motion.section
-            key={section.id}
-            id={section.id}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.42, ease: "easeOut" }}
-            className="scroll-mt-32 rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] md:p-8"
-          >
-            <h2 className="font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl">
-              {section.title}
-            </h2>
-            <RichContent content={section.content || section.intro || ""} />
-          </motion.section>
-        ))}
+        {article.sections.map((section) => {
+          const sectionTitleIsFaq = isFrequentlyAskedQuestionsTitle(section.title);
+
+          return (
+            <motion.section
+              key={section.id}
+              id={section.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.42, ease: "easeOut" }}
+              className="scroll-mt-32 rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] md:p-8"
+            >
+              {!sectionTitleIsFaq ? (
+                <h2 className="font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl">
+                  {section.title}
+                </h2>
+              ) : null}
+
+              <RichContent
+                content={section.content || section.intro || ""}
+                fallbackHeading={sectionTitleIsFaq ? section.title : undefined}
+              />
+            </motion.section>
+          );
+        })}
       </div>
     </article>
   );

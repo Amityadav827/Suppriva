@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, CircleHelp } from "lucide-react";
 import { KeyboardEvent, useRef, useState } from "react";
 
 export type BlogArticleFaqItem = {
@@ -46,10 +46,15 @@ export function BlogArticleFaqAccordion({
   }
 
   return (
-    <section className="my-8 rounded-[30px] border border-border-light bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.07)] md:p-8">
-      <h2 className="font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl">
-        {heading}
-      </h2>
+    <section className="my-10 rounded-[28px] border border-border-light bg-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-[30px]">
+      <div className="flex items-center gap-4">
+        <span className="flex size-14 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_12px_32px_rgba(16,110,70,0.12)] md:size-16">
+          <CircleHelp className="size-7 md:size-8" aria-hidden="true" />
+        </span>
+        <h2 className="font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl">
+          {heading}
+        </h2>
+      </div>
 
       <div className="mt-8 grid gap-5">
         {faqs.map((faq, index) => {
@@ -60,7 +65,7 @@ export function BlogArticleFaqAccordion({
           return (
             <div
               key={`${faq.question}-${index}`}
-              className="overflow-hidden rounded-[24px] border border-border-light bg-white shadow-[0_14px_40px_rgba(15,23,42,0.055)] transition duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_18px_48px_rgba(15,23,42,0.08)]"
+              className="overflow-hidden rounded-[24px] border border-border-light bg-white shadow-[0_16px_42px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_58px_rgba(15,23,42,0.1)]"
             >
               <button
                 ref={(node) => {
@@ -70,14 +75,14 @@ export function BlogArticleFaqAccordion({
                 type="button"
                 aria-expanded={active}
                 aria-controls={panelId}
-                onClick={() => setOpenIndex(active ? -1 : index)}
+                onClick={() => setOpenIndex(index)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
-                className="flex min-h-[76px] w-full items-center justify-between gap-5 px-6 py-5 text-left font-heading text-lg font-extrabold leading-snug text-text-dark transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:px-7 md:py-6 md:text-xl"
+                className="flex min-h-[92px] w-full items-center justify-between gap-5 px-6 py-6 text-left font-heading text-[22px] font-bold leading-tight text-text-dark transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:min-h-[110px] md:px-[30px] md:py-7 md:text-[32px]"
               >
                 <span>{faq.question}</span>
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-soft-green text-primary">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_10px_24px_rgba(16,110,70,0.1)] md:size-14">
                   <ChevronDown
-                    className={`size-5 transition duration-300 ${active ? "rotate-180 text-gold" : ""}`}
+                    className={`size-6 transition duration-300 ${active ? "rotate-180 text-gold" : ""}`}
                     aria-hidden="true"
                   />
                 </span>
@@ -92,11 +97,11 @@ export function BlogArticleFaqAccordion({
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.26, ease: "easeOut" }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
                     className="overflow-hidden"
                   >
                     <div
-                      className="border-t border-border-light px-6 py-5 text-base leading-8 text-muted md:px-7 md:py-6 [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_strong]:text-text-dark"
+                      className="border-t border-border-light px-6 py-6 text-lg leading-9 text-muted md:px-[30px] md:py-7 [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_strong]:text-text-dark"
                       dangerouslySetInnerHTML={{ __html: faq.answerHtml }}
                     />
                   </motion.div>
