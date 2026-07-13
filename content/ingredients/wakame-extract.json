@@ -1,0 +1,222 @@
+{
+  "name": "Wakame Extract",
+  "scientific_name": "Undaria pinnatifida",
+  "ingredient_category": "Specialty Ingredients",
+  "hero_badge": null,
+  "short_description": "Wakame Extract is a brown seaweed extract used in supplement formulas for marine mineral and fucoxanthin-focused formulas, with label quality depending on source, form, and dose transparency.",
+  "overview_title": "Wakame Extract Overview",
+  "overview_subtitle": "A practical guide to wakame extract as a supplement ingredient.",
+  "overview_content": "<p>Wakame Extract is a brown seaweed extract used in wellness supplements for marine mineral and fucoxanthin-focused formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Wakame Extract is often discussed because it contains or represents fucoxanthin, iodine, alginates, fucoidans, and marine minerals. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Wakame Extract should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
+  "interesting_fact_label": "Ingredient Note",
+  "interesting_fact": "<p>Wakame is a traditional edible seaweed in miso soup, but extracts can concentrate selected marine compounds.</p>",
+  "how_it_works_title": "How Wakame Extract Works",
+  "how_it_works_subtitle": "Wakame Extract is evaluated by its compound profile, source quality, and formula context.",
+  "how_it_works_highlight_title": "Source and standardization matter",
+  "how_it_works_highlight_description": "Two wakame extract products can differ significantly if they use different forms, serving sizes, or extract standards.",
+  "how_it_works_content": "<p>Wakame Extract works mainly through marine carotenoid, mineral, and polysaccharide support. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Wakame Extract depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Wakame Extract with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "benefits_title": "Potential Wakame Extract Benefits",
+  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Formula Context",
+      "description": "Wakame Extract helps shoppers evaluate supplements that use brown seaweed extract positioning for marine mineral and fucoxanthin-focused formulas."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Key Compound Profile",
+      "description": "It is commonly reviewed for fucoxanthin, iodine, alginates, fucoidans, and marine minerals, which influence how brands position it on supplement labels."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Label Transparency",
+      "description": "The best products clearly disclose form, serving size, standardization, and whether Wakame Extract is part of a broader blend."
+    },
+    {
+      "icon": "activity",
+      "title": "Routine Fit",
+      "description": "Wakame Extract is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+    },
+    {
+      "icon": "search",
+      "title": "Comparison Value",
+      "description": "Comparing Wakame Extract across products can reveal differences in source quality, concentration, and supporting ingredients."
+    },
+    {
+      "icon": "heart",
+      "title": "Safety Awareness",
+      "description": "Understanding cautions and interactions helps users decide whether Wakame Extract fits their health status and medication profile."
+    }
+  ],
+  "dosage_title": "Typical Wakame Extract Dosage",
+  "dosage_subtitle": "Use the product label as the primary dose reference.",
+  "typical_dose": "Follow label directions; seaweed extracts should be compared by iodine and standardization.",
+  "dosage": "Follow the product label and avoid combining multiple wakame extract products unless a healthcare professional has reviewed the routine.",
+  "dosage_content": "<p>There is no single universal dose for wakame extract because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using wakame extract.</p>",
+  "safety_title": "Wakame Extract Safety Information",
+  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "side_effects": [
+    "Digestive discomfort",
+    "Nausea",
+    "Headache",
+    "Sensitivity reaction"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Discomfort",
+      "description": "Wakame Extract may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+    },
+    {
+      "title": "Sensitivity or Allergy",
+      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review wakame extract carefully before use."
+    },
+    {
+      "title": "Formula Overlap",
+      "description": "Side effects may be more likely when wakame extract is combined with several ingredients that have similar wellness positioning."
+    },
+    {
+      "title": "Dose-Related Concerns",
+      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with thyroid medications, iodine supplements, lithium, blood-thinning medication, or mineral-heavy formulas.",
+    "Review use if taking prescription medication or managing a diagnosed condition.",
+    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
+    "Ask a healthcare professional before use during pregnancy or nursing."
+  ],
+  "who_should_avoid_json": [
+    "People with thyroid concerns or iodine restrictions should review wakame extract before use.",
+    "People with known allergy or sensitivity related to wakame extract.",
+    "People taking medication without reviewing supplement interactions.",
+    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
+    "Children unless directed by a qualified healthcare provider."
+  ],
+  "food_sources_title": "Wakame Extract Food Sources",
+  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
+  "food_sources_content": "<p>Wakame seaweed, seaweed salads, soups, and marine vegetable blends provide related dietary compounds.</p>",
+  "food_sources_json": [
+    {
+      "title": "Dietary Sources",
+      "description": "Wakame seaweed, seaweed salads, soups, and marine vegetable blends provide related dietary compounds."
+    },
+    {
+      "title": "Supplement Forms",
+      "description": "Wakame Extract is commonly sold as capsule, powder, extract, depending on the product category."
+    },
+    {
+      "title": "Label Review",
+      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+    }
+  ],
+  "faq_title": "Wakame Extract FAQs",
+  "faq_subtitle": "Common questions about wakame extract supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Wakame Extract used for in supplements?",
+      "answer": "Wakame Extract is commonly used in formulas positioned around marine mineral and fucoxanthin-focused formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+    },
+    {
+      "question": "What is the main active profile of Wakame Extract?",
+      "answer": "Supplement labels usually discuss Wakame Extract in relation to fucoxanthin, iodine, alginates, fucoidans, and marine minerals. The exact profile can vary by source and processing method."
+    },
+    {
+      "question": "Is Wakame Extract a medicine?",
+      "answer": "No. Wakame Extract is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+    },
+    {
+      "question": "How should I compare Wakame Extract products?",
+      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+    },
+    {
+      "question": "Can Wakame Extract be taken every day?",
+      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+    },
+    {
+      "question": "What dose of Wakame Extract should I use?",
+      "answer": "Follow label directions; seaweed extracts should be compared by iodine and standardization. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
+    },
+    {
+      "question": "Does Wakame Extract have side effects?",
+      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+    },
+    {
+      "question": "Can Wakame Extract interact with medication?",
+      "answer": "Review use with thyroid medications, iodine supplements, lithium, blood-thinning medication, or mineral-heavy formulas. Medication users should review supplement use with a qualified healthcare professional."
+    },
+    {
+      "question": "Is Wakame Extract found in foods?",
+      "answer": "Wakame seaweed, seaweed salads, soups, and marine vegetable blends provide related dietary compounds."
+    },
+    {
+      "question": "Who should avoid Wakame Extract?",
+      "answer": "People with thyroid concerns or iodine restrictions should review wakame extract before use. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+    }
+  ],
+  "sidebar_profile_title": "Wakame Extract Profile Snapshot",
+  "sidebar_profile_content": "A brown seaweed extract used in marine wellness formulas, often discussed for minerals and fucoxanthin-related positioning.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Brown seaweed extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Follow label directions; seaweed extracts should be compared by iodine and standardization."
+    },
+    {
+      "label": "Best For",
+      "value": "Marine mineral and fucoxanthin-focused formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review label directions and medication context"
+    },
+    {
+      "label": "Origin",
+      "value": "Coastal East Asia"
+    },
+    {
+      "label": "Part Used",
+      "value": "Seaweed frond"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder, extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Savory and ocean-like"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Wakame Extract is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
+  "full_description": "Wakame Extract is a brown seaweed extract used in supplement formulas for marine mineral and fucoxanthin-focused formulas.",
+  "best_for": "Marine mineral and fucoxanthin-focused formulas",
+  "safety_level": "Review label directions and medication context",
+  "origin_country": "Coastal East Asia",
+  "part_used": "Seaweed frond",
+  "ingredient_form": "Capsule, powder, extract",
+  "taste_profile": "Savory and ocean-like",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Wakame Extract Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "wakame extract",
+  "seo_description": "Explore wakame extract benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/wakame-extract",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Wakame Extract Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore wakame extract benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+}

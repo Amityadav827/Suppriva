@@ -1,0 +1,222 @@
+{
+  "name": "Black Fungus",
+  "scientific_name": "Auricularia polytricha",
+  "ingredient_category": "Specialty Ingredients",
+  "hero_badge": null,
+  "short_description": "Black Fungus is a edible fungus used in supplement formulas for mushroom and circulation-aware formulas, with label quality depending on source, form, and dose transparency.",
+  "overview_title": "Black Fungus Overview",
+  "overview_subtitle": "A practical guide to black fungus as a supplement ingredient.",
+  "overview_content": "<p>Black Fungus is a edible fungus used in wellness supplements for mushroom and circulation-aware formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Black Fungus is often discussed because it contains or represents polysaccharides, fiber, minerals, and mushroom-derived antioxidants. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Black Fungus should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
+  "interesting_fact_label": "Ingredient Note",
+  "interesting_fact": "<p>Black fungus is prized in cooking more for its texture than its flavor, which is why it absorbs sauces and broths well.</p>",
+  "how_it_works_title": "How Black Fungus Works",
+  "how_it_works_subtitle": "Black Fungus is evaluated by its compound profile, source quality, and formula context.",
+  "how_it_works_highlight_title": "Source and standardization matter",
+  "how_it_works_highlight_description": "Two black fungus products can differ significantly if they use different forms, serving sizes, or extract standards.",
+  "how_it_works_content": "<p>Black Fungus works mainly through fungal polysaccharide and fiber-based support. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Black Fungus depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Black Fungus with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "benefits_title": "Potential Black Fungus Benefits",
+  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Formula Context",
+      "description": "Black Fungus helps shoppers evaluate supplements that use edible fungus positioning for mushroom and circulation-aware formulas."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Key Compound Profile",
+      "description": "It is commonly reviewed for polysaccharides, fiber, minerals, and mushroom-derived antioxidants, which influence how brands position it on supplement labels."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Label Transparency",
+      "description": "The best products clearly disclose form, serving size, standardization, and whether Black Fungus is part of a broader blend."
+    },
+    {
+      "icon": "activity",
+      "title": "Routine Fit",
+      "description": "Black Fungus is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+    },
+    {
+      "icon": "search",
+      "title": "Comparison Value",
+      "description": "Comparing Black Fungus across products can reveal differences in source quality, concentration, and supporting ingredients."
+    },
+    {
+      "icon": "heart",
+      "title": "Safety Awareness",
+      "description": "Understanding cautions and interactions helps users decide whether Black Fungus fits their health status and medication profile."
+    }
+  ],
+  "dosage_title": "Typical Black Fungus Dosage",
+  "dosage_subtitle": "Use the product label as the primary dose reference.",
+  "typical_dose": "Follow label directions; extract and food-powder servings can differ significantly.",
+  "dosage": "Follow the product label and avoid combining multiple black fungus products unless a healthcare professional has reviewed the routine.",
+  "dosage_content": "<p>There is no single universal dose for black fungus because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using black fungus.</p>",
+  "safety_title": "Black Fungus Safety Information",
+  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "side_effects": [
+    "Digestive discomfort",
+    "Nausea",
+    "Headache",
+    "Sensitivity reaction"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Discomfort",
+      "description": "Black Fungus may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+    },
+    {
+      "title": "Sensitivity or Allergy",
+      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review black fungus carefully before use."
+    },
+    {
+      "title": "Formula Overlap",
+      "description": "Side effects may be more likely when black fungus is combined with several ingredients that have similar wellness positioning."
+    },
+    {
+      "title": "Dose-Related Concerns",
+      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+    }
+  ],
+  "drug_interactions_json": [
+    "Use caution with anticoagulants, antiplatelet medications, diabetes medication, or multi-mushroom formulas.",
+    "Review use if taking prescription medication or managing a diagnosed condition.",
+    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
+    "Ask a healthcare professional before use during pregnancy or nursing."
+  ],
+  "who_should_avoid_json": [
+    "People with mushroom allergy, bleeding disorders, or medication-sensitive routines should review concentrated black fungus products carefully.",
+    "People with known allergy or sensitivity related to black fungus.",
+    "People taking medication without reviewing supplement interactions.",
+    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
+    "Children unless directed by a qualified healthcare provider."
+  ],
+  "food_sources_title": "Black Fungus Food Sources",
+  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
+  "food_sources_content": "<p>Dried black fungus, wood ear mushroom dishes, soups, and stir-fries provide dietary exposure.</p>",
+  "food_sources_json": [
+    {
+      "title": "Dietary Sources",
+      "description": "Dried black fungus, wood ear mushroom dishes, soups, and stir-fries provide dietary exposure."
+    },
+    {
+      "title": "Supplement Forms",
+      "description": "Black Fungus is commonly sold as powder, extract, dried food ingredient, depending on the product category."
+    },
+    {
+      "title": "Label Review",
+      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+    }
+  ],
+  "faq_title": "Black Fungus FAQs",
+  "faq_subtitle": "Common questions about black fungus supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Black Fungus used for in supplements?",
+      "answer": "Black Fungus is commonly used in formulas positioned around mushroom and circulation-aware formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+    },
+    {
+      "question": "What is the main active profile of Black Fungus?",
+      "answer": "Supplement labels usually discuss Black Fungus in relation to polysaccharides, fiber, minerals, and mushroom-derived antioxidants. The exact profile can vary by source and processing method."
+    },
+    {
+      "question": "Is Black Fungus a medicine?",
+      "answer": "No. Black Fungus is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+    },
+    {
+      "question": "How should I compare Black Fungus products?",
+      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+    },
+    {
+      "question": "Can Black Fungus be taken every day?",
+      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+    },
+    {
+      "question": "What dose of Black Fungus should I use?",
+      "answer": "Follow label directions; extract and food-powder servings can differ significantly. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
+    },
+    {
+      "question": "Does Black Fungus have side effects?",
+      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+    },
+    {
+      "question": "Can Black Fungus interact with medication?",
+      "answer": "Use caution with anticoagulants, antiplatelet medications, diabetes medication, or multi-mushroom formulas. Medication users should review supplement use with a qualified healthcare professional."
+    },
+    {
+      "question": "Is Black Fungus found in foods?",
+      "answer": "Dried black fungus, wood ear mushroom dishes, soups, and stir-fries provide dietary exposure."
+    },
+    {
+      "question": "Who should avoid Black Fungus?",
+      "answer": "People with mushroom allergy, bleeding disorders, or medication-sensitive routines should review concentrated black fungus products carefully. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+    }
+  ],
+  "sidebar_profile_title": "Black Fungus Profile Snapshot",
+  "sidebar_profile_content": "An edible fungus used in traditional foods and specialty mushroom supplement formulas.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Edible fungus"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Follow label directions; extract and food-powder servings can differ significantly."
+    },
+    {
+      "label": "Best For",
+      "value": "Mushroom and circulation-aware formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review label directions and medication context"
+    },
+    {
+      "label": "Origin",
+      "value": "East and Southeast Asia"
+    },
+    {
+      "label": "Part Used",
+      "value": "Fruiting body"
+    },
+    {
+      "label": "Form",
+      "value": "Powder, extract, dried food ingredient"
+    },
+    {
+      "label": "Taste",
+      "value": "Mild and earthy"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Black Fungus is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
+  "full_description": "Black Fungus is a edible fungus used in supplement formulas for mushroom and circulation-aware formulas.",
+  "best_for": "Mushroom and circulation-aware formulas",
+  "safety_level": "Review label directions and medication context",
+  "origin_country": "East and Southeast Asia",
+  "part_used": "Fruiting body",
+  "ingredient_form": "Powder, extract, dried food ingredient",
+  "taste_profile": "Mild and earthy",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Black Fungus Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "black fungus",
+  "seo_description": "Explore black fungus benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/black-fungus",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Black Fungus Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore black fungus benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+}

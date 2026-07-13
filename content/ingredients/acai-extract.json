@@ -1,0 +1,222 @@
+{
+  "name": "Acai Extract",
+  "scientific_name": "Euterpe oleracea",
+  "ingredient_category": "Fruits & Botanicals",
+  "hero_badge": null,
+  "short_description": "Acai Extract is a berry extract used in supplement formulas for antioxidant and superfruit formulas, with label quality depending on source, form, and dose transparency.",
+  "overview_title": "Acai Extract Overview",
+  "overview_subtitle": "A practical guide to acai extract as a supplement ingredient.",
+  "overview_content": "<p>Acai Extract is a berry extract used in wellness supplements for antioxidant and superfruit formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Acai Extract is often discussed because it contains or represents anthocyanins, phenolic acids, plant sterols, and fatty acids. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Acai Extract should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
+  "interesting_fact_label": "Ingredient Note",
+  "interesting_fact": "<p>Acai berries are highly perishable, so supplement products usually use freeze-dried powder, pulp, or extract rather than fresh whole berries.</p>",
+  "how_it_works_title": "How Acai Extract Works",
+  "how_it_works_subtitle": "Acai Extract is evaluated by its compound profile, source quality, and formula context.",
+  "how_it_works_highlight_title": "Source and standardization matter",
+  "how_it_works_highlight_description": "Two acai extract products can differ significantly if they use different forms, serving sizes, or extract standards.",
+  "how_it_works_content": "<p>Acai Extract works mainly through antioxidant polyphenol support. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Acai Extract depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Acai Extract with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "benefits_title": "Potential Acai Extract Benefits",
+  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Formula Context",
+      "description": "Acai Extract helps shoppers evaluate supplements that use berry extract positioning for antioxidant and superfruit formulas."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Key Compound Profile",
+      "description": "It is commonly reviewed for anthocyanins, phenolic acids, plant sterols, and fatty acids, which influence how brands position it on supplement labels."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Label Transparency",
+      "description": "The best products clearly disclose form, serving size, standardization, and whether Acai Extract is part of a broader blend."
+    },
+    {
+      "icon": "activity",
+      "title": "Routine Fit",
+      "description": "Acai Extract is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+    },
+    {
+      "icon": "search",
+      "title": "Comparison Value",
+      "description": "Comparing Acai Extract across products can reveal differences in source quality, concentration, and supporting ingredients."
+    },
+    {
+      "icon": "heart",
+      "title": "Safety Awareness",
+      "description": "Understanding cautions and interactions helps users decide whether Acai Extract fits their health status and medication profile."
+    }
+  ],
+  "dosage_title": "Typical Acai Extract Dosage",
+  "dosage_subtitle": "Use the product label as the primary dose reference.",
+  "typical_dose": "Follow label directions; acai powder and extract servings vary by processing and concentration.",
+  "dosage": "Follow the product label and avoid combining multiple acai extract products unless a healthcare professional has reviewed the routine.",
+  "dosage_content": "<p>There is no single universal dose for acai extract because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using acai extract.</p>",
+  "safety_title": "Acai Extract Safety Information",
+  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "side_effects": [
+    "Digestive discomfort",
+    "Nausea",
+    "Headache",
+    "Sensitivity reaction"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Discomfort",
+      "description": "Acai Extract may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+    },
+    {
+      "title": "Sensitivity or Allergy",
+      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review acai extract carefully before use."
+    },
+    {
+      "title": "Formula Overlap",
+      "description": "Side effects may be more likely when acai extract is combined with several ingredients that have similar wellness positioning."
+    },
+    {
+      "title": "Dose-Related Concerns",
+      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+    }
+  ],
+  "drug_interactions_json": [
+    "Use caution when stacking with multiple antioxidant products, blood sugar formulas, or medication-sensitive routines.",
+    "Review use if taking prescription medication or managing a diagnosed condition.",
+    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
+    "Ask a healthcare professional before use during pregnancy or nursing."
+  ],
+  "who_should_avoid_json": [
+    "People with palm fruit allergies or sensitivity to concentrated fruit powders should review acai use carefully.",
+    "People with known allergy or sensitivity related to acai extract.",
+    "People taking medication without reviewing supplement interactions.",
+    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
+    "Children unless directed by a qualified healthcare provider."
+  ],
+  "food_sources_title": "Acai Extract Food Sources",
+  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
+  "food_sources_content": "<p>Acai pulp, acai bowls, freeze-dried acai powder, and berry blends provide dietary exposure to related compounds.</p>",
+  "food_sources_json": [
+    {
+      "title": "Dietary Sources",
+      "description": "Acai pulp, acai bowls, freeze-dried acai powder, and berry blends provide dietary exposure to related compounds."
+    },
+    {
+      "title": "Supplement Forms",
+      "description": "Acai Extract is commonly sold as capsule, powder, extract, depending on the product category."
+    },
+    {
+      "title": "Label Review",
+      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+    }
+  ],
+  "faq_title": "Acai Extract FAQs",
+  "faq_subtitle": "Common questions about acai extract supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Acai Extract used for in supplements?",
+      "answer": "Acai Extract is commonly used in formulas positioned around antioxidant and superfruit formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+    },
+    {
+      "question": "What is the main active profile of Acai Extract?",
+      "answer": "Supplement labels usually discuss Acai Extract in relation to anthocyanins, phenolic acids, plant sterols, and fatty acids. The exact profile can vary by source and processing method."
+    },
+    {
+      "question": "Is Acai Extract a medicine?",
+      "answer": "No. Acai Extract is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+    },
+    {
+      "question": "How should I compare Acai Extract products?",
+      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+    },
+    {
+      "question": "Can Acai Extract be taken every day?",
+      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+    },
+    {
+      "question": "What dose of Acai Extract should I use?",
+      "answer": "Follow label directions; acai powder and extract servings vary by processing and concentration. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
+    },
+    {
+      "question": "Does Acai Extract have side effects?",
+      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+    },
+    {
+      "question": "Can Acai Extract interact with medication?",
+      "answer": "Use caution when stacking with multiple antioxidant products, blood sugar formulas, or medication-sensitive routines. Medication users should review supplement use with a qualified healthcare professional."
+    },
+    {
+      "question": "Is Acai Extract found in foods?",
+      "answer": "Acai pulp, acai bowls, freeze-dried acai powder, and berry blends provide dietary exposure to related compounds."
+    },
+    {
+      "question": "Who should avoid Acai Extract?",
+      "answer": "People with palm fruit allergies or sensitivity to concentrated fruit powders should review acai use carefully. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+    }
+  ],
+  "sidebar_profile_title": "Acai Extract Profile Snapshot",
+  "sidebar_profile_content": "A dark purple berry extract used in superfruit and antioxidant supplement formulas.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Berry extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Follow label directions; acai powder and extract servings vary by processing and concentration."
+    },
+    {
+      "label": "Best For",
+      "value": "Antioxidant and superfruit formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review label directions and medication context"
+    },
+    {
+      "label": "Origin",
+      "value": "Amazon region of South America"
+    },
+    {
+      "label": "Part Used",
+      "value": "Berry pulp"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder, extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Berry-like and earthy"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Acai Extract is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
+  "full_description": "Acai Extract is a berry extract used in supplement formulas for antioxidant and superfruit formulas.",
+  "best_for": "Antioxidant and superfruit formulas",
+  "safety_level": "Review label directions and medication context",
+  "origin_country": "Amazon region of South America",
+  "part_used": "Berry pulp",
+  "ingredient_form": "Capsule, powder, extract",
+  "taste_profile": "Berry-like and earthy",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Acai Extract Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "acai extract",
+  "seo_description": "Explore acai extract benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/acai-extract",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Acai Extract Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore acai extract benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+}
