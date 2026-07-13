@@ -114,11 +114,29 @@ function parseHtmlSections(
     ];
   }
 
-  const intro = source.slice(0, matches[0].index).trim();
+  const sectionMatches = matches.filter((match, index) => {
+    const level = Number(match[1]);
 
-  return matches.map((match, index) => {
+    if (level <= 2) {
+      return true;
+    }
+
+    const previousTopLevelHeading = [...matches]
+      .slice(0, index)
+      .reverse()
+      .find((candidate) => Number(candidate[1]) <= 2);
+    const previousTopLevelTitle = previousTopLevelHeading
+      ? stripFormatting(previousTopLevelHeading[3])
+      : "";
+
+    return !/frequently asked questions/i.test(previousTopLevelTitle);
+  });
+
+  const intro = source.slice(0, sectionMatches[0].index).trim();
+
+  return sectionMatches.map((match, index) => {
     const currentStart = (match.index ?? 0) + match[0].length;
-    const nextStart = matches[index + 1]?.index ?? source.length;
+    const nextStart = sectionMatches[index + 1]?.index ?? source.length;
     const title = stripFormatting(match[3]) || (index === 0 ? fallbackTitle : `${fallbackTitle} Notes`);
     const idMatch = match[2].match(/\sid=["']([^"']+)["']/i);
     const content = source.slice(currentStart, nextStart).trim();

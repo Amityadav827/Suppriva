@@ -432,6 +432,19 @@ function isFrequentlyAskedQuestionsTitle(value: string) {
   return /frequently asked questions/i.test(value);
 }
 
+function parseHtmlWithOptionalFaqHeading(html: string, fallbackHeading?: string) {
+  const parsedSegments = parseFaqSegments(html);
+
+  if (!containsFaqSegment(parsedSegments) && fallbackHeading) {
+    const syntheticFaqHtml = `<h2>${escapeHtml(fallbackHeading)}</h2>${html}`;
+    const syntheticSegments = parseFaqSegments(syntheticFaqHtml);
+
+    return containsFaqSegment(syntheticSegments) ? syntheticSegments : parsedSegments;
+  }
+
+  return parsedSegments;
+}
+
 function RichContent({
   content,
   fallbackHeading,
@@ -442,24 +455,14 @@ function RichContent({
   const isHtml = looksLikeHtml(content);
   const safeHtml = sanitizeHtml(content);
   const [segments, setSegments] = useState<HtmlSegment[]>(
-    isHtml ? parseFaqSegments(safeHtml) : [{ type: "html", html: safeHtml }],
+    isHtml
+      ? parseHtmlWithOptionalFaqHeading(safeHtml, fallbackHeading)
+      : [{ type: "html", html: safeHtml }],
   );
 
   useEffect(() => {
     if (isHtml) {
-      const parsedSegments = parseFaqSegments(safeHtml);
-
-      if (!containsFaqSegment(parsedSegments) && fallbackHeading) {
-        const syntheticFaqHtml = `<h2>${escapeHtml(fallbackHeading)}</h2>${safeHtml}`;
-        const syntheticSegments = parseFaqSegments(syntheticFaqHtml);
-
-        setSegments(
-          containsFaqSegment(syntheticSegments) ? syntheticSegments : parsedSegments,
-        );
-        return;
-      }
-
-      setSegments(parsedSegments);
+      setSegments(parseHtmlWithOptionalFaqHeading(safeHtml, fallbackHeading));
     }
   }, [fallbackHeading, isHtml, safeHtml]);
 
