@@ -1,0 +1,231 @@
+{
+  "name": "Glutathione",
+  "status": "published",
+  "scientific_name": "Glutathione",
+  "ingredient_category": "Antioxidants",
+  "hero_badge": null,
+  "short_description": "Glutathione is a major antioxidant made from amino acids and used in supplements for cellular and liver-wellness positioning, with practical safety and label context for supplement shoppers.",
+  "overview_title": "Glutathione Overview",
+  "overview_subtitle": "A practical look at glutathione as a supplement ingredient.",
+  "overview_content": "<p>Glutathione is a major antioxidant made from amino acids and used in supplements for cellular and liver-wellness positioning. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Glutathione through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Glutathione should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Glutathione is made from three amino acids: glutamate, cysteine, and glycine.</p>",
+  "how_it_works_title": "How Glutathione Works",
+  "how_it_works_subtitle": "The main mechanisms behind glutathione in wellness formulas.",
+  "how_it_works_highlight_title": "Endogenous antioxidant tripeptide support profile",
+  "how_it_works_highlight_description": "Glutathione is commonly evaluated through redox balance, antioxidant recycling, and support for normal cellular protection pathways.",
+  "how_it_works_content": "<p>Glutathione works through redox balance, antioxidant recycling, and support for normal cellular protection pathways. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Glutathione is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "benefits_title": "Potential Glutathione Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_json": [
+    {
+      "icon": "sparkles",
+      "title": "Antioxidant Wellness Support",
+      "description": "Glutathione is commonly used in formulas that support antioxidant balance and general cellular wellness."
+    },
+    {
+      "icon": "activity",
+      "title": "Supports Cellular Antioxidant Support",
+      "description": "Its ingredient profile helps explain why brands include it in products positioned around cellular antioxidant support."
+    },
+    {
+      "icon": "search",
+      "title": "Label Comparison Value",
+      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+    },
+    {
+      "icon": "leaf",
+      "title": "Formula Pairing Potential",
+      "description": "Glutathione often appears with complementary nutrients or botanicals that support a broader wellness goal."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Routine-Friendly Positioning",
+      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+    },
+    {
+      "icon": "book-open",
+      "title": "Research-Informed Context",
+      "description": "Suppriva evaluates Glutathione by mechanism, evidence level, safety context, and practical product positioning."
+    }
+  ],
+  "dosage_title": "Typical Glutathione Dosage",
+  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
+  "typical_dose": "Common supplement servings often range from 250 mg to 1,000 mg daily, depending on reduced, liposomal, or supportive formula format.",
+  "dosage": "Common supplement servings often range from 250 mg to 1,000 mg daily, depending on reduced, liposomal, or supportive formula format.",
+  "dosage_content": "<p>Common supplement servings often range from 250 mg to 1,000 mg daily, depending on reduced, liposomal, or supportive formula format.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Glutathione without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "safety_title": "Glutathione Safety Information",
+  "safety_subtitle": "Important safety context before using glutathione supplements.",
+  "side_effects": [
+    "Digestive Discomfort",
+    "Sensitivity Reactions",
+    "Dose-Related Effects",
+    "Formula Overlap"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Discomfort",
+      "description": "Glutathione may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+    },
+    {
+      "title": "Sensitivity Reactions",
+      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+    },
+    {
+      "title": "Dose-Related Effects",
+      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+    },
+    {
+      "title": "Formula Overlap",
+      "description": "Side effects can be more likely when Glutathione is combined with similar ingredients or multi-ingredient products."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review Glutathione with a healthcare professional if you take prescription medication or manage a chronic condition.",
+    "People with asthma, cancer treatment plans, pregnancy, nursing, or complex medication routines should consult a healthcare professional before use.",
+    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
+    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
+    "Children unless directed by a pediatric clinician.",
+    "People with known allergy or sensitivity to Glutathione or related ingredients.",
+    "People taking medications that may overlap with the ingredient's intended effect.",
+    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+  ],
+  "food_sources_title": "Glutathione Food Sources",
+  "food_sources_subtitle": "Food and source context for glutathione.",
+  "food_sources_content": "<p>The body makes glutathione internally, while foods and supplements can support antioxidant nutrition in different ways.</p>",
+  "food_sources_json": [
+    {
+      "title": "Asparagus",
+      "description": "Asparagus can contribute to cellular antioxidant support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Avocado",
+      "description": "Avocado can contribute to cellular antioxidant support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Spinach",
+      "description": "Spinach can contribute to cellular antioxidant support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Broccoli",
+      "description": "Broccoli can contribute to cellular antioxidant support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Sulfur-rich foods that support glutathione production",
+      "description": "Sulfur-rich foods that support glutathione production can contribute to cellular antioxidant support, though supplement potency depends on serving size, form, and standardization."
+    }
+  ],
+  "faq_title": "Glutathione FAQs",
+  "faq_subtitle": "Common questions about glutathione supplements.",
+  "faq_json": [
+    {
+      "question": "What is Glutathione?",
+      "answer": "Glutathione is a major antioxidant made from amino acids and used in supplements for cellular and liver-wellness positioning. It is used in supplement formulas for cellular antioxidant support, not as a substitute for medical treatment."
+    },
+    {
+      "question": "What is Glutathione commonly used for?",
+      "answer": "It is commonly positioned around antioxidant support, cellular wellness, and liver-support formulas. The exact role depends on dose, form, and the other ingredients in the formula."
+    },
+    {
+      "question": "How does Glutathione work?",
+      "answer": "Glutathione is usually discussed through redox balance, antioxidant recycling, and support for normal cellular protection pathways. This helps explain its supplement positioning without treating it as a cure or medication."
+    },
+    {
+      "question": "What is a typical Glutathione dose?",
+      "answer": "Common supplement servings often range from 250 mg to 1,000 mg daily, depending on reduced, liposomal, or supportive formula format. Always follow the specific product label because extract strength and format can vary widely."
+    },
+    {
+      "question": "Is Glutathione safe for daily use?",
+      "answer": "Generally well tolerated with label-directed use. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+    },
+    {
+      "question": "Can Glutathione cause side effects?",
+      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+    },
+    {
+      "question": "Can Glutathione interact with medication?",
+      "answer": "People with asthma, cancer treatment plans, pregnancy, nursing, or complex medication routines should consult a healthcare professional before use. This is especially important for people managing medical conditions or using multiple supplements."
+    },
+    {
+      "question": "What should I compare on a Glutathione supplement label?",
+      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+    },
+    {
+      "question": "What foods contain Glutathione or related compounds?",
+      "answer": "The body makes glutathione internally, while foods and supplements can support antioxidant nutrition in different ways."
+    },
+    {
+      "question": "Can Glutathione replace medical care?",
+      "answer": "No. Glutathione supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    }
+  ],
+  "sidebar_profile_title": "Glutathione Profile Snapshot",
+  "sidebar_profile_content": "Glutathione is a endogenous antioxidant tripeptide used in supplements for cellular antioxidant support.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Endogenous antioxidant tripeptide"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common supplement servings often range from 250 mg to 1,000 mg daily, depending on reduced, liposomal, or supportive formula format."
+    },
+    {
+      "label": "Best For",
+      "value": "Antioxidant support, cellular wellness, and liver-support formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Generally well tolerated with label-directed use"
+    },
+    {
+      "label": "Origin",
+      "value": "Produced naturally in the body and supported by dietary amino acids"
+    },
+    {
+      "label": "Part Used",
+      "value": "Tripeptide compound"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, liposomal liquid, tablet, powder"
+    },
+    {
+      "label": "Taste",
+      "value": "Sulfur-like in some liquid forms"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Glutathione is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
+  "full_description": "Glutathione is a major antioxidant made from amino acids and used in supplements for cellular and liver-wellness positioning, with practical supplement label and safety context for informed wellness decisions.",
+  "best_for": "Antioxidant support, cellular wellness, and liver-support formulas",
+  "safety_level": "Generally well tolerated with label-directed use",
+  "origin_country": "Produced naturally in the body and supported by dietary amino acids",
+  "part_used": "Tripeptide compound",
+  "ingredient_form": "Capsule, liposomal liquid, tablet, powder",
+  "taste_profile": "Sulfur-like in some liquid forms",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Glutathione Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "glutathione",
+  "seo_description": "Explore Glutathione benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/glutathione",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Glutathione Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore Glutathione benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+}

@@ -1,0 +1,231 @@
+{
+  "name": "Betaine",
+  "status": "published",
+  "scientific_name": "Trimethylglycine",
+  "ingredient_category": "Specialty Ingredients",
+  "hero_badge": null,
+  "short_description": "Betaine is a naturally occurring compound also known as trimethylglycine, used in methylation, performance, and digestive-support formulas, with practical safety and label context for supplement shoppers.",
+  "overview_title": "Betaine Overview",
+  "overview_subtitle": "A practical look at betaine as a supplement ingredient.",
+  "overview_content": "<p>Betaine is a naturally occurring compound also known as trimethylglycine, used in methylation, performance, and digestive-support formulas. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Betaine through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Betaine should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Betaine was first identified in sugar beets, which is reflected in its name.</p>",
+  "how_it_works_title": "How Betaine Works",
+  "how_it_works_subtitle": "The main mechanisms behind betaine in wellness formulas.",
+  "how_it_works_highlight_title": "Methyl donor and osmolyte support profile",
+  "how_it_works_highlight_description": "Betaine is commonly evaluated through methyl-donor activity, cellular osmolyte behavior, and form-specific use such as betaine anhydrous or betaine hydrochloride.",
+  "how_it_works_content": "<p>Betaine works through methyl-donor activity, cellular osmolyte behavior, and form-specific use such as betaine anhydrous or betaine hydrochloride. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Betaine is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "benefits_title": "Potential Betaine Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_json": [
+    {
+      "icon": "sparkles",
+      "title": "Antioxidant Wellness Support",
+      "description": "Betaine is commonly used in formulas that support antioxidant balance and general cellular wellness."
+    },
+    {
+      "icon": "activity",
+      "title": "Supports Methylation And Performance Support",
+      "description": "Its ingredient profile helps explain why brands include it in products positioned around methylation and performance support."
+    },
+    {
+      "icon": "search",
+      "title": "Label Comparison Value",
+      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+    },
+    {
+      "icon": "leaf",
+      "title": "Formula Pairing Potential",
+      "description": "Betaine often appears with complementary nutrients or botanicals that support a broader wellness goal."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Routine-Friendly Positioning",
+      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+    },
+    {
+      "icon": "book-open",
+      "title": "Research-Informed Context",
+      "description": "Suppriva evaluates Betaine by mechanism, evidence level, safety context, and practical product positioning."
+    }
+  ],
+  "dosage_title": "Typical Betaine Dosage",
+  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
+  "typical_dose": "Common servings vary by form; betaine anhydrous often ranges from 500 mg to 2,500 mg, while betaine HCl products follow digestive-support label directions.",
+  "dosage": "Common servings vary by form; betaine anhydrous often ranges from 500 mg to 2,500 mg, while betaine HCl products follow digestive-support label directions.",
+  "dosage_content": "<p>Common servings vary by form; betaine anhydrous often ranges from 500 mg to 2,500 mg, while betaine HCl products follow digestive-support label directions.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Betaine without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "safety_title": "Betaine Safety Information",
+  "safety_subtitle": "Important safety context before using betaine supplements.",
+  "side_effects": [
+    "Digestive Discomfort",
+    "Sensitivity Reactions",
+    "Dose-Related Effects",
+    "Formula Overlap"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Discomfort",
+      "description": "Betaine may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+    },
+    {
+      "title": "Sensitivity Reactions",
+      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+    },
+    {
+      "title": "Dose-Related Effects",
+      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+    },
+    {
+      "title": "Formula Overlap",
+      "description": "Side effects can be more likely when Betaine is combined with similar ingredients or multi-ingredient products."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review Betaine with a healthcare professional if you take prescription medication or manage a chronic condition.",
+    "People with kidney disease, high cholesterol concerns, reflux, ulcers, or medication routines should review betaine form and dose with a clinician.",
+    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
+    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
+    "Children unless directed by a pediatric clinician.",
+    "People with known allergy or sensitivity to Betaine or related ingredients.",
+    "People taking medications that may overlap with the ingredient's intended effect.",
+    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+  ],
+  "food_sources_title": "Betaine Food Sources",
+  "food_sources_subtitle": "Food and source context for betaine.",
+  "food_sources_content": "<p>Dietary betaine is found in several foods, while supplements may use betaine anhydrous or betaine HCl for different purposes.</p>",
+  "food_sources_json": [
+    {
+      "title": "Beets",
+      "description": "Beets can contribute to methylation and performance support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Spinach",
+      "description": "Spinach can contribute to methylation and performance support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Quinoa",
+      "description": "Quinoa can contribute to methylation and performance support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Wheat bran",
+      "description": "Wheat bran can contribute to methylation and performance support, though supplement potency depends on serving size, form, and standardization."
+    },
+    {
+      "title": "Seafood",
+      "description": "Seafood can contribute to methylation and performance support, though supplement potency depends on serving size, form, and standardization."
+    }
+  ],
+  "faq_title": "Betaine FAQs",
+  "faq_subtitle": "Common questions about betaine supplements.",
+  "faq_json": [
+    {
+      "question": "What is Betaine?",
+      "answer": "Betaine is a naturally occurring compound also known as trimethylglycine, used in methylation, performance, and digestive-support formulas. It is used in supplement formulas for methylation and performance support, not as a substitute for medical treatment."
+    },
+    {
+      "question": "What is Betaine commonly used for?",
+      "answer": "It is commonly positioned around methylation support, performance formulas, and digestive-support products depending on form. The exact role depends on dose, form, and the other ingredients in the formula."
+    },
+    {
+      "question": "How does Betaine work?",
+      "answer": "Betaine is usually discussed through methyl-donor activity, cellular osmolyte behavior, and form-specific use such as betaine anhydrous or betaine hydrochloride. This helps explain its supplement positioning without treating it as a cure or medication."
+    },
+    {
+      "question": "What is a typical Betaine dose?",
+      "answer": "Common servings vary by form; betaine anhydrous often ranges from 500 mg to 2,500 mg, while betaine HCl products follow digestive-support label directions. Always follow the specific product label because extract strength and format can vary widely."
+    },
+    {
+      "question": "Is Betaine safe for daily use?",
+      "answer": "Generally well tolerated; form and dose matter. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+    },
+    {
+      "question": "Can Betaine cause side effects?",
+      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+    },
+    {
+      "question": "Can Betaine interact with medication?",
+      "answer": "People with kidney disease, high cholesterol concerns, reflux, ulcers, or medication routines should review betaine form and dose with a clinician. This is especially important for people managing medical conditions or using multiple supplements."
+    },
+    {
+      "question": "What should I compare on a Betaine supplement label?",
+      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+    },
+    {
+      "question": "What foods contain Betaine or related compounds?",
+      "answer": "Dietary betaine is found in several foods, while supplements may use betaine anhydrous or betaine HCl for different purposes."
+    },
+    {
+      "question": "Can Betaine replace medical care?",
+      "answer": "No. Betaine supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    }
+  ],
+  "sidebar_profile_title": "Betaine Profile Snapshot",
+  "sidebar_profile_content": "Betaine is a methyl donor and osmolyte used in supplements for methylation and performance support.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Methyl donor and osmolyte"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common servings vary by form; betaine anhydrous often ranges from 500 mg to 2,500 mg, while betaine HCl products follow digestive-support label directions."
+    },
+    {
+      "label": "Best For",
+      "value": "Methylation support, performance formulas, and digestive-support products depending on form"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Generally well tolerated; form and dose matter"
+    },
+    {
+      "label": "Origin",
+      "value": "Found naturally in beets and several plant and animal foods"
+    },
+    {
+      "label": "Part Used",
+      "value": "Trimethylglycine compound"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder, tablet"
+    },
+    {
+      "label": "Taste",
+      "value": "Mildly sweet or neutral"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Betaine is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
+  "full_description": "Betaine is a naturally occurring compound also known as trimethylglycine, used in methylation, performance, and digestive-support formulas, with practical supplement label and safety context for informed wellness decisions.",
+  "best_for": "Methylation support, performance formulas, and digestive-support products depending on form",
+  "safety_level": "Generally well tolerated; form and dose matter",
+  "origin_country": "Found naturally in beets and several plant and animal foods",
+  "part_used": "Trimethylglycine compound",
+  "ingredient_form": "Capsule, powder, tablet",
+  "taste_profile": "Mildly sweet or neutral",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Betaine Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "betaine",
+  "seo_description": "Explore Betaine benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/betaine",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Betaine Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore Betaine benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+}
