@@ -1,0 +1,212 @@
+{
+  "name": "Alpha-GPC",
+  "scientific_name": "L-alpha-glycerylphosphorylcholine",
+  "hero_badge": null,
+  "short_description": "Alpha-GPC is a choline-containing compound used in cognitive support supplements for focus, memory, and brain-health education.",
+  "overview_title": "Alpha-GPC Overview",
+  "overview_subtitle": "A practical look at alpha gpc and how it appears in supplement labels.",
+  "overview_content": "<p>Alpha-GPC is a supplemental form of choline, a nutrient involved in acetylcholine production, cell membranes, and brain-health research. It is commonly found in nootropic, focus, memory, and cognitive-performance products.</p><p>Because Alpha-GPC is more targeted than general choline foods, it is important to compare serving size, timing, stimulant overlap, and personal tolerance. Some formulas combine it with caffeine, bacopa, phosphatidylserine, or other cognition-focused ingredients.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Alpha-GPC provides choline in a form often selected for brain-focused formulas because choline is a building block for acetylcholine.</p>",
+  "how_it_works_title": "How Alpha-GPC Works",
+  "how_it_works_subtitle": "How alpha gpc is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Choline Support for Focus Formulas",
+  "how_it_works_highlight_description": "Alpha-GPC is commonly evaluated as a choline donor in cognitive-support and performance-oriented supplement stacks.",
+  "how_it_works_content": "<p>Alpha-GPC supplies choline that the body can use in acetylcholine pathways and phospholipid metabolism. This is why it appears in formulas focused on attention, learning, training performance, and brain-health education. The practical value of Alpha-GPC depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Alpha-GPC Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with alpha gpc in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Cognitive Support Context",
+      "description": "Cognitive Support Context helps readers evaluate alpha gpc by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Acetylcholine Pathways",
+      "description": "Acetylcholine Pathways helps readers evaluate alpha gpc by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Performance Stack Fit",
+      "description": "Performance Stack Fit helps readers evaluate alpha gpc by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Nootropic Label Comparison",
+      "description": "Nootropic Label Comparison helps readers evaluate alpha gpc by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Membrane Support Education",
+      "description": "Membrane Support Education helps readers evaluate alpha gpc by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Formulation Transparency",
+      "description": "Formulation Transparency helps readers evaluate alpha gpc by looking at use context, quality, dose, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Alpha-GPC Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common supplement servings often range from 150 mg to 600 mg daily depending on product purpose and tolerance.",
+  "dosage": "Common supplement servings often range from 150 mg to 600 mg daily depending on product purpose and tolerance.",
+  "dosage_content": "<p>Common supplement servings often range from 150 mg to 600 mg daily depending on product purpose and tolerance. Start with the label directions for the specific product rather than assuming all alpha gpc supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Alpha-GPC Safety Information",
+  "safety_subtitle": "Alpha-GPC is generally used by adults, but headache, digestive symptoms, blood pressure concerns, and medication overlap should be reviewed.",
+  "side_effects": [
+    "Headache or brain fog",
+    "Digestive upset",
+    "Blood pressure awareness",
+    "Stack sensitivity"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Headache or brain fog",
+      "description": "Headache or brain fog may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Blood pressure awareness",
+      "description": "Blood pressure awareness may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stack sensitivity",
+      "description": "Stack sensitivity may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with cholinergic or anticholinergic medications.",
+    "Discuss use with blood pressure medications or cardiovascular concerns.",
+    "Use caution when combining with stimulants, nootropics, or sleep-impacting products.",
+    "Ask a healthcare professional before use with neurological or psychiatric medications."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant or nursing individuals unless advised by a healthcare professional.",
+    "People using cholinergic medications without clinician guidance.",
+    "People with uncontrolled blood pressure or cardiovascular concerns unless cleared.",
+    "People sensitive to nootropic or stimulant stacks.",
+    "Children unless directed by a qualified healthcare provider."
+  ],
+  "faq_title": "Alpha-GPC FAQs",
+  "faq_subtitle": "Common questions about alpha gpc, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Alpha-GPC?",
+      "answer": "Alpha-GPC is a choline-containing compound used in cognitive support supplements for focus, memory, and brain-health education."
+    },
+    {
+      "question": "What is Alpha-GPC commonly used for?",
+      "answer": "Alpha-GPC is commonly discussed for cognitive performance and choline-support formulas. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Alpha-GPC safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Alpha-GPC label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Alpha-GPC take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Alpha-GPC replace medical treatment?",
+      "answer": "No. Alpha-GPC supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Alpha-GPC with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Alpha-GPC?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Alpha-GPC usually sold in?",
+      "answer": "Alpha-GPC is commonly sold as capsule, powder, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Alpha-GPC?",
+      "answer": "Suppriva reviews Alpha-GPC by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Alpha-GPC Profile Snapshot",
+  "sidebar_profile_content": "Alpha-GPC is a choline compound used in supplement education for cognitive performance and choline-support formulas.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Choline compound"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common supplement servings often range from 150 mg to 600 mg daily depending on product purpose and tolerance."
+    },
+    {
+      "label": "Best For",
+      "value": "Cognitive performance and choline-support formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Alpha-GPC is generally used by adults, but headache, digestive symptoms, blood pressure concerns, and medication overlap should be reviewed."
+    },
+    {
+      "label": "Origin",
+      "value": "Choline-containing compound used in supplements"
+    },
+    {
+      "label": "Part Used",
+      "value": "Not plant-specific"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder"
+    },
+    {
+      "label": "Taste",
+      "value": "Mild and slightly bitter"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Alpha-GPC is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Alpha-GPC is a choline-containing compound used in cognitive support supplements for focus, memory, and brain-health education.",
+  "best_for": "Cognitive performance and choline-support formulas",
+  "safety_level": "Alpha-GPC is generally used by adults, but headache, digestive symptoms, blood pressure concerns, and medication overlap should be reviewed.",
+  "origin_country": "Choline-containing compound used in supplements",
+  "part_used": "Not plant-specific",
+  "ingredient_form": "Capsule, powder",
+  "taste_profile": "Mild and slightly bitter",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Alpha-GPC Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "alpha gpc",
+  "seo_description": "Explore alpha gpc benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/alpha-gpc",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Alpha-GPC Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore alpha gpc benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

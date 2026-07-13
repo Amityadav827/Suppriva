@@ -1,0 +1,212 @@
+{
+  "name": "Ashwagandha (KSM-66)",
+  "scientific_name": "Withania somnifera",
+  "hero_badge": null,
+  "short_description": "Ashwagandha is an adaptogenic root extract used in supplements for stress resilience, relaxation, sleep quality, and performance education.",
+  "overview_title": "Ashwagandha (KSM-66) Overview",
+  "overview_subtitle": "A practical look at ashwagandha and how it appears in supplement labels.",
+  "overview_content": "<p>Ashwagandha is a root from Withania somnifera, a botanical widely used in adaptogen supplements. KSM-66 is one branded full-spectrum root extract, but many other forms exist, including Sensoril, Shoden, generic root powder, and standardized extracts.</p><p>The ingredient is commonly discussed for stress resilience, relaxation, sleep quality, mood-support routines, and active-lifestyle recovery. It is not a sedative for everyone, and different extracts may feel different depending on dose and withanolide profile.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Ashwagandha is often called an adaptogen, a term used for botanicals traditionally associated with helping the body adapt to stress.</p>",
+  "how_it_works_title": "How Ashwagandha (KSM-66) Works",
+  "how_it_works_subtitle": "How ashwagandha is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Adaptogenic Root for Stress-Aware Routines",
+  "how_it_works_highlight_description": "Ashwagandha is best compared by root versus leaf use, extract brand, withanolide standardization, dose, and safety cautions.",
+  "how_it_works_content": "<p>Ashwagandha is researched for stress-response pathways, cortisol-related markers, sleep quality, and performance-support outcomes. The effect depends on extract type, dose, standardization, and personal tolerance. The practical value of Ashwagandha (KSM-66) depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Ashwagandha (KSM-66) Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with ashwagandha in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Relaxation Support Context",
+      "description": "Relaxation Support Context helps readers evaluate ashwagandha by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Stress-Response Research",
+      "description": "Stress-Response Research helps readers evaluate ashwagandha by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Sleep Quality Formulas",
+      "description": "Sleep Quality Formulas helps readers evaluate ashwagandha by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Active-Lifestyle Support",
+      "description": "Active-Lifestyle Support helps readers evaluate ashwagandha by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Extract Comparison",
+      "description": "Extract Comparison helps readers evaluate ashwagandha by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Routine Fit",
+      "description": "Routine Fit helps readers evaluate ashwagandha by looking at use context, quality, dose, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Ashwagandha (KSM-66) Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common servings often range from 300 mg to 600 mg daily for standardized root extracts, while powders may use different amounts.",
+  "dosage": "Common servings often range from 300 mg to 600 mg daily for standardized root extracts, while powders may use different amounts.",
+  "dosage_content": "<p>Common servings often range from 300 mg to 600 mg daily for standardized root extracts, while powders may use different amounts. Start with the label directions for the specific product rather than assuming all ashwagandha supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Ashwagandha (KSM-66) Safety Information",
+  "safety_subtitle": "Ashwagandha can cause sedation, digestive effects, thyroid-related concerns, and rare liver-related reports. It is not appropriate for everyone.",
+  "side_effects": [
+    "Drowsiness",
+    "Digestive upset",
+    "Thyroid awareness",
+    "Rare liver concerns"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Drowsiness",
+      "description": "Drowsiness may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Thyroid awareness",
+      "description": "Thyroid awareness may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Rare liver concerns",
+      "description": "Rare liver concerns may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with sedatives, sleep aids, alcohol, or calming medications.",
+    "Discuss with a clinician if taking thyroid medication or managing thyroid disease.",
+    "Use caution with autoimmune conditions or immune-modulating medication.",
+    "Review with a healthcare professional if using mood-related medications."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant individuals, because ashwagandha is generally not recommended during pregnancy.",
+    "People with thyroid disease unless guided by a clinician.",
+    "People with autoimmune conditions or immune-suppressing therapy without professional advice.",
+    "People with liver disease or prior supplement-related liver issues.",
+    "Children unless directed by a qualified healthcare provider."
+  ],
+  "faq_title": "Ashwagandha (KSM-66) FAQs",
+  "faq_subtitle": "Common questions about ashwagandha, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Ashwagandha (KSM-66)?",
+      "answer": "Ashwagandha is an adaptogenic root extract used in supplements for stress resilience, relaxation, sleep quality, and performance education."
+    },
+    {
+      "question": "What is Ashwagandha (KSM-66) commonly used for?",
+      "answer": "Ashwagandha (KSM-66) is commonly discussed for stress, relaxation, and performance-support education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Ashwagandha (KSM-66) safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Ashwagandha (KSM-66) label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Ashwagandha (KSM-66) take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Ashwagandha (KSM-66) replace medical treatment?",
+      "answer": "No. Ashwagandha (KSM-66) supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Ashwagandha (KSM-66) with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Ashwagandha (KSM-66)?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Ashwagandha (KSM-66) usually sold in?",
+      "answer": "Ashwagandha (KSM-66) is commonly sold as capsule, powder, gummy, extract, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Ashwagandha (KSM-66)?",
+      "answer": "Suppriva reviews Ashwagandha (KSM-66) by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Ashwagandha (KSM-66) Profile Snapshot",
+  "sidebar_profile_content": "Ashwagandha (KSM-66) is a adaptogenic root extract used in supplement education for stress, relaxation, and performance-support education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Adaptogenic root extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common servings often range from 300 mg to 600 mg daily for standardized root extracts, while powders may use different amounts."
+    },
+    {
+      "label": "Best For",
+      "value": "Stress, relaxation, and performance-support education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Ashwagandha can cause sedation, digestive effects, thyroid-related concerns, and rare liver-related reports. It is not appropriate for everyone."
+    },
+    {
+      "label": "Origin",
+      "value": "India and dry regions of South Asia"
+    },
+    {
+      "label": "Part Used",
+      "value": "Root"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder, gummy, extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Earthy and bitter"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Ashwagandha (KSM-66) is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Ashwagandha is an adaptogenic root extract used in supplements for stress resilience, relaxation, sleep quality, and performance education.",
+  "best_for": "Stress, relaxation, and performance-support education",
+  "safety_level": "Ashwagandha can cause sedation, digestive effects, thyroid-related concerns, and rare liver-related reports. It is not appropriate for everyone.",
+  "origin_country": "India and dry regions of South Asia",
+  "part_used": "Root",
+  "ingredient_form": "Capsule, powder, gummy, extract",
+  "taste_profile": "Earthy and bitter",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Ashwagandha (KSM-66) Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "ashwagandha",
+  "seo_description": "Explore ashwagandha benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/ashwagandha",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Ashwagandha (KSM-66) Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore ashwagandha benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

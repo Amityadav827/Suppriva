@@ -1,0 +1,212 @@
+{
+  "name": "Aloe Vera",
+  "scientific_name": "Aloe barbadensis miller",
+  "hero_badge": null,
+  "short_description": "Aloe vera is a succulent plant ingredient used in supplements and wellness products for digestive comfort, hydration, and skin-support education.",
+  "overview_title": "Aloe Vera Overview",
+  "overview_subtitle": "A practical look at aloe vera and how it appears in supplement labels.",
+  "overview_content": "<p>Aloe vera is a succulent plant best known for the gel inside its thick leaves. In supplements, aloe may appear as inner leaf juice, gel powder, whole leaf extract, or standardized aloe preparations. These forms are not identical, so label clarity is especially important.</p><p>Aloe is commonly discussed for digestive comfort, regularity formulas, hydration-focused products, and skin-support education. Some preparations contain compounds with laxative effects, which makes processing method and safety review important.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>The clear inner leaf gel and the outer leaf latex are different parts of aloe, and they can have very different safety profiles.</p>",
+  "how_it_works_title": "How Aloe Vera Works",
+  "how_it_works_subtitle": "How aloe vera is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Plant Part Matters",
+  "how_it_works_highlight_description": "Aloe vera is best evaluated by whether the label identifies inner leaf gel, whole leaf extract, processing method, and laxative-compound controls.",
+  "how_it_works_content": "<p>Aloe products may work through soothing polysaccharides, hydration support, and, in some forms, compounds that influence bowel motility. The effect depends heavily on whether the product uses inner leaf gel, decolorized whole leaf, or latex-containing material.</p><p>The practical value of Aloe Vera depends on product quality, dose, ingredient form, and whether the label sets realistic expectations. It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Aloe Vera Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with aloe vera in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Digestive Comfort Context",
+      "description": "Digestive Comfort Context helps readers evaluate aloe vera by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Hydration-Oriented Use",
+      "description": "Hydration-Oriented Use helps readers evaluate aloe vera by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Skin Wellness Education",
+      "description": "Skin Wellness Education helps readers evaluate aloe vera by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Processing Transparency",
+      "description": "Processing Transparency helps readers evaluate aloe vera by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Gentle Routine Positioning",
+      "description": "Gentle Routine Positioning helps readers evaluate aloe vera by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Safety Label Awareness",
+      "description": "Safety Label Awareness helps readers evaluate aloe vera by looking at use context, quality, dose, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Aloe Vera Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Dose varies widely by form; follow the specific product label because aloe juice, gel powder, and capsules are not interchangeable.",
+  "dosage": "Dose varies widely by form; follow the specific product label because aloe juice, gel powder, and capsules are not interchangeable.",
+  "dosage_content": "<p>Dose varies widely by form; follow the specific product label because aloe juice, gel powder, and capsules are not interchangeable. Start with the label directions for the specific product rather than assuming all aloe vera supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Aloe Vera Safety Information",
+  "safety_subtitle": "Aloe safety depends on plant part, processing, dose, and individual tolerance. Latex-containing or laxative aloe products require extra caution.",
+  "side_effects": [
+    "Digestive changes",
+    "Electrolyte concerns",
+    "Sensitivity reactions",
+    "Plant-part risk"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive changes",
+      "description": "Digestive changes may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Electrolyte concerns",
+      "description": "Electrolyte concerns may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Sensitivity reactions",
+      "description": "Sensitivity reactions may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Plant-part risk",
+      "description": "Plant-part risk may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Use caution with laxatives, diuretics, or medications affected by electrolyte balance.",
+    "Review use with diabetes medications because some aloe products may overlap with glucose monitoring.",
+    "Discuss with a clinician if taking heart, kidney, or digestive medications.",
+    "Avoid combining multiple regularity products without professional guidance."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant or nursing individuals unless cleared by a healthcare professional.",
+    "People with kidney disease or electrolyte concerns.",
+    "People with inflammatory bowel disease or severe digestive symptoms unless supervised.",
+    "Children unless directed by a qualified healthcare provider.",
+    "Anyone using laxative aloe as a long-term substitute for medical evaluation."
+  ],
+  "faq_title": "Aloe Vera FAQs",
+  "faq_subtitle": "Common questions about aloe vera, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Aloe Vera?",
+      "answer": "Aloe vera is a succulent plant ingredient used in supplements and wellness products for digestive comfort, hydration, and skin-support education."
+    },
+    {
+      "question": "What is Aloe Vera commonly used for?",
+      "answer": "Aloe Vera is commonly discussed for digestive comfort and skin-support education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Aloe Vera safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Aloe Vera label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Aloe Vera take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Aloe Vera replace medical treatment?",
+      "answer": "No. Aloe Vera supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Aloe Vera with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Aloe Vera?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Aloe Vera usually sold in?",
+      "answer": "Aloe Vera is commonly sold as juice, gel, capsule, extract, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Aloe Vera?",
+      "answer": "Suppriva reviews Aloe Vera by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Aloe Vera Profile Snapshot",
+  "sidebar_profile_content": "Aloe Vera is a botanical leaf gel and extract used in supplement education for digestive comfort and skin-support education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Botanical leaf gel and extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Dose varies widely by form; follow the specific product label because aloe juice, gel powder, and capsules are not interchangeable."
+    },
+    {
+      "label": "Best For",
+      "value": "Digestive comfort and skin-support education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Aloe safety depends on plant part, processing, dose, and individual tolerance. Latex-containing or laxative aloe products require extra caution."
+    },
+    {
+      "label": "Origin",
+      "value": "Arid and subtropical regions"
+    },
+    {
+      "label": "Part Used",
+      "value": "Leaf gel and inner leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Juice, gel, capsule, extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Mild, bitter, or plant-like"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Aloe Vera is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Aloe vera is a succulent plant ingredient used in supplements and wellness products for digestive comfort, hydration, and skin-support education.",
+  "best_for": "Digestive comfort and skin-support education",
+  "safety_level": "Aloe safety depends on plant part, processing, dose, and individual tolerance. Latex-containing or laxative aloe products require extra caution.",
+  "origin_country": "Arid and subtropical regions",
+  "part_used": "Leaf gel and inner leaf",
+  "ingredient_form": "Juice, gel, capsule, extract",
+  "taste_profile": "Mild, bitter, or plant-like",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Aloe Vera Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "aloe vera",
+  "seo_description": "Explore aloe vera benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/aloe-vera",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Aloe Vera Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore aloe vera benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

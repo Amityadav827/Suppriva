@@ -1,0 +1,212 @@
+{
+  "name": "Artichoke Extract",
+  "scientific_name": "Cynara scolymus",
+  "hero_badge": null,
+  "short_description": "Artichoke extract is a bitter botanical leaf extract used in digestive, liver-support, and cholesterol-wellness supplement education.",
+  "overview_title": "Artichoke Extract Overview",
+  "overview_subtitle": "A practical look at artichoke extract and how it appears in supplement labels.",
+  "overview_content": "<p>Artichoke extract is typically made from the leaves of Cynara scolymus. It is different from eating artichoke hearts as a food because supplements often concentrate bitter compounds such as cynarin and other polyphenols. In supplement education, artichoke is most often discussed for digestive comfort, bile-flow support, liver wellness, and cholesterol-related research.</p><p>It may appear in digestive enzyme blends, liver-support formulas, and metabolic wellness products.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Artichoke leaf is naturally bitter, and that bitterness is one reason it is used in digestive-support traditions.</p>",
+  "how_it_works_title": "How Artichoke Extract Works",
+  "how_it_works_subtitle": "How artichoke extract is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Bitter Leaf Extract for Digestive Support",
+  "how_it_works_highlight_description": "Artichoke is often evaluated in digestive and liver-support formulas by plant part, polyphenol content, dose, and safety warnings.",
+  "how_it_works_content": "<p>Artichoke extract is discussed for bitter-compound signaling, bile-flow support, antioxidant polyphenols, and digestive wellness. Its role is supportive and should be evaluated by extract type, dose, and gallbladder-related cautions.</p><p>The practical value of Artichoke Extract depends on product quality, dose, ingredient form, and whether the label sets realistic expectations. It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Artichoke Extract Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with artichoke extract in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Digestive Comfort Context",
+      "description": "Digestive Comfort Context helps readers evaluate artichoke extract by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Bitter Botanical Support",
+      "description": "Bitter Botanical Support helps readers evaluate artichoke extract by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Liver Wellness Education",
+      "description": "Liver Wellness Education helps readers evaluate artichoke extract by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Cholesterol Research Context",
+      "description": "Cholesterol Research Context helps readers evaluate artichoke extract by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Extract Transparency",
+      "description": "Extract Transparency helps readers evaluate artichoke extract by looking at use context, quality, dose, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Formula Fit",
+      "description": "Formula Fit helps readers evaluate artichoke extract by looking at use context, quality, dose, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Artichoke Extract Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common servings often range from 300 mg to 1,200 mg daily depending on extract strength and label instructions.",
+  "dosage": "Common servings often range from 300 mg to 1,200 mg daily depending on extract strength and label instructions.",
+  "dosage_content": "<p>Common servings often range from 300 mg to 1,200 mg daily depending on extract strength and label instructions. Start with the label directions for the specific product rather than assuming all artichoke extract supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Artichoke Extract Safety Information",
+  "safety_subtitle": "Artichoke is generally well tolerated by many adults, but gallbladder concerns and plant allergies require caution.",
+  "side_effects": [
+    "Digestive symptoms",
+    "Gallbladder caution",
+    "Allergy awareness",
+    "Tolerance varies"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive symptoms",
+      "description": "Digestive symptoms may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Gallbladder caution",
+      "description": "Gallbladder caution may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Allergy awareness",
+      "description": "Allergy awareness may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Tolerance varies",
+      "description": "Tolerance varies may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with gallbladder or bile-flow medications.",
+    "Discuss with a clinician if taking cholesterol or liver-related medications.",
+    "Use caution with other bitter digestive herbs or liver-support stacks.",
+    "Ask a healthcare professional before use during pregnancy or nursing."
+  ],
+  "who_should_avoid_json": [
+    "People with bile duct obstruction or active gallbladder disease unless medically supervised.",
+    "People with known allergy to artichoke or Asteraceae plants.",
+    "Pregnant or nursing individuals unless advised by a healthcare professional.",
+    "People with severe reflux or digestive sensitivity who react to bitter herbs.",
+    "Children unless directed by a qualified healthcare provider."
+  ],
+  "faq_title": "Artichoke Extract FAQs",
+  "faq_subtitle": "Common questions about artichoke extract, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Artichoke Extract?",
+      "answer": "Artichoke extract is a bitter botanical leaf extract used in digestive, liver-support, and cholesterol-wellness supplement education."
+    },
+    {
+      "question": "What is Artichoke Extract commonly used for?",
+      "answer": "Artichoke Extract is commonly discussed for digestive, liver, and cholesterol-support education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Artichoke Extract safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Artichoke Extract label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Artichoke Extract take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Artichoke Extract replace medical treatment?",
+      "answer": "No. Artichoke Extract supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Artichoke Extract with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Artichoke Extract?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Artichoke Extract usually sold in?",
+      "answer": "Artichoke Extract is commonly sold as capsule, tablet, liquid extract, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Artichoke Extract?",
+      "answer": "Suppriva reviews Artichoke Extract by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Artichoke Extract Profile Snapshot",
+  "sidebar_profile_content": "Artichoke Extract is a botanical leaf extract used in supplement education for digestive, liver, and cholesterol-support education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Botanical leaf extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common servings often range from 300 mg to 1,200 mg daily depending on extract strength and label instructions."
+    },
+    {
+      "label": "Best For",
+      "value": "Digestive, liver, and cholesterol-support education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Artichoke is generally well tolerated by many adults, but gallbladder concerns and plant allergies require caution."
+    },
+    {
+      "label": "Origin",
+      "value": "Mediterranean region"
+    },
+    {
+      "label": "Part Used",
+      "value": "Leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, liquid extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Bitter and herbal"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Artichoke Extract is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Artichoke extract is a bitter botanical leaf extract used in digestive, liver-support, and cholesterol-wellness supplement education.",
+  "best_for": "Digestive, liver, and cholesterol-support education",
+  "safety_level": "Artichoke is generally well tolerated by many adults, but gallbladder concerns and plant allergies require caution.",
+  "origin_country": "Mediterranean region",
+  "part_used": "Leaf",
+  "ingredient_form": "Capsule, tablet, liquid extract",
+  "taste_profile": "Bitter and herbal",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "food_sources_title": null,
+  "food_sources_subtitle": null,
+  "food_sources_content": null,
+  "food_sources_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Artichoke Extract Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "artichoke extract",
+  "seo_description": "Explore artichoke extract benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/artichoke-extract",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Artichoke Extract Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore artichoke extract benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}
