@@ -8,6 +8,7 @@ export type SearchResult = {
   description: string;
   href: string;
   image?: string;
+  scientificName?: string | null;
   rating?: string;
   readingTime?: string;
 };

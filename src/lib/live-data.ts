@@ -958,7 +958,8 @@ export function buildSearchResults(
       id: ingredient.id,
       type: "ingredient" as const,
       title: ingredient.name,
-      category: "Ingredient",
+      category: ingredient.ingredient_category || "Ingredient",
+      scientificName: ingredient.scientific_name,
       readingTime: ingredient.is_featured ? "Featured" : "Library",
       description:
         ingredient.short_description ||
@@ -966,7 +967,6 @@ export function buildSearchResults(
         ingredient.meta_description ||
         "Suppriva ingredient library reference.",
       href: `/ingredient/${ingredient.slug}`,
-      image: ingredient.image_url || ingredient.featured_image || "/assets/hero-supplements.webp",
     })),
   ];
 }

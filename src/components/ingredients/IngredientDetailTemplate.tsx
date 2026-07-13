@@ -23,7 +23,6 @@ import {
 import { FadeIn } from "@/components/ui/FadeIn";
 import { IngredientFAQAccordion } from "@/components/ingredients/IngredientFAQAccordion";
 import { IngredientSectionNav, type IngredientSectionLink } from "@/components/ingredients/IngredientSectionNav";
-import { IngredientSmartImage } from "@/components/ingredients/IngredientSmartImage";
 import type { BlogPostCard } from "@/components/blog/BlogCard";
 import type { CategoryProduct } from "@/lib/category-data";
 import type {
@@ -278,6 +277,17 @@ function renderFormattedBlock(block: string, index: number) {
 }
 
 function RichTextContent({ content }: { content?: string | null }) {
+  const normalizedContent = content?.trim() ?? "";
+
+  if (looksLikeHtml(normalizedContent)) {
+    return (
+      <div
+        className="space-y-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_li]:leading-8 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_p]:leading-8 [&_strong]:text-text-dark [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6"
+        dangerouslySetInnerHTML={{ __html: sanitizeRichHtml(normalizedContent) }}
+      />
+    );
+  }
+
   const blocks = splitParagraphs(content);
 
   if (!blocks.length) {
@@ -285,6 +295,19 @@ function RichTextContent({ content }: { content?: string | null }) {
   }
 
   return <div className="space-y-5">{blocks.map(renderFormattedBlock)}</div>;
+}
+
+function looksLikeHtml(value: string) {
+  return /<\/?[a-z][\s\S]*>/i.test(value);
+}
+
+function sanitizeRichHtml(value: string) {
+  return value
+    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, "")
+    .replace(/\son\w+=["'][^"']*["']/gi, "")
+    .replace(/\shref=["']javascript:[^"']*["']/gi, ' href="#"')
+    .replace(/\ssrc=["']javascript:[^"']*["']/gi, "");
 }
 
 function buildQuickFacts(ingredient: Ingredient) {
@@ -1271,40 +1294,30 @@ function RelatedIngredientTextCard({ item }: { item: RelatedIngredientCardData }
 
 function RelatedIngredientCard({ item }: { item: RelatedIngredientCardData }) {
   const wrapperClasses =
-    "group relative h-full overflow-hidden rounded-[28px] border border-border-light bg-white p-5 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover";
+    "group relative flex min-h-[280px] h-full flex-col overflow-hidden rounded-[28px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-premium-hover";
   const content = (
-    <>
-      <div className="relative h-[210px] overflow-hidden rounded-[24px] bg-gradient-to-br from-white to-soft-green">
-        <IngredientSmartImage
-          src={item.image}
-          alt={item.name}
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="group-hover:scale-105"
-        />
-      </div>
-      <div className="mt-5">
-        {item.category ? (
-          <span className="rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
-            {item.category}
-          </span>
-        ) : null}
-        <h3 className="mt-4 font-heading text-2xl font-extrabold text-text-dark">
-          {item.name}
-        </h3>
-        {item.scientificName ? (
-          <p className="mt-2 text-sm italic text-primary">{item.scientificName}</p>
-        ) : null}
-        {item.description ? (
-          <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
-        ) : null}
-        {item.slug ? (
-          <span className="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold text-primary">
-            Explore ingredient
-            <ArrowUpRight className="size-4" />
-          </span>
-        ) : null}
-      </div>
-    </>
+    <div className="flex h-full flex-col">
+      {item.category ? (
+        <span className="w-fit rounded-pill bg-soft-green px-3 py-1.5 font-heading text-xs font-semibold text-primary">
+          {item.category}
+        </span>
+      ) : null}
+      <h3 className="mt-5 font-heading text-2xl font-extrabold leading-tight text-text-dark">
+        {item.name}
+      </h3>
+      {item.scientificName ? (
+        <p className="mt-2 text-sm italic text-primary">{item.scientificName}</p>
+      ) : null}
+      {item.description ? (
+        <p className="mt-4 line-clamp-3 text-sm leading-7 text-muted">{item.description}</p>
+      ) : null}
+      {item.slug ? (
+        <span className="mt-auto inline-flex items-center gap-2 pt-6 font-heading text-sm font-semibold text-primary">
+          Read More
+          <ArrowUpRight className="size-4" />
+        </span>
+      ) : null}
+    </div>
   );
 
   return item.slug ? (
@@ -1314,7 +1327,7 @@ function RelatedIngredientCard({ item }: { item: RelatedIngredientCardData }) {
         className="absolute inset-0 z-20 rounded-[28px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         aria-label={`View ${item.name}`}
       />
-      <div className="relative z-10">{content}</div>
+      <div className="relative z-10 flex h-full flex-col">{content}</div>
     </FadeIn>
   ) : (
     <FadeIn className={wrapperClasses}>{content}</FadeIn>

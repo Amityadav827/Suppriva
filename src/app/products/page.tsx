@@ -41,7 +41,7 @@ export default async function ProductsPage() {
         schema={[
           buildCollectionPageJsonLd({
             title: "All Supplements",
-            description: "Live published products from the Suppriva database.",
+            description: "Every product vetted for ingredients, safety, and value — so you don't have to.",
             path: "/products",
             items: productCards.map((product) => ({
               name: product.name,
@@ -59,7 +59,7 @@ export default async function ProductsPage() {
         <SectionWrapper id="products" tone="white">
           <SectionTitle
             title="All Supplements"
-            subtitle="Live published products from the Suppriva database."
+            subtitle="Every product vetted for ingredients, safety, and value — so you don't have to."
           />
           <CategoryProductGrid products={productCards} />
         </SectionWrapper>

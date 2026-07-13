@@ -205,23 +205,84 @@ type HtmlSegment =
 const articleHtmlClassName =
   "mt-5 grid gap-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_h4]:font-heading [&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:text-base [&_p]:leading-8 [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:w-full [&_table]:min-w-[620px] [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-6 [&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-6 [&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3";
 
-function parseFaqSegments(html: string): HtmlSegment[] {
-  if (typeof DOMParser === "undefined") {
+function stripHtmlText(value: string) {
+  return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function parseFaqSegmentsFromMarkup(html: string): HtmlSegment[] {
+  const segments: HtmlSegment[] = [];
+  const h2Pattern = /<h2\b[^>]*>([\s\S]*?)<\/h2>/gi;
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = h2Pattern.exec(html)) !== null) {
+    const heading = stripHtmlText(match[1]);
+
+    if (!isFrequentlyAskedQuestionsTitle(heading)) {
+      continue;
+    }
+
+    const faqStart = match.index;
+    const faqContentStart = h2Pattern.lastIndex;
+    const nextHeadingMatch = /<h2\b[^>]*>/i.exec(html.slice(faqContentStart));
+    const faqEnd = nextHeadingMatch
+      ? faqContentStart + nextHeadingMatch.index
+      : html.length;
+    const faqHtml = html.slice(faqContentStart, faqEnd);
+    const faqPattern = /<h3\b[^>]*>([\s\S]*?)<\/h3>\s*<p\b[^>]*>([\s\S]*?)<\/p>/gi;
+    const faqs: BlogArticleFaqItem[] = [];
+    let faqMatch: RegExpExecArray | null;
+
+    while ((faqMatch = faqPattern.exec(faqHtml)) !== null) {
+      const question = stripHtmlText(faqMatch[1]);
+      const answerHtml = faqMatch[2].trim();
+
+      if (question && answerHtml) {
+        faqs.push({ question, answerHtml });
+      }
+    }
+
+    if (!faqs.length) {
+      continue;
+    }
+
+    if (faqStart > cursor) {
+      segments.push({ type: "html", html: html.slice(cursor, faqStart) });
+    }
+
+    segments.push({
+      type: "faq",
+      heading: heading || "Frequently Asked Questions",
+      faqs,
+    });
+
+    cursor = faqEnd;
+    h2Pattern.lastIndex = faqEnd;
+  }
+
+  if (!segments.length) {
     return [{ type: "html", html }];
   }
 
+  if (cursor < html.length) {
+    segments.push({ type: "html", html: html.slice(cursor) });
+  }
+
+  return segments;
+}
+
+function parseFaqSegments(html: string): HtmlSegment[] {
+  if (typeof DOMParser === "undefined") {
+    return parseFaqSegmentsFromMarkup(html);
+  }
+
   const parser = new DOMParser();
-  const document = parser.parseFromString(
-    "<!doctype html><html><body><article></article></body></html>",
-    "text/html",
-  );
-  const root = document.querySelector("article");
+  const document = parser.parseFromString(html, "text/html");
+  const root = document.body;
 
   if (!root) {
     return [{ type: "html", html }];
   }
-
-  root.innerHTML = html;
 
   const blocks = Array.from(root.querySelectorAll("h1, h2, h3, p")) as HTMLElement[];
   const faqSections: Array<{
@@ -380,9 +441,9 @@ function RichContent({
 }) {
   const isHtml = looksLikeHtml(content);
   const safeHtml = sanitizeHtml(content);
-  const [segments, setSegments] = useState<HtmlSegment[]>([
-    { type: "html", html: safeHtml },
-  ]);
+  const [segments, setSegments] = useState<HtmlSegment[]>(
+    isHtml ? parseFaqSegments(safeHtml) : [{ type: "html", html: safeHtml }],
+  );
 
   useEffect(() => {
     if (isHtml) {
@@ -563,7 +624,7 @@ function RichContent({
 
 export function ArticleContent({ article }: { article: BlogArticle }) {
   return (
-    <article className="min-w-0">
+    <article className="min-w-0 rounded-[34px] border border-border-light bg-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-8 lg:p-10">
       <div className="grid gap-10">
         {article.sections.map((section) => {
           const sectionTitleIsFaq = isFrequentlyAskedQuestionsTitle(section.title);
@@ -576,7 +637,7 @@ export function ArticleContent({ article }: { article: BlogArticle }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.42, ease: "easeOut" }}
-              className="scroll-mt-32 rounded-[32px] border border-border-light bg-white p-6 shadow-[0_18px_52px_rgba(15,23,42,0.06)] md:p-8"
+              className="scroll-mt-32"
             >
               {!sectionTitleIsFaq ? (
                 <h2 className="font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl">
