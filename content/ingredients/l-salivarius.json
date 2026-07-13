@@ -1,0 +1,217 @@
+{
+  "name": "L. Salivarius",
+  "scientific_name": "Lactobacillus salivarius",
+  "ingredient_category": "Probiotics",
+  "hero_badge": null,
+  "short_description": "L. Salivarius is a probiotic species used in oral, digestive, immune, and microbiome-focused formulas, with value depending on strain identity and CFU transparency.",
+  "overview_title": "L. Salivarius Overview",
+  "overview_subtitle": "A practical guide to Lactobacillus salivarius in supplement labels.",
+  "overview_content": "<p>L. Salivarius is the abbreviated label name for Lactobacillus salivarius, a probiotic species commonly associated with oral wellness, digestive support, and microbiome-focused supplement formulas.</p><p>Because probiotic effects are strain-specific, shoppers should not judge a product by the species name alone. The best labels identify the strain code, CFU count, storage requirements, expiration potency, and the reason the strain is included.</p><p>L. Salivarius supplements are educational wellness tools and are not substitutes for dental care, medical diagnosis, prescribed treatment, or professional guidance for oral or digestive health concerns.</p>",
+  "interesting_fact_label": "Ingredient Note",
+  "interesting_fact": "<p>The name salivarius relates to saliva, which is one reason this probiotic species is often discussed in oral microbiome and mouth-care supplement categories.</p>",
+  "how_it_works_title": "How L. Salivarius Works",
+  "how_it_works_subtitle": "Oral and digestive formulas depend on strain selection and product quality.",
+  "how_it_works_highlight_title": "Oral-care context matters",
+  "how_it_works_highlight_description": "L. salivarius may appear in oral freshness formulas, but label quality depends on strain disclosure, CFU count, storage, and full formula design.",
+  "how_it_works_content": "<p>L. Salivarius works by contributing live probiotic organisms that interact with microbial environments. Depending on strain and formula design, products may be positioned for oral freshness, digestive balance, immune wellness, or general microbiome support.</p><p>The practical value of L. Salivarius depends on strain identity, viability, CFU count, storage conditions, and the finished product's delivery format. A probiotic lozenge, capsule, chewable, or powder may have different goals.</p><p>Consumers should compare labels carefully and remember that probiotics support wellness routines; they do not replace dental hygiene, medical care, or treatment for infections or chronic symptoms.</p>",
+  "benefits_title": "Potential L. Salivarius Benefits",
+  "benefits_subtitle": "Benefits are strain-specific and depend on product quality.",
+  "benefits_json": [
+    {
+      "icon": "sparkles",
+      "title": "Oral Freshness Context",
+      "description": "L. Salivarius is commonly used in formulas positioned around oral microbiome balance and breath freshness support."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive Wellness",
+      "description": "Some L. salivarius strains appear in digestive support supplements as part of broader probiotic blends."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Immune Routine Support",
+      "description": "Because microbiome health is linked with immune wellness, L. salivarius may be included in daily immune-support formulas."
+    },
+    {
+      "icon": "search",
+      "title": "Strain Transparency",
+      "description": "Clear strain codes and CFU counts make it easier to compare L. Salivarius products responsibly."
+    },
+    {
+      "icon": "leaf",
+      "title": "Formula Versatility",
+      "description": "It may appear in capsules, lozenges, chewables, powders, or oral-care blends depending on the product goal."
+    },
+    {
+      "icon": "heart",
+      "title": "Safety Awareness",
+      "description": "Users with immune compromise, serious illness, or persistent oral symptoms should seek professional guidance before use."
+    }
+  ],
+  "dosage_title": "Typical L. Salivarius Dosage",
+  "dosage_subtitle": "Use CFU count, strain identity, and label directions as the guide.",
+  "typical_dose": "Follow label directions; CFU count and format vary by product.",
+  "dosage": "Take only as directed on the finished product label and avoid stacking multiple probiotic formulas without professional review.",
+  "dosage_content": "<p>L. Salivarius dosage varies because different products use different strains, CFU counts, delivery formats, and intended uses. A label should state the serving size and whether CFU count is guaranteed through expiration.</p><p>For oral-care products, directions may differ from standard capsules. Follow the label closely, including timing, chewing or dissolving instructions, and storage guidance.</p>",
+  "safety_title": "L. Salivarius Safety Information",
+  "safety_subtitle": "Safety depends on health status, immune function, formula design, and allergens.",
+  "side_effects": [
+    "Gas or bloating",
+    "Digestive changes",
+    "Mouth sensitivity",
+    "Allergy or intolerance"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Gas or Bloating",
+      "description": "Temporary digestive adjustment such as gas or bloating can occur when starting a probiotic."
+    },
+    {
+      "title": "Digestive Changes",
+      "description": "Some users may notice changes in bowel habits or digestive comfort depending on the formula."
+    },
+    {
+      "title": "Mouth Sensitivity",
+      "description": "Lozenges or oral-care formats may include flavors, acids, sweeteners, or botanicals that irritate sensitive mouths."
+    },
+    {
+      "title": "Allergy or Intolerance",
+      "description": "Review excipients, fermentation media, dairy traces, and sweeteners before use if you have sensitivities."
+    }
+  ],
+  "drug_interactions_json": [
+    "Ask a clinician before use if immunocompromised or seriously ill.",
+    "Review timing if taking antibiotics or antimicrobial treatments.",
+    "Consult a dentist or clinician for persistent bad breath, gum symptoms, mouth sores, or suspected infection.",
+    "Seek professional advice before use during pregnancy, nursing, or before surgery."
+  ],
+  "who_should_avoid_json": [
+    "People with severe immune compromise unless medically supervised.",
+    "People with persistent oral symptoms that require dental evaluation.",
+    "People allergic to ingredients or excipients in the finished product.",
+    "Children unless the product is age-appropriate and professionally recommended.",
+    "People with serious illness or recent major surgery without clinician guidance."
+  ],
+  "food_sources_title": "L. Salivarius Food Sources",
+  "food_sources_subtitle": "Supplement strains are specific even when related microbes occur naturally.",
+  "food_sources_content": "<p>Lactobacillus species can occur in fermented foods and the human oral and digestive microbiome, but a supplement strain should be evaluated by its label details rather than assumed from food exposure.</p>",
+  "food_sources_json": [
+    {
+      "title": "Fermented Foods",
+      "description": "Some fermented foods may contain Lactobacillus species, but not necessarily the same L. salivarius strain used in supplements."
+    },
+    {
+      "title": "Oral-Care Products",
+      "description": "L. Salivarius may appear in lozenges, chewables, capsules, powders, or breath-focused formulas."
+    },
+    {
+      "title": "Label Specificity",
+      "description": "Strain code, CFU count, and delivery format are more useful than food-source assumptions."
+    }
+  ],
+  "faq_title": "L. Salivarius FAQs",
+  "faq_subtitle": "Common questions about Lactobacillus salivarius supplements.",
+  "faq_json": [
+    {
+      "question": "What is L. Salivarius?",
+      "answer": "L. Salivarius is an abbreviation for Lactobacillus salivarius, a probiotic species used in oral, digestive, and microbiome support formulas."
+    },
+    {
+      "question": "Is L. Salivarius mainly for oral health?",
+      "answer": "It is often used in oral-care formulas, but some products also position it for digestive or immune wellness depending on the strain and formula."
+    },
+    {
+      "question": "Does it treat bad breath?",
+      "answer": "It may be included in breath-freshness formulas, but persistent bad breath can have dental or medical causes and should be evaluated professionally."
+    },
+    {
+      "question": "Why does strain identity matter?",
+      "answer": "Probiotic effects are strain-specific, so strain codes help determine whether product claims match the exact organism used."
+    },
+    {
+      "question": "What does CFU mean?",
+      "answer": "CFU means colony-forming units, a measure of viable probiotic organisms in a serving."
+    },
+    {
+      "question": "Can I take L. Salivarius daily?",
+      "answer": "Many products are designed for daily use, but follow the label and ask a professional if you have health concerns."
+    },
+    {
+      "question": "Does it need refrigeration?",
+      "answer": "Storage depends on the product. Follow the label for refrigeration or shelf-stable storage instructions."
+    },
+    {
+      "question": "Can I use it with mouthwash?",
+      "answer": "Follow product directions and ask a dentist if you have oral sensitivity or active oral health concerns."
+    },
+    {
+      "question": "Can children use L. Salivarius?",
+      "answer": "Children should use only products specifically formulated for their age and with appropriate professional guidance."
+    },
+    {
+      "question": "Who should be cautious with L. Salivarius?",
+      "answer": "People who are immunocompromised, seriously ill, pregnant, nursing, or managing oral disease should consult a healthcare or dental professional."
+    }
+  ],
+  "sidebar_profile_title": "Profile Snapshot",
+  "sidebar_profile_content": "<p>L. Salivarius is a probiotic species commonly used in oral and digestive wellness formulas. Compare it by strain code, CFU count, storage needs, and delivery format.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Probiotic"
+    },
+    {
+      "label": "Species",
+      "value": "L. salivarius"
+    },
+    {
+      "label": "Category",
+      "value": "Probiotics"
+    },
+    {
+      "label": "Dose Unit",
+      "value": "CFU"
+    },
+    {
+      "label": "Common Use",
+      "value": "Oral Wellness"
+    },
+    {
+      "label": "Key Check",
+      "value": "Strain Code"
+    },
+    {
+      "label": "Format",
+      "value": "Capsule or Lozenge"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Generally Tolerated"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>L. Salivarius is best compared by strain disclosure, CFU count, intended oral or digestive use, storage directions, and allergen information.</p>",
+  "related_ingredients_json": [
+    {
+      "slug": "lactobacillus-salivarius",
+      "label": "Lactobacillus Salivarius"
+    },
+    {
+      "slug": "probiotics",
+      "label": "Probiotics"
+    },
+    {
+      "slug": "biofresh-clean-complex",
+      "label": "BioFresh Clean Complex"
+    }
+  ],
+  "seo_title": "L. Salivarius Benefits, Uses, Dosage, and Safety | Suppriva",
+  "seo_description": "Learn what L. Salivarius is, how Lactobacillus salivarius probiotics are used in oral and digestive formulas, and how to compare labels safely.",
+  "seo_focus_keyword": "L. Salivarius",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/l-salivarius",
+  "seo_og_title": "L. Salivarius Probiotic Guide",
+  "seo_og_description": "A practical Suppriva guide to L. Salivarius, oral wellness probiotics, CFU counts, strain disclosure, benefits, dosage, and safety.",
+  "meta_title": "L. Salivarius Benefits, Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn what L. Salivarius is, how Lactobacillus salivarius probiotics are used in oral and digestive formulas, and how to compare labels safely.",
+  "seo_noindex": false,
+  "seo_nofollow": false
+}
