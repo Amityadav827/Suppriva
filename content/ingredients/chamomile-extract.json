@@ -1,0 +1,223 @@
+{
+  "name": "Chamomile Extract",
+  "scientific_name": "Matricaria chamomilla or Chamaemelum nobile",
+  "hero_badge": null,
+  "short_description": "Chamomile extract is a flower-derived botanical used in sleep, relaxation, and digestive comfort supplement formulas.",
+  "overview_title": "Chamomile Extract Overview",
+  "overview_subtitle": "A practical look at chamomile extract and how it appears in supplement labels.",
+  "overview_content": "<p>Chamomile is a flowering botanical commonly used in teas, calming blends, and sleep-support supplements. German chamomile and Roman chamomile are the two common species references, and products should identify which one is used. Chamomile is often positioned around relaxation, bedtime routines, and gentle digestive comfort.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Chamomile belongs to the Asteraceae family, the same plant family as ragweed and daisies, which matters for allergy-sensitive users.</p>",
+  "how_it_works_title": "How Chamomile Extract Works",
+  "how_it_works_subtitle": "How chamomile extract is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Flower Botanical for Bedtime Routines",
+  "how_it_works_highlight_description": "Chamomile is best evaluated by species, plant part, extract strength, allergy cautions, and sedative overlap.",
+  "how_it_works_content": "<p>Chamomile contains flavonoids such as apigenin and is discussed for calming routines, sleep support, and digestive comfort. It is usually gentle but can still interact with allergies, sedatives, and blood-thinning concerns. The practical value of Chamomile Extract depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Chamomile Extract Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with chamomile extract in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Relaxation Support Context",
+      "description": "Relaxation Support Context helps readers evaluate chamomile extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Sleep Routine Fit",
+      "description": "Sleep Routine Fit helps readers evaluate chamomile extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive Comfort Education",
+      "description": "Digestive Comfort Education helps readers evaluate chamomile extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Flavonoid Awareness",
+      "description": "Flavonoid Awareness helps readers evaluate chamomile extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Tea and Extract Comparison",
+      "description": "Tea and Extract Comparison helps readers evaluate chamomile extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Allergy Safety Review",
+      "description": "Allergy Safety Review helps readers evaluate chamomile extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Chamomile Extract Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Dose varies by tea, capsule, or extract; follow the product label and avoid combining multiple calming products without review.",
+  "dosage": "Dose varies by tea, capsule, or extract; follow the product label and avoid combining multiple calming products without review.",
+  "dosage_content": "<p>Dose varies by tea, capsule, or extract; follow the product label and avoid combining multiple calming products without review. Start with the label directions for the specific product rather than assuming all chamomile extract supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Chamomile Extract Safety Information",
+  "safety_subtitle": "Chamomile is generally well tolerated, but allergy risk, sedation, pregnancy status, and medication overlap matter.",
+  "side_effects": [
+    "Drowsiness",
+    "Allergy reactions",
+    "Digestive discomfort",
+    "Sedative overlap"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Drowsiness",
+      "description": "Drowsiness may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Allergy reactions",
+      "description": "Allergy reactions may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Digestive discomfort",
+      "description": "Digestive discomfort may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Sedative overlap",
+      "description": "Sedative overlap may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Use caution with sedatives, alcohol, sleep medications, or anti-anxiety medications.",
+    "Review use with anticoagulant or antiplatelet medications.",
+    "Avoid if allergic to ragweed or related plants unless cleared.",
+    "Discuss use during pregnancy or nursing with a clinician."
+  ],
+  "who_should_avoid_json": [
+    "People allergic to ragweed, daisies, or Asteraceae plants.",
+    "People taking sedatives or blood thinners without guidance.",
+    "Pregnant or nursing individuals unless advised by a healthcare professional.",
+    "People who need to drive after use if drowsy.",
+    "Children unless directed by a qualified provider."
+  ],
+  "food_sources_title": "Chamomile Extract Food Sources",
+  "food_sources_subtitle": "Food and natural source context for chamomile extract.",
+  "food_sources_content": "<p>Chamomile is commonly consumed as herbal tea and used in calming beverage blends.</p>",
+  "food_sources_json": [
+    {
+      "icon": "utensils",
+      "title": "Food Context",
+      "description": "Chamomile is commonly consumed as herbal tea and used in calming beverage blends."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Supplement Difference",
+      "description": "Supplement forms of chamomile extract may be more concentrated or standardized than ordinary dietary exposure."
+    }
+  ],
+  "faq_title": "Chamomile Extract FAQs",
+  "faq_subtitle": "Common questions about chamomile extract, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Chamomile Extract?",
+      "answer": "Chamomile extract is a flower-derived botanical used in sleep, relaxation, and digestive comfort supplement formulas."
+    },
+    {
+      "question": "What is Chamomile Extract commonly used for?",
+      "answer": "Chamomile Extract is commonly discussed for sleep, calm, and digestive comfort education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Chamomile Extract safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Chamomile Extract label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Chamomile Extract take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Chamomile Extract replace medical treatment?",
+      "answer": "No. Chamomile Extract supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Chamomile Extract with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Chamomile Extract?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Chamomile Extract usually sold in?",
+      "answer": "Chamomile Extract is commonly sold as tea, capsule, tincture, extract, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Chamomile Extract?",
+      "answer": "Suppriva reviews Chamomile Extract by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Chamomile Extract Profile Snapshot",
+  "sidebar_profile_content": "Chamomile Extract is a relaxation botanical extract used in supplement education for sleep, calm, and digestive comfort education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Relaxation botanical extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Dose varies by tea, capsule, or extract; follow the product label and avoid combining multiple calming products without review."
+    },
+    {
+      "label": "Best For",
+      "value": "Sleep, calm, and digestive comfort education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Chamomile is generally well tolerated, but allergy risk, sedation, pregnancy status, and medication overlap matter."
+    },
+    {
+      "label": "Origin",
+      "value": "Europe and Western Asia"
+    },
+    {
+      "label": "Part Used",
+      "value": "Flower"
+    },
+    {
+      "label": "Form",
+      "value": "Tea, capsule, tincture, extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Floral and mildly sweet"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Chamomile Extract is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Chamomile extract is a flower-derived botanical used in sleep, relaxation, and digestive comfort supplement formulas.",
+  "best_for": "Sleep, calm, and digestive comfort education",
+  "safety_level": "Chamomile is generally well tolerated, but allergy risk, sedation, pregnancy status, and medication overlap matter.",
+  "origin_country": "Europe and Western Asia",
+  "part_used": "Flower",
+  "ingredient_form": "Tea, capsule, tincture, extract",
+  "taste_profile": "Floral and mildly sweet",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Chamomile Extract Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "chamomile extract",
+  "seo_description": "Explore chamomile extract benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/chamomile-extract",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Chamomile Extract Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore chamomile extract benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

@@ -1,0 +1,223 @@
+{
+  "name": "Black Seed Oil (Nigella Sativa)",
+  "scientific_name": "Nigella sativa",
+  "hero_badge": null,
+  "short_description": "Black seed oil is a Nigella sativa seed oil used in supplements for immune, respiratory, and general wellness education.",
+  "overview_title": "Black Seed Oil (Nigella Sativa) Overview",
+  "overview_subtitle": "A practical look at black seed oil and how it appears in supplement labels.",
+  "overview_content": "<p>Black seed oil is pressed from Nigella sativa seeds and contains thymoquinone and other seed oil constituents. It is used in immune, respiratory, skin, and general wellness formulas. Quality depends on extraction method, freshness, thymoquinone disclosure, oxidation control, and whether the product is a liquid oil or softgel.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Black seed oil has a strong peppery flavor and is sometimes called black cumin seed oil, though it is not the same as culinary cumin.</p>",
+  "how_it_works_title": "How Black Seed Oil (Nigella Sativa) Works",
+  "how_it_works_subtitle": "How black seed oil is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Thymoquinone-Rich Seed Oil",
+  "how_it_works_highlight_description": "Black seed oil is best evaluated by source, extraction method, freshness, thymoquinone context, and medication cautions.",
+  "how_it_works_content": "<p>Black seed oil is discussed for thymoquinone, fatty acids, and antioxidant-related pathways. Its role is supportive and should not replace treatment for asthma, allergies, immune disorders, or infections. The practical value of Black Seed Oil (Nigella Sativa) depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Black Seed Oil (Nigella Sativa) Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with black seed oil in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Immune Wellness Context",
+      "description": "Immune Wellness Context helps readers evaluate black seed oil by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Respiratory Support Education",
+      "description": "Respiratory Support Education helps readers evaluate black seed oil by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Seed Oil Quality",
+      "description": "Seed Oil Quality helps readers evaluate black seed oil by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Antioxidant Pathways",
+      "description": "Antioxidant Pathways helps readers evaluate black seed oil by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Thymoquinone Awareness",
+      "description": "Thymoquinone Awareness helps readers evaluate black seed oil by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Formula Comparison",
+      "description": "Formula Comparison helps readers evaluate black seed oil by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Black Seed Oil (Nigella Sativa) Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common servings range from 500 mg softgels to teaspoon-sized liquid oil servings depending on the product.",
+  "dosage": "Common servings range from 500 mg softgels to teaspoon-sized liquid oil servings depending on the product.",
+  "dosage_content": "<p>Common servings range from 500 mg softgels to teaspoon-sized liquid oil servings depending on the product. Start with the label directions for the specific product rather than assuming all black seed oil supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Black Seed Oil (Nigella Sativa) Safety Information",
+  "safety_subtitle": "Black seed oil may affect blood sugar, blood pressure, bleeding risk, digestion, and pregnancy safety.",
+  "side_effects": [
+    "Digestive upset",
+    "Allergy or rash",
+    "Blood sugar changes",
+    "Blood pressure changes"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Allergy or rash",
+      "description": "Allergy or rash may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Blood sugar changes",
+      "description": "Blood sugar changes may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Blood pressure changes",
+      "description": "Blood pressure changes may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with diabetes or blood pressure medications.",
+    "Use caution with anticoagulant or antiplatelet medications.",
+    "Discuss before surgery or if using immune-related therapies.",
+    "Ask a clinician before use during pregnancy or nursing."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant individuals unless specifically advised by a clinician.",
+    "People taking blood sugar or blood pressure medication without guidance.",
+    "People taking blood thinners unless cleared by a clinician.",
+    "People allergic to Nigella sativa or seed oils.",
+    "Children unless directed by a qualified provider."
+  ],
+  "food_sources_title": "Black Seed Oil (Nigella Sativa) Food Sources",
+  "food_sources_subtitle": "Food and natural source context for black seed oil.",
+  "food_sources_content": "<p>Nigella seeds are used as a spice in some cuisines, while black seed oil is a concentrated oil product.</p>",
+  "food_sources_json": [
+    {
+      "icon": "utensils",
+      "title": "Food Context",
+      "description": "Nigella seeds are used as a spice in some cuisines, while black seed oil is a concentrated oil product."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Supplement Difference",
+      "description": "Supplement forms of black seed oil may be more concentrated or standardized than ordinary dietary exposure."
+    }
+  ],
+  "faq_title": "Black Seed Oil (Nigella Sativa) FAQs",
+  "faq_subtitle": "Common questions about black seed oil, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Black Seed Oil (Nigella Sativa)?",
+      "answer": "Black seed oil is a Nigella sativa seed oil used in supplements for immune, respiratory, and general wellness education."
+    },
+    {
+      "question": "What is Black Seed Oil (Nigella Sativa) commonly used for?",
+      "answer": "Black Seed Oil (Nigella Sativa) is commonly discussed for immune, respiratory, and general wellness education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Black Seed Oil (Nigella Sativa) safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Black Seed Oil (Nigella Sativa) label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Black Seed Oil (Nigella Sativa) take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Black Seed Oil (Nigella Sativa) replace medical treatment?",
+      "answer": "No. Black Seed Oil (Nigella Sativa) supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Black Seed Oil (Nigella Sativa) with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Black Seed Oil (Nigella Sativa)?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Black Seed Oil (Nigella Sativa) usually sold in?",
+      "answer": "Black Seed Oil (Nigella Sativa) is commonly sold as softgel, liquid oil, capsule, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Black Seed Oil (Nigella Sativa)?",
+      "answer": "Suppriva reviews Black Seed Oil (Nigella Sativa) by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Black Seed Oil (Nigella Sativa) Profile Snapshot",
+  "sidebar_profile_content": "Black Seed Oil (Nigella Sativa) is a botanical seed oil used in supplement education for immune, respiratory, and general wellness education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Botanical seed oil"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common servings range from 500 mg softgels to teaspoon-sized liquid oil servings depending on the product."
+    },
+    {
+      "label": "Best For",
+      "value": "Immune, respiratory, and general wellness education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Black seed oil may affect blood sugar, blood pressure, bleeding risk, digestion, and pregnancy safety."
+    },
+    {
+      "label": "Origin",
+      "value": "Southwest Asia, North Africa, and the Mediterranean"
+    },
+    {
+      "label": "Part Used",
+      "value": "Seed oil"
+    },
+    {
+      "label": "Form",
+      "value": "Softgel, liquid oil, capsule"
+    },
+    {
+      "label": "Taste",
+      "value": "Peppery and bitter"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Black Seed Oil (Nigella Sativa) is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Black seed oil is a Nigella sativa seed oil used in supplements for immune, respiratory, and general wellness education.",
+  "best_for": "Immune, respiratory, and general wellness education",
+  "safety_level": "Black seed oil may affect blood sugar, blood pressure, bleeding risk, digestion, and pregnancy safety.",
+  "origin_country": "Southwest Asia, North Africa, and the Mediterranean",
+  "part_used": "Seed oil",
+  "ingredient_form": "Softgel, liquid oil, capsule",
+  "taste_profile": "Peppery and bitter",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Black Seed Oil (Nigella Sativa) Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "black seed oil",
+  "seo_description": "Explore black seed oil benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/black-seed-oil",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Black Seed Oil (Nigella Sativa) Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore black seed oil benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

@@ -1,0 +1,223 @@
+{
+  "name": "Bromelain",
+  "scientific_name": "Proteolytic enzymes from Ananas comosus",
+  "hero_badge": null,
+  "short_description": "Bromelain is a proteolytic enzyme from pineapple used in digestive enzyme, recovery, and inflammation-response supplement formulas.",
+  "overview_title": "Bromelain Overview",
+  "overview_subtitle": "A practical look at bromelain and how it appears in supplement labels.",
+  "overview_content": "<p>Bromelain is a group of protein-digesting enzymes found in pineapple, especially the stem. Supplements use bromelain in digestive enzyme blends and formulas positioned around recovery, swelling, and normal inflammatory-response education.</p><p>Activity units and timing matter because bromelain may be used differently with meals versus away from meals.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Bromelain is one reason fresh pineapple can tenderize meat: it breaks down proteins.</p>",
+  "how_it_works_title": "How Bromelain Works",
+  "how_it_works_subtitle": "How bromelain is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Pineapple-Derived Proteolytic Enzyme",
+  "how_it_works_highlight_description": "Bromelain is best compared by enzyme activity units, dose, timing, and bleeding-risk cautions.",
+  "how_it_works_content": "<p>Bromelain breaks down proteins and is researched for enzyme activity, digestion, and inflammation-response pathways. Its effect depends on enzyme potency, timing, dose, and whether it is combined with other enzymes. The practical value of Bromelain depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Bromelain Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with bromelain in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Protein Digestion Support",
+      "description": "Protein Digestion Support helps readers evaluate bromelain by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Recovery Formula Context",
+      "description": "Recovery Formula Context helps readers evaluate bromelain by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Inflammation-Response Research",
+      "description": "Inflammation-Response Research helps readers evaluate bromelain by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Enzyme Activity Review",
+      "description": "Enzyme Activity Review helps readers evaluate bromelain by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Meal Timing Education",
+      "description": "Meal Timing Education helps readers evaluate bromelain by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Pineapple Source Awareness",
+      "description": "Pineapple Source Awareness helps readers evaluate bromelain by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Bromelain Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common servings vary widely; labels may list milligrams and sometimes enzyme activity units such as GDU or MCU.",
+  "dosage": "Common servings vary widely; labels may list milligrams and sometimes enzyme activity units such as GDU or MCU.",
+  "dosage_content": "<p>Common servings vary widely; labels may list milligrams and sometimes enzyme activity units such as GDU or MCU. Start with the label directions for the specific product rather than assuming all bromelain supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Bromelain Safety Information",
+  "safety_subtitle": "Bromelain may affect bleeding risk, digestion, allergies, and surgery timing.",
+  "side_effects": [
+    "Digestive upset",
+    "Allergy risk",
+    "Bleeding-risk caution",
+    "Mouth or throat irritation"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Allergy risk",
+      "description": "Allergy risk may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Bleeding-risk caution",
+      "description": "Bleeding-risk caution may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Mouth or throat irritation",
+      "description": "Mouth or throat irritation may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with anticoagulant or antiplatelet medications.",
+    "Discuss with a clinician before surgery.",
+    "Use caution with antibiotics or sedatives unless professionally advised.",
+    "Avoid with pineapple allergy or enzyme sensitivity."
+  ],
+  "who_should_avoid_json": [
+    "People taking blood thinners unless cleared by a clinician.",
+    "People with pineapple allergy.",
+    "People scheduled for surgery unless supplement timing is reviewed.",
+    "Pregnant or nursing individuals unless guided by a professional.",
+    "Children unless directed by a qualified provider."
+  ],
+  "food_sources_title": "Bromelain Food Sources",
+  "food_sources_subtitle": "Food and natural source context for bromelain.",
+  "food_sources_content": "<p>Fresh pineapple contains bromelain, but supplement extracts are more concentrated and often sourced from pineapple stem.</p>",
+  "food_sources_json": [
+    {
+      "icon": "utensils",
+      "title": "Food Context",
+      "description": "Fresh pineapple contains bromelain, but supplement extracts are more concentrated and often sourced from pineapple stem."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Supplement Difference",
+      "description": "Supplement forms of bromelain may be more concentrated or standardized than ordinary dietary exposure."
+    }
+  ],
+  "faq_title": "Bromelain FAQs",
+  "faq_subtitle": "Common questions about bromelain, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Bromelain?",
+      "answer": "Bromelain is a proteolytic enzyme from pineapple used in digestive enzyme, recovery, and inflammation-response supplement formulas."
+    },
+    {
+      "question": "What is Bromelain commonly used for?",
+      "answer": "Bromelain is commonly discussed for digestive enzyme and inflammation-response education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Bromelain safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Bromelain label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Bromelain take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Bromelain replace medical treatment?",
+      "answer": "No. Bromelain supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Bromelain with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Bromelain?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Bromelain usually sold in?",
+      "answer": "Bromelain is commonly sold as capsule, tablet, enzyme blend, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Bromelain?",
+      "answer": "Suppriva reviews Bromelain by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Bromelain Profile Snapshot",
+  "sidebar_profile_content": "Bromelain is a proteolytic enzyme used in supplement education for digestive enzyme and inflammation-response education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Proteolytic enzyme"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common servings vary widely; labels may list milligrams and sometimes enzyme activity units such as GDU or MCU."
+    },
+    {
+      "label": "Best For",
+      "value": "Digestive enzyme and inflammation-response education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Bromelain may affect bleeding risk, digestion, allergies, and surgery timing."
+    },
+    {
+      "label": "Origin",
+      "value": "Pineapple stem and fruit"
+    },
+    {
+      "label": "Part Used",
+      "value": "Stem or fruit enzyme extract"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, enzyme blend"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral in capsules"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Bromelain is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Bromelain is a proteolytic enzyme from pineapple used in digestive enzyme, recovery, and inflammation-response supplement formulas.",
+  "best_for": "Digestive enzyme and inflammation-response education",
+  "safety_level": "Bromelain may affect bleeding risk, digestion, allergies, and surgery timing.",
+  "origin_country": "Pineapple stem and fruit",
+  "part_used": "Stem or fruit enzyme extract",
+  "ingredient_form": "Capsule, tablet, enzyme blend",
+  "taste_profile": "Neutral in capsules",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Bromelain Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "bromelain",
+  "seo_description": "Explore bromelain benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/bromelain",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Bromelain Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore bromelain benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

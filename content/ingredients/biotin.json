@@ -1,0 +1,223 @@
+{
+  "name": "Biotin (Vitamin B7)",
+  "scientific_name": "Biotin",
+  "hero_badge": null,
+  "short_description": "Biotin, also known as vitamin B7, is a water-soluble nutrient used in hair, skin, nail, and metabolic enzyme support supplements.",
+  "overview_title": "Biotin (Vitamin B7) Overview",
+  "overview_subtitle": "A practical look at biotin vitamin b7 and how it appears in supplement labels.",
+  "overview_content": "<p>Biotin is a water-soluble B vitamin involved in carboxylase enzymes that support macronutrient metabolism. It is widely marketed in hair, skin, and nail supplements, though benefits are most relevant when intake is low or when a clinician identifies a deficiency-related concern.</p><p>Very high-dose biotin can interfere with certain lab tests, which is a major safety consideration.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>High-dose biotin can interfere with some blood tests, including certain thyroid and cardiac marker tests, even when the supplement itself is not causing symptoms.</p>",
+  "how_it_works_title": "How Biotin (Vitamin B7) Works",
+  "how_it_works_subtitle": "How biotin vitamin b7 is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "B Vitamin for Enzyme Support",
+  "how_it_works_highlight_description": "Biotin is best compared by dose, lab-test warning, formula context, and whether the product makes realistic hair and nail claims.",
+  "how_it_works_content": "<p>Biotin supports enzymes involved in fatty acid synthesis, amino acid metabolism, and glucose-related pathways. In beauty supplements, it is often paired with collagen, zinc, silica, or vitamin C. The practical value of Biotin (Vitamin B7) depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Biotin (Vitamin B7) Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with biotin vitamin b7 in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Hair and Nail Context",
+      "description": "Hair and Nail Context helps readers evaluate biotin vitamin b7 by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "B Vitamin Nutrition",
+      "description": "B Vitamin Nutrition helps readers evaluate biotin vitamin b7 by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Metabolic Enzyme Support",
+      "description": "Metabolic Enzyme Support helps readers evaluate biotin vitamin b7 by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Beauty Formula Fit",
+      "description": "Beauty Formula Fit helps readers evaluate biotin vitamin b7 by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Lab-Test Awareness",
+      "description": "Lab-Test Awareness helps readers evaluate biotin vitamin b7 by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Dose Comparison",
+      "description": "Dose Comparison helps readers evaluate biotin vitamin b7 by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Biotin (Vitamin B7) Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Many supplements provide 30 mcg to several thousand mcg daily; high-dose products should be used with lab-test awareness.",
+  "dosage": "Many supplements provide 30 mcg to several thousand mcg daily; high-dose products should be used with lab-test awareness.",
+  "dosage_content": "<p>Many supplements provide 30 mcg to several thousand mcg daily; high-dose products should be used with lab-test awareness. Start with the label directions for the specific product rather than assuming all biotin vitamin b7 supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Biotin (Vitamin B7) Safety Information",
+  "safety_subtitle": "Biotin is generally well tolerated, but high doses can interfere with laboratory test results.",
+  "side_effects": [
+    "Acne-like breakouts",
+    "Digestive discomfort",
+    "Lab test interference",
+    "Formula overlap"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Acne-like breakouts",
+      "description": "Acne-like breakouts may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive discomfort",
+      "description": "Digestive discomfort may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Lab test interference",
+      "description": "Lab test interference may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Formula overlap",
+      "description": "Formula overlap may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Tell healthcare providers about biotin before blood testing.",
+    "Review use with anticonvulsant medications that may affect biotin status.",
+    "Avoid stacking multiple high-dose hair and nail products.",
+    "Discuss use during pregnancy or nursing with a clinician."
+  ],
+  "who_should_avoid_json": [
+    "People scheduled for lab testing unless they inform their clinician.",
+    "People taking very high doses without a clear reason.",
+    "People with unexplained hair loss who have not sought medical evaluation.",
+    "Children unless directed by a qualified provider.",
+    "Anyone using biotin instead of diagnosing nutrient or thyroid issues."
+  ],
+  "food_sources_title": "Biotin (Vitamin B7) Food Sources",
+  "food_sources_subtitle": "Food and natural source context for biotin vitamin b7.",
+  "food_sources_content": "<p>Food sources include eggs, liver, salmon, nuts, seeds, sweet potatoes, and legumes.</p>",
+  "food_sources_json": [
+    {
+      "icon": "utensils",
+      "title": "Food Context",
+      "description": "Food sources include eggs, liver, salmon, nuts, seeds, sweet potatoes, and legumes."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Supplement Difference",
+      "description": "Supplement forms of biotin vitamin b7 may be more concentrated or standardized than ordinary dietary exposure."
+    }
+  ],
+  "faq_title": "Biotin (Vitamin B7) FAQs",
+  "faq_subtitle": "Common questions about biotin vitamin b7, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Biotin (Vitamin B7)?",
+      "answer": "Biotin, also known as vitamin B7, is a water-soluble nutrient used in hair, skin, nail, and metabolic enzyme support supplements."
+    },
+    {
+      "question": "What is Biotin (Vitamin B7) commonly used for?",
+      "answer": "Biotin (Vitamin B7) is commonly discussed for hair, skin, nail, and nutrient-support education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Biotin (Vitamin B7) safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Biotin (Vitamin B7) label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Biotin (Vitamin B7) take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Biotin (Vitamin B7) replace medical treatment?",
+      "answer": "No. Biotin (Vitamin B7) supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Biotin (Vitamin B7) with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Biotin (Vitamin B7)?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Biotin (Vitamin B7) usually sold in?",
+      "answer": "Biotin (Vitamin B7) is commonly sold as capsule, tablet, gummy, softgel, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Biotin (Vitamin B7)?",
+      "answer": "Suppriva reviews Biotin (Vitamin B7) by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Biotin (Vitamin B7) Profile Snapshot",
+  "sidebar_profile_content": "Biotin (Vitamin B7) is a water-soluble b vitamin used in supplement education for hair, skin, nail, and nutrient-support education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Water-soluble B vitamin"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Many supplements provide 30 mcg to several thousand mcg daily; high-dose products should be used with lab-test awareness."
+    },
+    {
+      "label": "Best For",
+      "value": "Hair, skin, nail, and nutrient-support education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Biotin is generally well tolerated, but high doses can interfere with laboratory test results."
+    },
+    {
+      "label": "Origin",
+      "value": "Foods and supplemental vitamin production"
+    },
+    {
+      "label": "Part Used",
+      "value": "Vitamin nutrient"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, gummy, softgel"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Biotin (Vitamin B7) is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Biotin, also known as vitamin B7, is a water-soluble nutrient used in hair, skin, nail, and metabolic enzyme support supplements.",
+  "best_for": "Hair, skin, nail, and nutrient-support education",
+  "safety_level": "Biotin is generally well tolerated, but high doses can interfere with laboratory test results.",
+  "origin_country": "Foods and supplemental vitamin production",
+  "part_used": "Vitamin nutrient",
+  "ingredient_form": "Capsule, tablet, gummy, softgel",
+  "taste_profile": "Neutral",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Biotin (Vitamin B7) Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "biotin vitamin b7",
+  "seo_description": "Explore biotin vitamin b7 benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/biotin",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Biotin (Vitamin B7) Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore biotin vitamin b7 benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

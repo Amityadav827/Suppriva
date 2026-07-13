@@ -1,0 +1,223 @@
+{
+  "name": "Berberine",
+  "scientific_name": "Berberine",
+  "hero_badge": null,
+  "short_description": "Berberine is a yellow plant alkaloid used in metabolic wellness supplements for blood sugar, lipid, and insulin-response education.",
+  "overview_title": "Berberine Overview",
+  "overview_subtitle": "A practical look at berberine and how it appears in supplement labels.",
+  "overview_content": "<p>Berberine is a naturally occurring alkaloid found in several plants, including barberry and goldenseal. It is one of the most discussed ingredients in blood sugar and metabolic support supplements. Because berberine can overlap with medication effects, it should be treated as a serious ingredient that requires careful label review and professional guidance for many users.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Berberine has a naturally bright yellow color and an intensely bitter taste, which reflects its alkaloid chemistry.</p>",
+  "how_it_works_title": "How Berberine Works",
+  "how_it_works_subtitle": "How berberine is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Metabolic Alkaloid Support",
+  "how_it_works_highlight_description": "Berberine is best evaluated by dose, form, tolerability, medication cautions, and whether the product uses plain berberine or a specialized delivery format.",
+  "how_it_works_content": "<p>Berberine is researched in relation to AMPK signaling, glucose metabolism, lipid markers, and gut microbiome interactions. It should not be used as a substitute for diabetes care, cholesterol medication, or medical monitoring. The practical value of Berberine depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Berberine Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with berberine in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Blood Sugar Research",
+      "description": "Blood Sugar Research helps readers evaluate berberine by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Metabolic Wellness Context",
+      "description": "Metabolic Wellness Context helps readers evaluate berberine by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Lipid Marker Education",
+      "description": "Lipid Marker Education helps readers evaluate berberine by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Meal-Time Formula Fit",
+      "description": "Meal-Time Formula Fit helps readers evaluate berberine by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Medication Safety Awareness",
+      "description": "Medication Safety Awareness helps readers evaluate berberine by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Dose Transparency",
+      "description": "Dose Transparency helps readers evaluate berberine by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Berberine Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common supplement servings often range from 500 mg to 1,500 mg daily, usually divided with meals, but medical guidance is important.",
+  "dosage": "Common supplement servings often range from 500 mg to 1,500 mg daily, usually divided with meals, but medical guidance is important.",
+  "dosage_content": "<p>Common supplement servings often range from 500 mg to 1,500 mg daily, usually divided with meals, but medical guidance is important. Start with the label directions for the specific product rather than assuming all berberine supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Berberine Safety Information",
+  "safety_subtitle": "Berberine may affect blood sugar, blood pressure, liver enzymes, medication metabolism, and digestive tolerance.",
+  "side_effects": [
+    "Digestive upset",
+    "Constipation or diarrhea",
+    "Low blood sugar risk",
+    "Medication interaction risk"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Constipation or diarrhea",
+      "description": "Constipation or diarrhea may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Low blood sugar risk",
+      "description": "Low blood sugar risk may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Medication interaction risk",
+      "description": "Medication interaction risk may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with diabetes medications, insulin, or GLP-1 therapies.",
+    "Use caution with blood pressure or cholesterol medications.",
+    "Berberine may interact with medications processed by liver enzymes or P-glycoprotein.",
+    "Avoid use with pregnancy or nursing unless a clinician specifically advises otherwise."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant or nursing individuals.",
+    "Infants and children unless directed by a qualified clinician.",
+    "People taking diabetes medication without professional monitoring.",
+    "People taking multiple prescription medications without interaction review.",
+    "Anyone using berberine instead of prescribed metabolic care."
+  ],
+  "food_sources_title": "Berberine Food Sources",
+  "food_sources_subtitle": "Food and natural source context for berberine.",
+  "food_sources_content": "<p>Berberine is not consumed in meaningful amounts from common foods; it is obtained from specific medicinal plant extracts.</p>",
+  "food_sources_json": [
+    {
+      "icon": "utensils",
+      "title": "Food Context",
+      "description": "Berberine is not consumed in meaningful amounts from common foods; it is obtained from specific medicinal plant extracts."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Supplement Difference",
+      "description": "Supplement forms of berberine may be more concentrated or standardized than ordinary dietary exposure."
+    }
+  ],
+  "faq_title": "Berberine FAQs",
+  "faq_subtitle": "Common questions about berberine, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Berberine?",
+      "answer": "Berberine is a yellow plant alkaloid used in metabolic wellness supplements for blood sugar, lipid, and insulin-response education."
+    },
+    {
+      "question": "What is Berberine commonly used for?",
+      "answer": "Berberine is commonly discussed for blood sugar and metabolic wellness education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Berberine safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Berberine label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Berberine take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Berberine replace medical treatment?",
+      "answer": "No. Berberine supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Berberine with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Berberine?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Berberine usually sold in?",
+      "answer": "Berberine is commonly sold as capsule, tablet, extract, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Berberine?",
+      "answer": "Suppriva reviews Berberine by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Berberine Profile Snapshot",
+  "sidebar_profile_content": "Berberine is a plant alkaloid used in supplement education for blood sugar and metabolic wellness education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Plant alkaloid"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common supplement servings often range from 500 mg to 1,500 mg daily, usually divided with meals, but medical guidance is important."
+    },
+    {
+      "label": "Best For",
+      "value": "Blood sugar and metabolic wellness education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Berberine may affect blood sugar, blood pressure, liver enzymes, medication metabolism, and digestive tolerance."
+    },
+    {
+      "label": "Origin",
+      "value": "Plants such as barberry, goldenseal, and Oregon grape"
+    },
+    {
+      "label": "Part Used",
+      "value": "Root, bark, or stem extracts"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, extract"
+    },
+    {
+      "label": "Taste",
+      "value": "Very bitter"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Berberine is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Berberine is a yellow plant alkaloid used in metabolic wellness supplements for blood sugar, lipid, and insulin-response education.",
+  "best_for": "Blood sugar and metabolic wellness education",
+  "safety_level": "Berberine may affect blood sugar, blood pressure, liver enzymes, medication metabolism, and digestive tolerance.",
+  "origin_country": "Plants such as barberry, goldenseal, and Oregon grape",
+  "part_used": "Root, bark, or stem extracts",
+  "ingredient_form": "Capsule, tablet, extract",
+  "taste_profile": "Very bitter",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Berberine Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "berberine",
+  "seo_description": "Explore berberine benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/berberine",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Berberine Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore berberine benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}

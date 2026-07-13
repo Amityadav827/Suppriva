@@ -1,0 +1,223 @@
+{
+  "name": "Boron",
+  "scientific_name": "Boron",
+  "hero_badge": null,
+  "short_description": "Boron is a trace mineral used in supplements for bone health, mineral metabolism, and hormone-support education.",
+  "overview_title": "Boron Overview",
+  "overview_subtitle": "A practical look at boron and how it appears in supplement labels.",
+  "overview_content": "<p>Boron is a trace mineral found in foods and soil. Supplements often position it around bone health, vitamin D and magnesium context, testosterone-support formulas, and mineral metabolism education. It is needed only in small amounts, so dose discipline matters.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Boron is naturally present in many plant foods, including prunes, raisins, nuts, avocados, and legumes.</p>",
+  "how_it_works_title": "How Boron Works",
+  "how_it_works_subtitle": "How boron is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Trace Mineral for Bone and Hormone Context",
+  "how_it_works_highlight_description": "Boron is best evaluated by dose, mineral stack overlap, and whether a product keeps intake within safe supplemental ranges.",
+  "how_it_works_content": "<p>Boron is discussed for its relationship to mineral metabolism, vitamin D status, bone wellness, and hormone-related research. It should not be used as a high-dose hormone enhancer or a replacement for medical care. The practical value of Boron depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
+  "benefits_title": "Potential Boron Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with boron in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Bone Health Context",
+      "description": "Bone Health Context helps readers evaluate boron by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Mineral Metabolism",
+      "description": "Mineral Metabolism helps readers evaluate boron by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Vitamin D Support Education",
+      "description": "Vitamin D Support Education helps readers evaluate boron by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Hormone Research Context",
+      "description": "Hormone Research Context helps readers evaluate boron by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Trace Mineral Awareness",
+      "description": "Trace Mineral Awareness helps readers evaluate boron by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Dose Discipline",
+      "description": "Dose Discipline helps readers evaluate boron by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+    }
+  ],
+  "dosage_title": "Typical Boron Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common supplement servings often range from 1 mg to 6 mg daily; high-dose use should be avoided unless professionally guided.",
+  "dosage": "Common supplement servings often range from 1 mg to 6 mg daily; high-dose use should be avoided unless professionally guided.",
+  "dosage_content": "<p>Common supplement servings often range from 1 mg to 6 mg daily; high-dose use should be avoided unless professionally guided. Start with the label directions for the specific product rather than assuming all boron supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Boron Safety Information",
+  "safety_subtitle": "Excess boron can be unsafe, so dose, kidney function, pregnancy status, and total mineral intake matter.",
+  "side_effects": [
+    "Digestive upset",
+    "Headache",
+    "Excess mineral intake",
+    "Hormonal sensitivity"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "activity",
+      "title": "Headache",
+      "description": "Headache may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Excess mineral intake",
+      "description": "Excess mineral intake may occur in some users depending on dose, product format, personal tolerance, and health status."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Hormonal sensitivity",
+      "description": "Hormonal sensitivity may occur in some users depending on dose, product format, personal tolerance, and health status."
+    }
+  ],
+  "drug_interactions_json": [
+    "Review use with hormone-related therapies.",
+    "Use caution with kidney disease or mineral restrictions.",
+    "Avoid stacking multiple boron products.",
+    "Discuss use during pregnancy or nursing with a clinician."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant or nursing individuals unless specifically advised by a healthcare professional.",
+    "People with kidney disease without clinician guidance.",
+    "People using hormone therapies without medical review.",
+    "Children unless directed by a qualified provider.",
+    "Anyone taking high doses without professional supervision."
+  ],
+  "food_sources_title": "Boron Food Sources",
+  "food_sources_subtitle": "Food and natural source context for boron.",
+  "food_sources_content": "<p>Food sources include prunes, raisins, almonds, walnuts, avocados, beans, lentils, and some fruits.</p>",
+  "food_sources_json": [
+    {
+      "icon": "utensils",
+      "title": "Food Context",
+      "description": "Food sources include prunes, raisins, almonds, walnuts, avocados, beans, lentils, and some fruits."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Supplement Difference",
+      "description": "Supplement forms of boron may be more concentrated or standardized than ordinary dietary exposure."
+    }
+  ],
+  "faq_title": "Boron FAQs",
+  "faq_subtitle": "Common questions about boron, dosage, safety, and supplement label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Boron?",
+      "answer": "Boron is a trace mineral used in supplements for bone health, mineral metabolism, and hormone-support education."
+    },
+    {
+      "question": "What is Boron commonly used for?",
+      "answer": "Boron is commonly discussed for bone, hormone, and mineral metabolism education. Its usefulness depends on dose, quality, and the overall routine."
+    },
+    {
+      "question": "Is Boron safe for daily use?",
+      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+    },
+    {
+      "question": "What should I compare on a Boron label?",
+      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+    },
+    {
+      "question": "How long does Boron take to work?",
+      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+    },
+    {
+      "question": "Can Boron replace medical treatment?",
+      "answer": "No. Boron supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "Can I combine Boron with other supplements?",
+      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+    },
+    {
+      "question": "Who should be careful with Boron?",
+      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+    },
+    {
+      "question": "What format is Boron usually sold in?",
+      "answer": "Boron is commonly sold as capsule, tablet, mineral complex, though formats and concentrations can vary significantly by brand."
+    },
+    {
+      "question": "How does Suppriva review Boron?",
+      "answer": "Suppriva reviews Boron by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+    }
+  ],
+  "sidebar_profile_title": "Boron Profile Snapshot",
+  "sidebar_profile_content": "Boron is a trace mineral used in supplement education for bone, hormone, and mineral metabolism education.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Trace mineral"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common supplement servings often range from 1 mg to 6 mg daily; high-dose use should be avoided unless professionally guided."
+    },
+    {
+      "label": "Best For",
+      "value": "Bone, hormone, and mineral metabolism education"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Excess boron can be unsafe, so dose, kidney function, pregnancy status, and total mineral intake matter."
+    },
+    {
+      "label": "Origin",
+      "value": "Foods, soil minerals, and supplements"
+    },
+    {
+      "label": "Part Used",
+      "value": "Trace mineral"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, mineral complex"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Boron is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "full_description": "Boron is a trace mineral used in supplements for bone health, mineral metabolism, and hormone-support education.",
+  "best_for": "Bone, hormone, and mineral metabolism education",
+  "safety_level": "Excess boron can be unsafe, so dose, kidney function, pregnancy status, and total mineral intake matter.",
+  "origin_country": "Foods, soil minerals, and supplements",
+  "part_used": "Trace mineral",
+  "ingredient_form": "Capsule, tablet, mineral complex",
+  "taste_profile": "Neutral",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": null,
+  "uses_subtitle": null,
+  "uses_content": null,
+  "uses_json": [],
+  "research_title": null,
+  "research_subtitle": null,
+  "research_content": null,
+  "research_json": [],
+  "references_title": null,
+  "references_subtitle": null,
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Boron Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "boron",
+  "seo_description": "Explore boron benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/boron",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Boron Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore boron benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+}
