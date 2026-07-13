@@ -1,0 +1,274 @@
+{
+  "name": "Ginkgo Biloba",
+  "scientific_name": "Ginkgo biloba",
+  "hero_badge": null,
+  "short_description": "Ginkgo Biloba is a botanical leaf extract used in wellness supplements for cognitive, circulation, and memory-support education.",
+  "overview_title": "Ginkgo Biloba Overview",
+  "overview_subtitle": "A practical look at Ginkgo Biloba and how it appears in supplement formulas.",
+  "overview_content": "<p>Ginkgo Biloba is a botanical leaf extract associated with cognitive, circulation, and memory-support education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Ginkgo Biloba depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Ginkgo Biloba is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "how_it_works_title": "How Ginkgo Biloba Works",
+  "how_it_works_subtitle": "How Ginkgo Biloba is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Cognitive Botanical Support",
+  "how_it_works_highlight_description": "Ginkgo Biloba is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
+  "how_it_works_content": "<p>Ginkgo Biloba is commonly discussed through standardized leaf extract and cognitive-circulation support education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Ginkgo Biloba to a supplement routine.</p>",
+  "benefits_title": "Potential Ginkgo Biloba Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with Ginkgo Biloba in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Memory Support Context",
+      "description": "Memory Support Context helps readers evaluate Ginkgo Biloba by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Circulation Claim Review",
+      "description": "Circulation Claim Review helps readers evaluate Ginkgo Biloba by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Standardized Extract Awareness",
+      "description": "Standardized Extract Awareness helps readers evaluate Ginkgo Biloba by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Leaf vs Seed Safety",
+      "description": "Leaf vs Seed Safety helps readers evaluate Ginkgo Biloba by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Older Adult Formula Review",
+      "description": "Older Adult Formula Review helps readers evaluate Ginkgo Biloba by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Medication Caution Awareness",
+      "description": "Medication Caution Awareness helps readers evaluate Ginkgo Biloba by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    }
+  ],
+  "dosage_title": "Typical Ginkgo Biloba Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Standardized extracts are commonly used in divided servings, but product directions vary.",
+  "dosage": "Standardized extracts are commonly used in divided servings, but product directions vary.",
+  "dosage_content": "<p>Standardized extracts are commonly used in divided servings, but product directions vary. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Ginkgo Biloba Safety Information",
+  "safety_subtitle": "May interact with blood thinners, seizure medications, surgery plans, or bleeding-risk conditions.",
+  "side_effects": [
+    "Headache",
+    "Digestive upset",
+    "Bleeding risk concern",
+    "Allergic skin reactions"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Headache",
+      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Bleeding risk concern",
+      "description": "Bleeding risk concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Allergic skin reactions",
+      "description": "Allergic skin reactions may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "icon": "pill",
+      "title": "Medication Review",
+      "description": "Ginkgo Biloba should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+    },
+    {
+      "icon": "activity",
+      "title": "Condition-Specific Caution",
+      "description": "People managing diagnosed health conditions should not use Ginkgo Biloba as a substitute for medical care or monitoring."
+    },
+    {
+      "icon": "calendar",
+      "title": "Surgery Planning",
+      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stacking Awareness",
+      "description": "Use caution when combining Ginkgo Biloba with formulas that target the same pathway or contain similar active compounds."
+    }
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless a qualified clinician approves use of Ginkgo Biloba.",
+    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
+    "Anyone with a known allergy or sensitivity to ginkgo tree leaves.",
+    "People using medications or managing medical conditions without professional guidance.",
+    "Anyone expecting Ginkgo Biloba to replace diagnosis, treatment, or prescribed care."
+  ],
+  "food_sources_title": "Ginkgo Biloba Food Sources",
+  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
+  "food_sources_content": "<p>Ginkgo is used as a supplement or tea; seeds require caution and are not equivalent to leaf extracts.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Ginkgo is used as a supplement or tea; seeds require caution and are not equivalent to leaf extracts",
+      "description": "Ginkgo is used as a supplement or tea; seeds require caution and are not equivalent to leaf extracts may help explain the dietary or source context for Ginkgo Biloba."
+    }
+  ],
+  "faq_title": "Ginkgo Biloba FAQs",
+  "faq_subtitle": "Common questions about Ginkgo Biloba, dosage, safety, and supplement use.",
+  "faq_json": [
+    {
+      "question": "What is Ginkgo Biloba?",
+      "answer": "Ginkgo Biloba is a botanical leaf extract used in supplements for cognitive, circulation, and memory-support education."
+    },
+    {
+      "question": "What is Ginkgo Biloba commonly used for?",
+      "answer": "It is commonly discussed for cognitive, circulation, and memory-support education, but its role depends on the product formula, serving size, and user context."
+    },
+    {
+      "question": "How does Ginkgo Biloba work?",
+      "answer": "Ginkgo Biloba is usually evaluated through standardized leaf extract and cognitive-circulation support education, along with dose, quality, and safety considerations."
+    },
+    {
+      "question": "What is a typical Ginkgo Biloba dose?",
+      "answer": "Standardized extracts are commonly used in divided servings, but product directions vary."
+    },
+    {
+      "question": "Is Ginkgo Biloba safe?",
+      "answer": "Ginkgo Biloba may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+    },
+    {
+      "question": "Can Ginkgo Biloba cause side effects?",
+      "answer": "Possible side effects include headache, digestive upset, bleeding risk concern, especially when serving sizes are high or tolerance is low."
+    },
+    {
+      "question": "Can Ginkgo Biloba interact with medications?",
+      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Ginkgo Biloba."
+    },
+    {
+      "question": "Is Ginkgo Biloba found in foods?",
+      "answer": "Ginkgo is used as a supplement or tea; seeds require caution and are not equivalent to leaf extracts."
+    },
+    {
+      "question": "What should I look for on a Ginkgo Biloba label?",
+      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+    },
+    {
+      "question": "Is Ginkgo Biloba a substitute for medical treatment?",
+      "answer": "No. Ginkgo Biloba is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+    }
+  ],
+  "sidebar_profile_title": "Ginkgo Biloba Profile Snapshot",
+  "sidebar_profile_content": "<p>Ginkgo Biloba is categorized as a botanical leaf extract and is most often reviewed for cognitive, circulation, and memory-support education.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Botanical leaf extract",
+      "icon": "flask-conical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Standardized extracts are commonly used in divided servings, but product directions vary.",
+      "icon": "clipboard-check"
+    },
+    {
+      "label": "Best For",
+      "value": "Cognitive, circulation, and memory-support education",
+      "icon": "target"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review cautions before use",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "Ginkgo tree leaves",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Leaf",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, extract, tea",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Bitter and herbal",
+      "icon": "sparkles"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Ginkgo Biloba is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
+  "full_description": "Ginkgo Biloba is reviewed by Suppriva as a botanical leaf extract for cognitive, circulation, and memory-support education.",
+  "best_for": "Cognitive, circulation, and memory-support education",
+  "safety_level": "Review cautions before use",
+  "origin_country": "Ginkgo tree leaves",
+  "part_used": "Leaf",
+  "ingredient_form": "Capsule, tablet, extract, tea",
+  "taste_profile": "Bitter and herbal",
+  "rating": 4.6,
+  "evidence_level": "Moderate",
+  "uses_title": "Ginkgo Biloba Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Ginkgo Biloba may appear in formulas related to cognitive, circulation, and memory-support education. Use should be guided by label directions and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Memory Support Context",
+      "description": "Memory Support Context is a common context for evaluating Ginkgo Biloba."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Circulation Claim Review",
+      "description": "Circulation Claim Review is a common context for evaluating Ginkgo Biloba."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Standardized Extract Awareness",
+      "description": "Standardized Extract Awareness is a common context for evaluating Ginkgo Biloba."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Leaf vs Seed Safety",
+      "description": "Leaf vs Seed Safety is a common context for evaluating Ginkgo Biloba."
+    }
+  ],
+  "research_title": "Ginkgo Biloba Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Research interest around Ginkgo Biloba focuses on standardized leaf extract and cognitive-circulation support education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Form Matters",
+      "description": "Research conclusions may not apply to every supplement form or serving size."
+    },
+    {
+      "icon": "search",
+      "title": "Population Matters",
+      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+    }
+  ],
+  "references_title": "Ginkgo Biloba References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Ginkgo Biloba Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "ginkgo biloba",
+  "seo_description": "Ginkgo Biloba guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/ginkgo-biloba",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Ginkgo Biloba Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Ginkgo Biloba guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+}

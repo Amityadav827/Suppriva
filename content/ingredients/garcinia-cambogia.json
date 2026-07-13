@@ -1,0 +1,279 @@
+{
+  "name": "Garcinia Cambogia",
+  "scientific_name": "Garcinia gummi-gutta",
+  "hero_badge": null,
+  "short_description": "Garcinia Cambogia is a botanical fruit extract used in wellness supplements for weight-management and appetite-support claim education.",
+  "overview_title": "Garcinia Cambogia Overview",
+  "overview_subtitle": "A practical look at Garcinia Cambogia and how it appears in supplement formulas.",
+  "overview_content": "<p>Garcinia Cambogia is a botanical fruit extract associated with weight-management and appetite-support claim education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Garcinia Cambogia depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Garcinia Cambogia is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "how_it_works_title": "How Garcinia Cambogia Works",
+  "how_it_works_subtitle": "How Garcinia Cambogia is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Weight-Management Claim Review",
+  "how_it_works_highlight_description": "Garcinia Cambogia is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
+  "how_it_works_content": "<p>Garcinia Cambogia is commonly discussed through HCA-standardized fruit extract and weight-management claim education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Garcinia Cambogia to a supplement routine.</p>",
+  "benefits_title": "Potential Garcinia Cambogia Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with Garcinia Cambogia in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Appetite Claim Context",
+      "description": "Appetite Claim Context helps readers evaluate Garcinia Cambogia by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "HCA Standardization",
+      "description": "HCA Standardization helps readers evaluate Garcinia Cambogia by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Weight-Management Education",
+      "description": "Weight-Management Education helps readers evaluate Garcinia Cambogia by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Fruit Extract Awareness",
+      "description": "Fruit Extract Awareness helps readers evaluate Garcinia Cambogia by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Label Quality Review",
+      "description": "Label Quality Review helps readers evaluate Garcinia Cambogia by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Safety Screening",
+      "description": "Safety Screening helps readers evaluate Garcinia Cambogia by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    }
+  ],
+  "dosage_title": "Typical Garcinia Cambogia Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Labels often focus on hydroxycitric acid content; serving size varies by standardization.",
+  "dosage": "Labels often focus on hydroxycitric acid content; serving size varies by standardization.",
+  "dosage_content": "<p>Labels often focus on hydroxycitric acid content; serving size varies by standardization. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Garcinia Cambogia Safety Information",
+  "safety_subtitle": "Liver safety concerns and medication interactions should be considered before use.",
+  "side_effects": [
+    "Digestive upset",
+    "Headache",
+    "Liver safety concern",
+    "Medication interaction concern"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "activity",
+      "title": "Headache",
+      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Liver safety concern",
+      "description": "Liver safety concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Medication interaction concern",
+      "description": "Medication interaction concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "icon": "pill",
+      "title": "Medication Review",
+      "description": "Garcinia Cambogia should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+    },
+    {
+      "icon": "activity",
+      "title": "Condition-Specific Caution",
+      "description": "People managing diagnosed health conditions should not use Garcinia Cambogia as a substitute for medical care or monitoring."
+    },
+    {
+      "icon": "calendar",
+      "title": "Surgery Planning",
+      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stacking Awareness",
+      "description": "Use caution when combining Garcinia Cambogia with formulas that target the same pathway or contain similar active compounds."
+    }
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless a qualified clinician approves use of Garcinia Cambogia.",
+    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
+    "Anyone with a known allergy or sensitivity to tropical garcinia fruit rind.",
+    "People using medications or managing medical conditions without professional guidance.",
+    "Anyone expecting Garcinia Cambogia to replace diagnosis, treatment, or prescribed care."
+  ],
+  "food_sources_title": "Garcinia Cambogia Food Sources",
+  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
+  "food_sources_content": "<p>Garcinia fruit is used regionally in food, while supplements use concentrated rind extracts.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Garcinia fruit is used regionally in food",
+      "description": "Garcinia fruit is used regionally in food may help explain the dietary or source context for Garcinia Cambogia."
+    },
+    {
+      "icon": "leaf",
+      "title": "while supplements use concentrated rind extracts",
+      "description": "while supplements use concentrated rind extracts may help explain the dietary or source context for Garcinia Cambogia."
+    }
+  ],
+  "faq_title": "Garcinia Cambogia FAQs",
+  "faq_subtitle": "Common questions about Garcinia Cambogia, dosage, safety, and supplement use.",
+  "faq_json": [
+    {
+      "question": "What is Garcinia Cambogia?",
+      "answer": "Garcinia Cambogia is a botanical fruit extract used in supplements for weight-management and appetite-support claim education."
+    },
+    {
+      "question": "What is Garcinia Cambogia commonly used for?",
+      "answer": "It is commonly discussed for weight-management and appetite-support claim education, but its role depends on the product formula, serving size, and user context."
+    },
+    {
+      "question": "How does Garcinia Cambogia work?",
+      "answer": "Garcinia Cambogia is usually evaluated through HCA-standardized fruit extract and weight-management claim education, along with dose, quality, and safety considerations."
+    },
+    {
+      "question": "What is a typical Garcinia Cambogia dose?",
+      "answer": "Labels often focus on hydroxycitric acid content; serving size varies by standardization."
+    },
+    {
+      "question": "Is Garcinia Cambogia safe?",
+      "answer": "Garcinia Cambogia may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+    },
+    {
+      "question": "Can Garcinia Cambogia cause side effects?",
+      "answer": "Possible side effects include digestive upset, headache, liver safety concern, especially when serving sizes are high or tolerance is low."
+    },
+    {
+      "question": "Can Garcinia Cambogia interact with medications?",
+      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Garcinia Cambogia."
+    },
+    {
+      "question": "Is Garcinia Cambogia found in foods?",
+      "answer": "Garcinia fruit is used regionally in food, while supplements use concentrated rind extracts."
+    },
+    {
+      "question": "What should I look for on a Garcinia Cambogia label?",
+      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+    },
+    {
+      "question": "Is Garcinia Cambogia a substitute for medical treatment?",
+      "answer": "No. Garcinia Cambogia is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+    }
+  ],
+  "sidebar_profile_title": "Garcinia Cambogia Profile Snapshot",
+  "sidebar_profile_content": "<p>Garcinia Cambogia is categorized as a botanical fruit extract and is most often reviewed for weight-management and appetite-support claim education.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Botanical fruit extract",
+      "icon": "flask-conical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Labels often focus on hydroxycitric acid content; serving size varies by standardization.",
+      "icon": "clipboard-check"
+    },
+    {
+      "label": "Best For",
+      "value": "Weight-management and appetite-support claim education",
+      "icon": "target"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review cautions before use",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "Tropical Garcinia fruit rind",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Fruit rind",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, extract",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Sour and fruity",
+      "icon": "sparkles"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Garcinia Cambogia is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
+  "full_description": "Garcinia Cambogia is reviewed by Suppriva as a botanical fruit extract for weight-management and appetite-support claim education.",
+  "best_for": "Weight-management and appetite-support claim education",
+  "safety_level": "Review cautions before use",
+  "origin_country": "Tropical Garcinia fruit rind",
+  "part_used": "Fruit rind",
+  "ingredient_form": "Capsule, tablet, extract",
+  "taste_profile": "Sour and fruity",
+  "rating": 4.6,
+  "evidence_level": "Moderate",
+  "uses_title": "Garcinia Cambogia Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Garcinia Cambogia may appear in formulas related to weight-management and appetite-support claim education. Use should be guided by label directions and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Appetite Claim Context",
+      "description": "Appetite Claim Context is a common context for evaluating Garcinia Cambogia."
+    },
+    {
+      "icon": "check-circle",
+      "title": "HCA Standardization",
+      "description": "HCA Standardization is a common context for evaluating Garcinia Cambogia."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Weight-Management Education",
+      "description": "Weight-Management Education is a common context for evaluating Garcinia Cambogia."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Fruit Extract Awareness",
+      "description": "Fruit Extract Awareness is a common context for evaluating Garcinia Cambogia."
+    }
+  ],
+  "research_title": "Garcinia Cambogia Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Research interest around Garcinia Cambogia focuses on HCA-standardized fruit extract and weight-management claim education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Form Matters",
+      "description": "Research conclusions may not apply to every supplement form or serving size."
+    },
+    {
+      "icon": "search",
+      "title": "Population Matters",
+      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+    }
+  ],
+  "references_title": "Garcinia Cambogia References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Garcinia Cambogia Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "garcinia cambogia",
+  "seo_description": "Garcinia Cambogia guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/garcinia-cambogia",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Garcinia Cambogia Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Garcinia Cambogia guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+}

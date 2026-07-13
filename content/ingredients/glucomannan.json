@@ -1,0 +1,274 @@
+{
+  "name": "Glucomannan",
+  "scientific_name": "Amorphophallus konjac",
+  "hero_badge": null,
+  "short_description": "Glucomannan is a soluble fiber used in wellness supplements for satiety, digestive regularity, and weight-management education.",
+  "overview_title": "Glucomannan Overview",
+  "overview_subtitle": "A practical look at Glucomannan and how it appears in supplement formulas.",
+  "overview_content": "<p>Glucomannan is a soluble fiber associated with satiety, digestive regularity, and weight-management education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Glucomannan depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Glucomannan is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "how_it_works_title": "How Glucomannan Works",
+  "how_it_works_subtitle": "How Glucomannan is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Soluble Fiber Satiety Support",
+  "how_it_works_highlight_description": "Glucomannan is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
+  "how_it_works_content": "<p>Glucomannan is commonly discussed through water-absorbing soluble fiber and satiety-support education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Glucomannan to a supplement routine.</p>",
+  "benefits_title": "Potential Glucomannan Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with Glucomannan in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Satiety Context",
+      "description": "Satiety Context helps readers evaluate Glucomannan by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Digestive Regularity",
+      "description": "Digestive Regularity helps readers evaluate Glucomannan by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Soluble Fiber Intake",
+      "description": "Soluble Fiber Intake helps readers evaluate Glucomannan by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Meal Timing Education",
+      "description": "Meal Timing Education helps readers evaluate Glucomannan by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Water Intake Safety",
+      "description": "Water Intake Safety helps readers evaluate Glucomannan by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Medication Timing Awareness",
+      "description": "Medication Timing Awareness helps readers evaluate Glucomannan by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    }
+  ],
+  "dosage_title": "Typical Glucomannan Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common servings often use gram-level amounts with plenty of water before meals, according to label directions.",
+  "dosage": "Common servings often use gram-level amounts with plenty of water before meals, according to label directions.",
+  "dosage_content": "<p>Common servings often use gram-level amounts with plenty of water before meals, according to label directions. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Glucomannan Safety Information",
+  "safety_subtitle": "Must be taken with adequate water to reduce choking or blockage risk and may affect medication absorption timing.",
+  "side_effects": [
+    "Bloating",
+    "Gas",
+    "Loose stool",
+    "Choking risk without enough water"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Bloating",
+      "description": "Bloating may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "activity",
+      "title": "Gas",
+      "description": "Gas may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Loose stool",
+      "description": "Loose stool may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Choking risk without enough water",
+      "description": "Choking risk without enough water may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "icon": "pill",
+      "title": "Medication Review",
+      "description": "Glucomannan should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+    },
+    {
+      "icon": "activity",
+      "title": "Condition-Specific Caution",
+      "description": "People managing diagnosed health conditions should not use Glucomannan as a substitute for medical care or monitoring."
+    },
+    {
+      "icon": "calendar",
+      "title": "Surgery Planning",
+      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stacking Awareness",
+      "description": "Use caution when combining Glucomannan with formulas that target the same pathway or contain similar active compounds."
+    }
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless a qualified clinician approves use of Glucomannan.",
+    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
+    "Anyone with a known allergy or sensitivity to konjac root.",
+    "People using medications or managing medical conditions without professional guidance.",
+    "Anyone expecting Glucomannan to replace diagnosis, treatment, or prescribed care."
+  ],
+  "food_sources_title": "Glucomannan Food Sources",
+  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
+  "food_sources_content": "<p>Konjac noodles and konjac-based foods contain glucomannan fiber.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Konjac noodles and konjac-based foods contain glucomannan fiber",
+      "description": "Konjac noodles and konjac-based foods contain glucomannan fiber may help explain the dietary or source context for Glucomannan."
+    }
+  ],
+  "faq_title": "Glucomannan FAQs",
+  "faq_subtitle": "Common questions about Glucomannan, dosage, safety, and supplement use.",
+  "faq_json": [
+    {
+      "question": "What is Glucomannan?",
+      "answer": "Glucomannan is a soluble fiber used in supplements for satiety, digestive regularity, and weight-management education."
+    },
+    {
+      "question": "What is Glucomannan commonly used for?",
+      "answer": "It is commonly discussed for satiety, digestive regularity, and weight-management education, but its role depends on the product formula, serving size, and user context."
+    },
+    {
+      "question": "How does Glucomannan work?",
+      "answer": "Glucomannan is usually evaluated through water-absorbing soluble fiber and satiety-support education, along with dose, quality, and safety considerations."
+    },
+    {
+      "question": "What is a typical Glucomannan dose?",
+      "answer": "Common servings often use gram-level amounts with plenty of water before meals, according to label directions."
+    },
+    {
+      "question": "Is Glucomannan safe?",
+      "answer": "Glucomannan may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+    },
+    {
+      "question": "Can Glucomannan cause side effects?",
+      "answer": "Possible side effects include bloating, gas, loose stool, especially when serving sizes are high or tolerance is low."
+    },
+    {
+      "question": "Can Glucomannan interact with medications?",
+      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Glucomannan."
+    },
+    {
+      "question": "Is Glucomannan found in foods?",
+      "answer": "Konjac noodles and konjac-based foods contain glucomannan fiber."
+    },
+    {
+      "question": "What should I look for on a Glucomannan label?",
+      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+    },
+    {
+      "question": "Is Glucomannan a substitute for medical treatment?",
+      "answer": "No. Glucomannan is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+    }
+  ],
+  "sidebar_profile_title": "Glucomannan Profile Snapshot",
+  "sidebar_profile_content": "<p>Glucomannan is categorized as a soluble fiber and is most often reviewed for satiety, digestive regularity, and weight-management education.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Soluble fiber",
+      "icon": "flask-conical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common servings often use gram-level amounts with plenty of water before meals, according to label directions.",
+      "icon": "clipboard-check"
+    },
+    {
+      "label": "Best For",
+      "value": "Satiety, digestive regularity, and weight-management education",
+      "icon": "target"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review cautions before use",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "Konjac root",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Root fiber",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder, fiber blend",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral",
+      "icon": "sparkles"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Glucomannan is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
+  "full_description": "Glucomannan is reviewed by Suppriva as a soluble fiber for satiety, digestive regularity, and weight-management education.",
+  "best_for": "Satiety, digestive regularity, and weight-management education",
+  "safety_level": "Review cautions before use",
+  "origin_country": "Konjac root",
+  "part_used": "Root fiber",
+  "ingredient_form": "Capsule, powder, fiber blend",
+  "taste_profile": "Neutral",
+  "rating": 4.6,
+  "evidence_level": "Moderate",
+  "uses_title": "Glucomannan Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Glucomannan may appear in formulas related to satiety, digestive regularity, and weight-management education. Use should be guided by label directions and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Satiety Context",
+      "description": "Satiety Context is a common context for evaluating Glucomannan."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Digestive Regularity",
+      "description": "Digestive Regularity is a common context for evaluating Glucomannan."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Soluble Fiber Intake",
+      "description": "Soluble Fiber Intake is a common context for evaluating Glucomannan."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Meal Timing Education",
+      "description": "Meal Timing Education is a common context for evaluating Glucomannan."
+    }
+  ],
+  "research_title": "Glucomannan Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Research interest around Glucomannan focuses on water-absorbing soluble fiber and satiety-support education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Form Matters",
+      "description": "Research conclusions may not apply to every supplement form or serving size."
+    },
+    {
+      "icon": "search",
+      "title": "Population Matters",
+      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+    }
+  ],
+  "references_title": "Glucomannan References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Glucomannan Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "glucomannan",
+  "seo_description": "Glucomannan guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/glucomannan",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Glucomannan Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Glucomannan guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+}

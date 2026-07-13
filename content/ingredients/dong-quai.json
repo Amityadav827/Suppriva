@@ -1,0 +1,274 @@
+{
+  "name": "Dong Quai",
+  "scientific_name": "Angelica sinensis",
+  "hero_badge": null,
+  "short_description": "Dong Quai is a women's health botanical used in wellness supplements for women's wellness and traditional botanical education.",
+  "overview_title": "Dong Quai Overview",
+  "overview_subtitle": "A practical look at Dong Quai and how it appears in supplement formulas.",
+  "overview_content": "<p>Dong Quai is a women's health botanical associated with women's wellness and traditional botanical education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Dong Quai depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Dong Quai is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "how_it_works_title": "How Dong Quai Works",
+  "how_it_works_subtitle": "How Dong Quai is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Traditional Women's Wellness Root",
+  "how_it_works_highlight_description": "Dong Quai is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
+  "how_it_works_content": "<p>Dong Quai is commonly discussed through traditional women's wellness botanical and safety education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Dong Quai to a supplement routine.</p>",
+  "benefits_title": "Potential Dong Quai Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with Dong Quai in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Women's Wellness Context",
+      "description": "Women's Wellness Context helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Traditional Use Education",
+      "description": "Traditional Use Education helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Cycle Support Claim Review",
+      "description": "Cycle Support Claim Review helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Root Extract Awareness",
+      "description": "Root Extract Awareness helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Formula Pairing Review",
+      "description": "Formula Pairing Review helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Safety Screening",
+      "description": "Safety Screening helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    }
+  ],
+  "dosage_title": "Typical Dong Quai Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully.",
+  "dosage": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully.",
+  "dosage_content": "<p>Serving size varies by extract, tea, and formula type; label directions should be followed carefully. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Dong Quai Safety Information",
+  "safety_subtitle": "May interact with blood thinners and is not appropriate during pregnancy unless directed by a clinician.",
+  "side_effects": [
+    "Digestive upset",
+    "Photosensitivity",
+    "Bleeding risk concern",
+    "Pregnancy caution"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "activity",
+      "title": "Photosensitivity",
+      "description": "Photosensitivity may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Bleeding risk concern",
+      "description": "Bleeding risk concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Pregnancy caution",
+      "description": "Pregnancy caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "icon": "pill",
+      "title": "Medication Review",
+      "description": "Dong Quai should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+    },
+    {
+      "icon": "activity",
+      "title": "Condition-Specific Caution",
+      "description": "People managing diagnosed health conditions should not use Dong Quai as a substitute for medical care or monitoring."
+    },
+    {
+      "icon": "calendar",
+      "title": "Surgery Planning",
+      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stacking Awareness",
+      "description": "Use caution when combining Dong Quai with formulas that target the same pathway or contain similar active compounds."
+    }
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless a qualified clinician approves use of Dong Quai.",
+    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
+    "Anyone with a known allergy or sensitivity to east asian traditional herbal systems.",
+    "People using medications or managing medical conditions without professional guidance.",
+    "Anyone expecting Dong Quai to replace diagnosis, treatment, or prescribed care."
+  ],
+  "food_sources_title": "Dong Quai Food Sources",
+  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
+  "food_sources_content": "<p>Dong quai is used as an herbal ingredient rather than a common culinary food.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Dong quai is used as an herbal ingredient rather than a common culinary food",
+      "description": "Dong quai is used as an herbal ingredient rather than a common culinary food may help explain the dietary or source context for Dong Quai."
+    }
+  ],
+  "faq_title": "Dong Quai FAQs",
+  "faq_subtitle": "Common questions about Dong Quai, dosage, safety, and supplement use.",
+  "faq_json": [
+    {
+      "question": "What is Dong Quai?",
+      "answer": "Dong Quai is a women's health botanical used in supplements for women's wellness and traditional botanical education."
+    },
+    {
+      "question": "What is Dong Quai commonly used for?",
+      "answer": "It is commonly discussed for women's wellness and traditional botanical education, but its role depends on the product formula, serving size, and user context."
+    },
+    {
+      "question": "How does Dong Quai work?",
+      "answer": "Dong Quai is usually evaluated through traditional women's wellness botanical and safety education, along with dose, quality, and safety considerations."
+    },
+    {
+      "question": "What is a typical Dong Quai dose?",
+      "answer": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully."
+    },
+    {
+      "question": "Is Dong Quai safe?",
+      "answer": "Dong Quai may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+    },
+    {
+      "question": "Can Dong Quai cause side effects?",
+      "answer": "Possible side effects include digestive upset, photosensitivity, bleeding risk concern, especially when serving sizes are high or tolerance is low."
+    },
+    {
+      "question": "Can Dong Quai interact with medications?",
+      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Dong Quai."
+    },
+    {
+      "question": "Is Dong Quai found in foods?",
+      "answer": "Dong quai is used as an herbal ingredient rather than a common culinary food."
+    },
+    {
+      "question": "What should I look for on a Dong Quai label?",
+      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+    },
+    {
+      "question": "Is Dong Quai a substitute for medical treatment?",
+      "answer": "No. Dong Quai is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+    }
+  ],
+  "sidebar_profile_title": "Dong Quai Profile Snapshot",
+  "sidebar_profile_content": "<p>Dong Quai is categorized as a women's health botanical and is most often reviewed for women's wellness and traditional botanical education.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Women's health botanical",
+      "icon": "flask-conical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully.",
+      "icon": "clipboard-check"
+    },
+    {
+      "label": "Best For",
+      "value": "Women's wellness and traditional botanical education",
+      "icon": "target"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review cautions before use",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "East Asian traditional herbal systems",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Root",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tea, tincture, extract",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Bitter, sweet, and earthy",
+      "icon": "sparkles"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Dong Quai is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
+  "full_description": "Dong Quai is reviewed by Suppriva as a women's health botanical for women's wellness and traditional botanical education.",
+  "best_for": "Women's wellness and traditional botanical education",
+  "safety_level": "Review cautions before use",
+  "origin_country": "East Asian traditional herbal systems",
+  "part_used": "Root",
+  "ingredient_form": "Capsule, tea, tincture, extract",
+  "taste_profile": "Bitter, sweet, and earthy",
+  "rating": 4.6,
+  "evidence_level": "Moderate",
+  "uses_title": "Dong Quai Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Dong Quai may appear in formulas related to women's wellness and traditional botanical education. Use should be guided by label directions and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Women's Wellness Context",
+      "description": "Women's Wellness Context is a common context for evaluating Dong Quai."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Traditional Use Education",
+      "description": "Traditional Use Education is a common context for evaluating Dong Quai."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Cycle Support Claim Review",
+      "description": "Cycle Support Claim Review is a common context for evaluating Dong Quai."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Root Extract Awareness",
+      "description": "Root Extract Awareness is a common context for evaluating Dong Quai."
+    }
+  ],
+  "research_title": "Dong Quai Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Research interest around Dong Quai focuses on traditional women's wellness botanical and safety education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Form Matters",
+      "description": "Research conclusions may not apply to every supplement form or serving size."
+    },
+    {
+      "icon": "search",
+      "title": "Population Matters",
+      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+    }
+  ],
+  "references_title": "Dong Quai References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Dong Quai Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "dong quai",
+  "seo_description": "Dong Quai guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/dong-quai",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Dong Quai Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Dong Quai guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+}

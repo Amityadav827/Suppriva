@@ -1,0 +1,274 @@
+{
+  "name": "Evening Primrose Oil",
+  "scientific_name": "Oenothera biennis",
+  "hero_badge": null,
+  "short_description": "Evening Primrose Oil is a gamma-linolenic acid oil used in wellness supplements for women's wellness, skin, and essential fatty acid education.",
+  "overview_title": "Evening Primrose Oil Overview",
+  "overview_subtitle": "A practical look at Evening Primrose Oil and how it appears in supplement formulas.",
+  "overview_content": "<p>Evening Primrose Oil is a gamma-linolenic acid oil associated with women's wellness, skin, and essential fatty acid education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Evening Primrose Oil depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Evening Primrose Oil is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "how_it_works_title": "How Evening Primrose Oil Works",
+  "how_it_works_subtitle": "How Evening Primrose Oil is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "GLA Fatty Acid Support",
+  "how_it_works_highlight_description": "Evening Primrose Oil is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
+  "how_it_works_content": "<p>Evening Primrose Oil is commonly discussed through GLA fatty acid support for skin and women's wellness education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Evening Primrose Oil to a supplement routine.</p>",
+  "benefits_title": "Potential Evening Primrose Oil Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with Evening Primrose Oil in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Skin Barrier Context",
+      "description": "Skin Barrier Context helps readers evaluate Evening Primrose Oil by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Women's Wellness Education",
+      "description": "Women's Wellness Education helps readers evaluate Evening Primrose Oil by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Essential Fatty Acid Intake",
+      "description": "Essential Fatty Acid Intake helps readers evaluate Evening Primrose Oil by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Softgel Routine Fit",
+      "description": "Softgel Routine Fit helps readers evaluate Evening Primrose Oil by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "search",
+      "title": "GLA Label Awareness",
+      "description": "GLA Label Awareness helps readers evaluate Evening Primrose Oil by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Medication Safety Review",
+      "description": "Medication Safety Review helps readers evaluate Evening Primrose Oil by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    }
+  ],
+  "dosage_title": "Typical Evening Primrose Oil Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common supplement servings often provide several hundred milligrams to a few grams of oil daily.",
+  "dosage": "Common supplement servings often provide several hundred milligrams to a few grams of oil daily.",
+  "dosage_content": "<p>Common supplement servings often provide several hundred milligrams to a few grams of oil daily. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Evening Primrose Oil Safety Information",
+  "safety_subtitle": "May interact with blood thinners or seizure-threshold concerns and should be reviewed during pregnancy or medication use.",
+  "side_effects": [
+    "Digestive upset",
+    "Headache",
+    "Bleeding risk concern",
+    "Seizure-threshold caution"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "activity",
+      "title": "Headache",
+      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Bleeding risk concern",
+      "description": "Bleeding risk concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Seizure-threshold caution",
+      "description": "Seizure-threshold caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "icon": "pill",
+      "title": "Medication Review",
+      "description": "Evening Primrose Oil should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+    },
+    {
+      "icon": "activity",
+      "title": "Condition-Specific Caution",
+      "description": "People managing diagnosed health conditions should not use Evening Primrose Oil as a substitute for medical care or monitoring."
+    },
+    {
+      "icon": "calendar",
+      "title": "Surgery Planning",
+      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stacking Awareness",
+      "description": "Use caution when combining Evening Primrose Oil with formulas that target the same pathway or contain similar active compounds."
+    }
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless a qualified clinician approves use of Evening Primrose Oil.",
+    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
+    "Anyone with a known allergy or sensitivity to evening primrose seeds.",
+    "People using medications or managing medical conditions without professional guidance.",
+    "Anyone expecting Evening Primrose Oil to replace diagnosis, treatment, or prescribed care."
+  ],
+  "food_sources_title": "Evening Primrose Oil Food Sources",
+  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
+  "food_sources_content": "<p>Evening primrose oil is primarily used as a supplement rather than a regular culinary oil.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Evening primrose oil is primarily used as a supplement rather than a regular culinary oil",
+      "description": "Evening primrose oil is primarily used as a supplement rather than a regular culinary oil may help explain the dietary or source context for Evening Primrose Oil."
+    }
+  ],
+  "faq_title": "Evening Primrose Oil FAQs",
+  "faq_subtitle": "Common questions about Evening Primrose Oil, dosage, safety, and supplement use.",
+  "faq_json": [
+    {
+      "question": "What is Evening Primrose Oil?",
+      "answer": "Evening Primrose Oil is a gamma-linolenic acid oil used in supplements for women's wellness, skin, and essential fatty acid education."
+    },
+    {
+      "question": "What is Evening Primrose Oil commonly used for?",
+      "answer": "It is commonly discussed for women's wellness, skin, and essential fatty acid education, but its role depends on the product formula, serving size, and user context."
+    },
+    {
+      "question": "How does Evening Primrose Oil work?",
+      "answer": "Evening Primrose Oil is usually evaluated through GLA fatty acid support for skin and women's wellness education, along with dose, quality, and safety considerations."
+    },
+    {
+      "question": "What is a typical Evening Primrose Oil dose?",
+      "answer": "Common supplement servings often provide several hundred milligrams to a few grams of oil daily."
+    },
+    {
+      "question": "Is Evening Primrose Oil safe?",
+      "answer": "Evening Primrose Oil may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+    },
+    {
+      "question": "Can Evening Primrose Oil cause side effects?",
+      "answer": "Possible side effects include digestive upset, headache, bleeding risk concern, especially when serving sizes are high or tolerance is low."
+    },
+    {
+      "question": "Can Evening Primrose Oil interact with medications?",
+      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Evening Primrose Oil."
+    },
+    {
+      "question": "Is Evening Primrose Oil found in foods?",
+      "answer": "Evening primrose oil is primarily used as a supplement rather than a regular culinary oil."
+    },
+    {
+      "question": "What should I look for on a Evening Primrose Oil label?",
+      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+    },
+    {
+      "question": "Is Evening Primrose Oil a substitute for medical treatment?",
+      "answer": "No. Evening Primrose Oil is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+    }
+  ],
+  "sidebar_profile_title": "Evening Primrose Oil Profile Snapshot",
+  "sidebar_profile_content": "<p>Evening Primrose Oil is categorized as a gamma-linolenic acid oil and is most often reviewed for women's wellness, skin, and essential fatty acid education.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Gamma-linolenic acid oil",
+      "icon": "flask-conical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common supplement servings often provide several hundred milligrams to a few grams of oil daily.",
+      "icon": "clipboard-check"
+    },
+    {
+      "label": "Best For",
+      "value": "Women's wellness, skin, and essential fatty acid education",
+      "icon": "target"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review cautions before use",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "Evening primrose seeds",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Seed oil",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Softgel, liquid oil",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral in softgels",
+      "icon": "sparkles"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Evening Primrose Oil is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
+  "full_description": "Evening Primrose Oil is reviewed by Suppriva as a gamma-linolenic acid oil for women's wellness, skin, and essential fatty acid education.",
+  "best_for": "Women's wellness, skin, and essential fatty acid education",
+  "safety_level": "Review cautions before use",
+  "origin_country": "Evening primrose seeds",
+  "part_used": "Seed oil",
+  "ingredient_form": "Softgel, liquid oil",
+  "taste_profile": "Neutral in softgels",
+  "rating": 4.6,
+  "evidence_level": "Moderate",
+  "uses_title": "Evening Primrose Oil Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Evening Primrose Oil may appear in formulas related to women's wellness, skin, and essential fatty acid education. Use should be guided by label directions and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Skin Barrier Context",
+      "description": "Skin Barrier Context is a common context for evaluating Evening Primrose Oil."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Women's Wellness Education",
+      "description": "Women's Wellness Education is a common context for evaluating Evening Primrose Oil."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Essential Fatty Acid Intake",
+      "description": "Essential Fatty Acid Intake is a common context for evaluating Evening Primrose Oil."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Softgel Routine Fit",
+      "description": "Softgel Routine Fit is a common context for evaluating Evening Primrose Oil."
+    }
+  ],
+  "research_title": "Evening Primrose Oil Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Research interest around Evening Primrose Oil focuses on GLA fatty acid support for skin and women's wellness education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Form Matters",
+      "description": "Research conclusions may not apply to every supplement form or serving size."
+    },
+    {
+      "icon": "search",
+      "title": "Population Matters",
+      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+    }
+  ],
+  "references_title": "Evening Primrose Oil References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Evening Primrose Oil Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "evening primrose oil",
+  "seo_description": "Evening Primrose Oil guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/evening-primrose-oil",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Evening Primrose Oil Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Evening Primrose Oil guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+}

@@ -1,0 +1,289 @@
+{
+  "name": "Citicoline",
+  "scientific_name": "Cytidine diphosphate-choline",
+  "hero_badge": null,
+  "short_description": "Citicoline is a choline donor compound used in wellness supplements for cognitive support, focus, and brain nutrient education.",
+  "overview_title": "Citicoline Overview",
+  "overview_subtitle": "A practical look at Citicoline and how it appears in supplement formulas.",
+  "overview_content": "<p>Citicoline is a choline donor compound associated with cognitive support, focus, and brain nutrient education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Citicoline depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
+  "interesting_fact_label": "Ingredient Insight",
+  "interesting_fact": "<p>Citicoline is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "how_it_works_title": "How Citicoline Works",
+  "how_it_works_subtitle": "How Citicoline is commonly discussed in wellness supplement education.",
+  "how_it_works_highlight_title": "Brain Nutrient Support",
+  "how_it_works_highlight_description": "Citicoline is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
+  "how_it_works_content": "<p>Citicoline is commonly discussed through choline metabolism, phospholipid support, and cognitive wellness education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Citicoline to a supplement routine.</p>",
+  "benefits_title": "Potential Citicoline Benefits",
+  "benefits_subtitle": "Educational benefits commonly associated with Citicoline in supplement routines.",
+  "benefits_json": [
+    {
+      "icon": "leaf",
+      "title": "Choline Support",
+      "description": "Choline Support helps readers evaluate Citicoline by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Focus Routine Context",
+      "description": "Focus Routine Context helps readers evaluate Citicoline by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "activity",
+      "title": "Cognitive Wellness Education",
+      "description": "Cognitive Wellness Education helps readers evaluate Citicoline by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Phospholipid Support",
+      "description": "Phospholipid Support helps readers evaluate Citicoline by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "search",
+      "title": "Stacking Awareness",
+      "description": "Stacking Awareness helps readers evaluate Citicoline by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Dose Transparency",
+      "description": "Dose Transparency helps readers evaluate Citicoline by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+    }
+  ],
+  "dosage_title": "Typical Citicoline Dosage",
+  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
+  "typical_dose": "Common supplement servings often range from 250 mg to 500 mg daily, depending on product directions.",
+  "dosage": "Common supplement servings often range from 250 mg to 500 mg daily, depending on product directions.",
+  "dosage_content": "<p>Common supplement servings often range from 250 mg to 500 mg daily, depending on product directions. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "safety_title": "Citicoline Safety Information",
+  "safety_subtitle": "May not suit everyone with neurological conditions, medication use, pregnancy, or nursing without professional guidance.",
+  "side_effects": [
+    "Headache",
+    "Digestive upset",
+    "Restlessness in some users",
+    "Sleep changes if taken late"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "stomach",
+      "title": "Headache",
+      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive upset",
+      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Restlessness in some users",
+      "description": "Restlessness in some users may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Sleep changes if taken late",
+      "description": "Sleep changes if taken late may occur in some users depending on serving size, product format, health status, and personal tolerance."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "icon": "pill",
+      "title": "Medication Review",
+      "description": "Citicoline should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+    },
+    {
+      "icon": "activity",
+      "title": "Condition-Specific Caution",
+      "description": "People managing diagnosed health conditions should not use Citicoline as a substitute for medical care or monitoring."
+    },
+    {
+      "icon": "calendar",
+      "title": "Surgery Planning",
+      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Stacking Awareness",
+      "description": "Use caution when combining Citicoline with formulas that target the same pathway or contain similar active compounds."
+    }
+  ],
+  "who_should_avoid_json": [
+    "People who are pregnant or nursing unless a qualified clinician approves use of Citicoline.",
+    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
+    "Anyone with a known allergy or sensitivity to supplemental choline compound.",
+    "People using medications or managing medical conditions without professional guidance.",
+    "Anyone expecting Citicoline to replace diagnosis, treatment, or prescribed care."
+  ],
+  "food_sources_title": "Citicoline Food Sources",
+  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
+  "food_sources_content": "<p>Citicoline is primarily supplemental; choline is found in eggs, liver, fish, and soy foods.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Citicoline is primarily supplemental; choline is found in eggs",
+      "description": "Citicoline is primarily supplemental; choline is found in eggs may help explain the dietary or source context for Citicoline."
+    },
+    {
+      "icon": "leaf",
+      "title": "liver",
+      "description": "liver may help explain the dietary or source context for Citicoline."
+    },
+    {
+      "icon": "leaf",
+      "title": "fish",
+      "description": "fish may help explain the dietary or source context for Citicoline."
+    },
+    {
+      "icon": "leaf",
+      "title": "and soy foods",
+      "description": "and soy foods may help explain the dietary or source context for Citicoline."
+    }
+  ],
+  "faq_title": "Citicoline FAQs",
+  "faq_subtitle": "Common questions about Citicoline, dosage, safety, and supplement use.",
+  "faq_json": [
+    {
+      "question": "What is Citicoline?",
+      "answer": "Citicoline is a choline donor compound used in supplements for cognitive support, focus, and brain nutrient education."
+    },
+    {
+      "question": "What is Citicoline commonly used for?",
+      "answer": "It is commonly discussed for cognitive support, focus, and brain nutrient education, but its role depends on the product formula, serving size, and user context."
+    },
+    {
+      "question": "How does Citicoline work?",
+      "answer": "Citicoline is usually evaluated through choline metabolism, phospholipid support, and cognitive wellness education, along with dose, quality, and safety considerations."
+    },
+    {
+      "question": "What is a typical Citicoline dose?",
+      "answer": "Common supplement servings often range from 250 mg to 500 mg daily, depending on product directions."
+    },
+    {
+      "question": "Is Citicoline safe?",
+      "answer": "Citicoline may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+    },
+    {
+      "question": "Can Citicoline cause side effects?",
+      "answer": "Possible side effects include headache, digestive upset, restlessness in some users, especially when serving sizes are high or tolerance is low."
+    },
+    {
+      "question": "Can Citicoline interact with medications?",
+      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Citicoline."
+    },
+    {
+      "question": "Is Citicoline found in foods?",
+      "answer": "Citicoline is primarily supplemental; choline is found in eggs, liver, fish, and soy foods."
+    },
+    {
+      "question": "What should I look for on a Citicoline label?",
+      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+    },
+    {
+      "question": "Is Citicoline a substitute for medical treatment?",
+      "answer": "No. Citicoline is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+    }
+  ],
+  "sidebar_profile_title": "Citicoline Profile Snapshot",
+  "sidebar_profile_content": "<p>Citicoline is categorized as a choline donor compound and is most often reviewed for cognitive support, focus, and brain nutrient education.</p>",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Choline donor compound",
+      "icon": "flask-conical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Common supplement servings often range from 250 mg to 500 mg daily, depending on product directions.",
+      "icon": "clipboard-check"
+    },
+    {
+      "label": "Best For",
+      "value": "Cognitive support, focus, and brain nutrient education",
+      "icon": "target"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Review cautions before use",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "Supplemental choline compound",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Nutrient compound",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tablet, powder",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Neutral to mildly bitter",
+      "icon": "sparkles"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Citicoline is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
+  "full_description": "Citicoline is reviewed by Suppriva as a choline donor compound for cognitive support, focus, and brain nutrient education.",
+  "best_for": "Cognitive support, focus, and brain nutrient education",
+  "safety_level": "Review cautions before use",
+  "origin_country": "Supplemental choline compound",
+  "part_used": "Nutrient compound",
+  "ingredient_form": "Capsule, tablet, powder",
+  "taste_profile": "Neutral to mildly bitter",
+  "rating": 4.6,
+  "evidence_level": "Moderate",
+  "uses_title": "Citicoline Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Citicoline may appear in formulas related to cognitive support, focus, and brain nutrient education. Use should be guided by label directions and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Choline Support",
+      "description": "Choline Support is a common context for evaluating Citicoline."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Focus Routine Context",
+      "description": "Focus Routine Context is a common context for evaluating Citicoline."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Cognitive Wellness Education",
+      "description": "Cognitive Wellness Education is a common context for evaluating Citicoline."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Phospholipid Support",
+      "description": "Phospholipid Support is a common context for evaluating Citicoline."
+    }
+  ],
+  "research_title": "Citicoline Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Research interest around Citicoline focuses on choline metabolism, phospholipid support, and cognitive wellness education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Form Matters",
+      "description": "Research conclusions may not apply to every supplement form or serving size."
+    },
+    {
+      "icon": "search",
+      "title": "Population Matters",
+      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+    }
+  ],
+  "references_title": "Citicoline References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [],
+  "related_ingredients_json": [],
+  "seo_title": "Citicoline Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "citicoline",
+  "seo_description": "Citicoline guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/citicoline",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Citicoline Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Citicoline guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+}
