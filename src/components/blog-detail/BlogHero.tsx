@@ -21,7 +21,7 @@ export function BlogHero({ article }: { article: BlogArticle }) {
         >
           {article.category}
         </Link>
-        <h1 className="mt-6 font-heading text-4xl font-extrabold leading-[1.1] text-text-dark md:text-5xl lg:text-6xl">
+        <h1 className="mt-6 break-words font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-5xl md:leading-[1.1] lg:text-6xl">
           {article.title}
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted lg:mx-0">

@@ -203,7 +203,7 @@ type HtmlSegment =
   | { type: "faq"; heading: string; faqs: BlogArticleFaqItem[] };
 
 const articleHtmlClassName =
-  "mt-5 grid gap-5 text-base leading-8 text-muted [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:font-heading [&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:text-text-dark [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-text-dark [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:text-text-dark [&_h4]:font-heading [&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:text-base [&_p]:leading-8 [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:w-full [&_table]:min-w-[620px] [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-6 [&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-6 [&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3";
+  "mt-5 grid max-w-full gap-5 overflow-hidden text-base leading-8 text-muted [&_*]:min-w-0 [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_blockquote]:rounded-[24px] [&_blockquote]:border [&_blockquote]:border-gold/24 [&_blockquote]:bg-gold/10 [&_blockquote]:p-4 md:[&_blockquote]:p-5 [&_blockquote]:text-text-dark [&_code]:rounded-md [&_code]:bg-soft-green [&_code]:px-1.5 [&_code]:py-0.5 [&_figure]:overflow-hidden [&_figure]:rounded-[24px] [&_figure]:border [&_figure]:border-border-light [&_figcaption]:px-4 md:[&_figcaption]:px-5 [&_figcaption]:py-3 [&_figcaption]:text-sm [&_figcaption]:text-muted [&_h1]:break-words [&_h1]:font-heading [&_h1]:text-2xl md:[&_h1]:text-3xl [&_h1]:font-extrabold [&_h1]:leading-tight [&_h1]:text-text-dark [&_h2]:break-words [&_h2]:font-heading [&_h2]:text-xl md:[&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:leading-tight [&_h2]:text-text-dark [&_h3]:break-words [&_h3]:font-heading [&_h3]:text-lg md:[&_h3]:text-xl [&_h3]:font-extrabold [&_h3]:leading-snug [&_h3]:text-text-dark [&_h4]:break-words [&_h4]:font-heading [&_h4]:text-base md:[&_h4]:text-lg [&_h4]:font-extrabold [&_h4]:leading-snug [&_h4]:text-text-dark [&_hr]:border-border-light [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-[24px] [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-5 md:[&_ol]:pl-6 [&_p]:break-words [&_p]:text-[15px] md:[&_p]:text-base [&_p]:leading-7 md:[&_p]:leading-8 [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_pre]:rounded-[24px] [&_pre]:bg-slate-950 [&_pre]:p-4 md:[&_pre]:p-5 [&_pre]:text-slate-100 [&_table]:block md:[&_table]:table [&_table]:w-full [&_table]:max-w-full [&_table]:min-w-0 md:[&_table]:min-w-[620px] [&_table]:overflow-x-auto [&_table]:text-left [&_table]:text-sm [&_tbody_tr]:border-t [&_tbody_tr]:border-border-light [&_td]:px-4 md:[&_td]:px-6 [&_td]:py-3 md:[&_td]:py-4 [&_th]:bg-soft-green [&_th]:px-4 md:[&_th]:px-6 [&_th]:py-3 md:[&_th]:py-4 [&_th]:font-heading [&_th]:text-text-dark [&_ul]:grid [&_ul]:gap-3 [&_ul]:pl-5 md:[&_ul]:pl-0";
 
 function stripHtmlText(value: string) {
   return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -627,8 +627,8 @@ function RichContent({
 
 export function ArticleContent({ article }: { article: BlogArticle }) {
   return (
-    <article className="min-w-0 rounded-[34px] border border-border-light bg-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-8 lg:p-10">
-      <div className="grid gap-10">
+    <article className="min-w-0 max-w-full overflow-hidden rounded-[28px] border border-border-light bg-white p-4 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:rounded-[34px] md:p-8 lg:p-10">
+      <div className="grid max-w-full gap-8 md:gap-10">
         {article.sections.map((section) => {
           const sectionTitleIsFaq = isFrequentlyAskedQuestionsTitle(section.title);
 
@@ -640,10 +640,10 @@ export function ArticleContent({ article }: { article: BlogArticle }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.42, ease: "easeOut" }}
-              className="scroll-mt-32"
+              className="max-w-full scroll-mt-32"
             >
               {!sectionTitleIsFaq ? (
-                <h2 className="font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl">
+                <h2 className="break-words font-heading text-xl font-extrabold leading-tight text-text-dark md:text-3xl">
                   {section.title}
                 </h2>
               ) : null}

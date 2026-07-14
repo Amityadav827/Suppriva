@@ -46,12 +46,12 @@ export function BlogArticleFaqAccordion({
   }
 
   return (
-    <section className="my-10 rounded-[28px] border border-border-light bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-6">
-      <div className="flex items-center gap-4">
-        <span className="flex size-14 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_12px_32px_rgba(16,110,70,0.12)] md:size-16">
-          <CircleHelp className="size-7 md:size-8" aria-hidden="true" />
+    <section className="my-8 max-w-full overflow-hidden rounded-[24px] border border-border-light bg-white p-4 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:my-10 md:rounded-[28px] md:p-6">
+      <div className="flex min-w-0 items-center gap-3 md:gap-4">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_12px_32px_rgba(16,110,70,0.12)] md:size-16">
+          <CircleHelp className="size-5 md:size-8" aria-hidden="true" />
         </span>
-        <h2 className="font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl">
+        <h2 className="min-w-0 break-words font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-4xl">
           {heading}
         </h2>
       </div>
@@ -77,9 +77,9 @@ export function BlogArticleFaqAccordion({
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(index)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
-                className="flex min-h-[64px] w-full items-center justify-between gap-4 px-5 py-4 text-left font-heading text-lg font-bold leading-snug text-text-dark transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:min-h-[74px] md:px-6 md:py-5 md:text-[22px]"
+                className="flex min-h-[60px] w-full items-center justify-between gap-3 px-4 py-4 text-left font-heading text-base font-bold leading-snug text-text-dark transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:min-h-[74px] md:gap-4 md:px-6 md:py-5 md:text-[22px]"
               >
-                <span>{faq.question}</span>
+                <span className="min-w-0 break-words">{faq.question}</span>
                 <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_10px_24px_rgba(16,110,70,0.1)] md:size-10">
                   <ChevronDown
                     className={`size-4 transition duration-300 md:size-5 ${active ? "rotate-180 text-gold" : ""}`}
