@@ -327,9 +327,13 @@ export function ProductDetailTemplate({ product }: { product: ProductDetail }) {
                           <span className="font-heading text-base font-bold text-text-dark">
                             {product.rating}
                           </span>
-                          <span className="text-sm text-muted">
-                            {product.ratingScaleLabel} ({product.reviewCount} reviews)
-                          </span>
+                          {product.heroShowRatingLabel || product.heroShowReviewCount ? (
+                            <span className="text-sm text-muted">
+                              {product.heroShowRatingLabel ? product.ratingScaleLabel : null}
+                              {product.heroShowRatingLabel && product.heroShowReviewCount ? " " : null}
+                              {product.heroShowReviewCount ? `(${product.reviewCount} reviews)` : null}
+                            </span>
+                          ) : null}
                         </div>
                       </div>
                     ) : null}

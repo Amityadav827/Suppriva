@@ -649,6 +649,8 @@ export function productToDetail(
           description: benefit.description,
         })),
     heroShowRating: product.hero_show_rating ?? true,
+    heroShowRatingLabel: product.hero_show_rating_label ?? true,
+    heroShowReviewCount: product.hero_show_review_count ?? true,
     heroShowBadge: product.hero_show_badge ?? true,
     category: categoryLabel,
     categorySlug: category?.slug,

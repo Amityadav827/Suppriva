@@ -58,6 +58,8 @@ export type ProductDetail = {
     description?: string | null;
   }[];
   heroShowRating: boolean;
+  heroShowRatingLabel: boolean;
+  heroShowReviewCount: boolean;
   heroShowBadge: boolean;
   category: string;
   categorySlug?: string;

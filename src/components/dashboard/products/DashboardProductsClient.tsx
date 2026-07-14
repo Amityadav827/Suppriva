@@ -60,6 +60,8 @@ type ProductFormState = {
   hero_secondary_cta_target: "_self" | "_blank";
   hero_checklist: string;
   hero_show_rating: boolean;
+  hero_show_rating_label: boolean;
+  hero_show_review_count: boolean;
   hero_show_badge: boolean;
   product_layout_sections: ProductLayoutFormItem[];
   review_count: string;
@@ -256,6 +258,8 @@ const emptyForm: ProductFormState = {
   hero_secondary_cta_target: "_blank",
   hero_checklist: "",
   hero_show_rating: true,
+  hero_show_rating_label: true,
+  hero_show_review_count: true,
   hero_show_badge: true,
   product_layout_sections: createDefaultLayoutFormItems(),
   review_count: "",
@@ -809,6 +813,8 @@ function productToForm(product: Product): ProductFormState {
     hero_secondary_cta_target: product.hero_secondary_cta_target ?? "_blank",
     hero_checklist: heroChecklist.join("\n"),
     hero_show_rating: product.hero_show_rating,
+    hero_show_rating_label: product.hero_show_rating_label ?? true,
+    hero_show_review_count: product.hero_show_review_count ?? true,
     hero_show_badge: product.hero_show_badge,
     product_layout_sections: productLayoutToForm(product.product_layout_sections),
     review_count: product.review_count?.toString() ?? "",
@@ -976,6 +982,8 @@ function formToPayload(form: ProductFormState) {
     hero_secondary_cta_target: form.hero_secondary_cta_target,
     hero_checklist: lines(form.hero_checklist),
     hero_show_rating: form.hero_show_rating,
+    hero_show_rating_label: form.hero_show_rating_label,
+    hero_show_review_count: form.hero_show_review_count,
     hero_show_badge: form.hero_show_badge,
     product_layout_sections: normalizeLayoutFormItems(form.product_layout_sections).map(
       (item) => ({
@@ -1587,6 +1595,8 @@ export function DashboardProductsClient() {
               <TextAreaField label="Hero Highlight Cards" value={form.standout_points} onChange={(value) => updateForm("standout_points", value)} placeholder="Title | Description | icon, one per line" rows={4} />
               <div className="grid gap-3">
                 <CheckboxField label="Show Rating" checked={form.hero_show_rating} onChange={(value) => updateForm("hero_show_rating", value)} />
+                <CheckboxField label="Show Rating Label" checked={form.hero_show_rating_label} onChange={(value) => updateForm("hero_show_rating_label", value)} />
+                <CheckboxField label="Show Review Count" checked={form.hero_show_review_count} onChange={(value) => updateForm("hero_show_review_count", value)} />
                 <CheckboxField label="Show Hero Badge" checked={form.hero_show_badge} onChange={(value) => updateForm("hero_show_badge", value)} />
               </div>
             </CmsSection>

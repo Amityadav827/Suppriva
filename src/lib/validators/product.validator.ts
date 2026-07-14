@@ -121,6 +121,8 @@ export type ProductCreateInput = {
   hero_secondary_cta_target?: "_self" | "_blank" | null;
   hero_checklist?: string[];
   hero_show_rating?: boolean;
+  hero_show_rating_label?: boolean;
+  hero_show_review_count?: boolean;
   hero_show_badge?: boolean;
   review_count?: number | null;
   rating_label?: string | null;
@@ -549,6 +551,22 @@ export function validateProductInput<TInput extends ProductValidationInput>(
 
   if ("hero_show_rating" in input && input.hero_show_rating !== undefined && !isBoolean(input.hero_show_rating)) {
     errors.push("Hero rating visibility must be true or false.");
+  }
+
+  if (
+    "hero_show_rating_label" in input &&
+    input.hero_show_rating_label !== undefined &&
+    !isBoolean(input.hero_show_rating_label)
+  ) {
+    errors.push("Hero rating label visibility must be true or false.");
+  }
+
+  if (
+    "hero_show_review_count" in input &&
+    input.hero_show_review_count !== undefined &&
+    !isBoolean(input.hero_show_review_count)
+  ) {
+    errors.push("Hero review count visibility must be true or false.");
   }
 
   if ("hero_show_badge" in input && input.hero_show_badge !== undefined && !isBoolean(input.hero_show_badge)) {

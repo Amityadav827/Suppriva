@@ -511,6 +511,12 @@ export class SupabaseProductsRepository implements ProductsRepository {
     }
     if ("hero_checklist" in input) payload.hero_checklist = input.hero_checklist ?? [];
     if ("hero_show_rating" in input) payload.hero_show_rating = input.hero_show_rating ?? true;
+    if ("hero_show_rating_label" in input) {
+      payload.hero_show_rating_label = input.hero_show_rating_label ?? true;
+    }
+    if ("hero_show_review_count" in input) {
+      payload.hero_show_review_count = input.hero_show_review_count ?? true;
+    }
     if ("hero_show_badge" in input) payload.hero_show_badge = input.hero_show_badge ?? true;
     if ("review_count" in input) payload.review_count = input.review_count ?? null;
     if ("rating_label" in input) payload.rating_label = input.rating_label ?? null;

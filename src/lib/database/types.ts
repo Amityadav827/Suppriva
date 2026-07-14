@@ -359,6 +359,8 @@ export type Product = {
   hero_secondary_cta_target: "_self" | "_blank" | null;
   hero_checklist: string[];
   hero_show_rating: boolean;
+  hero_show_rating_label: boolean;
+  hero_show_review_count: boolean;
   hero_show_badge: boolean;
   review_count: number | null;
   rating_label: string | null;

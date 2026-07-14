@@ -146,6 +146,8 @@ export class ProductService {
       gallery: input.gallery ?? [],
       hero_checklist: input.hero_checklist ?? [],
       hero_show_rating: input.hero_show_rating ?? true,
+      hero_show_rating_label: input.hero_show_rating_label ?? true,
+      hero_show_review_count: input.hero_show_review_count ?? true,
       hero_show_badge: input.hero_show_badge ?? true,
       ingredients: input.ingredients ?? [],
       benefits: input.benefits ?? [],
