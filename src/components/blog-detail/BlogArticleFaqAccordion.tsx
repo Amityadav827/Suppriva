@@ -46,7 +46,7 @@ export function BlogArticleFaqAccordion({
   }
 
   return (
-    <section className="my-10 rounded-[28px] border border-border-light bg-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-[30px]">
+    <section className="my-10 rounded-[28px] border border-border-light bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-6">
       <div className="flex items-center gap-4">
         <span className="flex size-14 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_12px_32px_rgba(16,110,70,0.12)] md:size-16">
           <CircleHelp className="size-7 md:size-8" aria-hidden="true" />
@@ -56,7 +56,7 @@ export function BlogArticleFaqAccordion({
         </h2>
       </div>
 
-      <div className="mt-8 grid gap-5">
+      <div className="mt-6 grid gap-4">
         {faqs.map((faq, index) => {
           const active = openIndex === index;
           const buttonId = `blog-article-faq-button-${index}`;
@@ -77,12 +77,12 @@ export function BlogArticleFaqAccordion({
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(index)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
-                className="flex min-h-[92px] w-full items-center justify-between gap-5 px-6 py-6 text-left font-heading text-[22px] font-bold leading-tight text-text-dark transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:min-h-[110px] md:px-[30px] md:py-7 md:text-[32px]"
+                className="flex min-h-[64px] w-full items-center justify-between gap-4 px-5 py-4 text-left font-heading text-lg font-bold leading-snug text-text-dark transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:min-h-[74px] md:px-6 md:py-5 md:text-[22px]"
               >
                 <span>{faq.question}</span>
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_10px_24px_rgba(16,110,70,0.1)] md:size-14">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-primary/10 bg-soft-green text-primary shadow-[0_10px_24px_rgba(16,110,70,0.1)] md:size-10">
                   <ChevronDown
-                    className={`size-6 transition duration-300 ${active ? "rotate-180 text-gold" : ""}`}
+                    className={`size-4 transition duration-300 md:size-5 ${active ? "rotate-180 text-gold" : ""}`}
                     aria-hidden="true"
                   />
                 </span>
@@ -101,7 +101,7 @@ export function BlogArticleFaqAccordion({
                     className="overflow-hidden"
                   >
                     <div
-                      className="border-t border-border-light px-6 py-6 text-lg leading-9 text-muted md:px-[30px] md:py-7 [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_strong]:text-text-dark"
+                      className="border-t border-border-light px-5 py-4 text-base leading-8 text-muted md:px-6 md:py-5 [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:decoration-gold/50 [&_a]:underline-offset-4 [&_strong]:text-text-dark"
                       dangerouslySetInnerHTML={{ __html: faq.answerHtml }}
                     />
                   </motion.div>
