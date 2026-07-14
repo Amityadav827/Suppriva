@@ -1,146 +1,146 @@
 {
   "name": "Astaxanthin",
-  "scientific_name": "Astaxanthin",
+  "scientific_name": "Astaxanthin; commonly sourced from Haematococcus pluvialis",
   "hero_badge": null,
   "short_description": "Astaxanthin is a red-orange carotenoid antioxidant used in eye, skin, recovery, and cellular wellness supplement education.",
-  "overview_title": "Astaxanthin Overview",
-  "overview_subtitle": "A practical look at astaxanthin and how it appears in supplement labels.",
-  "overview_content": "<p>Astaxanthin is a naturally red-orange carotenoid found in microalgae and in marine animals that consume it, such as salmon, krill, and shrimp. Supplements often use algae-derived astaxanthin, especially from Haematococcus pluvialis.</p><p>It is commonly discussed in relation to antioxidant support, eye strain, skin wellness, exercise recovery, and cellular health. Astaxanthin is fat-soluble, so many products use oil-based softgels and recommend taking it with food.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Astaxanthin is the pigment that helps give salmon their pink-orange color through the marine food chain.</p>",
+  "overview_title": "What Is Astaxanthin?",
+  "overview_subtitle": "A practical guide to algae-derived astaxanthin, antioxidant positioning, and supplement label comparison.",
+  "overview_content": "Astaxanthin is a red-orange carotenoid pigment found in microalgae and in marine animals that consume algae, including salmon, krill, trout, and shrimp. In supplements, it is often sourced from the microalga Haematococcus pluvialis, although synthetic and other sourced forms also exist. Because astaxanthin is fat-soluble, it is commonly sold in softgels or oil-based capsules designed to be taken with food.\n\nIn wellness education, astaxanthin is most often discussed for antioxidant support, eye strain routines, skin wellness, exercise recovery, and cellular health. It is not a cure for eye disease, skin disease, inflammation, or cardiovascular conditions. Its role is better understood as an ingredient that appears in formulas aimed at supporting normal oxidative-balance pathways and helping readers compare antioxidant-focused supplements.\n\nA key label consideration is source transparency. Natural astaxanthin from Haematococcus pluvialis is commonly highlighted by premium brands, but the label should still disclose dose, serving format, carrier oil, other antioxidant ingredients, and safety cautions. Some products combine astaxanthin with lutein, zeaxanthin, omega-3 fatty acids, vitamin E, or skin-support nutrients, which changes how the formula should be evaluated.\n\nTypical servings are often measured in milligrams, with many products using 4 mg to 12 mg per day. More is not automatically better. Because astaxanthin is fat-soluble, absorption may be improved when taken with a meal containing fat. People taking medication, managing chronic conditions, pregnant or nursing individuals, and those preparing for surgery should ask a qualified healthcare professional before using concentrated antioxidant supplements.\n\nSuppriva reviews astaxanthin as an educational ingredient for shoppers comparing antioxidant, eye, skin, and recovery formulas. The most useful approach is to evaluate the ingredient by source, dose, carrier system, companion ingredients, and realistic expectations. It should support informed product comparison, not replace medical advice or professional care.\n\nAstaxanthin is also a good example of why ingredient context matters. A product marketed for eye wellness may pair it with lutein and zeaxanthin, while a skin formula may combine it with collagen, vitamin C, hyaluronic acid, or ceramides. A recovery-oriented product may combine it with omega-3 fatty acids or other antioxidants. The same ingredient can therefore appear in very different products, and the surrounding formula changes how the label should be interpreted.\n\nReaders should also be careful with broad antioxidant language. Antioxidant support does not mean a supplement prevents disease or reverses damage. It means the ingredient is being discussed in relation to normal oxidative-balance pathways. A responsible astaxanthin review should look at the dose, source, fat-soluble delivery, safety cautions, and the specific wellness goal of the formula. This helps shoppers avoid treating every red-orange softgel as equivalent.\n\nA responsible astaxanthin page should also help readers understand what it cannot do. It should not be treated as a replacement for eye examinations, dermatology care, cardiovascular care, or recovery planning. If a product makes strong promises, shoppers should look for clear ingredient identity, realistic language, and a transparent supplement facts panel. This keeps the focus on education, product comparison, and safe decision-making rather than exaggerated antioxidant claims. This is especially useful for readers comparing eye, skin, and recovery products side by side.",
+  "interesting_fact_label": "Marine Pigment Insight",
+  "interesting_fact": "Astaxanthin is one reason salmon and flamingos can develop their pink-orange color through the food chain.",
   "how_it_works_title": "How Astaxanthin Works",
-  "how_it_works_subtitle": "How astaxanthin is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Marine Carotenoid Antioxidant",
-  "how_it_works_highlight_description": "Astaxanthin is commonly compared by natural algae source, dose, carrier oil, and antioxidant-support positioning.",
-  "how_it_works_content": "<p>Astaxanthin works as a fat-soluble carotenoid antioxidant that integrates into lipid-rich tissues and is studied for oxidative stress support. Its supplement value depends on source, dose, absorption, and consistency. The practical value of Astaxanthin depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
-  "benefits_title": "Potential Astaxanthin Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with astaxanthin in supplement routines.",
+  "how_it_works_subtitle": "Astaxanthin is discussed as a fat-soluble carotenoid antioxidant used in eye, skin, and recovery-support formulas.",
+  "how_it_works_highlight_title": "Fat-Soluble Antioxidant Context",
+  "how_it_works_highlight_description": "Astaxanthin is commonly evaluated by natural source, milligram dose, carrier oil, and whether it is paired with eye or skin nutrients.",
+  "how_it_works_content": "Astaxanthin works as a carotenoid antioxidant that is fat-soluble, meaning it associates with lipid-rich environments in the body. Research interest often focuses on oxidative stress markers, visual fatigue, skin hydration and elasticity markers, and exercise-related recovery outcomes. These areas are educational and should not be presented as disease treatment claims.\n\nBecause absorption depends on delivery, astaxanthin labels should be compared carefully. Oil-based softgels, meals containing fat, and companion ingredients may influence product positioning. A clean label should state the source, dose, serving frequency, and whether the ingredient is natural algae-derived astaxanthin or another form.",
+  "benefits_title": "Potential Benefits of Astaxanthin",
+  "benefits_subtitle": "Educational benefits commonly discussed for Astaxanthin in supplement routines.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Eye Strain Support Context",
-      "description": "Eye Strain Support Context helps readers evaluate astaxanthin by looking at use context, quality, dose, and realistic supplement expectations."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Skin Wellness Education",
-      "description": "Skin Wellness Education helps readers evaluate astaxanthin by looking at use context, quality, dose, and realistic supplement expectations."
-    },
-    {
-      "icon": "activity",
-      "title": "Antioxidant Support",
-      "description": "Antioxidant Support helps readers evaluate astaxanthin by looking at use context, quality, dose, and realistic supplement expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Recovery Formula Fit",
-      "description": "Recovery Formula Fit helps readers evaluate astaxanthin by looking at use context, quality, dose, and realistic supplement expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Fat-Soluble Delivery",
-      "description": "Fat-Soluble Delivery helps readers evaluate astaxanthin by looking at use context, quality, dose, and realistic supplement expectations."
+      "icon": "eye",
+      "title": "Eye Wellness Context",
+      "description": "Often included in formulas for screen-heavy lifestyles and visual comfort education."
     },
     {
       "icon": "sparkles",
-      "title": "Source Comparison",
-      "description": "Source Comparison helps readers evaluate astaxanthin by looking at use context, quality, dose, and realistic supplement expectations."
+      "title": "Skin Support Education",
+      "description": "Commonly discussed in relation to antioxidant support, hydration, and skin wellness routines."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Antioxidant Research",
+      "description": "Helps readers understand oxidative-stress support claims in supplement labels."
+    },
+    {
+      "icon": "dumbbell",
+      "title": "Recovery Formula Fit",
+      "description": "Appears in active-lifestyle products that discuss exercise recovery and cellular resilience."
+    },
+    {
+      "icon": "droplets",
+      "title": "Fat-Soluble Delivery",
+      "description": "Encourages comparison of softgels, carrier oils, and meal timing for absorption context."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Source Transparency",
+      "description": "Natural algae source, dose, and companion ingredients are key label comparison points."
     }
   ],
-  "dosage_title": "Typical Astaxanthin Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common supplement servings often range from 4 mg to 12 mg daily, usually taken with food or fat-containing meals.",
-  "dosage": "Common supplement servings often range from 4 mg to 12 mg daily, usually taken with food or fat-containing meals.",
-  "dosage_content": "<p>Common supplement servings often range from 4 mg to 12 mg daily, usually taken with food or fat-containing meals. Start with the label directions for the specific product rather than assuming all astaxanthin supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "Astaxanthin Safety Information",
-  "safety_subtitle": "Astaxanthin is generally well tolerated by many adults, but medication use, pregnancy, and high-dose combinations should be reviewed.",
+  "dosage_title": "Typical Dosage",
+  "dosage_subtitle": "Serving amounts vary by product form, standardization, and individual health context.",
+  "typical_dose": "Common astaxanthin servings often range from 4 mg to 12 mg daily, usually taken with food.",
+  "dosage": "Common astaxanthin servings often range from 4 mg to 12 mg daily, usually taken with food.",
+  "dosage_content": "Astaxanthin supplement servings commonly range from 4 mg to 12 mg daily, though some formulas use different amounts depending on the purpose and companion ingredients. Because it is fat-soluble, labels often recommend taking it with food or a meal that contains dietary fat.\n\nFollow the specific product label and avoid assuming that higher amounts are automatically better. If you take medication, are pregnant or nursing, manage a chronic health condition, or are planning surgery, discuss astaxanthin with a qualified healthcare professional before use.",
+  "safety_title": "Safety Information",
+  "safety_subtitle": "Astaxanthin is generally well tolerated by many adults, but medication use, pregnancy, and high-dose antioxidant stacking should be reviewed.",
   "side_effects": [
     "Digestive upset",
-    "Skin tone changes",
-    "Blood pressure or glucose review",
-    "Allergy context"
+    "Stool color changes in some users",
+    "Headache",
+    "Skin color changes are uncommon but possible at high intake"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on dose, product format, personal tolerance, and health status."
-    },
-    {
-      "icon": "activity",
-      "title": "Skin tone changes",
-      "description": "Skin tone changes may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "title": "Digestive Tolerance",
+      "description": "Some people report mild stomach discomfort, especially when taken without food."
     },
     {
       "icon": "alert-circle",
-      "title": "Blood pressure or glucose review",
-      "description": "Blood pressure or glucose review may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "title": "Dose Awareness",
+      "description": "High antioxidant stacking should be reviewed if multiple products are used together."
     },
     {
       "icon": "shield-alert",
-      "title": "Allergy context",
-      "description": "Allergy context may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "title": "Medication Review",
+      "description": "People using prescriptions should ask a clinician before starting concentrated supplements."
+    },
+    {
+      "icon": "droplets",
+      "title": "Fat-Soluble Use",
+      "description": "Taking with food may support tolerance and absorption for many users."
     }
   ],
   "drug_interactions_json": [
-    "Review use with blood pressure or blood sugar medications.",
-    "Use caution with anticoagulant or antiplatelet medications unless cleared by a clinician.",
-    "Check allergy status for marine-derived formulas or added oils.",
-    "Discuss use before surgery or during pregnancy or nursing."
+    "Blood pressure or blood sugar medication use should be reviewed with a healthcare professional.",
+    "Anticoagulant or antiplatelet medication use should be discussed before concentrated antioxidant supplementation.",
+    "Combining multiple antioxidant formulas may increase total intake beyond what the label makes obvious.",
+    "Pregnancy, nursing, surgery preparation, or chronic disease management should be reviewed before use."
   ],
   "who_should_avoid_json": [
-    "Pregnant or nursing individuals unless advised by a healthcare professional.",
-    "People taking blood-thinning medication without clinician guidance.",
-    "People with allergies to ingredients in the carrier oil or marine-derived products.",
-    "People preparing for surgery who have not reviewed supplement use.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with medication changes who have not discussed supplement use with a clinician.",
+    "Pregnant or nursing individuals unless advised by a qualified professional.",
+    "People preparing for surgery unless supplement timing has been reviewed.",
+    "Anyone sensitive to softgel oils or added carrier ingredients.",
+    "People using multiple high-dose antioxidant products without guidance."
   ],
-  "faq_title": "Astaxanthin FAQs",
-  "faq_subtitle": "Common questions about astaxanthin, dosage, safety, and supplement label comparison.",
+  "faq_title": "Frequently Asked Questions",
+  "faq_subtitle": "Answers to common questions about Astaxanthin, supplement labels, dosage, and safety.",
   "faq_json": [
     {
-      "question": "What is Astaxanthin?",
-      "answer": "Astaxanthin is a red-orange carotenoid antioxidant used in eye, skin, recovery, and cellular wellness supplement education."
+      "question": "What is astaxanthin?",
+      "answer": "Astaxanthin is a red-orange carotenoid antioxidant commonly sourced from microalgae and used in eye, skin, recovery, and antioxidant-support supplements."
     },
     {
-      "question": "What is Astaxanthin commonly used for?",
-      "answer": "Astaxanthin is commonly discussed for eye, skin, and antioxidant-support formulas. Its usefulness depends on dose, quality, and the overall routine."
+      "question": "Is astaxanthin natural?",
+      "answer": "Many premium supplements use natural astaxanthin from Haematococcus pluvialis, but labels should be checked because sourcing can vary."
     },
     {
-      "question": "Is Astaxanthin safe for daily use?",
-      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+      "question": "What is astaxanthin commonly used for?",
+      "answer": "It is commonly discussed for antioxidant support, eye wellness routines, skin wellness, and recovery-support formulas."
     },
     {
-      "question": "What should I compare on a Astaxanthin label?",
-      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+      "question": "Can astaxanthin treat eye disease?",
+      "answer": "No. Astaxanthin supplements are not treatments for eye disease or substitutes for professional eye care."
     },
     {
-      "question": "How long does Astaxanthin take to work?",
-      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+      "question": "What dose is common for astaxanthin?",
+      "answer": "Many products provide 4 mg to 12 mg daily, often in an oil-based softgel taken with food."
     },
     {
-      "question": "Can Astaxanthin replace medical treatment?",
-      "answer": "No. Astaxanthin supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Should astaxanthin be taken with food?",
+      "answer": "Because it is fat-soluble, taking it with food or dietary fat may be recommended by many product labels."
     },
     {
-      "question": "Can I combine Astaxanthin with other supplements?",
-      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+      "question": "What should I compare on an astaxanthin label?",
+      "answer": "Compare source, milligram dose, carrier oil, serving frequency, and whether it is paired with lutein, zeaxanthin, omega-3, or skin nutrients."
     },
     {
-      "question": "Who should be careful with Astaxanthin?",
-      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+      "question": "Is astaxanthin safe daily?",
+      "answer": "It is generally well tolerated by many adults, but medication use, pregnancy, nursing, and chronic conditions should be reviewed."
     },
     {
-      "question": "What format is Astaxanthin usually sold in?",
-      "answer": "Astaxanthin is commonly sold as softgel, capsule, oil suspension, though formats and concentrations can vary significantly by brand."
+      "question": "Can astaxanthin replace sunscreen or skincare?",
+      "answer": "No. Astaxanthin is not a replacement for sunscreen, dermatology care, or healthy skin protection habits."
     },
     {
-      "question": "How does Suppriva review Astaxanthin?",
-      "answer": "Suppriva reviews Astaxanthin by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+      "question": "Can astaxanthin be combined with omega-3?",
+      "answer": "Some formulas combine them, but total supplement intake and medication context should be reviewed if you use multiple products."
     }
   ],
-  "sidebar_profile_title": "Astaxanthin Profile Snapshot",
-  "sidebar_profile_content": "Astaxanthin is a carotenoid antioxidant used in supplement education for eye, skin, and antioxidant-support formulas.",
+  "sidebar_profile_title": "Astaxanthin Snapshot",
+  "sidebar_profile_content": "Astaxanthin is a fat-soluble carotenoid antioxidant used in supplement education for eye wellness, skin support, recovery, and oxidative-stress context.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -148,41 +148,41 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement servings often range from 4 mg to 12 mg daily, usually taken with food or fat-containing meals."
+      "value": "Often 4-12 mg daily"
     },
     {
       "label": "Best For",
-      "value": "Eye, skin, and antioxidant-support formulas"
+      "value": "Eye, skin, and antioxidant routines"
     },
     {
       "label": "Safety Level",
-      "value": "Astaxanthin is generally well tolerated by many adults, but medication use, pregnancy, and high-dose combinations should be reviewed."
+      "value": "Review medications and high-dose antioxidant stacking"
     },
     {
       "label": "Origin",
-      "value": "Microalgae and marine food chains"
+      "value": "Often algae-derived"
     },
     {
       "label": "Part Used",
-      "value": "Algae-derived pigment"
+      "value": "Microalgae pigment"
     },
     {
       "label": "Form",
-      "value": "Softgel, capsule, oil suspension"
+      "value": "Softgel, capsule, or oil suspension"
     },
     {
       "label": "Taste",
-      "value": "Neutral in softgels"
+      "value": "Usually neutral in softgels"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Astaxanthin is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
+  "sidebar_at_a_glance_content": "- Commonly sourced from Haematococcus pluvialis.\n- Often appears in eye, skin, and recovery formulas.\n- Fat-soluble and often taken with food.\n- Compare source, dose, and carrier oil.\n- Educational profile only; not personal medical advice.",
   "full_description": "Astaxanthin is a red-orange carotenoid antioxidant used in eye, skin, recovery, and cellular wellness supplement education.",
-  "best_for": "Eye, skin, and antioxidant-support formulas",
-  "safety_level": "Astaxanthin is generally well tolerated by many adults, but medication use, pregnancy, and high-dose combinations should be reviewed.",
-  "origin_country": "Microalgae and marine food chains",
-  "part_used": "Algae-derived pigment",
-  "ingredient_form": "Softgel, capsule, oil suspension",
-  "taste_profile": "Neutral in softgels",
+  "best_for": "Eye, skin, and antioxidant routines",
+  "safety_level": "Review medications and high-dose antioxidant stacking",
+  "origin_country": "Often algae-derived",
+  "part_used": "Microalgae pigment",
+  "ingredient_form": "Softgel, capsule, or oil suspension",
+  "taste_profile": "Usually neutral in softgels",
   "rating": null,
   "evidence_level": null,
   "uses_title": null,
@@ -200,13 +200,19 @@
   "references_title": null,
   "references_subtitle": null,
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Astaxanthin Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "lutein",
+    "zeaxanthin",
+    "omega-3-fatty-acids",
+    "vitamin-e",
+    "grape-seed-extract"
+  ],
+  "seo_title": "Astaxanthin Benefits, Dosage and Safety | Suppriva",
   "seo_focus_keyword": "astaxanthin",
-  "seo_description": "Explore astaxanthin benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore astaxanthin benefits, dosage context, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/astaxanthin",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Astaxanthin Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore astaxanthin benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Astaxanthin Benefits, Dosage and Safety | Suppriva",
+  "meta_description": "Explore astaxanthin benefits, dosage context, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
 }
