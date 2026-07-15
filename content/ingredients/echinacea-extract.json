@@ -1,201 +1,191 @@
 {
   "name": "Echinacea Extract",
   "scientific_name": "Echinacea purpurea, Echinacea angustifolia, or Echinacea pallida",
-  "hero_badge": null,
-  "short_description": "Echinacea Extract is a immune-support botanical used in wellness supplements for seasonal immune wellness and herbal supplement education.",
-  "overview_title": "Echinacea Extract Overview",
-  "overview_subtitle": "A practical look at Echinacea Extract and how it appears in supplement formulas.",
-  "overview_content": "<p>Echinacea Extract is a immune-support botanical associated with seasonal immune wellness and herbal supplement education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Echinacea Extract depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Echinacea Extract is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Herbal Extracts",
+  "hero_badge": "Immune Herb Extract",
+  "short_description": "Echinacea extract is a flowering botanical used in seasonal immune-support formulas, commonly from E. purpurea, E. angustifolia, or E. pallida.",
+  "overview_title": "What Is Echinacea Extract?",
+  "overview_subtitle": "A responsible guide to echinacea species, immune-support labels, dosage formats, and allergy cautions.",
+  "overview_content": "<p>Echinacea extract comes from flowering plants in the Echinacea genus, most commonly Echinacea purpurea, Echinacea angustifolia, and Echinacea pallida. The ingredient is widely used in seasonal wellness products, immune-support supplements, teas, lozenges, tinctures, gummies, and combination formulas. Labels may use aerial parts, roots, whole herb, pressed juice, alcohol extracts, dried extracts, or standardized preparations, so one echinacea product may differ meaningfully from another.</p><p>Echinacea is best known for its use around seasonal immune routines, especially at the first sign of common cold-like discomfort. However, evidence is mixed, and results vary by species, plant part, extract method, timing, and study design. It should not be presented as a cure, prevention guarantee, antibiotic, antiviral treatment, or substitute for medical care. Suppriva presents echinacea as an educational ingredient so shoppers can interpret labels more clearly and make safer comparisons.</p><p>The plant contains compounds such as alkamides, caffeic acid derivatives, polysaccharides, glycoproteins, and other botanical constituents. These compounds are discussed in relation to immune-cell signaling, inflammatory-response pathways, and antioxidant context. The challenge is that different species and extracts can provide different constituent profiles. This is why a product that simply says echinacea may be less informative than one that clearly lists species, plant part, extraction type, and serving size.</p><p>According to NCCIH, some echinacea products appear likely safe for most adults when used for short periods, but allergic reactions can occur, and digestive symptoms are among the more common side effects. People with allergies to plants in the daisy family, such as ragweed, chrysanthemums, marigolds, or daisies, should be especially cautious. People with autoimmune disorders, organ transplants, immune-suppressing medication, or complex immune conditions should ask a healthcare professional before use.</p><p>Echinacea is frequently combined with vitamin C, zinc, elderberry, andrographis, propolis, or mushroom extracts. These blends may be convenient, but they also make it harder to identify which ingredient caused a reaction. Consumers should avoid stacking multiple immune products with overlapping herbs and nutrients unless a clinician has reviewed the total intake.</p><p>Quality comparison should include species name, plant part, extract method, alcohol content for tinctures, added sugars in syrups or gummies, and whether the product is meant for short-term use. Echinacea is often used seasonally rather than as a permanent daily supplement. If symptoms are severe, persistent, recurrent, or accompanied by high fever or breathing difficulty, medical evaluation is more appropriate than supplement experimentation.</p><p>For readers comparing echinacea products, the responsible question is not simply does echinacea work. A better question is which species, which plant part, which extract, what timing, what dose, what safety profile, and what formula partners. That approach keeps the ingredient grounded in evidence-aware wellness education instead of exaggerated immune claims.</p><p>A well-built echinacea label should avoid vague immune promises and instead provide useful details. Look for the Latin species, plant part, extract type, serving directions, duration guidance, and allergy warnings. Products that combine echinacea with zinc, vitamin C, elderberry, or other seasonal ingredients should make each amount clear. This helps users understand whether they are buying a focused echinacea product or a broad immune blend with multiple overlapping ingredients.</p>",
+  "interesting_fact_label": "Species Matter",
+  "interesting_fact": "<p>Echinacea is not one single ingredient. Labels may use different species and plant parts, which can change the extract profile.</p>",
   "how_it_works_title": "How Echinacea Extract Works",
-  "how_it_works_subtitle": "How Echinacea Extract is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Seasonal Immune Botanical",
-  "how_it_works_highlight_description": "Echinacea Extract is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Echinacea Extract is commonly discussed through seasonal immune support and botanical form education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Echinacea Extract to a supplement routine.</p>",
-  "benefits_title": "Potential Echinacea Extract Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Echinacea Extract in supplement routines.",
+  "how_it_works_subtitle": "Echinacea is studied for immune-signaling compounds, seasonal wellness context, and extract-dependent activity.",
+  "how_it_works_highlight_title": "Seasonal Immune Context",
+  "how_it_works_highlight_description": "The most useful echinacea labels identify species, plant part, extract type, dose, and short-term use guidance.",
+  "how_it_works_content": "<p>Echinacea extracts contain plant compounds that are studied for immune-cell signaling, normal inflammatory-response pathways, and antioxidant context. These mechanisms do not mean echinacea prevents illness or replaces medical care. They provide a framework for understanding why the ingredient appears in seasonal wellness products.</p><p>The extract type matters. Root extracts, aerial-part extracts, pressed juices, and whole-herb powders may provide different constituent profiles. Timing may also matter because many echinacea products are intended for short-term use during seasonal immune routines rather than indefinite daily use.</p><p>Echinacea should be used with allergy and immune-status awareness. People with daisy-family allergies, autoimmune conditions, organ transplant history, immune-suppressing therapies, or serious illness should not use echinacea without professional guidance.</p>",
+  "benefits_title": "Potential Benefits of Echinacea Extract",
+  "benefits_subtitle": "Educational benefits commonly discussed for echinacea in seasonal immune-support supplements.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Immune Wellness Context",
-      "description": "Immune Wellness Context helps readers evaluate Echinacea Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "shield-check",
+      "title": "Seasonal Immune Support",
+      "description": "Echinacea is commonly used in short-term seasonal wellness and immune-support formulas."
     },
     {
-      "icon": "shield-check",
-      "title": "Seasonal Routine Fit",
-      "description": "Seasonal Routine Fit helps readers evaluate Echinacea Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "leaf",
+      "title": "Botanical Immune Education",
+      "description": "The ingredient helps readers compare species, plant parts, and extract types on labels."
     },
     {
       "icon": "activity",
-      "title": "Root vs Aerial Parts Awareness",
-      "description": "Root vs Aerial Parts Awareness helps readers evaluate Echinacea Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Tea and Extract Options",
-      "description": "Tea and Extract Options helps readers evaluate Echinacea Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Short-Term Use Education",
-      "description": "Short-Term Use Education helps readers evaluate Echinacea Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Normal Immune Signaling Context",
+      "description": "Echinacea compounds are studied for immune-cell signaling and normal inflammatory-response pathways."
     },
     {
       "icon": "sparkles",
-      "title": "Allergy Caution Review",
-      "description": "Allergy Caution Review helps readers evaluate Echinacea Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Tea and Tincture Formats",
+      "description": "Echinacea appears in capsules, teas, lozenges, gummies, and liquid extracts."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Short-Term Routine Fit",
+      "description": "Many users consider echinacea for short seasonal windows rather than indefinite use."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Allergy Awareness",
+      "description": "Echinacea labels help highlight why ragweed-family allergy cautions matter."
     }
   ],
   "dosage_title": "Typical Echinacea Extract Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Use varies by product form and timing; follow label directions for short-term or seasonal use.",
-  "dosage": "Use varies by product form and timing; follow label directions for short-term or seasonal use.",
-  "dosage_content": "<p>Use varies by product form and timing; follow label directions for short-term or seasonal use. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_subtitle": "Dosage varies by species, plant part, extract type, tincture strength, and product format.",
+  "typical_dose": "Echinacea labels vary widely; follow the finished product instructions and avoid stacking multiple immune blends.",
+  "dosage": "Echinacea labels vary widely; follow the finished product instructions and avoid stacking multiple immune blends.",
+  "dosage_content": "<p>Echinacea dosage depends on whether the product is a tea, tincture, capsule, gummy, lozenge, pressed juice, root extract, or aerial-part extract. Serving sizes vary too widely to compare by milligrams alone. Use the finished product label and pay attention to whether the label recommends short-term or daily use.</p><p>People with allergies, autoimmune disease, organ transplant history, or immune-suppressing medication should consult a healthcare professional before use. Echinacea should not be used to delay medical care for severe or persistent symptoms.</p>",
   "safety_title": "Echinacea Extract Safety Information",
-  "safety_subtitle": "People with ragweed allergy, autoimmune conditions, immune-suppressing medication use, pregnancy, or nursing need medical guidance.",
+  "safety_subtitle": "Echinacea is often used short term, but allergy, digestive tolerance, and immune-related conditions matter.",
   "side_effects": [
-    "Digestive upset",
-    "Tingling mouth sensation",
-    "Allergic reactions",
-    "Autoimmune medication concern"
+    "Digestive Symptoms",
+    "Allergic Reactions",
+    "Headache or Dizziness",
+    "Immune-Condition Caution"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    },
-    {
-      "icon": "activity",
-      "title": "Tingling mouth sensation",
-      "description": "Tingling mouth sensation may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Symptoms",
+      "description": "Abdominal discomfort, nausea, or stomach upset may occur in some users."
     },
     {
       "icon": "alert-circle",
-      "title": "Allergic reactions",
-      "description": "Allergic reactions may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Autoimmune medication concern",
-      "description": "Autoimmune medication concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    }
-  ],
-  "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Echinacea Extract should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "title": "Allergic Reactions",
+      "description": "Allergy risk may be higher in people sensitive to ragweed, daisies, marigolds, or related plants."
     },
     {
       "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Echinacea Extract as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "title": "Headache or Dizziness",
+      "description": "Some users may report headache, dizziness, or fatigue."
     },
     {
       "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Echinacea Extract with formulas that target the same pathway or contain similar active compounds."
+      "title": "Immune-Condition Caution",
+      "description": "Autoimmune conditions and immune-suppressing therapies require professional review."
     }
   ],
-  "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Echinacea Extract.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to north american echinacea species.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Echinacea Extract to replace diagnosis, treatment, or prescribed care."
+  "drug_interactions_json": [
+    "Immunosuppressant medications, including transplant-related therapies, should be reviewed before echinacea use.",
+    "Corticosteroids or immune-modulating medications may not be appropriate to combine with echinacea without clinician guidance.",
+    "Cancer therapies or complex oncology care should not be combined with immune herbs unless the care team approves.",
+    "Warfarin or other complex medication routines should be discussed with a healthcare professional before use."
   ],
-  "food_sources_title": "Echinacea Extract Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Echinacea is used as a supplement or herbal tea, not a common food.</p>",
+  "who_should_avoid_json": [
+    "People allergic to ragweed, daisies, chrysanthemums, marigolds, or related plants unless cleared by a clinician.",
+    "People with autoimmune disorders unless professionally advised.",
+    "Organ transplant recipients or people taking immune-suppressing medication.",
+    "People with severe, persistent, or worsening symptoms who need medical evaluation.",
+    "Anyone using echinacea as a replacement for antibiotics, antivirals, vaccines, or prescribed care."
+  ],
+  "food_sources_title": "Echinacea Food Sources",
+  "food_sources_subtitle": "Echinacea is used as an herbal supplement rather than a common food.",
+  "food_sources_content": "<p>Echinacea is not typically consumed as a normal dietary food. It is used in herbal teas, tinctures, capsules, lozenges, gummies, and extracts. These supplement forms should be evaluated by species, plant part, extraction method, and serving instructions.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Echinacea is used as a supplement or herbal tea",
-      "description": "Echinacea is used as a supplement or herbal tea may help explain the dietary or source context for Echinacea Extract."
+      "icon": "cup-soda",
+      "title": "Herbal teas",
+      "description": "Echinacea teas may use aerial parts, roots, or blends with other herbs."
     },
     {
-      "icon": "leaf",
-      "title": "not a common food",
-      "description": "not a common food may help explain the dietary or source context for Echinacea Extract."
+      "icon": "pill",
+      "title": "Capsules and tablets",
+      "description": "Capsules may provide powdered herb or standardized extract."
+    },
+    {
+      "icon": "flask-conical",
+      "title": "Tinctures and extracts",
+      "description": "Liquid extracts vary by solvent, concentration, and species."
     }
   ],
   "faq_title": "Echinacea Extract FAQs",
-  "faq_subtitle": "Common questions about Echinacea Extract, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Echinacea Extract, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Echinacea Extract?",
-      "answer": "Echinacea Extract is a immune-support botanical used in supplements for seasonal immune wellness and herbal supplement education."
+      "question": "What is echinacea extract?",
+      "answer": "Echinacea extract is made from Echinacea species and is commonly used in seasonal immune-support supplements."
     },
     {
-      "question": "What is Echinacea Extract commonly used for?",
-      "answer": "It is commonly discussed for seasonal immune wellness and herbal supplement education, but its role depends on the product formula, serving size, and user context."
+      "question": "Which echinacea species are common?",
+      "answer": "Common species include Echinacea purpurea, Echinacea angustifolia, and Echinacea pallida."
     },
     {
-      "question": "How does Echinacea Extract work?",
-      "answer": "Echinacea Extract is usually evaluated through seasonal immune support and botanical form education, along with dose, quality, and safety considerations."
+      "question": "Does echinacea prevent colds?",
+      "answer": "Evidence is mixed. Echinacea should not be treated as a guaranteed prevention or cure."
     },
     {
-      "question": "What is a typical Echinacea Extract dose?",
-      "answer": "Use varies by product form and timing; follow label directions for short-term or seasonal use."
+      "question": "What is echinacea commonly used for?",
+      "answer": "It is commonly used in short-term seasonal wellness routines and immune-support formulas."
     },
     {
-      "question": "Is Echinacea Extract safe?",
-      "answer": "Echinacea Extract may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Can echinacea cause allergies?",
+      "answer": "Yes. Allergy risk may be higher for people sensitive to ragweed, daisies, chrysanthemums, or related plants."
     },
     {
-      "question": "Can Echinacea Extract cause side effects?",
-      "answer": "Possible side effects include digestive upset, tingling mouth sensation, allergic reactions, especially when serving sizes are high or tolerance is low."
+      "question": "Can echinacea replace medication?",
+      "answer": "No. Echinacea is not a substitute for medical treatment, antibiotics, antivirals, or clinician guidance."
     },
     {
-      "question": "Can Echinacea Extract interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Echinacea Extract."
+      "question": "What side effects can occur?",
+      "answer": "Digestive upset, nausea, stomach pain, headache, dizziness, fatigue, rash, or allergic reactions may occur."
     },
     {
-      "question": "Is Echinacea Extract found in foods?",
-      "answer": "Echinacea is used as a supplement or herbal tea, not a common food."
+      "question": "Who should avoid echinacea?",
+      "answer": "People with autoimmune disorders, transplant history, immune-suppressing medication, or significant allergies should seek guidance."
     },
     {
-      "question": "What should I look for on a Echinacea Extract label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "How should echinacea products be compared?",
+      "answer": "Compare species, plant part, extract type, serving size, formula partners, and short-term use guidance."
     },
     {
-      "question": "Is Echinacea Extract a substitute for medical treatment?",
-      "answer": "No. Echinacea Extract is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Can I take echinacea every day?",
+      "answer": "Many echinacea products are intended for short-term seasonal use. Follow the label and ask a clinician for long-term use."
     }
   ],
   "sidebar_profile_title": "Echinacea Extract Profile Snapshot",
-  "sidebar_profile_content": "<p>Echinacea Extract is categorized as a immune-support botanical and is most often reviewed for seasonal immune wellness and herbal supplement education.</p>",
+  "sidebar_profile_content": "<p>Echinacea extract is a seasonal immune-support botanical. Compare species, plant part, extract type, and allergy or immune-condition cautions.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Immune-support botanical",
-      "icon": "flask-conical"
+      "value": "Flowering herbal extract",
+      "icon": "flower2"
     },
     {
       "label": "Typical Dose",
-      "value": "Use varies by product form and timing; follow label directions for short-term or seasonal use.",
+      "value": "Product-specific",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Seasonal immune wellness and herbal supplement education",
+      "value": "Seasonal immune education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Review allergies and immune status",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "North American echinacea species",
+      "value": "North American flowering plants",
       "icon": "map-pin"
     },
     {
@@ -205,75 +195,80 @@
     },
     {
       "label": "Form",
-      "value": "Capsule, tea, tincture, lozenge, extract",
+      "value": "Capsule, tea, lozenge, tincture, or gummy",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Bitter and tingling",
+      "value": "Earthy and mildly bitter",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Echinacea Extract is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Echinacea Extract is reviewed by Suppriva as a immune-support botanical for seasonal immune wellness and herbal supplement education.",
-  "best_for": "Seasonal immune wellness and herbal supplement education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "North American echinacea species",
+  "sidebar_at_a_glance_content": "<p>Echinacea is best compared by species, plant part, extract type, timing, and allergy cautions. It is educational immune-support content, not medical treatment advice.</p>",
+  "full_description": "Echinacea extract is a flowering botanical used in seasonal immune-support supplement education.",
+  "best_for": "Seasonal immune-support education and short-term herbal wellness routines",
+  "safety_level": "Review allergies, autoimmune conditions, and immune-suppressing medications",
+  "origin_country": "North American Echinacea species",
   "part_used": "Root, aerial parts, or whole herb",
-  "ingredient_form": "Capsule, tea, tincture, lozenge, extract",
-  "taste_profile": "Bitter and tingling",
+  "ingredient_form": "Capsule, tea, tincture, lozenge, or gummy",
+  "taste_profile": "Earthy and mildly bitter",
   "rating": 4.6,
-  "evidence_level": "Moderate",
+  "evidence_level": "Mixed",
   "uses_title": "Echinacea Extract Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Echinacea Extract may appear in formulas related to seasonal immune wellness and herbal supplement education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Echinacea Extract may appear in formulas related to seasonal immune-support education and short-term herbal wellness routines. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Immune Wellness Context",
-      "description": "Immune Wellness Context is a common context for evaluating Echinacea Extract."
+      "title": "Seasonal Immune Support",
+      "description": "Commonly used in immune-focused formulas during seasonal wellness periods."
     },
     {
       "icon": "check-circle",
-      "title": "Seasonal Routine Fit",
-      "description": "Seasonal Routine Fit is a common context for evaluating Echinacea Extract."
+      "title": "Botanical Label Comparison",
+      "description": "Useful for comparing species, plant parts, and extract types."
     },
     {
       "icon": "check-circle",
-      "title": "Root vs Aerial Parts Awareness",
-      "description": "Root vs Aerial Parts Awareness is a common context for evaluating Echinacea Extract."
+      "title": "Short-Term Herbal Routine",
+      "description": "Often used for limited seasonal windows rather than indefinite daily use."
     },
     {
       "icon": "check-circle",
-      "title": "Tea and Extract Options",
-      "description": "Tea and Extract Options is a common context for evaluating Echinacea Extract."
+      "title": "Allergy Safety Education",
+      "description": "Highlights the need to review daisy-family allergy cautions."
     }
   ],
   "research_title": "Echinacea Extract Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Echinacea Extract focuses on seasonal immune support and botanical form education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Echinacea research has produced mixed results, with outcomes influenced by species, plant part, extract method, timing, and study design. Some products may be more relevant to short-term seasonal use than others.</p><p>Safety references emphasize digestive symptoms and allergy risk, especially among people sensitive to ragweed-family plants. Immune-related medical conditions and immunosuppressive therapies require professional guidance.</p>",
   "research_json": [
     {
       "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "title": "Evidence Varies by Extract",
+      "description": "Research findings depend on the exact species, preparation, dose, study design, and population being evaluated."
     },
     {
       "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "title": "Label Context Matters",
+      "description": "Supplement labels should be reviewed for active form, serving size, quality testing, and safety cautions before comparison."
     }
   ],
   "references_title": "Echinacea Extract References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
+  "related_ingredients_json": [
+    "elderberry-extract",
+    "vitamin-c",
+    "zinc",
+    "probiotics"
+  ],
   "seo_title": "Echinacea Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "echinacea extract",
-  "seo_description": "Echinacea Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about echinacea extract, species differences, immune-support use, dosage, side effects, allergy cautions, and supplement label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/echinacea-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Echinacea Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Echinacea Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_description": "Learn about echinacea extract, species differences, immune-support use, dosage, side effects, allergy cautions, and supplement label tips."
 }

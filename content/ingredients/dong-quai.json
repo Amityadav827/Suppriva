@@ -1,196 +1,191 @@
 {
   "name": "Dong Quai",
   "scientific_name": "Angelica sinensis",
-  "hero_badge": null,
-  "short_description": "Dong Quai is a women's health botanical used in wellness supplements for women's wellness and traditional botanical education.",
-  "overview_title": "Dong Quai Overview",
-  "overview_subtitle": "A practical look at Dong Quai and how it appears in supplement formulas.",
-  "overview_content": "<p>Dong Quai is a women's health botanical associated with women's wellness and traditional botanical education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Dong Quai depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Dong Quai is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Herbal Extracts",
+  "hero_badge": "Traditional Root Botanical",
+  "short_description": "Dong quai is the root of Angelica sinensis, a traditional botanical used in women-focused wellness formulas and herbal balance routines.",
+  "overview_title": "What Is Dong Quai?",
+  "overview_subtitle": "A practical guide to Angelica sinensis, traditional use, label comparison, and safety cautions.",
+  "overview_content": "<p>Dong quai is the common name for the root of Angelica sinensis, a plant used in traditional East Asian herbal practice and often positioned in modern supplements for women-focused wellness, cycle comfort, menopause-transition support, and general vitality. It is sometimes called female ginseng, although it is not the same plant as Panax ginseng or eleuthero. The ingredient is usually sold as dried root, powdered root, liquid extract, capsule, tablet, tea, or a component of broader botanical formulas.</p><p>For Suppriva readers, the most important point is that dong quai should be evaluated as a traditional botanical, not as a hormone therapy, fertility treatment, medication replacement, or guaranteed solution for menstrual or menopausal symptoms. Supplement labels may describe the ingredient in broad wellness language, but the real comparison should focus on the root form, extract ratio, serving size, formula partners, safety cautions, and whether the product explains who should avoid it.</p><p>Dong quai contains naturally occurring compounds such as ferulic acid, ligustilide, polysaccharides, coumarin-like constituents, and other aromatic molecules. These compounds are part of why the root is discussed in relation to circulation, smooth-muscle signaling, and traditional reproductive wellness routines. However, human evidence is not strong enough to treat dong quai as a stand-alone medical intervention. It is best framed as an educational ingredient that may appear in formulas designed for comfort, transition, and herbal balance.</p><p>Safety review is especially important with dong quai. Memorial Sloan Kettering notes cautions around blood-thinning medication, pregnancy, breastfeeding, and hormone-sensitive conditions. Because some dong quai constituents may be relevant to bleeding risk or hormone-sensitive contexts, people should not add it casually when using anticoagulants, antiplatelet drugs, hormone therapies, or complex prescription routines. Those preparing for surgery should also discuss timing with a clinician.</p><p>Product comparison should also consider the complete formula. Dong quai is often paired with black cohosh, chaste tree berry, red clover, evening primrose oil, ginger, or other botanicals. Those combinations can create overlapping effects or additional cautions. A high-quality product should clearly identify the amount of dong quai, the plant part used, whether it is standardized, and whether the label provides practical warnings.</p><p>Dong quai has a distinctive aromatic, earthy, slightly bitter profile when used as tea or powder. Capsules can avoid taste but still require careful label review. The ingredient may be more suitable for adults seeking to understand traditional botanical options than for people looking for immediate symptom relief. It should not be used to self-treat heavy bleeding, severe pain, irregular bleeding, infertility, hot flashes, or any diagnosed condition without professional guidance.</p><p>Suppriva presents dong quai as a wellness education topic so readers can compare labels responsibly. The best approach is to treat it as one part of a broader health conversation: identify the exact product form, review medication and pregnancy cautions, avoid stacking similar formulas, and speak with a qualified healthcare professional if symptoms are persistent, severe, or medically complex.</p><p>A practical buying checklist can make dong quai easier to evaluate. Look for the Latin name Angelica sinensis, the plant part root, an honest serving size, clear directions, and warnings that match the seriousness of the ingredient. Be cautious with labels that imply hormone-balancing certainty, guaranteed cycle relief, or broad women's health claims without explaining dose and safety. A responsible product should make it easy to understand what is in the bottle and who should avoid it.</p>",
+  "interesting_fact_label": "Traditional Root Insight",
+  "interesting_fact": "<p>Dong quai is sometimes nicknamed female ginseng, but botanically it belongs to the Angelica genus and is not a true ginseng.</p>",
   "how_it_works_title": "How Dong Quai Works",
-  "how_it_works_subtitle": "How Dong Quai is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Traditional Women's Wellness Root",
-  "how_it_works_highlight_description": "Dong Quai is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Dong Quai is commonly discussed through traditional women's wellness botanical and safety education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Dong Quai to a supplement routine.</p>",
+  "how_it_works_subtitle": "Dong quai is studied for aromatic root compounds, traditional use patterns, and circulation-related wellness context.",
+  "how_it_works_highlight_title": "Traditional Botanical Balance",
+  "how_it_works_highlight_description": "Dong quai is best evaluated by root form, formula context, dose clarity, and pregnancy, bleeding-risk, and hormone-sensitive cautions.",
+  "how_it_works_content": "<p>Dong quai does not work like an immediate stimulant, hormone prescription, or pain reliever. Its traditional use is tied to the root's aromatic compounds, plant acids, polysaccharides, and other naturally occurring constituents. Modern supplement discussions often focus on how these compounds may relate to normal smooth-muscle, circulation, and antioxidant signaling, but these mechanisms remain educational rather than treatment claims.</p><p>Because dong quai is usually used in formulas rather than by itself, the surrounding ingredients matter. A product may combine it with chaste tree berry, black cohosh, ginger, red clover, or mineral support. The overall formula can change the safety profile and user experience. Readers should compare the entire supplement facts panel instead of judging dong quai in isolation.</p><p>The ingredient also requires special safety awareness. Its potential relevance to bleeding risk, pregnancy, breastfeeding, surgery timing, and hormone-sensitive conditions means it should be approached conservatively. People with significant symptoms should seek medical evaluation rather than relying on herbal supplements.</p>",
   "benefits_title": "Potential Dong Quai Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Dong Quai in supplement routines.",
+  "benefits_subtitle": "Educational benefits commonly discussed for dong quai in traditional botanical and women's wellness formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
+      "icon": "flower2",
       "title": "Women's Wellness Context",
-      "description": "Women's Wellness Context helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Traditional Use Education",
-      "description": "Traditional Use Education helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "description": "Dong quai appears in formulas marketed around cycle comfort, transition support, and general reproductive wellness education."
     },
     {
       "icon": "activity",
-      "title": "Cycle Support Claim Review",
-      "description": "Cycle Support Claim Review helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Circulation-Related Tradition",
+      "description": "Traditional use often connects dong quai with blood-flow and vitality concepts, though modern users should avoid disease-treatment assumptions."
+    },
+    {
+      "icon": "leaf",
+      "title": "Botanical Formula Support",
+      "description": "It is commonly paired with other herbs, making it useful for learning how multi-herb women's formulas are built."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Label Safety Awareness",
+      "description": "Dong quai encourages careful review of pregnancy, surgery, bleeding-risk, and hormone-sensitive condition cautions."
     },
     {
       "icon": "clipboard-check",
-      "title": "Root Extract Awareness",
-      "description": "Root Extract Awareness helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Formula Pairing Review",
-      "description": "Formula Pairing Review helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Traditional Herb Education",
+      "description": "The ingredient helps readers distinguish historical use from modern evidence and responsible supplement comparison."
     },
     {
       "icon": "sparkles",
-      "title": "Safety Screening",
-      "description": "Safety Screening helps readers evaluate Dong Quai by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Aromatic Root Profile",
+      "description": "Dong quai's distinctive root chemistry gives it a recognizable herbal profile in capsules, tinctures, and teas."
     }
   ],
   "dosage_title": "Typical Dong Quai Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully.",
-  "dosage": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully.",
-  "dosage_content": "<p>Serving size varies by extract, tea, and formula type; label directions should be followed carefully. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_subtitle": "Serving size varies widely by root powder, extract ratio, tea, tincture, and combination formula.",
+  "typical_dose": "Many dong quai products provide several hundred milligrams of root powder or extract per serving, but users should follow the finished product label.",
+  "dosage": "Many dong quai products provide several hundred milligrams of root powder or extract per serving, but users should follow the finished product label.",
+  "dosage_content": "<p>Dong quai dosage cannot be judged by milligrams alone because labels may use powdered root, concentrated extract, tea, tincture, or a multi-herb blend. A concentrated extract may not be equivalent to a raw-root capsule. The most responsible approach is to follow the specific product label and avoid combining multiple dong quai-containing products.</p><p>People taking blood thinners, antiplatelet medication, hormone-related therapies, or medications for complex conditions should ask a healthcare professional before use. Dong quai should generally be avoided during pregnancy and breastfeeding unless a qualified clinician provides individualized guidance.</p>",
   "safety_title": "Dong Quai Safety Information",
-  "safety_subtitle": "May interact with blood thinners and is not appropriate during pregnancy unless directed by a clinician.",
+  "safety_subtitle": "Dong quai requires careful review for pregnancy, breastfeeding, bleeding risk, surgery timing, and hormone-sensitive conditions.",
   "side_effects": [
-    "Digestive upset",
+    "Digestive Upset",
     "Photosensitivity",
-    "Bleeding risk concern",
-    "Pregnancy caution"
+    "Bleeding-Risk Concern",
+    "Hormone-Sensitive Caution"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Upset",
+      "description": "Some users may notice nausea, diarrhea, bloating, appetite changes, or stomach discomfort."
     },
     {
-      "icon": "activity",
+      "icon": "sun",
       "title": "Photosensitivity",
-      "description": "Photosensitivity may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "description": "Dong quai may increase sun sensitivity in some people, especially at higher exposure or with certain medications."
     },
     {
       "icon": "alert-circle",
-      "title": "Bleeding risk concern",
-      "description": "Bleeding risk concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Pregnancy caution",
-      "description": "Pregnancy caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    }
-  ],
-  "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Dong Quai should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "title": "Bleeding-Risk Concern",
+      "description": "People using blood-thinning medication or preparing for surgery should review dong quai with a clinician."
     },
     {
       "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Dong Quai as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Dong Quai with formulas that target the same pathway or contain similar active compounds."
+      "title": "Hormone-Sensitive Caution",
+      "description": "People with hormone-sensitive conditions should avoid self-directed use unless medically advised."
     }
   ],
+  "drug_interactions_json": [
+    "Anticoagulant and antiplatelet medications, including warfarin, should be reviewed because dong quai may increase bleeding-risk concerns.",
+    "NSAIDs and other products that can affect bleeding should be discussed before combining with dong quai.",
+    "Hormone therapies, oral contraceptives, or treatments for hormone-sensitive conditions should not be combined without professional guidance.",
+    "Photosensitizing medications may require extra caution because dong quai may increase sun sensitivity in some users."
+  ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Dong Quai.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to east asian traditional herbal systems.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Dong Quai to replace diagnosis, treatment, or prescribed care."
+    "Pregnant individuals unless specifically advised by a qualified clinician.",
+    "Breastfeeding individuals unless professional guidance confirms appropriateness.",
+    "People with hormone-sensitive cancers or hormone-sensitive medical conditions.",
+    "People taking blood thinners or scheduled for surgery without clinician clearance.",
+    "Anyone using dong quai instead of medical evaluation for abnormal bleeding, severe pain, or persistent symptoms."
   ],
   "food_sources_title": "Dong Quai Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Dong quai is used as an herbal ingredient rather than a common culinary food.</p>",
+  "food_sources_subtitle": "Dong quai is primarily used as an herbal root rather than a common food ingredient.",
+  "food_sources_content": "<p>Dong quai is not typically consumed as an everyday food. It is more often used as dried root, tea, powder, tincture, capsule, or extract in herbal products. Food exposure and supplement exposure should not be treated as equivalent.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
-      "title": "Dong quai is used as an herbal ingredient rather than a common culinary food",
-      "description": "Dong quai is used as an herbal ingredient rather than a common culinary food may help explain the dietary or source context for Dong Quai."
+      "title": "Dried Angelica Root",
+      "description": "Traditional preparations may use sliced or dried Angelica sinensis root."
+    },
+    {
+      "icon": "cup-soda",
+      "title": "Herbal Tea",
+      "description": "Some products use dong quai root in tea blends, though dose can vary considerably."
+    },
+    {
+      "icon": "pill",
+      "title": "Capsules and Extracts",
+      "description": "Modern supplements commonly use capsules, tablets, tinctures, or liquid extracts."
     }
   ],
   "faq_title": "Dong Quai FAQs",
-  "faq_subtitle": "Common questions about Dong Quai, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Dong Quai, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Dong Quai?",
-      "answer": "Dong Quai is a women's health botanical used in supplements for women's wellness and traditional botanical education."
+      "question": "What is dong quai?",
+      "answer": "Dong quai is the root of Angelica sinensis, a traditional botanical used in herbal wellness formulas, especially women's wellness blends."
     },
     {
-      "question": "What is Dong Quai commonly used for?",
-      "answer": "It is commonly discussed for women's wellness and traditional botanical education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is dong quai the same as ginseng?",
+      "answer": "No. It is sometimes called female ginseng, but it is not Panax ginseng and belongs to a different botanical group."
     },
     {
-      "question": "How does Dong Quai work?",
-      "answer": "Dong Quai is usually evaluated through traditional women's wellness botanical and safety education, along with dose, quality, and safety considerations."
+      "question": "What is dong quai commonly used for?",
+      "answer": "It is commonly discussed in cycle comfort, menopause-transition, circulation-related, and traditional botanical wellness formulas."
     },
     {
-      "question": "What is a typical Dong Quai dose?",
-      "answer": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully."
+      "question": "Can dong quai replace hormone therapy?",
+      "answer": "No. Dong quai is not a hormone therapy and should not replace prescribed treatment or medical evaluation."
     },
     {
-      "question": "Is Dong Quai safe?",
-      "answer": "Dong Quai may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Is dong quai safe during pregnancy?",
+      "answer": "Dong quai is generally avoided during pregnancy unless a qualified healthcare professional specifically advises otherwise."
     },
     {
-      "question": "Can Dong Quai cause side effects?",
-      "answer": "Possible side effects include digestive upset, photosensitivity, bleeding risk concern, especially when serving sizes are high or tolerance is low."
+      "question": "Can dong quai interact with blood thinners?",
+      "answer": "Yes. People taking anticoagulant or antiplatelet medication should speak with a healthcare professional before using dong quai."
     },
     {
-      "question": "Can Dong Quai interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Dong Quai."
+      "question": "What are possible dong quai side effects?",
+      "answer": "Possible side effects include digestive upset, diarrhea, appetite changes, photosensitivity, and bleeding-risk concerns in susceptible users."
     },
     {
-      "question": "Is Dong Quai found in foods?",
-      "answer": "Dong quai is used as an herbal ingredient rather than a common culinary food."
+      "question": "How should dong quai supplements be compared?",
+      "answer": "Compare root form, extract ratio, serving size, formula partners, quality testing, and safety warnings."
     },
     {
-      "question": "What should I look for on a Dong Quai label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Can dong quai be taken with other women's wellness herbs?",
+      "answer": "Combination formulas are common, but stacking herbs may increase cautions, so the full ingredient panel should be reviewed."
     },
     {
-      "question": "Is Dong Quai a substitute for medical treatment?",
-      "answer": "No. Dong Quai is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Who should avoid dong quai?",
+      "answer": "Pregnant or breastfeeding individuals, people with hormone-sensitive conditions, and people using blood thinners should avoid self-directed use."
     }
   ],
   "sidebar_profile_title": "Dong Quai Profile Snapshot",
-  "sidebar_profile_content": "<p>Dong Quai is categorized as a women's health botanical and is most often reviewed for women's wellness and traditional botanical education.</p>",
+  "sidebar_profile_content": "<p>Dong quai is an Angelica sinensis root ingredient used in traditional women's wellness formulas. It should be reviewed carefully for pregnancy, bleeding-risk, surgery, and hormone-sensitive cautions.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Women's health botanical",
-      "icon": "flask-conical"
+      "value": "Traditional root botanical",
+      "icon": "flower2"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving size varies by extract, tea, and formula type; label directions should be followed carefully.",
+      "value": "Product-specific root or extract dose",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Women's wellness and traditional botanical education",
+      "value": "Women's wellness education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Needs medication and pregnancy review",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "East Asian traditional herbal systems",
+      "value": "East Asian herbal tradition",
       "icon": "map-pin"
     },
     {
@@ -200,75 +195,80 @@
     },
     {
       "label": "Form",
-      "value": "Capsule, tea, tincture, extract",
+      "value": "Capsule, tea, tincture, or extract",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Bitter, sweet, and earthy",
+      "value": "Earthy, aromatic, slightly bitter",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Dong Quai is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Dong Quai is reviewed by Suppriva as a women's health botanical for women's wellness and traditional botanical education.",
-  "best_for": "Women's wellness and traditional botanical education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "East Asian traditional herbal systems",
+  "sidebar_at_a_glance_content": "<p>Dong quai is best understood as a traditional botanical for education, not a treatment. Review dose form, formula partners, blood-thinner cautions, pregnancy guidance, and hormone-sensitive context before use.</p>",
+  "full_description": "Dong quai is Angelica sinensis root, used in traditional women's wellness formulas and botanical supplement education.",
+  "best_for": "Women's wellness education, traditional botanical support, and herbal formula comparison",
+  "safety_level": "Avoid during pregnancy and review blood thinners, surgery, and hormone-sensitive conditions",
+  "origin_country": "East Asian herbal tradition",
   "part_used": "Root",
-  "ingredient_form": "Capsule, tea, tincture, extract",
-  "taste_profile": "Bitter, sweet, and earthy",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "ingredient_form": "Capsule, tablet, tea, tincture, or extract",
+  "taste_profile": "Earthy, aromatic, and slightly bitter",
+  "rating": 4.4,
+  "evidence_level": "Traditional",
   "uses_title": "Dong Quai Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Dong Quai may appear in formulas related to women's wellness and traditional botanical education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Dong Quai may appear in formulas related to women's wellness education, traditional botanical support, and herbal formula comparison. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Women's Wellness Context",
-      "description": "Women's Wellness Context is a common context for evaluating Dong Quai."
+      "title": "Women's Wellness Formulas",
+      "description": "Dong quai is commonly included in cycle and transition-focused herbal supplement blends."
     },
     {
       "icon": "check-circle",
-      "title": "Traditional Use Education",
-      "description": "Traditional Use Education is a common context for evaluating Dong Quai."
+      "title": "Traditional Root Support",
+      "description": "It is often reviewed as part of traditional East Asian botanical practice."
     },
     {
       "icon": "check-circle",
-      "title": "Cycle Support Claim Review",
-      "description": "Cycle Support Claim Review is a common context for evaluating Dong Quai."
+      "title": "Formula Comparison",
+      "description": "Dong quai helps readers evaluate multi-herb women's wellness formulas more carefully."
     },
     {
       "icon": "check-circle",
-      "title": "Root Extract Awareness",
-      "description": "Root Extract Awareness is a common context for evaluating Dong Quai."
+      "title": "Safety Education",
+      "description": "The ingredient highlights why pregnancy, medication, and hormone-sensitive cautions matter."
     }
   ],
   "research_title": "Dong Quai Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Dong Quai focuses on traditional women's wellness botanical and safety education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Dong quai research includes traditional-use reviews, laboratory work on root constituents, and limited human studies. Evidence is not strong enough to use it as a stand-alone treatment for menstrual, menopausal, or hormone-related concerns.</p><p>Safety references emphasize caution with pregnancy, breastfeeding, anticoagulant medication, surgery timing, and hormone-sensitive conditions. Product quality and formula context also affect real-world use.</p>",
   "research_json": [
     {
       "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "title": "Evidence Varies by Extract",
+      "description": "Research findings depend on the exact species, preparation, dose, study design, and population being evaluated."
     },
     {
       "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "title": "Label Context Matters",
+      "description": "Supplement labels should be reviewed for active form, serving size, quality testing, and safety cautions before comparison."
     }
   ],
   "references_title": "Dong Quai References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Dong Quai Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "black-cohosh-root",
+    "evening-primrose-oil",
+    "ginger-root",
+    "ashwagandha"
+  ],
+  "seo_title": "Dong Quai Benefits, Uses, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "dong quai",
-  "seo_description": "Dong Quai guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about dong quai, Angelica sinensis root, traditional uses, dosage, side effects, interactions, and supplement label safety cautions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/dong-quai",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Dong Quai Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Dong Quai guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Dong Quai Benefits, Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about dong quai, Angelica sinensis root, traditional uses, dosage, side effects, interactions, and supplement label safety cautions."
 }

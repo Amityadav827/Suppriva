@@ -1,289 +1,274 @@
 {
   "name": "Elderberry Extract",
   "scientific_name": "Sambucus nigra",
-  "hero_badge": null,
-  "short_description": "Elderberry Extract is a polyphenol-rich berry extract used in wellness supplements for seasonal immune and antioxidant supplement education.",
-  "overview_title": "Elderberry Extract Overview",
-  "overview_subtitle": "A practical look at Elderberry Extract and how it appears in supplement formulas.",
-  "overview_content": "<p>Elderberry Extract is a polyphenol-rich berry extract associated with seasonal immune and antioxidant supplement education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Elderberry Extract depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Elderberry Extract is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Fruits & Botanicals",
+  "hero_badge": "Anthocyanin-Rich Berry",
+  "short_description": "Elderberry extract comes from Sambucus nigra berries and is used in seasonal wellness, antioxidant, syrup, gummy, and immune-support formulas.",
+  "overview_title": "What Is Elderberry Extract?",
+  "overview_subtitle": "A practical guide to elderberry supplements, anthocyanins, seasonal wellness claims, and preparation safety.",
+  "overview_content": "<p>Elderberry extract is made from the dark purple berries of Sambucus nigra, commonly known as European elder. It appears in syrups, gummies, capsules, lozenges, teas, powders, and seasonal immune-support formulas. Elderberry's deep color comes from anthocyanins and other polyphenols, which are part of why the ingredient is discussed in antioxidant and seasonal wellness contexts.</p><p>Elderberry is often marketed for immune support, especially during cold-weather seasons. The evidence is still evolving, and products vary widely by extract strength, berry preparation, added sugar, formula partners, and dosage. Elderberry should not be described as a cure, prevention guarantee, antiviral replacement, or substitute for medical care. It is best understood as a botanical ingredient that may support general wellness routines when used responsibly.</p><p>Preparation safety is one of the most important parts of elderberry education. NCCIH notes that raw or unripe elderberries and other parts of the elder tree, including leaves and stems, contain substances that can cause nausea, vomiting, and severe diarrhea. Proper cooking or processing is used to address this issue in commercial products. Consumers should not make assumptions about raw berries, homemade extracts, or improperly prepared plant material.</p><p>Elderberry products often combine the extract with vitamin C, zinc, echinacea, propolis, honey, or other seasonal ingredients. These combinations may be convenient, but they also introduce additional safety and dosage considerations. Gummies and syrups may contain added sugars, sweeteners, or flavoring agents, which matters for people monitoring carbohydrate intake or dental health.</p><p>The ingredient's antioxidant profile makes it useful for label education. Anthocyanins are plant pigments found in many dark-colored berries, including elderberry, blueberry, black currant, and acai. This does not mean all berry extracts are interchangeable. Each fruit extract has its own preparation method, concentration, taste, and supplement positioning.</p><p>People with autoimmune conditions, those using immune-suppressing medications, pregnant or breastfeeding individuals, and children should use elderberry only with appropriate guidance. People with severe symptoms, high fever, breathing difficulty, dehydration, or persistent illness should seek medical care rather than relying on supplements. Elderberry should also not be used as a replacement for vaccines, prescriptions, or clinician-directed treatment.</p><p>For Suppriva readers, elderberry is a helpful example of how a familiar fruit can become a concentrated supplement ingredient. Responsible comparison means checking the form, serving size, added sugar, standardization, formula partners, preparation quality, and safety warnings. A polished label should make these details easy to understand.</p><p>Elderberry also deserves extra attention because product formats can create different user experiences. A syrup may be soothing and easy to take but higher in sugar. A gummy may be convenient but easy to overuse. A capsule may reduce sugar exposure but depends heavily on extract quality. A tea may provide a gentler routine but can be harder to compare by dose. Matching the format to the user's health context is part of responsible supplement selection.</p><p>The best elderberry products make preparation and intended use clear. Look for ripe berry extract, serving instructions, added sweeteners, age guidance, and warnings for immune-related conditions. Avoid treating homemade raw-berry preparations as equivalent to properly processed commercial products. This distinction protects readers from confusing traditional food preparations with concentrated supplement use.</p>",
+  "interesting_fact_label": "Preparation Matters",
+  "interesting_fact": "<p>Proper preparation is important because raw or unripe elderberries and elder tree parts can cause significant digestive symptoms.</p>",
   "how_it_works_title": "How Elderberry Extract Works",
-  "how_it_works_subtitle": "How Elderberry Extract is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Seasonal Berry Support",
-  "how_it_works_highlight_description": "Elderberry Extract is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Elderberry Extract is commonly discussed through seasonal berry polyphenols and immune-support education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Elderberry Extract to a supplement routine.</p>",
-  "benefits_title": "Potential Elderberry Extract Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Elderberry Extract in supplement routines.",
+  "how_it_works_subtitle": "Elderberry is discussed for anthocyanins, antioxidant activity, and seasonal wellness formula context.",
+  "how_it_works_highlight_title": "Anthocyanin Seasonal Support",
+  "how_it_works_highlight_description": "Elderberry products are best compared by preparation quality, extract form, added sugar, dose, and formula partners.",
+  "how_it_works_content": "<p>Elderberry extract provides anthocyanins and other polyphenols that are studied for antioxidant activity and seasonal wellness context. These compounds do not make elderberry a treatment or guaranteed immune defense. They provide a nutritional and botanical basis for why elderberry appears in many seasonal formulas.</p><p>The product format matters. Syrups and gummies may be easy to use but can contain added sugar. Capsules and powders may be more concentrated but less transparent if extract strength is not stated. Teas may provide a milder preparation. The best choice depends on label clarity and personal health context.</p><p>Elderberry should be used with preparation and safety awareness. Commercial products should use properly processed berries, and users should avoid raw or unripe berries or homemade preparations that are not safely prepared.</p>",
+  "benefits_title": "Potential Benefits of Elderberry Extract",
+  "benefits_subtitle": "Educational benefits commonly discussed for elderberry in seasonal wellness and antioxidant supplement routines.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Seasonal Immune Context",
-      "description": "Seasonal Immune Context helps readers evaluate Elderberry Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
       "icon": "shield-check",
-      "title": "Anthocyanin Education",
-      "description": "Anthocyanin Education helps readers evaluate Elderberry Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "activity",
-      "title": "Syrup and Gummy Options",
-      "description": "Syrup and Gummy Options helps readers evaluate Elderberry Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Family Formula Label Review",
-      "description": "Family Formula Label Review helps readers evaluate Elderberry Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Antioxidant Support",
-      "description": "Antioxidant Support helps readers evaluate Elderberry Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Seasonal Wellness Support",
+      "description": "Elderberry is widely used in formulas designed around cold-weather and immune-support routines."
     },
     {
       "icon": "sparkles",
+      "title": "Anthocyanin Antioxidants",
+      "description": "Dark elderberries provide anthocyanins, plant pigments associated with antioxidant activity."
+    },
+    {
+      "icon": "leaf",
+      "title": "Botanical Fruit Extract",
+      "description": "Elderberry helps readers compare fruit-based extracts beyond standard vitamins and minerals."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Formula Label Education",
+      "description": "Elderberry products vary by syrup, gummy, capsule, lozenge, tea, and added-sugar content."
+    },
+    {
+      "icon": "activity",
+      "title": "Short-Term Routine Fit",
+      "description": "Many users consider elderberry during seasonal wellness periods rather than as a permanent supplement."
+    },
+    {
+      "icon": "shield-alert",
       "title": "Preparation Safety Awareness",
-      "description": "Preparation Safety Awareness helps readers evaluate Elderberry Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "description": "The ingredient teaches why raw plant parts and properly processed supplements should not be confused."
     }
   ],
   "dosage_title": "Typical Elderberry Extract Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Serving sizes vary by syrup, gummy, and extract concentration; label directions are essential.",
-  "dosage": "Serving sizes vary by syrup, gummy, and extract concentration; label directions are essential.",
-  "dosage_content": "<p>Serving sizes vary by syrup, gummy, and extract concentration; label directions are essential. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_subtitle": "Serving size varies by syrup, gummy, capsule, lozenge, powder, and extract concentration.",
+  "typical_dose": "Elderberry dosing is product-specific; follow the label and compare extract strength, serving size, and added ingredients.",
+  "dosage": "Elderberry dosing is product-specific; follow the label and compare extract strength, serving size, and added ingredients.",
+  "dosage_content": "<p>Elderberry dosage varies widely because products may be syrups, gummies, lozenges, capsules, powders, or teas. Some labels list elderberry fruit amount, while others list extract weight or a proprietary blend. These are not always comparable.</p><p>Follow the finished product label and avoid combining multiple elderberry products with overlapping immune blends. Children, pregnant or breastfeeding individuals, and people with medical conditions should use elderberry only with appropriate professional guidance.</p>",
   "safety_title": "Elderberry Extract Safety Information",
-  "safety_subtitle": "Raw or improperly prepared elderberry parts can be unsafe; use finished products from reputable sources.",
+  "safety_subtitle": "Use properly prepared products and avoid raw or unripe elderberries or other elder tree parts.",
   "side_effects": [
-    "Digestive upset",
-    "Allergic reactions",
-    "Raw berry safety concern",
-    "Medication caution for immune conditions"
+    "Digestive Upset",
+    "Raw Plant Risk",
+    "Sugar Content",
+    "Immune-System Caution"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    },
-    {
-      "icon": "activity",
-      "title": "Allergic reactions",
-      "description": "Allergic reactions may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Upset",
+      "description": "Nausea, vomiting, stomach cramps, or diarrhea may occur, especially with improper preparation."
     },
     {
       "icon": "alert-circle",
-      "title": "Raw berry safety concern",
-      "description": "Raw berry safety concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Medication caution for immune conditions",
-      "description": "Medication caution for immune conditions may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    }
-  ],
-  "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Elderberry Extract should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "title": "Raw Plant Risk",
+      "description": "Raw or unripe berries, leaves, stems, and bark can contain compounds that cause illness."
     },
     {
       "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Elderberry Extract as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "title": "Sugar Content",
+      "description": "Syrups and gummies may contain added sugars that matter for some users."
     },
     {
       "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Elderberry Extract with formulas that target the same pathway or contain similar active compounds."
+      "title": "Immune-System Caution",
+      "description": "Autoimmune conditions and immune-suppressing therapies should be discussed with a clinician."
     }
   ],
-  "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Elderberry Extract.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to european elderberry fruit.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Elderberry Extract to replace diagnosis, treatment, or prescribed care."
+  "drug_interactions_json": [
+    "Immunosuppressant medications should be reviewed before elderberry use.",
+    "Diabetes medications may require attention if elderberry syrups or gummies contain added sugars.",
+    "Diuretics or blood pressure medications should be discussed with a clinician if the user has complex medical needs.",
+    "Combining elderberry with multiple immune formulas can increase overlapping ingredient exposure."
   ],
-  "food_sources_title": "Elderberry Extract Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Cooked elderberries may be used in syrups, jams, and teas, while supplements use standardized extracts.</p>",
+  "who_should_avoid_json": [
+    "People consuming raw or unripe elderberries or homemade preparations that are not safely processed.",
+    "People with autoimmune conditions unless professionally advised.",
+    "People taking immune-suppressing medication without clinician approval.",
+    "Pregnant or breastfeeding individuals unless advised by a qualified professional.",
+    "Anyone using elderberry instead of medical evaluation for severe, persistent, or worsening symptoms."
+  ],
+  "food_sources_title": "Elderberry Food Sources",
+  "food_sources_subtitle": "Elderberries must be properly prepared before consumption.",
+  "food_sources_content": "<p>Elderberries may be used in cooked syrups, jams, teas, lozenges, and extracts. Raw or unripe elderberries and other elder plant parts should be avoided. Commercial supplements should be reviewed for preparation quality, serving size, and added sugar.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Cooked elderberries may be used in syrups",
-      "description": "Cooked elderberries may be used in syrups may help explain the dietary or source context for Elderberry Extract."
+      "icon": "cup-soda",
+      "title": "Cooked elderberry syrup",
+      "description": "Syrups are common but may contain sugar or other immune-support ingredients."
     },
     {
       "icon": "leaf",
-      "title": "jams",
-      "description": "jams may help explain the dietary or source context for Elderberry Extract."
+      "title": "Processed elderberry extract",
+      "description": "Extracts are used in capsules, lozenges, and gummies."
     },
     {
-      "icon": "leaf",
-      "title": "and teas",
-      "description": "and teas may help explain the dietary or source context for Elderberry Extract."
-    },
-    {
-      "icon": "leaf",
-      "title": "while supplements use standardized extracts",
-      "description": "while supplements use standardized extracts may help explain the dietary or source context for Elderberry Extract."
+      "icon": "sparkles",
+      "title": "Cooked elderberry foods",
+      "description": "Traditional preparations may include properly cooked jams or preserves."
     }
   ],
   "faq_title": "Elderberry Extract FAQs",
-  "faq_subtitle": "Common questions about Elderberry Extract, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Elderberry Extract, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Elderberry Extract?",
-      "answer": "Elderberry Extract is a polyphenol-rich berry extract used in supplements for seasonal immune and antioxidant supplement education."
+      "question": "What is elderberry extract?",
+      "answer": "Elderberry extract is made from Sambucus nigra berries and used in seasonal wellness and antioxidant formulas."
     },
     {
-      "question": "What is Elderberry Extract commonly used for?",
-      "answer": "It is commonly discussed for seasonal immune and antioxidant supplement education, but its role depends on the product formula, serving size, and user context."
+      "question": "What gives elderberry its color?",
+      "answer": "Elderberry's dark purple color comes from anthocyanins, a group of plant pigments with antioxidant activity."
     },
     {
-      "question": "How does Elderberry Extract work?",
-      "answer": "Elderberry Extract is usually evaluated through seasonal berry polyphenols and immune-support education, along with dose, quality, and safety considerations."
+      "question": "Can elderberry cure colds or flu?",
+      "answer": "No. Elderberry is not a cure, prevention guarantee, or replacement for medical care."
     },
     {
-      "question": "What is a typical Elderberry Extract dose?",
-      "answer": "Serving sizes vary by syrup, gummy, and extract concentration; label directions are essential."
+      "question": "Is raw elderberry safe?",
+      "answer": "Raw or unripe elderberries and other elder plant parts can cause nausea, vomiting, and diarrhea and should be avoided."
     },
     {
-      "question": "Is Elderberry Extract safe?",
-      "answer": "Elderberry Extract may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "What forms does elderberry come in?",
+      "answer": "Common forms include syrup, gummy, capsule, lozenge, tea, and powder."
     },
     {
-      "question": "Can Elderberry Extract cause side effects?",
-      "answer": "Possible side effects include digestive upset, allergic reactions, raw berry safety concern, especially when serving sizes are high or tolerance is low."
+      "question": "Can children take elderberry?",
+      "answer": "Children should use elderberry only according to age-appropriate product directions and professional guidance."
     },
     {
-      "question": "Can Elderberry Extract interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Elderberry Extract."
+      "question": "Does elderberry contain sugar?",
+      "answer": "Some syrups and gummies contain added sugars, so the full label should be reviewed."
     },
     {
-      "question": "Is Elderberry Extract found in foods?",
-      "answer": "Cooked elderberries may be used in syrups, jams, and teas, while supplements use standardized extracts."
+      "question": "Who should be cautious with elderberry?",
+      "answer": "People with autoimmune conditions, immune-suppressing medication, pregnancy, breastfeeding, or severe symptoms should seek guidance."
     },
     {
-      "question": "What should I look for on a Elderberry Extract label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "How should elderberry products be compared?",
+      "answer": "Compare extract form, serving size, preparation quality, added sugar, formula partners, and safety warnings."
     },
     {
-      "question": "Is Elderberry Extract a substitute for medical treatment?",
-      "answer": "No. Elderberry Extract is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Can elderberry replace vaccines or medication?",
+      "answer": "No. Elderberry should not replace vaccines, prescriptions, or clinician-directed treatment."
     }
   ],
   "sidebar_profile_title": "Elderberry Extract Profile Snapshot",
-  "sidebar_profile_content": "<p>Elderberry Extract is categorized as a polyphenol-rich berry extract and is most often reviewed for seasonal immune and antioxidant supplement education.</p>",
+  "sidebar_profile_content": "<p>Elderberry extract is an anthocyanin-rich Sambucus nigra berry ingredient used in seasonal wellness formulas. Preparation quality and raw-plant safety are central.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Polyphenol-rich berry extract",
-      "icon": "flask-conical"
+      "value": "Berry extract",
+      "icon": "sparkles"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary by syrup, gummy, and extract concentration; label directions are essential.",
+      "value": "Product-specific syrup or extract dose",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Seasonal immune and antioxidant supplement education",
+      "value": "Seasonal wellness education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Use properly prepared products",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "European elderberry fruit",
+      "value": "Sambucus nigra berries",
       "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Berry",
+      "value": "Ripe berry",
       "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Syrup, gummy, capsule, lozenge, extract",
+      "value": "Syrup, gummy, capsule, lozenge, or tea",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Tart and berry-like",
+      "value": "Tart, berry-like, mildly sweet",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Elderberry Extract is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Elderberry Extract is reviewed by Suppriva as a polyphenol-rich berry extract for seasonal immune and antioxidant supplement education.",
-  "best_for": "Seasonal immune and antioxidant supplement education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "European elderberry fruit",
-  "part_used": "Berry",
-  "ingredient_form": "Syrup, gummy, capsule, lozenge, extract",
-  "taste_profile": "Tart and berry-like",
+  "sidebar_at_a_glance_content": "<p>Elderberry is best compared by extract form, preparation quality, serving size, sugar content, and formula partners. Avoid raw plant parts and do not use it as medical treatment.</p>",
+  "full_description": "Elderberry extract is a Sambucus nigra berry ingredient used in seasonal wellness and antioxidant supplement education.",
+  "best_for": "Seasonal wellness, antioxidant education, and fruit-based supplement comparison",
+  "safety_level": "Use properly prepared products; review immune status and added sugar",
+  "origin_country": "European elder berry",
+  "part_used": "Ripe berry",
+  "ingredient_form": "Syrup, gummy, lozenge, capsule, tea, or powder",
+  "taste_profile": "Tart berry flavor",
   "rating": 4.6,
-  "evidence_level": "Moderate",
+  "evidence_level": "Emerging",
   "uses_title": "Elderberry Extract Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Elderberry Extract may appear in formulas related to seasonal immune and antioxidant supplement education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Elderberry Extract may appear in formulas related to seasonal wellness, antioxidant education, and fruit-based supplement comparison. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Seasonal Immune Context",
-      "description": "Seasonal Immune Context is a common context for evaluating Elderberry Extract."
+      "title": "Seasonal Wellness",
+      "description": "Used in many cold-weather immune-support formulas."
     },
     {
       "icon": "check-circle",
-      "title": "Anthocyanin Education",
-      "description": "Anthocyanin Education is a common context for evaluating Elderberry Extract."
+      "title": "Antioxidant Education",
+      "description": "Anthocyanin content helps explain its dark berry profile."
     },
     {
       "icon": "check-circle",
-      "title": "Syrup and Gummy Options",
-      "description": "Syrup and Gummy Options is a common context for evaluating Elderberry Extract."
+      "title": "Fruit Extract Comparison",
+      "description": "Useful for comparing berry-based supplement ingredients."
     },
     {
       "icon": "check-circle",
-      "title": "Family Formula Label Review",
-      "description": "Family Formula Label Review is a common context for evaluating Elderberry Extract."
+      "title": "Preparation Safety",
+      "description": "Highlights why proper processing and raw-plant cautions matter."
     }
   ],
   "research_title": "Elderberry Extract Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Elderberry Extract focuses on seasonal berry polyphenols and immune-support education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Elderberry research focuses on seasonal wellness, antioxidant compounds, and product-specific preparations. Evidence differs by extract type, dose, and study population.</p><p>Safety guidance emphasizes avoiding raw or unripe berries and other elder tree parts because improperly prepared material can cause significant digestive symptoms.</p>",
   "research_json": [
     {
       "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "title": "Evidence Varies by Extract",
+      "description": "Research findings depend on the exact species, preparation, dose, study design, and population being evaluated."
     },
     {
       "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "title": "Label Context Matters",
+      "description": "Supplement labels should be reviewed for active form, serving size, quality testing, and safety cautions before comparison."
     }
   ],
   "references_title": "Elderberry Extract References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Elderberry Extract Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "echinacea-extract",
+    "vitamin-c",
+    "zinc",
+    "black-currant-extract"
+  ],
+  "seo_title": "Elderberry Extract Benefits, Uses, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "elderberry extract",
-  "seo_description": "Elderberry Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about elderberry extract, Sambucus nigra, anthocyanins, seasonal wellness use, dosage, side effects, raw berry safety, and label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/elderberry-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Elderberry Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Elderberry Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Elderberry Extract Benefits, Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about elderberry extract, Sambucus nigra, anthocyanins, seasonal wellness use, dosage, side effects, raw berry safety, and label tips."
 }

@@ -1,217 +1,274 @@
 {
   "name": "Dual-Strain L. Plantarum Complex",
-  "scientific_name": "Lactobacillus plantarum dual-strain complex",
+  "scientific_name": "Lactiplantibacillus plantarum dual-strain complex",
   "ingredient_category": "Probiotics",
-  "hero_badge": null,
-  "short_description": "Dual-Strain L. Plantarum Complex is a probiotic label term for formulas that combine two Lactobacillus plantarum strains for digestive, oral, and microbiome-focused supplement positioning.",
-  "overview_title": "Dual-Strain L. Plantarum Complex Overview",
-  "overview_subtitle": "A guide to evaluating dual-strain Lactobacillus plantarum probiotic formulas.",
-  "overview_content": "<p>Dual-Strain L. Plantarum Complex refers to a probiotic ingredient format built around two Lactobacillus plantarum strains. In supplement labels, this kind of term is usually used to highlight strain diversity, microbiome support, and formula design.</p><p>Lactobacillus plantarum is a widely studied probiotic species found in fermented foods and dietary supplements. However, probiotic benefits are strain-specific, which means a product should ideally identify the strain codes, colony-forming units, storage requirements, and intended use.</p><p>This profile is educational and should not be used as medical advice. Probiotic supplements are not substitutes for diagnosis, treatment, or professional care for digestive, immune, dental, or metabolic conditions.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Lactobacillus plantarum is known for its ability to survive in varied environments, which is one reason it appears in fermented foods and many probiotic supplement formulas.</p>",
+  "hero_badge": "Product-Label Probiotic Complex",
+  "short_description": "Dual-Strain L. Plantarum Complex is a product-label probiotic term for two Lactiplantibacillus plantarum strains used in microbiome support formulas.",
+  "overview_title": "What Is Dual-Strain L. Plantarum Complex?",
+  "overview_subtitle": "A label-focused guide to L. plantarum strain blends, probiotic comparison, and safety context.",
+  "overview_content": "<p>Dual-Strain L. Plantarum Complex is a product-label ingredient name used to describe a formula that contains two strains of Lactiplantibacillus plantarum, formerly commonly written as Lactobacillus plantarum. This type of label language appears in probiotic supplements, oral wellness formulas, digestive health products, and microbiome-focused blends. The word complex is important because it tells the reader that the ingredient is not a single generic compound; it is a strain-based probiotic blend that should be evaluated by strain identity, CFU amount, delivery format, and product quality.</p><p>L. plantarum is a lactic acid-producing bacterium found in fermented foods and studied in digestive and microbiome research. Different strains can behave differently, so two products that both list L. plantarum may not be equivalent. A transparent label should ideally identify the strain codes, colony-forming units at expiration, storage instructions, and whether the product has been tested for stability. If a label only says dual-strain complex without naming the strains, readers should treat the claim as less specific.</p><p>Probiotic complexes are often marketed around gut balance, oral microbiome support, breath freshness, digestive comfort, immune-environment support, and post-antibiotic routine context. These claims should be interpreted carefully. Probiotics are not antibiotics, disease treatments, or substitutes for dental care, medical care, or a clinician-guided plan. Their usefulness depends on strain selection, dose, survival through storage and digestion, and the user's health status.</p><p>For product comparison, CFU count should not be the only deciding factor. A very high CFU number is not automatically better if strain identity, quality testing, expiration dating, and intended use are unclear. Some formulas use shelf-stable capsules; others use chewables, lozenges, powders, or oral-care delivery formats. The delivery system can matter because oral and gut microbiome products may have different goals.</p><p>Safety is generally favorable for many healthy adults, but probiotics are not appropriate for everyone. People who are severely immunocompromised, critically ill, have central venous catheters, recent major surgery, serious heart-valve conditions, or complex medical situations should consult a clinician before use. Mild gas, bloating, or digestive changes can occur when starting a probiotic.</p><p>The dual-strain label also matters for shoppers comparing product-label ingredients. It may not need to replace a broader Lactiplantibacillus plantarum educational page, but it deserves a separate dashboard record when products list it exactly. This helps Suppriva connect supplement labels to ingredient education without creating duplicate claims or confusing the user.</p><p>Suppriva reviews Dual-Strain L. Plantarum Complex as a label-specific probiotic ingredient. The best reader approach is to check whether strains are named, verify CFU details, review storage instructions, avoid using probiotics as medical treatment, and ask a professional when immune status or serious illness is involved.</p><p>This ingredient also shows why product-label precision matters. If a label names the strain codes, explains the two-strain blend, and guarantees CFU through expiration, shoppers can make a more informed comparison. If the label only uses broad probiotic language, the user may not know whether the formula is designed for oral wellness, digestive support, or general microbiome positioning. Suppriva treats the exact label name as useful for product matching while still encouraging readers to compare it with the broader L. plantarum education page.</p>",
+  "interesting_fact_label": "Strain-Specific Insight",
+  "interesting_fact": "<p>In probiotics, the strain can matter as much as the species. Two L. plantarum products may differ if they use different strain codes or stability systems.</p>",
   "how_it_works_title": "How Dual-Strain L. Plantarum Complex Works",
-  "how_it_works_subtitle": "Strain identity, CFU count, and product handling determine practical value.",
-  "how_it_works_highlight_title": "Strain details are essential",
-  "how_it_works_highlight_description": "A dual-strain claim is most useful when the label discloses each strain, CFU amount, expiration dating, and storage guidance.",
-  "how_it_works_content": "<p>Dual-Strain L. Plantarum Complex is typically positioned to support the microbiome by delivering two Lactobacillus plantarum strains in one formula. Depending on the specific strains, products may be marketed for digestive comfort, oral wellness, immune support, or daily gut balance.</p><p>Probiotics work by interacting with the existing microbiome and the gut environment. Their usefulness depends on strain selection, survivability, dose, manufacturing quality, and whether the product is taken consistently as directed.</p><p>When comparing products, prioritize labels that identify strain codes, CFU count through expiration, storage conditions, and whether the product has been tested for purity and viability.</p>",
-  "benefits_title": "Potential Dual-Strain L. Plantarum Complex Benefits",
-  "benefits_subtitle": "Benefits depend on the exact strains, CFU count, and full formula.",
+  "how_it_works_subtitle": "This complex is evaluated through strain identity, CFU stability, delivery format, and microbiome-support context.",
+  "how_it_works_highlight_title": "Two-Strain Probiotic Label",
+  "how_it_works_highlight_description": "The strongest labels identify strains, CFU at expiration, storage needs, and intended microbiome use.",
+  "how_it_works_content": "<p>L. plantarum strains are lactic acid-producing bacteria that may interact with the microbiome environment by competing for space, producing fermentation byproducts, and supporting microbial balance. The exact effect depends on the strain and product format. A dual-strain complex may be designed to combine two complementary L. plantarum strains, but the benefit of that design should be supported by transparent labeling.</p><p>For digestive formulas, the goal is usually to deliver viable organisms through storage and use. For oral wellness formulas, the product may be designed as a lozenge, chewable, or capsule intended to support oral microbial balance. These different goals should not be mixed together without reviewing the product instructions.</p><p>Probiotic effects are usually gradual and context-dependent. Diet, oral hygiene, recent antibiotic use, stress, digestive history, and immune status can all influence user experience. Probiotics should be used as wellness education and routine support, not as a replacement for medical or dental care.</p>",
+  "benefits_title": "Potential Benefits of Dual-Strain L. Plantarum Complex",
+  "benefits_subtitle": "Educational benefits commonly discussed for L. plantarum strain blends in microbiome-focused formulas.",
   "benefits_json": [
     {
-      "icon": "activity",
+      "icon": "shield-check",
       "title": "Microbiome Support",
-      "description": "Dual-strain L. plantarum formulas are commonly positioned to support a balanced gut microbiome as part of a daily wellness routine."
+      "description": "L. plantarum strains are commonly used in formulas designed around gut or oral microbial balance."
     },
     {
-      "icon": "shield-check",
-      "title": "Digestive Routine Fit",
-      "description": "Some formulas use L. plantarum strains in digestive comfort products, though results depend on the strains and user context."
+      "icon": "activity",
+      "title": "Digestive Routine Context",
+      "description": "Some products position L. plantarum as part of digestive comfort and daily microbiome support routines."
     },
     {
       "icon": "sparkles",
-      "title": "Formula Diversity",
-      "description": "Using two strains may broaden formula positioning, but each strain should still be disclosed and evaluated individually."
+      "title": "Oral Wellness Formulas",
+      "description": "Dual-strain complexes may appear in breath, gum, or oral microbiome products depending on delivery format."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "A clear label helps shoppers compare strain codes, CFU count, storage needs, and expiration-based potency."
+      "icon": "clipboard-check",
+      "title": "Strain Label Education",
+      "description": "This ingredient helps readers understand why species names, strain codes, CFU, and stability details matter."
     },
     {
       "icon": "leaf",
-      "title": "Fermented Food Context",
-      "description": "L. plantarum is associated with fermented food environments, which helps explain why it appears in gut-focused supplements."
+      "title": "Fermented-Food Connection",
+      "description": "L. plantarum is associated with fermentation, though food exposure and supplement dosing are not identical."
     },
     {
-      "icon": "heart",
-      "title": "Safety Awareness",
-      "description": "Probiotic use should be reviewed carefully by people with immune compromise, serious illness, or complex medication routines."
+      "icon": "heart-pulse",
+      "title": "Routine-Friendly Format",
+      "description": "Probiotic blends can be compared by capsule, lozenge, chewable, or powder format and storage requirements."
     }
   ],
   "dosage_title": "Typical Dual-Strain L. Plantarum Complex Dosage",
-  "dosage_subtitle": "Use CFU count and label directions as the practical dose guide.",
-  "typical_dose": "Follow label directions; probiotic doses are usually expressed in CFU per serving.",
-  "dosage": "Take according to the product label and avoid stacking multiple probiotic formulas unless a healthcare professional has reviewed your routine.",
-  "dosage_content": "<p>There is no universal dose for Dual-Strain L. Plantarum Complex because the effective serving depends on strain identity, CFU count, product format, and expiration dating. A product should state whether CFU count is guaranteed at manufacture or through expiration.</p><p>Some probiotics are taken with food, while others may be used at a different time depending on product instructions. Follow the label and consult a clinician if you are immunocompromised, taking medication, pregnant, nursing, or managing a diagnosed condition.</p>",
+  "dosage_subtitle": "Serving size should be judged by CFU, strain identity, expiration dating, and product instructions.",
+  "typical_dose": "Probiotic products vary widely, often listing millions to billions of CFU per serving; follow the finished product label.",
+  "dosage": "Probiotic products vary widely, often listing millions to billions of CFU per serving; follow the finished product label.",
+  "dosage_content": "<p>Dual-Strain L. Plantarum Complex dosage should be based on the product's CFU statement, strain information, storage instructions, and suggested use. Some labels list CFU at manufacture, while stronger labels list CFU through expiration. That distinction matters because probiotics must remain viable to match label expectations.</p><p>Do not combine multiple probiotic products simply to increase CFU count. If antibiotics, immune compromise, serious illness, or digestive disease is involved, ask a qualified healthcare professional before use. If a product causes persistent discomfort, stop and seek guidance.</p>",
   "safety_title": "Dual-Strain L. Plantarum Complex Safety Information",
-  "safety_subtitle": "Most healthy adults tolerate probiotics well, but some users need extra caution.",
+  "safety_subtitle": "Probiotics are often well tolerated by healthy adults, but immune status and serious medical conditions matter.",
   "side_effects": [
-    "Gas or bloating",
-    "Digestive changes",
-    "Temporary discomfort",
-    "Sensitivity reaction"
+    "Temporary Gas or Bloating",
+    "Bowel Habit Changes",
+    "Allergy or Excipient Sensitivity",
+    "Rare Infection Risk"
   ],
   "side_effects_json": [
     {
-      "title": "Gas or Bloating",
-      "description": "Probiotics may cause temporary gas, bloating, or digestive adjustment when first introduced."
+      "icon": "stomach",
+      "title": "Temporary Gas or Bloating",
+      "description": "Some users notice gas, bloating, or digestive changes when starting a probiotic."
     },
     {
-      "title": "Digestive Changes",
-      "description": "Changes in bowel habits can occur depending on the formula, dose, diet, and individual microbiome."
+      "icon": "activity",
+      "title": "Bowel Habit Changes",
+      "description": "Stool pattern changes may occur as the digestive routine adjusts."
     },
     {
-      "title": "Sensitivity Reaction",
-      "description": "Review capsule materials, prebiotics, dairy traces, and allergen statements if you have sensitivities."
+      "icon": "alert-circle",
+      "title": "Allergy or Excipient Sensitivity",
+      "description": "Capsule materials, sweeteners, flavors, or other ingredients may bother sensitive users."
     },
     {
-      "title": "Immune Considerations",
-      "description": "People with severe immune compromise or serious illness should use probiotics only with clinician guidance."
+      "icon": "shield-alert",
+      "title": "Rare Infection Risk",
+      "description": "People who are severely immunocompromised or critically ill need clinician guidance before probiotics."
     }
   ],
   "drug_interactions_json": [
-    "Ask a healthcare professional before use if you are immunocompromised or have a central venous catheter.",
-    "Review timing with antibiotics because some probiotic labels recommend spacing doses apart.",
-    "Use caution with serious gastrointestinal illness or recent surgery.",
-    "Discuss use during pregnancy or nursing with a qualified clinician."
+    "Antibiotics may reduce probiotic viability if taken at the same time; spacing should follow clinician or label guidance.",
+    "Immunosuppressive therapies require professional review before probiotic use.",
+    "Antifungal or antimicrobial regimens may affect probiotic timing and suitability.",
+    "Critical illness, central venous catheters, or recent major surgery require clinician oversight before probiotic supplements."
   ],
   "who_should_avoid_json": [
-    "People with severe immune compromise unless medically supervised.",
-    "People with serious illness or recent major surgery without professional guidance.",
-    "People with known allergy to product excipients or fermentation media.",
-    "Children unless the product is age-appropriate and professionally recommended.",
-    "People with persistent digestive symptoms that need medical evaluation."
+    "Severely immunocompromised individuals unless cleared by a clinician.",
+    "Critically ill people or those with central venous catheters unless medically supervised.",
+    "People with serious infections or unexplained fever who have not been evaluated.",
+    "Anyone with known sensitivity to formula excipients, flavors, or sweeteners.",
+    "People using probiotics instead of medical or dental treatment."
   ],
-  "food_sources_title": "Lactobacillus Plantarum Food Sources",
-  "food_sources_subtitle": "Fermented foods may contain related species, but supplement strains are product-specific.",
-  "food_sources_content": "<p>Lactobacillus plantarum has been associated with fermented vegetables, sauerkraut, kimchi, sourdough environments, and other fermented foods. Food exposure is not the same as a defined dual-strain supplement.</p>",
+  "food_sources_title": "L. Plantarum Food Sources",
+  "food_sources_subtitle": "Related Lactiplantibacillus plantarum strains may occur in fermented foods, but supplement strains are product-specific.",
+  "food_sources_content": "<p>L. plantarum has been associated with fermented foods such as sauerkraut, kimchi, fermented vegetables, sourdough environments, and some cultured foods. However, food strains, supplement strains, and product-label complexes are not interchangeable. A dual-strain supplement should be evaluated by its own label.</p>",
   "food_sources_json": [
     {
-      "title": "Fermented Vegetables",
-      "description": "Sauerkraut, kimchi, and other fermented vegetables may contain L. plantarum-related microbes depending on preparation."
+      "icon": "leaf",
+      "title": "Fermented vegetables",
+      "description": "Foods like sauerkraut and kimchi may contain lactic acid bacteria depending on preparation."
     },
     {
-      "title": "Supplement Forms",
-      "description": "Dual-strain complexes are usually sold as capsules, chewables, powders, or oral-care formulas."
+      "icon": "leaf",
+      "title": "Cultured foods",
+      "description": "Some cultured foods may contain related organisms, though strain identity varies."
     },
     {
-      "title": "Strain Specificity",
-      "description": "A food source does not guarantee the same strain or dose listed on a supplement label."
+      "icon": "pill",
+      "title": "Probiotic supplements",
+      "description": "Supplements can list strain blends, CFU amounts, and delivery formats."
     }
   ],
   "faq_title": "Dual-Strain L. Plantarum Complex FAQs",
-  "faq_subtitle": "Common questions about dual-strain Lactobacillus plantarum supplements.",
+  "faq_subtitle": "Common questions about Dual-Strain L. Plantarum Complex, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What does Dual-Strain L. Plantarum Complex mean?",
-      "answer": "It means the product uses two strains of Lactobacillus plantarum. The label should ideally identify the strain codes and CFU count for each serving."
+      "question": "What is Dual-Strain L. Plantarum Complex?",
+      "answer": "It is a product-label term for a probiotic complex containing two Lactiplantibacillus plantarum strains."
     },
     {
       "question": "Is it the same as Lactobacillus plantarum?",
-      "answer": "It is related, but more specific. Lactobacillus plantarum is the species, while a dual-strain complex refers to a product formula using two strains from that species."
+      "answer": "It is related, but the term dual-strain complex refers to a specific blend rather than a generic species listing."
     },
     {
-      "question": "Why do probiotic strain codes matter?",
-      "answer": "Probiotic effects are strain-specific, so strain codes help determine whether research or quality claims apply to the exact ingredient used."
+      "question": "Why do probiotic strains matter?",
+      "answer": "Different strains can have different properties, so strain codes and CFU details improve label transparency."
     },
     {
-      "question": "What is CFU?",
-      "answer": "CFU stands for colony-forming units, a measure used to describe viable probiotic organisms in a serving."
+      "question": "What does CFU mean?",
+      "answer": "CFU stands for colony-forming units, a measure used to describe viable probiotic organisms."
     },
     {
-      "question": "Can it support digestion?",
-      "answer": "Many L. plantarum formulas are positioned for digestive support, but practical results depend on strain identity, dose, product quality, and individual factors."
+      "question": "Is a higher CFU always better?",
+      "answer": "No. Strain identity, viability through expiration, storage, and product purpose also matter."
     },
     {
-      "question": "Should it be refrigerated?",
-      "answer": "Storage depends on the product. Follow the label because some probiotics are shelf-stable while others require refrigeration."
+      "question": "Can this replace medical care?",
+      "answer": "No. Probiotics are not replacements for medical, dental, or antimicrobial treatment."
+    },
+    {
+      "question": "What side effects can occur?",
+      "answer": "Temporary gas, bloating, stool changes, or sensitivity to other formula ingredients may occur."
+    },
+    {
+      "question": "Who should be cautious with probiotics?",
+      "answer": "People who are severely immunocompromised, critically ill, or medically complex should seek professional guidance."
     },
     {
       "question": "Can I take it with antibiotics?",
-      "answer": "Ask your healthcare professional. Some probiotic labels recommend spacing probiotics and antibiotics apart."
+      "answer": "Many people separate probiotics from antibiotics, but timing should follow the label or clinician guidance."
     },
     {
-      "question": "Is it safe for daily use?",
-      "answer": "Many healthy adults tolerate probiotics well, but people with immune compromise, serious illness, or complex medical situations should seek professional advice."
-    },
-    {
-      "question": "How long does it take to notice effects?",
-      "answer": "Timing varies by strain, product, diet, and personal microbiome. Use the product as directed and evaluate changes realistically."
-    },
-    {
-      "question": "Can children use it?",
-      "answer": "Children should use only age-appropriate probiotic products with guidance from a qualified healthcare professional."
+      "question": "How should I compare products?",
+      "answer": "Look for strain names, CFU at expiration, storage instructions, delivery format, and quality testing."
     }
   ],
-  "sidebar_profile_title": "Profile Snapshot",
-  "sidebar_profile_content": "<p>Dual-Strain L. Plantarum Complex is a probiotic formula term best evaluated by strain disclosure, CFU count, expiration potency, storage instructions, and intended use.</p>",
+  "sidebar_profile_title": "Dual-Strain L. Plantarum Complex Profile Snapshot",
+  "sidebar_profile_content": "<p>Dual-Strain L. Plantarum Complex is a label-specific probiotic blend. It should be compared by strain transparency, CFU, delivery format, and immune-status cautions.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Probiotic Complex"
+      "value": "Probiotic strain complex",
+      "icon": "shield-check"
     },
     {
-      "label": "Species",
-      "value": "L. plantarum"
+      "label": "Typical Dose",
+      "value": "Product-specific CFU",
+      "icon": "clipboard-check"
     },
     {
-      "label": "Category",
-      "value": "Probiotics"
-    },
-    {
-      "label": "Dose Unit",
-      "value": "CFU"
-    },
-    {
-      "label": "Common Use",
-      "value": "Gut Support"
-    },
-    {
-      "label": "Key Check",
-      "value": "Strain Codes"
-    },
-    {
-      "label": "Storage",
-      "value": "Label Specific"
+      "label": "Best For",
+      "value": "Microbiome label education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Generally Tolerated"
+      "value": "Review immune status",
+      "icon": "shield-check"
+    },
+    {
+      "label": "Origin",
+      "value": "Lactic acid bacteria",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Live probiotic strains",
+      "icon": "leaf"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, lozenge, chewable, or powder",
+      "icon": "pill"
+    },
+    {
+      "label": "Taste",
+      "value": "Formula-dependent",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Dual-Strain L. Plantarum Complex is most useful when the product clearly discloses strain codes, CFU count, storage guidance, and expiration-based potency.</p>",
-  "related_ingredients_json": [
+  "sidebar_at_a_glance_content": "<p>This ingredient is best judged by named strains, CFU through expiration, storage requirements, delivery format, and whether the product is intended for gut or oral microbiome support.</p>",
+  "full_description": "Dual-Strain L. Plantarum Complex is a product-label probiotic blend used in microbiome support supplement education.",
+  "best_for": "Microbiome support, probiotic label comparison, and oral or digestive wellness routines",
+  "safety_level": "Generally well tolerated for healthy adults; clinician review for immune compromise",
+  "origin_country": "Probiotic fermentation and strain culture",
+  "part_used": "Live probiotic strains",
+  "ingredient_form": "Capsule, chewable, lozenge, or powder",
+  "taste_profile": "Neutral to formula-dependent",
+  "rating": 4.5,
+  "evidence_level": "Strain-dependent",
+  "uses_title": "Dual-Strain L. Plantarum Complex Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Dual-Strain L. Plantarum Complex may appear in formulas related to microbiome support, probiotic label comparison, and oral or digestive wellness routines. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
+  "uses_json": [
     {
-      "slug": "lactobacillus-plantarum",
-      "label": "Lactobacillus Plantarum"
+      "icon": "check-circle",
+      "title": "Microbiome Support",
+      "description": "Used in formulas designed to support gut or oral microbial balance."
     },
     {
-      "slug": "probiotics",
-      "label": "Probiotics"
+      "icon": "check-circle",
+      "title": "Probiotic Education",
+      "description": "Helpful for comparing strain names, CFU, and storage claims."
     },
     {
-      "slug": "lactobacillus-rhamnosus",
-      "label": "Lactobacillus Rhamnosus"
+      "icon": "check-circle",
+      "title": "Digestive Routine Context",
+      "description": "May appear in digestive wellness formulas when product format is appropriate."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Oral Wellness Context",
+      "description": "Some delivery formats may be positioned for oral microbiome support."
     }
+  ],
+  "research_title": "Dual-Strain L. Plantarum Complex Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>L. plantarum research is strain-specific. Some strains have been studied in digestive, immune-environment, and microbiome contexts, but results should not be generalized to every product using the species name.</p><p>A dual-strain complex should be evaluated based on whether the strains are identified, whether CFU is guaranteed through expiration, and whether the product format supports the intended use.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Varies by Extract",
+      "description": "Research findings depend on the exact species, preparation, dose, study design, and population being evaluated."
+    },
+    {
+      "icon": "search",
+      "title": "Label Context Matters",
+      "description": "Supplement labels should be reviewed for active form, serving size, quality testing, and safety cautions before comparison."
+    }
+  ],
+  "references_title": "Dual-Strain L. Plantarum Complex References",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
+  "references_json": [],
+  "related_ingredients_json": [
+    "lactobacillus-plantarum",
+    "lactobacillus-salivarius",
+    "lactobacillus-rhamnosus",
+    "probiotics"
   ],
   "seo_title": "Dual-Strain L. Plantarum Complex Benefits and Safety | Suppriva",
-  "seo_description": "Learn how Dual-Strain L. Plantarum Complex is used in probiotic supplements, what CFU and strain details mean, and how to compare labels safely.",
-  "seo_focus_keyword": "Dual-Strain L. Plantarum Complex",
+  "seo_focus_keyword": "dual-strain l plantarum complex",
+  "seo_description": "Learn about Dual-Strain L. Plantarum Complex, probiotic strain labels, CFU, benefits, dosage, side effects, and safety cautions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/dual-strain-l-plantarum-complex",
-  "seo_og_title": "Dual-Strain L. Plantarum Complex Guide",
-  "seo_og_description": "A Suppriva guide to Dual-Strain L. Plantarum Complex, probiotic label quality, CFU counts, strain disclosure, benefits, and safety.",
-  "meta_title": "Dual-Strain L. Plantarum Complex Benefits and Safety | Suppriva",
-  "meta_description": "Learn how Dual-Strain L. Plantarum Complex is used in probiotic supplements, what CFU and strain details mean, and how to compare labels safely.",
   "seo_noindex": false,
-  "seo_nofollow": false
+  "seo_nofollow": false,
+  "meta_title": "Dual-Strain L. Plantarum Complex Benefits and Safety | Suppriva",
+  "meta_description": "Learn about Dual-Strain L. Plantarum Complex, probiotic strain labels, CFU, benefits, dosage, side effects, and safety cautions."
 }
