@@ -1,223 +1,278 @@
 {
   "name": "Chaga Mushroom Extract",
   "scientific_name": "Inonotus obliquus",
-  "hero_badge": null,
-  "short_description": "Chaga mushroom extract is a functional mushroom ingredient used in immune, antioxidant, and daily wellness supplement formulas.",
-  "overview_title": "Chaga Mushroom Extract Overview",
-  "overview_subtitle": "A practical look at chaga mushroom extract and how it appears in supplement labels.",
-  "overview_content": "<p>Chaga, Inonotus obliquus, is a fungus that grows on birch trees in cold climates. Supplements often position chaga around immune wellness, antioxidant support, and functional mushroom routines. Quality varies by extraction method, beta-glucan disclosure, sourcing, and testing for contaminants or heavy metals.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Chaga grows as a dark, charcoal-like mass on birch trees, but supplement extracts require careful processing and testing.</p>",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "Chaga Mushroom Extract is a functional mushroom ingredient used for antioxidant support, immune-season wellness, and mushroom blend formulas.",
+  "overview_title": "What Is Chaga Mushroom Extract?",
+  "overview_subtitle": "A dark functional mushroom extract known for antioxidant compounds and traditional wellness use.",
+  "overview_content": "<p>Chaga Mushroom Extract comes from Inonotus obliquus, a fungus that grows primarily on birch trees in cold northern climates. It has a dark, charcoal-like exterior and has been used traditionally in teas and decoctions. Modern supplements usually provide chaga as a powder, capsule, or extract, often as part of a functional mushroom blend with reishi, turkey tail, shiitake, maitake, cordyceps, or lion's mane.</p>\n\n<p>Chaga is most often discussed for antioxidant support. It contains polyphenols and other compounds that contribute to its dark color and wellness reputation. Some products also highlight beta-glucans or polysaccharides, although the exact composition depends heavily on sourcing, extraction method, and whether the product uses fruiting body, mycelium, or a blend. Consumers should read labels carefully because mushroom products vary widely.</p>\n\n<p>Chaga is not a stimulant, vitamin, mineral, or probiotic. It is a functional mushroom ingredient, which means it is usually included for broad wellness positioning rather than a single nutrient target. It may appear in daily wellness powders, immune-season blends, coffee alternatives, antioxidant products, and adaptogen-style formulas. Its earthy flavor also makes it popular in drink mixes.</p>\n\n<p>Safety deserves special attention. Chaga may be high in oxalates, which is relevant for people with kidney disease, kidney stone history, or oxalate-sensitive conditions. It may also interact with blood thinners, diabetes medication, immune-suppressing drugs, or medication that affects bleeding or blood sugar. People with autoimmune conditions should ask a clinician before using mushroom extracts.</p>\n\n<p>Because functional mushroom marketing can be exaggerated, chaga should be described carefully. It should not be presented as a cancer treatment, immune cure, detox product, or replacement for medical care. Its responsible role is antioxidant and general wellness support, with clear attention to sourcing and safety.</p>\n\n<p>Chaga pairs naturally with other mushroom ingredients, but stacking many mushroom extracts can make it harder to identify tolerance issues. Users should start with label directions and avoid combining multiple products that contain chaga. Anyone with chronic illness, medication use, kidney concerns, or upcoming surgery should seek professional guidance.</p>\n\n<p>For Suppriva readers, Chaga Mushroom Extract is a useful ingredient to compare within the functional mushroom category. The most important decision points are extract quality, part used, beta-glucan or polysaccharide disclosure, oxalate caution, and medication context. A good product should be transparent and avoid overpromising.</p>\n\n<p>Chaga also raises an important sourcing question. Wild-harvested mushroom ingredients can vary by region, host tree, harvesting method, and testing standards. Consumers should favor brands that test for heavy metals, microbial contamination, and identity, especially when the ingredient is used daily in powders or beverages.</p>\n\n<p>Another practical point is that mushroom blends can overlap. A person may take a mushroom coffee in the morning and a separate immune blend later in the day without realizing both contain chaga. Reviewing all supplement labels together helps prevent accidental stacking and makes it easier to identify which ingredient is helping or causing side effects.</p>\n\n<p>A cautious approach is especially important because antioxidant-focused ingredients are often used long term, making quality testing and personal health context more important than trend appeal.</p>",
+  "interesting_fact_label": "Birch-Associated Mushroom",
+  "interesting_fact": "<p>Chaga commonly grows on birch trees in colder climates, and its hard dark exterior is very different from the familiar cap-and-stem mushrooms many people imagine.</p>",
   "how_it_works_title": "How Chaga Mushroom Extract Works",
-  "how_it_works_subtitle": "How chaga mushroom extract is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Functional Mushroom Antioxidant Context",
-  "how_it_works_highlight_description": "Chaga is best compared by extraction method, beta-glucan disclosure, oxalate caution, and third-party testing.",
-  "how_it_works_content": "<p>Chaga is discussed for beta-glucans, polyphenols, melanin-like compounds, and antioxidant pathways. It is a supportive wellness ingredient, not a treatment for immune disease, cancer, or infections. The practical value of Chaga Mushroom Extract depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
-  "benefits_title": "Potential Chaga Mushroom Extract Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with chaga mushroom extract in supplement routines.",
+  "how_it_works_subtitle": "Chaga is used for antioxidant support and broad functional mushroom wellness positioning.",
+  "how_it_works_highlight_title": "Antioxidant Mushroom Profile",
+  "how_it_works_highlight_description": "Chaga's dark pigments and polyphenol content are central to its antioxidant-support reputation.",
+  "how_it_works_content": "<p>Chaga works as a functional mushroom ingredient by contributing compounds such as polyphenols, polysaccharides, and other mushroom-associated constituents. These compounds are used to explain its antioxidant and daily wellness positioning.</p>\n\n<p>Extraction method matters. Hot water extracts, dual extracts, powders, fruiting body products, and mycelium products can differ. A label that clearly explains extract type and standardization is easier to evaluate than one that only lists a proprietary mushroom blend.</p>\n\n<p>Chaga should be used with safety context. Its oxalate content and possible medication interactions mean that it is not the right mushroom for every person.</p>",
+  "benefits_title": "Potential Benefits of Chaga Mushroom Extract",
+  "benefits_subtitle": "Common wellness reasons Chaga Mushroom Extract appears in functional mushroom products.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Functional Mushroom Context",
-      "description": "Functional Mushroom Context helps readers evaluate chaga mushroom extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "sparkles",
+      "title": "Antioxidant Support",
+      "description": "Provides mushroom-associated antioxidant compounds used in daily wellness formulas."
     },
     {
       "icon": "shield-check",
-      "title": "Immune Wellness Education",
-      "description": "Immune Wellness Education helps readers evaluate chaga mushroom extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "title": "Immune-Season Formula Fit",
+      "description": "Often included in mushroom blends positioned for seasonal wellness support."
     },
     {
-      "icon": "activity",
-      "title": "Antioxidant Support",
-      "description": "Antioxidant Support helps readers evaluate chaga mushroom extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "coffee",
+      "title": "Beverage Blend Friendly",
+      "description": "Common in mushroom coffees, teas, and earthy wellness drink mixes."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Extraction Method Review",
-      "description": "Extraction Method Review helps readers evaluate chaga mushroom extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "leaf",
+      "title": "Functional Mushroom Category",
+      "description": "Pairs with reishi, turkey tail, shiitake, and other mushroom extracts."
     },
     {
       "icon": "search",
-      "title": "Beta-Glucan Labeling",
-      "description": "Beta-Glucan Labeling helps readers evaluate chaga mushroom extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "title": "Extraction Quality Matters",
+      "description": "Encourages consumers to compare fruiting body, mycelium, and extract methods."
     },
     {
-      "icon": "sparkles",
-      "title": "Testing Transparency",
-      "description": "Testing Transparency helps readers evaluate chaga mushroom extract by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "alert-triangle",
+      "title": "Important Safety Cautions",
+      "description": "Oxalate and medication considerations make label transparency especially important."
     }
   ],
-  "dosage_title": "Typical Chaga Mushroom Extract Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common servings vary from 500 mg capsules to gram-level powders or tea extracts depending on product format.",
-  "dosage": "Common servings vary from 500 mg capsules to gram-level powders or tea extracts depending on product format.",
-  "dosage_content": "<p>Common servings vary from 500 mg capsules to gram-level powders or tea extracts depending on product format. Start with the label directions for the specific product rather than assuming all chaga mushroom extract supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_title": "Chaga Mushroom Extract Dosage",
+  "dosage_subtitle": "Dosage depends on extract type, mushroom part, and the complete product formula.",
+  "typical_dose": "Common products may provide 500-1,500 mg daily, but extract strength and preparation vary widely.",
+  "dosage": "Common products may provide 500-1,500 mg daily, but extract strength and preparation vary widely.",
+  "dosage_content": "<p>Chaga dosage depends on whether the product is a powder, hot water extract, dual extract, or part of a mushroom blend. Milligrams alone do not fully describe quality. Look for information about beta-glucans, polysaccharides, extract ratio, and whether the product uses fruiting body or mycelium.</p>\n\n<p>People with kidney disease, kidney stone history, diabetes medication, blood thinners, immune-suppressing drugs, or upcoming surgery should ask a healthcare professional before using chaga. Do not combine multiple chaga products unless directed.</p>",
   "safety_title": "Chaga Mushroom Extract Safety Information",
-  "safety_subtitle": "Chaga may be high in oxalates and may affect bleeding risk, blood sugar, immune activity, or kidney concerns.",
+  "safety_subtitle": "Chaga has important cautions for kidney health, oxalates, blood sugar, bleeding risk, and immune-related medication.",
   "side_effects": [
-    "Digestive discomfort",
-    "Oxalate concern",
-    "Blood sugar changes",
-    "Medication overlap"
+    "Digestive upset, nausea, or changes in bowel habits may occur.",
+    "Allergic reactions are possible in people sensitive to mushrooms.",
+    "High oxalate exposure may be a concern for kidney-sensitive individuals.",
+    "Stacking multiple mushroom products may increase tolerance issues."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive discomfort",
-      "description": "Digestive discomfort may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Digestive upset, nausea, or changes in bowel habits may occur."
     },
     {
-      "icon": "activity",
-      "title": "Oxalate concern",
-      "description": "Oxalate concern may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Allergic reactions are possible in people sensitive to mushrooms."
     },
     {
-      "icon": "alert-circle",
-      "title": "Blood sugar changes",
-      "description": "Blood sugar changes may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "High oxalate exposure may be a concern for kidney-sensitive individuals."
     },
     {
-      "icon": "shield-alert",
-      "title": "Medication overlap",
-      "description": "Medication overlap may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Stacking multiple mushroom products may increase tolerance issues."
     }
   ],
   "drug_interactions_json": [
-    "Review use with blood thinners or diabetes medications.",
-    "Use caution with immune-suppressing medications.",
-    "Avoid high intake with kidney disease or oxalate stone history unless supervised.",
-    "Discuss use before surgery or during pregnancy or nursing."
-  ],
-  "who_should_avoid_json": [
-    "People with kidney disease or oxalate kidney stone history unless cleared by a clinician.",
-    "People taking blood thinners without guidance.",
-    "People on immune-suppressing therapy unless medically supervised.",
-    "Pregnant or nursing individuals unless advised by a professional.",
-    "Children unless directed by a qualified provider."
-  ],
-  "food_sources_title": "Chaga Mushroom Extract Food Sources",
-  "food_sources_subtitle": "Food and natural source context for chaga mushroom extract.",
-  "food_sources_content": "<p>Chaga is usually consumed as tea, powder, or extract rather than a culinary mushroom.</p>",
-  "food_sources_json": [
     {
-      "icon": "utensils",
-      "title": "Food Context",
-      "description": "Chaga is usually consumed as tea, powder, or extract rather than a culinary mushroom."
+      "text": "Use caution with blood thinners, antiplatelet drugs, or bleeding-risk supplements."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Supplement Difference",
-      "description": "Supplement forms of chaga mushroom extract may be more concentrated or standardized than ordinary dietary exposure."
+      "text": "Discuss use with a clinician if taking diabetes medication or monitoring blood sugar."
+    },
+    {
+      "text": "Avoid unsupervised use with immune-suppressing medication or autoimmune conditions."
+    },
+    {
+      "text": "Ask about timing before surgery or medical procedures."
     }
   ],
-  "faq_title": "Chaga Mushroom Extract FAQs",
-  "faq_subtitle": "Common questions about chaga mushroom extract, dosage, safety, and supplement label comparison.",
+  "who_should_avoid_json": [
+    {
+      "text": "People with kidney disease or kidney stone history should avoid unsupervised chaga use."
+    },
+    {
+      "text": "Pregnant or nursing individuals should seek medical guidance before use."
+    },
+    {
+      "text": "People taking immune-suppressing drugs should consult a clinician."
+    },
+    {
+      "text": "Anyone with mushroom allergy should avoid chaga products."
+    }
+  ],
+  "faq_title": "Chaga Mushroom Extract FAQ",
+  "faq_subtitle": "Common questions about Chaga Mushroom Extract, supplement use, and safety considerations.",
   "faq_json": [
     {
       "question": "What is Chaga Mushroom Extract?",
-      "answer": "Chaga mushroom extract is a functional mushroom ingredient used in immune, antioxidant, and daily wellness supplement formulas."
+      "answer": "Chaga Mushroom Extract is a supplement ingredient from Inonotus obliquus, a fungus commonly found on birch trees."
     },
     {
-      "question": "What is Chaga Mushroom Extract commonly used for?",
-      "answer": "Chaga Mushroom Extract is commonly discussed for immune and antioxidant wellness education. Its usefulness depends on dose, quality, and the overall routine."
+      "question": "What is chaga used for?",
+      "answer": "It is commonly used for antioxidant support, functional mushroom blends, and daily wellness products."
     },
     {
-      "question": "Is Chaga Mushroom Extract safe for daily use?",
-      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+      "question": "Is chaga a stimulant?",
+      "answer": "No. Chaga is not typically considered a stimulant, though it may be included in coffee-style blends that contain caffeine."
     },
     {
-      "question": "What should I compare on a Chaga Mushroom Extract label?",
-      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+      "question": "Does chaga support immunity?",
+      "answer": "Chaga appears in immune-season formulas, but it should not be described as treating or preventing illness."
     },
     {
-      "question": "How long does Chaga Mushroom Extract take to work?",
-      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+      "question": "Why is chaga safety important?",
+      "answer": "Chaga may contain oxalates and may interact with blood thinners, diabetes medication, and immune-related drugs."
     },
     {
-      "question": "Can Chaga Mushroom Extract replace medical treatment?",
-      "answer": "No. Chaga Mushroom Extract supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Who should avoid chaga?",
+      "answer": "People with kidney disease, kidney stones, mushroom allergy, pregnancy, nursing, or immune-related medication should seek medical guidance."
     },
     {
-      "question": "Can I combine Chaga Mushroom Extract with other supplements?",
-      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+      "question": "What should I look for in a chaga supplement?",
+      "answer": "Look for extract type, mushroom part used, beta-glucan or polysaccharide information, and third-party quality cues."
     },
     {
-      "question": "Who should be careful with Chaga Mushroom Extract?",
-      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+      "question": "Can chaga replace medical treatment?",
+      "answer": "No. Chaga is a wellness ingredient and should not replace diagnosis, treatment, or prescribed medication."
     },
     {
-      "question": "What format is Chaga Mushroom Extract usually sold in?",
-      "answer": "Chaga Mushroom Extract is commonly sold as capsule, powder, tea, extract, though formats and concentrations can vary significantly by brand."
+      "question": "Is chaga the same as reishi?",
+      "answer": "No. Chaga and reishi are different mushrooms with different traditional uses and supplement profiles."
     },
     {
-      "question": "How does Suppriva review Chaga Mushroom Extract?",
-      "answer": "Suppriva reviews Chaga Mushroom Extract by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+      "question": "Can I take chaga every day?",
+      "answer": "Some products are designed for daily use, but people with kidney, blood sugar, bleeding, or immune concerns should ask a clinician first."
     }
   ],
-  "sidebar_profile_title": "Chaga Mushroom Extract Profile Snapshot",
-  "sidebar_profile_content": "Chaga Mushroom Extract is a functional mushroom extract used in supplement education for immune and antioxidant wellness education.",
+  "sidebar_profile_title": "Chaga Mushroom Extract Profile",
+  "sidebar_profile_content": "A functional mushroom extract used in antioxidant, immune-season, and mushroom blend supplements.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Functional mushroom extract"
+      "value": "Functional mushroom"
     },
     {
       "label": "Typical Dose",
-      "value": "Common servings vary from 500 mg capsules to gram-level powders or tea extracts depending on product format."
+      "value": "500-1,500 mg daily"
     },
     {
       "label": "Best For",
-      "value": "Immune and antioxidant wellness education"
+      "value": "Antioxidant support"
     },
     {
       "label": "Safety Level",
-      "value": "Chaga may be high in oxalates and may affect bleeding risk, blood sugar, immune activity, or kidney concerns."
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "Birch forests in cold northern climates"
+      "value": "Cold-climate birch forests"
     },
     {
       "label": "Part Used",
-      "value": "Sclerotium"
+      "value": "Fungal conk"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, tea, extract"
+      "value": "Powder or extract"
     },
     {
       "label": "Taste",
-      "value": "Earthy and mild"
+      "value": "Earthy and woody"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Chaga Mushroom Extract is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
-  "full_description": "Chaga mushroom extract is a functional mushroom ingredient used in immune, antioxidant, and daily wellness supplement formulas.",
-  "best_for": "Immune and antioxidant wellness education",
-  "safety_level": "Chaga may be high in oxalates and may affect bleeding risk, blood sugar, immune activity, or kidney concerns.",
-  "origin_country": "Birch forests in cold northern climates",
-  "part_used": "Sclerotium",
-  "ingredient_form": "Capsule, powder, tea, extract",
-  "taste_profile": "Earthy and mild",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Chaga Mushroom Extract Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "chaga mushroom extract",
-  "seo_description": "Explore chaga mushroom extract benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "sidebar_at_a_glance_content": "<p>Chaga Mushroom Extract is a popular antioxidant-focused mushroom ingredient, but kidney and medication cautions are important. Compare extraction method and quality disclosures before choosing a product.</p>",
+  "full_description": "Chaga Mushroom Extract is a functional mushroom ingredient used in antioxidant and daily wellness supplement blends.",
+  "best_for": "Antioxidant mushroom support",
+  "safety_level": "Moderate",
+  "origin_country": "Northern birch forests",
+  "part_used": "Fungal conk",
+  "ingredient_form": "Powder, capsule, or extract",
+  "taste_profile": "Earthy and woody",
+  "rating": 4.5,
+  "evidence_level": "Emerging",
+  "uses_title": "Chaga Mushroom Extract Uses",
+  "uses_subtitle": "Chaga is most often used in functional mushroom and antioxidant-support products.",
+  "uses_content": "<p>Chaga Mushroom Extract appears in mushroom coffees, daily wellness powders, immune-season blends, antioxidant products, and functional mushroom capsules.</p>",
+  "uses_json": [
+    {
+      "text": "Antioxidant support"
+    },
+    {
+      "text": "Functional mushroom blends"
+    },
+    {
+      "text": "Immune-season formulas"
+    },
+    {
+      "text": "Mushroom beverage mixes"
+    }
+  ],
+  "food_sources_title": "Chaga Mushroom Extract Food Sources",
+  "food_sources_subtitle": "Chaga is usually consumed as tea, powder, or extract rather than a typical food.",
+  "food_sources_content": "<p>Chaga may be brewed as tea or included in mushroom beverage mixes. Supplement extracts are more concentrated than traditional tea preparations and require more careful safety review.</p>",
+  "food_sources_json": [
+    {
+      "text": "Chaga tea"
+    },
+    {
+      "text": "Mushroom powders"
+    },
+    {
+      "text": "Chaga extract capsules"
+    }
+  ],
+  "research_title": "Chaga Mushroom Extract Research Notes",
+  "research_subtitle": "Chaga research focuses on antioxidant compounds, polysaccharides, and safety considerations.",
+  "research_content": "<p>Chaga research includes laboratory and early wellness interest, but human evidence is still developing. Oxalate content and medication interactions are important practical considerations.</p>",
+  "research_json": [
+    {
+      "text": "Inonotus obliquus compounds"
+    },
+    {
+      "text": "Functional mushroom extracts"
+    },
+    {
+      "text": "Oxalate safety"
+    },
+    {
+      "text": "Mushroom polysaccharide research"
+    }
+  ],
+  "references_title": "Chaga Mushroom Extract Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Chaga mushroom safety"
+    },
+    {
+      "text": "Inonotus obliquus antioxidant compounds"
+    },
+    {
+      "text": "Functional mushroom supplement quality"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "reishi-mushroom"
+    },
+    {
+      "slug": "turkey-tail-mushroom"
+    },
+    {
+      "slug": "shiitake-mushroom"
+    },
+    {
+      "slug": "black-fungus"
+    }
+  ],
+  "seo_title": "Chaga Mushroom Extract Benefits, Safety, Uses and Dosage",
+  "seo_focus_keyword": "Chaga Mushroom Extract",
+  "seo_description": "Learn about Chaga Mushroom Extract, including antioxidant support, functional mushroom uses, dosage ranges, oxalate cautions, and safety considerations.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/chaga-mushroom-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Chaga Mushroom Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore chaga mushroom extract benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Chaga Mushroom Extract Benefits, Safety, Uses and Dosage",
+  "meta_description": "Learn about Chaga Mushroom Extract, including antioxidant support, functional mushroom uses, dosage ranges, oxalate cautions, and safety considerations."
 }

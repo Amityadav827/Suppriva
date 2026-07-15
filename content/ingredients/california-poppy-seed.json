@@ -1,177 +1,169 @@
 {
   "name": "California Poppy Seed",
   "scientific_name": "Eschscholzia californica",
-  "hero_badge": null,
-  "short_description": "California poppy is a relaxation-focused botanical used in sleep and calming supplement formulas.",
-  "overview_title": "California Poppy Seed Overview",
-  "overview_subtitle": "A practical look at california poppy and how it appears in supplement labels.",
-  "overview_content": "<p>California poppy, Eschscholzia californica, is a botanical commonly used in relaxation and sleep-support blends. It is not the same as opium poppy and should not be confused with stronger poppy-derived substances. Product labels may use aerial parts, herb extract, or seed-related naming, so identity and plant part should be checked carefully.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>California poppy is the state flower of California and is botanically different from opium poppy.</p>",
+  "hero_badge": "Calming Botanical",
+  "short_description": "California Poppy Seed refers to a calming botanical ingredient associated with relaxation, sleep-support blends, and nervous-system wellness formulas.",
+  "overview_title": "What Is California Poppy Seed?",
+  "overview_subtitle": "A gentle relaxation-focused botanical used in sleep and calm-support supplement formulas.",
+  "overview_content": "<p>California Poppy Seed is associated with Eschscholzia californica, a flowering plant native to western North America. In supplement discussions, the ingredient is usually grouped with calming botanicals rather than stimulant herbs, vitamins, or minerals. Products may use aerial plant parts, extract, or seed-related naming depending on the label, so consumers should read the ingredient panel carefully to understand the actual form used.</p>\n\n<p>California poppy is best known in wellness products for relaxation, occasional stress support, and sleep-routine formulas. It is often positioned as a gentle botanical option compared with stronger sedative ingredients. This does not mean it is risk free. Any ingredient that can promote calm or drowsiness may also interact with alcohol, sedatives, sleep medication, anxiety medication, or other products that affect the nervous system.</p>\n\n<p>A responsible supplement label should avoid claiming that California poppy treats insomnia, anxiety disorders, depression, pain, or neurological disease. Its appropriate role is educational and supportive: it may be included in formulas designed to help adults wind down, maintain a consistent bedtime routine, or support relaxation alongside sleep hygiene habits such as limiting late caffeine, reducing screen exposure, and keeping a regular schedule.</p>\n\n<p>California poppy is commonly compared with GABA, magnesium glycinate, chamomile, lavender, lemon balm, passionflower, and L-theanine. Each of these ingredients has a different profile. Magnesium is a mineral, GABA is a neurotransmitter-related compound, lavender is often used as an aromatic botanical, and California poppy is a flowering herb. The right choice depends on the formula design, user sensitivity, timing, and medication status.</p>\n\n<p>Because calm-support products can affect alertness, users should be cautious the first time they try California poppy. It is best tested when driving, operating equipment, or demanding work is not required. Combining multiple sleep products can increase next-day grogginess or unwanted sedation. People who already take prescription sleep aids, benzodiazepines, antidepressants, antipsychotics, seizure medication, or alcohol should seek medical guidance before use.</p>\n\n<p>Pregnant and nursing individuals should avoid unsupervised California poppy supplementation because safety data is limited. Children should not use it unless directed by a qualified healthcare professional. People with chronic insomnia, panic symptoms, severe anxiety, mood changes, or persistent fatigue should seek professional care rather than relying on supplements alone.</p>\n\n<p>For Suppriva readers, California Poppy Seed should be understood as a calming botanical that belongs in the sleep and relaxation category. It is not a cure or a replacement for medical care. Its value comes from understanding its role, timing, cautions, and how it compares with other sleep-support ingredients.</p>\n\n<p>California Poppy Seed also highlights the importance of separating occasional wellness support from clinical sleep problems. Many adults have short periods where stress, schedule changes, travel, or caffeine timing disrupt sleep. A gentle botanical may be considered as part of a bedtime routine in those situations. Ongoing insomnia, however, deserves a medical conversation.</p>\n\n<p>Formula context is another key detail. California poppy may appear beside valerian, passionflower, magnesium, melatonin, or GABA. That combination can change the strength and next-day feel of the product. Users should avoid assuming a botanical blend is mild simply because it is plant based.</p>",
+  "interesting_fact_label": "State Flower Botanical",
+  "interesting_fact": "<p>California poppy is the state flower of California, but supplement products usually use concentrated plant material rather than the decorative flower itself.</p>",
   "how_it_works_title": "How California Poppy Seed Works",
-  "how_it_works_subtitle": "How california poppy is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Gentle Relaxation Botanical",
-  "how_it_works_highlight_description": "California poppy is best evaluated by plant part, blend partners, sedative overlap, and timing recommendations.",
-  "how_it_works_content": "<p>California poppy is discussed for calming botanical compounds and traditional relaxation use. It is usually included in blends with chamomile, passionflower, valerian, magnesium, or L-theanine. The practical value of California Poppy Seed depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
-  "benefits_title": "Potential California Poppy Seed Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with california poppy in supplement routines.",
+  "how_it_works_subtitle": "California poppy is used in formulas that support calm routines and bedtime relaxation.",
+  "how_it_works_highlight_title": "Relaxation Routine Support",
+  "how_it_works_highlight_description": "This botanical is most often used in sleep-support blends where gentle calm and consistent nighttime habits are the goal.",
+  "how_it_works_content": "<p>California poppy is believed to act as a calming botanical, which is why it appears in sleep and relaxation formulas. Its exact supplement effect can vary depending on extract type, serving size, and the other ingredients included in the product.</p>\n\n<p>The most practical way to understand the ingredient is through routine support. A calming supplement may be more useful when paired with a consistent bedtime, reduced late caffeine, low evening light exposure, and stress-management habits.</p>\n\n<p>Because it may contribute to drowsiness, California poppy should be used thoughtfully. It should not be combined casually with alcohol, sedatives, or prescription sleep medication without medical guidance.</p>",
+  "benefits_title": "Potential Benefits of California Poppy Seed",
+  "benefits_subtitle": "Common wellness reasons California Poppy Seed appears in relaxation products.",
   "benefits_json": [
     {
+      "icon": "moon",
+      "title": "Sleep Routine Support",
+      "description": "Often included in formulas designed to support a calm transition toward bedtime."
+    },
+    {
       "icon": "leaf",
-      "title": "Relaxation Formula Fit",
-      "description": "Relaxation Formula Fit helps readers evaluate california poppy by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "title": "Botanical Relaxation",
+      "description": "Provides a plant-based option for calm-support supplement blends."
     },
     {
-      "icon": "shield-check",
-      "title": "Sleep Routine Context",
-      "description": "Sleep Routine Context helps readers evaluate california poppy by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "brain",
+      "title": "Nervous-System Wellness",
+      "description": "Commonly grouped with ingredients used for relaxation and stress-management routines."
     },
     {
-      "icon": "activity",
-      "title": "Non-Caffeine Support",
-      "description": "Non-Caffeine Support helps readers evaluate california poppy by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Botanical Blend Review",
-      "description": "Botanical Blend Review helps readers evaluate california poppy by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Timing Awareness",
-      "description": "Timing Awareness helps readers evaluate california poppy by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "clock",
+      "title": "Evening Wind-Down",
+      "description": "May complement non-supplement habits such as consistent sleep timing and lower evening stimulation."
     },
     {
       "icon": "sparkles",
-      "title": "Sedative Safety",
-      "description": "Sedative Safety helps readers evaluate california poppy by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "title": "Gentle Formula Positioning",
+      "description": "Often used in products marketed as gentle relaxation support."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Clear Safety Decision Point",
+      "description": "Medication and drowsiness cautions help users decide whether it fits their routine."
     }
   ],
-  "dosage_title": "Typical California Poppy Seed Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Dose varies widely by extract, tea, or tincture format; follow the specific product label.",
-  "dosage": "Dose varies widely by extract, tea, or tincture format; follow the specific product label.",
-  "dosage_content": "<p>Dose varies widely by extract, tea, or tincture format; follow the specific product label. Start with the label directions for the specific product rather than assuming all california poppy supplements are equivalent. People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_title": "California Poppy Seed Dosage",
+  "dosage_subtitle": "Dosage depends on plant part, extract strength, and the complete sleep-support formula.",
+  "typical_dose": "Follow the product label; California poppy extract amounts vary widely by preparation and blend.",
+  "dosage": "Follow the product label; California poppy extract amounts vary widely by preparation and blend.",
+  "dosage_content": "<p>There is no single universal dose for California Poppy Seed because products may use different plant parts, extract ratios, and combination formulas. Some sleep products include it as one part of a blend rather than as a standalone ingredient.</p>\n\n<p>Use the lowest label-recommended serving at first and avoid combining it with alcohol or other sedating products. If drowsiness, vivid dreams, headache, or next-day grogginess occurs, stop use and reassess with a healthcare professional.</p>",
   "safety_title": "California Poppy Seed Safety Information",
-  "safety_subtitle": "Sedation, medication overlap, pregnancy status, and driving safety are the main concerns.",
+  "safety_subtitle": "Main cautions relate to drowsiness, sedative combinations, pregnancy, and medication use.",
   "side_effects": [
-    "Drowsiness",
-    "Dizziness",
-    "Digestive discomfort",
-    "Sedative overlap"
+    "Drowsiness, grogginess, or reduced alertness may occur.",
+    "Headache or digestive discomfort may occur in sensitive users.",
+    "Vivid dreams or changes in sleep quality are possible.",
+    "Combining with other calming products may increase unwanted sedation."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Drowsiness",
-      "description": "Drowsiness may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Drowsiness, grogginess, or reduced alertness may occur."
     },
     {
-      "icon": "activity",
-      "title": "Dizziness",
-      "description": "Dizziness may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Headache or digestive discomfort may occur in sensitive users."
     },
     {
-      "icon": "alert-circle",
-      "title": "Digestive discomfort",
-      "description": "Digestive discomfort may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Vivid dreams or changes in sleep quality are possible."
     },
     {
-      "icon": "shield-alert",
-      "title": "Sedative overlap",
-      "description": "Sedative overlap may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Combining with other calming products may increase unwanted sedation."
     }
   ],
   "drug_interactions_json": [
-    "Use caution with sedatives, sleep aids, alcohol, or anti-anxiety medications.",
-    "Avoid driving if drowsy.",
-    "Discuss use before surgery or anesthesia.",
-    "Ask a clinician before use during pregnancy or nursing."
+    {
+      "text": "Do not combine with alcohol, sedatives, sleep medication, or anxiety medication unless supervised."
+    },
+    {
+      "text": "Use caution with antidepressants, antipsychotics, seizure medication, or other nervous-system drugs."
+    },
+    {
+      "text": "Avoid stacking with multiple sleep supplements without professional guidance."
+    },
+    {
+      "text": "Discuss use with a clinician if taking medication that affects alertness or mood."
+    }
   ],
   "who_should_avoid_json": [
-    "Pregnant or nursing individuals unless advised by a healthcare professional.",
-    "People taking sedatives or alcohol without professional guidance.",
-    "People who need to drive or operate machinery after use.",
-    "Children unless directed by a qualified provider.",
-    "Anyone using it instead of care for severe insomnia or anxiety."
-  ],
-  "food_sources_title": "California Poppy Seed Food Sources",
-  "food_sources_subtitle": "Food and natural source context for california poppy.",
-  "food_sources_content": "<p>California poppy is used as an herbal supplement rather than a common food source.</p>",
-  "food_sources_json": [
     {
-      "icon": "utensils",
-      "title": "Food Context",
-      "description": "California poppy is used as an herbal supplement rather than a common food source."
+      "text": "Pregnant or nursing individuals should avoid unsupervised use."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Supplement Difference",
-      "description": "Supplement forms of california poppy may be more concentrated or standardized than ordinary dietary exposure."
+      "text": "Children should not use California poppy supplements unless directed by a healthcare professional."
+    },
+    {
+      "text": "People who need to drive or operate equipment should test tolerance carefully or avoid use."
+    },
+    {
+      "text": "People with chronic insomnia, severe anxiety, depression, or neurological symptoms should seek medical care."
     }
   ],
-  "faq_title": "California Poppy Seed FAQs",
-  "faq_subtitle": "Common questions about california poppy, dosage, safety, and supplement label comparison.",
+  "faq_title": "California Poppy Seed FAQ",
+  "faq_subtitle": "Common questions about California Poppy Seed, supplement use, and safety considerations.",
   "faq_json": [
     {
-      "question": "What is California Poppy Seed?",
-      "answer": "California poppy is a relaxation-focused botanical used in sleep and calming supplement formulas."
+      "question": "What is California Poppy Seed used for?",
+      "answer": "It is commonly used in relaxation and sleep-support supplements for adults."
     },
     {
-      "question": "What is California Poppy Seed commonly used for?",
-      "answer": "California Poppy Seed is commonly discussed for sleep and relaxation support education. Its usefulness depends on dose, quality, and the overall routine."
+      "question": "Is California poppy the same as opium poppy?",
+      "answer": "No. California poppy is Eschscholzia californica and is different from opium poppy."
     },
     {
-      "question": "Is California Poppy Seed safe for daily use?",
-      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+      "question": "Can California poppy make you sleepy?",
+      "answer": "It may contribute to drowsiness in some users, which is why timing and caution are important."
     },
     {
-      "question": "What should I compare on a California Poppy Seed label?",
-      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+      "question": "Can I take it with sleep medication?",
+      "answer": "Do not combine it with sleep medication unless a healthcare professional says it is appropriate."
     },
     {
-      "question": "How long does California Poppy Seed take to work?",
-      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+      "question": "Is it safe for daily use?",
+      "answer": "Long-term daily use should be discussed with a clinician, especially if sleep problems are persistent."
     },
     {
-      "question": "Can California Poppy Seed replace medical treatment?",
-      "answer": "No. California Poppy Seed supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Can I take California poppy with alcohol?",
+      "answer": "No. Combining calming botanicals with alcohol can increase sedation and safety risks."
     },
     {
-      "question": "Can I combine California Poppy Seed with other supplements?",
-      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+      "question": "Is California poppy good for anxiety?",
+      "answer": "It may be used in calm-support formulas, but it should not be used to treat anxiety disorders."
     },
     {
-      "question": "Who should be careful with California Poppy Seed?",
-      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+      "question": "When should it be taken?",
+      "answer": "Sleep products usually suggest evening use, but follow the specific product label."
     },
     {
-      "question": "What format is California Poppy Seed usually sold in?",
-      "answer": "California Poppy Seed is commonly sold as capsule, tincture, tea, blend, though formats and concentrations can vary significantly by brand."
+      "question": "Who should avoid it?",
+      "answer": "Pregnant or nursing individuals, children, and people using sedatives or nervous-system medication should avoid unsupervised use."
     },
     {
-      "question": "How does Suppriva review California Poppy Seed?",
-      "answer": "Suppriva reviews California Poppy Seed by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+      "question": "What should I compare it with?",
+      "answer": "Compare it with chamomile, lavender, magnesium glycinate, GABA, lemon balm, and L-theanine depending on your goals."
     }
   ],
-  "sidebar_profile_title": "California Poppy Seed Profile Snapshot",
-  "sidebar_profile_content": "California Poppy Seed is a relaxation botanical used in supplement education for sleep and relaxation support education.",
+  "sidebar_profile_title": "California Poppy Seed Profile",
+  "sidebar_profile_content": "A calming botanical ingredient used in sleep, relaxation, and nervous-system wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Relaxation botanical"
+      "value": "Calming botanical"
     },
     {
       "label": "Typical Dose",
-      "value": "Dose varies widely by extract, tea, or tincture format; follow the specific product label."
+      "value": "Label-directed"
     },
     {
       "label": "Best For",
-      "value": "Sleep and relaxation support education"
+      "value": "Relaxation support"
     },
     {
       "label": "Safety Level",
-      "value": "Sedation, medication overlap, pregnancy status, and driving safety are the main concerns."
+      "value": "Moderate"
     },
     {
       "label": "Origin",
@@ -179,45 +171,108 @@
     },
     {
       "label": "Part Used",
-      "value": "Aerial parts and seed references by product"
+      "value": "Plant material"
     },
     {
       "label": "Form",
-      "value": "Capsule, tincture, tea, blend"
+      "value": "Extract or blend"
     },
     {
       "label": "Taste",
-      "value": "Bitter and herbal"
+      "value": "Mildly bitter"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>California Poppy Seed is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
-  "full_description": "California poppy is a relaxation-focused botanical used in sleep and calming supplement formulas.",
-  "best_for": "Sleep and relaxation support education",
-  "safety_level": "Sedation, medication overlap, pregnancy status, and driving safety are the main concerns.",
+  "sidebar_at_a_glance_content": "<p>California Poppy Seed is most relevant for adults comparing gentle sleep and relaxation ingredients. It requires caution with alcohol, sedatives, and medications that affect alertness.</p>",
+  "full_description": "California Poppy Seed is a relaxation-focused botanical used in calm and sleep-support supplement blends.",
+  "best_for": "Sleep and relaxation support",
+  "safety_level": "Moderate",
   "origin_country": "Western North America",
-  "part_used": "Aerial parts and seed references by product",
-  "ingredient_form": "Capsule, tincture, tea, blend",
-  "taste_profile": "Bitter and herbal",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "California Poppy Seed Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "california poppy",
-  "seo_description": "Explore california poppy benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "part_used": "Plant material",
+  "ingredient_form": "Extract or capsule blend",
+  "taste_profile": "Mildly bitter",
+  "rating": 4.4,
+  "evidence_level": "Emerging",
+  "uses_title": "California Poppy Seed Uses",
+  "uses_subtitle": "California poppy is mainly used in calm-support and bedtime formulas.",
+  "uses_content": "<p>California Poppy Seed may appear in sleep, relaxation, stress-management, and nervous-system support products. It is usually paired with other calming ingredients.</p>",
+  "uses_json": [
+    {
+      "text": "Bedtime routine support"
+    },
+    {
+      "text": "Relaxation formulas"
+    },
+    {
+      "text": "Calm-support blends"
+    },
+    {
+      "text": "Sleep hygiene support"
+    }
+  ],
+  "food_sources_title": "California Poppy Seed Food Sources",
+  "food_sources_subtitle": "California poppy is not a common food ingredient.",
+  "food_sources_content": "<p>California poppy is generally used as a botanical supplement ingredient rather than as a normal food. It should be treated like an herbal extract with relevant cautions.</p>",
+  "food_sources_json": [
+    {
+      "text": "California poppy extract"
+    },
+    {
+      "text": "Relaxation blends"
+    },
+    {
+      "text": "Sleep-support capsules"
+    }
+  ],
+  "research_title": "California Poppy Seed Research Notes",
+  "research_subtitle": "Research is more limited than for many mainstream sleep ingredients.",
+  "research_content": "<p>California poppy has traditional use and modern supplement interest, but evidence is less developed than for some other sleep-support ingredients. Safety and medication context are especially important.</p>",
+  "research_json": [
+    {
+      "text": "Traditional botanical use"
+    },
+    {
+      "text": "Relaxation supplement formulas"
+    },
+    {
+      "text": "Sedative interaction cautions"
+    },
+    {
+      "text": "Sleep routine context"
+    }
+  ],
+  "references_title": "California Poppy Seed Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Eschscholzia californica traditional use"
+    },
+    {
+      "text": "Calming botanical supplement safety"
+    },
+    {
+      "text": "Sleep supplement interaction cautions"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "gaba"
+    },
+    {
+      "slug": "chamomile-extract"
+    },
+    {
+      "slug": "lavender-oil"
+    },
+    {
+      "slug": "magnesium-glycinate"
+    }
+  ],
+  "seo_title": "California Poppy Seed Benefits, Uses, Safety and Dosage",
+  "seo_focus_keyword": "California Poppy Seed",
+  "seo_description": "Learn how California Poppy Seed is used in sleep and relaxation supplements, including typical use, safety cautions, interactions, and FAQ.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/california-poppy-seed",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "California Poppy Seed Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore california poppy benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "California Poppy Seed Benefits, Uses, Safety and Dosage",
+  "meta_description": "Learn how California Poppy Seed is used in sleep and relaxation supplements, including typical use, safety cautions, interactions, and FAQ."
 }

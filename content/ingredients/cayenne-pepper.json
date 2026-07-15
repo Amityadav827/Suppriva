@@ -1,181 +1,173 @@
 {
   "name": "Cayenne Pepper (Capsaicin)",
   "scientific_name": "Capsicum annuum",
-  "hero_badge": null,
-  "short_description": "Cayenne pepper extract provides capsaicin and is used in thermogenic, metabolism, circulation, and weight-management supplement formulas.",
-  "overview_title": "Cayenne Pepper (Capsaicin) Overview",
-  "overview_subtitle": "A practical look at cayenne pepper capsaicin and how it appears in supplement labels.",
-  "overview_content": "<p>Cayenne pepper comes from Capsicum annuum and is valued for capsaicin, the compound responsible for its heat. Supplements use cayenne in thermogenic, metabolism, circulation, and appetite-awareness formulas. Tolerance varies widely, and products should be reviewed for dose, digestive cautions, stimulant overlap, and whether capsaicin content is disclosed.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Capsaicin activates heat-sensing TRPV1 receptors, which explains cayenne's warming sensation.</p>",
+  "hero_badge": "Thermogenic Botanical",
+  "short_description": "Cayenne Pepper provides capsaicin and related capsaicinoids, commonly used in metabolism, thermogenic, and digestive wellness formulas.",
+  "overview_title": "What Is Cayenne Pepper (Capsaicin)?",
+  "overview_subtitle": "A spicy pepper extract used in thermogenic and digestive-support supplement blends.",
+  "overview_content": "<p>Cayenne Pepper is a spicy botanical from Capsicum annuum. Its best-known active compounds are capsaicin and related capsaicinoids, which create the characteristic heat of chili peppers. In supplements, cayenne is usually included in thermogenic, metabolism-support, digestion, circulation, and active-lifestyle formulas. It is also used topically in some products, but oral supplements and topical creams should be evaluated separately because safety and use cases differ.</p>\n\n<p>Cayenne is often marketed around thermogenesis, which refers to heat production in the body. In practical supplement language, that means it may be included in weight-management formulas designed to support energy expenditure alongside diet and exercise. This should not be interpreted as a promise of fat loss. No cayenne supplement can replace calorie awareness, physical activity, sleep, or medical care when needed.</p>\n\n<p>Capsaicin may also influence digestive sensations. Some people feel warmth, increased stomach activity, or mild appetite changes. Others experience heartburn or stomach irritation. Because response varies, cayenne is not ideal for everyone. People with reflux, gastritis, ulcers, inflammatory bowel conditions, or sensitivity to spicy foods should be especially cautious.</p>\n\n<p>Cayenne Pepper is commonly paired with green tea extract, caffeine, black pepper extract, ginger, chromium, apple cider vinegar, and other metabolism-support ingredients. These combinations can feel stimulating or warming, especially if caffeine is present. A responsible product should make stimulant content clear and avoid hiding strong ingredients inside proprietary blends.</p>\n\n<p>Safety concerns include stomach burning, reflux, sweating, flushing, and irritation. Cayenne may not be appropriate for people taking blood thinners, blood pressure medication, diabetes medication, or those preparing for surgery unless a clinician approves. It can also irritate the mouth, throat, or digestive tract if capsules open early or if powder is handled carelessly.</p>\n\n<p>For Suppriva readers, Cayenne Pepper is best understood as a spicy thermogenic-support ingredient. It may fit products aimed at metabolism, energy, and digestive warmth, but it is not a standalone solution for weight management. Formula context matters, especially caffeine level, serving size, and user tolerance.</p>\n\n<p>When evaluating cayenne supplements, look for clear capsaicin or capsaicinoid standardization, realistic claims, and safety guidance. Avoid using cayenne aggressively if you have digestive irritation, medication concerns, or sensitivity to spicy foods. Supplements should support a healthy routine, not override common sense or medical advice.</p>\n\n<p>Cayenne also demonstrates why weight-management supplement claims require careful reading. A warming sensation can make a product feel active, but sensation is not the same as meaningful results. The strongest long-term factors remain nutrition quality, energy balance, resistance training, daily movement, sleep, and consistency.</p>\n\n<p>Users should also pay attention to capsule design and timing. Taking cayenne on an empty stomach may be uncomfortable for some people, and opening capsules can irritate the eyes, nose, or skin. A sensible product provides clear directions and does not encourage users to chase stronger heat as a sign of effectiveness.</p>\n\n<p>For that reason, cayenne works best when the label is transparent about capsaicin strength and the product is used by someone who already knows they tolerate spicy foods well. Conservative dosing is the smarter starting point.</p>",
+  "interesting_fact_label": "Heat-Producing Compound",
+  "interesting_fact": "<p>The spicy sensation from cayenne comes largely from capsaicin, a compound that interacts with heat and pain-sensing receptors. That same heat is why dosage and tolerance matter.</p>",
   "how_it_works_title": "How Cayenne Pepper (Capsaicin) Works",
-  "how_it_works_subtitle": "How cayenne pepper capsaicin is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Capsaicin Heat-Signaling Support",
-  "how_it_works_highlight_description": "Cayenne is best evaluated by capsaicin standardization, digestive tolerance, stimulant overlap, and safe serving size.",
-  "how_it_works_content": "<p>Capsaicin is discussed for thermogenesis, heat signaling, circulation-related sensations, and appetite research. In supplement formulas, it is often paired with caffeine, green tea, or other weight-management ingredients. The practical value of Cayenne Pepper (Capsaicin) depends on product quality, dose, ingredient form, and whether the label sets realistic expectations.</p><p>It should be considered part of a broader wellness routine, not a stand-alone medical solution.</p>",
-  "benefits_title": "Potential Cayenne Pepper (Capsaicin) Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with cayenne pepper capsaicin in supplement routines.",
+  "how_it_works_subtitle": "Capsaicin is the main compound behind cayenne's warming and thermogenic profile.",
+  "how_it_works_highlight_title": "Capsaicin-Driven Warmth",
+  "how_it_works_highlight_description": "Cayenne's supplement role is closely tied to capsaicin and capsaicinoids, which create its warming effect.",
+  "how_it_works_content": "<p>Cayenne works primarily through capsaicinoids, especially capsaicin. These compounds interact with sensory receptors involved in heat perception. In supplement formulas, this warming quality is often connected to thermogenic positioning and metabolism-support language.</p>\n\n<p>Cayenne may also affect digestive sensations. Some users notice warmth after taking it, particularly if the supplement is taken without enough food or water. This is why tolerance and label directions matter.</p>\n\n<p>Because cayenne is often combined with caffeine or green tea extract, users should evaluate the whole formula rather than focusing on cayenne alone. The strongest effects may come from the combination of ingredients.</p>",
+  "benefits_title": "Potential Benefits of Cayenne Pepper (Capsaicin)",
+  "benefits_subtitle": "Common reasons Cayenne Pepper appears in metabolism and wellness formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Thermogenic Formula Context",
-      "description": "Thermogenic Formula Context helps readers evaluate cayenne pepper capsaicin by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Capsaicin Awareness",
-      "description": "Capsaicin Awareness helps readers evaluate cayenne pepper capsaicin by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "flame",
+      "title": "Thermogenic Support",
+      "description": "Capsaicin contributes to cayenne's warming role in thermogenic supplement blends."
     },
     {
       "icon": "activity",
-      "title": "Circulation Sensation",
-      "description": "Circulation Sensation helps readers evaluate cayenne pepper capsaicin by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "title": "Metabolism Formula Fit",
+      "description": "Often included in weight-management products alongside diet and exercise guidance."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Appetite Research",
-      "description": "Appetite Research helps readers evaluate cayenne pepper capsaicin by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "utensils",
+      "title": "Digestive Warmth",
+      "description": "May support digestive sensations in people who tolerate spicy ingredients well."
+    },
+    {
+      "icon": "zap",
+      "title": "Active Lifestyle Support",
+      "description": "Frequently paired with energy and metabolism-support ingredients."
     },
     {
       "icon": "search",
-      "title": "Spice-Based Ingredient",
-      "description": "Spice-Based Ingredient helps readers evaluate cayenne pepper capsaicin by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "title": "Standardization Matters",
+      "description": "Capsaicin or capsaicinoid content helps compare cayenne products."
     },
     {
-      "icon": "sparkles",
-      "title": "Tolerance Review",
-      "description": "Tolerance Review helps readers evaluate cayenne pepper capsaicin by looking at use context, quality, dose, safety cautions, and realistic supplement expectations."
+      "icon": "shield-check",
+      "title": "Tolerance-Based Use",
+      "description": "Clear safety guidance helps users avoid reflux, burning, or irritation."
     }
   ],
-  "dosage_title": "Typical Cayenne Pepper (Capsaicin) Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Serving sizes vary widely; capsaicin-standardized extracts may use smaller amounts than plain cayenne powder.",
-  "dosage": "Serving sizes vary widely; capsaicin-standardized extracts may use smaller amounts than plain cayenne powder.",
-  "dosage_content": "<p>Serving sizes vary widely; capsaicin-standardized extracts may use smaller amounts than plain cayenne powder. Start with the label directions for the specific product rather than assuming all cayenne pepper capsaicin supplements are equivalent.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_title": "Cayenne Pepper (Capsaicin) Dosage",
+  "dosage_subtitle": "Dosage depends on capsaicin standardization, spice tolerance, and formula context.",
+  "typical_dose": "Follow the product label; capsaicin strength and cayenne extract concentration vary widely.",
+  "dosage": "Follow the product label; capsaicin strength and cayenne extract concentration vary widely.",
+  "dosage_content": "<p>Cayenne Pepper dosage is difficult to compare without capsaicin standardization. Some products list cayenne powder, while others use concentrated extract. A small amount of concentrated capsaicin may feel stronger than a larger amount of basic powder.</p>\n\n<p>Take cayenne supplements with enough water and according to label instructions. People with reflux or sensitive stomachs should be cautious or avoid oral cayenne supplements. Do not exceed the serving size to try to increase thermogenic effects.</p>",
   "safety_title": "Cayenne Pepper (Capsaicin) Safety Information",
-  "safety_subtitle": "Cayenne can irritate the stomach, reflux symptoms, skin, eyes, and medication-sensitive users.",
+  "safety_subtitle": "Cayenne can irritate the digestive tract and may interact with some medications.",
   "side_effects": [
-    "Heartburn or reflux",
-    "Stomach burning",
-    "Sweating or flushing",
-    "Medication sensitivity"
+    "Heartburn, reflux, stomach burning, or nausea may occur.",
+    "Sweating, flushing, or warmth may be noticeable after use.",
+    "Mouth, throat, or digestive irritation can occur if capsules leak or powder is mishandled.",
+    "High intake may worsen symptoms in people sensitive to spicy foods."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Heartburn or reflux",
-      "description": "Heartburn or reflux may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Heartburn, reflux, stomach burning, or nausea may occur."
     },
     {
-      "icon": "activity",
-      "title": "Stomach burning",
-      "description": "Stomach burning may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Sweating, flushing, or warmth may be noticeable after use."
     },
     {
-      "icon": "alert-circle",
-      "title": "Sweating or flushing",
-      "description": "Sweating or flushing may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "Mouth, throat, or digestive irritation can occur if capsules leak or powder is mishandled."
     },
     {
-      "icon": "shield-alert",
-      "title": "Medication sensitivity",
-      "description": "Medication sensitivity may occur in some users depending on dose, product format, personal tolerance, and health status."
+      "text": "High intake may worsen symptoms in people sensitive to spicy foods."
     }
   ],
   "drug_interactions_json": [
-    "Use caution with blood thinners or blood pressure medications.",
-    "Review use with reflux medications or digestive conditions.",
-    "Avoid combining with harsh stimulant stacks if sensitive.",
-    "Discuss use before surgery or during pregnancy or nursing."
+    {
+      "text": "Use caution with blood thinners, antiplatelet drugs, and bleeding-risk supplements."
+    },
+    {
+      "text": "Discuss use with a clinician if taking blood pressure or diabetes medication."
+    },
+    {
+      "text": "Avoid combining multiple strong thermogenic products without guidance."
+    },
+    {
+      "text": "Ask a healthcare professional about use before surgery."
+    }
   ],
   "who_should_avoid_json": [
-    "People with active ulcers, severe reflux, or gastritis unless advised by a clinician.",
-    "People sensitive to spicy foods.",
-    "People taking blood thinners without guidance.",
-    "Pregnant or nursing individuals unless professionally advised.",
-    "Children unless directed by a qualified provider."
-  ],
-  "food_sources_title": "Cayenne Pepper (Capsaicin) Food Sources",
-  "food_sources_subtitle": "Food and natural source context for cayenne pepper capsaicin.",
-  "food_sources_content": "<p>Food sources include cayenne pepper, chili peppers, hot sauces, and spicy pepper powders.</p>",
-  "food_sources_json": [
     {
-      "icon": "utensils",
-      "title": "Food Context",
-      "description": "Food sources include cayenne pepper, chili peppers, hot sauces, and spicy pepper powders."
+      "text": "People with reflux, ulcers, gastritis, or significant digestive irritation may need to avoid cayenne supplements."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Supplement Difference",
-      "description": "Supplement forms of cayenne pepper capsaicin may be more concentrated or standardized than ordinary dietary exposure."
+      "text": "Pregnant or nursing individuals should seek medical guidance before concentrated cayenne use."
+    },
+    {
+      "text": "People sensitive to spicy foods should start cautiously or avoid it."
+    },
+    {
+      "text": "Anyone with chest pain, severe abdominal pain, or persistent digestive symptoms should seek medical care."
     }
   ],
-  "faq_title": "Cayenne Pepper (Capsaicin) FAQs",
-  "faq_subtitle": "Common questions about cayenne pepper capsaicin, dosage, safety, and supplement label comparison.",
+  "faq_title": "Cayenne Pepper (Capsaicin) FAQ",
+  "faq_subtitle": "Common questions about Cayenne Pepper (Capsaicin), supplement use, and safety considerations.",
   "faq_json": [
     {
-      "question": "What is Cayenne Pepper (Capsaicin)?",
-      "answer": "Cayenne pepper extract provides capsaicin and is used in thermogenic, metabolism, circulation, and weight-management supplement formulas."
+      "question": "What is Cayenne Pepper used for in supplements?",
+      "answer": "It is commonly used in thermogenic, metabolism-support, digestive, and active-lifestyle formulas."
     },
     {
-      "question": "What is Cayenne Pepper (Capsaicin) commonly used for?",
-      "answer": "Cayenne Pepper (Capsaicin) is commonly discussed for metabolism, circulation, and thermogenic formula education. Its usefulness depends on dose, quality, and the overall routine."
+      "question": "What is capsaicin?",
+      "answer": "Capsaicin is the compound in cayenne and chili peppers that creates heat and warming sensations."
     },
     {
-      "question": "Is Cayenne Pepper (Capsaicin) safe for daily use?",
-      "answer": "Many adult products are designed for daily use, but safety depends on medication use, health status, dose, and the exact formula."
+      "question": "Can cayenne help with weight loss?",
+      "answer": "Cayenne may appear in weight-management formulas, but it cannot replace diet, exercise, sleep, or medical guidance."
     },
     {
-      "question": "What should I compare on a Cayenne Pepper (Capsaicin) label?",
-      "answer": "Compare form, serving size, standardization, source, added ingredients, and safety warnings before choosing a product."
+      "question": "Can cayenne cause heartburn?",
+      "answer": "Yes. Cayenne can trigger reflux, burning, or stomach irritation in sensitive users."
     },
     {
-      "question": "How long does Cayenne Pepper (Capsaicin) take to work?",
-      "answer": "Response time varies. Supplements usually require consistent use and should be evaluated alongside nutrition, sleep, movement, and medical context."
+      "question": "Should cayenne be taken with food?",
+      "answer": "Many people tolerate it better with food, but follow the specific product label."
     },
     {
-      "question": "Can Cayenne Pepper (Capsaicin) replace medical treatment?",
-      "answer": "No. Cayenne Pepper (Capsaicin) supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Is cayenne safe with blood thinners?",
+      "answer": "Use caution and ask a clinician because concentrated cayenne may raise bleeding-related concerns."
     },
     {
-      "question": "Can I combine Cayenne Pepper (Capsaicin) with other supplements?",
-      "answer": "Some combinations may be reasonable, but overlapping effects can increase side effects. Review the full stack and ask a clinician if you use medication."
+      "question": "Is cayenne the same as capsaicin?",
+      "answer": "Cayenne is the pepper ingredient; capsaicin is one of its key active compounds."
     },
     {
-      "question": "Who should be careful with Cayenne Pepper (Capsaicin)?",
-      "answer": "Pregnant or nursing individuals, children, people with medical conditions, and anyone taking medication should seek professional guidance before use."
+      "question": "Can I combine cayenne with caffeine?",
+      "answer": "Some products do, but the combination may feel more stimulating or warming, so tolerance matters."
     },
     {
-      "question": "What format is Cayenne Pepper (Capsaicin) usually sold in?",
-      "answer": "Cayenne Pepper (Capsaicin) is commonly sold as capsule, powder, extract, though formats and concentrations can vary significantly by brand."
+      "question": "Who should avoid cayenne supplements?",
+      "answer": "People with reflux, ulcers, spicy-food sensitivity, or medication concerns should seek guidance or avoid use."
     },
     {
-      "question": "How does Suppriva review Cayenne Pepper (Capsaicin)?",
-      "answer": "Suppriva reviews Cayenne Pepper (Capsaicin) by focusing on ingredient identity, label transparency, practical use context, safety cautions, and realistic wellness education."
+      "question": "What should I look for on the label?",
+      "answer": "Look for cayenne amount, capsaicin standardization, stimulant content, serving directions, and safety cautions."
     }
   ],
-  "sidebar_profile_title": "Cayenne Pepper (Capsaicin) Profile Snapshot",
-  "sidebar_profile_content": "Cayenne Pepper (Capsaicin) is a thermogenic botanical spice extract used in supplement education for metabolism, circulation, and thermogenic formula education.",
+  "sidebar_profile_title": "Cayenne Pepper (Capsaicin) Profile",
+  "sidebar_profile_content": "A spicy botanical extract used in thermogenic, metabolism-support, and digestive-warmth supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Thermogenic botanical spice extract"
+      "value": "Spicy botanical"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary widely; capsaicin-standardized extracts may use smaller amounts than plain cayenne powder."
+      "value": "Label-directed"
     },
     {
       "label": "Best For",
-      "value": "Metabolism, circulation, and thermogenic formula education"
+      "value": "Thermogenic formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Cayenne can irritate the stomach, reflux symptoms, skin, eyes, and medication-sensitive users."
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "Capsicum peppers"
+      "value": "Chili pepper fruit"
     },
     {
       "label": "Part Used",
@@ -183,41 +175,104 @@
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract"
+      "value": "Powder or extract"
     },
     {
       "label": "Taste",
-      "value": "Hot and spicy"
+      "value": "Hot and pungent"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Cayenne Pepper (Capsaicin) is best evaluated by identity, source, dose, format, and safety context. Compare labels carefully and use it as educational support rather than a substitute for medical care.</p>",
-  "full_description": "Cayenne pepper extract provides capsaicin and is used in thermogenic, metabolism, circulation, and weight-management supplement formulas.",
-  "best_for": "Metabolism, circulation, and thermogenic formula education",
-  "safety_level": "Cayenne can irritate the stomach, reflux symptoms, skin, eyes, and medication-sensitive users.",
-  "origin_country": "Capsicum peppers",
+  "sidebar_at_a_glance_content": "<p>Cayenne Pepper is a warming ingredient best evaluated by capsaicin content and user tolerance. It may not suit people with reflux or sensitivity to spicy foods.</p>",
+  "full_description": "Cayenne Pepper provides capsaicin, a warming compound used in thermogenic and metabolism-support supplement blends.",
+  "best_for": "Thermogenic support",
+  "safety_level": "Moderate",
+  "origin_country": "Capsicum pepper fruit",
   "part_used": "Fruit",
-  "ingredient_form": "Capsule, powder, extract",
+  "ingredient_form": "Powder or standardized extract",
   "taste_profile": "Hot and spicy",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Cayenne Pepper (Capsaicin) Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "cayenne pepper capsaicin",
-  "seo_description": "Explore cayenne pepper capsaicin benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library.",
+  "rating": 4.5,
+  "evidence_level": "Moderate",
+  "uses_title": "Cayenne Pepper (Capsaicin) Uses",
+  "uses_subtitle": "Cayenne is mostly used in metabolism, digestive warmth, and active-lifestyle products.",
+  "uses_content": "<p>Cayenne Pepper appears in thermogenic blends, weight-management formulas, digestive-support products, and circulation-oriented supplements. It should be evaluated within the full formula.</p>",
+  "uses_json": [
+    {
+      "text": "Thermogenic formulas"
+    },
+    {
+      "text": "Metabolism support"
+    },
+    {
+      "text": "Digestive warmth"
+    },
+    {
+      "text": "Active-lifestyle blends"
+    }
+  ],
+  "food_sources_title": "Cayenne Pepper (Capsaicin) Food Sources",
+  "food_sources_subtitle": "Cayenne is also used as a culinary spice.",
+  "food_sources_content": "<p>Cayenne pepper can be consumed as a spice in food, but supplement extracts may be more concentrated and should not be treated the same as normal seasoning amounts.</p>",
+  "food_sources_json": [
+    {
+      "text": "Cayenne pepper spice"
+    },
+    {
+      "text": "Chili peppers"
+    },
+    {
+      "text": "Capsaicin extracts"
+    }
+  ],
+  "research_title": "Cayenne Pepper (Capsaicin) Research Notes",
+  "research_subtitle": "Research commonly focuses on capsaicin, thermogenesis, appetite, and sensory receptor activity.",
+  "research_content": "<p>Cayenne research often centers on capsaicin and capsaicinoids. Effects vary by dose, tolerance, and whether the product also includes stimulants such as caffeine.</p>",
+  "research_json": [
+    {
+      "text": "Capsaicin activity"
+    },
+    {
+      "text": "Thermogenic supplement research"
+    },
+    {
+      "text": "Digestive tolerance"
+    },
+    {
+      "text": "Metabolism-support formulas"
+    }
+  ],
+  "references_title": "Cayenne Pepper (Capsaicin) Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Capsaicin supplement safety"
+    },
+    {
+      "text": "Cayenne pepper thermogenesis"
+    },
+    {
+      "text": "Capsicum annuum ingredient research"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "green-tea-extract"
+    },
+    {
+      "slug": "ginger-root"
+    },
+    {
+      "slug": "chromium"
+    },
+    {
+      "slug": "bioperine-black-pepper-extract"
+    }
+  ],
+  "seo_title": "Cayenne Pepper Capsaicin Benefits, Safety and Dosage",
+  "seo_focus_keyword": "Cayenne Pepper Capsaicin",
+  "seo_description": "Learn how Cayenne Pepper and capsaicin are used in thermogenic supplements, including benefits, dosage considerations, safety, and interactions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/cayenne-pepper",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Cayenne Pepper (Capsaicin) Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore cayenne pepper capsaicin benefits, dosage, safety notes, side effects, FAQs, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Cayenne Pepper Capsaicin Benefits, Safety and Dosage",
+  "meta_description": "Learn how Cayenne Pepper and capsaicin are used in thermogenic supplements, including benefits, dosage considerations, safety, and interactions."
 }

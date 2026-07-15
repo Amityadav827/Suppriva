@@ -1,212 +1,278 @@
 {
   "name": "Boswellia Serrata",
   "scientific_name": "Boswellia serrata",
-  "hero_badge": null,
-  "short_description": "Boswellia serrata is a resin extract from the Indian frankincense tree. Suppriva reviews it as a botanical ingredient commonly used in joint comfort, mobility, and normal inflammation-response supplement formulas.",
+  "hero_badge": "Herbal Extract",
+  "short_description": "Boswellia serrata is a resin extract rich in boswellic acids, often used in joint, mobility, and inflammatory-response wellness formulas.",
   "overview_title": "What Is Boswellia Serrata?",
-  "overview_subtitle": "A practical guide to Indian frankincense resin extract and its role in joint and mobility formulas.",
-  "overview_content": "Boswellia serrata is a tree resin extract often called Indian frankincense. The resin contains boswellic acids, a group of compounds that are commonly used to standardize supplement extracts. Boswellia is especially common in joint health formulas, where it may be combined with curcumin, collagen, glucosamine, chondroitin, MSM, or omega-3 fatty acids.\n\nIn supplement education, Boswellia serrata is most often discussed for joint comfort, mobility routines, exercise recovery, and normal inflammatory-response pathways. It should not be described as a cure for arthritis, pain, or inflammatory disease. A responsible profile helps readers compare extract quality, boswellic acid standardization, serving size, safety cautions, and whether the formula makes realistic claims.\n\nLabels vary significantly. Some products list total boswellic acids, while others specify AKBA or branded boswellia extracts. These distinctions matter because extract composition affects how products are compared. Shoppers should also review whether the formula is standalone or combined with other joint-support ingredients.\n\nBoswellia may cause digestive discomfort in some users and may not be appropriate with certain medications or before surgery. People who are pregnant, nursing, taking medications, managing chronic conditions, or using multiple joint formulas should consult a qualified healthcare professional before use.",
-  "interesting_fact_label": "Resin Insight",
-  "interesting_fact": "Boswellia serrata supplements come from tree resin, not leaves or roots. The resin is processed into extracts standardized for boswellic acids.",
+  "overview_subtitle": "A resin-based botanical traditionally used for mobility, joint comfort, and balanced inflammatory-response support.",
+  "overview_content": "<p>Boswellia Serrata is a tree resin extract from Boswellia serrata, a species native to dry regions of India and surrounding areas. The aromatic resin, sometimes called Indian frankincense, has been used in traditional wellness systems for centuries. Modern supplements usually focus on standardized extracts that contain boswellic acids, including compounds such as AKBA. These naturally occurring acids are the reason Boswellia is commonly found in joint, mobility, and active-lifestyle formulas.</p>\n\n<p>In supplement form, Boswellia is best understood as a support ingredient rather than a quick symptom fix. It is often positioned for people who want to maintain comfortable movement, support an active routine, or complement a broader joint-health plan that includes strength work, healthy body weight, hydration, and adequate protein. Unlike basic minerals or vitamins, Boswellia is a botanical extract, so standardization and extract quality matter. A label should clearly state the extract amount and, ideally, the percentage of boswellic acids or AKBA.</p>\n\n<p>Boswellia is commonly paired with ingredients such as curcumin, ginger, collagen peptides, omega-3 fatty acids, and bromelain. These combinations are popular because each ingredient approaches wellness from a different angle. Boswellia is typically used for inflammatory-response balance, collagen supports connective tissue structure, omega-3 fatty acids support cell membrane health, and curcumin contributes antioxidant activity. A well-designed formula explains why the ingredients are combined instead of simply stacking many herbs together.</p>\n\n<p>The experience with Boswellia can be subtle. Some users look for changes in everyday comfort during walking, stairs, exercise recovery, or general stiffness. Others use it proactively as part of a long-term mobility plan. Because response varies, consistency, dose, extract quality, and overall lifestyle are important. It should not be used as a substitute for medical care, physical therapy, prescribed medication, or diagnosis of joint pain.</p>\n\n<p>Safety matters with any herbal extract. Boswellia is generally well tolerated by many adults, but it may cause digestive upset, reflux, nausea, or allergy-like reactions in some people. Anyone taking blood-thinning medication, anti-inflammatory medication, immune-modulating drugs, or preparing for surgery should ask a healthcare professional before using it. Pregnant or nursing individuals should avoid unsupervised use unless their clinician specifically recommends it.</p>\n\n<p>For Suppriva readers, Boswellia Serrata belongs in the ingredient library as a mobility-focused botanical with a strong history of traditional use and growing modern interest. It is not a cure for arthritis, inflammation, or injury. Its best role is as an educational ingredient to compare with other joint-support options and to understand how resin extracts differ from vitamins, minerals, amino acids, and structural nutrients.</p>\n\n<p>When evaluating a Boswellia product, look for transparent standardization, sensible serving size, third-party quality cues, and clear safety language. The best formulas avoid exaggerated promises and explain how the ingredient fits into a broader wellness routine. People with persistent joint pain, swelling, mobility limitation, or inflammatory disease should seek medical evaluation rather than relying on supplements alone.</p>\n\n<p>A practical way to compare Boswellia with other joint-support ingredients is to ask what role it plays in the formula. It does not supply collagen building blocks like collagen peptides, nor does it provide essential fatty acids like omega-3s. Instead, it is usually included as a botanical extract for comfort and inflammatory-response context. That distinction helps users avoid expecting one ingredient to do everything.</p>\n\n<p>People should also consider product timing and tolerance. Some formulas are intended for daily use with food, while others combine Boswellia with several botanicals that may be harder on the stomach. Reading the supplement facts panel, allergen notes, and medication warnings is part of using the ingredient responsibly.</p>",
+  "interesting_fact_label": "Resin-Based Botanical",
+  "interesting_fact": "<p>Boswellia Serrata extract comes from hardened tree resin rather than leaves, roots, seeds, or fruit. This makes it different from many common herbal ingredients and explains why quality markers often focus on boswellic acid standardization.</p>",
   "how_it_works_title": "How Boswellia Serrata Works",
-  "how_it_works_subtitle": "Boswellia is researched for boswellic acids and their relationship to normal inflammatory-response pathways.",
-  "how_it_works_highlight_title": "Boswellic Acid Standardization",
-  "how_it_works_highlight_description": "Boswellia extracts are often compared by total boswellic acids or specific fractions such as AKBA, which helps explain differences between formulas.",
-  "how_it_works_content": "Boswellia serrata is researched for compounds called boswellic acids. These compounds are commonly discussed in relation to enzymes and signaling pathways involved in the body's normal inflammatory response. This is why boswellia is frequently included in joint comfort, mobility, and recovery formulas.\n\nThe ingredient is not a quick replacement for medical pain management. It is better evaluated as a botanical extract that may support wellness routines when used appropriately. Product quality depends on the extract type, standardization, serving amount, and whether the label clearly explains the form used.\n\nBoswellia is often paired with curcumin because both are used in joint-support formulas, but combination products should still be reviewed carefully. More ingredients do not automatically mean better results. The safest comparison looks at dose, extract details, medication cautions, digestive tolerance, and whether the brand avoids disease-treatment claims.",
+  "how_it_works_subtitle": "Boswellic acids are the main compounds used to explain Boswellia's role in mobility formulas.",
+  "how_it_works_highlight_title": "Boswellic Acid Support",
+  "how_it_works_highlight_description": "Standardized Boswellia extracts are commonly evaluated by their boswellic acid content, especially in joint and mobility supplements.",
+  "how_it_works_content": "<p>Boswellia works through compounds in the resin known as boswellic acids. These compounds are studied for their relationship to inflammatory-response pathways, which is why the ingredient appears in many joint comfort products. The goal of supplementation is not to block normal inflammation completely. Healthy inflammatory signaling is part of repair and immune function. The wellness goal is balance, especially for adults who want to support comfortable movement over time.</p>\n\n<p>The ingredient may also support exercise and recovery routines indirectly. When joints feel comfortable, people may be more consistent with walking, stretching, and strength training. Those habits often matter more than any single supplement. Boswellia should therefore be viewed as one part of a mobility plan, not the entire plan.</p>\n\n<p>Standardization changes how Boswellia products compare. A capsule that lists only raw resin powder is not the same as an extract standardized to boswellic acids. Consumers should review the label, serving size, extract ratio, and safety notes before choosing a product.</p>",
   "benefits_title": "Potential Benefits of Boswellia Serrata",
-  "benefits_subtitle": "Educational benefits commonly discussed for boswellia resin extract in joint and mobility supplement routines.",
+  "benefits_subtitle": "Common wellness reasons Boswellia Serrata appears in joint and active-lifestyle formulas.",
   "benefits_json": [
     {
-      "icon": "bone",
-      "title": "Joint Comfort Support",
-      "description": "Boswellia is commonly used in formulas positioned around everyday joint comfort and mobility."
-    },
-    {
       "icon": "activity",
-      "title": "Normal Inflammatory Response",
-      "description": "Boswellic acids are researched for pathways related to the body's normal inflammatory-response signaling."
-    },
-    {
-      "icon": "dumbbell",
-      "title": "Active Lifestyle Fit",
-      "description": "Boswellia may appear in recovery and movement-support formulas for people comparing comfort-focused routines."
-    },
-    {
-      "icon": "leaf",
-      "title": "Botanical Alternative Context",
-      "description": "It is a plant resin extract often compared with curcumin, ginger, omega-3 fatty acids, and collagen."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Extract Quality Comparison",
-      "description": "Boswellia products can be compared by boswellic acid standardization, AKBA content, dose, and formula transparency."
+      "title": "Mobility Support",
+      "description": "Helps support comfortable movement when used as part of a broader joint wellness routine."
     },
     {
       "icon": "shield-check",
-      "title": "Label Safety Review",
-      "description": "Clear labels help shoppers evaluate digestive cautions, medication overlap, and suggested use."
+      "title": "Inflammatory-Response Balance",
+      "description": "Boswellic acids are commonly used to support normal inflammatory-response pathways."
+    },
+    {
+      "icon": "dumbbell",
+      "title": "Active Lifestyle Support",
+      "description": "May complement walking, stretching, strength training, and recovery-focused habits."
+    },
+    {
+      "icon": "leaf",
+      "title": "Botanical Joint Formula Fit",
+      "description": "Pairs well with other botanical and structural joint-support ingredients."
+    },
+    {
+      "icon": "search",
+      "title": "Standardized Extract Option",
+      "description": "Clear boswellic acid standardization helps consumers compare formulas more easily."
+    },
+    {
+      "icon": "heart-handshake",
+      "title": "Everyday Comfort Support",
+      "description": "Often chosen by adults seeking long-term support for daily movement comfort."
     }
   ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Boswellia serving sizes depend on extract concentration and boswellic acid standardization.",
-  "typical_dose": "Many boswellia extracts provide 100 mg to 500 mg per serving, depending on standardization and formula design.",
-  "dosage": "Many boswellia extracts provide 100 mg to 500 mg per serving, depending on standardization and formula design.",
-  "dosage_content": "Boswellia dosage is difficult to compare without knowing the extract standardization. A 100 mg branded extract standardized for specific boswellic acids may not be equivalent to a larger amount of basic resin powder. Many supplement labels list 100 mg to 500 mg per serving, but the extract details are essential.\n\nShoppers should review total boswellic acids, AKBA information if provided, serving frequency, and whether the product combines boswellia with other joint-support ingredients. Follow the label and avoid stacking several joint formulas without checking overlapping ingredients.\n\nPeople taking medications, preparing for surgery, pregnant or nursing individuals, and anyone with digestive sensitivity or chronic inflammatory conditions should consult a healthcare professional before using boswellia supplements.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Boswellia is commonly tolerated, but digestive effects, medication overlap, and surgery timing should be reviewed.",
+  "dosage_title": "Boswellia Serrata Dosage",
+  "dosage_subtitle": "Dosage depends on extract strength, boswellic acid standardization, and the finished product formula.",
+  "typical_dose": "Common supplemental ranges often fall around 100-500 mg of Boswellia extract per serving, depending on standardization.",
+  "dosage": "Common supplemental ranges often fall around 100-500 mg of Boswellia extract per serving, depending on standardization.",
+  "dosage_content": "<p>Boswellia dosage varies widely because products may use raw resin, concentrated extract, or extracts standardized to specific boswellic acid levels. Many supplements provide one to three servings per day, but the meaningful comparison is not only milligrams. Extract strength and AKBA or total boswellic acid content can change the practical potency of the product.</p>\n\n<p>Follow the product label rather than combining multiple Boswellia products. People using medication, managing chronic joint conditions, or preparing for surgery should ask a qualified healthcare professional before use. Starting with the label's suggested serving and monitoring tolerance is more responsible than increasing dose quickly.</p>",
+  "safety_title": "Boswellia Serrata Safety Information",
+  "safety_subtitle": "Boswellia is generally well tolerated by many adults, but medication and surgery-related cautions matter.",
   "side_effects": [
-    "Stomach discomfort",
-    "Nausea",
-    "Loose stools",
-    "Skin sensitivity in rare cases"
+    "Digestive discomfort, nausea, reflux, or loose stools may occur in sensitive users.",
+    "Allergy-like reactions are possible, especially in people sensitive to resin or frankincense-type botanicals.",
+    "Headache or skin changes have been reported by some users.",
+    "Taking higher amounts than directed may increase the chance of stomach upset."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Boswellia may cause stomach upset, nausea, acid reflux, or loose stools in some people."
+      "text": "Digestive discomfort, nausea, reflux, or loose stools may occur in sensitive users."
     },
     {
-      "icon": "activity",
-      "title": "Tolerance Depends on Extract",
-      "description": "Different resin extracts and combination formulas may feel different from one product to another."
+      "text": "Allergy-like reactions are possible, especially in people sensitive to resin or frankincense-type botanicals."
     },
     {
-      "icon": "alert-circle",
-      "title": "Allergy or Sensitivity",
-      "description": "People sensitive to resins or botanical extracts should start cautiously and review reactions."
+      "text": "Headache or skin changes have been reported by some users."
     },
     {
-      "icon": "shield-alert",
-      "title": "Medical Context Matters",
-      "description": "Boswellia should not replace care for joint pain, inflammatory disease, or persistent symptoms."
+      "text": "Taking higher amounts than directed may increase the chance of stomach upset."
     }
   ],
   "drug_interactions_json": [
-    "Anti-inflammatory medications, blood-thinning medications, or multiple joint formulas should be reviewed with a healthcare professional.",
-    "Immune-related medications or therapies should be discussed with a clinician before boswellia use.",
-    "Combination formulas with curcumin, ginger, or omega-3 fatty acids should be reviewed for overlapping cautions.",
-    "Surgery timing should be discussed with a clinician because supplement use may need to be paused."
+    {
+      "text": "Ask a clinician before combining Boswellia with blood thinners or antiplatelet medication."
+    },
+    {
+      "text": "Use caution with NSAIDs, anti-inflammatory drugs, or immune-modulating medication unless supervised."
+    },
+    {
+      "text": "Stop before surgery only if directed by a healthcare professional or surgical team."
+    },
+    {
+      "text": "Discuss use if taking medication for autoimmune or inflammatory conditions."
+    }
   ],
   "who_should_avoid_json": [
-    "Pregnant or nursing individuals unless advised by a healthcare professional.",
-    "People taking blood-thinning medication or preparing for surgery without clinician guidance.",
-    "People with significant digestive sensitivity who do not tolerate resin extracts.",
-    "Anyone using medication for inflammatory or immune-related conditions without professional review.",
-    "Children and adolescents unless directed by a qualified healthcare professional."
+    {
+      "text": "Pregnant or nursing individuals should avoid unsupervised Boswellia supplementation."
+    },
+    {
+      "text": "People with planned surgery should discuss timing with their healthcare team."
+    },
+    {
+      "text": "Anyone with persistent joint pain, swelling, or limited mobility should seek medical evaluation."
+    },
+    {
+      "text": "People with known allergy to Boswellia, frankincense, or resin products should avoid it."
+    }
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Common questions about Boswellia serrata, boswellic acids, joint formulas, and safety.",
+  "faq_title": "Boswellia Serrata FAQ",
+  "faq_subtitle": "Common questions about Boswellia Serrata, supplement use, and safety considerations.",
   "faq_json": [
     {
-      "question": "What is Boswellia serrata?",
-      "answer": "Boswellia serrata is a tree resin extract, often called Indian frankincense, used in supplements for joint comfort and mobility routines."
+      "question": "What is Boswellia Serrata used for?",
+      "answer": "Boswellia Serrata is commonly used in supplements for joint comfort, mobility support, and inflammatory-response balance."
+    },
+    {
+      "question": "Is Boswellia the same as frankincense?",
+      "answer": "Boswellia resin is related to frankincense, but supplement extracts are usually standardized for boswellic acids rather than used as fragrance resin."
     },
     {
       "question": "What are boswellic acids?",
-      "answer": "Boswellic acids are compounds found in boswellia resin. Many supplements are standardized by total boswellic acids or specific fractions such as AKBA."
+      "answer": "Boswellic acids are naturally occurring compounds in Boswellia resin that help explain its role in mobility and joint-support formulas."
     },
     {
-      "question": "Is boswellia used for joint support?",
-      "answer": "Yes. Boswellia commonly appears in joint comfort and mobility formulas, but it should not be presented as a medical treatment."
+      "question": "How long does Boswellia take to work?",
+      "answer": "Response varies. Many people evaluate it over several weeks of consistent use while also considering exercise, diet, and overall joint health."
     },
     {
-      "question": "Can boswellia replace arthritis medication?",
-      "answer": "No. Boswellia supplements are not substitutes for prescribed treatment or medical care."
+      "question": "Can Boswellia replace arthritis medication?",
+      "answer": "No. Boswellia is a supplement ingredient and should not replace prescribed medication or medical care for arthritis or joint disease."
     },
     {
-      "question": "What dose is common on labels?",
-      "answer": "Many labels list 100 mg to 500 mg per serving, but extract standardization is important for comparison."
+      "question": "Can Boswellia be taken with curcumin?",
+      "answer": "Many formulas combine Boswellia and curcumin, but people taking medications or managing health conditions should ask a clinician first."
     },
     {
-      "question": "Can boswellia be taken with curcumin?",
-      "answer": "Some formulas combine them, but users should review total dose, digestive tolerance, and medication cautions."
+      "question": "Is Boswellia safe for daily use?",
+      "answer": "Many adults tolerate it well when used as directed, but digestive effects and medication interactions are possible."
     },
     {
-      "question": "What side effects can boswellia cause?",
-      "answer": "Digestive discomfort, nausea, reflux, or loose stools are commonly discussed side effects."
+      "question": "What should I look for on a Boswellia label?",
+      "answer": "Look for extract amount, standardization to boswellic acids or AKBA, serving directions, and clear safety information."
     },
     {
-      "question": "Who should be cautious with boswellia?",
-      "answer": "People taking medications, preparing for surgery, pregnant or nursing individuals, and those with digestive sensitivity should seek guidance."
+      "question": "Who should avoid Boswellia?",
+      "answer": "Pregnant or nursing individuals, people with resin allergies, and people on blood-thinning or immune-related medication should seek medical guidance."
     },
     {
-      "question": "How should I compare boswellia products?",
-      "answer": "Compare extract type, total boswellic acids, AKBA information, serving size, combination ingredients, and caution statements."
-    },
-    {
-      "question": "Is frankincense essential oil the same as boswellia supplement extract?",
-      "answer": "No. Boswellia dietary supplements use resin extracts intended for oral supplement use, not essential oils."
+      "question": "Is Boswellia a pain reliever?",
+      "answer": "It should not be marketed as a pain reliever. It is better described as a mobility and inflammatory-response support ingredient."
     }
   ],
-  "sidebar_profile_title": "Boswellia Serrata Snapshot",
-  "sidebar_profile_content": "Boswellia serrata is an Indian frankincense resin extract commonly used in joint comfort, mobility, and normal inflammatory-response supplement formulas.",
+  "sidebar_profile_title": "Boswellia Serrata Profile",
+  "sidebar_profile_content": "A resin-derived botanical extract commonly used in joint comfort, mobility, and inflammatory-response wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Botanical resin extract"
+      "value": "Herbal resin extract"
     },
     {
       "label": "Typical Dose",
-      "value": "Often 100-500 mg per serving"
+      "value": "100-500 mg extract"
     },
     {
       "label": "Best For",
-      "value": "Joint comfort and mobility research"
+      "value": "Mobility support"
     },
     {
       "label": "Safety Level",
-      "value": "Review medications and digestive tolerance"
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "India and surrounding regions"
+      "value": "Boswellia tree resin"
     },
     {
       "label": "Part Used",
-      "value": "Tree resin"
+      "value": "Resin"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, or extract"
+      "value": "Capsule or tablet"
     },
     {
       "label": "Taste",
-      "value": "Resinous and bitter"
+      "value": "Resinous, bitter"
     }
   ],
-  "sidebar_at_a_glance_content": "- Indian frankincense resin extract\n- Commonly standardized for boswellic acids\n- Often paired with curcumin in joint formulas\n- Digestive tolerance and medication overlap should be reviewed\n- Not a substitute for medical joint care",
-  "full_description": "Boswellia serrata is a resin extract commonly used in joint comfort and mobility supplement formulas, especially where normal inflammatory-response support is a key label theme.",
-  "best_for": "Joint comfort and mobility research",
-  "safety_level": "Review medications and digestive tolerance",
-  "origin_country": "India",
+  "sidebar_at_a_glance_content": "<p>Boswellia Serrata is best known for standardized boswellic acid extracts used in mobility products. It is most relevant for adults comparing joint-support formulas and should be used with medication cautions in mind.</p>",
+  "full_description": "Boswellia Serrata is a traditional resin extract used in modern joint, mobility, and inflammatory-response support supplements.",
+  "best_for": "Joint comfort and mobility formulas",
+  "safety_level": "Moderate",
+  "origin_country": "India and surrounding dry regions",
   "part_used": "Tree resin",
-  "ingredient_form": "Capsule, tablet, or extract",
-  "taste_profile": "Resinous and bitter",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Boswellia Serrata Benefits and Safety | Suppriva",
-  "seo_focus_keyword": "boswellia serrata",
-  "seo_description": "Explore Boswellia serrata benefits, boswellic acids, typical dosage, joint supplement use, side effects, and safety considerations.",
+  "ingredient_form": "Standardized extract",
+  "taste_profile": "Bitter and resinous",
+  "rating": 4.7,
+  "evidence_level": "Moderate",
+  "uses_title": "Boswellia Serrata Uses",
+  "uses_subtitle": "Boswellia is most often used in products focused on comfortable movement and active aging.",
+  "uses_content": "<p>Boswellia Serrata is used in mobility supplements, joint comfort products, active-lifestyle formulas, and multi-ingredient botanical blends. It may also appear in products designed for older adults who want to support daily movement and flexibility.</p>",
+  "uses_json": [
+    {
+      "text": "Joint comfort formulas"
+    },
+    {
+      "text": "Mobility support"
+    },
+    {
+      "text": "Active aging products"
+    },
+    {
+      "text": "Botanical inflammatory-response blends"
+    }
+  ],
+  "food_sources_title": "Boswellia Serrata Food Sources",
+  "food_sources_subtitle": "Boswellia is not a common food ingredient.",
+  "food_sources_content": "<p>Boswellia Serrata is typically consumed as a resin extract rather than as a normal dietary food. It is not comparable to getting nutrients from fruits, vegetables, grains, or proteins.</p>",
+  "food_sources_json": [
+    {
+      "text": "Standardized Boswellia extract"
+    },
+    {
+      "text": "Boswellia resin powder"
+    },
+    {
+      "text": "Multi-ingredient joint formulas"
+    }
+  ],
+  "research_title": "Boswellia Serrata Research Notes",
+  "research_subtitle": "Research mainly focuses on boswellic acids, joint comfort, and inflammatory-response pathways.",
+  "research_content": "<p>Boswellia research often evaluates standardized extracts and their boswellic acid content. Study designs, doses, and extract types vary, so product quality matters when comparing evidence to a supplement label.</p>",
+  "research_json": [
+    {
+      "text": "Boswellic acid standardization"
+    },
+    {
+      "text": "Joint comfort studies"
+    },
+    {
+      "text": "Mobility support research"
+    },
+    {
+      "text": "Inflammatory-response pathways"
+    }
+  ],
+  "references_title": "Boswellia Serrata Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Boswellia serrata extract standardization"
+    },
+    {
+      "text": "AKBA and boswellic acids"
+    },
+    {
+      "text": "Joint mobility supplement safety"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "curcumin"
+    },
+    {
+      "slug": "omega-3-fatty-acids"
+    },
+    {
+      "slug": "bromelain"
+    },
+    {
+      "slug": "ginger-root"
+    }
+  ],
+  "seo_title": "Boswellia Serrata Benefits, Dosage, Safety and Uses",
+  "seo_focus_keyword": "Boswellia Serrata",
+  "seo_description": "Learn what Boswellia Serrata is, how boswellic acids support mobility formulas, typical dosage ranges, safety cautions, and common supplement uses.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/boswellia-serrata",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Boswellia Serrata Benefits and Safety | Suppriva",
-  "meta_description": "Explore Boswellia serrata benefits, boswellic acids, typical dosage, joint supplement use, side effects, and safety considerations."
+  "meta_title": "Boswellia Serrata Benefits, Dosage, Safety and Uses",
+  "meta_description": "Learn what Boswellia Serrata is, how boswellic acids support mobility formulas, typical dosage ranges, safety cautions, and common supplement uses."
 }
