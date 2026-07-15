@@ -1,187 +1,177 @@
 {
   "name": "Cordyceps Extract",
-  "scientific_name": "Cordyceps militaris or Cordyceps sinensis",
-  "hero_badge": null,
-  "short_description": "Cordyceps Extract is a functional mushroom extract used in wellness supplements for energy, endurance, and functional mushroom education.",
-  "overview_title": "Cordyceps Extract Overview",
-  "overview_subtitle": "A practical look at Cordyceps Extract and how it appears in supplement formulas.",
-  "overview_content": "<p>Cordyceps Extract is a functional mushroom extract associated with energy, endurance, and functional mushroom education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Cordyceps Extract depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Cordyceps Extract is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "scientific_name": "Cordyceps militaris / Ophiocordyceps sinensis",
+  "ingredient_category": "Mushrooms",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "Cordyceps extract is a functional mushroom ingredient used in energy, endurance, respiratory wellness, and immune-support supplement formulas.",
+  "overview_title": "What Is Cordyceps Extract?",
+  "overview_subtitle": "A practical guide to cordyceps mushroom extracts, beta-glucans, cordycepin, and label comparison.",
+  "overview_content": "<p>Cordyceps extract is a functional mushroom ingredient derived mainly from Cordyceps militaris or Ophiocordyceps sinensis-related species. Traditional cordyceps was rare and expensive, but modern supplement products usually use cultivated mushroom material or mycelium extracts. This shift matters because the source, extraction method, and standardization can vary widely between products. A high-quality label should make it clear whether the supplement uses fruiting body, mycelium, whole biomass, or a standardized extract.</p><p>Cordyceps is commonly discussed in wellness education for energy, stamina, respiratory support, immune signaling, and active-lifestyle routines. The compound cordycepin, along with polysaccharides and beta-glucans, is often highlighted in research discussions. However, cordyceps should not be presented as a cure, performance drug, or replacement for medical care. Its role is better understood as a functional mushroom ingredient that may support a broader wellness routine depending on dose, extract quality, and individual context.</p><p>Consumers should pay attention to extraction type. Water extracts may emphasize polysaccharides and beta-glucans, while dual extracts may capture a broader range of compounds. Some products list beta-glucan percentage, cordycepin content, or fruiting-body sourcing; others use generic mushroom powder with less detail. Those differences can strongly affect how a cordyceps supplement is evaluated.</p><p>Safety context is important. Cordyceps may not be suitable for people taking immunosuppressant medication, blood-thinning medication, diabetes medication, or those with autoimmune conditions unless a healthcare professional approves. People preparing for surgery, pregnant or nursing individuals, and anyone managing a chronic condition should be cautious. Cordyceps can also cause digestive upset or allergy-like reactions in sensitive users.</p><p>Suppriva reviews cordyceps extract as an educational ingredient for comparing mushroom supplements responsibly. The most useful questions are: what species is used, what part of the organism is used, how is it extracted, is it standardized, what dose is provided, and does the label include appropriate safety cautions?</p><p>Cordyceps also sits within a larger functional mushroom category that includes reishi, lion's mane, chaga, turkey tail, shiitake, and maitake. Each mushroom is marketed differently, so consumers should avoid treating mushroom blends as interchangeable. Cordyceps is most often positioned around energy and stamina, but another mushroom may be more focused on immune education, cognitive support, or general wellness. This makes source transparency and ingredient-specific labeling especially valuable.</p><p>A responsible cordyceps page should also help readers slow down around performance claims. Feeling more energetic can depend on sleep, iron status, thyroid health, training load, hydration, and many other factors. Cordyceps may be one ingredient in an active-lifestyle routine, but persistent fatigue, breathing difficulty, or unexplained performance decline should be evaluated medically. Supplement education is most useful when it helps people ask better questions before buying.</p><p>For product comparison, cordyceps should be reviewed beside the entire formula rather than isolated from it. Some blends combine cordyceps with caffeine, rhodiola, beet root, electrolytes, or other performance ingredients, which can change the user experience and safety profile. A clean educational review should separate cordyceps-specific information from claims created by the broader stack. That distinction helps shoppers understand whether they are buying a mushroom extract, an energy blend, or a multi-ingredient performance product.</p>",
+  "interesting_fact_label": "Mushroom Insight",
+  "interesting_fact": "<p>Many modern cordyceps supplements use cultivated Cordyceps militaris because traditional wild cordyceps is rare, costly, and difficult to source consistently.</p>",
   "how_it_works_title": "How Cordyceps Extract Works",
-  "how_it_works_subtitle": "How Cordyceps Extract is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Functional Mushroom Energy Support",
-  "how_it_works_highlight_description": "Cordyceps Extract is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Cordyceps Extract is commonly discussed through functional mushroom energy and endurance-support education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Cordyceps Extract to a supplement routine.</p>",
-  "benefits_title": "Potential Cordyceps Extract Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Cordyceps Extract in supplement routines.",
+  "how_it_works_subtitle": "Cordyceps is researched for mushroom polysaccharides, cordycepin, and activity related to energy and immune signaling.",
+  "how_it_works_highlight_title": "Functional Mushroom Support",
+  "how_it_works_highlight_description": "Cordyceps extract is often evaluated by species, fruiting-body or mycelium source, beta-glucan content, cordycepin standardization, and extraction method.",
+  "how_it_works_content": "<p>Cordyceps extract is studied for several groups of naturally occurring mushroom compounds. Polysaccharides and beta-glucans are commonly discussed in immune-support education, while cordycepin is often highlighted as a unique cordyceps-associated compound. These compounds do not act like caffeine. Instead, cordyceps is typically positioned as a functional mushroom ingredient used over time as part of a daily routine.</p><p>Some research explores cordyceps in relation to oxygen utilization, fatigue perception, exercise capacity, and respiratory wellness, but findings depend heavily on the population, dose, extract, and study design. A product using simple mushroom powder is not the same as a standardized extract, so shoppers should avoid assuming that all cordyceps products are equivalent.</p><p>The most responsible way to understand cordyceps is to compare source species, extraction method, active compound disclosure, serving size, and medication cautions. It may fit certain energy or immune-support formulas, but people with immune disorders, medication use, or medical conditions should review it with a qualified professional.</p>",
+  "benefits_title": "Potential Benefits of Cordyceps Extract",
+  "benefits_subtitle": "Educational benefits commonly discussed for cordyceps in energy, endurance, and mushroom supplement routines.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Energy Routine Context",
-      "description": "Energy Routine Context helps readers evaluate Cordyceps Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Energy Routine Support",
+      "description": "Cordyceps Extract is often included in formulas for daily vitality without acting like a stimulant."
     },
     {
       "icon": "shield-check",
-      "title": "Endurance Claim Review",
-      "description": "Endurance Claim Review helps readers evaluate Cordyceps Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Exercise Performance Context",
+      "description": "Cordyceps Extract is studied in relation to oxygen use and endurance markers, though results vary by extract and population."
     },
     {
       "icon": "activity",
-      "title": "Mushroom Extract Quality",
-      "description": "Mushroom Extract Quality helps readers evaluate Cordyceps Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Beta-Glucan Education",
-      "description": "Beta-Glucan Education helps readers evaluate Cordyceps Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Adaptogen-Style Formula Fit",
-      "description": "Adaptogen-Style Formula Fit helps readers evaluate Cordyceps Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Immune-Support Education",
+      "description": "Cordyceps Extract contains mushroom polysaccharides and beta-glucans commonly discussed in immune wellness."
     },
     {
       "icon": "sparkles",
-      "title": "Source Transparency",
-      "description": "Source Transparency helps readers evaluate Cordyceps Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Respiratory Wellness Context",
+      "description": "Cordyceps Extract appears in some formulas designed around breathing, stamina, and active lifestyle support."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Functional Mushroom Comparison",
+      "description": "Cordyceps Extract helps readers compare mushroom extracts by species, source, extraction method, and standardization."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Caffeine-Free Positioning",
+      "description": "Cordyceps Extract may appeal to people comparing energy formulas that do not rely on caffeine."
     }
   ],
   "dosage_title": "Typical Cordyceps Extract Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength.",
-  "dosage": "Common supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength.",
-  "dosage_content": "<p>Common supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_subtitle": "Serving size depends on species, extract ratio, beta-glucan disclosure, and whether the product uses fruiting body or mycelium.",
+  "typical_dose": "Common cordyceps supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength.",
+  "dosage": "Common cordyceps supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength.",
+  "dosage_content": "<p>Cordyceps dosage varies widely because products may use mushroom powder, fruiting-body extract, mycelium extract, or standardized forms. Many labels list 500 mg to 2,000 mg per day, but extract quality and standardization matter as much as the number of milligrams.</p><p>For best comparison, review whether the label lists Cordyceps militaris, Ophiocordyceps sinensis, fruiting body, mycelium, extract ratio, beta-glucans, or cordycepin. Follow the product label and avoid stacking multiple mushroom formulas without considering total dose and immune-related cautions.</p>",
   "safety_title": "Cordyceps Extract Safety Information",
-  "safety_subtitle": "People with immune conditions, bleeding concerns, medication use, pregnancy, or nursing should seek professional guidance.",
+  "safety_subtitle": "Cordyceps is generally well tolerated by many adults, but immune, bleeding, glucose, and allergy considerations matter.",
   "side_effects": [
-    "Digestive upset",
-    "Dry mouth",
-    "Allergy concern",
-    "Immune medication caution"
+    "Digestive Upset",
+    "Allergy Sensitivity",
+    "Immune-System Caution",
+    "Blood Sugar Review"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Upset",
+      "description": "Cordyceps may cause nausea, dry mouth, gas, or stomach discomfort in some users."
     },
     {
       "icon": "activity",
-      "title": "Dry mouth",
-      "description": "Dry mouth may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Allergy Sensitivity",
+      "description": "People sensitive to mushrooms or molds should use caution with mushroom-based supplements."
     },
     {
       "icon": "alert-circle",
-      "title": "Allergy concern",
-      "description": "Allergy concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Immune-System Caution",
+      "description": "Cordyceps may not be appropriate for people on immunosuppressant medication without clinician guidance."
     },
     {
       "icon": "shield-alert",
-      "title": "Immune medication caution",
-      "description": "Immune medication caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Blood Sugar Review",
+      "description": "People using diabetes medication should discuss cordyceps with a healthcare professional."
     }
   ],
   "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Cordyceps Extract should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
-    },
-    {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Cordyceps Extract as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Cordyceps Extract with formulas that target the same pathway or contain similar active compounds."
-    }
+    "Immunosuppressant medications may be relevant because cordyceps is discussed in immune-support contexts.",
+    "Anticoagulant or antiplatelet medications should be reviewed because some mushroom supplements may affect bleeding-risk discussions.",
+    "Diabetes medications may require caution if blood sugar monitoring is part of the user's care plan.",
+    "Surgery timing should be discussed with a clinician before using cordyceps or other mushroom supplements."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Cordyceps Extract.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to cultivated cordyceps mushroom biomass or fruiting body.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Cordyceps Extract to replace diagnosis, treatment, or prescribed care."
+    "People using immunosuppressant drugs unless a healthcare professional approves cordyceps use.",
+    "People with autoimmune conditions who have not discussed mushroom supplements with a clinician.",
+    "People with mushroom allergies or significant mold sensitivity.",
+    "Pregnant or nursing individuals unless advised by a qualified healthcare professional.",
+    "Anyone expecting cordyceps to replace medical treatment, inhalers, or prescribed therapies."
   ],
   "food_sources_title": "Cordyceps Extract Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Cordyceps is primarily used as a supplement, tea, powder, or functional mushroom blend.</p>",
+  "food_sources_subtitle": "Cordyceps is primarily consumed as a supplement or specialty mushroom preparation rather than a common food.",
+  "food_sources_content": "<p>Cordyceps is not a typical grocery-store food in most diets. Supplements usually use cultivated Cordyceps militaris fruiting body, mycelium, or standardized extracts. Some specialty foods and traditional preparations may contain cordyceps, but supplement labels should be evaluated separately from culinary mushrooms.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
-      "title": "Cordyceps is primarily used as a supplement",
-      "description": "Cordyceps is primarily used as a supplement may help explain the dietary or source context for Cordyceps Extract."
+      "title": "Cultivated cordyceps fruiting body",
+      "description": "Cultivated cordyceps fruiting body may provide dietary context for Cordyceps Extract, though supplement amounts can differ from food exposure."
     },
     {
       "icon": "leaf",
-      "title": "tea",
-      "description": "tea may help explain the dietary or source context for Cordyceps Extract."
+      "title": "Cordyceps mycelium preparations",
+      "description": "Cordyceps mycelium preparations may provide dietary context for Cordyceps Extract, though supplement amounts can differ from food exposure."
     },
     {
       "icon": "leaf",
-      "title": "powder",
-      "description": "powder may help explain the dietary or source context for Cordyceps Extract."
+      "title": "Mushroom extract capsules",
+      "description": "Mushroom extract capsules may provide dietary context for Cordyceps Extract, though supplement amounts can differ from food exposure."
     },
     {
       "icon": "leaf",
-      "title": "or functional mushroom blend",
-      "description": "or functional mushroom blend may help explain the dietary or source context for Cordyceps Extract."
+      "title": "Mushroom powders",
+      "description": "Mushroom powders may provide dietary context for Cordyceps Extract, though supplement amounts can differ from food exposure."
+    },
+    {
+      "icon": "leaf",
+      "title": "Functional mushroom blends",
+      "description": "Functional mushroom blends may provide dietary context for Cordyceps Extract, though supplement amounts can differ from food exposure."
     }
   ],
   "faq_title": "Cordyceps Extract FAQs",
-  "faq_subtitle": "Common questions about Cordyceps Extract, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Cordyceps Extract, dosage, safety, and supplement label comparison.",
   "faq_json": [
     {
-      "question": "What is Cordyceps Extract?",
-      "answer": "Cordyceps Extract is a functional mushroom extract used in supplements for energy, endurance, and functional mushroom education."
+      "question": "What is cordyceps extract?",
+      "answer": "Cordyceps extract is a functional mushroom supplement ingredient commonly derived from cultivated Cordyceps militaris or related species."
     },
     {
-      "question": "What is Cordyceps Extract commonly used for?",
-      "answer": "It is commonly discussed for energy, endurance, and functional mushroom education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is cordyceps a stimulant?",
+      "answer": "No. Cordyceps is not caffeine. It is typically used in energy and endurance formulas as a non-stimulant mushroom ingredient."
     },
     {
-      "question": "How does Cordyceps Extract work?",
-      "answer": "Cordyceps Extract is usually evaluated through functional mushroom energy and endurance-support education, along with dose, quality, and safety considerations."
+      "question": "What does cordyceps contain?",
+      "answer": "Cordyceps may contain polysaccharides, beta-glucans, cordycepin, and other mushroom compounds depending on source and extraction."
     },
     {
-      "question": "What is a typical Cordyceps Extract dose?",
-      "answer": "Common supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength."
+      "question": "What is a typical cordyceps dose?",
+      "answer": "Many supplements provide 500 mg to 2,000 mg per day, but extract type and standardization should also be reviewed."
     },
     {
-      "question": "Is Cordyceps Extract safe?",
-      "answer": "Cordyceps Extract may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Is fruiting body better than mycelium?",
+      "answer": "Not always, but fruiting body, mycelium, extract ratio, and beta-glucan disclosure should be clearly stated so shoppers can compare products."
     },
     {
-      "question": "Can Cordyceps Extract cause side effects?",
-      "answer": "Possible side effects include digestive upset, dry mouth, allergy concern, especially when serving sizes are high or tolerance is low."
+      "question": "Can cordyceps replace asthma or respiratory medication?",
+      "answer": "No. Cordyceps should not replace medical treatment, inhalers, or prescribed respiratory therapies."
     },
     {
-      "question": "Can Cordyceps Extract interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Cordyceps Extract."
+      "question": "Who should be cautious with cordyceps?",
+      "answer": "People with autoimmune conditions, mushroom allergies, medication use, pregnancy, nursing, or upcoming surgery should seek professional guidance."
     },
     {
-      "question": "Is Cordyceps Extract found in foods?",
-      "answer": "Cordyceps is primarily used as a supplement, tea, powder, or functional mushroom blend."
+      "question": "Can cordyceps interact with medications?",
+      "answer": "Yes, it may be relevant to immunosuppressants, anticoagulants, antiplatelets, and diabetes medications."
     },
     {
-      "question": "What should I look for on a Cordyceps Extract label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "What should I look for on a cordyceps label?",
+      "answer": "Look for species, fruiting body or mycelium source, extract ratio, beta-glucan content, cordycepin disclosure, and safety cautions."
     },
     {
-      "question": "Is Cordyceps Extract a substitute for medical treatment?",
-      "answer": "No. Cordyceps Extract is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is cordyceps safe for daily use?",
+      "answer": "Many adults tolerate it, but daily use should be based on label directions and personal health context."
     }
   ],
   "sidebar_profile_title": "Cordyceps Extract Profile Snapshot",
-  "sidebar_profile_content": "<p>Cordyceps Extract is categorized as a functional mushroom extract and is most often reviewed for energy, endurance, and functional mushroom education.</p>",
+  "sidebar_profile_content": "<p>Cordyceps extract is a functional mushroom ingredient used in energy, endurance, immune-support, and respiratory wellness formulas. Label quality depends on species, extract type, and standardization.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -190,22 +180,22 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement servings often range from 500 mg to 2,000 mg daily, depending on extract strength.",
+      "value": "Often 500-2,000 mg daily",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Energy, endurance, and functional mushroom education",
+      "value": "Energy, endurance, and mushroom wellness",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Review immune and medication context",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Cultivated Cordyceps mushroom biomass or fruiting body",
+      "value": "Cultivated mushroom sources",
       "icon": "map-pin"
     },
     {
@@ -215,75 +205,80 @@
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract, coffee blend",
+      "value": "Capsule, powder, extract, blend",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Earthy and mild",
+      "value": "Earthy and mushroom-like",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Cordyceps Extract is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Cordyceps Extract is reviewed by Suppriva as a functional mushroom extract for energy, endurance, and functional mushroom education.",
-  "best_for": "Energy, endurance, and functional mushroom education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Cultivated Cordyceps mushroom biomass or fruiting body",
+  "sidebar_at_a_glance_content": "<p>Cordyceps extract is best compared by species, source material, extract ratio, beta-glucan or cordycepin disclosure, and medication cautions. It is educationally relevant to energy and functional mushroom formulas.</p>",
+  "full_description": "Cordyceps extract is a functional mushroom ingredient used in energy, endurance, respiratory wellness, and immune-support supplement education.",
+  "best_for": "Energy, endurance, and functional mushroom support",
+  "safety_level": "Review immune, bleeding, and glucose medication context",
+  "origin_country": "Cultivated Cordyceps militaris and related sources",
   "part_used": "Fruiting body or mycelium",
-  "ingredient_form": "Capsule, powder, extract, coffee blend",
-  "taste_profile": "Earthy and mild",
+  "ingredient_form": "Capsule, powder, extract, or mushroom blend",
+  "taste_profile": "Earthy mushroom flavor",
   "rating": 4.6,
-  "evidence_level": "Moderate",
+  "evidence_level": "Emerging",
   "uses_title": "Cordyceps Extract Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Cordyceps Extract may appear in formulas related to energy, endurance, and functional mushroom education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Cordyceps Extract may appear in formulas related to energy, endurance, and functional mushroom support. Use should be guided by the finished product label, the total ingredient stack, and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Energy Routine Context",
-      "description": "Energy Routine Context is a common context for evaluating Cordyceps Extract."
+      "title": "Energy Routine Support",
+      "description": "Energy Routine Support is a common educational context for comparing this ingredient on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Endurance Claim Review",
-      "description": "Endurance Claim Review is a common context for evaluating Cordyceps Extract."
+      "title": "Exercise Performance Context",
+      "description": "Exercise Performance Context is a common educational context for comparing this ingredient on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Mushroom Extract Quality",
-      "description": "Mushroom Extract Quality is a common context for evaluating Cordyceps Extract."
+      "title": "Immune-Support Education",
+      "description": "Immune-Support Education is a common educational context for comparing this ingredient on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Beta-Glucan Education",
-      "description": "Beta-Glucan Education is a common context for evaluating Cordyceps Extract."
+      "title": "Functional Mushroom Comparison",
+      "description": "Functional Mushroom Comparison is a common educational context for comparing this ingredient on supplement labels."
     }
   ],
   "research_title": "Cordyceps Extract Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Cordyceps Extract focuses on functional mushroom energy and endurance-support education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Cordyceps research includes functional mushroom compounds, cordycepin, beta-glucans, exercise-related outcomes, and immune signaling. Results vary depending on species, extract type, dose, and study population.</p><p>Because mushroom extracts are not interchangeable, research on one cordyceps preparation should not be assumed to apply to every product. Label transparency is especially important.</p>",
   "research_json": [
     {
       "icon": "book-open",
       "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "description": "Research findings may not apply equally to every extract form, delivery system, or serving size."
     },
     {
       "icon": "search",
       "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "description": "Outcomes can vary by age, baseline status, diet, medication use, and study design."
     }
   ],
   "references_title": "Cordyceps Extract References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
+  "related_ingredients_json": [
+    "reishi-mushroom",
+    "shiitake-mushroom",
+    "turkey-tail-mushroom",
+    "chaga-mushroom-extract"
+  ],
   "seo_title": "Cordyceps Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "cordyceps extract",
-  "seo_description": "Cordyceps Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about cordyceps extract benefits, typical dosage, mushroom forms, beta-glucans, cordycepin, side effects, interactions, and label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/cordyceps-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Cordyceps Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Cordyceps Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_description": "Learn about cordyceps extract benefits, typical dosage, mushroom forms, beta-glucans, cordycepin, side effects, interactions, and label tips."
 }
