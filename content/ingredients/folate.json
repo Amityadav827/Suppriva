@@ -1,299 +1,274 @@
 {
   "name": "Folate (Methylfolate)",
   "scientific_name": "L-5-methyltetrahydrofolate",
-  "hero_badge": null,
-  "short_description": "Folate (Methylfolate) is a b vitamin form used in wellness supplements for methylation, prenatal, and b-vitamin supplement education.",
-  "overview_title": "Folate (Methylfolate) Overview",
-  "overview_subtitle": "A practical look at Folate (Methylfolate) and how it appears in supplement formulas.",
-  "overview_content": "<p>Folate (Methylfolate) is a b vitamin form associated with methylation, prenatal, and b-vitamin supplement education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Folate (Methylfolate) depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Folate (Methylfolate) is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
-  "how_it_works_title": "How Folate (Methylfolate) Works",
-  "how_it_works_subtitle": "How Folate (Methylfolate) is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Active Folate Support",
-  "how_it_works_highlight_description": "Folate (Methylfolate) is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Folate (Methylfolate) is commonly discussed through active folate form and methylation-support education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Folate (Methylfolate) to a supplement routine.</p>",
-  "benefits_title": "Potential Folate (Methylfolate) Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Folate (Methylfolate) in supplement routines.",
+  "ingredient_category": "Vitamins",
+  "hero_badge": "Active B Vitamin",
+  "short_description": "Folate is vitamin B9; methylfolate is the active 5-MTHF form used in prenatal, methylation, mood, and cellular wellness formulas.",
+  "overview_title": "What Is Folate?",
+  "overview_subtitle": "A practical guide to vitamin B9, methylfolate, folic acid, pregnancy nutrition, and label comparison.",
+  "overview_content": "<p>Folate is the family name for vitamin B9 compounds found in foods and supplements. Methylfolate, often written as L-5-MTHF or L-5-methyltetrahydrofolate, is a biologically active form used in many modern supplement formulas. Folic acid is the synthetic form commonly used in fortified foods and many supplements. All three terms are related, but they are not identical on a label.</p><p>Vitamin B9 is essential for DNA synthesis, red blood cell formation, amino acid metabolism, and normal growth and development. It is especially important before and during pregnancy because adequate folate intake helps reduce the risk of neural tube defects. This is one reason folic acid fortification and prenatal supplements are major public health topics. However, supplement decisions during pregnancy should be made with a healthcare professional.</p><p>Methylfolate is popular because it is already in the 5-MTHF form used in the body. Some people look for methylfolate because of genetic discussions around MTHFR variants, although MTHFR marketing is often oversimplified. NIH Office of Dietary Supplements materials explain folate in dietary folate equivalents, fortified foods, deficiency, and upper intake considerations. Consumers should avoid assuming that more folate is always better.</p><p>Folate deficiency can contribute to megaloblastic anemia and may occur with inadequate intake, certain digestive disorders, alcohol misuse, some medications, pregnancy, or increased needs. Symptoms can overlap with other issues, so deficiency should be evaluated clinically rather than guessed from fatigue alone. Vitamin B12 status is especially important because high folic acid intake can mask signs of B12 deficiency while neurological issues progress.</p><p>Label comparison should include the exact form: folic acid, folate, methylfolate, calcium L-5-MTHF, glucosamine salt 5-MTHF, or food-based folate. The amount may be listed in micrograms DFE, which stands for dietary folate equivalents. This unit accounts for different bioavailability between food folate and folic acid. A high-quality label should make the form and amount clear.</p><p>Folate appears in prenatal vitamins, B-complex supplements, methylation blends, homocysteine-support formulas, mood-support formulas, and multivitamins. These products often include vitamin B12, B6, choline, iron, iodine, or other nutrients. The full formula matters because nutrient balance, dose, and user needs differ. People should not combine multiple high-dose B vitamin products without reviewing total intake.</p><p>Safety is generally favorable at appropriate doses, but excessive supplemental folic acid may be problematic, particularly when vitamin B12 deficiency has not been ruled out. Some medications, including methotrexate, certain anti-seizure drugs, and other therapies, require professional guidance. People being treated for cancer, epilepsy, autoimmune disease, or pregnancy-related needs should follow clinician advice.</p><p>Suppriva presents folate and methylfolate as vitamin education, not personalized medical advice. The best approach is to compare form, dose, DFE amount, B12 pairing, prenatal relevance, medication context, and whether the product fits the user's stage of life. Folate is essential, but supplementing it responsibly means respecting both deficiency risk and overuse concerns.</p><p>A practical label review should also check whether folate is part of a multivitamin, prenatal, B-complex, mood formula, or methylation blend. The surrounding nutrients can change the user's total intake. For example, folate is often paired with B12, B6, choline, iodine, and iron in prenatal products, while methylation formulas may use higher-potency B vitamins. Comparing the whole formula helps prevent accidental duplication from multiple supplements.</p>",
+  "interesting_fact_label": "Vitamin B9 Insight",
+  "interesting_fact": "<p>Supplement labels may list folic acid, folate, 5-MTHF, or methylfolate, and the dose may appear as micrograms DFE.</p>",
+  "how_it_works_title": "How Folate Works",
+  "how_it_works_subtitle": "Folate supports DNA synthesis, red blood cell formation, methylation pathways, and normal growth and development.",
+  "how_it_works_highlight_title": "Active Vitamin B9 Support",
+  "how_it_works_highlight_description": "Methylfolate is a 5-MTHF form of vitamin B9, but dose, B12 status, and medical context still matter.",
+  "how_it_works_content": "<p>Folate participates in one-carbon metabolism, a network of reactions involved in DNA synthesis, methylation, and amino acid metabolism. These pathways are essential for rapidly dividing cells and normal red blood cell formation.</p><p>Methylfolate is already in the 5-MTHF form used in circulation, while folic acid must be converted through enzymatic steps. This difference explains why some supplement labels emphasize methylfolate, but it does not mean everyone needs high-dose methylfolate.</p><p>Folate works closely with vitamin B12 and vitamin B6. Imbalances or high intake without proper clinical context can create problems, especially if B12 deficiency is present. The safest approach is to evaluate the full nutrient picture.</p>",
+  "benefits_title": "Potential Benefits of Folate",
+  "benefits_subtitle": "Educational benefits commonly discussed for vitamin B9 and methylfolate supplements.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "B Vitamin Education",
-      "description": "B Vitamin Education helps readers evaluate Folate (Methylfolate) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "baby",
+      "title": "Prenatal Nutrition Context",
+      "description": "Adequate folate intake is important before and during pregnancy for normal fetal development."
     },
     {
-      "icon": "shield-check",
-      "title": "Methylation Context",
-      "description": "Methylation Context helps readers evaluate Folate (Methylfolate) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "dna",
+      "title": "DNA Synthesis Support",
+      "description": "Folate is required for normal DNA synthesis and cellular division."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Homocysteine Pathways",
+      "description": "Folate works with B12 and B6 in amino acid metabolism and homocysteine-related pathways."
     },
     {
       "icon": "activity",
-      "title": "Prenatal Label Review",
-      "description": "Prenatal Label Review helps readers evaluate Folate (Methylfolate) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Red Blood Cell Formation",
+      "description": "Vitamin B9 is needed for normal red blood cell production."
+    },
+    {
+      "icon": "brain",
+      "title": "Methylation Formula Context",
+      "description": "Methylfolate appears in methylation and mood-support formulas, though use should be individualized."
     },
     {
       "icon": "clipboard-check",
-      "title": "Folate vs Folic Acid Awareness",
-      "description": "Folate vs Folic Acid Awareness helps readers evaluate Folate (Methylfolate) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Deficiency Awareness",
-      "description": "Deficiency Awareness helps readers evaluate Folate (Methylfolate) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Dose Transparency",
-      "description": "Dose Transparency helps readers evaluate Folate (Methylfolate) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Label Form Education",
+      "description": "Folate helps readers compare folic acid, food folate, and 5-MTHF forms."
     }
   ],
-  "dosage_title": "Typical Folate (Methylfolate) Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common adult supplement amounts are often listed in micrograms DFE; prenatal or medical needs should follow clinician guidance.",
-  "dosage": "Common adult supplement amounts are often listed in micrograms DFE; prenatal or medical needs should follow clinician guidance.",
-  "dosage_content": "<p>Common adult supplement amounts are often listed in micrograms DFE; prenatal or medical needs should follow clinician guidance. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "Folate (Methylfolate) Safety Information",
-  "safety_subtitle": "High folate intake can mask vitamin B12 deficiency concerns, so medical context matters.",
+  "dosage_title": "Typical Folate Dosage",
+  "dosage_subtitle": "Serving size is usually listed in micrograms DFE and depends on age, pregnancy status, diet, and clinician guidance.",
+  "typical_dose": "Many adult supplements provide 400 mcg DFE or more, while prenatal needs and medical use should follow professional guidance.",
+  "dosage": "Many adult supplements provide 400 mcg DFE or more, while prenatal needs and medical use should follow professional guidance.",
+  "dosage_content": "<p>Folate labels may list micrograms DFE, folic acid, folate, or 5-MTHF. Adults commonly see 400 mcg DFE on multivitamin labels, while prenatal products may differ. The correct amount depends on life stage, diet, medical context, and clinician guidance.</p><p>Do not combine multiple high-dose folate or methylfolate products without reviewing total intake. Vitamin B12 status should be considered, especially in older adults, vegans, people with absorption concerns, or anyone with anemia symptoms.</p>",
+  "safety_title": "Folate Safety Information",
+  "safety_subtitle": "Folate is essential, but high-dose supplementation should consider B12 status, medication use, pregnancy needs, and upper intake guidance.",
   "side_effects": [
-    "Digestive upset",
-    "Sleep changes in sensitive users",
-    "Masking B12 deficiency concern",
-    "Medication interaction concern"
+    "Digestive Symptoms",
+    "Sleep or Mood Changes",
+    "B12 Masking Concern",
+    "Medication-Specific Caution"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Symptoms",
+      "description": "Nausea, gas, or mild digestive discomfort may occur in some users."
     },
     {
-      "icon": "activity",
-      "title": "Sleep changes in sensitive users",
-      "description": "Sleep changes in sensitive users may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "icon": "brain",
+      "title": "Sleep or Mood Changes",
+      "description": "Some users report restlessness or mood changes with high-dose methylfolate."
     },
     {
       "icon": "alert-circle",
-      "title": "Masking B12 deficiency concern",
-      "description": "Masking B12 deficiency concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "B12 Masking Concern",
+      "description": "High folic acid intake can mask signs of vitamin B12 deficiency."
     },
     {
       "icon": "shield-alert",
-      "title": "Medication interaction concern",
-      "description": "Medication interaction concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Medication-Specific Caution",
+      "description": "Methotrexate, anti-seizure drugs, and other medications require professional guidance."
     }
   ],
   "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Folate (Methylfolate) should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
-    },
-    {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Folate (Methylfolate) as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Folate (Methylfolate) with formulas that target the same pathway or contain similar active compounds."
-    }
+    "Methotrexate use requires clinician-directed folate guidance, especially when used for cancer or autoimmune conditions.",
+    "Certain anti-seizure medications can interact with folate status and should be managed professionally.",
+    "Sulfasalazine and some other medications may affect folate absorption or status.",
+    "High-dose folate should be reviewed when vitamin B12 deficiency is possible or being evaluated."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Folate (Methylfolate).",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to supplemental active folate form.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Folate (Methylfolate) to replace diagnosis, treatment, or prescribed care."
+    "People using methotrexate or anti-seizure medication without clinician guidance.",
+    "People with suspected vitamin B12 deficiency who have not been evaluated.",
+    "People combining multiple high-dose methylation or B-complex products without intake review.",
+    "Pregnant individuals using non-prenatal high-dose formulas without professional advice.",
+    "Anyone using folate to self-treat anemia, fatigue, mood symptoms, or pregnancy concerns without medical evaluation."
   ],
-  "food_sources_title": "Folate (Methylfolate) Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Leafy greens, legumes, asparagus, avocado, citrus, and fortified grains provide folate or folic acid.</p>",
+  "food_sources_title": "Folate Food Sources",
+  "food_sources_subtitle": "Folate occurs naturally in foods, while folic acid is used in fortified foods and supplements.",
+  "food_sources_content": "<p>Natural folate is found in leafy greens, legumes, asparagus, avocado, citrus, broccoli, and liver. Folic acid is added to fortified grains and cereals in many countries. Supplements may provide folic acid or methylfolate, and labels may use DFE to compare intake.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
       "title": "Leafy greens",
-      "description": "Leafy greens may help explain the dietary or source context for Folate (Methylfolate)."
+      "description": "Spinach, romaine, and other greens provide natural folate."
     },
     {
       "icon": "leaf",
-      "title": "legumes",
-      "description": "legumes may help explain the dietary or source context for Folate (Methylfolate)."
+      "title": "Legumes",
+      "description": "Lentils, beans, and peas are important folate-rich foods."
     },
     {
-      "icon": "leaf",
-      "title": "asparagus",
-      "description": "asparagus may help explain the dietary or source context for Folate (Methylfolate)."
-    },
-    {
-      "icon": "leaf",
-      "title": "avocado",
-      "description": "avocado may help explain the dietary or source context for Folate (Methylfolate)."
-    },
-    {
-      "icon": "leaf",
-      "title": "citrus",
-      "description": "citrus may help explain the dietary or source context for Folate (Methylfolate)."
-    },
-    {
-      "icon": "leaf",
-      "title": "and fortified grains provide folate or folic acid",
-      "description": "and fortified grains provide folate or folic acid may help explain the dietary or source context for Folate (Methylfolate)."
+      "icon": "wheat",
+      "title": "Fortified grains",
+      "description": "Many enriched grains provide folic acid through fortification."
     }
   ],
   "faq_title": "Folate (Methylfolate) FAQs",
-  "faq_subtitle": "Common questions about Folate (Methylfolate), dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Folate (Methylfolate), supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Folate (Methylfolate)?",
-      "answer": "Folate (Methylfolate) is a b vitamin form used in supplements for methylation, prenatal, and b-vitamin supplement education."
+      "question": "What is folate?",
+      "answer": "Folate is vitamin B9, an essential nutrient involved in DNA synthesis, red blood cell formation, and normal development."
     },
     {
-      "question": "What is Folate (Methylfolate) commonly used for?",
-      "answer": "It is commonly discussed for methylation, prenatal, and b-vitamin supplement education, but its role depends on the product formula, serving size, and user context."
+      "question": "What is methylfolate?",
+      "answer": "Methylfolate is L-5-MTHF, an active form of folate used in many supplements."
     },
     {
-      "question": "How does Folate (Methylfolate) work?",
-      "answer": "Folate (Methylfolate) is usually evaluated through active folate form and methylation-support education, along with dose, quality, and safety considerations."
+      "question": "Is folate the same as folic acid?",
+      "answer": "No. Folic acid is a synthetic form used in fortified foods and supplements, while folate refers to vitamin B9 forms broadly."
     },
     {
-      "question": "What is a typical Folate (Methylfolate) dose?",
-      "answer": "Common adult supplement amounts are often listed in micrograms DFE; prenatal or medical needs should follow clinician guidance."
+      "question": "Why is folate important during pregnancy?",
+      "answer": "Adequate folate before and during pregnancy helps support normal fetal neural tube development."
     },
     {
-      "question": "Is Folate (Methylfolate) safe?",
-      "answer": "Folate (Methylfolate) may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "What does DFE mean?",
+      "answer": "DFE means dietary folate equivalents, a unit used to compare different folate forms and bioavailability."
     },
     {
-      "question": "Can Folate (Methylfolate) cause side effects?",
-      "answer": "Possible side effects include digestive upset, sleep changes in sensitive users, masking b12 deficiency concern, especially when serving sizes are high or tolerance is low."
+      "question": "Does everyone need methylfolate?",
+      "answer": "Not necessarily. The best form depends on diet, health status, tolerance, and clinician guidance."
     },
     {
-      "question": "Can Folate (Methylfolate) interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Folate (Methylfolate)."
+      "question": "Can too much folate be a problem?",
+      "answer": "High supplemental folic acid can mask signs of B12 deficiency and should be used responsibly."
     },
     {
-      "question": "Is Folate (Methylfolate) found in foods?",
-      "answer": "Leafy greens, legumes, asparagus, avocado, citrus, and fortified grains provide folate or folic acid."
+      "question": "What medications interact with folate?",
+      "answer": "Methotrexate, certain anti-seizure drugs, sulfasalazine, and other medications may require professional guidance."
     },
     {
-      "question": "What should I look for on a Folate (Methylfolate) label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "What foods contain folate?",
+      "answer": "Leafy greens, legumes, asparagus, avocado, citrus, broccoli, liver, and fortified grains can provide folate or folic acid."
     },
     {
-      "question": "Is Folate (Methylfolate) a substitute for medical treatment?",
-      "answer": "No. Folate (Methylfolate) is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Can folate replace medical care for anemia?",
+      "answer": "No. Anemia should be evaluated medically because B12, iron, folate, and other causes may be involved."
     }
   ],
   "sidebar_profile_title": "Folate (Methylfolate) Profile Snapshot",
-  "sidebar_profile_content": "<p>Folate (Methylfolate) is categorized as a b vitamin form and is most often reviewed for methylation, prenatal, and b-vitamin supplement education.</p>",
+  "sidebar_profile_content": "<p>Folate is vitamin B9, while methylfolate is an active 5-MTHF form. It is central to prenatal nutrition, red blood cells, DNA synthesis, and methylation education.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "B vitamin form",
-      "icon": "flask-conical"
+      "value": "Vitamin B9",
+      "icon": "dna"
     },
     {
       "label": "Typical Dose",
-      "value": "Common adult supplement amounts are often listed in micrograms DFE; prenatal or medical needs should follow clinician guidance.",
+      "value": "Often 400 mcg DFE in adult multis",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Methylation, prenatal, and B-vitamin supplement education",
+      "value": "Prenatal and methylation education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Review B12 status and medications",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Supplemental active folate form",
+      "value": "Foods, fortified foods, or supplements",
       "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Vitamin nutrient",
+      "value": "Nutrient form",
       "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, prenatal, multivitamin",
+      "value": "Folic acid, folate, or 5-MTHF",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Neutral",
+      "value": "Usually neutral in capsules",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Folate (Methylfolate) is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Folate (Methylfolate) is reviewed by Suppriva as a b vitamin form for methylation, prenatal, and b-vitamin supplement education.",
-  "best_for": "Methylation, prenatal, and B-vitamin supplement education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Supplemental active folate form",
+  "sidebar_at_a_glance_content": "<p>Folate is essential vitamin B9. Compare folic acid, food folate, and methylfolate by DFE amount, B12 context, pregnancy status, and medication considerations.</p>",
+  "full_description": "Folate is vitamin B9, and methylfolate is an active 5-MTHF form used in prenatal, methylation, and cellular wellness supplement education.",
+  "best_for": "Prenatal nutrition, methylation education, red blood cell support, and B-vitamin label comparison",
+  "safety_level": "Review B12 status, high-dose intake, pregnancy needs, and medication interactions",
+  "origin_country": "Food folate, fortified foods, and supplement forms",
   "part_used": "Vitamin nutrient",
-  "ingredient_form": "Capsule, tablet, prenatal, multivitamin",
-  "taste_profile": "Neutral",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "ingredient_form": "Capsule, tablet, gummy, powder, or fortified food",
+  "taste_profile": "Neutral to formula-dependent",
+  "rating": 4.9,
+  "evidence_level": "Strong for essential nutrient role",
   "uses_title": "Folate (Methylfolate) Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Folate (Methylfolate) may appear in formulas related to methylation, prenatal, and b-vitamin supplement education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Folate (Methylfolate) may appear in formulas related to prenatal nutrition, methylation education, red blood cell support, and b-vitamin label comparison. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "B Vitamin Education",
-      "description": "B Vitamin Education is a common context for evaluating Folate (Methylfolate)."
+      "title": "Prenatal Nutrition",
+      "description": "Important before and during pregnancy for normal development."
     },
     {
       "icon": "check-circle",
-      "title": "Methylation Context",
-      "description": "Methylation Context is a common context for evaluating Folate (Methylfolate)."
+      "title": "Red Blood Cell Support",
+      "description": "Required for normal red blood cell formation."
     },
     {
       "icon": "check-circle",
-      "title": "Prenatal Label Review",
-      "description": "Prenatal Label Review is a common context for evaluating Folate (Methylfolate)."
+      "title": "Methylation Formula Context",
+      "description": "Appears in methylation and B-complex formulas."
     },
     {
       "icon": "check-circle",
-      "title": "Folate vs Folic Acid Awareness",
-      "description": "Folate vs Folic Acid Awareness is a common context for evaluating Folate (Methylfolate)."
+      "title": "Nutrient Label Education",
+      "description": "Helps readers compare folic acid, folate, 5-MTHF, and DFE."
     }
   ],
   "research_title": "Folate (Methylfolate) Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Folate (Methylfolate) focuses on active folate form and methylation-support education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Folate has a well-established essential nutrient role in DNA synthesis, red blood cell formation, and prenatal neural tube development. Form and dose still matter.</p><p>Supplement decisions should consider dietary intake, pregnancy status, B12 status, medication use, and whether the label lists folic acid, folate, methylfolate, or DFE.</p>",
   "research_json": [
     {
       "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "title": "Evidence Depends on Context",
+      "description": "Ingredient research should be interpreted by dose, form, population, study design, and the finished supplement formula."
     },
     {
       "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "title": "Label Details Matter",
+      "description": "Consumers should compare active form, serving size, standardization, quality testing, and safety cautions before use."
     }
   ],
   "references_title": "Folate (Methylfolate) References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Folate (Methylfolate) Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "vitamin-b12",
+    "vitamin-b6",
+    "choline",
+    "iron"
+  ],
+  "seo_title": "Folate Benefits, Methylfolate Uses, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "folate methylfolate",
-  "seo_description": "Folate (Methylfolate) guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about folate, methylfolate, folic acid, DFE, prenatal nutrition, dosage, side effects, B12 cautions, and supplement label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/folate",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Folate (Methylfolate) Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Folate (Methylfolate) guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Folate Benefits, Methylfolate Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about folate, methylfolate, folic acid, DFE, prenatal nutrition, dosage, side effects, B12 cautions, and supplement label tips."
 }

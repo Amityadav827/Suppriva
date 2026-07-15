@@ -1,208 +1,274 @@
 {
   "name": "Flaxseed Oil",
   "scientific_name": "Linum usitatissimum seed oil",
-  "hero_badge": null,
-  "short_description": "Flaxseed Oil is a plant omega oil used in supplement formulas for plant-based omega support and general heart-wellness routines.",
-  "overview_title": "Flaxseed Oil Overview",
-  "overview_subtitle": "A practical guide to flaxseed oil in modern supplement formulas.",
-  "overview_content": "<p>Flaxseed Oil is a plant omega oil that appears in wellness products because of alpha-linolenic acid (ALA), a plant-based omega-3 fatty acid. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing flaxseed oil products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Flaxseed Oil supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Flaxseed oil supplies ALA, which is different from the EPA and DHA found in fish oil.</p>",
+  "ingredient_category": "Oils",
+  "hero_badge": "Plant Omega-3 Oil",
+  "short_description": "Flaxseed oil is pressed from Linum usitatissimum seeds and provides alpha-linolenic acid, a plant-based omega-3 used in heart, skin, and fatty-acid formulas.",
+  "overview_title": "What Is Flaxseed Oil?",
+  "overview_subtitle": "A practical guide to ALA omega-3, plant-based oil labels, freshness, and supplement safety.",
+  "overview_content": "<p>Flaxseed oil is pressed from the seeds of Linum usitatissimum, the flax plant. It is best known as a plant-based source of alpha-linolenic acid, or ALA, an essential omega-3 fatty acid. Unlike fish oil, which provides EPA and DHA directly, flaxseed oil provides ALA that the body can convert only in limited amounts to longer-chain omega-3s. This distinction is central for shoppers comparing plant omega-3 products.</p><p>Flaxseed oil appears in heart wellness, skin support, vegan omega-3, fatty-acid balance, and general wellness formulas. It should not be described as a direct replacement for fish oil in every context, and it should not be used as a treatment for heart disease, cholesterol problems, inflammatory disorders, or hormone issues. It is better understood as a nutritional oil that can contribute plant omega-3 intake when used appropriately.</p><p>Freshness is especially important with flaxseed oil because polyunsaturated oils are vulnerable to oxidation. High-quality products should provide expiration dating, storage guidance, and packaging that protects the oil from heat, light, and oxygen. Liquid flaxseed oil is often refrigerated after opening, while softgels may be more convenient but still require quality review.</p><p>Flaxseed oil is different from whole or ground flaxseed. Whole and ground flaxseed contain fiber and lignans, while the oil primarily provides fatty acids. If a user is seeking digestive fiber or lignan content, flaxseed oil may not be the right comparison. Conversely, someone seeking a concentrated oil may prefer softgels or liquid oil over ground seed.</p><p>ALA is essential because the body cannot make it from scratch. Diets that include walnuts, chia seeds, flaxseed, canola oil, and other plant foods may already provide ALA. Supplements can add convenience, but they should not replace a varied diet. People who need EPA or DHA for a specific health reason should discuss options with a healthcare professional, including algae-based omega-3 for vegan users.</p><p>Safety is generally favorable for many adults, but flaxseed oil can cause digestive upset, loose stools, or oily burps. It may be relevant to blood-thinning medication, surgery timing, blood pressure medication, or diabetes medication in some contexts. People who are pregnant, breastfeeding, or managing medical conditions should ask a clinician before using concentrated oil supplements.</p><p>Suppriva presents flaxseed oil as a plant omega-3 education ingredient. It is most useful when readers understand the difference between ALA, EPA, and DHA; compare oil freshness; check storage instructions; and avoid exaggerated claims. A premium label should identify flaxseed oil, serving size, ALA amount, expiration date, and any added antioxidant such as vitamin E.</p><p>Product format should match user goals. Liquid oil can be added to cold foods but should not be used for high-heat cooking. Softgels are portable and reduce taste exposure but may require multiple capsules for a meaningful amount. Either way, freshness, storage, and dose transparency are more important than broad front-label omega claims.</p><p>A practical buying checklist should include the source, ALA amount, serving size, added antioxidants, expiration date, and storage recommendations. If a product smells paint-like, bitter, or rancid, it should not be used. Readers should also understand that flaxseed oil does not provide the fiber benefits of ground flaxseed. That distinction prevents confusion between digestive-health claims and fatty-acid claims.</p>",
+  "interesting_fact_label": "ALA Omega-3 Insight",
+  "interesting_fact": "<p>Flaxseed oil provides ALA, a plant omega-3, but it does not naturally provide meaningful EPA or DHA like fish oil or algae oil.</p>",
   "how_it_works_title": "How Flaxseed Oil Works",
-  "how_it_works_subtitle": "How flaxseed oil supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Plant-based Omega Support",
-  "how_it_works_highlight_description": "Flaxseed Oil is most often positioned around plant-based omega support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Flaxseed Oil works through ALA-rich oil that supports its use as a plant-based alternative in omega-focused supplement routines. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare flaxseed oil by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
-  "benefits_title": "Potential Flaxseed Oil Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether flaxseed oil fits the full formula.",
+  "how_it_works_subtitle": "Flaxseed oil is evaluated by ALA content, oil freshness, storage quality, and omega-3 comparison context.",
+  "how_it_works_highlight_title": "Plant-Based ALA Source",
+  "how_it_works_highlight_description": "The best labels identify ALA amount, oil freshness, storage instructions, and whether the product is liquid oil or softgel.",
+  "how_it_works_content": "<p>Flaxseed oil provides alpha-linolenic acid, an essential fatty acid used in normal cell membrane and fatty-acid pathways. The body can convert some ALA into EPA and DHA, but conversion is limited and varies by person.</p><p>Because flaxseed oil is an oil, freshness and oxidation control matter. Poorly stored oils can develop off-flavors and may not provide the intended quality experience. Labels should include expiration and storage guidance.</p><p>Flaxseed oil should be viewed as a plant omega-3 option, not a universal replacement for all omega-3 products. The right comparison depends on whether the user's goal is ALA intake, vegan omega support, or EPA/DHA exposure.</p>",
+  "benefits_title": "Potential Benefits of Flaxseed Oil",
+  "benefits_subtitle": "Educational benefits commonly discussed for plant-based ALA oil supplements.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Plant-based omega support",
-      "description": "Flaxseed Oil is commonly evaluated for plant-based omega support within supplement formulas and wellness routines."
+      "title": "Plant Omega-3 Source",
+      "description": "Flaxseed oil provides ALA, an essential omega-3 fatty acid from plants."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Heart Wellness Context",
+      "description": "ALA intake is commonly discussed in heart-friendly diet and supplement education."
     },
     {
       "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Flaxseed Oil to support a more targeted product story around plant-based omega support and general heart-wellness routines."
+      "title": "Skin Wellness Formulas",
+      "description": "Fatty-acid oils may appear in skin and moisture-support routines."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
-    },
-    {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Flaxseed Oil may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "clipboard-check",
+      "title": "Vegan Omega Education",
+      "description": "Flaxseed oil helps readers compare plant omega-3 sources with fish and algae oils."
     },
     {
       "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Flaxseed Oil supplements."
+      "title": "Freshness Awareness",
+      "description": "The ingredient highlights why oil storage, oxidation, and expiration dates matter."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Flaxseed Oil helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "activity",
+      "title": "Fatty-Acid Balance",
+      "description": "Flaxseed oil can contribute to broader dietary fatty-acid balance when used appropriately."
     }
   ],
   "dosage_title": "Typical Flaxseed Oil Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Common servings often provide 1,000 mg to several grams of flaxseed oil daily, depending on the product format.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Common servings often provide 1,000 mg to several grams of flaxseed oil daily, depending on the product format.</p><p>Because flaxseed oil can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on liquid oil or softgel format and the amount of ALA provided.",
+  "typical_dose": "Flaxseed oil products vary from softgel servings to liquid teaspoons; compare ALA amount and follow the label.",
+  "dosage": "Flaxseed oil products vary from softgel servings to liquid teaspoons; compare ALA amount and follow the label.",
+  "dosage_content": "<p>Flaxseed oil dosage depends on format. Liquid products may suggest teaspoon servings, while softgels may require multiple capsules. The meaningful comparison is how much ALA the serving provides and how the oil is stored.</p><p>Do not use flaxseed oil for high-heat cooking. People taking blood thinners, blood pressure medication, diabetes medication, or preparing for surgery should discuss concentrated oil supplements with a healthcare professional.</p>",
   "safety_title": "Flaxseed Oil Safety Information",
-  "safety_subtitle": "Use flaxseed oil with label awareness and personal health context in mind.",
+  "safety_subtitle": "Flaxseed oil is generally tolerated by many adults, but freshness, digestive effects, medication use, and surgery timing matter.",
   "side_effects": [
-    "Skin Sensitivity",
     "Digestive Upset",
-    "Allergy Awareness",
-    "Dose and Dilution Concerns"
+    "Oxidation Concern",
+    "Blood Pressure Review",
+    "Bleeding-Risk Review"
   ],
   "side_effects_json": [
     {
-      "title": "Skin Sensitivity",
-      "description": "Flaxseed Oil may cause irritation or sensitivity, especially when used undiluted or on sensitive skin."
-    },
-    {
+      "icon": "stomach",
       "title": "Digestive Upset",
-      "description": "Internal use is not appropriate unless the product is specifically formulated and labeled for that purpose."
+      "description": "Loose stools, nausea, bloating, or oily burps may occur."
     },
     {
-      "title": "Allergy Awareness",
-      "description": "Stop use if rash, itching, swelling, or other sensitivity signs occur."
+      "icon": "alert-circle",
+      "title": "Oxidation Concern",
+      "description": "Rancid or poorly stored oil may have unpleasant taste and reduced quality."
     },
     {
-      "title": "Dose and Dilution Concerns",
-      "description": "Concentrated oils require careful label-directed use and should not be treated like ordinary foods."
+      "icon": "activity",
+      "title": "Blood Pressure Review",
+      "description": "People using blood pressure medication should discuss concentrated use if needed."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Bleeding-Risk Review",
+      "description": "Blood thinners and surgery timing should be reviewed with a clinician."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    "Anticoagulant and antiplatelet medications should be reviewed before concentrated flaxseed oil use.",
+    "Blood pressure medications may require professional guidance if high-dose oil supplements are used.",
+    "Diabetes medications should be reviewed in medically complex users.",
+    "Multiple omega-3 or oil supplements may increase digestive effects and should be considered together."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Flaxseed Oil or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with known allergy or sensitivity to flaxseed products.",
+    "People using blood thinners or preparing for surgery without clinician guidance.",
+    "Pregnant or breastfeeding individuals unless advised by a healthcare professional.",
+    "People seeking EPA or DHA specifically without understanding ALA conversion limits.",
+    "Anyone using flaxseed oil instead of prescribed cardiovascular or metabolic care."
+  ],
+  "food_sources_title": "Flaxseed Oil Food Sources",
+  "food_sources_subtitle": "Flaxseed oil comes from flax seeds and differs from whole or ground flaxseed.",
+  "food_sources_content": "<p>Flaxseed oil is pressed from flax seeds and may be used cold in dressings or smoothies. Whole or ground flaxseed provides fiber and lignans that the oil does not provide in the same way. Other ALA foods include chia seeds, walnuts, hemp seeds, and some plant oils.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Flaxseed oil",
+      "description": "A concentrated plant oil source of ALA."
+    },
+    {
+      "icon": "leaf",
+      "title": "Ground flaxseed",
+      "description": "Provides fiber and lignans along with some fat, unlike the oil alone."
+    },
+    {
+      "icon": "leaf",
+      "title": "Chia seeds and walnuts",
+      "description": "Other foods that can contribute dietary ALA."
+    }
   ],
   "faq_title": "Flaxseed Oil FAQs",
-  "faq_subtitle": "Common questions about flaxseed oil supplements and label comparison.",
+  "faq_subtitle": "Common questions about Flaxseed Oil, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Flaxseed Oil used for in supplements?",
-      "answer": "Flaxseed Oil is commonly used in formulas focused on plant-based omega support and general heart-wellness routines. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is flaxseed oil?",
+      "answer": "Flaxseed oil is oil pressed from flax seeds and used as a plant-based source of ALA omega-3."
     },
     {
-      "question": "Is Flaxseed Oil a medicine?",
-      "answer": "No. Flaxseed Oil is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What is ALA?",
+      "answer": "ALA is alpha-linolenic acid, an essential omega-3 fatty acid found in plant foods."
     },
     {
-      "question": "What form of Flaxseed Oil should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Is flaxseed oil the same as fish oil?",
+      "answer": "No. Flaxseed oil provides ALA, while fish oil provides EPA and DHA directly."
     },
     {
-      "question": "How long does Flaxseed Oil take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Can the body convert ALA into EPA and DHA?",
+      "answer": "Yes, but conversion is limited and varies between individuals."
     },
     {
-      "question": "Can Flaxseed Oil cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Is flaxseed oil the same as ground flaxseed?",
+      "answer": "No. Ground flaxseed contains fiber and lignans, while the oil primarily provides fatty acids."
     },
     {
-      "question": "Can I take Flaxseed Oil every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "How should flaxseed oil be stored?",
+      "answer": "Follow the product label. Many liquid oils require refrigeration and protection from heat and light."
     },
     {
-      "question": "What should I check on a Flaxseed Oil label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Can flaxseed oil be used for cooking?",
+      "answer": "It is generally best used cold, not for high-heat cooking."
     },
     {
-      "question": "Does Flaxseed Oil interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "What side effects can occur?",
+      "answer": "Loose stools, nausea, bloating, oily burps, or digestive discomfort may occur."
     },
     {
-      "question": "Is Flaxseed Oil suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Who should be cautious with flaxseed oil?",
+      "answer": "People taking blood thinners, blood pressure medication, or preparing for surgery should seek guidance."
     },
     {
-      "question": "Can Flaxseed Oil replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "How should I compare flaxseed oil products?",
+      "answer": "Compare ALA amount, format, freshness, storage directions, expiration date, and quality testing."
     }
   ],
   "sidebar_profile_title": "Flaxseed Oil Profile Snapshot",
-  "sidebar_profile_content": "Flaxseed Oil is a plant omega oil commonly evaluated for plant-based omega support and general heart-wellness routines.",
+  "sidebar_profile_content": "<p>Flaxseed oil is a plant-based ALA omega-3 oil. It differs from fish oil and whole flaxseed, so freshness and label clarity matter.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Plant omega oil"
+      "value": "Plant omega-3 oil",
+      "icon": "leaf"
     },
     {
       "label": "Typical Dose",
-      "value": "Common servings often provide 1,000 mg to several grams of flaxseed oil daily, depending on the product format."
+      "value": "Softgel or teaspoon serving",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Plant-based omega support and general heart-wellness routines"
+      "value": "Vegan omega-3 education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; use caution with blood-thinning medication"
+      "value": "Review blood thinners and freshness",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Temperate regions worldwide"
+      "value": "Flax seed",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Seed oil"
+      "value": "Seed oil",
+      "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Softgel, liquid oil"
+      "value": "Liquid oil or softgel",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Mild nutty oil"
+      "value": "Mild nutty oil if fresh",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Flaxseed Oil is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Flaxseed Oil is used in supplement formulas for plant-based omega support and general heart-wellness routines and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Plant-based omega support and general heart-wellness routines",
-  "safety_level": "Generally well tolerated; use caution with blood-thinning medication",
-  "origin_country": "Temperate regions worldwide",
+  "sidebar_at_a_glance_content": "<p>Flaxseed oil is best compared by ALA amount, liquid versus softgel format, freshness, storage, expiration date, and whether the user needs ALA or direct EPA/DHA.</p>",
+  "full_description": "Flaxseed oil is a plant-based ALA omega-3 oil used in vegan omega, heart wellness, and skin supplement education.",
+  "best_for": "Plant omega-3 education, vegan fatty-acid support, and oil supplement comparison",
+  "safety_level": "Review blood thinners, surgery timing, medication use, and oil freshness",
+  "origin_country": "Flax seed",
   "part_used": "Seed oil",
-  "ingredient_form": "Softgel, liquid oil",
-  "taste_profile": "Mild nutty oil",
-  "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
+  "ingredient_form": "Softgel or liquid oil",
+  "taste_profile": "Mild nutty oil when fresh",
+  "rating": 4.6,
+  "evidence_level": "Moderate for ALA nutrition",
+  "uses_title": "Flaxseed Oil Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Flaxseed Oil may appear in formulas related to plant omega-3 education, vegan fatty-acid support, and oil supplement comparison. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Plant Omega-3 Intake",
+      "description": "Used as a plant source of ALA."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Vegan Omega Education",
+      "description": "Helps compare plant oils with fish and algae oils."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Skin Wellness Context",
+      "description": "Appears in fatty-acid skin support formulas."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Heart-Friendly Diet Context",
+      "description": "ALA is commonly discussed in heart wellness nutrition."
+    }
+  ],
+  "research_title": "Flaxseed Oil Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Flaxseed oil research is tied to ALA nutrition, fatty-acid intake, and plant-based omega-3 comparison. It should not be confused with EPA/DHA-focused research.</p><p>Safety and quality depend on freshness, storage, dose, and user medication context, especially anticoagulants and surgery timing.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Depends on Context",
+      "description": "Ingredient research should be interpreted by dose, form, population, study design, and the finished supplement formula."
+    },
+    {
+      "icon": "search",
+      "title": "Label Details Matter",
+      "description": "Consumers should compare active form, serving size, standardization, quality testing, and safety cautions before use."
+    }
+  ],
+  "references_title": "Flaxseed Oil References",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Flaxseed Oil Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "omega-3-fatty-acids",
+    "evening-primrose-oil",
+    "vitamin-e",
+    "chia-seed"
+  ],
+  "seo_title": "Flaxseed Oil Benefits, ALA Omega-3 Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "flaxseed oil",
-  "seo_description": "Explore flaxseed oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Learn about flaxseed oil, ALA omega-3, vegan supplement uses, dosage, freshness, side effects, interactions, and label comparison.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/flaxseed-oil",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Flaxseed Oil Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore flaxseed oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Flaxseed Oil Benefits, ALA Omega-3 Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about flaxseed oil, ALA omega-3, vegan supplement uses, dosage, freshness, side effects, interactions, and label comparison."
 }
