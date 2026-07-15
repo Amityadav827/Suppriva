@@ -1,299 +1,285 @@
 {
   "name": "Chicory Root Inulin",
   "scientific_name": "Cichorium intybus",
-  "hero_badge": null,
-  "short_description": "Chicory Root Inulin is a prebiotic fiber used in wellness supplements for digestive wellness, fiber intake, and microbiome support education.",
-  "overview_title": "Chicory Root Inulin Overview",
-  "overview_subtitle": "A practical look at Chicory Root Inulin and how it appears in supplement formulas.",
-  "overview_content": "<p>Chicory Root Inulin is a prebiotic fiber associated with digestive wellness, fiber intake, and microbiome support education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Chicory Root Inulin depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Chicory Root Inulin is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Prebiotics",
+  "hero_badge": "Prebiotic Fiber",
+  "short_description": "Chicory Root Inulin is a prebiotic soluble fiber used to support digestive regularity, gut bacteria balance, and fiber intake.",
+  "overview_title": "What Is Chicory Root Inulin?",
+  "overview_subtitle": "A prebiotic fiber from chicory root used in digestive health and gut-support formulas.",
+  "overview_content": "<p>Chicory Root Inulin is a soluble fiber extracted from the root of Cichorium intybus. It belongs to a group of fibers called fructans, which resist digestion in the upper digestive tract and reach the colon where gut bacteria can ferment them. This prebiotic activity is the reason inulin is commonly used in digestive health supplements, fiber powders, protein bars, low-sugar foods, and gut-support formulas.</p>\n\n<p>Unlike probiotics, which provide live microorganisms, inulin provides a food source for certain beneficial bacteria already present in the gut. This makes it a prebiotic rather than a probiotic. Many products combine prebiotics and probiotics, but the two are not interchangeable. Inulin can support fiber intake and gut ecology, while probiotic strains are evaluated by genus, species, strain, and dose.</p>\n\n<p>Chicory root inulin is often used to support digestive regularity and stool consistency. Because it is fermentable, it can also cause gas, bloating, cramping, or digestive discomfort, especially when taken in larger amounts or introduced too quickly. People following a low-FODMAP diet, managing irritable bowel symptoms, or sensitive to fermentable fibers may need to avoid or carefully limit it.</p>\n\n<p>Inulin is also used in metabolic wellness products because soluble fiber can influence satiety, meal texture, and carbohydrate absorption patterns. However, it should not be framed as a treatment for diabetes, high cholesterol, weight loss, or digestive disease. Its most responsible role is to help users understand fiber intake and prebiotic support within a broader diet.</p>\n\n<p>Food manufacturers often use chicory root fiber to improve texture and add fiber without adding much sugar. This can be helpful, but it can also surprise consumers who experience bloating after eating high-fiber bars or snacks. Reading labels for chicory root fiber, inulin, fructooligosaccharides, or FOS can help identify possible triggers.</p>\n\n<p>For Suppriva readers, Chicory Root Inulin is a useful ingredient for comparing gut health supplements and fiber products. It fits best for adults who want to increase soluble fiber gradually and understand the difference between prebiotics and probiotics. Hydration, whole-food fiber, movement, and consistent meal patterns remain important.</p>\n\n<p>When choosing an inulin product, start low, increase gradually, and watch tolerance. People with significant digestive symptoms, inflammatory bowel disease, severe IBS, intestinal obstruction risk, or medical nutrition needs should speak with a healthcare professional before using concentrated fiber supplements.</p>\n\n<p>The most common mistake with inulin is taking too much too soon. Fiber fermentation is not inherently bad, but rapid fermentation can feel uncomfortable. A small serving taken consistently may be more useful than a large serving taken occasionally. People should also consider fiber from food, because a bar, powder, and supplement can quickly add up.</p>\n\n<p>Chicory root inulin is also useful for label literacy. It may appear under several names, including chicory root fiber, inulin, FOS, or fructooligosaccharides. Someone trying to identify a bloating trigger may need to check multiple product labels rather than looking only for the word inulin.</p>\n\n<p>For best results, inulin should be treated as part of a gradual fiber plan rather than a quick digestive fix. Hydration, meal timing, movement, and total fiber from foods all influence how comfortable it feels. If symptoms worsen despite lowering the dose, the ingredient may simply not match that person's digestive tolerance.</p>",
+  "interesting_fact_label": "Prebiotic, Not Probiotic",
+  "interesting_fact": "<p>Inulin does not add live bacteria. It acts as a fermentable fiber that can feed certain gut bacteria already living in the digestive tract.</p>",
   "how_it_works_title": "How Chicory Root Inulin Works",
-  "how_it_works_subtitle": "How Chicory Root Inulin is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Prebiotic Fiber Support",
-  "how_it_works_highlight_description": "Chicory Root Inulin is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Chicory Root Inulin is commonly discussed through prebiotic fiber fermentation and gut microbiome support. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Chicory Root Inulin to a supplement routine.</p>",
-  "benefits_title": "Potential Chicory Root Inulin Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Chicory Root Inulin in supplement routines.",
+  "how_it_works_subtitle": "Inulin resists digestion and is fermented by gut bacteria in the colon.",
+  "how_it_works_highlight_title": "Fermentable Fiber Support",
+  "how_it_works_highlight_description": "Chicory root inulin supports gut bacteria by acting as a prebiotic substrate, but gradual introduction is important.",
+  "how_it_works_content": "<p>Chicory Root Inulin passes through the stomach and small intestine mostly intact. In the colon, bacteria ferment it and produce compounds such as short-chain fatty acids. This fermentation is part of why it is considered prebiotic.</p>\n\n<p>Fermentation can be beneficial, but it also explains common side effects. Gas and bloating are not unusual if the dose is too high or introduced too quickly. Tolerance varies widely.</p>\n\n<p>Inulin works best as part of a broader fiber strategy that includes fruits, vegetables, legumes, whole grains, hydration, and movement rather than as the only source of digestive support.</p>",
+  "benefits_title": "Potential Benefits of Chicory Root Inulin",
+  "benefits_subtitle": "Common wellness reasons Chicory Root Inulin appears in gut health products.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Prebiotic Fiber Intake",
-      "description": "Prebiotic Fiber Intake helps readers evaluate Chicory Root Inulin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Prebiotic Support",
+      "description": "Feeds selected gut bacteria and supports a healthy gut environment."
+    },
+    {
+      "icon": "activity",
+      "title": "Digestive Regularity",
+      "description": "May support stool consistency when introduced gradually with enough fluids."
+    },
+    {
+      "icon": "utensils",
+      "title": "Fiber Intake Support",
+      "description": "Helps increase soluble fiber intake in powders, capsules, and functional foods."
+    },
+    {
+      "icon": "users",
+      "title": "Probiotic Formula Pairing",
+      "description": "Often paired with probiotic strains in synbiotic products."
+    },
+    {
+      "icon": "scale",
+      "title": "Satiety-Friendly Fiber",
+      "description": "Can contribute to fullness as part of a balanced eating pattern."
     },
     {
       "icon": "shield-check",
-      "title": "Digestive Regularity",
-      "description": "Digestive Regularity helps readers evaluate Chicory Root Inulin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "activity",
-      "title": "Microbiome Education",
-      "description": "Microbiome Education helps readers evaluate Chicory Root Inulin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Fiber Gap Support",
-      "description": "Fiber Gap Support helps readers evaluate Chicory Root Inulin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Satiety Context",
-      "description": "Satiety Context helps readers evaluate Chicory Root Inulin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Label Transparency",
-      "description": "Label Transparency helps readers evaluate Chicory Root Inulin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Tolerance Awareness",
+      "description": "Clear dosing helps reduce bloating, gas, and digestive discomfort."
     }
   ],
-  "dosage_title": "Typical Chicory Root Inulin Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common supplemental servings often range from 2 g to 10 g daily, usually introduced gradually to support tolerance.",
-  "dosage": "Common supplemental servings often range from 2 g to 10 g daily, usually introduced gradually to support tolerance.",
-  "dosage_content": "<p>Common supplemental servings often range from 2 g to 10 g daily, usually introduced gradually to support tolerance. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_title": "Chicory Root Inulin Dosage",
+  "dosage_subtitle": "Inulin should usually be introduced gradually to support tolerance.",
+  "typical_dose": "Common supplemental ranges often start around 2-5 g daily and may increase gradually if tolerated.",
+  "dosage": "Common supplemental ranges often start around 2-5 g daily and may increase gradually if tolerated.",
+  "dosage_content": "<p>Chicory Root Inulin is best started at a low dose. Many people tolerate small amounts better than large servings. Increasing too quickly can lead to gas, bloating, cramping, or loose stools.</p>\n\n<p>Take inulin with water and consider total fiber intake from foods and supplements. People with IBS, low-FODMAP needs, inflammatory bowel disease, or complex digestive symptoms should ask a qualified professional before use.</p>",
   "safety_title": "Chicory Root Inulin Safety Information",
-  "safety_subtitle": "May cause gas, bloating, or digestive discomfort if introduced too quickly or used in large servings.",
+  "safety_subtitle": "Most concerns relate to digestive tolerance and fermentable fiber sensitivity.",
   "side_effects": [
-    "Gas or bloating",
-    "Digestive cramping",
-    "Loose stool at higher servings",
-    "Tolerance varies by fiber sensitivity"
+    "Gas and bloating may occur, especially at higher doses.",
+    "Cramping or abdominal discomfort can occur in sensitive users.",
+    "Loose stools may occur if intake increases too quickly.",
+    "Fermentable fiber may worsen symptoms in some people with IBS."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Gas or bloating",
-      "description": "Gas or bloating may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Gas and bloating may occur, especially at higher doses."
     },
     {
-      "icon": "activity",
-      "title": "Digestive cramping",
-      "description": "Digestive cramping may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Cramping or abdominal discomfort can occur in sensitive users."
     },
     {
-      "icon": "alert-circle",
-      "title": "Loose stool at higher servings",
-      "description": "Loose stool at higher servings may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Loose stools may occur if intake increases too quickly."
     },
     {
-      "icon": "shield-alert",
-      "title": "Tolerance varies by fiber sensitivity",
-      "description": "Tolerance varies by fiber sensitivity may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Fermentable fiber may worsen symptoms in some people with IBS."
     }
   ],
   "drug_interactions_json": [
     {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Chicory Root Inulin should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "text": "Fiber may affect timing or absorption of some medications if taken together."
     },
     {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Chicory Root Inulin as a substitute for medical care or monitoring."
+      "text": "Use caution with other high-fiber supplements to avoid excessive intake."
     },
     {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "text": "People using medical nutrition plans should ask a clinician before adding concentrated fiber."
     },
     {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Chicory Root Inulin with formulas that target the same pathway or contain similar active compounds."
+      "text": "Separate from medications when advised by a healthcare professional."
     }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Chicory Root Inulin.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to chicory root.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Chicory Root Inulin to replace diagnosis, treatment, or prescribed care."
-  ],
-  "food_sources_title": "Chicory Root Inulin Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Chicory root, Jerusalem artichoke, onions, garlic, asparagus, and some fortified fiber foods contain inulin-type fibers.</p>",
-  "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Chicory root",
-      "description": "Chicory root may help explain the dietary or source context for Chicory Root Inulin."
+      "text": "People following a strict low-FODMAP diet may need to avoid inulin."
     },
     {
-      "icon": "leaf",
-      "title": "Jerusalem artichoke",
-      "description": "Jerusalem artichoke may help explain the dietary or source context for Chicory Root Inulin."
+      "text": "People with severe IBS symptoms should use only with guidance."
     },
     {
-      "icon": "leaf",
-      "title": "onions",
-      "description": "onions may help explain the dietary or source context for Chicory Root Inulin."
+      "text": "Anyone with bowel obstruction risk or serious GI disease should consult a clinician."
     },
     {
-      "icon": "leaf",
-      "title": "garlic",
-      "description": "garlic may help explain the dietary or source context for Chicory Root Inulin."
-    },
-    {
-      "icon": "leaf",
-      "title": "asparagus",
-      "description": "asparagus may help explain the dietary or source context for Chicory Root Inulin."
-    },
-    {
-      "icon": "leaf",
-      "title": "and some fortified fiber foods contain inulin-type fibers",
-      "description": "and some fortified fiber foods contain inulin-type fibers may help explain the dietary or source context for Chicory Root Inulin."
+      "text": "Stop use if severe pain, persistent diarrhea, or significant digestive distress occurs."
     }
   ],
-  "faq_title": "Chicory Root Inulin FAQs",
-  "faq_subtitle": "Common questions about Chicory Root Inulin, dosage, safety, and supplement use.",
+  "food_sources_title": "Chicory Root Inulin Food Sources",
+  "food_sources_subtitle": "Chicory root fiber appears in foods, bars, powders, and supplements.",
+  "food_sources_content": "<p>Inulin occurs naturally in foods such as chicory root, Jerusalem artichoke, garlic, onion, asparagus, and bananas. Processed foods may also add chicory root fiber to increase fiber content.</p>",
+  "food_sources_json": [
+    {
+      "text": "Chicory root"
+    },
+    {
+      "text": "Jerusalem artichoke"
+    },
+    {
+      "text": "Garlic and onion"
+    },
+    {
+      "text": "Asparagus"
+    },
+    {
+      "text": "Fiber bars and powders"
+    }
+  ],
+  "faq_title": "Chicory Root Inulin FAQ",
+  "faq_subtitle": "Common questions about Chicory Root Inulin, supplement use, and safety considerations.",
   "faq_json": [
     {
       "question": "What is Chicory Root Inulin?",
-      "answer": "Chicory Root Inulin is a prebiotic fiber used in supplements for digestive wellness, fiber intake, and microbiome support education."
+      "answer": "It is a soluble prebiotic fiber extracted from chicory root."
     },
     {
-      "question": "What is Chicory Root Inulin commonly used for?",
-      "answer": "It is commonly discussed for digestive wellness, fiber intake, and microbiome support education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is inulin a probiotic?",
+      "answer": "No. Inulin is a prebiotic fiber that feeds certain gut bacteria; probiotics are live microorganisms."
     },
     {
-      "question": "How does Chicory Root Inulin work?",
-      "answer": "Chicory Root Inulin is usually evaluated through prebiotic fiber fermentation and gut microbiome support, along with dose, quality, and safety considerations."
+      "question": "Can inulin cause bloating?",
+      "answer": "Yes. Gas and bloating are common if too much is taken too quickly."
     },
     {
-      "question": "What is a typical Chicory Root Inulin dose?",
-      "answer": "Common supplemental servings often range from 2 g to 10 g daily, usually introduced gradually to support tolerance."
+      "question": "How should I start inulin?",
+      "answer": "Start with a small serving, increase gradually, and drink enough water."
     },
     {
-      "question": "Is Chicory Root Inulin safe?",
-      "answer": "Chicory Root Inulin may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Is chicory root fiber low FODMAP?",
+      "answer": "No. Inulin is fermentable and may not fit low-FODMAP plans."
     },
     {
-      "question": "Can Chicory Root Inulin cause side effects?",
-      "answer": "Possible side effects include gas or bloating, digestive cramping, loose stool at higher servings, especially when serving sizes are high or tolerance is low."
+      "question": "Can inulin help regularity?",
+      "answer": "It may support regularity for some people when tolerated and paired with hydration."
     },
     {
-      "question": "Can Chicory Root Inulin interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Chicory Root Inulin."
+      "question": "Can I take inulin with probiotics?",
+      "answer": "Many products combine them, but tolerance depends on dose and strain mix."
     },
     {
-      "question": "Is Chicory Root Inulin found in foods?",
-      "answer": "Chicory root, Jerusalem artichoke, onions, garlic, asparagus, and some fortified fiber foods contain inulin-type fibers."
+      "question": "Who should avoid inulin?",
+      "answer": "People with severe IBS, low-FODMAP needs, bowel obstruction risk, or serious GI disease should seek guidance."
     },
     {
-      "question": "What should I look for on a Chicory Root Inulin label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Is inulin good for weight loss?",
+      "answer": "It may support fullness, but it is not a weight-loss treatment."
     },
     {
-      "question": "Is Chicory Root Inulin a substitute for medical treatment?",
-      "answer": "No. Chicory Root Inulin is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What should I look for on a label?",
+      "answer": "Look for grams per serving, chicory root fiber or inulin wording, and digestive tolerance guidance."
     }
   ],
-  "sidebar_profile_title": "Chicory Root Inulin Profile Snapshot",
-  "sidebar_profile_content": "<p>Chicory Root Inulin is categorized as a prebiotic fiber and is most often reviewed for digestive wellness, fiber intake, and microbiome support education.</p>",
+  "sidebar_profile_title": "Chicory Root Inulin Profile",
+  "sidebar_profile_content": "A soluble prebiotic fiber from chicory root used in gut health, regularity, and fiber-support products.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Prebiotic fiber",
-      "icon": "flask-conical"
+      "value": "Prebiotic fiber"
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplemental servings often range from 2 g to 10 g daily, usually introduced gradually to support tolerance.",
-      "icon": "clipboard-check"
+      "value": "2-5 g to start"
     },
     {
       "label": "Best For",
-      "value": "Digestive wellness, fiber intake, and microbiome support education",
-      "icon": "target"
+      "value": "Gut support"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
-      "icon": "shield-check"
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "Chicory root",
-      "icon": "map-pin"
+      "value": "Chicory root"
     },
     {
       "label": "Part Used",
-      "value": "Root",
-      "icon": "leaf"
+      "value": "Root"
     },
     {
       "label": "Form",
-      "value": "Powder, capsule, fiber blend",
-      "icon": "pill"
+      "value": "Powder or capsule"
     },
     {
       "label": "Taste",
-      "value": "Mildly sweet",
-      "icon": "sparkles"
+      "value": "Mildly sweet"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Chicory Root Inulin is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Chicory Root Inulin is reviewed by Suppriva as a prebiotic fiber for digestive wellness, fiber intake, and microbiome support education.",
-  "best_for": "Digestive wellness, fiber intake, and microbiome support education",
-  "safety_level": "Review cautions before use",
+  "sidebar_at_a_glance_content": "<p>Chicory Root Inulin can support prebiotic fiber intake, but it should be introduced gradually because gas and bloating are common tolerance issues.</p>",
+  "full_description": "Chicory Root Inulin is a fermentable soluble fiber used as a prebiotic ingredient in digestive wellness products.",
+  "best_for": "Prebiotic and fiber support",
+  "safety_level": "Moderate",
   "origin_country": "Chicory root",
   "part_used": "Root",
-  "ingredient_form": "Powder, capsule, fiber blend",
+  "ingredient_form": "Powder, capsule, or food fiber",
   "taste_profile": "Mildly sweet",
   "rating": 4.6,
   "evidence_level": "Moderate",
   "uses_title": "Chicory Root Inulin Uses",
-  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Chicory Root Inulin may appear in formulas related to digestive wellness, fiber intake, and microbiome support education. Use should be guided by label directions and personal health context.</p>",
+  "uses_subtitle": "Inulin is mostly used in gut health, fiber, and synbiotic formulas.",
+  "uses_content": "<p>Chicory Root Inulin appears in prebiotic powders, probiotic blends, regularity formulas, fiber bars, and gut-health supplements.</p>",
   "uses_json": [
     {
-      "icon": "check-circle",
-      "title": "Prebiotic Fiber Intake",
-      "description": "Prebiotic Fiber Intake is a common context for evaluating Chicory Root Inulin."
+      "text": "Prebiotic support"
     },
     {
-      "icon": "check-circle",
-      "title": "Digestive Regularity",
-      "description": "Digestive Regularity is a common context for evaluating Chicory Root Inulin."
+      "text": "Fiber intake"
     },
     {
-      "icon": "check-circle",
-      "title": "Microbiome Education",
-      "description": "Microbiome Education is a common context for evaluating Chicory Root Inulin."
+      "text": "Digestive regularity"
     },
     {
-      "icon": "check-circle",
-      "title": "Fiber Gap Support",
-      "description": "Fiber Gap Support is a common context for evaluating Chicory Root Inulin."
+      "text": "Synbiotic formulas"
     }
   ],
   "research_title": "Chicory Root Inulin Research Notes",
-  "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Chicory Root Inulin focuses on prebiotic fiber fermentation and gut microbiome support. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_subtitle": "Research focuses on prebiotic fermentation, gut bacteria, stool consistency, and tolerance.",
+  "research_content": "<p>Inulin research often evaluates changes in gut bacteria and digestive markers. Tolerance and dose remain major practical considerations.</p>",
   "research_json": [
     {
-      "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "text": "Prebiotic fiber fermentation"
     },
     {
-      "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "text": "Short-chain fatty acids"
+    },
+    {
+      "text": "Digestive tolerance"
+    },
+    {
+      "text": "Gut microbiome support"
     }
   ],
-  "references_title": "Chicory Root Inulin References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Chicory Root Inulin Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "chicory root inulin",
-  "seo_description": "Chicory Root Inulin guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "references_title": "Chicory Root Inulin Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Inulin prebiotic research"
+    },
+    {
+      "text": "Chicory root fiber tolerance"
+    },
+    {
+      "text": "Low-FODMAP fiber considerations"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "probiotics"
+    },
+    {
+      "slug": "lactobacillus-plantarum"
+    },
+    {
+      "slug": "digestive-enzymes"
+    },
+    {
+      "slug": "glucomannan"
+    }
+  ],
+  "seo_title": "Chicory Root Inulin Benefits, Dosage, Side Effects and Uses",
+  "seo_focus_keyword": "Chicory Root Inulin",
+  "seo_description": "Learn how Chicory Root Inulin works as a prebiotic fiber, including benefits, dosage, food sources, bloating risks, and safety guidance.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/chicory-root-inulin",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Chicory Root Inulin Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Chicory Root Inulin guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Chicory Root Inulin Benefits, Dosage, Side Effects and Uses",
+  "meta_description": "Learn how Chicory Root Inulin works as a prebiotic fiber, including benefits, dosage, food sources, bloating risks, and safety guidance."
 }
