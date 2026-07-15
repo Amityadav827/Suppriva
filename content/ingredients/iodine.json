@@ -1,231 +1,324 @@
 {
   "name": "Iodine",
   "status": "published",
-  "scientific_name": "Iodine",
+  "scientific_name": "Iodine / iodide",
   "ingredient_category": "Minerals",
-  "hero_badge": null,
-  "short_description": "Iodine is an essential trace mineral required for normal thyroid hormone production and dietary mineral balance, with practical safety and label context for supplement shoppers.",
+  "hero_badge": "Essential Trace Mineral",
+  "short_description": "Iodine is an essential trace mineral needed for thyroid hormone production, but supplement use should be dose-aware because both too little and too much can cause problems.",
   "overview_title": "Iodine Overview",
-  "overview_subtitle": "A practical look at iodine as a supplement ingredient.",
-  "overview_content": "<p>Iodine is an essential trace mineral required for normal thyroid hormone production and dietary mineral balance. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Iodine through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Iodine should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
+  "overview_subtitle": "A practical guide to iodine, supplement labels, and safety considerations.",
+  "overview_content": "<p>Iodine is a essential trace mineral that appears in supplement formulas because of thyroid hormone production, deficiency prevention, excess-intake risk, and why more iodine is not always better. It is best evaluated with the finished product label in hand, because ingredient form, serving size, standardization, and companion ingredients can change the practical meaning of a claim.</p><p>For shoppers, the most useful question is not whether iodine is popular, but whether the formula explains why it is included and how much is provided. Transparent labels identify the ingredient form, avoid exaggerated language, and provide safety directions that match the intended audience.</p><p>Research and traditional-use discussions around iodine should be interpreted carefully. Some evidence may involve foods, isolated compounds, topical products, prescription contexts, or specific study populations. A supplement label does not automatically inherit every claim ever associated with the ingredient.</p><p>Iodine is essential, but high-dose iodine can aggravate thyroid issues in susceptible people. This is especially important for people who take medication, manage chronic conditions, are pregnant or nursing, are preparing for surgery, or use multiple supplements. In those cases, the safest approach is to use ingredient education as a conversation starter with a qualified healthcare professional.</p><p>Suppriva reviews ingredients through a wellness-discovery lens. That means we look at what the ingredient is, why brands use it, which claims are reasonable, what safety notes deserve attention, and how it compares with related ingredients in the same category. This approach helps readers avoid relying on front-label promises alone.</p><p>Iodine should not be treated as a cure, diagnostic tool, or replacement for medical care. A responsible supplement routine also includes sleep, nutrition, movement, hydration, stress management, and professional guidance when symptoms or medical conditions are involved.</p><p>When reviewing iodine, compare dose, form, third-party testing, allergen information, contraindications, and the total formula. If the product uses a proprietary blend, confirm that the label still provides enough context to judge serving size and safety.</p><p>The best use of this ingredient page is practical decision support. It helps readers understand the role iodine may play in a formula, which questions to ask before buying, and when a clinician or pharmacist should be involved before use.</p><p>It is also helpful to compare iodine with adjacent ingredients in the same wellness category. Similar ingredients may appear beside each other on a label, but they can differ in evidence quality, expected timeline, dose sensitivity, and the people who should avoid them. A careful comparison can prevent overpaying for a formula that sounds impressive but does not provide meaningful label detail.</p><p>Quality control is another important part of the review. Supplements may vary in extract strength, purity testing, contamination screening, and whether the brand explains the source material clearly. For botanicals, the plant part and extraction method matter. For nutrients, the chemical form and total daily intake matter. For specialty compounds, the serving size and intended use should be especially clear.</p><p>Readers should keep expectations conservative. Iodine may support a wellness routine when used appropriately, but individual response can vary based on diet, medication use, health status, consistency, and the quality of the finished product. This is why Suppriva emphasizes education, safety, and comparison instead of guaranteed outcomes.</p>",
   "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Iodized salt programs were introduced in many regions to reduce population-level iodine deficiency.</p>",
+  "interesting_fact": "<p>Iodized salt programs were introduced because iodine deficiency can affect thyroid health at the population level.</p>",
   "how_it_works_title": "How Iodine Works",
-  "how_it_works_subtitle": "The main mechanisms behind iodine in wellness formulas.",
-  "how_it_works_highlight_title": "Essential trace mineral support profile",
-  "how_it_works_highlight_description": "Iodine is commonly evaluated through its role as a building block for thyroid hormones that help regulate normal metabolism, growth, and energy balance.",
-  "how_it_works_content": "<p>Iodine works through its role as a building block for thyroid hormones that help regulate normal metabolism, growth, and energy balance. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Iodine is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "The main mechanisms behind iodine supplement positioning.",
+  "how_it_works_highlight_title": "Essential Trace Mineral",
+  "how_it_works_highlight_description": "Iodine is best understood by form, dose, label transparency, and whether the formula's claims match responsible evidence context.",
+  "how_it_works_content": "<p>Iodine works through iodine's role as a required component of thyroid hormones that help regulate metabolism, growth, and development. These mechanisms help explain why supplement brands include it, but they do not guarantee a specific result for every person.</p><p>The most responsible review looks at dose, form, frequency of use, and the full formula. Iodine may be only one part of a broader ingredient stack, so shoppers should avoid judging a product by a single ingredient name.</p><p>Use this section to understand the ingredient's role, then compare product labels for transparency, safety warnings, and realistic wellness language.</p>",
   "benefits_title": "Potential Iodine Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Educational benefits associated with iodine in supplement formulas.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Iodine is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "icon": "leaf",
+      "title": "Formula Clarity",
+      "description": "Helps readers understand why Iodine appears in thyroid hormone, mineral intake, and deficiency-risk education formulas."
     },
     {
       "icon": "activity",
-      "title": "Supports Thyroid And Trace Mineral Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around thyroid and trace mineral support."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
-    },
-    {
-      "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Iodine often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Label Comparison",
+      "description": "Supports better comparison of serving size, form, standardization, and safety language."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+      "title": "Routine Fit",
+      "description": "Explains whether iodine fits a daily wellness routine or needs more cautious use."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Safety Awareness",
+      "description": "Highlights medication, pregnancy, nursing, dose, and sensitivity considerations before use."
+    },
+    {
+      "icon": "search",
+      "title": "Evidence Context",
+      "description": "Separates reasonable educational discussion from exaggerated supplement claims."
     },
     {
       "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Iodine by mechanism, evidence level, safety context, and practical product positioning."
+      "title": "Ingredient Discovery",
+      "description": "Connects this ingredient with related wellness goals and adjacent ingredient categories."
     }
   ],
   "dosage_title": "Typical Iodine Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Many adult supplements provide around 150 mcg daily, though needs vary and higher intakes should be clinician-guided.",
-  "dosage": "Many adult supplements provide around 150 mcg daily, though needs vary and higher intakes should be clinician-guided.",
-  "dosage_content": "<p>Many adult supplements provide around 150 mcg daily, though needs vary and higher intakes should be clinician-guided.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Iodine without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on ingredient form, product purpose, and individual context.",
+  "typical_dose": "Adult daily needs are commonly around 150 mcg, while pregnancy and nursing needs are higher; avoid high-dose iodine unless clinician-directed.",
+  "dosage": "Adult daily needs are commonly around 150 mcg, while pregnancy and nursing needs are higher; avoid high-dose iodine unless clinician-directed.",
+  "dosage_content": "<p>Adult daily needs are commonly around 150 mcg, while pregnancy and nursing needs are higher; avoid high-dose iodine unless clinician-directed.</p><p>There is no universal dose that fits every person or every formula. Follow the finished product label and avoid stacking multiple products with overlapping ingredients unless a qualified professional confirms the combination is appropriate.</p><p>Start conservatively when appropriate, monitor tolerance, and stop use if unusual symptoms occur. People with medical conditions, medication routines, pregnancy, nursing, or upcoming surgery should ask a clinician before using iodine supplements.</p>",
   "safety_title": "Iodine Safety Information",
-  "safety_subtitle": "Important safety context before using iodine supplements.",
+  "safety_subtitle": "Important cautions before using iodine supplements.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Thyroid Symptoms",
+    "Digestive Upset",
+    "Metallic Taste",
+    "Skin or Sensitivity Reactions"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Iodine may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "icon": "alert-circle",
+      "title": "Thyroid Symptoms",
+      "text": "Too much or too little iodine may affect thyroid function in susceptible individuals."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "icon": "alert-circle",
+      "title": "Digestive Upset",
+      "text": "Some supplements may cause nausea or stomach discomfort."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "icon": "alert-circle",
+      "title": "Metallic Taste",
+      "text": "High or concentrated forms may cause a metallic taste or mouth irritation."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Iodine is combined with similar ingredients or multi-ingredient products."
+      "icon": "alert-circle",
+      "title": "Skin or Sensitivity Reactions",
+      "text": "Stop use if rash, swelling, or unusual symptoms occur."
     }
   ],
   "drug_interactions_json": [
-    "Review Iodine with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People with thyroid disease, autoimmune thyroid conditions, pregnancy, or thyroid medication use should not supplement iodine without professional guidance.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
-  ],
-  "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Iodine or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
-  ],
-  "food_sources_title": "Iodine Food Sources",
-  "food_sources_subtitle": "Food and source context for iodine.",
-  "food_sources_content": "<p>Iodine intake varies widely by diet and geography, so supplements should be evaluated against total iodine exposure from food and salt.</p>",
-  "food_sources_json": [
     {
-      "title": "Iodized salt",
-      "description": "Iodized salt can contribute to thyroid and trace mineral support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Thyroid Medication",
+      "text": "People taking thyroid medication should use iodine only with clinician guidance."
     },
     {
-      "title": "Seaweed",
-      "description": "Seaweed can contribute to thyroid and trace mineral support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Anti-Thyroid Drugs",
+      "text": "Iodine intake can be relevant for people using medications for hyperthyroidism."
     },
     {
-      "title": "Seafood",
-      "description": "Seafood can contribute to thyroid and trace mineral support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Potassium-Sparing Diuretics",
+      "text": "Some iodine forms may contain potassium and require review."
     },
     {
-      "title": "Dairy products",
-      "description": "Dairy products can contribute to thyroid and trace mineral support, though supplement potency depends on serving size, form, and standardization."
-    },
-    {
-      "title": "Eggs",
-      "description": "Eggs can contribute to thyroid and trace mineral support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Kelp or Seaweed Supplements",
+      "text": "Stacking iodine sources can unintentionally raise intake."
     }
   ],
-  "faq_title": "Iodine FAQs",
-  "faq_subtitle": "Common questions about iodine supplements.",
+  "who_should_avoid_json": [
+    {
+      "icon": "x-circle",
+      "title": "Thyroid Disease Without Guidance",
+      "text": "Avoid self-directed high-dose iodine with thyroid conditions."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Iodine Sensitivity",
+      "text": "Avoid if advised by a clinician."
+    },
+    {
+      "icon": "x-circle",
+      "title": "High-Dose Kelp Products",
+      "text": "Avoid products with unclear iodine amounts."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Pregnancy Without Prenatal Guidance",
+      "text": "Use iodine in pregnancy only within appropriate clinician or prenatal guidance."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Children Without Guidance",
+      "text": "Use age-appropriate products only under professional direction."
+    }
+  ],
+  "food_sources_title": "Iodine Food Sources",
+  "food_sources_subtitle": "Food context for iodine, where applicable.",
+  "food_sources_content": "<p>Iodine may be naturally present in foods, botanicals, or body tissues depending on the ingredient. Supplements are more concentrated and should be evaluated separately from ordinary dietary exposure.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Natural Context",
+      "description": "Seafood, seaweed, iodized salt, dairy, eggs, and mineral supplements"
+    },
+    {
+      "icon": "pill",
+      "title": "Supplement Form",
+      "description": "Tablet, capsule, liquid drops, multivitamin, mineral blend, or kelp-derived ingredient"
+    },
+    {
+      "icon": "search",
+      "title": "Label Check",
+      "description": "Compare the finished product rather than relying only on the ingredient name."
+    }
+  ],
+  "faq_title": "Iodine FAQ",
+  "faq_subtitle": "Common questions about iodine, dose, safety, and supplement comparison.",
   "faq_json": [
     {
       "question": "What is Iodine?",
-      "answer": "Iodine is an essential trace mineral required for normal thyroid hormone production and dietary mineral balance. It is used in supplement formulas for thyroid and trace mineral support, not as a substitute for medical treatment."
+      "answer": "Iodine is a essential trace mineral used in supplement formulas for thyroid hormone, mineral intake, and deficiency-risk education. Its practical role depends on the dose, form, and complete formula."
     },
     {
       "question": "What is Iodine commonly used for?",
-      "answer": "It is commonly positioned around thyroid hormone support, trace mineral nutrition, and iodine intake awareness. The exact role depends on dose, form, and the other ingredients in the formula."
+      "answer": "It is commonly discussed in relation to thyroid hormone, mineral intake, and deficiency-risk education, but it should be evaluated as part of a wellness routine rather than as a stand-alone solution."
     },
     {
-      "question": "How does Iodine work?",
-      "answer": "Iodine is usually discussed through its role as a building block for thyroid hormones that help regulate normal metabolism, growth, and energy balance. This helps explain its supplement positioning without treating it as a cure or medication."
-    },
-    {
-      "question": "What is a typical Iodine dose?",
-      "answer": "Many adult supplements provide around 150 mcg daily, though needs vary and higher intakes should be clinician-guided. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "How should I compare Iodine supplements?",
+      "answer": "Compare ingredient form, serving size, standardization, testing claims, companion ingredients, warnings, and whether the brand uses realistic language."
     },
     {
       "question": "Is Iodine safe for daily use?",
-      "answer": "Dose-sensitive; too little or too much can be problematic. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "answer": "Daily use depends on personal health context, product dose, and tolerance. Follow the label and ask a healthcare professional if you use medication or manage a condition."
     },
     {
       "question": "Can Iodine cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "answer": "Yes. Side effects are possible, especially with higher servings, sensitivity, poor product fit, or medication overlap."
     },
     {
-      "question": "Can Iodine interact with medication?",
-      "answer": "People with thyroid disease, autoimmune thyroid conditions, pregnancy, or thyroid medication use should not supplement iodine without professional guidance. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "Can Iodine interact with medications?",
+      "answer": "It may, depending on the ingredient and medication. People taking prescription drugs should review supplement use with a clinician or pharmacist."
     },
     {
-      "question": "What should I compare on a Iodine supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "How long does Iodine take to work?",
+      "answer": "Response time varies by ingredient type, consistency, formula quality, baseline health, and the wellness goal being targeted."
     },
     {
-      "question": "What foods contain Iodine or related compounds?",
-      "answer": "Iodine intake varies widely by diet and geography, so supplements should be evaluated against total iodine exposure from food and salt."
+      "question": "Is Iodine suitable during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance because safety needs are more specific and depend on the ingredient and dose."
     },
     {
       "question": "Can Iodine replace medical care?",
-      "answer": "No. Iodine supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "answer": "No. Supplements should not replace diagnosis, prescribed treatment, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "How does Suppriva evaluate Iodine?",
+      "answer": "Suppriva reviews intended use, evidence context, dose transparency, safety cautions, related ingredients, and whether the finished product makes realistic wellness claims."
     }
   ],
   "sidebar_profile_title": "Iodine Profile Snapshot",
-  "sidebar_profile_content": "Iodine is a essential trace mineral used in supplements for thyroid and trace mineral support.",
+  "sidebar_profile_content": "Iodine is a essential trace mineral used in supplement education for thyroid hormone, mineral intake, and deficiency-risk education.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Essential trace mineral"
+      "value": "Essential trace mineral",
+      "icon": "leaf"
     },
     {
       "label": "Typical Dose",
-      "value": "Many adult supplements provide around 150 mcg daily, though needs vary and higher intakes should be clinician-guided."
+      "value": "Adult daily needs are commonly around 150 mcg, while pregnancy and nursing needs are higher; avoid high-dose iodine unless clinician-directed.",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Thyroid hormone support, trace mineral nutrition, and iodine intake awareness"
+      "value": "Thyroid hormone, mineral intake, and deficiency-risk education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Dose-sensitive; too little or too much can be problematic"
+      "value": "Dose-sensitive; review thyroid disease, medication use, pregnancy, nursing, and total iodine intake",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Dietary mineral from sea foods, iodized salt, and supplements"
+      "value": "Seafood, seaweed, iodized salt, dairy, eggs, and mineral supplements",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Mineral compound"
+      "value": "Iodide or iodine compound",
+      "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Tablet, capsule, kelp-derived blend, liquid drops"
+      "value": "Tablet, capsule, liquid drops, multivitamin, mineral blend, or kelp-derived ingredient",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Usually neutral in tablets or drops"
+      "value": "Neutral to mineral-like depending on format",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Iodine is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Iodine is an essential trace mineral required for normal thyroid hormone production and dietary mineral balance, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Thyroid hormone support, trace mineral nutrition, and iodine intake awareness",
-  "safety_level": "Dose-sensitive; too little or too much can be problematic",
-  "origin_country": "Dietary mineral from sea foods, iodized salt, and supplements",
-  "part_used": "Mineral compound",
-  "ingredient_form": "Tablet, capsule, kelp-derived blend, liquid drops",
-  "taste_profile": "Usually neutral in tablets or drops",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Iodine Benefits, Dosage, and Safety | Suppriva",
+  "sidebar_at_a_glance_content": "<p>Iodine is best compared by ingredient form, serving size, safety cautions, third-party testing, and whether the product's claims are realistic.</p>",
+  "full_description": "Iodine is a essential trace mineral used in supplement formulas for thyroid hormone, mineral intake, and deficiency-risk education.",
+  "best_for": "Thyroid hormone, mineral intake, and deficiency-risk education",
+  "safety_level": "Dose-sensitive; review thyroid disease, medication use, pregnancy, nursing, and total iodine intake",
+  "origin_country": "Seafood, seaweed, iodized salt, dairy, eggs, and mineral supplements",
+  "part_used": "Iodide or iodine compound",
+  "ingredient_form": "Tablet, capsule, liquid drops, multivitamin, mineral blend, or kelp-derived ingredient",
+  "taste_profile": "Neutral to mineral-like depending on format",
+  "rating": 4.6,
+  "evidence_level": "Strong",
+  "uses_title": "Iodine Uses",
+  "uses_subtitle": "Common use contexts for iodine in supplement formulas.",
+  "uses_content": "<p>Iodine may appear in products related to thyroid hormone, mineral intake, and deficiency-risk education. Its best use is label-informed comparison, not self-diagnosis or treatment.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Formula Support",
+      "description": "Used in products positioned for thyroid hormone, mineral intake, and deficiency-risk education."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Ingredient Education",
+      "description": "Helpful for comparing similar products and safety considerations."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Routine Review",
+      "description": "Useful when matching supplement choices to realistic wellness goals."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Label Transparency",
+      "description": "Encourages review of dose, form, and quality standards."
+    }
+  ],
+  "research_title": "Iodine Research Notes",
+  "research_subtitle": "A cautious look at evidence themes and label interpretation.",
+  "research_content": "<p>Research context for iodine varies by ingredient form, study population, dose, outcome, and whether the ingredient was studied alone or inside a broader formula. Readers should avoid assuming that every study applies directly to every supplement.</p><p>Suppriva presents ingredient research as educational context, not as a promise of personal results or medical benefit.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Depends on Form",
+      "description": "Dose, standardization, and study design influence interpretation."
+    },
+    {
+      "icon": "search",
+      "title": "Finished Formula Matters",
+      "description": "A product's complete ingredient stack affects safety and usefulness."
+    }
+  ],
+  "references_title": "Iodine References",
+  "references_subtitle": "Trusted sources used for general ingredient safety and evidence context.",
+  "references_json": [
+    {
+      "title": "NIH Office of Dietary Supplements",
+      "url": "https://ods.od.nih.gov/"
+    },
+    {
+      "title": "Memorial Sloan Kettering herb and supplement database",
+      "url": "https://www.mskcc.org/cancer-care/diagnosis-treatment/symptom-management/integrative-medicine/herbs"
+    },
+    {
+      "title": "PubMed biomedical literature",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/"
+    }
+  ],
+  "related_ingredients_json": [
+    "selenium",
+    "zinc",
+    "tyrosine",
+    "kelp"
+  ],
+  "seo_title": "Iodine Benefits, Dosage, Side Effects, and Safety | Suppriva",
   "seo_focus_keyword": "iodine",
-  "seo_description": "Explore Iodine benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Learn about Iodine, including benefits, typical dosage, side effects, interactions, safety, and supplement label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/iodine",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Iodine Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Iodine benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Iodine Benefits, Dosage, Side Effects, and Safety | Suppriva",
+  "meta_description": "Learn about Iodine, including benefits, typical dosage, side effects, interactions, safety, and supplement label tips."
 }
