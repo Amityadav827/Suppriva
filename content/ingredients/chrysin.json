@@ -1,289 +1,285 @@
 {
   "name": "Chrysin",
   "scientific_name": "5,7-dihydroxyflavone",
-  "hero_badge": null,
-  "short_description": "Chrysin is a flavonoid compound used in wellness supplements for men's wellness, hormone-support claims, and flavonoid education.",
-  "overview_title": "Chrysin Overview",
-  "overview_subtitle": "A practical look at Chrysin and how it appears in supplement formulas.",
-  "overview_content": "<p>Chrysin is a flavonoid compound associated with men's wellness, hormone-support claims, and flavonoid education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Chrysin depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Chrysin is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Antioxidants",
+  "hero_badge": "Flavonoid",
+  "short_description": "Chrysin is a naturally occurring flavonoid found in passionflower, honey, and propolis, often discussed in antioxidant and hormone-support supplement contexts.",
+  "overview_title": "What Is Chrysin?",
+  "overview_subtitle": "A plant flavonoid commonly discussed for antioxidant and hormone-related supplement positioning.",
+  "overview_content": "<p>Chrysin is a naturally occurring flavonoid known chemically as 5,7-dihydroxyflavone. It is found in small amounts in passionflower, honey, propolis, and some plant materials. In supplements, chrysin is most often marketed around antioxidant support, men's wellness, hormone-related positioning, and botanical research interest.</p>\n\n<p>Chrysin became popular because laboratory studies explored its interaction with aromatase, an enzyme involved in estrogen production. However, human relevance is more complicated. Oral chrysin has limited bioavailability, and supplement claims about testosterone, estrogen, or body composition should be treated cautiously unless supported by product-specific evidence and professional guidance.</p>\n\n<p>As an antioxidant flavonoid, chrysin belongs to the same broad family of plant compounds as quercetin, luteolin, apigenin, and hesperidin. These compounds are researched for cell-signaling, oxidative stress, and inflammatory pathway context, but they should not be described as treatments for hormone disorders, infertility, cancer, or chronic disease.</p>\n\n<p>Chrysin may appear in formulas for men's vitality, sports nutrition, sleep-adjacent blends, and antioxidant support. It is sometimes combined with zinc, boron, fenugreek, tribulus, ashwagandha, DIM, or black pepper extract. Combination formulas require careful review because the overall effect may be influenced by multiple hormone-positioned ingredients.</p>\n\n<p>Dose discussions are difficult because there is no universally established chrysin dosage for wellness use. Products commonly use hundreds of milligrams, but bioavailability and formulation quality matter. Piperine or other absorption enhancers may change exposure and interaction potential, which is why label review is important.</p>\n\n<p>Safety information is limited compared with common vitamins and minerals. Possible concerns include digestive upset, headache, allergy risk from propolis-derived products, and interactions with medications processed by liver enzymes. People with hormone-sensitive conditions, liver disease, pregnancy, nursing, or medication-managed conditions should avoid self-directed use without clinical guidance.</p>\n\n<p>For Suppriva readers, Chrysin is best understood as a specialized flavonoid ingredient with interesting research history but cautious practical interpretation. It can be useful for comparing men's wellness and antioxidant formulas, but it should not be treated as a proven hormone therapy or a substitute for medical evaluation.</p>\n\n<p>The ingredient also illustrates why supplement education should separate early-stage research from real-world outcomes. A compound can look promising in cell or enzyme studies while still having limited usefulness after digestion, absorption, and metabolism. Chrysin is a good example of why bioavailability matters.</p>\n\n<p>When reviewing chrysin products, users should look beyond the front label. Important details include the dose, whether an absorption enhancer is included, the presence of other hormone-positioned ingredients, and whether the brand avoids exaggerated claims. Conservative language is usually a better trust signal than dramatic testosterone promises.</p>\n\n<p>Chrysin may still have a place in ingredient libraries because it helps users compare flavonoids, passionflower-derived compounds, and men's wellness formulas. Its best use is informed comparison, not self-directed hormone management or avoidance of proper lab testing and clinical care.</p>\n\n<p>For everyday users, the safest approach is to treat chrysin as an optional specialty ingredient rather than a core nutrient. It may be interesting in a broader formula, but people should prioritize clear labeling, realistic claims, and medical guidance whenever hormones, fertility, liver health, or prescription medications are involved.</p>",
+  "interesting_fact_label": "Flavonoid Bioavailability",
+  "interesting_fact": "<p>Chrysin is well known in supplement marketing, but its oral bioavailability is one reason researchers remain cautious about strong hormone-related claims.</p>",
   "how_it_works_title": "How Chrysin Works",
-  "how_it_works_subtitle": "How Chrysin is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Flavonoid Claim Review",
-  "how_it_works_highlight_description": "Chrysin is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Chrysin is commonly discussed through flavonoid chemistry and men's wellness supplement claims. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Chrysin to a supplement routine.</p>",
-  "benefits_title": "Potential Chrysin Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Chrysin in supplement routines.",
+  "how_it_works_subtitle": "Chrysin is studied as a flavonoid with antioxidant and cell-signaling activity.",
+  "how_it_works_highlight_title": "Specialized Flavonoid",
+  "how_it_works_highlight_description": "Chrysin is often discussed for aromatase-related research, but real-world supplement effects depend on absorption and context.",
+  "how_it_works_content": "<p>Chrysin may influence antioxidant pathways and has been studied in laboratory settings for enzyme and cell-signaling activity. These findings do not automatically translate into predictable supplement outcomes in humans.</p>\n\n<p>The aromatase discussion around chrysin is a major reason it appears in men's wellness products. Because human evidence and bioavailability are limited, claims should remain conservative.</p>\n\n<p>When chrysin is combined with other hormone-positioned botanicals or minerals, the full formula should be evaluated carefully, especially for people with medical conditions or medication use.</p>",
+  "benefits_title": "Potential Benefits of Chrysin",
+  "benefits_subtitle": "Common wellness reasons chrysin appears in specialized supplement formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Flavonoid Education",
-      "description": "Flavonoid Education helps readers evaluate Chrysin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "sparkles",
+      "title": "Flavonoid Support",
+      "description": "Provides a plant-based flavonoid for antioxidant-focused formulas."
     },
     {
-      "icon": "shield-check",
-      "title": "Men's Wellness Context",
-      "description": "Men's Wellness Context helps readers evaluate Chrysin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "shield",
+      "title": "Oxidative Stress Context",
+      "description": "Often discussed in relation to cellular antioxidant pathways."
     },
     {
       "icon": "activity",
-      "title": "Antioxidant Research",
-      "description": "Antioxidant Research helps readers evaluate Chrysin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Formula Claim Review",
-      "description": "Formula Claim Review helps readers evaluate Chrysin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Men's Wellness Formula Fit",
+      "description": "Appears in products positioned for vitality and hormone-adjacent support."
     },
     {
       "icon": "search",
-      "title": "Dose Awareness",
-      "description": "Dose Awareness helps readers evaluate Chrysin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Ingredient Research Value",
+      "description": "Helps users compare flavonoids with different levels of evidence."
     },
     {
-      "icon": "sparkles",
-      "title": "Expectation Setting",
-      "description": "Expectation Setting helps readers evaluate Chrysin by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    }
-  ],
-  "dosage_title": "Typical Chrysin Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Supplement labels vary widely, commonly using tens to hundreds of milligrams per serving.",
-  "dosage": "Supplement labels vary widely, commonly using tens to hundreds of milligrams per serving.",
-  "dosage_content": "<p>Supplement labels vary widely, commonly using tens to hundreds of milligrams per serving. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "Chrysin Safety Information",
-  "safety_subtitle": "Hormone-related claims should be interpreted carefully, and users with medical conditions should seek professional guidance.",
-  "side_effects": [
-    "Digestive upset",
-    "Headache in sensitive users",
-    "Hormone-related caution",
-    "Medication uncertainty"
-  ],
-  "side_effects_json": [
-    {
-      "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
-    },
-    {
-      "icon": "activity",
-      "title": "Headache in sensitive users",
-      "description": "Headache in sensitive users may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "icon": "leaf",
+      "title": "Botanical Pairing",
+      "description": "Can appear alongside passionflower, propolis, zinc, boron, or ashwagandha."
     },
     {
       "icon": "alert-circle",
-      "title": "Hormone-related caution",
-      "description": "Hormone-related caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Claim Awareness",
+      "description": "Encourages careful interpretation of aromatase and testosterone marketing language."
+    }
+  ],
+  "dosage_title": "Chrysin Dosage",
+  "dosage_subtitle": "There is no established standard wellness dosage for chrysin.",
+  "typical_dose": "Products commonly provide 250-1,000 mg daily, but label directions and formulation context matter.",
+  "dosage": "Products commonly provide 250-1,000 mg daily, but label directions and formulation context matter.",
+  "dosage_content": "<p>Chrysin dosage varies widely by product. Many supplements use 250-1,000 mg per day, sometimes with absorption enhancers. There is no established standard dose for hormone support or antioxidant wellness.</p>\n\n<p>People considering chrysin should review the full formula, especially if it includes other hormone-positioned ingredients. Use caution with medications, liver conditions, hormone-sensitive concerns, pregnancy, or nursing.</p>",
+  "safety_title": "Chrysin Safety Information",
+  "safety_subtitle": "Chrysin requires caution because human supplement data and interaction information are limited.",
+  "side_effects": [
+    "Digestive upset, nausea, or stomach discomfort may occur.",
+    "Headache or dizziness may occur in sensitive users.",
+    "Allergic reactions are possible, especially with propolis-derived products.",
+    "Hormone-related effects are not well established and should not be assumed safe for everyone."
+  ],
+  "side_effects_json": [
+    {
+      "text": "Digestive upset, nausea, or stomach discomfort may occur."
     },
     {
-      "icon": "shield-alert",
-      "title": "Medication uncertainty",
-      "description": "Medication uncertainty may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Headache or dizziness may occur in sensitive users."
+    },
+    {
+      "text": "Allergic reactions are possible, especially with propolis-derived products."
+    },
+    {
+      "text": "Hormone-related effects are not well established and should not be assumed safe for everyone."
     }
   ],
   "drug_interactions_json": [
     {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Chrysin should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "text": "Use caution with medications processed by liver enzymes."
     },
     {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Chrysin as a substitute for medical care or monitoring."
+      "text": "Avoid combining with hormone therapies unless supervised by a clinician."
     },
     {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "text": "Discuss use with a clinician before stacking with multiple men's wellness or testosterone-positioned products."
     },
     {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Chrysin with formulas that target the same pathway or contain similar active compounds."
+      "text": "Absorption enhancers such as piperine may change exposure to chrysin and other ingredients."
     }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Chrysin.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to passionflower, honey, propolis, and botanical sources.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Chrysin to replace diagnosis, treatment, or prescribed care."
+    {
+      "text": "People with hormone-sensitive conditions unless medically supervised."
+    },
+    {
+      "text": "Pregnant or nursing individuals."
+    },
+    {
+      "text": "People with liver disease or complex prescription routines."
+    },
+    {
+      "text": "Anyone expecting chrysin to replace hormone testing or medical care."
+    }
   ],
   "food_sources_title": "Chrysin Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Small amounts may be present in honey, propolis, passionflower, and some botanicals.</p>",
+  "food_sources_subtitle": "Chrysin occurs naturally in small amounts in select botanical sources.",
+  "food_sources_content": "<p>Natural sources include passionflower, honey, propolis, and some plant materials. Supplement amounts are usually much higher than typical dietary exposure.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Small amounts may be present in honey",
-      "description": "Small amounts may be present in honey may help explain the dietary or source context for Chrysin."
+      "text": "Passionflower"
     },
     {
-      "icon": "leaf",
-      "title": "propolis",
-      "description": "propolis may help explain the dietary or source context for Chrysin."
+      "text": "Honey"
     },
     {
-      "icon": "leaf",
-      "title": "passionflower",
-      "description": "passionflower may help explain the dietary or source context for Chrysin."
+      "text": "Propolis"
     },
     {
-      "icon": "leaf",
-      "title": "and some botanicals",
-      "description": "and some botanicals may help explain the dietary or source context for Chrysin."
+      "text": "Botanical extracts"
+    },
+    {
+      "text": "Some plant flavonoid sources"
     }
   ],
-  "faq_title": "Chrysin FAQs",
-  "faq_subtitle": "Common questions about Chrysin, dosage, safety, and supplement use.",
+  "faq_title": "Chrysin FAQ",
+  "faq_subtitle": "Common questions about Chrysin, evidence, and safety.",
   "faq_json": [
     {
-      "question": "What is Chrysin?",
-      "answer": "Chrysin is a flavonoid compound used in supplements for men's wellness, hormone-support claims, and flavonoid education."
+      "question": "What is chrysin?",
+      "answer": "Chrysin is a flavonoid found in passionflower, honey, propolis, and some botanical sources."
     },
     {
-      "question": "What is Chrysin commonly used for?",
-      "answer": "It is commonly discussed for men's wellness, hormone-support claims, and flavonoid education, but its role depends on the product formula, serving size, and user context."
+      "question": "Why is chrysin used in supplements?",
+      "answer": "It is used in antioxidant, men's wellness, and hormone-adjacent formulas because of its research history."
     },
     {
-      "question": "How does Chrysin work?",
-      "answer": "Chrysin is usually evaluated through flavonoid chemistry and men's wellness supplement claims, along with dose, quality, and safety considerations."
+      "question": "Does chrysin boost testosterone?",
+      "answer": "Human evidence is limited, and chrysin should not be treated as a proven testosterone therapy."
     },
     {
-      "question": "What is a typical Chrysin dose?",
-      "answer": "Supplement labels vary widely, commonly using tens to hundreds of milligrams per serving."
+      "question": "What is chrysin's main limitation?",
+      "answer": "Oral bioavailability is a key limitation that affects how supplement claims should be interpreted."
     },
     {
-      "question": "Is Chrysin safe?",
-      "answer": "Chrysin may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Can chrysin affect estrogen?",
+      "answer": "Laboratory research explored aromatase activity, but real-world human effects are not clearly established."
     },
     {
-      "question": "Can Chrysin cause side effects?",
-      "answer": "Possible side effects include digestive upset, headache in sensitive users, hormone-related caution, especially when serving sizes are high or tolerance is low."
+      "question": "How much chrysin do supplements use?",
+      "answer": "Many products provide 250-1,000 mg daily, but there is no established standard dose."
     },
     {
-      "question": "Can Chrysin interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Chrysin."
+      "question": "Can chrysin be taken with piperine?",
+      "answer": "Some formulas combine them, but absorption enhancers may also affect medication exposure."
     },
     {
-      "question": "Is Chrysin found in foods?",
-      "answer": "Small amounts may be present in honey, propolis, passionflower, and some botanicals."
+      "question": "Who should avoid chrysin?",
+      "answer": "People with hormone-sensitive conditions, pregnancy, nursing, liver disease, or complex medication use should seek guidance."
     },
     {
-      "question": "What should I look for on a Chrysin label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Is chrysin the same as passionflower?",
+      "answer": "No. Chrysin is one flavonoid found in passionflower and other sources."
     },
     {
-      "question": "Is Chrysin a substitute for medical treatment?",
-      "answer": "No. Chrysin is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What should I compare chrysin with?",
+      "answer": "Compare it with quercetin, resveratrol, grape seed extract, apigenin-like flavonoids, and men's wellness nutrients."
     }
   ],
-  "sidebar_profile_title": "Chrysin Profile Snapshot",
-  "sidebar_profile_content": "<p>Chrysin is categorized as a flavonoid compound and is most often reviewed for men's wellness, hormone-support claims, and flavonoid education.</p>",
+  "sidebar_profile_title": "Chrysin Profile",
+  "sidebar_profile_content": "A specialized flavonoid used in antioxidant and hormone-adjacent supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Flavonoid compound",
-      "icon": "flask-conical"
+      "value": "Flavonoid"
     },
     {
       "label": "Typical Dose",
-      "value": "Supplement labels vary widely, commonly using tens to hundreds of milligrams per serving.",
-      "icon": "clipboard-check"
+      "value": "250-1,000 mg"
     },
     {
       "label": "Best For",
-      "value": "Men's wellness, hormone-support claims, and flavonoid education",
-      "icon": "target"
+      "value": "Antioxidant research"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
-      "icon": "shield-check"
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "Passionflower, honey, propolis, and botanical sources",
-      "icon": "map-pin"
+      "value": "Passionflower and propolis"
     },
     {
       "label": "Part Used",
-      "value": "Plant flavonoid",
-      "icon": "leaf"
+      "value": "Flavonoid compound"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, blend ingredient",
-      "icon": "pill"
+      "value": "Capsule or tablet"
     },
     {
       "label": "Taste",
-      "value": "Neutral to bitter",
-      "icon": "sparkles"
+      "value": "Neutral to bitter"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Chrysin is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Chrysin is reviewed by Suppriva as a flavonoid compound for men's wellness, hormone-support claims, and flavonoid education.",
-  "best_for": "Men's wellness, hormone-support claims, and flavonoid education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Passionflower, honey, propolis, and botanical sources",
-  "part_used": "Plant flavonoid",
-  "ingredient_form": "Capsule, tablet, blend ingredient",
+  "sidebar_at_a_glance_content": "<p>Chrysin is best approached as a research-focused flavonoid. It may help users compare antioxidant and men's wellness formulas, but strong hormone claims should be treated cautiously.</p>",
+  "full_description": "Chrysin is a plant flavonoid used in antioxidant and men's wellness formulas, with careful interpretation needed for hormone-related claims.",
+  "best_for": "Flavonoid research support",
+  "safety_level": "Moderate",
+  "origin_country": "Passionflower, honey, propolis",
+  "part_used": "Flavonoid compound",
+  "ingredient_form": "Capsule or tablet",
   "taste_profile": "Neutral to bitter",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "rating": 4.2,
+  "evidence_level": "Limited",
   "uses_title": "Chrysin Uses",
-  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Chrysin may appear in formulas related to men's wellness, hormone-support claims, and flavonoid education. Use should be guided by label directions and personal health context.</p>",
+  "uses_subtitle": "Chrysin appears in antioxidant, men's wellness, and botanical support formulas.",
+  "uses_content": "<p>Chrysin is used in formulas focused on flavonoid intake, antioxidant wellness, men's vitality positioning, and botanical ingredient comparisons.</p>",
   "uses_json": [
     {
-      "icon": "check-circle",
-      "title": "Flavonoid Education",
-      "description": "Flavonoid Education is a common context for evaluating Chrysin."
+      "text": "Flavonoid support"
     },
     {
-      "icon": "check-circle",
-      "title": "Men's Wellness Context",
-      "description": "Men's Wellness Context is a common context for evaluating Chrysin."
+      "text": "Antioxidant formulas"
     },
     {
-      "icon": "check-circle",
-      "title": "Antioxidant Research",
-      "description": "Antioxidant Research is a common context for evaluating Chrysin."
+      "text": "Men's wellness blends"
     },
     {
-      "icon": "check-circle",
-      "title": "Formula Claim Review",
-      "description": "Formula Claim Review is a common context for evaluating Chrysin."
+      "text": "Botanical research"
     }
   ],
   "research_title": "Chrysin Research Notes",
-  "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Chrysin focuses on flavonoid chemistry and men's wellness supplement claims. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_subtitle": "Research is strongest in laboratory contexts and more limited for oral supplement outcomes.",
+  "research_content": "<p>Chrysin research includes antioxidant and aromatase-related laboratory work, but human supplement outcomes require cautious interpretation because absorption is limited.</p>",
   "research_json": [
     {
-      "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "text": "Chrysin bioavailability"
     },
     {
-      "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "text": "Flavonoid antioxidant research"
+    },
+    {
+      "text": "Aromatase-related laboratory studies"
+    },
+    {
+      "text": "Men's wellness supplement claims"
     }
   ],
-  "references_title": "Chrysin References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Chrysin Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "chrysin",
-  "seo_description": "Chrysin guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "references_title": "Chrysin Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Chrysin bioavailability research"
+    },
+    {
+      "text": "Flavonoid safety reviews"
+    },
+    {
+      "text": "Passionflower and propolis ingredient context"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "resveratrol"
+    },
+    {
+      "slug": "grape-seed-extract"
+    },
+    {
+      "slug": "quercetin-phytosome"
+    },
+    {
+      "slug": "saffron-extract"
+    }
+  ],
+  "seo_title": "Chrysin Benefits, Dosage, Bioavailability and Safety",
+  "seo_focus_keyword": "Chrysin",
+  "seo_description": "Learn what Chrysin is, why it appears in antioxidant and men's wellness supplements, and what to know about dosage, bioavailability, safety, and interactions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/chrysin",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Chrysin Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Chrysin guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Chrysin Benefits, Dosage, Bioavailability and Safety",
+  "meta_description": "Learn what Chrysin is, why it appears in antioxidant and men's wellness supplements, and what to know about dosage, bioavailability, safety, and interactions."
 }

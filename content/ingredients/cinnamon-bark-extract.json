@@ -1,284 +1,288 @@
 {
   "name": "Cinnamon Bark Extract",
   "scientific_name": "Cinnamomum cassia or Cinnamomum verum",
-  "hero_badge": null,
-  "short_description": "Cinnamon Bark Extract is a botanical bark extract used in wellness supplements for blood sugar, metabolic wellness, and spice-extract education.",
-  "overview_title": "Cinnamon Bark Extract Overview",
-  "overview_subtitle": "A practical look at Cinnamon Bark Extract and how it appears in supplement formulas.",
-  "overview_content": "<p>Cinnamon Bark Extract is a botanical bark extract associated with blood sugar, metabolic wellness, and spice-extract education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Cinnamon Bark Extract depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Cinnamon Bark Extract is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Herbal Extracts",
+  "hero_badge": "Botanical Extract",
+  "short_description": "Cinnamon bark extract is a concentrated botanical ingredient used in metabolic wellness, blood sugar support, and antioxidant formulas.",
+  "overview_title": "What Is Cinnamon Bark Extract?",
+  "overview_subtitle": "A spice-derived extract commonly used in glucose metabolism and metabolic wellness supplements.",
+  "overview_content": "<p>Cinnamon Bark Extract is made from the bark of cinnamon species, most commonly Cinnamomum cassia or Cinnamomum verum. While culinary cinnamon is used as a spice, supplement extracts are more concentrated and are often standardized or prepared for metabolic wellness, antioxidant support, and blood sugar support formulas.</p>\n\n<p>Cinnamon's popularity in supplements comes from research interest in glucose metabolism, insulin sensitivity markers, and polyphenol compounds. It is important to separate wellness support from medical treatment. Cinnamon bark extract is not a diabetes medication, should not replace prescribed care, and should not be used to self-manage blood sugar without professional guidance.</p>\n\n<p>Different cinnamon species matter. Cassia cinnamon is common and often less expensive, but it can contain higher levels of coumarin, a naturally occurring compound that may be a concern for liver health at high or prolonged intakes. Ceylon cinnamon is often described as lower in coumarin, though extract quality and dose still matter.</p>\n\n<p>Cinnamon bark extract may appear with chromium, berberine, alpha lipoic acid, bitter melon, gymnema, banaba leaf, apple cider vinegar, and green tea extract. These combinations are common in glucose metabolism products, but they require careful review for people using diabetes medication or other supplements that may influence glucose markers.</p>\n\n<p>Supplement labels may list cinnamon bark powder, cinnamon extract, cassia bark extract, Ceylon cinnamon, water extract, polyphenol extract, or a cinnamon species name. Consumers should look for clear dose information, extract type, serving instructions, and safety warnings rather than relying only on a familiar spice name.</p>\n\n<p>Safety depends on species, dose, duration, medication use, and health status. Possible side effects include digestive upset, mouth irritation, allergy, headache, and liver-related concerns with high coumarin exposure. People with liver disease, diabetes, anticoagulant use, surgery plans, pregnancy, or nursing should seek clinician guidance.</p>\n\n<p>For Suppriva readers, Cinnamon Bark Extract is a useful ingredient for comparing blood sugar support and metabolic formulas. Its strongest value is educational: it shows how familiar botanicals can become concentrated supplement ingredients that require more careful safety evaluation than ordinary food seasoning.</p>\n\n<p>This distinction matters because people often assume a familiar kitchen spice is automatically low-risk in supplement form. Extract concentration, daily dose, duration, and species can change the safety conversation. A capsule taken every day for months is not the same exposure as a sprinkle of cinnamon on food.</p>\n\n<p>Users should also evaluate whether a product states the cinnamon species and extract details clearly. If a formula does not explain whether it uses cassia, Ceylon, or a standardized extract, it becomes harder to judge coumarin exposure and compare it with other metabolic wellness ingredients.</p>\n\n<p>Cinnamon bark extract can be a helpful comparison point in blood sugar support products, but responsible use still depends on medical context. Anyone using medication for glucose control, liver conditions, or blood thinners should avoid treating cinnamon as a harmless add-on without professional input.</p>\n\n<p>In practice, cinnamon bark extract is best judged by clarity: species listed, dose explained, safety cautions included, and no promise that a spice extract can replace nutrition or medical care. That makes it easier to compare products without overvaluing a familiar ingredient name.</p>",
+  "interesting_fact_label": "Cassia vs Ceylon",
+  "interesting_fact": "<p>Cassia cinnamon can contain more coumarin than Ceylon cinnamon, which is one reason species, dose, and duration matter for supplement safety.</p>",
   "how_it_works_title": "How Cinnamon Bark Extract Works",
-  "how_it_works_subtitle": "How Cinnamon Bark Extract is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Spice Extract Metabolic Support",
-  "how_it_works_highlight_description": "Cinnamon Bark Extract is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Cinnamon Bark Extract is commonly discussed through cinnamon polyphenols and metabolic wellness education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Cinnamon Bark Extract to a supplement routine.</p>",
-  "benefits_title": "Potential Cinnamon Bark Extract Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Cinnamon Bark Extract in supplement routines.",
+  "how_it_works_subtitle": "Cinnamon bark extract is studied for polyphenols and metabolic pathway support.",
+  "how_it_works_highlight_title": "Metabolic Wellness Botanical",
+  "how_it_works_highlight_description": "Cinnamon bark extract appears in glucose metabolism formulas because of its polyphenol content and metabolic research history.",
+  "how_it_works_content": "<p>Cinnamon bark contains polyphenols and other plant compounds studied for antioxidant activity and markers related to glucose metabolism. Extracts are used to concentrate these compounds into supplement form.</p>\n\n<p>The effect of a cinnamon formula depends on species, extract type, dose, product quality, and the user's health context. Cinnamon does not replace diet, activity, medication, or glucose monitoring.</p>\n\n<p>Because cinnamon is often combined with other blood sugar support ingredients, people using diabetes medication should review the full product with a healthcare professional.</p>",
+  "benefits_title": "Potential Benefits of Cinnamon Bark Extract",
+  "benefits_subtitle": "Common wellness reasons cinnamon bark appears in supplement formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Blood Sugar Context",
-      "description": "Blood Sugar Context helps readers evaluate Cinnamon Bark Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Polyphenol Intake",
-      "description": "Polyphenol Intake helps readers evaluate Cinnamon Bark Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "activity",
-      "title": "Culinary Ingredient Familiarity",
-      "description": "Culinary Ingredient Familiarity helps readers evaluate Cinnamon Bark Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Metabolic Wellness Education",
-      "description": "Metabolic Wellness Education helps readers evaluate Cinnamon Bark Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Extract Standardization",
-      "description": "Extract Standardization helps readers evaluate Cinnamon Bark Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "droplets",
+      "title": "Glucose Metabolism Support",
+      "description": "Often included in formulas focused on healthy blood sugar wellness."
     },
     {
       "icon": "sparkles",
-      "title": "Label Safety Awareness",
-      "description": "Label Safety Awareness helps readers evaluate Cinnamon Bark Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    }
-  ],
-  "dosage_title": "Typical Cinnamon Bark Extract Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Serving sizes vary by extract strength; many labels use several hundred milligrams daily.",
-  "dosage": "Serving sizes vary by extract strength; many labels use several hundred milligrams daily.",
-  "dosage_content": "<p>Serving sizes vary by extract strength; many labels use several hundred milligrams daily. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "Cinnamon Bark Extract Safety Information",
-  "safety_subtitle": "Cassia cinnamon may contain coumarin, so liver health, medication use, and high-dose routines require caution.",
-  "side_effects": [
-    "Digestive irritation",
-    "Mouth sensitivity",
-    "Liver caution with high cassia intake",
-    "Medication interaction concern"
-  ],
-  "side_effects_json": [
-    {
-      "icon": "stomach",
-      "title": "Digestive irritation",
-      "description": "Digestive irritation may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Polyphenol Support",
+      "description": "Provides plant compounds associated with antioxidant activity."
     },
     {
       "icon": "activity",
-      "title": "Mouth sensitivity",
-      "description": "Mouth sensitivity may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Metabolic Formula Fit",
+      "description": "Pairs well with minerals and herbs used in metabolic support blends."
     },
     {
-      "icon": "alert-circle",
-      "title": "Liver caution with high cassia intake",
-      "description": "Liver caution with high cassia intake may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "icon": "leaf",
+      "title": "Familiar Botanical",
+      "description": "Offers a recognizable ingredient that users often want to understand more deeply."
     },
     {
-      "icon": "shield-alert",
-      "title": "Medication interaction concern",
-      "description": "Medication interaction concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "icon": "shield-check",
+      "title": "Species Awareness",
+      "description": "Encourages label review for cassia, Ceylon, extract type, and dose."
+    },
+    {
+      "icon": "search",
+      "title": "Comparison Value",
+      "description": "Helps users compare cinnamon with berberine, chromium, and alpha lipoic acid."
+    }
+  ],
+  "dosage_title": "Cinnamon Bark Extract Dosage",
+  "dosage_subtitle": "Dosage depends on species, extract strength, and the full formula.",
+  "typical_dose": "Common products use 250-2,000 mg daily, but extract type and coumarin exposure matter.",
+  "dosage": "Common products use 250-2,000 mg daily, but extract type and coumarin exposure matter.",
+  "dosage_content": "<p>Cinnamon supplement doses vary widely. Some products use bark powder, while others use concentrated extracts. A smaller amount of extract may not be equivalent to a larger amount of whole cinnamon powder.</p>\n\n<p>Long-term high intake of cassia cinnamon may raise coumarin concerns for some users. People with liver disease, diabetes medication use, anticoagulant therapy, pregnancy, or nursing should seek professional guidance.</p>",
+  "safety_title": "Cinnamon Bark Extract Safety Information",
+  "safety_subtitle": "Safety depends on species, dose, duration, liver health, and medication context.",
+  "side_effects": [
+    "Digestive upset, nausea, or stomach discomfort may occur.",
+    "Mouth irritation or allergic reactions can occur in sensitive users.",
+    "High cassia cinnamon intake may raise coumarin-related liver concerns.",
+    "Blood sugar changes may be relevant for people using diabetes medication."
+  ],
+  "side_effects_json": [
+    {
+      "text": "Digestive upset, nausea, or stomach discomfort may occur."
+    },
+    {
+      "text": "Mouth irritation or allergic reactions can occur in sensitive users."
+    },
+    {
+      "text": "High cassia cinnamon intake may raise coumarin-related liver concerns."
+    },
+    {
+      "text": "Blood sugar changes may be relevant for people using diabetes medication."
     }
   ],
   "drug_interactions_json": [
     {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Cinnamon Bark Extract should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "text": "Use caution with insulin or glucose-lowering medication."
     },
     {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Cinnamon Bark Extract as a substitute for medical care or monitoring."
+      "text": "Discuss use with a clinician if taking blood thinners or planning surgery."
     },
     {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "text": "Avoid combining multiple glucose-support products without guidance."
     },
     {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Cinnamon Bark Extract with formulas that target the same pathway or contain similar active compounds."
+      "text": "Use caution with medications or conditions that affect the liver."
     }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Cinnamon Bark Extract.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to cinnamon tree bark.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Cinnamon Bark Extract to replace diagnosis, treatment, or prescribed care."
+    {
+      "text": "People with liver disease unless medically supervised."
+    },
+    {
+      "text": "People using diabetes medication without clinician guidance."
+    },
+    {
+      "text": "Pregnant or nursing individuals unless approved by a clinician."
+    },
+    {
+      "text": "Anyone allergic to cinnamon or related spice products."
+    }
   ],
-  "food_sources_title": "Cinnamon Bark Extract Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Cinnamon is used as a culinary spice in foods, teas, and beverages.</p>",
+  "food_sources_title": "Cinnamon Bark Food Sources",
+  "food_sources_subtitle": "Cinnamon is consumed as a spice, but extracts are more concentrated.",
+  "food_sources_content": "<p>Cinnamon bark is commonly used in foods, teas, spice blends, baked goods, and beverages. Supplements may provide much more concentrated amounts than ordinary culinary use.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Cinnamon is used as a culinary spice in foods",
-      "description": "Cinnamon is used as a culinary spice in foods may help explain the dietary or source context for Cinnamon Bark Extract."
+      "text": "Cinnamon spice"
     },
     {
-      "icon": "leaf",
-      "title": "teas",
-      "description": "teas may help explain the dietary or source context for Cinnamon Bark Extract."
+      "text": "Cinnamon tea"
     },
     {
-      "icon": "leaf",
-      "title": "and beverages",
-      "description": "and beverages may help explain the dietary or source context for Cinnamon Bark Extract."
+      "text": "Baked goods"
+    },
+    {
+      "text": "Spice blends"
+    },
+    {
+      "text": "Ceylon cinnamon"
+    },
+    {
+      "text": "Cassia cinnamon"
     }
   ],
-  "faq_title": "Cinnamon Bark Extract FAQs",
-  "faq_subtitle": "Common questions about Cinnamon Bark Extract, dosage, safety, and supplement use.",
+  "faq_title": "Cinnamon Bark Extract FAQ",
+  "faq_subtitle": "Common questions about Cinnamon Bark Extract, dosage, and safety.",
   "faq_json": [
     {
-      "question": "What is Cinnamon Bark Extract?",
-      "answer": "Cinnamon Bark Extract is a botanical bark extract used in supplements for blood sugar, metabolic wellness, and spice-extract education."
+      "question": "What is cinnamon bark extract?",
+      "answer": "It is a concentrated supplement ingredient made from cinnamon bark, commonly used in metabolic wellness formulas."
     },
     {
-      "question": "What is Cinnamon Bark Extract commonly used for?",
-      "answer": "It is commonly discussed for blood sugar, metabolic wellness, and spice-extract education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is cinnamon bark extract the same as cinnamon spice?",
+      "answer": "No. Extracts may be more concentrated and should be evaluated differently than culinary spice use."
     },
     {
-      "question": "How does Cinnamon Bark Extract work?",
-      "answer": "Cinnamon Bark Extract is usually evaluated through cinnamon polyphenols and metabolic wellness education, along with dose, quality, and safety considerations."
+      "question": "Can cinnamon bark extract treat diabetes?",
+      "answer": "No. It is not a diabetes treatment and should not replace medication, monitoring, or medical care."
     },
     {
-      "question": "What is a typical Cinnamon Bark Extract dose?",
-      "answer": "Serving sizes vary by extract strength; many labels use several hundred milligrams daily."
+      "question": "What is the difference between cassia and Ceylon cinnamon?",
+      "answer": "Cassia is common and can contain more coumarin, while Ceylon is often lower in coumarin."
     },
     {
-      "question": "Is Cinnamon Bark Extract safe?",
-      "answer": "Cinnamon Bark Extract may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "How much cinnamon bark extract is common?",
+      "answer": "Many products use 250-2,000 mg daily, but extract strength and species matter."
     },
     {
-      "question": "Can Cinnamon Bark Extract cause side effects?",
-      "answer": "Possible side effects include digestive irritation, mouth sensitivity, liver caution with high cassia intake, especially when serving sizes are high or tolerance is low."
+      "question": "Can cinnamon interact with diabetes medication?",
+      "answer": "Yes, it may be relevant for people using glucose-lowering medication, so guidance is recommended."
     },
     {
-      "question": "Can Cinnamon Bark Extract interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Cinnamon Bark Extract."
+      "question": "Is cinnamon bark extract safe for the liver?",
+      "answer": "High cassia intake may raise liver concerns because of coumarin, especially with long-term use."
     },
     {
-      "question": "Is Cinnamon Bark Extract found in foods?",
-      "answer": "Cinnamon is used as a culinary spice in foods, teas, and beverages."
+      "question": "Can I take cinnamon with berberine or chromium?",
+      "answer": "These combinations are common but should be reviewed carefully with medication use."
     },
     {
-      "question": "What should I look for on a Cinnamon Bark Extract label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Who should avoid cinnamon bark extract?",
+      "answer": "People with liver disease, cinnamon allergy, pregnancy, nursing, or medication-managed blood sugar should seek guidance."
     },
     {
-      "question": "Is Cinnamon Bark Extract a substitute for medical treatment?",
-      "answer": "No. Cinnamon Bark Extract is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What should I compare it with?",
+      "answer": "Compare it with chromium, berberine, alpha lipoic acid, bitter melon, and banaba leaf extract."
     }
   ],
-  "sidebar_profile_title": "Cinnamon Bark Extract Profile Snapshot",
-  "sidebar_profile_content": "<p>Cinnamon Bark Extract is categorized as a botanical bark extract and is most often reviewed for blood sugar, metabolic wellness, and spice-extract education.</p>",
+  "sidebar_profile_title": "Cinnamon Bark Extract Profile",
+  "sidebar_profile_content": "A spice-derived botanical extract used in metabolic wellness and glucose support formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Botanical bark extract",
-      "icon": "flask-conical"
+      "value": "Botanical extract"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary by extract strength; many labels use several hundred milligrams daily.",
-      "icon": "clipboard-check"
+      "value": "250-2,000 mg"
     },
     {
       "label": "Best For",
-      "value": "Blood sugar, metabolic wellness, and spice-extract education",
-      "icon": "target"
+      "value": "Metabolic wellness"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
-      "icon": "shield-check"
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "Cinnamon tree bark",
-      "icon": "map-pin"
+      "value": "Cinnamon bark"
     },
     {
       "label": "Part Used",
-      "value": "Bark",
-      "icon": "leaf"
+      "value": "Bark"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract",
-      "icon": "pill"
+      "value": "Capsule, powder, extract"
     },
     {
       "label": "Taste",
-      "value": "Warm, sweet, and spicy",
-      "icon": "sparkles"
+      "value": "Warm and spicy"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Cinnamon Bark Extract is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Cinnamon Bark Extract is reviewed by Suppriva as a botanical bark extract for blood sugar, metabolic wellness, and spice-extract education.",
-  "best_for": "Blood sugar, metabolic wellness, and spice-extract education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Cinnamon tree bark",
+  "sidebar_at_a_glance_content": "<p>Cinnamon Bark Extract is a familiar botanical with metabolic wellness relevance, but species, coumarin exposure, and medication context are important safety considerations.</p>",
+  "full_description": "Cinnamon Bark Extract is a concentrated botanical ingredient used in glucose metabolism, antioxidant, and metabolic wellness supplements.",
+  "best_for": "Metabolic wellness support",
+  "safety_level": "Moderate",
+  "origin_country": "Cinnamon bark",
   "part_used": "Bark",
-  "ingredient_form": "Capsule, powder, extract",
-  "taste_profile": "Warm, sweet, and spicy",
+  "ingredient_form": "Capsule, powder, or extract",
+  "taste_profile": "Warm and spicy",
   "rating": 4.6,
   "evidence_level": "Moderate",
   "uses_title": "Cinnamon Bark Extract Uses",
-  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Cinnamon Bark Extract may appear in formulas related to blood sugar, metabolic wellness, and spice-extract education. Use should be guided by label directions and personal health context.</p>",
+  "uses_subtitle": "Cinnamon bark extract appears in blood sugar and metabolic wellness formulas.",
+  "uses_content": "<p>Cinnamon bark extract is used in glucose metabolism products, antioxidant blends, metabolic wellness formulas, and supplement comparisons involving botanicals and minerals.</p>",
   "uses_json": [
     {
-      "icon": "check-circle",
-      "title": "Blood Sugar Context",
-      "description": "Blood Sugar Context is a common context for evaluating Cinnamon Bark Extract."
+      "text": "Glucose metabolism"
     },
     {
-      "icon": "check-circle",
-      "title": "Polyphenol Intake",
-      "description": "Polyphenol Intake is a common context for evaluating Cinnamon Bark Extract."
+      "text": "Metabolic wellness"
     },
     {
-      "icon": "check-circle",
-      "title": "Culinary Ingredient Familiarity",
-      "description": "Culinary Ingredient Familiarity is a common context for evaluating Cinnamon Bark Extract."
+      "text": "Polyphenol support"
     },
     {
-      "icon": "check-circle",
-      "title": "Metabolic Wellness Education",
-      "description": "Metabolic Wellness Education is a common context for evaluating Cinnamon Bark Extract."
+      "text": "Blood sugar support formulas"
     }
   ],
   "research_title": "Cinnamon Bark Extract Research Notes",
-  "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Cinnamon Bark Extract focuses on cinnamon polyphenols and metabolic wellness education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_subtitle": "Research focuses on cinnamon species, polyphenols, and metabolic markers.",
+  "research_content": "<p>Cinnamon research varies by species, dose, and extract preparation. Results should be interpreted carefully, especially for people with diabetes or liver health concerns.</p>",
   "research_json": [
     {
-      "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "text": "Cinnamon polyphenols"
     },
     {
-      "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "text": "Cassia and Ceylon cinnamon differences"
+    },
+    {
+      "text": "Glucose metabolism research"
+    },
+    {
+      "text": "Coumarin safety context"
     }
   ],
-  "references_title": "Cinnamon Bark Extract References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Cinnamon Bark Extract Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "cinnamon bark extract",
-  "seo_description": "Cinnamon Bark Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "references_title": "Cinnamon Bark Extract Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Cinnamon safety and coumarin"
+    },
+    {
+      "text": "Cinnamon and glucose metabolism research"
+    },
+    {
+      "text": "Cassia vs Ceylon supplement context"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "chromium"
+    },
+    {
+      "slug": "chromium-picolinate"
+    },
+    {
+      "slug": "berberine"
+    },
+    {
+      "slug": "alpha-lipoic-acid"
+    }
+  ],
+  "seo_title": "Cinnamon Bark Extract Benefits, Dosage and Safety",
+  "seo_focus_keyword": "Cinnamon Bark Extract",
+  "seo_description": "Learn how Cinnamon Bark Extract is used in glucose metabolism and metabolic wellness formulas, including dosage, cassia vs Ceylon safety, and interactions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/cinnamon-bark-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Cinnamon Bark Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Cinnamon Bark Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Cinnamon Bark Extract Benefits, Dosage and Safety",
+  "meta_description": "Learn how Cinnamon Bark Extract is used in glucose metabolism and metabolic wellness formulas, including dosage, cassia vs Ceylon safety, and interactions."
 }

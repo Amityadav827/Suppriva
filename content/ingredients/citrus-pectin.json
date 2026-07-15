@@ -1,227 +1,288 @@
 {
   "name": "Citrus Pectin",
-  "status": "published",
-  "scientific_name": "Citrus pectin",
+  "scientific_name": "Pectin from Citrus spp.",
   "ingredient_category": "Specialty Ingredients",
-  "hero_badge": null,
-  "short_description": "Citrus Pectin is a soluble fiber extracted from citrus peel and pith, often used in gut, fiber, and wellness-support formulas, with practical safety and label context for supplement shoppers.",
-  "overview_title": "Citrus Pectin Overview",
-  "overview_subtitle": "A practical look at citrus pectin as a supplement ingredient.",
-  "overview_content": "<p>Citrus Pectin is a soluble fiber extracted from citrus peel and pith, often used in gut, fiber, and wellness-support formulas. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Citrus Pectin through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Citrus Pectin should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Pectin is the same type of plant fiber that helps fruit preserves thicken, but supplement forms are processed for nutrition and wellness applications.</p>",
+  "hero_badge": "Soluble Fiber",
+  "short_description": "Citrus pectin is a soluble fiber from citrus peel used in digestive wellness, metabolic support, and specialty supplement formulas.",
+  "overview_title": "What Is Citrus Pectin?",
+  "overview_subtitle": "A citrus-derived soluble fiber used for digestive and metabolic wellness support.",
+  "overview_content": "<p>Citrus Pectin is a soluble fiber naturally found in the peel and pulp of citrus fruits such as oranges, lemons, limes, and grapefruits. In supplements, it may be used as regular citrus pectin or as modified citrus pectin, a processed form designed to have a different molecular size and functional profile.</p>\n\n<p>As a fiber ingredient, citrus pectin is most often discussed in relation to digestive regularity, gut comfort, cholesterol wellness, blood sugar response after meals, and satiety support. These are wellness contexts, not disease treatment claims. Citrus pectin should not be used as a replacement for medical care, cholesterol medication, diabetes treatment, or a prescribed digestive plan.</p>\n\n<p>Regular pectin is familiar in food because it helps jams and jellies gel. Supplemental citrus pectin may be used in powders, capsules, functional beverages, and fiber blends. Modified citrus pectin is more specialized and is sometimes discussed in immune and cell-adhesion research contexts, but those uses require cautious interpretation.</p>\n\n<p>Citrus pectin may appear with probiotics, inulin, glucomannan, apple cider vinegar, green tea extract, chromium, or other metabolic support ingredients. In digestive formulas, it may be positioned as a gentle soluble fiber. In weight-management formulas, it may be included for fullness and meal-response support.</p>\n\n<p>Because fiber can influence digestion, timing matters. Citrus pectin may bind water and affect how quickly the stomach empties. It may also interfere with the absorption of some medications or minerals if taken too close together. Users should separate fiber supplements from medications when advised by a clinician or label.</p>\n\n<p>Side effects are usually digestive and may include gas, bloating, cramping, loose stools, or constipation depending on dose, hydration, and sensitivity. People with bowel obstruction risk, severe gastrointestinal disease, citrus allergy, swallowing difficulty, or medication routines should seek professional guidance before use.</p>\n\n<p>For Suppriva readers, Citrus Pectin is useful because it connects ingredient education with fiber quality, digestive wellness, and metabolic formula design. It is not a flashy stimulant or hormone ingredient; its value comes from understanding how soluble fibers can support everyday wellness when used responsibly.</p>\n\n<p>The ingredient also helps explain why fiber supplements should be introduced gradually. A high fiber dose may be useful for some people, but a sudden increase can cause bloating or bowel changes. Hydration, meal timing, and individual tolerance strongly influence the experience.</p>\n\n<p>Citrus pectin should be compared with other fibers rather than judged only as a citrus ingredient. Inulin, glucomannan, psyllium, acacia fiber, and resistant starch can all support digestive wellness in different ways. The best choice depends on tolerance, product form, and the user's wellness goal.</p>\n\n<p>For supplement shoppers, the most important label questions are whether the product uses regular pectin or modified citrus pectin, how many grams are provided, whether sweeteners are included, and whether the directions mention water intake or medication spacing. These details make the product easier to evaluate responsibly.</p>\n\n<p>Citrus pectin is also a useful reminder that gentle ingredients can still require thoughtful use. Fiber changes can affect digestion, appetite, bowel habits, and medication timing, so users should increase intake gradually and pay attention to how their body responds.</p>",
+  "interesting_fact_label": "From Citrus Peel",
+  "interesting_fact": "<p>Citrus pectin is one reason fruit peels and pulp have a unique texture, and the same gelling property makes pectin useful in foods and supplements.</p>",
   "how_it_works_title": "How Citrus Pectin Works",
-  "how_it_works_subtitle": "The main mechanisms behind citrus pectin in wellness formulas.",
-  "how_it_works_highlight_title": "Soluble fiber polysaccharide support profile",
-  "how_it_works_highlight_description": "Citrus Pectin is commonly evaluated through soluble fiber behavior, gel-forming properties, and its ability to support normal digestive transit and formula texture.",
-  "how_it_works_content": "<p>Citrus Pectin works through soluble fiber behavior, gel-forming properties, and its ability to support normal digestive transit and formula texture. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Citrus Pectin is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
-  "benefits_title": "Potential Citrus Pectin Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "how_it_works_subtitle": "Citrus pectin acts as a soluble fiber that interacts with water and digestion.",
+  "how_it_works_highlight_title": "Soluble Fiber Support",
+  "how_it_works_highlight_description": "Citrus pectin can form a gel-like matrix in water, which helps explain its digestive and meal-response supplement uses.",
+  "how_it_works_content": "<p>Citrus pectin absorbs water and can form a gel-like structure. This supports its role as a soluble fiber and explains why it is used in digestive wellness and satiety-focused formulas.</p>\n\n<p>Soluble fibers may influence stool consistency, fullness, and the way nutrients are processed after meals. The practical effect depends on dose, hydration, diet, and individual gut tolerance.</p>\n\n<p>Because fiber can affect medication absorption, citrus pectin should be timed thoughtfully and introduced gradually, especially for people with sensitive digestion.</p>",
+  "benefits_title": "Potential Benefits of Citrus Pectin",
+  "benefits_subtitle": "Common wellness reasons citrus pectin appears in fiber and digestive support formulas.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Citrus Pectin is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "icon": "waves",
+      "title": "Soluble Fiber Support",
+      "description": "Provides a citrus-derived fiber that can support digestive regularity."
     },
     {
-      "icon": "activity",
-      "title": "Supports Soluble Fiber And Digestive Wellness Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around soluble fiber and digestive wellness support."
+      "icon": "heart",
+      "title": "Cholesterol Wellness Context",
+      "description": "Soluble fibers are often discussed in relation to healthy cholesterol support."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+      "icon": "scale",
+      "title": "Satiety Formula Fit",
+      "description": "May help support fullness when used with adequate water and balanced meals."
+    },
+    {
+      "icon": "droplets",
+      "title": "Meal Response Support",
+      "description": "Can be included in formulas focused on post-meal metabolic wellness."
     },
     {
       "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Citrus Pectin often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Gentle Botanical Source",
+      "description": "Comes from citrus peel and pulp rather than synthetic stimulant ingredients."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
-    },
-    {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Citrus Pectin by mechanism, evidence level, safety context, and practical product positioning."
+      "title": "Medication Timing Awareness",
+      "description": "Encourages spacing fiber supplements away from medications when needed."
     }
   ],
-  "dosage_title": "Typical Citrus Pectin Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common servings often range from 1 g to 5 g daily, depending on whether the formula uses standard or modified citrus pectin.",
-  "dosage": "Common servings often range from 1 g to 5 g daily, depending on whether the formula uses standard or modified citrus pectin.",
-  "dosage_content": "<p>Common servings often range from 1 g to 5 g daily, depending on whether the formula uses standard or modified citrus pectin.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Citrus Pectin without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_title": "Citrus Pectin Dosage",
+  "dosage_subtitle": "Dose depends on whether the product uses regular or modified citrus pectin.",
+  "typical_dose": "Common fiber products may use gram-level servings; modified citrus pectin products vary by label.",
+  "dosage": "Common fiber products may use gram-level servings; modified citrus pectin products vary by label.",
+  "dosage_content": "<p>Citrus pectin dosage varies by product type. Regular fiber products often use gram-level servings, while modified citrus pectin products may provide different serving sizes depending on processing and intended use.</p>\n\n<p>Start with a lower dose if you are sensitive to fiber, and drink adequate water. Separate from medications if directed by a clinician or product label.</p>",
   "safety_title": "Citrus Pectin Safety Information",
-  "safety_subtitle": "Important safety context before using citrus pectin supplements.",
+  "safety_subtitle": "Citrus pectin is usually well tolerated, but digestive tolerance and medication timing matter.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Gas, bloating, or abdominal discomfort may occur, especially when starting.",
+    "Loose stools or constipation may occur depending on dose and hydration.",
+    "Citrus allergy reactions are possible in sensitive individuals.",
+    "Swallowing large dry amounts without water may be unsafe."
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Citrus Pectin may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "text": "Gas, bloating, or abdominal discomfort may occur, especially when starting."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "text": "Loose stools or constipation may occur depending on dose and hydration."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "text": "Citrus allergy reactions are possible in sensitive individuals."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Citrus Pectin is combined with similar ingredients or multi-ingredient products."
+      "text": "Swallowing large dry amounts without water may be unsafe."
     }
   ],
   "drug_interactions_json": [
-    "Review Citrus Pectin with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People with citrus allergy, significant digestive sensitivity, or medication timing concerns should review citrus pectin use with a clinician.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    {
+      "text": "Fiber may reduce or delay absorption of some medications if taken together."
+    },
+    {
+      "text": "Separate from thyroid medication, minerals, or prescriptions if instructed by a clinician."
+    },
+    {
+      "text": "Use caution with diabetes medication if changing fiber intake significantly."
+    },
+    {
+      "text": "Discuss use with a clinician if taking many medications or managing gastrointestinal disease."
+    }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Citrus Pectin or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    {
+      "text": "People with bowel obstruction risk or severe gastrointestinal narrowing."
+    },
+    {
+      "text": "People with citrus allergy."
+    },
+    {
+      "text": "People with swallowing difficulty unless using a clinician-approved form."
+    },
+    {
+      "text": "Pregnant or nursing individuals should use only label-appropriate or clinician-approved amounts."
+    }
   ],
   "food_sources_title": "Citrus Pectin Food Sources",
-  "food_sources_subtitle": "Food and source context for citrus pectin.",
-  "food_sources_content": "<p>Citrus pectin comes mainly from citrus peel and pith, while supplements may use purified or modified forms for more consistent serving sizes.</p>",
+  "food_sources_subtitle": "Citrus pectin naturally occurs in citrus fruits.",
+  "food_sources_content": "<p>Citrus pectin is found in orange, lemon, lime, and grapefruit peel and pulp. Whole fruits provide pectin along with water, vitamins, flavonoids, and other fibers.</p>",
   "food_sources_json": [
     {
-      "title": "Orange peel and pith",
-      "description": "Orange peel and pith can contribute to soluble fiber and digestive wellness support, though supplement potency depends on serving size, form, and standardization."
+      "text": "Orange peel"
     },
     {
-      "title": "Lemon peel",
-      "description": "Lemon peel can contribute to soluble fiber and digestive wellness support, though supplement potency depends on serving size, form, and standardization."
+      "text": "Lemon peel"
     },
     {
-      "title": "Grapefruit peel",
-      "description": "Grapefruit peel can contribute to soluble fiber and digestive wellness support, though supplement potency depends on serving size, form, and standardization."
+      "text": "Lime peel"
     },
     {
-      "title": "Apples and other pectin-rich fruits",
-      "description": "Apples and other pectin-rich fruits can contribute to soluble fiber and digestive wellness support, though supplement potency depends on serving size, form, and standardization."
+      "text": "Grapefruit peel"
+    },
+    {
+      "text": "Citrus pulp"
+    },
+    {
+      "text": "Fruit preserves"
     }
   ],
-  "faq_title": "Citrus Pectin FAQs",
-  "faq_subtitle": "Common questions about citrus pectin supplements.",
+  "faq_title": "Citrus Pectin FAQ",
+  "faq_subtitle": "Common questions about Citrus Pectin, fiber, and safety.",
   "faq_json": [
     {
-      "question": "What is Citrus Pectin?",
-      "answer": "Citrus Pectin is a soluble fiber extracted from citrus peel and pith, often used in gut, fiber, and wellness-support formulas. It is used in supplement formulas for soluble fiber and digestive wellness support, not as a substitute for medical treatment."
+      "question": "What is citrus pectin?",
+      "answer": "Citrus pectin is a soluble fiber found in citrus peel and pulp."
     },
     {
-      "question": "What is Citrus Pectin commonly used for?",
-      "answer": "It is commonly positioned around digestive wellness, fiber support, and gentle daily cleansing formulas. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "Is citrus pectin the same as modified citrus pectin?",
+      "answer": "No. Modified citrus pectin is processed to change its molecular size and is used differently in supplements."
     },
     {
-      "question": "How does Citrus Pectin work?",
-      "answer": "Citrus Pectin is usually discussed through soluble fiber behavior, gel-forming properties, and its ability to support normal digestive transit and formula texture. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "Why is citrus pectin used in supplements?",
+      "answer": "It is used for soluble fiber support, digestive wellness, satiety, and meal-response formulas."
     },
     {
-      "question": "What is a typical Citrus Pectin dose?",
-      "answer": "Common servings often range from 1 g to 5 g daily, depending on whether the formula uses standard or modified citrus pectin. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "Can citrus pectin treat high cholesterol?",
+      "answer": "No. It may support cholesterol wellness as a fiber ingredient, but it does not replace medical treatment."
     },
     {
-      "question": "Is Citrus Pectin safe for daily use?",
-      "answer": "Generally well tolerated; digestive adjustment is possible. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "How much citrus pectin is common?",
+      "answer": "Regular fiber products often use gram-level servings, while modified citrus pectin amounts vary by label."
     },
     {
-      "question": "Can Citrus Pectin cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "Can citrus pectin cause bloating?",
+      "answer": "Yes. Gas and bloating can occur, especially when increasing fiber too quickly."
     },
     {
-      "question": "Can Citrus Pectin interact with medication?",
-      "answer": "People with citrus allergy, significant digestive sensitivity, or medication timing concerns should review citrus pectin use with a clinician. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "Should citrus pectin be taken with water?",
+      "answer": "Yes. Fiber supplements should generally be taken with adequate fluid."
     },
     {
-      "question": "What should I compare on a Citrus Pectin supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Can citrus pectin affect medication absorption?",
+      "answer": "It may interfere with absorption if taken too close to certain medications."
     },
     {
-      "question": "What foods contain Citrus Pectin or related compounds?",
-      "answer": "Citrus pectin comes mainly from citrus peel and pith, while supplements may use purified or modified forms for more consistent serving sizes."
+      "question": "Who should avoid citrus pectin?",
+      "answer": "People with citrus allergy, bowel obstruction risk, severe GI narrowing, or swallowing difficulty should seek guidance."
     },
     {
-      "question": "Can Citrus Pectin replace medical care?",
-      "answer": "No. Citrus Pectin supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "What should I compare it with?",
+      "answer": "Compare it with inulin, glucomannan, probiotics, apple cider vinegar, and other digestive wellness ingredients."
     }
   ],
-  "sidebar_profile_title": "Citrus Pectin Profile Snapshot",
-  "sidebar_profile_content": "Citrus Pectin is a soluble fiber polysaccharide used in supplements for soluble fiber and digestive wellness support.",
+  "sidebar_profile_title": "Citrus Pectin Profile",
+  "sidebar_profile_content": "A citrus-derived soluble fiber used in digestive wellness, satiety, and metabolic support formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Soluble fiber polysaccharide"
+      "value": "Soluble fiber"
     },
     {
       "label": "Typical Dose",
-      "value": "Common servings often range from 1 g to 5 g daily, depending on whether the formula uses standard or modified citrus pectin."
+      "value": "Gram-level servings"
     },
     {
       "label": "Best For",
-      "value": "Digestive wellness, fiber support, and gentle daily cleansing formulas"
+      "value": "Digestive wellness"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; digestive adjustment is possible"
+      "value": "Generally well tolerated"
     },
     {
       "label": "Origin",
-      "value": "Citrus fruits such as oranges, lemons, and grapefruits"
+      "value": "Citrus peel and pulp"
     },
     {
       "label": "Part Used",
-      "value": "Fruit peel and pith fiber"
+      "value": "Fruit fiber"
     },
     {
       "label": "Form",
-      "value": "Powder, capsule, drink mix"
+      "value": "Powder or capsule"
     },
     {
       "label": "Taste",
-      "value": "Mild citrus fiber taste"
+      "value": "Mild citrus"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Citrus Pectin is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Citrus Pectin is a soluble fiber extracted from citrus peel and pith, often used in gut, fiber, and wellness-support formulas, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Digestive wellness, fiber support, and gentle daily cleansing formulas",
-  "safety_level": "Generally well tolerated; digestive adjustment is possible",
-  "origin_country": "Citrus fruits such as oranges, lemons, and grapefruits",
-  "part_used": "Fruit peel and pith fiber",
-  "ingredient_form": "Powder, capsule, drink mix",
-  "taste_profile": "Mild citrus fiber taste",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Citrus Pectin Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "citrus pectin",
-  "seo_description": "Explore Citrus Pectin benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "sidebar_at_a_glance_content": "<p>Citrus pectin is a practical soluble fiber ingredient. Its main considerations are digestive tolerance, hydration, and spacing from medications when needed.</p>",
+  "full_description": "Citrus pectin is a soluble fiber from citrus peel used in digestive wellness, satiety, and metabolic support formulas.",
+  "best_for": "Digestive fiber support",
+  "safety_level": "Generally well tolerated",
+  "origin_country": "Citrus peel and pulp",
+  "part_used": "Fruit fiber",
+  "ingredient_form": "Powder or capsule",
+  "taste_profile": "Mild citrus",
+  "rating": 4.5,
+  "evidence_level": "Moderate",
+  "uses_title": "Citrus Pectin Uses",
+  "uses_subtitle": "Citrus pectin appears in fiber, digestive wellness, and metabolic support products.",
+  "uses_content": "<p>Citrus pectin is used in formulas focused on digestive regularity, soluble fiber intake, satiety, cholesterol wellness context, and meal-response support.</p>",
+  "uses_json": [
+    {
+      "text": "Digestive wellness"
+    },
+    {
+      "text": "Soluble fiber support"
+    },
+    {
+      "text": "Satiety formulas"
+    },
+    {
+      "text": "Meal-response support"
+    }
+  ],
+  "research_title": "Citrus Pectin Research Notes",
+  "research_subtitle": "Research focuses on pectin as a soluble fiber and modified citrus pectin as a specialty ingredient.",
+  "research_content": "<p>Citrus pectin research includes fiber-related digestion and metabolic wellness topics. Modified citrus pectin research should be interpreted separately from regular food pectin.</p>",
+  "research_json": [
+    {
+      "text": "Soluble fiber research"
+    },
+    {
+      "text": "Pectin digestion studies"
+    },
+    {
+      "text": "Modified citrus pectin context"
+    },
+    {
+      "text": "Fiber and medication timing"
+    }
+  ],
+  "references_title": "Citrus Pectin Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Pectin soluble fiber research"
+    },
+    {
+      "text": "Citrus fiber supplement safety"
+    },
+    {
+      "text": "Modified citrus pectin research context"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "chicory-root-inulin"
+    },
+    {
+      "slug": "glucomannan"
+    },
+    {
+      "slug": "probiotics"
+    },
+    {
+      "slug": "apple-cider-vinegar"
+    }
+  ],
+  "seo_title": "Citrus Pectin Benefits, Dosage and Safety",
+  "seo_focus_keyword": "Citrus Pectin",
+  "seo_description": "Learn how Citrus Pectin works as a soluble fiber for digestive wellness, satiety, and metabolic support, including dosage, food sources, and safety cautions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/citrus-pectin",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Citrus Pectin Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Citrus Pectin benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Citrus Pectin Benefits, Dosage and Safety",
+  "meta_description": "Learn how Citrus Pectin works as a soluble fiber for digestive wellness, satiety, and metabolic support, including dosage, food sources, and safety cautions."
 }
