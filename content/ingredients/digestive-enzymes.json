@@ -1,216 +1,211 @@
 {
   "name": "Digestive Enzymes",
   "scientific_name": "Amylase, protease, lipase, lactase, cellulase, and related enzymes",
-  "hero_badge": null,
-  "short_description": "Digestive Enzymes is a enzyme blend used in wellness supplements for digestive comfort and macronutrient breakdown education.",
-  "overview_title": "Digestive Enzymes Overview",
-  "overview_subtitle": "A practical look at Digestive Enzymes and how it appears in supplement formulas.",
-  "overview_content": "<p>Digestive Enzymes is a enzyme blend associated with digestive comfort and macronutrient breakdown education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Digestive Enzymes depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Digestive Enzymes is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
-  "how_it_works_title": "How Digestive Enzymes Works",
-  "how_it_works_subtitle": "How Digestive Enzymes is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Meal-Time Digestive Support",
-  "how_it_works_highlight_description": "Digestive Enzymes is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Digestive Enzymes is commonly discussed through meal-time enzyme support and digestive formula education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Digestive Enzymes to a supplement routine.</p>",
-  "benefits_title": "Potential Digestive Enzymes Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Digestive Enzymes in supplement routines.",
+  "ingredient_category": "Specialty Ingredients",
+  "hero_badge": "Digestive Support",
+  "short_description": "Digestive enzymes are protein-based compounds used in supplements to help break down carbohydrates, proteins, fats, lactose, fiber, and other food components.",
+  "overview_title": "What Are Digestive Enzymes?",
+  "overview_subtitle": "A practical guide to enzyme blends, units of activity, food-specific support, and responsible digestive supplement comparison.",
+  "overview_content": "<p>Digestive enzymes are proteins that help break down food into smaller components the body can absorb. The body naturally produces enzymes such as amylase for carbohydrates, protease for proteins, lipase for fats, and lactase for lactose. Supplements may provide these or other enzymes in capsules, chewables, powders, or meal-time formulas. Digestive enzyme products are often marketed for bloating, gas, lactose digestion, meal comfort, or broad digestive support, but the usefulness of a product depends on which enzymes are included and why the person is using it.</p><p>This ingredient category is different from many herbs or nutrients because enzymes are measured not only by weight but also by activity units. A label may list milligrams, but enzyme activity units such as FCC, ALU, HUT, FIP, DU, or SAP often provide more meaningful information. Two products with the same milligram amount may have very different enzyme activity. A transparent supplement should list the enzyme type and activity units so shoppers know what food components the formula is designed to address.</p><p>Some enzyme supplements have clearer use cases than others. Lactase may help people who have difficulty digesting lactose. Alpha-galactosidase is used in products designed around gas from beans and certain vegetables. Pancreatic enzyme replacement therapy is a medical treatment and should not be confused with over-the-counter digestive enzyme supplements. Broad enzyme blends may be useful for some meal-comfort routines, but many claims go beyond strong evidence.</p><p>Johns Hopkins and Mayo Clinic educational resources note that over-the-counter digestive enzyme supplements are not regulated like prescription therapies and that unsupported claims can be common. This makes label literacy important. Readers should look for specific enzymes, activity units, meal timing directions, allergen information, and warnings for medical conditions. Persistent digestive symptoms should be evaluated instead of masked with supplements.</p><p>Safety considerations include digestive upset, mouth or throat irritation from chewables, allergy risk from fungal or animal-derived enzymes, and special cautions for people with pancreatitis, ulcers, inflammatory bowel disease, gallbladder disease, or serious digestive disorders. People taking blood thinners should be cautious with proteolytic enzymes such as bromelain or papain if included in the blend. Anyone with unexplained weight loss, blood in stool, severe pain, chronic diarrhea, or persistent symptoms should seek medical care.</p><p>Suppriva reviews digestive enzymes as an educational ingredient category so readers can compare enzyme blends intelligently. The key questions are: what enzymes are included, what foods are they intended to help digest, are activity units listed, when should the product be taken, and are there medical symptoms that should be evaluated instead of self-managed?</p><p>Because digestive enzyme formulas vary so much, there is no single best digestive enzyme for everyone. A person who struggles with lactose has different needs than someone comparing a protein-heavy meal blend or a bean-digestion product. Good supplement education should connect each enzyme to its target food component rather than treating all enzymes as a generic digestion solution.</p><p>Digestive enzymes should also be distinguished from probiotics, prebiotics, fiber supplements, antacids, and prescription digestive therapies. These categories may appear near each other in wellness shopping, but they work differently. Enzymes help break food down, probiotics supply live microorganisms, prebiotics feed beneficial microbes, and medical therapies address diagnosed conditions. Clear education prevents readers from using the wrong product category for the symptom they are trying to understand.</p>",
+  "interesting_fact_label": "Label Insight",
+  "interesting_fact": "<p>For digestive enzymes, activity units are often more meaningful than milligrams because enzymes are valued by what they can break down, not just by weight.</p>",
+  "how_it_works_title": "How Digestive Enzymes Work",
+  "how_it_works_subtitle": "Digestive enzymes help break specific food components into smaller pieces during digestion.",
+  "how_it_works_highlight_title": "Food-Specific Enzyme Activity",
+  "how_it_works_highlight_description": "Amylase targets starches, protease targets proteins, lipase targets fats, lactase targets lactose, and alpha-galactosidase targets certain fermentable carbohydrates.",
+  "how_it_works_content": "<p>Digestive enzymes work by catalyzing the breakdown of food molecules. Amylase helps break starches into smaller carbohydrates, protease helps break proteins into peptides and amino acids, lipase helps break fats, lactase helps break lactose, and cellulase or hemicellulase may be included for plant fiber-related support.</p><p>The practical value of an enzyme supplement depends on matching the enzyme to the meal. A lactase product is relevant to dairy, while a broad-spectrum blend may include several enzymes for mixed meals. Activity units help show how much functional enzyme activity the product provides.</p><p>Digestive enzyme supplements should not be used to ignore ongoing symptoms. If digestive discomfort is frequent, severe, or unexplained, a healthcare professional should evaluate possible causes such as food intolerance, celiac disease, gallbladder issues, pancreatic insufficiency, inflammatory bowel disease, or other conditions.</p>",
+  "benefits_title": "Potential Benefits of Digestive Enzymes",
+  "benefits_subtitle": "Educational benefits commonly discussed for enzyme supplements in meal-time digestive support routines.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Macronutrient Breakdown",
-      "description": "Macronutrient Breakdown helps readers evaluate Digestive Enzymes by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Meal-Time Digestion Support",
+      "description": "Digestive Enzymes may help support the breakdown of specific food components when taken with meals."
     },
     {
       "icon": "shield-check",
-      "title": "Meal Comfort Context",
-      "description": "Meal Comfort Context helps readers evaluate Digestive Enzymes by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Lactose Digestion Context",
+      "description": "Digestive Enzymes blends that include lactase may be relevant for people comparing dairy digestion products."
     },
     {
       "icon": "activity",
-      "title": "Enzyme Unit Education",
-      "description": "Enzyme Unit Education helps readers evaluate Digestive Enzymes by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Lactose and Protein Support",
-      "description": "Lactose and Protein Support helps readers evaluate Digestive Enzymes by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Formula Matching",
-      "description": "Formula Matching helps readers evaluate Digestive Enzymes by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Macronutrient Breakdown",
+      "description": "Digestive Enzymes formulas may include amylase, protease, and lipase to target carbohydrates, proteins, and fats."
     },
     {
       "icon": "sparkles",
-      "title": "Label Transparency",
-      "description": "Label Transparency helps readers evaluate Digestive Enzymes by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Label Literacy",
+      "description": "Digestive Enzymes teaches readers to compare activity units rather than relying only on milligrams."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Food-Specific Targeting",
+      "description": "Digestive Enzymes products can be matched to dairy, beans, proteins, fats, or mixed meals depending on enzyme type."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Symptom Awareness",
+      "description": "Digestive Enzymes education helps readers know when digestive symptoms need medical evaluation instead of supplement trial."
     }
   ],
-  "dosage_title": "Typical Digestive Enzymes Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Most products are taken with meals, with strength listed in enzyme activity units rather than only milligrams.",
-  "dosage": "Most products are taken with meals, with strength listed in enzyme activity units rather than only milligrams.",
-  "dosage_content": "<p>Most products are taken with meals, with strength listed in enzyme activity units rather than only milligrams. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "Digestive Enzymes Safety Information",
-  "safety_subtitle": "People with ulcers, pancreatitis, allergies, medication use, or digestive disease should seek professional guidance.",
+  "dosage_title": "Typical Digestive Enzyme Dosage",
+  "dosage_subtitle": "Digestive enzyme labels vary by enzyme type and activity units; most are taken with meals.",
+  "typical_dose": "Digestive enzyme supplements are usually taken with the first bites of a meal, using label-specific activity units rather than a universal milligram dose.",
+  "dosage": "Digestive enzyme supplements are usually taken with the first bites of a meal, using label-specific activity units rather than a universal milligram dose.",
+  "dosage_content": "<p>Digestive enzyme dosing depends on the enzyme type and activity units. Lactase products may use ALU units, lipase may use FIP units, protease may use HUT or SAP units, and amylase may use DU units. Because each enzyme has a different unit system, there is no universal dosage.</p><p>Most digestive enzyme supplements are taken with the first bites of a meal. Products designed for lactose, beans, protein-heavy meals, or mixed meals may have different directions. People with diagnosed pancreatic insufficiency should use prescribed therapy rather than replacing it with over-the-counter enzymes.</p>",
+  "safety_title": "Digestive Enzyme Safety Information",
+  "safety_subtitle": "Digestive enzymes are generally tolerated by many adults, but allergies, medical digestive conditions, and formula ingredients matter.",
   "side_effects": [
-    "Digestive irritation",
-    "Nausea",
-    "Allergic reactions",
-    "Mouth irritation with chewables"
+    "Digestive Upset",
+    "Mouth Irritation",
+    "Allergy Risk",
+    "Medical Symptom Delay"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive irritation",
-      "description": "Digestive irritation may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Upset",
+      "description": "Enzyme supplements may cause nausea, cramps, gas, diarrhea, or constipation in some users."
     },
     {
       "icon": "activity",
-      "title": "Nausea",
-      "description": "Nausea may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Mouth Irritation",
+      "description": "Chewable enzymes may irritate the mouth or throat if held too long before swallowing."
     },
     {
       "icon": "alert-circle",
-      "title": "Allergic reactions",
-      "description": "Allergic reactions may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Allergy Risk",
+      "description": "Some enzymes come from fungal, plant, or animal sources that may not suit every user."
     },
     {
       "icon": "shield-alert",
-      "title": "Mouth irritation with chewables",
-      "description": "Mouth irritation with chewables may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Medical Symptom Delay",
+      "description": "Using enzymes to mask persistent symptoms can delay proper evaluation."
     }
   ],
   "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Digestive Enzymes should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
-    },
-    {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Digestive Enzymes as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Digestive Enzymes with formulas that target the same pathway or contain similar active compounds."
-    }
+    "Blood-thinning medication should be reviewed if the formula includes proteolytic enzymes such as bromelain or papain.",
+    "People with pancreatitis, pancreatic insufficiency, or serious gastrointestinal disease should use clinician-guided care.",
+    "Diabetes medication users should review formulas that include additional metabolic-support ingredients.",
+    "Antibiotics, acid-reducing drugs, or complex digestive therapies should be discussed with a healthcare professional when symptoms persist."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Digestive Enzymes.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to microbial, plant, or animal enzyme sources.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Digestive Enzymes to replace diagnosis, treatment, or prescribed care."
+    "People with severe or unexplained digestive symptoms until evaluated by a healthcare professional.",
+    "People with known allergies to enzyme sources such as pineapple, papaya, fungi, or animal-derived ingredients.",
+    "People with pancreatitis, ulcers, inflammatory bowel disease, or gallbladder disease unless cleared by a clinician.",
+    "Pregnant or nursing individuals unless advised by a qualified professional.",
+    "Anyone using over-the-counter enzymes instead of prescribed pancreatic enzyme replacement therapy."
   ],
-  "food_sources_title": "Digestive Enzymes Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Pineapple, papaya, fermented foods, and raw plant foods may contain naturally occurring enzymes.</p>",
+  "food_sources_title": "Digestive Enzyme Food Sources",
+  "food_sources_subtitle": "The body makes digestive enzymes, and some foods naturally contain enzyme activity, but supplements are formulated products.",
+  "food_sources_content": "<p>The pancreas, stomach, small intestine, and salivary glands naturally produce digestive enzymes. Foods such as pineapple, papaya, kiwi, fermented foods, and raw plant foods may contain enzymes, but supplement products provide selected enzyme types in defined formulas.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
-      "title": "Pineapple",
-      "description": "Pineapple may help explain the dietary or source context for Digestive Enzymes."
+      "title": "Pancreatic enzyme production",
+      "description": "Pancreatic enzyme production provides source context for Digestive Enzymes, though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "papaya",
-      "description": "papaya may help explain the dietary or source context for Digestive Enzymes."
+      "title": "Salivary amylase",
+      "description": "Salivary amylase provides source context for Digestive Enzymes, though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "fermented foods",
-      "description": "fermented foods may help explain the dietary or source context for Digestive Enzymes."
+      "title": "Pineapple bromelain",
+      "description": "Pineapple bromelain provides source context for Digestive Enzymes, though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "and raw plant foods may contain naturally occurring enzymes",
-      "description": "and raw plant foods may contain naturally occurring enzymes may help explain the dietary or source context for Digestive Enzymes."
+      "title": "Papaya papain",
+      "description": "Papaya papain provides source context for Digestive Enzymes, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Kiwi actinidin",
+      "description": "Kiwi actinidin provides source context for Digestive Enzymes, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Fermented foods",
+      "description": "Fermented foods provides source context for Digestive Enzymes, though supplement exposure can differ from food or traditional use."
     }
   ],
   "faq_title": "Digestive Enzymes FAQs",
-  "faq_subtitle": "Common questions about Digestive Enzymes, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Digestive Enzymes, supplement use, dosage, safety, and label comparison.",
   "faq_json": [
     {
-      "question": "What is Digestive Enzymes?",
-      "answer": "Digestive Enzymes is a enzyme blend used in supplements for digestive comfort and macronutrient breakdown education."
+      "question": "What are digestive enzymes?",
+      "answer": "Digestive enzymes are proteins that help break down carbohydrates, proteins, fats, lactose, and other food components."
     },
     {
-      "question": "What is Digestive Enzymes commonly used for?",
-      "answer": "It is commonly discussed for digestive comfort and macronutrient breakdown education, but its role depends on the product formula, serving size, and user context."
+      "question": "What enzymes are common in supplements?",
+      "answer": "Common enzymes include amylase, protease, lipase, lactase, cellulase, alpha-galactosidase, bromelain, and papain."
     },
     {
-      "question": "How does Digestive Enzymes work?",
-      "answer": "Digestive Enzymes is usually evaluated through meal-time enzyme support and digestive formula education, along with dose, quality, and safety considerations."
+      "question": "When should digestive enzymes be taken?",
+      "answer": "Most are taken with the first bites of a meal, but directions depend on the product and enzyme type."
     },
     {
-      "question": "What is a typical Digestive Enzymes dose?",
-      "answer": "Most products are taken with meals, with strength listed in enzyme activity units rather than only milligrams."
+      "question": "Are enzyme activity units important?",
+      "answer": "Yes. Activity units often tell more about enzyme strength than milligrams alone."
     },
     {
-      "question": "Is Digestive Enzymes safe?",
-      "answer": "Digestive Enzymes may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Can digestive enzymes treat digestive disease?",
+      "answer": "No. Over-the-counter enzymes should not replace medical evaluation or prescribed enzyme therapy."
     },
     {
-      "question": "Can Digestive Enzymes cause side effects?",
-      "answer": "Possible side effects include digestive irritation, nausea, allergic reactions, especially when serving sizes are high or tolerance is low."
+      "question": "Can lactase help with dairy?",
+      "answer": "Lactase can help break down lactose in dairy for some people who have difficulty digesting lactose."
     },
     {
-      "question": "Can Digestive Enzymes interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Digestive Enzymes."
+      "question": "Can digestive enzymes cause side effects?",
+      "answer": "Possible side effects include stomach upset, cramps, diarrhea, constipation, or mouth irritation from chewables."
     },
     {
-      "question": "Is Digestive Enzymes found in foods?",
-      "answer": "Pineapple, papaya, fermented foods, and raw plant foods may contain naturally occurring enzymes."
+      "question": "Who should be cautious with digestive enzymes?",
+      "answer": "People with serious digestive disease, allergies, blood-thinner use, pregnancy, nursing, or persistent symptoms should seek professional guidance."
     },
     {
-      "question": "What should I look for on a Digestive Enzymes label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "What should I look for on a digestive enzyme label?",
+      "answer": "Look for enzyme types, activity units, meal timing, source, allergen information, and realistic claims."
     },
     {
-      "question": "Is Digestive Enzymes a substitute for medical treatment?",
-      "answer": "No. Digestive Enzymes is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Are broad-spectrum enzyme blends always better?",
+      "answer": "Not always. The best enzyme depends on the food component the person is trying to digest."
     }
   ],
   "sidebar_profile_title": "Digestive Enzymes Profile Snapshot",
-  "sidebar_profile_content": "<p>Digestive Enzymes is categorized as a enzyme blend and is most often reviewed for digestive comfort and macronutrient breakdown education.</p>",
+  "sidebar_profile_content": "<p>Digestive enzymes are meal-time support ingredients that should be compared by enzyme type, activity units, target food component, timing, and medical symptom context.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Enzyme blend",
+      "value": "Functional enzyme blend",
       "icon": "flask-conical"
     },
     {
       "label": "Typical Dose",
-      "value": "Most products are taken with meals, with strength listed in enzyme activity units rather than only milligrams.",
+      "value": "Taken with meals per activity units",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Digestive comfort and macronutrient breakdown education",
+      "value": "Meal-specific digestive support education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Review allergies and digestive conditions",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Microbial, plant, or animal enzyme sources",
+      "value": "Human, plant, fungal, microbial, or animal sources",
       "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Enzyme blend",
+      "value": "Enzyme activity",
       "icon": "leaf"
     },
     {
@@ -220,70 +215,75 @@
     },
     {
       "label": "Taste",
-      "value": "Neutral in capsules",
+      "value": "Usually neutral; chewables vary",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Digestive Enzymes is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Digestive Enzymes is reviewed by Suppriva as a enzyme blend for digestive comfort and macronutrient breakdown education.",
-  "best_for": "Digestive comfort and macronutrient breakdown education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Microbial, plant, or animal enzyme sources",
-  "part_used": "Enzyme blend",
-  "ingredient_form": "Capsule, tablet, chewable, powder",
-  "taste_profile": "Neutral in capsules",
+  "sidebar_at_a_glance_content": "<p>Digestive enzymes are best compared by enzyme type and activity units. They may support meal-specific digestion but should not be used to ignore persistent or severe digestive symptoms.</p>",
+  "full_description": "Digestive enzymes are enzyme supplements used in meal-time digestion education for carbohydrates, proteins, fats, lactose, fiber, and other food components.",
+  "best_for": "Meal-specific digestion and enzyme label comparison",
+  "safety_level": "Review allergies, blood thinners, and digestive conditions",
+  "origin_country": "Plant, fungal, microbial, animal, or synthetic production",
+  "part_used": "Enzyme activity",
+  "ingredient_form": "Capsule, tablet, chewable, or powder",
+  "taste_profile": "Neutral to mildly bitter depending on form",
   "rating": 4.6,
-  "evidence_level": "Moderate",
+  "evidence_level": "Moderate for specific enzyme uses",
   "uses_title": "Digestive Enzymes Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Digestive Enzymes may appear in formulas related to digestive comfort and macronutrient breakdown education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Digestive Enzymes may appear in formulas related to meal-specific digestion and enzyme label comparison. Use should be guided by the finished product label and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
+      "title": "Meal-Time Digestion Support",
+      "description": "Meal-Time Digestion Support is a common educational context for comparing Digestive Enzymes on supplement labels."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Lactose Digestion Context",
+      "description": "Lactose Digestion Context is a common educational context for comparing Digestive Enzymes on supplement labels."
+    },
+    {
+      "icon": "check-circle",
       "title": "Macronutrient Breakdown",
-      "description": "Macronutrient Breakdown is a common context for evaluating Digestive Enzymes."
+      "description": "Macronutrient Breakdown is a common educational context for comparing Digestive Enzymes on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Meal Comfort Context",
-      "description": "Meal Comfort Context is a common context for evaluating Digestive Enzymes."
-    },
-    {
-      "icon": "check-circle",
-      "title": "Enzyme Unit Education",
-      "description": "Enzyme Unit Education is a common context for evaluating Digestive Enzymes."
-    },
-    {
-      "icon": "check-circle",
-      "title": "Lactose and Protein Support",
-      "description": "Lactose and Protein Support is a common context for evaluating Digestive Enzymes."
+      "title": "Label Literacy",
+      "description": "Label Literacy is a common educational context for comparing Digestive Enzymes on supplement labels."
     }
   ],
   "research_title": "Digestive Enzymes Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Digestive Enzymes focuses on meal-time enzyme support and digestive formula education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Digestive enzyme evidence is strongest for specific use cases such as lactase for lactose digestion and prescribed pancreatic enzymes for pancreatic insufficiency.</p><p>Broad over-the-counter enzyme blends vary widely, so product-specific enzyme activity and target use should guide interpretation.</p>",
   "research_json": [
     {
       "icon": "book-open",
       "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "description": "Research findings may not apply equally to every extract, dose, or delivery format."
     },
     {
       "icon": "search",
       "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "description": "Outcomes can vary by baseline status, diet, medication use, health conditions, and study design."
     }
   ],
   "references_title": "Digestive Enzymes References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Digestive Enzymes Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "bromelain",
+    "papaya-enzyme",
+    "probiotics",
+    "chicory-root-inulin"
+  ],
+  "seo_title": "Digestive Enzymes Benefits, Types, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "digestive enzymes",
-  "seo_description": "Digestive Enzymes guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about digestive enzyme types, benefits, activity units, dosage timing, side effects, interactions, and supplement label comparison tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/digestive-enzymes",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Digestive Enzymes Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Digestive Enzymes guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Digestive Enzymes Benefits, Types, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about digestive enzyme types, benefits, activity units, dosage timing, side effects, interactions, and supplement label comparison tips."
 }

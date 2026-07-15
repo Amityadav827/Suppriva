@@ -1,279 +1,284 @@
 {
   "name": "Dandelion Extract",
-  "scientific_name": "Taraxacum officinale",
-  "hero_badge": null,
-  "short_description": "Dandelion Extract is a botanical root or leaf extract used in wellness supplements for fluid balance, digestive wellness, and botanical education.",
-  "overview_title": "Dandelion Extract Overview",
-  "overview_subtitle": "A practical look at Dandelion Extract and how it appears in supplement formulas.",
-  "overview_content": "<p>Dandelion Extract is a botanical root or leaf extract associated with fluid balance, digestive wellness, and botanical education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Dandelion Extract depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Dandelion Extract is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "scientific_name": "Taraxacum officinale extract",
+  "ingredient_category": "Herbal Extracts",
+  "hero_badge": "Herbal Extract",
+  "short_description": "Dandelion extract is a concentrated botanical ingredient used in digestive, liver-support, urinary, and fluid-balance supplement formulas.",
+  "overview_title": "What Is Dandelion Extract?",
+  "overview_subtitle": "A practical guide to concentrated dandelion root and leaf extracts in supplement formulas.",
+  "overview_content": "<p>Dandelion extract is a concentrated preparation made from Taraxacum officinale, typically using the root, leaf, or whole herb. Compared with simple dandelion tea or dried herb powder, an extract may concentrate certain plant constituents and provide a more standardized serving in capsules, tinctures, tablets, or liquid formulas. That makes extract labeling especially important. A responsible product should identify the plant part, extract ratio or standardization when available, serving size, and intended use.</p><p>Dandelion extract appears in supplement formulas for digestive support, liver-support education, urinary wellness, fluid-balance routines, and broad detox-positioned products. These categories often use marketing language that can sound stronger than the evidence supports. Dandelion extract should not be presented as a cleanse treatment, liver disease therapy, kidney treatment, or weight-loss shortcut. It is better evaluated as a botanical ingredient within a finished formula, with clear attention to plant part and safety cautions.</p><p>Root and leaf extracts may be positioned differently. Dandelion root extract is more often used in digestive bitters and liver-support blends, while dandelion leaf extract is more closely associated with urinary and fluid-balance conversations. Whole-plant extracts may combine both contexts. If the label does not specify plant part, the product is harder to interpret. Extract ratio, solvent type, and standardization can also affect how concentrated the ingredient is.</p><p>The safety profile is similar to dandelion but may be more relevant because extracts can be stronger than teas or foods. Memorial Sloan Kettering highlights potential additive effects with diuretics and hypoglycemic medications. People with ragweed-family allergies, gallbladder disease, bile duct obstruction, kidney disease, diabetes, blood pressure medication use, lithium use, pregnancy, or nursing should seek professional guidance before using dandelion extract.</p><p>Suppriva reviews dandelion extract as a label-comparison ingredient. The key questions are whether it is root or leaf, whether extract strength is disclosed, whether the product makes realistic claims, and whether medication warnings are easy to find. For many shoppers, understanding those details is more useful than simply seeing the word dandelion on a front label.</p><p>Dandelion extract is also commonly combined with milk thistle, artichoke, burdock, green tea, cranberry, or electrolytes. Combination formulas can change the safety profile and intended use. A fluid-balance product, for example, may include several ingredients that affect urination or hydration. A liver-support product may combine multiple bitter botanicals. The complete formula should always be reviewed rather than judging dandelion extract alone.</p><p>Because extract products can vary widely, consumers should be cautious with aggressive detox claims. The body already has liver, kidney, digestive, and lymphatic systems that handle normal waste processing. Supplements may support general wellness routines, but they do not replace medical evaluation for swelling, urinary problems, abdominal pain, jaundice, abnormal labs, or persistent digestive symptoms.</p><p>Dandelion extract also deserves a separate profile from general dandelion because concentrated extract products are usually what shoppers encounter in capsules and multi-ingredient formulas. A tea drinker and a capsule user may be exposed to different plant parts, different concentrations, and different safety considerations. Keeping the extract page focused on concentration, standardization, and formula context helps readers understand why the same plant can appear differently across products.</p>",
+  "interesting_fact_label": "Extract Insight",
+  "interesting_fact": "<p>A dandelion extract label can mean root extract, leaf extract, or whole-herb extract, so the plant part is one of the most important quality details.</p>",
   "how_it_works_title": "How Dandelion Extract Works",
-  "how_it_works_subtitle": "How Dandelion Extract is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Bitter Botanical Wellness Support",
-  "how_it_works_highlight_description": "Dandelion Extract is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Dandelion Extract is commonly discussed through bitter botanical support for digestion and fluid-balance education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Dandelion Extract to a supplement routine.</p>",
-  "benefits_title": "Potential Dandelion Extract Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Dandelion Extract in supplement routines.",
+  "how_it_works_subtitle": "Dandelion extract is reviewed through concentrated plant-part use, bitters, fluid balance, and formula context.",
+  "how_it_works_highlight_title": "Concentrated Botanical Format",
+  "how_it_works_highlight_description": "Dandelion extract can be stronger than teas or powders, making plant part, extract ratio, serving size, and medication cautions especially important.",
+  "how_it_works_content": "<p>Dandelion extract works as a concentrated botanical preparation. Root extracts are commonly discussed in digestive bitters and liver-support education, while leaf extracts are commonly discussed in urinary and fluid-balance formulas. Whole-herb extracts may blend these contexts.</p><p>Extract concentration can vary widely. A product may use a 4:1 extract, a liquid tincture, a dry extract, or a standardized preparation. Without clear labeling, two products with the same milligram amount may not be comparable.</p><p>A responsible interpretation focuses on extract type, plant part, dose, formula partners, and safety. People using diuretics, diabetes medication, lithium, blood pressure medication, or those with kidney or gallbladder concerns should review dandelion extract with a clinician.</p>",
+  "benefits_title": "Potential Benefits of Dandelion Extract",
+  "benefits_subtitle": "Educational benefits commonly discussed for concentrated dandelion ingredients in modern supplement formulas.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Digestive Bitters Context",
-      "description": "Digestive Bitters Context helps readers evaluate Dandelion Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Concentrated Botanical Support",
+      "description": "Dandelion Extract provides a more concentrated format than many teas or whole-herb powders."
     },
     {
       "icon": "shield-check",
-      "title": "Fluid Balance Education",
-      "description": "Fluid Balance Education helps readers evaluate Dandelion Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Digestive Formula Context",
+      "description": "Dandelion Extract root extracts are often used in bitter botanical and digestive-support routines."
     },
     {
       "icon": "activity",
-      "title": "Root vs Leaf Awareness",
-      "description": "Root vs Leaf Awareness helps readers evaluate Dandelion Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Traditional Use Review",
-      "description": "Traditional Use Review helps readers evaluate Dandelion Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Tea and Extract Options",
-      "description": "Tea and Extract Options helps readers evaluate Dandelion Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Fluid-Balance Education",
+      "description": "Dandelion Extract leaf extracts are commonly discussed in urinary and water-balance formulas."
     },
     {
       "icon": "sparkles",
-      "title": "Medication Caution Awareness",
-      "description": "Medication Caution Awareness helps readers evaluate Dandelion Extract by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Liver-Support Label Review",
+      "description": "Dandelion Extract appears in liver-support blends where realistic claims and safety cautions matter."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Plant-Part Comparison",
+      "description": "Dandelion Extract helps readers compare root, leaf, and whole-herb extract labels."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Formula Safety Awareness",
+      "description": "Dandelion Extract encourages review of diuretics, glucose medication, allergies, kidney, and gallbladder context."
     }
   ],
   "dosage_title": "Typical Dandelion Extract Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Serving size depends on whether the product uses root, leaf, tea, or standardized extract.",
-  "dosage": "Serving size depends on whether the product uses root, leaf, tea, or standardized extract.",
-  "dosage_content": "<p>Serving size depends on whether the product uses root, leaf, tea, or standardized extract. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_subtitle": "Serving size depends on plant part, extract ratio, dry extract strength, and liquid tincture concentration.",
+  "typical_dose": "Dandelion extract servings vary widely; capsule labels often list several hundred milligrams, while tinctures use liquid serving directions.",
+  "dosage": "Dandelion extract servings vary widely; capsule labels often list several hundred milligrams, while tinctures use liquid serving directions.",
+  "dosage_content": "<p>Dandelion extract dosage cannot be compared by milligrams alone. A 500 mg root powder is different from a 500 mg dry extract, and a liquid tincture uses different concentration language. The label should specify plant part and extract strength when possible.</p><p>Start with the product directions and avoid combining several dandelion or fluid-balance products without professional guidance. People using diuretics, diabetes medication, lithium, blood pressure medication, or those with kidney or gallbladder concerns should consult a healthcare professional.</p>",
   "safety_title": "Dandelion Extract Safety Information",
-  "safety_subtitle": "May not suit people with ragweed allergy, gallbladder issues, kidney concerns, or diuretic medication use.",
+  "safety_subtitle": "Extracts may be more concentrated than teas, so allergy and medication cautions deserve attention.",
   "side_effects": [
-    "Digestive upset",
-    "Allergy in ragweed-sensitive users",
-    "Increased urination",
-    "Medication interaction concern"
+    "Digestive Discomfort",
+    "Allergic Reaction",
+    "Diuretic Overlap",
+    "Glucose Monitoring"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Discomfort",
+      "description": "Dandelion extract may cause stomach upset, heartburn, gas, or loose stools."
     },
     {
       "icon": "activity",
-      "title": "Allergy in ragweed-sensitive users",
-      "description": "Allergy in ragweed-sensitive users may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Allergic Reaction",
+      "description": "People allergic to ragweed-family plants may be more likely to react."
     },
     {
       "icon": "alert-circle",
-      "title": "Increased urination",
-      "description": "Increased urination may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Diuretic Overlap",
+      "description": "Leaf extracts may overlap with fluid-balance or diuretic medication effects."
     },
     {
       "icon": "shield-alert",
-      "title": "Medication interaction concern",
-      "description": "Medication interaction concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Glucose Monitoring",
+      "description": "People using diabetes medication should review dandelion extract with a clinician."
     }
   ],
   "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Dandelion Extract should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
-    },
-    {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Dandelion Extract as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Dandelion Extract with formulas that target the same pathway or contain similar active compounds."
-    }
+    "Diuretics may have additive effects with dandelion extract, especially leaf-based products.",
+    "Diabetes medications may require monitoring if dandelion extract is used in metabolic or wellness formulas.",
+    "Lithium should be reviewed because fluid-balance changes can affect lithium handling.",
+    "Blood pressure medication and kidney-related prescriptions should be discussed before use."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Dandelion Extract.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to dandelion plant.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Dandelion Extract to replace diagnosis, treatment, or prescribed care."
+    "People with ragweed, daisy, chrysanthemum, or Asteraceae allergies unless cleared by a clinician.",
+    "People using prescription diuretics or lithium without medical guidance.",
+    "People with kidney disease, gallbladder disease, or bile duct obstruction.",
+    "Pregnant or nursing individuals unless advised by a qualified healthcare professional.",
+    "Anyone using dandelion extract as a substitute for medical liver, kidney, urinary, or digestive care."
   ],
   "food_sources_title": "Dandelion Extract Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Dandelion greens may be eaten as bitter greens, and roots are used in teas and extracts.</p>",
+  "food_sources_subtitle": "Dandelion extract is a supplement preparation; food use comes from the plant itself.",
+  "food_sources_content": "<p>Dandelion extract is made from dandelion root, leaf, or whole herb. Food and beverage forms include dandelion greens, roasted root beverages, and herbal teas. Extract products may be more concentrated than these traditional uses.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
-      "title": "Dandelion greens may be eaten as bitter greens",
-      "description": "Dandelion greens may be eaten as bitter greens may help explain the dietary or source context for Dandelion Extract."
+      "title": "Dandelion root extract",
+      "description": "Dandelion root extract provides source context for Dandelion Extract, though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "and roots are used in teas and extracts",
-      "description": "and roots are used in teas and extracts may help explain the dietary or source context for Dandelion Extract."
+      "title": "Dandelion leaf extract",
+      "description": "Dandelion leaf extract provides source context for Dandelion Extract, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Whole-herb dandelion extract",
+      "description": "Whole-herb dandelion extract provides source context for Dandelion Extract, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Dandelion greens",
+      "description": "Dandelion greens provides source context for Dandelion Extract, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Roasted dandelion root tea",
+      "description": "Roasted dandelion root tea provides source context for Dandelion Extract, though supplement exposure can differ from food or traditional use."
     }
   ],
   "faq_title": "Dandelion Extract FAQs",
-  "faq_subtitle": "Common questions about Dandelion Extract, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about Dandelion Extract, supplement use, dosage, safety, and label comparison.",
   "faq_json": [
     {
-      "question": "What is Dandelion Extract?",
-      "answer": "Dandelion Extract is a botanical root or leaf extract used in supplements for fluid balance, digestive wellness, and botanical education."
+      "question": "What is dandelion extract?",
+      "answer": "Dandelion extract is a concentrated preparation made from dandelion root, leaf, or whole herb."
     },
     {
-      "question": "What is Dandelion Extract commonly used for?",
-      "answer": "It is commonly discussed for fluid balance, digestive wellness, and botanical education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is dandelion extract stronger than dandelion tea?",
+      "answer": "It can be. Extracts may concentrate plant compounds, while teas are usually milder and prepared differently."
     },
     {
-      "question": "How does Dandelion Extract work?",
-      "answer": "Dandelion Extract is usually evaluated through bitter botanical support for digestion and fluid-balance education, along with dose, quality, and safety considerations."
+      "question": "What is dandelion extract used for?",
+      "answer": "It is commonly used in digestive, liver-support, urinary, and fluid-balance supplement formulas."
     },
     {
-      "question": "What is a typical Dandelion Extract dose?",
-      "answer": "Serving size depends on whether the product uses root, leaf, tea, or standardized extract."
+      "question": "Should the label say root or leaf?",
+      "answer": "Yes. Root and leaf are used in different contexts, so plant-part disclosure is important."
     },
     {
-      "question": "Is Dandelion Extract safe?",
-      "answer": "Dandelion Extract may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Can dandelion extract interact with diuretics?",
+      "answer": "Yes. Dandelion leaf extracts may overlap with diuretic effects and should be reviewed with a clinician."
     },
     {
-      "question": "Can Dandelion Extract cause side effects?",
-      "answer": "Possible side effects include digestive upset, allergy in ragweed-sensitive users, increased urination, especially when serving sizes are high or tolerance is low."
+      "question": "Can dandelion extract affect blood sugar?",
+      "answer": "It may be relevant to glucose-related medication discussions, so people using diabetes medication should seek professional guidance."
     },
     {
-      "question": "Can Dandelion Extract interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Dandelion Extract."
+      "question": "Who should avoid dandelion extract?",
+      "answer": "People with ragweed-family allergies, kidney disease, gallbladder disease, pregnancy, nursing, or relevant medication use should be cautious."
     },
     {
-      "question": "Is Dandelion Extract found in foods?",
-      "answer": "Dandelion greens may be eaten as bitter greens, and roots are used in teas and extracts."
+      "question": "What is a typical dose?",
+      "answer": "Doses vary by extract strength and format. Follow the product label and compare plant part and extract ratio."
     },
     {
-      "question": "What should I look for on a Dandelion Extract label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Does dandelion extract detox the body?",
+      "answer": "No supplement should be viewed as a detox treatment. Dandelion extract may appear in support formulas but does not replace medical care."
     },
     {
-      "question": "Is Dandelion Extract a substitute for medical treatment?",
-      "answer": "No. Dandelion Extract is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "How should I compare dandelion extract products?",
+      "answer": "Compare root versus leaf, extract ratio, serving size, formula partners, allergy warnings, and medication cautions."
     }
   ],
   "sidebar_profile_title": "Dandelion Extract Profile Snapshot",
-  "sidebar_profile_content": "<p>Dandelion Extract is categorized as a botanical root or leaf extract and is most often reviewed for fluid balance, digestive wellness, and botanical education.</p>",
+  "sidebar_profile_content": "<p>Dandelion extract is a concentrated botanical preparation used in digestive, liver-support, urinary, and fluid-balance formulas. Plant part and extract strength matter.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Botanical root or leaf extract",
+      "value": "Botanical extract",
       "icon": "flask-conical"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving size depends on whether the product uses root, leaf, tea, or standardized extract.",
+      "value": "Varies by extract ratio and form",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Fluid balance, digestive wellness, and botanical education",
+      "value": "Digestive and fluid-balance label comparison",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Review allergies, diuretics, glucose medication",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Dandelion plant",
+      "value": "Taraxacum officinale plant",
       "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Root or leaf",
+      "value": "Root, leaf, or whole herb",
       "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, tea, tincture, powder",
+      "value": "Capsule, tincture, powder, liquid extract",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Bitter and earthy",
+      "value": "Bitter and herbal",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Dandelion Extract is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Dandelion Extract is reviewed by Suppriva as a botanical root or leaf extract for fluid balance, digestive wellness, and botanical education.",
-  "best_for": "Fluid balance, digestive wellness, and botanical education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Dandelion plant",
-  "part_used": "Root or leaf",
-  "ingredient_form": "Capsule, tea, tincture, powder",
-  "taste_profile": "Bitter and earthy",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "sidebar_at_a_glance_content": "<p>Dandelion extract is best evaluated by root versus leaf sourcing, extract strength, formula partners, and medication cautions. It should not be treated as a detox cure.</p>",
+  "full_description": "Dandelion extract is a concentrated Taraxacum officinale preparation used in digestive, urinary, fluid-balance, and liver-support supplement education.",
+  "best_for": "Digestive, fluid-balance, and botanical formula comparison",
+  "safety_level": "Review allergies, diuretics, glucose medication, kidney, and gallbladder context",
+  "origin_country": "Taraxacum officinale plant",
+  "part_used": "Root, leaf, or whole herb extract",
+  "ingredient_form": "Capsule, tincture, powder, or liquid extract",
+  "taste_profile": "Bitter and herbal",
+  "rating": 4.5,
+  "evidence_level": "Traditional Use",
   "uses_title": "Dandelion Extract Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Dandelion Extract may appear in formulas related to fluid balance, digestive wellness, and botanical education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>Dandelion Extract may appear in formulas related to digestive, fluid-balance, and botanical formula comparison. Use should be guided by the finished product label and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Digestive Bitters Context",
-      "description": "Digestive Bitters Context is a common context for evaluating Dandelion Extract."
+      "title": "Concentrated Botanical Support",
+      "description": "Concentrated Botanical Support is a common educational context for comparing Dandelion Extract on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Fluid Balance Education",
-      "description": "Fluid Balance Education is a common context for evaluating Dandelion Extract."
+      "title": "Digestive Formula Context",
+      "description": "Digestive Formula Context is a common educational context for comparing Dandelion Extract on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Root vs Leaf Awareness",
-      "description": "Root vs Leaf Awareness is a common context for evaluating Dandelion Extract."
+      "title": "Fluid-Balance Education",
+      "description": "Fluid-Balance Education is a common educational context for comparing Dandelion Extract on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Traditional Use Review",
-      "description": "Traditional Use Review is a common context for evaluating Dandelion Extract."
+      "title": "Formula Safety Awareness",
+      "description": "Formula Safety Awareness is a common educational context for comparing Dandelion Extract on supplement labels."
     }
   ],
   "research_title": "Dandelion Extract Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Dandelion Extract focuses on bitter botanical support for digestion and fluid-balance education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>Dandelion extract research includes plant chemistry, diuretic activity, digestive traditions, and preclinical liver-related studies. Human evidence remains limited.</p><p>The most useful interpretation is extract-specific label education with strong attention to plant part and medication cautions.</p>",
   "research_json": [
     {
       "icon": "book-open",
       "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "description": "Research findings may not apply equally to every extract, dose, or delivery format."
     },
     {
       "icon": "search",
       "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "description": "Outcomes can vary by baseline status, diet, medication use, health conditions, and study design."
     }
   ],
   "references_title": "Dandelion Extract References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
+  "related_ingredients_json": [
+    "dandelion-root",
+    "milk-thistle",
+    "artichoke-extract",
+    "burdock-root"
+  ],
   "seo_title": "Dandelion Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "dandelion extract",
-  "seo_description": "Dandelion Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "seo_description": "Learn about dandelion extract benefits, root vs leaf forms, dosage, side effects, interactions, allergy cautions, and supplement label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/dandelion-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Dandelion Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Dandelion Extract guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_description": "Learn about dandelion extract benefits, root vs leaf forms, dosage, side effects, interactions, allergy cautions, and supplement label tips."
 }

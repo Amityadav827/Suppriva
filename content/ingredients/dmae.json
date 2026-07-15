@@ -1,177 +1,177 @@
 {
   "name": "DMAE",
   "scientific_name": "Dimethylaminoethanol",
-  "hero_badge": null,
-  "short_description": "DMAE is a choline-related compound used in wellness supplements for cognitive-support and skin-care supplement education.",
-  "overview_title": "DMAE Overview",
-  "overview_subtitle": "A practical look at DMAE and how it appears in supplement formulas.",
-  "overview_content": "<p>DMAE is a choline-related compound associated with cognitive-support and skin-care supplement education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of DMAE depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>DMAE is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Specialty Ingredients",
+  "hero_badge": "Cognitive & Skin Support",
+  "short_description": "DMAE is a compound related to choline chemistry and used in supplements and cosmetic discussions for cognitive, mood, and skin-firmness education.",
+  "overview_title": "What Is DMAE?",
+  "overview_subtitle": "A practical guide to dimethylaminoethanol, cognitive-support claims, topical skin research, and safety cautions.",
+  "overview_content": "<p>DMAE stands for dimethylaminoethanol, a compound related to choline chemistry and sometimes discussed in relation to acetylcholine, a neurotransmitter involved in memory and attention. DMAE appears in dietary supplements marketed for cognitive support, mood, focus, and healthy aging. It also appears in cosmetic dermatology discussions, especially topical products positioned around skin firmness. These two contexts should be kept separate because oral supplement use and topical cosmetic use are not the same.</p><p>DMAE has a long and complicated history. It was once studied in behavioral and cognitive contexts, but modern supplement claims often go beyond the strength of available evidence. Some research and reviews discuss topical DMAE for skin appearance, while oral DMAE supplement evidence for cognition or mood remains limited and inconsistent. A responsible educational profile should therefore avoid promising mental clarity, memory improvement, anti-aging effects, or skin tightening from oral supplements.</p><p>The biological rationale often mentioned is that DMAE may be related to choline and acetylcholine pathways. However, the relationship is not simple, and taking DMAE does not automatically translate into predictable brain effects. Many factors influence cognition and mood, including sleep, stress, nutrition, medication, mental health, neurological status, and medical conditions. Persistent memory changes, mood symptoms, attention concerns, or neurological symptoms should be evaluated by a healthcare professional.</p><p>Safety deserves careful attention. DMAE may cause headache, insomnia, muscle tension, digestive upset, irritability, or overstimulation in some users. NCBI toxicology resources note concerns such as mild stimulation, insomnia, muscle tenseness, and twitching at some doses or in susceptible individuals. People with seizure disorders, bipolar disorder, schizophrenia, significant anxiety, pregnancy, nursing, or medication use should avoid DMAE unless a clinician approves it.</p><p>DMAE can also appear in skin and beauty supplements, but topical cosmetic research should not be automatically applied to oral supplement outcomes. A topical gel studied for skin appearance is different from swallowing a capsule. Consumers should be skeptical of products that blur topical and oral evidence without explaining the difference.</p><p>Suppriva reviews DMAE as an educational ingredient so readers can compare labels responsibly. The best questions are: is the product oral or topical, what dose is provided, what claims are being made, are neurological or psychiatric cautions listed, and does the product rely on evidence from a different route of use? This careful approach helps avoid overstating a compound with limited modern supplement evidence.</p><p>DMAE is also a useful example of why cognitive supplements need cautious wording. Ingredients that affect alertness, mood, or neurotransmitter-related pathways may not be appropriate for everyone, even when sold over the counter. A person who is sensitive to stimulatory ingredients or who uses medication for mood, sleep, attention, or neurological conditions should treat DMAE as a higher-caution ingredient rather than a simple wellness nutrient.</p><p>For product comparison, DMAE should be separated from better-established nutrient categories such as choline, citicoline, or alpha GPC. Those ingredients have their own evidence and safety profiles, and a formula may combine them in ways that change tolerability. A careful ingredient page should not imply that all choline-related compounds behave the same. The most helpful framing is to explain DMAE's claimed role, evidence limits, and safety concerns in plain language.</p>",
+  "interesting_fact_label": "Cognitive Label Insight",
+  "interesting_fact": "<p>DMAE is often discussed as choline-related, but it is not the same as choline and should not be assumed to produce predictable acetylcholine effects.</p>",
   "how_it_works_title": "How DMAE Works",
-  "how_it_works_subtitle": "How DMAE is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Cognitive Claim Review",
-  "how_it_works_highlight_description": "DMAE is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>DMAE is commonly discussed through choline-related cognitive and skin-care claim education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding DMAE to a supplement routine.</p>",
-  "benefits_title": "Potential DMAE Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with DMAE in supplement routines.",
+  "how_it_works_subtitle": "DMAE is discussed through choline-related pathways, cognitive claims, and topical skin research, but evidence is limited.",
+  "how_it_works_highlight_title": "Route-of-Use Matters",
+  "how_it_works_highlight_description": "Oral DMAE supplements and topical DMAE cosmetics should be evaluated separately because evidence from one route does not automatically apply to the other.",
+  "how_it_works_content": "<p>DMAE is often described as a choline-related compound that may influence acetylcholine-related pathways. Acetylcholine is involved in attention, learning, and neuromuscular signaling, but the body's neurotransmitter systems are tightly regulated. Taking DMAE does not guarantee a predictable cognitive effect.</p><p>Topical DMAE has been studied in cosmetic contexts for skin appearance, but that research should not be used as proof that oral DMAE supplements improve skin firmness. The route, dose, formulation, and target tissue are different.</p><p>A responsible review of DMAE focuses on limited evidence, claim restraint, and safety cautions. People with seizure risk, psychiatric conditions, sleep issues, pregnancy, nursing, or medication use should avoid self-directed DMAE unless advised by a clinician.</p>",
+  "benefits_title": "Potential Benefits of DMAE",
+  "benefits_subtitle": "Educational benefits commonly discussed for DMAE in cognitive, mood, and skin-appearance supplement conversations.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Focus Claim Context",
-      "description": "Focus Claim Context helps readers evaluate DMAE by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Cognitive Claim Literacy",
+      "description": "DMAE helps readers evaluate focus and memory claims with caution and evidence awareness."
     },
     {
       "icon": "shield-check",
       "title": "Choline-Related Education",
-      "description": "Choline-Related Education helps readers evaluate DMAE by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "description": "DMAE is discussed in relation to choline chemistry, but it is not the same as dietary choline."
     },
     {
       "icon": "activity",
-      "title": "Skin-Care Ingredient Awareness",
-      "description": "Skin-Care Ingredient Awareness helps readers evaluate DMAE by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Formula Stacking Review",
-      "description": "Formula Stacking Review helps readers evaluate DMAE by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Dose Caution",
-      "description": "Dose Caution helps readers evaluate DMAE by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Mood and Alertness Context",
+      "description": "DMAE appears in some formulas marketed for mood, alertness, and mental energy."
     },
     {
       "icon": "sparkles",
-      "title": "Suitability Screening",
-      "description": "Suitability Screening helps readers evaluate DMAE by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Skin Research Distinction",
+      "description": "DMAE helps readers separate topical cosmetic research from oral supplement claims."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Safety Awareness",
+      "description": "DMAE requires careful review for sleep, mood, seizure, and neurological cautions."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Label Comparison",
+      "description": "DMAE products can be compared by dose, route, formula partners, and whether claims are responsibly worded."
     }
   ],
   "dosage_title": "Typical DMAE Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Supplement servings vary widely; users should follow product labels and avoid combining without guidance.",
-  "dosage": "Supplement servings vary widely; users should follow product labels and avoid combining without guidance.",
-  "dosage_content": "<p>Supplement servings vary widely; users should follow product labels and avoid combining without guidance. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_subtitle": "DMAE dosing varies widely, and conservative use is important because tolerability can differ.",
+  "typical_dose": "Oral DMAE supplement labels vary widely; many products use several hundred milligrams per serving, but evidence-based dosing is not well established.",
+  "dosage": "Oral DMAE supplement labels vary widely; many products use several hundred milligrams per serving, but evidence-based dosing is not well established.",
+  "dosage_content": "<p>There is no universally accepted DMAE supplement dose for cognitive support. Oral products vary, and some historical or research contexts used different forms and amounts. Because side effects such as insomnia, tension, headache, or irritability may occur, conservative label-following is important.</p><p>DMAE should not be combined casually with other cognitive, stimulant, mood, or cholinergic ingredients. People with seizure disorders, psychiatric conditions, sleep disorders, pregnancy, nursing, or medication use should avoid DMAE unless a qualified healthcare professional approves it.</p>",
   "safety_title": "DMAE Safety Information",
-  "safety_subtitle": "Not appropriate for everyone, especially with neurological conditions, mood concerns, pregnancy, nursing, or medication use.",
+  "safety_subtitle": "DMAE is a higher-caution ingredient for people with sleep, mood, seizure, neurological, or medication concerns.",
   "side_effects": [
-    "Headache",
     "Insomnia",
-    "Muscle tension",
-    "Mood changes in sensitive users"
+    "Headache",
+    "Digestive Upset",
+    "Neurological Caution"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Headache",
-      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Insomnia",
+      "description": "DMAE may cause sleep disruption or overstimulation in some users."
     },
     {
       "icon": "activity",
-      "title": "Insomnia",
-      "description": "Insomnia may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Headache",
+      "description": "Headache, tension, or irritability may occur depending on dose and sensitivity."
     },
     {
       "icon": "alert-circle",
-      "title": "Muscle tension",
-      "description": "Muscle tension may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or appetite changes may occur in some users."
     },
     {
       "icon": "shield-alert",
-      "title": "Mood changes in sensitive users",
-      "description": "Mood changes in sensitive users may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Neurological Caution",
+      "description": "People with seizure risk or neurological conditions should avoid DMAE unless medically supervised."
     }
   ],
   "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "DMAE should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
-    },
-    {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use DMAE as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining DMAE with formulas that target the same pathway or contain similar active compounds."
-    }
+    "Cholinergic medications or supplements should be reviewed because DMAE is discussed in choline-related pathways.",
+    "Stimulants, nootropics, or mood-support formulas may increase the chance of sleep or irritability issues.",
+    "Psychiatric medications should be reviewed with a clinician before DMAE use.",
+    "Seizure medications or neurological therapies should not be combined with DMAE without medical supervision."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of DMAE.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to supplemental compound and small food-source presence.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting DMAE to replace diagnosis, treatment, or prescribed care."
+    "People with seizure disorders unless a clinician specifically approves use.",
+    "People with bipolar disorder, schizophrenia, severe anxiety, or significant psychiatric history unless supervised.",
+    "Pregnant or nursing individuals.",
+    "People with insomnia or sensitivity to stimulating supplements.",
+    "Anyone using DMAE as a substitute for cognitive, mood, neurological, or dermatology care."
   ],
   "food_sources_title": "DMAE Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Small amounts may occur in fish, but supplements provide concentrated DMAE.</p>",
+  "food_sources_subtitle": "DMAE may occur in small amounts in some foods, but supplement exposure is more concentrated.",
+  "food_sources_content": "<p>DMAE is sometimes described as naturally occurring in small amounts in fish such as anchovies, sardines, and salmon. However, dietary exposure is not the same as concentrated DMAE supplements. Food-based choline sources such as eggs and liver are also different from DMAE itself.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
-      "title": "Small amounts may occur in fish",
-      "description": "Small amounts may occur in fish may help explain the dietary or source context for DMAE."
+      "title": "Anchovies",
+      "description": "Anchovies provides source context for DMAE, though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "but supplements provide concentrated DMAE",
-      "description": "but supplements provide concentrated DMAE may help explain the dietary or source context for DMAE."
+      "title": "Sardines",
+      "description": "Sardines provides source context for DMAE, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Salmon",
+      "description": "Salmon provides source context for DMAE, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Other fish sources",
+      "description": "Other fish sources provides source context for DMAE, though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Choline-rich foods as related context",
+      "description": "Choline-rich foods as related context provides source context for DMAE, though supplement exposure can differ from food or traditional use."
     }
   ],
   "faq_title": "DMAE FAQs",
-  "faq_subtitle": "Common questions about DMAE, dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about DMAE, supplement use, dosage, safety, and label comparison.",
   "faq_json": [
     {
       "question": "What is DMAE?",
-      "answer": "DMAE is a choline-related compound used in supplements for cognitive-support and skin-care supplement education."
+      "answer": "DMAE is dimethylaminoethanol, a compound related to choline chemistry and used in some cognitive and skin-related supplement discussions."
     },
     {
-      "question": "What is DMAE commonly used for?",
-      "answer": "It is commonly discussed for cognitive-support and skin-care supplement education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is DMAE the same as choline?",
+      "answer": "No. DMAE is related to choline chemistry but is not the same as dietary choline."
     },
     {
-      "question": "How does DMAE work?",
-      "answer": "DMAE is usually evaluated through choline-related cognitive and skin-care claim education, along with dose, quality, and safety considerations."
+      "question": "Does DMAE improve memory?",
+      "answer": "Evidence for oral DMAE improving memory is limited and not strong enough for guaranteed claims."
+    },
+    {
+      "question": "Is topical DMAE evidence the same as oral DMAE evidence?",
+      "answer": "No. Topical cosmetic research should not be automatically applied to oral supplement use."
     },
     {
       "question": "What is a typical DMAE dose?",
-      "answer": "Supplement servings vary widely; users should follow product labels and avoid combining without guidance."
+      "answer": "Oral supplement doses vary widely, and there is no universally established evidence-based dose for cognitive support."
     },
     {
-      "question": "Is DMAE safe?",
-      "answer": "DMAE may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Can DMAE cause insomnia?",
+      "answer": "Yes. Some users may experience insomnia, tension, irritability, or overstimulation."
     },
     {
-      "question": "Can DMAE cause side effects?",
-      "answer": "Possible side effects include headache, insomnia, muscle tension, especially when serving sizes are high or tolerance is low."
+      "question": "Who should avoid DMAE?",
+      "answer": "People with seizure disorders, psychiatric conditions, insomnia, pregnancy, nursing, or medication use should avoid DMAE unless medically supervised."
     },
     {
       "question": "Can DMAE interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting DMAE."
+      "answer": "It may be relevant to cholinergic, psychiatric, stimulant, sleep, or neurological medication routines."
     },
     {
-      "question": "Is DMAE found in foods?",
-      "answer": "Small amounts may occur in fish, but supplements provide concentrated DMAE."
+      "question": "Is DMAE safe for daily use?",
+      "answer": "Daily use should be approached cautiously because long-term supplement evidence is limited and tolerance varies."
     },
     {
-      "question": "What should I look for on a DMAE label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
-    },
-    {
-      "question": "Is DMAE a substitute for medical treatment?",
-      "answer": "No. DMAE is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "How should I compare DMAE products?",
+      "answer": "Compare dose, route of use, claims, other nootropic ingredients, and safety warnings for mood, sleep, and seizure risk."
     }
   ],
   "sidebar_profile_title": "DMAE Profile Snapshot",
-  "sidebar_profile_content": "<p>DMAE is categorized as a choline-related compound and is most often reviewed for cognitive-support and skin-care supplement education.</p>",
+  "sidebar_profile_content": "<p>DMAE is a choline-related compound used in cognitive, mood, and skin-appearance conversations. Oral supplement evidence is limited, and safety cautions are important.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -180,100 +180,105 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Supplement servings vary widely; users should follow product labels and avoid combining without guidance.",
+      "value": "Varies widely by product",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Cognitive-support and skin-care supplement education",
+      "value": "Cognitive claim and skin-route education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Higher caution for sleep, mood, seizure context",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Supplemental compound and small food-source presence",
+      "value": "Naturally occurring and supplemental production",
       "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Nutrient-like compound",
+      "value": "DMAE compound",
       "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, topical, powder",
+      "value": "Capsule, tablet, powder, topical product",
       "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Bitter",
+      "value": "Bitter or chemical in powders",
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>DMAE is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "DMAE is reviewed by Suppriva as a choline-related compound for cognitive-support and skin-care supplement education.",
-  "best_for": "Cognitive-support and skin-care supplement education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Supplemental compound and small food-source presence",
-  "part_used": "Nutrient-like compound",
-  "ingredient_form": "Capsule, tablet, topical, powder",
-  "taste_profile": "Bitter",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "sidebar_at_a_glance_content": "<p>DMAE should be reviewed carefully because oral cognitive claims are limited and safety concerns may apply to sleep, mood, seizure risk, and medication use. Topical and oral evidence should not be mixed.</p>",
+  "full_description": "DMAE is a choline-related compound used in cognitive-support, mood, nootropic, and skin-appearance supplement education.",
+  "best_for": "Cognitive claim literacy and route-of-use comparison",
+  "safety_level": "Higher caution for sleep, mood, seizure, neurological, and medication context",
+  "origin_country": "Naturally occurring in small amounts and made for supplements",
+  "part_used": "Dimethylaminoethanol compound",
+  "ingredient_form": "Capsule, tablet, powder, or topical product",
+  "taste_profile": "Bitter or chemical in powders",
+  "rating": 4.1,
+  "evidence_level": "Limited",
   "uses_title": "DMAE Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>DMAE may appear in formulas related to cognitive-support and skin-care supplement education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>DMAE may appear in formulas related to cognitive claim literacy and route-of-use comparison. Use should be guided by the finished product label and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Focus Claim Context",
-      "description": "Focus Claim Context is a common context for evaluating DMAE."
+      "title": "Cognitive Claim Literacy",
+      "description": "Cognitive Claim Literacy is a common educational context for comparing DMAE on supplement labels."
     },
     {
       "icon": "check-circle",
       "title": "Choline-Related Education",
-      "description": "Choline-Related Education is a common context for evaluating DMAE."
+      "description": "Choline-Related Education is a common educational context for comparing DMAE on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Skin-Care Ingredient Awareness",
-      "description": "Skin-Care Ingredient Awareness is a common context for evaluating DMAE."
+      "title": "Skin Research Distinction",
+      "description": "Skin Research Distinction is a common educational context for comparing DMAE on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Formula Stacking Review",
-      "description": "Formula Stacking Review is a common context for evaluating DMAE."
+      "title": "Safety Awareness",
+      "description": "Safety Awareness is a common educational context for comparing DMAE on supplement labels."
     }
   ],
   "research_title": "DMAE Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around DMAE focuses on choline-related cognitive and skin-care claim education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>DMAE research includes topical cosmetic studies, older cognitive investigations, toxicology reviews, and limited supplement-related evidence. Oral cognitive claims remain uncertain.</p><p>The most responsible interpretation separates topical skin evidence from oral supplement claims and emphasizes safety cautions for neurological and psychiatric contexts.</p>",
   "research_json": [
     {
       "icon": "book-open",
       "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "description": "Research findings may not apply equally to every extract, dose, or delivery format."
     },
     {
       "icon": "search",
       "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "description": "Outcomes can vary by baseline status, diet, medication use, health conditions, and study design."
     }
   ],
   "references_title": "DMAE References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "DMAE Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "dmae",
-  "seo_description": "DMAE guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "related_ingredients_json": [
+    "choline",
+    "alpha-gpc",
+    "citicoline",
+    "bacopa-monnieri"
+  ],
+  "seo_title": "DMAE Benefits, Uses, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "DMAE",
+  "seo_description": "Learn about DMAE, cognitive-support claims, choline-related context, topical vs oral evidence, dosage uncertainty, side effects, and safety cautions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/dmae",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "DMAE Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "DMAE guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "DMAE Benefits, Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about DMAE, cognitive-support claims, choline-related context, topical vs oral evidence, dosage uncertainty, side effects, and safety cautions."
 }

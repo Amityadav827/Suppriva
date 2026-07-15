@@ -1,226 +1,221 @@
 {
   "name": "DIM (Diindolylmethane)",
-  "scientific_name": "3,3'-diindolylmethane",
-  "hero_badge": null,
-  "short_description": "DIM (Diindolylmethane) is a cruciferous vegetable compound used in wellness supplements for hormone metabolism and cruciferous-compound education.",
-  "overview_title": "DIM (Diindolylmethane) Overview",
-  "overview_subtitle": "A practical look at DIM (Diindolylmethane) and how it appears in supplement formulas.",
-  "overview_content": "<p>DIM (Diindolylmethane) is a cruciferous vegetable compound associated with hormone metabolism and cruciferous-compound education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of DIM (Diindolylmethane) depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>DIM (Diindolylmethane) is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
-  "how_it_works_title": "How DIM (Diindolylmethane) Works",
-  "how_it_works_subtitle": "How DIM (Diindolylmethane) is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Cruciferous Compound Support",
-  "how_it_works_highlight_description": "DIM (Diindolylmethane) is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>DIM (Diindolylmethane) is commonly discussed through estrogen-metabolism support and cruciferous compound education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding DIM (Diindolylmethane) to a supplement routine.</p>",
-  "benefits_title": "Potential DIM (Diindolylmethane) Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with DIM (Diindolylmethane) in supplement routines.",
+  "scientific_name": "3,3'-Diindolylmethane",
+  "ingredient_category": "Specialty Ingredients",
+  "hero_badge": "Hormone Metabolism",
+  "short_description": "DIM is a compound formed from cruciferous vegetable nutrients and used in supplements for estrogen metabolism and hormone-balance education.",
+  "overview_title": "What Is DIM?",
+  "overview_subtitle": "A practical guide to diindolylmethane, cruciferous vegetables, estrogen metabolism, and supplement safety.",
+  "overview_content": "<p>DIM, short for diindolylmethane, is a compound formed in the body when indole-3-carbinol from cruciferous vegetables is broken down. Vegetables such as broccoli, Brussels sprouts, cabbage, cauliflower, and kale contain glucosinolates that can contribute to this pathway. In supplement form, DIM is usually provided directly as a concentrated capsule or tablet rather than requiring the body to convert it from food compounds. This makes DIM supplements different from simply eating cruciferous vegetables.</p><p>DIM is most commonly discussed in supplement education for estrogen metabolism, hormone-balance formulas, women's wellness, men's wellness, and certain skin or body-composition products. It is also studied in preclinical and clinical contexts related to cell signaling, inflammation, and hormone-sensitive tissues. However, DIM should not be presented as a cancer-prevention treatment, hormone therapy, or a substitute for medical care. Hormone-related symptoms deserve professional evaluation rather than self-treatment with supplements.</p><p>Because DIM is connected to estrogen metabolism, the safety context is especially important. People taking hormone therapy, birth control, fertility medications, aromatase inhibitors, tamoxifen, or other endocrine-related medications should consult a healthcare professional before using DIM. People with hormone-sensitive conditions, pregnancy, nursing, liver disease, or complex medication routines should be cautious. Supplement labels should avoid implying that estrogen is simply bad or that DIM universally balances hormones for everyone.</p><p>DIM products may vary by dose, delivery system, and formula partners. Some supplements use plain DIM, while others include bioavailability systems, broccoli sprout extract, calcium D-glucarate, sulforaphane precursors, chaste tree, or other hormone-related ingredients. The full formula should be reviewed because stacking multiple hormone-oriented ingredients can change safety considerations.</p><p>Memorial Sloan Kettering discusses DIM as a compound with preclinical research interest and also notes that evidence and safety context matter. For consumers, the most useful approach is not to chase bold hormone claims but to compare serving size, intended use, medication cautions, and whether a product explains what DIM can and cannot do. DIM is best framed as an educational ingredient for hormone-metabolism label literacy.</p><p>Dietary context matters too. Cruciferous vegetables provide fiber, vitamins, minerals, and many plant compounds beyond DIM-related precursors. A supplement cannot fully replace the broader benefits of a vegetable-rich diet. Someone interested in DIM may also benefit from discussing diet pattern, menstrual health, prostate health, skin concerns, or hormone symptoms with a qualified professional instead of relying on supplement marketing.</p><p>Suppriva reviews DIM with careful language because hormone-related supplements can be easy to misunderstand. A responsible ingredient profile should explain the food connection, the supplement concentration difference, the mixed and developing evidence, and the need for professional guidance when medications or hormone-sensitive conditions are involved.</p><p>DIM also needs careful context because hormone metabolism is not a simple good-versus-bad pathway. Estrogen metabolites, androgen balance, liver processing, genetics, menstrual status, body composition, and medications can all influence how a person interprets hormone-related wellness goals. A supplement page should help readers ask better questions instead of implying that one ingredient can universally correct hormone balance.</p><p>For shoppers, the best DIM labels are specific and conservative. They explain the serving size, whether absorption support is used, which companion ingredients are included, and who should avoid the product. This matters because a hormone-focused supplement can feel routine in a wellness aisle while still being inappropriate for someone using prescriptions or managing a hormone-sensitive condition.</p>",
+  "interesting_fact_label": "Cruciferous Compound Insight",
+  "interesting_fact": "<p>DIM is not stored inside broccoli as DIM itself; it forms after digestion from indole compounds found in cruciferous vegetables.</p>",
+  "how_it_works_title": "How DIM Works",
+  "how_it_works_subtitle": "DIM is reviewed through estrogen-metabolism pathways, cell-signaling research, and hormone-related safety context.",
+  "how_it_works_highlight_title": "Estrogen Metabolism Education",
+  "how_it_works_highlight_description": "DIM is commonly discussed for estrogen metabolite pathways, but hormone-related supplement use should be reviewed carefully with medications and medical history.",
+  "how_it_works_content": "<p>DIM is studied for its relationship to estrogen metabolite pathways and cell signaling. It may influence how the body processes certain estrogen metabolites, which is why it appears in hormone-balance formulas. That does not mean DIM is appropriate for everyone or that it should be used to self-manage hormone conditions.</p><p>Supplement forms deliver DIM directly, often at higher exposure than a typical serving of cruciferous vegetables. Some products use absorption-enhanced formats because DIM has formulation challenges. The delivery method, serving size, and formula partners should be reviewed.</p><p>The safest interpretation is that DIM is a hormone-metabolism education ingredient. People using hormone-related medications, managing hormone-sensitive conditions, or experiencing symptoms should involve a healthcare professional before use.</p>",
+  "benefits_title": "Potential Benefits of DIM",
+  "benefits_subtitle": "Educational benefits commonly discussed for DIM in hormone-metabolism and cruciferous compound supplement routines.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Hormone Metabolism Context",
-      "description": "Hormone Metabolism Context helps readers evaluate DIM (Diindolylmethane) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Estrogen Metabolism Context",
+      "description": "DIM (Diindolylmethane) is commonly discussed for estrogen metabolite pathways and hormone-related supplement education."
     },
     {
       "icon": "shield-check",
-      "title": "Cruciferous Nutrition Education",
-      "description": "Cruciferous Nutrition Education helps readers evaluate DIM (Diindolylmethane) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Cruciferous Vegetable Link",
+      "description": "DIM (Diindolylmethane) helps readers understand compounds connected to broccoli, cabbage, kale, and related vegetables."
     },
     {
       "icon": "activity",
-      "title": "Women's and Men's Wellness Review",
-      "description": "Women's and Men's Wellness Review helps readers evaluate DIM (Diindolylmethane) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Dose Transparency",
-      "description": "Dose Transparency helps readers evaluate DIM (Diindolylmethane) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Medication Caution Awareness",
-      "description": "Medication Caution Awareness helps readers evaluate DIM (Diindolylmethane) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Women's Wellness Formulas",
+      "description": "DIM (Diindolylmethane) appears in many menstrual, PMS-positioned, and hormone-balance supplement blends."
     },
     {
       "icon": "sparkles",
-      "title": "Realistic Claim Setting",
-      "description": "Realistic Claim Setting helps readers evaluate DIM (Diindolylmethane) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Men's Wellness Context",
+      "description": "DIM (Diindolylmethane) is also used in men's hormone-support formulas, especially alongside zinc or prostate-related ingredients."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Formula Safety Awareness",
+      "description": "DIM (Diindolylmethane) encourages careful review of hormone medications, birth control, fertility therapies, and endocrine conditions."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Evidence Literacy",
+      "description": "DIM (Diindolylmethane) helps readers separate developing research from exaggerated hormone-balance marketing claims."
     }
   ],
-  "dosage_title": "Typical DIM (Diindolylmethane) Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common supplement servings often range from 100 mg to 300 mg daily, depending on product directions.",
-  "dosage": "Common supplement servings often range from 100 mg to 300 mg daily, depending on product directions.",
-  "dosage_content": "<p>Common supplement servings often range from 100 mg to 300 mg daily, depending on product directions. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "DIM (Diindolylmethane) Safety Information",
-  "safety_subtitle": "Hormone-sensitive conditions, pregnancy, nursing, and medication use require professional guidance before DIM supplementation.",
+  "dosage_title": "Typical DIM Dosage",
+  "dosage_subtitle": "Serving size depends on product form, absorption support, and whether DIM is used alone or in a hormone-focused blend.",
+  "typical_dose": "Many DIM supplements provide about 100 mg to 300 mg daily, though serving size varies by formula.",
+  "dosage": "Many DIM supplements provide about 100 mg to 300 mg daily, though serving size varies by formula.",
+  "dosage_content": "<p>DIM supplements commonly provide 100 mg to 300 mg per day, but the right interpretation depends on the product and user context. Some products use enhanced-absorption systems or combine DIM with other hormone-related ingredients.</p><p>People should follow the product label and avoid stacking multiple hormone-focused supplements without professional guidance. Anyone taking hormone therapy, birth control, fertility medication, endocrine medication, or cancer-related therapies should speak with a healthcare professional before using DIM.</p>",
+  "safety_title": "DIM Safety Information",
+  "safety_subtitle": "DIM requires careful review because it is connected to hormone metabolism and may not be suitable for everyone.",
   "side_effects": [
-    "Headache",
-    "Digestive upset",
-    "Dark urine changes",
-    "Hormone-related caution"
+    "Digestive Upset",
+    "Urine Color Change",
+    "Hormone Context",
+    "Formula Stacking"
   ],
   "side_effects_json": [
     {
       "icon": "stomach",
-      "title": "Headache",
-      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Digestive Upset",
+      "description": "DIM may cause nausea, gas, headache, or stomach discomfort in some users."
     },
     {
       "icon": "activity",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Urine Color Change",
+      "description": "Some users report darker urine, which can occur with DIM metabolites."
     },
     {
       "icon": "alert-circle",
-      "title": "Dark urine changes",
-      "description": "Dark urine changes may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Hormone Context",
+      "description": "DIM may be inappropriate for some hormone-sensitive conditions or medication routines."
     },
     {
       "icon": "shield-alert",
-      "title": "Hormone-related caution",
-      "description": "Hormone-related caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "title": "Formula Stacking",
+      "description": "Combining DIM with other hormone-focused ingredients can increase uncertainty."
     }
   ],
   "drug_interactions_json": [
-    {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "DIM (Diindolylmethane) should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
-    },
-    {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use DIM (Diindolylmethane) as a substitute for medical care or monitoring."
-    },
-    {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining DIM (Diindolylmethane) with formulas that target the same pathway or contain similar active compounds."
-    }
+    "Hormone therapy, birth control, fertility medications, and endocrine medications should be reviewed before DIM use.",
+    "Tamoxifen, aromatase inhibitors, or cancer-related therapies should not be combined with DIM without oncology guidance.",
+    "Liver-metabolized medications may require review because DIM is discussed in metabolism pathways.",
+    "Other hormone-support supplements such as calcium D-glucarate, chaste tree, or DHEA should be reviewed as part of the full stack."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of DIM (Diindolylmethane).",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to compounds derived from cruciferous vegetables.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting DIM (Diindolylmethane) to replace diagnosis, treatment, or prescribed care."
+    "Pregnant or nursing individuals unless advised by a qualified healthcare professional.",
+    "People with hormone-sensitive conditions unless supervised by a clinician.",
+    "People taking hormone therapy, birth control, fertility medications, tamoxifen, or aromatase inhibitors without medical guidance.",
+    "People with liver disease or complex medication routines unless cleared by a professional.",
+    "Anyone using DIM as a substitute for hormone testing, cancer care, fertility care, or prescribed treatment."
   ],
-  "food_sources_title": "DIM (Diindolylmethane) Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Broccoli, Brussels sprouts, cabbage, kale, and cauliflower provide precursor compounds.</p>",
+  "food_sources_title": "DIM Food Sources",
+  "food_sources_subtitle": "DIM forms from compounds found in cruciferous vegetables, while supplements provide concentrated DIM directly.",
+  "food_sources_content": "<p>DIM is formed after digestion from indole-3-carbinol and related compounds in cruciferous vegetables. Food sources include broccoli, Brussels sprouts, cabbage, cauliflower, kale, bok choy, and collard greens. Supplements provide concentrated DIM and should be evaluated separately from food intake.</p>",
   "food_sources_json": [
     {
       "icon": "leaf",
       "title": "Broccoli",
-      "description": "Broccoli may help explain the dietary or source context for DIM (Diindolylmethane)."
+      "description": "Broccoli provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
       "title": "Brussels sprouts",
-      "description": "Brussels sprouts may help explain the dietary or source context for DIM (Diindolylmethane)."
+      "description": "Brussels sprouts provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "cabbage",
-      "description": "cabbage may help explain the dietary or source context for DIM (Diindolylmethane)."
+      "title": "Cabbage",
+      "description": "Cabbage provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "kale",
-      "description": "kale may help explain the dietary or source context for DIM (Diindolylmethane)."
+      "title": "Cauliflower",
+      "description": "Cauliflower provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
     },
     {
       "icon": "leaf",
-      "title": "and cauliflower provide precursor compounds",
-      "description": "and cauliflower provide precursor compounds may help explain the dietary or source context for DIM (Diindolylmethane)."
+      "title": "Kale",
+      "description": "Kale provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Bok choy",
+      "description": "Bok choy provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
+    },
+    {
+      "icon": "leaf",
+      "title": "Collard greens",
+      "description": "Collard greens provides source context for DIM (Diindolylmethane), though supplement exposure can differ from food or traditional use."
     }
   ],
   "faq_title": "DIM (Diindolylmethane) FAQs",
-  "faq_subtitle": "Common questions about DIM (Diindolylmethane), dosage, safety, and supplement use.",
+  "faq_subtitle": "Common questions about DIM (Diindolylmethane), supplement use, dosage, safety, and label comparison.",
   "faq_json": [
     {
-      "question": "What is DIM (Diindolylmethane)?",
-      "answer": "DIM (Diindolylmethane) is a cruciferous vegetable compound used in supplements for hormone metabolism and cruciferous-compound education."
+      "question": "What is DIM?",
+      "answer": "DIM, or diindolylmethane, is a compound formed from cruciferous vegetable compounds and used in hormone-metabolism supplements."
     },
     {
-      "question": "What is DIM (Diindolylmethane) commonly used for?",
-      "answer": "It is commonly discussed for hormone metabolism and cruciferous-compound education, but its role depends on the product formula, serving size, and user context."
+      "question": "Is DIM found directly in broccoli?",
+      "answer": "Not mainly. DIM forms after digestion from indole compounds found in cruciferous vegetables."
     },
     {
-      "question": "How does DIM (Diindolylmethane) work?",
-      "answer": "DIM (Diindolylmethane) is usually evaluated through estrogen-metabolism support and cruciferous compound education, along with dose, quality, and safety considerations."
+      "question": "What is DIM commonly used for?",
+      "answer": "It is commonly discussed in estrogen metabolism, hormone-balance, women's wellness, and men's wellness formulas."
     },
     {
-      "question": "What is a typical DIM (Diindolylmethane) dose?",
-      "answer": "Common supplement servings often range from 100 mg to 300 mg daily, depending on product directions."
+      "question": "Can DIM balance hormones?",
+      "answer": "DIM is discussed for hormone-metabolism pathways, but it should not be used to self-treat hormone problems."
     },
     {
-      "question": "Is DIM (Diindolylmethane) safe?",
-      "answer": "DIM (Diindolylmethane) may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "What is a typical DIM dose?",
+      "answer": "Many supplements provide about 100 mg to 300 mg daily, though formula and absorption system matter."
     },
     {
-      "question": "Can DIM (Diindolylmethane) cause side effects?",
-      "answer": "Possible side effects include headache, digestive upset, dark urine changes, especially when serving sizes are high or tolerance is low."
+      "question": "Can DIM interact with birth control?",
+      "answer": "Hormone-related medications, including birth control, should be reviewed with a healthcare professional before DIM use."
     },
     {
-      "question": "Can DIM (Diindolylmethane) interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting DIM (Diindolylmethane)."
+      "question": "Who should avoid DIM?",
+      "answer": "Pregnant or nursing people, those with hormone-sensitive conditions, liver disease, or hormone medication use should seek professional guidance."
     },
     {
-      "question": "Is DIM (Diindolylmethane) found in foods?",
-      "answer": "Broccoli, Brussels sprouts, cabbage, kale, and cauliflower provide precursor compounds."
+      "question": "Can DIM cause side effects?",
+      "answer": "Possible side effects include nausea, headache, gas, stomach discomfort, or changes in urine color."
     },
     {
-      "question": "What should I look for on a DIM (Diindolylmethane) label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Does DIM replace eating vegetables?",
+      "answer": "No. Cruciferous vegetables provide fiber and many nutrients beyond DIM-related compounds."
     },
     {
-      "question": "Is DIM (Diindolylmethane) a substitute for medical treatment?",
-      "answer": "No. DIM (Diindolylmethane) is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "How should I compare DIM products?",
+      "answer": "Compare dose, delivery system, formula partners, medication cautions, and whether claims are realistic."
     }
   ],
   "sidebar_profile_title": "DIM (Diindolylmethane) Profile Snapshot",
-  "sidebar_profile_content": "<p>DIM (Diindolylmethane) is categorized as a cruciferous vegetable compound and is most often reviewed for hormone metabolism and cruciferous-compound education.</p>",
+  "sidebar_profile_content": "<p>DIM is a cruciferous vegetable-derived compound used in estrogen-metabolism and hormone-support formulas. It requires careful medication and hormone-history review.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Cruciferous vegetable compound",
+      "value": "Cruciferous-derived compound",
       "icon": "flask-conical"
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement servings often range from 100 mg to 300 mg daily, depending on product directions.",
+      "value": "Often 100-300 mg daily",
       "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Hormone metabolism and cruciferous-compound education",
+      "value": "Hormone-metabolism education",
       "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
+      "value": "Review hormone medications and conditions",
       "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Compounds derived from cruciferous vegetables",
+      "value": "Formed from cruciferous vegetable compounds",
       "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Indole compound",
+      "value": "Isolated DIM compound",
       "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, blend ingredient",
+      "value": "Capsule, tablet, softgel",
       "icon": "pill"
     },
     {
@@ -229,66 +224,71 @@
       "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>DIM (Diindolylmethane) is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "DIM (Diindolylmethane) is reviewed by Suppriva as a cruciferous vegetable compound for hormone metabolism and cruciferous-compound education.",
-  "best_for": "Hormone metabolism and cruciferous-compound education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Compounds derived from cruciferous vegetables",
-  "part_used": "Indole compound",
-  "ingredient_form": "Capsule, tablet, blend ingredient",
+  "sidebar_at_a_glance_content": "<p>DIM is best evaluated by dose, delivery format, hormone-related cautions, and the full formula. It should not replace medical evaluation for hormone symptoms.</p>",
+  "full_description": "DIM is a cruciferous-derived compound used in estrogen-metabolism, hormone-balance, women's wellness, and men's wellness supplement education.",
+  "best_for": "Hormone-metabolism and cruciferous compound education",
+  "safety_level": "Review hormone medications, hormone-sensitive conditions, and liver context",
+  "origin_country": "Cruciferous vegetable compound metabolism",
+  "part_used": "Isolated DIM compound",
+  "ingredient_form": "Capsule, tablet, or softgel",
   "taste_profile": "Neutral in capsules",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "rating": 4.5,
+  "evidence_level": "Emerging",
   "uses_title": "DIM (Diindolylmethane) Uses",
   "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>DIM (Diindolylmethane) may appear in formulas related to hormone metabolism and cruciferous-compound education. Use should be guided by label directions and personal health context.</p>",
+  "uses_content": "<p>DIM (Diindolylmethane) may appear in formulas related to hormone-metabolism and cruciferous compound education. Use should be guided by the finished product label and personal health context.</p>",
   "uses_json": [
     {
       "icon": "check-circle",
-      "title": "Hormone Metabolism Context",
-      "description": "Hormone Metabolism Context is a common context for evaluating DIM (Diindolylmethane)."
+      "title": "Estrogen Metabolism Context",
+      "description": "Estrogen Metabolism Context is a common educational context for comparing DIM (Diindolylmethane) on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Cruciferous Nutrition Education",
-      "description": "Cruciferous Nutrition Education is a common context for evaluating DIM (Diindolylmethane)."
+      "title": "Cruciferous Vegetable Link",
+      "description": "Cruciferous Vegetable Link is a common educational context for comparing DIM (Diindolylmethane) on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Women's and Men's Wellness Review",
-      "description": "Women's and Men's Wellness Review is a common context for evaluating DIM (Diindolylmethane)."
+      "title": "Women's Wellness Formulas",
+      "description": "Women's Wellness Formulas is a common educational context for comparing DIM (Diindolylmethane) on supplement labels."
     },
     {
       "icon": "check-circle",
-      "title": "Dose Transparency",
-      "description": "Dose Transparency is a common context for evaluating DIM (Diindolylmethane)."
+      "title": "Formula Safety Awareness",
+      "description": "Formula Safety Awareness is a common educational context for comparing DIM (Diindolylmethane) on supplement labels."
     }
   ],
   "research_title": "DIM (Diindolylmethane) Research Notes",
   "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around DIM (Diindolylmethane) focuses on estrogen-metabolism support and cruciferous compound education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_content": "<p>DIM research includes estrogen metabolite pathways, cell signaling, inflammation-related mechanisms, and hormone-sensitive tissue contexts. Human evidence is still developing.</p><p>Because hormone-related interpretation is complex, DIM should be discussed with careful safety language and should not be framed as disease prevention or hormone therapy.</p>",
   "research_json": [
     {
       "icon": "book-open",
       "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "description": "Research findings may not apply equally to every extract, dose, or delivery format."
     },
     {
       "icon": "search",
       "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "description": "Outcomes can vary by baseline status, diet, medication use, health conditions, and study design."
     }
   ],
   "references_title": "DIM (Diindolylmethane) References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "DIM (Diindolylmethane) Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "dim diindolylmethane",
-  "seo_description": "DIM (Diindolylmethane) guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "related_ingredients_json": [
+    "indole-3-carbinol",
+    "calcium-d-glucarate",
+    "broccoli-sprout-extract",
+    "chaste-tree"
+  ],
+  "seo_title": "DIM Benefits, Estrogen Metabolism, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "DIM diindolylmethane",
+  "seo_description": "Learn about DIM benefits, estrogen metabolism, cruciferous vegetable sources, dosage, side effects, interactions, and hormone-safety cautions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/dim",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "DIM (Diindolylmethane) Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "DIM (Diindolylmethane) guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "DIM Benefits, Estrogen Metabolism, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about DIM benefits, estrogen metabolism, cruciferous vegetable sources, dosage, side effects, interactions, and hormone-safety cautions."
 }
