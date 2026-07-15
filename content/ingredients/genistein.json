@@ -2,221 +2,273 @@
   "name": "Genistein",
   "scientific_name": "4',5,7-trihydroxyisoflavone",
   "ingredient_category": "Antioxidants",
-  "hero_badge": null,
-  "short_description": "Genistein is a isoflavone used in supplement formulas for isoflavone and hormone-aware wellness formulas, with label quality depending on source, form, and dose transparency.",
-  "overview_title": "Genistein Overview",
-  "overview_subtitle": "A practical guide to genistein as a supplement ingredient.",
-  "overview_content": "<p>Genistein is a isoflavone used in wellness supplements for isoflavone and hormone-aware wellness formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Genistein is often discussed because it contains or represents genistein as a soy-derived isoflavone compound. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Genistein should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Genistein is one of the main isoflavones studied from soy, but isolated genistein is not the same as eating whole soy foods.</p>",
+  "hero_badge": "Soy Isoflavone",
+  "short_description": "Genistein is a soy isoflavone and phytoestrogen studied for antioxidant, cellular-signaling, bone, menopause, and hormone-sensitive wellness contexts.",
+  "overview_title": "What Is Genistein?",
+  "overview_subtitle": "A practical guide to soy isoflavones, phytoestrogen labels, menopause formulas, and hormone-sensitive cautions.",
+  "overview_content": "<p>Genistein is a naturally occurring isoflavone found primarily in soybeans and soy-based foods. It belongs to a group of plant compounds often called phytoestrogens because they can interact with estrogen receptors in ways that are weaker and more selective than the body's own estrogen. In supplements, genistein appears in menopause-support formulas, bone wellness products, antioxidant blends, and soy isoflavone capsules.</p><p>Genistein should not be treated as estrogen therapy, cancer treatment, fertility treatment, or a guaranteed menopause solution. The relationship between soy isoflavones, hormone-sensitive tissues, and health outcomes is complex. Soy foods have been widely consumed in traditional diets, but concentrated genistein or isoflavone supplements are a different exposure. Consumers should avoid assuming that food research automatically applies to high-dose capsules.</p><p>Research has examined genistein in relation to bone markers, hot-flash frequency, cardiovascular markers, antioxidant activity, cellular signaling, and hormone receptor biology. Results vary by dose, population, baseline diet, age, menopausal status, gut microbiome differences, and whether the study used isolated genistein or a soy isoflavone mixture. This makes careful label interpretation important.</p><p>Memorial Sloan Kettering notes theoretical or preclinical concerns involving genistein and certain breast cancer therapies such as tamoxifen or aromatase inhibitors. Clinical relevance can be complex, but people with current or past hormone-sensitive cancers, those taking endocrine therapy, or those being monitored for breast, uterine, ovarian, or prostate conditions should discuss genistein supplements with their oncology or healthcare team before use.</p><p>Genistein labels may list pure genistein, soy isoflavones, fermented soy extract, or an isoflavone blend containing daidzein and glycitein. A product may also be marketed as non-hormonal menopause support even though phytoestrogen activity is central to the discussion. A transparent label should identify the isoflavone amount, source, allergen information, and whether the formula is standardized.</p><p>Safety is generally favorable for food-level soy intake in many people, but supplement decisions require more caution. Possible issues include digestive upset, soy allergy, thyroid medication timing, hormone-sensitive conditions, and interactions with endocrine therapies. People with thyroid disease should review iodine status, thyroid medication timing, and clinician guidance because soy products can affect absorption if taken too close to medication.</p><p>Suppriva presents genistein as an educational ingredient for understanding phytoestrogens and soy isoflavone supplement labels. The ingredient is scientifically interesting, but it should be used responsibly. It is not a substitute for menopause care, osteoporosis prevention, cancer care, or hormone therapy decisions.</p><p>A premium genistein product should make the source, amount, isoflavone profile, allergen status, and intended use clear. Users should compare whether the product contains isolated genistein or broader soy isoflavones, and they should avoid high-dose supplementation without professional guidance if hormone-sensitive medical history or endocrine medication applies.</p>",
+  "interesting_fact_label": "Phytoestrogen Insight",
+  "interesting_fact": "<p>Genistein can bind estrogen receptors, but its activity is not the same as human estrogen or prescription hormone therapy.</p>",
   "how_it_works_title": "How Genistein Works",
-  "how_it_works_subtitle": "Genistein is evaluated by its compound profile, source quality, and formula context.",
-  "how_it_works_highlight_title": "Source and standardization matter",
-  "how_it_works_highlight_description": "Two genistein products can differ significantly if they use different forms, serving sizes, or extract standards.",
-  "how_it_works_content": "<p>Genistein works mainly through isoflavone signaling and antioxidant activity. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Genistein depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Genistein with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "how_it_works_subtitle": "Genistein is evaluated through isoflavone biology, estrogen-receptor interaction, antioxidant signaling, and hormone-sensitive context.",
+  "how_it_works_highlight_title": "Soy Isoflavone Signaling",
+  "how_it_works_highlight_description": "The best labels identify isoflavone source, amount, allergen status, and hormone-sensitive cautions.",
+  "how_it_works_content": "<p>Genistein interacts with estrogen receptors, particularly ER-beta, and also influences cellular-signaling pathways studied in antioxidant and metabolic contexts. These mechanisms do not make it a hormone therapy or disease treatment.</p><p>Effects can depend on dose, life stage, gut microbiome, and whether the product is isolated genistein or a full soy isoflavone blend. Food exposure and supplement exposure should be separated when evaluating claims.</p><p>Because of hormone-sensitive contexts, genistein requires careful review for people using tamoxifen, aromatase inhibitors, thyroid medication, or oncology-related care.</p>",
   "benefits_title": "Potential Genistein Benefits",
-  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_subtitle": "Educational benefits commonly discussed for genistein and soy isoflavone supplements.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Formula Context",
-      "description": "Genistein helps shoppers evaluate supplements that use isoflavone positioning for isoflavone and hormone-aware wellness formulas."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Key Compound Profile",
-      "description": "It is commonly reviewed for genistein as a soy-derived isoflavone compound, which influence how brands position it on supplement labels."
+      "icon": "flower2",
+      "title": "Menopause Formula Context",
+      "description": "Genistein appears in menopause-support products, especially soy isoflavone blends."
     },
     {
       "icon": "shield-check",
-      "title": "Label Transparency",
-      "description": "The best products clearly disclose form, serving size, standardization, and whether Genistein is part of a broader blend."
+      "title": "Bone Wellness Research",
+      "description": "Isoflavones are studied for bone-health markers in postmenopausal populations."
     },
     {
-      "icon": "activity",
-      "title": "Routine Fit",
-      "description": "Genistein is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+      "icon": "sparkles",
+      "title": "Antioxidant Signaling",
+      "description": "Genistein is researched for antioxidant and cellular-signaling pathways."
     },
     {
-      "icon": "search",
-      "title": "Comparison Value",
-      "description": "Comparing Genistein across products can reveal differences in source quality, concentration, and supporting ingredients."
+      "icon": "clipboard-check",
+      "title": "Phytoestrogen Education",
+      "description": "The ingredient helps readers understand plant estrogen-like compounds on labels."
     },
     {
-      "icon": "heart",
-      "title": "Safety Awareness",
-      "description": "Understanding cautions and interactions helps users decide whether Genistein fits their health status and medication profile."
+      "icon": "leaf",
+      "title": "Soy Isoflavone Source",
+      "description": "Genistein is one of the main isoflavones found in soy foods and extracts."
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Hormone-Sensitive Review",
+      "description": "Genistein highlights why endocrine therapy and hormone-sensitive history should be reviewed."
     }
   ],
   "dosage_title": "Typical Genistein Dosage",
-  "dosage_subtitle": "Use the product label as the primary dose reference.",
-  "typical_dose": "Follow label directions; isoflavone amounts should be reviewed carefully.",
-  "dosage": "Follow the product label and avoid combining multiple genistein products unless a healthcare professional has reviewed the routine.",
-  "dosage_content": "<p>There is no single universal dose for genistein because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using genistein.</p>",
+  "dosage_subtitle": "Serving size depends on isolated genistein versus total soy isoflavone amount.",
+  "typical_dose": "Genistein products vary widely; compare isolated genistein amount versus total soy isoflavones and follow the label.",
+  "dosage": "Genistein products vary widely; compare isolated genistein amount versus total soy isoflavones and follow the label.",
+  "dosage_content": "<p>Genistein dosage depends on whether the product lists isolated genistein or total soy isoflavones. A soy isoflavone blend may contain genistein, daidzein, and glycitein in different proportions.</p><p>People with hormone-sensitive conditions, current or past cancer, endocrine therapy, thyroid medication, pregnancy, or breastfeeding should seek healthcare guidance before using concentrated genistein supplements.</p>",
   "safety_title": "Genistein Safety Information",
-  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "safety_subtitle": "Genistein requires review for soy allergy, hormone-sensitive conditions, endocrine therapy, thyroid medication, pregnancy, and breastfeeding.",
   "side_effects": [
-    "Digestive discomfort",
-    "Nausea",
-    "Headache",
-    "Sensitivity reaction"
+    "Digestive Upset",
+    "Soy Allergy",
+    "Hormone-Sensitive Caution",
+    "Therapy Interaction Concern"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Genistein may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+      "icon": "stomach",
+      "title": "Digestive Upset",
+      "description": "Gas, bloating, nausea, or stomach discomfort may occur."
     },
     {
-      "title": "Sensitivity or Allergy",
-      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review genistein carefully before use."
+      "icon": "alert-circle",
+      "title": "Soy Allergy",
+      "description": "People allergic to soy should avoid soy-derived genistein unless clearly verified otherwise."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects may be more likely when genistein is combined with several ingredients that have similar wellness positioning."
+      "icon": "activity",
+      "title": "Hormone-Sensitive Caution",
+      "description": "Current or past hormone-sensitive conditions require professional review."
     },
     {
-      "title": "Dose-Related Concerns",
-      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+      "icon": "shield-alert",
+      "title": "Therapy Interaction Concern",
+      "description": "Tamoxifen, aromatase inhibitors, and endocrine therapies should be discussed with a clinician."
     }
   ],
   "drug_interactions_json": [
-    "Review use with hormone therapies, thyroid medication, tamoxifen or related medications, and fertility or oncology care plans.",
-    "Review use if taking prescription medication or managing a diagnosed condition.",
-    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a healthcare professional before use during pregnancy or nursing."
+    "Tamoxifen and aromatase inhibitors should be reviewed with an oncology team before genistein supplementation.",
+    "Thyroid medication timing may require attention with soy-based supplements.",
+    "Hormone therapies or fertility medications should not be combined without professional guidance.",
+    "Anticoagulants or complex medication routines should be reviewed when genistein is part of multi-ingredient formulas."
   ],
   "who_should_avoid_json": [
-    "People with hormone-sensitive conditions, thyroid concerns, pregnancy, nursing, or soy allergy should review genistein with a healthcare professional.",
-    "People with known allergy or sensitivity related to genistein.",
-    "People taking medication without reviewing supplement interactions.",
-    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with soy allergy unless the product is verified soy-free and clinician-approved.",
+    "People with current or past hormone-sensitive cancer unless their care team approves.",
+    "People taking tamoxifen, aromatase inhibitors, or endocrine therapies without professional guidance.",
+    "Pregnant or breastfeeding individuals unless advised by a healthcare professional.",
+    "Anyone using genistein instead of menopause, bone, thyroid, or cancer care."
   ],
   "food_sources_title": "Genistein Food Sources",
-  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
-  "food_sources_content": "<p>Soybeans, tofu, tempeh, soy milk, miso, and other legumes provide dietary isoflavones.</p>",
+  "food_sources_subtitle": "Genistein occurs naturally in soy foods, while supplements may provide concentrated isoflavones.",
+  "food_sources_content": "<p>Soybeans, tofu, tempeh, soy milk, miso, and edamame can provide soy isoflavones, including genistein. Food intake differs from isolated or concentrated genistein supplements. Fermentation, processing, and serving size can affect isoflavone exposure.</p>",
   "food_sources_json": [
     {
-      "title": "Dietary Sources",
-      "description": "Soybeans, tofu, tempeh, soy milk, miso, and other legumes provide dietary isoflavones."
+      "icon": "leaf",
+      "title": "Soybeans",
+      "description": "A primary dietary source of genistein and related isoflavones."
     },
     {
-      "title": "Supplement Forms",
-      "description": "Genistein is commonly sold as capsule, tablet, standardized extract, depending on the product category."
+      "icon": "leaf",
+      "title": "Tofu and tempeh",
+      "description": "Common soy foods that can contribute isoflavones."
     },
     {
-      "title": "Label Review",
-      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+      "icon": "cup-soda",
+      "title": "Soy milk and miso",
+      "description": "Processed soy foods may provide varying isoflavone amounts."
     }
   ],
   "faq_title": "Genistein FAQs",
-  "faq_subtitle": "Common questions about genistein supplements and label comparison.",
+  "faq_subtitle": "Common questions about Genistein, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Genistein used for in supplements?",
-      "answer": "Genistein is commonly used in formulas positioned around isoflavone and hormone-aware wellness formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+      "question": "What is genistein?",
+      "answer": "Genistein is a soy isoflavone and phytoestrogen found in soy foods and some supplements."
     },
     {
-      "question": "What is the main active profile of Genistein?",
-      "answer": "Supplement labels usually discuss Genistein in relation to genistein as a soy-derived isoflavone compound. The exact profile can vary by source and processing method."
+      "question": "Is genistein estrogen?",
+      "answer": "No. Genistein is a plant compound that can interact with estrogen receptors but is not human estrogen."
     },
     {
-      "question": "Is Genistein a medicine?",
-      "answer": "No. Genistein is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+      "question": "What is genistein used for?",
+      "answer": "It is commonly discussed in menopause, bone wellness, antioxidant, and phytoestrogen education contexts."
     },
     {
-      "question": "How should I compare Genistein products?",
-      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+      "question": "Is genistein the same as soy?",
+      "answer": "No. Soy foods contain genistein plus other compounds; isolated genistein supplements are more concentrated."
     },
     {
-      "question": "Can Genistein be taken every day?",
-      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+      "question": "Can genistein replace hormone therapy?",
+      "answer": "No. It should not replace prescription hormone therapy or clinician-guided menopause care."
     },
     {
-      "question": "What dose of Genistein should I use?",
-      "answer": "Follow label directions; isoflavone amounts should be reviewed carefully. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
+      "question": "Who should be cautious with genistein?",
+      "answer": "People with hormone-sensitive conditions, endocrine therapy, soy allergy, or thyroid medication should seek guidance."
     },
     {
-      "question": "Does Genistein have side effects?",
-      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+      "question": "Can genistein interact with tamoxifen?",
+      "answer": "Preclinical concerns exist, so people using tamoxifen should discuss genistein supplements with their care team."
     },
     {
-      "question": "Can Genistein interact with medication?",
-      "answer": "Review use with hormone therapies, thyroid medication, tamoxifen or related medications, and fertility or oncology care plans. Medication users should review supplement use with a qualified healthcare professional."
+      "question": "Does genistein affect thyroid medication?",
+      "answer": "Soy-based products may affect thyroid medication absorption if taken too closely, so timing should be reviewed."
     },
     {
-      "question": "Is Genistein found in foods?",
-      "answer": "Soybeans, tofu, tempeh, soy milk, miso, and other legumes provide dietary isoflavones."
+      "question": "What side effects can occur?",
+      "answer": "Digestive upset, soy allergy symptoms, or hormone-sensitive concerns may occur depending on the user."
     },
     {
-      "question": "Who should avoid Genistein?",
-      "answer": "People with hormone-sensitive conditions, thyroid concerns, pregnancy, nursing, or soy allergy should review genistein with a healthcare professional. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+      "question": "How should genistein products be compared?",
+      "answer": "Compare isolated genistein versus total isoflavones, dose, soy source, allergen status, and hormone cautions."
     }
   ],
   "sidebar_profile_title": "Genistein Profile Snapshot",
-  "sidebar_profile_content": "A plant isoflavone used in specialized formulas related to antioxidant and hormone-aware wellness positioning.",
+  "sidebar_profile_content": "<p>Genistein is a soy isoflavone phytoestrogen used in menopause, bone, and antioxidant supplement education. Hormone-sensitive context matters.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Isoflavone"
+      "value": "Soy isoflavone",
+      "icon": "leaf"
     },
     {
       "label": "Typical Dose",
-      "value": "Follow label directions; isoflavone amounts should be reviewed carefully."
+      "value": "Product-specific isoflavone dose",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Isoflavone and hormone-aware wellness formulas"
+      "value": "Phytoestrogen label education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review label directions and medication context"
+      "value": "Review hormone-sensitive history",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Soy and legume-derived sources"
+      "value": "Soy foods and extracts",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Isolated plant compound"
+      "value": "Isoflavone compound",
+      "icon": "flask-conical"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, standardized extract"
+      "value": "Capsule, tablet, or soy extract",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Neutral in capsules"
+      "value": "Neutral in capsules",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Genistein is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
-  "full_description": "Genistein is a isoflavone used in supplement formulas for isoflavone and hormone-aware wellness formulas.",
-  "best_for": "Isoflavone and hormone-aware wellness formulas",
-  "safety_level": "Review label directions and medication context",
-  "origin_country": "Soy and legume-derived sources",
-  "part_used": "Isolated plant compound",
-  "ingredient_form": "Capsule, tablet, standardized extract",
-  "taste_profile": "Neutral in capsules",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
+  "sidebar_at_a_glance_content": "<p>Genistein is best compared by soy source, isolated versus blend form, isoflavone dose, allergen status, and hormone-sensitive or thyroid-medication cautions.</p>",
+  "full_description": "Genistein is a soy isoflavone phytoestrogen used in menopause, bone, antioxidant, and hormone-sensitive supplement education.",
+  "best_for": "Menopause formula education, soy isoflavone comparison, antioxidant context, and hormone-sensitive label review",
+  "safety_level": "Review soy allergy, hormone-sensitive conditions, endocrine therapy, thyroid medication, pregnancy, and breastfeeding",
+  "origin_country": "Soybeans and soy extracts",
+  "part_used": "Isoflavone compound",
+  "ingredient_form": "Capsule, tablet, soy extract, or food source",
+  "taste_profile": "Neutral in capsules; soy-like in foods",
+  "rating": 4.6,
+  "evidence_level": "Moderate for isoflavone research",
+  "uses_title": "Genistein Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Genistein may appear in formulas related to menopause formula education, soy isoflavone comparison, antioxidant context, and hormone-sensitive label review. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Menopause Formula Context",
+      "description": "Appears in isoflavone-based menopause support products."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Bone Wellness Context",
+      "description": "Studied for bone-health markers in postmenopausal populations."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Phytoestrogen Education",
+      "description": "Helps explain plant compounds with estrogen-receptor activity."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Soy Supplement Comparison",
+      "description": "Useful for comparing soy foods, soy extracts, and isolated isoflavones."
+    }
+  ],
+  "research_title": "Genistein Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Genistein research includes menopause, bone, cardiovascular marker, antioxidant, and cellular-signaling contexts. Results depend on form, dose, and population.</p><p>Safety interpretation should distinguish soy foods from high-dose supplements and consider hormone-sensitive conditions, endocrine therapy, soy allergy, and thyroid medication timing.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Depends on Form",
+      "description": "Research should be interpreted by ingredient form, dose, population, study duration, and the complete formula."
+    },
+    {
+      "icon": "search",
+      "title": "Label Claims Need Context",
+      "description": "Front-label wellness claims should be checked against serving size, standardization, safety cautions, and product quality."
+    }
+  ],
+  "references_title": "Genistein References",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Genistein Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "soy-isoflavones",
+    "red-clover",
+    "black-cohosh-root",
+    "folate"
+  ],
+  "seo_title": "Genistein Benefits, Soy Isoflavone Uses, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "genistein",
-  "seo_description": "Explore genistein benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Learn about genistein, soy isoflavones, phytoestrogen activity, menopause and bone wellness context, dosage, side effects, and safety cautions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/genistein",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Genistein Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore genistein benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Genistein Benefits, Soy Isoflavone Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about genistein, soy isoflavones, phytoestrogen activity, menopause and bone wellness context, dosage, side effects, and safety cautions."
 }

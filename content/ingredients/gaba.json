@@ -1,212 +1,274 @@
 {
   "name": "GABA",
   "scientific_name": "Gamma-aminobutyric acid",
-  "hero_badge": null,
-  "short_description": "GABA is reviewed in Suppriva's ingredient library for relaxation routines, sleep-support formulas, and calm-focused supplement labels. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
+  "ingredient_category": "Amino Acids",
+  "hero_badge": "Calm-Focused Amino Acid",
+  "short_description": "GABA is gamma-aminobutyric acid, an inhibitory neurotransmitter also used in calm, stress, and sleep-support supplement formulas.",
   "overview_title": "What Is GABA?",
-  "overview_subtitle": "A practical overview of gaba and why it appears in modern supplement formulas.",
-  "overview_content": "GABA is commonly found in supplement formulas connected to relaxation routines, sleep-support formulas, and calm-focused supplement labels. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating gaba, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. GABA may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding gaba to a routine.",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "GABA is best known as an inhibitory neurotransmitter, but oral supplement effects can vary by person and product format.",
+  "overview_subtitle": "A practical guide to oral GABA supplements, calm-support formulas, sleep routines, and safety context.",
+  "overview_content": "<p>GABA stands for gamma-aminobutyric acid, a naturally occurring compound that functions as a major inhibitory neurotransmitter in the central nervous system. In simple terms, GABA helps regulate neural excitability. Supplement labels often position oral GABA for calm, relaxation, stress support, sleep quality, and mood-balance routines. It may appear as capsules, chewables, powders, gummies, drink mixes, or blends with magnesium, L-theanine, melatonin, valerian, lemon balm, or passionflower.</p><p>The science around oral GABA is nuanced. The body clearly uses GABA as a neurotransmitter, but researchers continue to debate how much supplemental GABA crosses the blood-brain barrier and how it may influence calm or sleep. Some human studies suggest possible benefits for relaxation or sleep measures, while reviews describe the evidence as mixed. This means GABA should not be marketed as an anxiety treatment, insomnia cure, sedative replacement, or substitute for mental health care.</p><p>GABA supplements are often used by people who want non-stimulant support in evening routines. Unlike caffeine-free does not automatically mean risk-free. A GABA formula may include other sedating ingredients such as melatonin, valerian, hops, magnesium, or antihistamine-like botanicals. The finished product can cause drowsiness, next-day grogginess, dizziness, or additive effects with alcohol or medications that affect the nervous system.</p><p>Safety reviews of GABA have generally found it to be well tolerated in studied amounts, but long-term data and medically complex populations remain limited. People who are pregnant, breastfeeding, using sedatives, anti-anxiety medication, sleep medication, blood pressure medication, seizure medication, or alcohol should seek professional guidance before use. GABA may not be appropriate before driving, operating machinery, or performing tasks requiring alertness.</p><p>Product comparison should focus on dose, timing, delivery form, formula partners, sweeteners, and whether the product is meant for daytime calm or nighttime sleep. A small dose in a daytime stress formula has a different purpose than a larger dose combined with melatonin in a sleep product. Labels should not blur these use cases.</p><p>GABA is also found in some fermented foods and teas, but food exposure, enriched products, and concentrated supplements are not identical. Some products use pharmaGABA or fermented GABA, while others list generic GABA. These source differences may matter for marketing and quality, but users should still compare serving amount and the complete formula.</p><p>Suppriva reviews GABA as a calm-support ingredient for education, not as a mental-health intervention. Anyone with persistent anxiety, insomnia, panic symptoms, depression, trauma-related symptoms, or medication needs should seek appropriate healthcare support. Supplements can be part of a broader routine, but they should not replace diagnosis, therapy, sleep hygiene, or prescribed care.</p><p>A premium GABA label should clearly state the amount per serving, suggested timing, whether it is paired with melatonin or other calming ingredients, and warnings about drowsiness, alcohol, and medication use. This helps shoppers choose between a relaxation supplement and a sleep formula without assuming all GABA products behave the same way.</p>",
+  "interesting_fact_label": "Neurotransmitter Insight",
+  "interesting_fact": "<p>GABA is naturally produced in the body, but oral GABA supplements are still studied separately because supplement effects may differ from brain GABA signaling.</p>",
   "how_it_works_title": "How GABA Works",
-  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to gaba.",
-  "how_it_works_highlight_title": "Amino Acid Derivative Context",
-  "how_it_works_highlight_description": "GABA is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
-  "how_it_works_content": "GABA does not work as a universal quick fix. It is typically discussed in relation to relaxation routines, sleep-support formulas, and calm-focused supplement labels, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. GABA is often compared with L-theanine, magnesium glycinate, 5-HTP, and melatonin.\n\nSafety context matters. Anyone with sedatives, sleep medications, anxiety treatment, pregnancy, nursing, or driving after use should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
-  "benefits_title": "Potential Benefits of GABA",
-  "benefits_subtitle": "Educational benefits commonly discussed for gaba in supplement routines and label comparison.",
+  "how_it_works_subtitle": "GABA is evaluated through inhibitory neurotransmitter biology, relaxation-support research, and formula timing.",
+  "how_it_works_highlight_title": "Calm and Sleep Formula Context",
+  "how_it_works_highlight_description": "The strongest labels clarify dose, timing, daytime versus nighttime use, and sedating formula partners.",
+  "how_it_works_content": "<p>GABA's biological role is to reduce neural excitability in the nervous system. Oral supplement effects may involve central and peripheral mechanisms, but researchers are still studying how much supplemental GABA directly affects brain activity.</p><p>In supplements, GABA is often used for subjective relaxation, stress routine support, and sleep preparation. These effects are generally expected to be subtle and context-dependent rather than immediate medical sedation.</p><p>GABA should be evaluated as part of the entire formula. Combining it with melatonin, valerian, alcohol, or sedating medications may increase drowsiness or impairment risk.</p>",
+  "benefits_title": "Potential GABA Benefits",
+  "benefits_subtitle": "Educational benefits commonly discussed for GABA in calm, relaxation, and sleep-support formulas.",
   "benefits_json": [
     {
-      "icon": "shield-check",
-      "title": "Wellness Routine Support",
-      "description": "GABA is commonly researched or used in formulas connected to relaxation and stress-response supplement routines."
+      "icon": "moon",
+      "title": "Sleep Routine Context",
+      "description": "GABA appears in formulas designed to support relaxation before bedtime."
     },
     {
-      "icon": "activity",
-      "title": "Label Comparison Value",
-      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
-    },
-    {
-      "icon": "leaf",
-      "title": "Formula Stacking Context",
-      "description": "GABA often appears alongside complementary ingredients such as L-theanine, magnesium glycinate, 5-HTP, and melatonin."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Everyday Education",
-      "description": "Understanding gaba helps shoppers separate educational ingredient context from exaggerated supplement claims."
+      "icon": "brain",
+      "title": "Calm-Support Education",
+      "description": "Its neurotransmitter role makes it a common ingredient in stress-support supplement discussions."
     },
     {
       "icon": "sparkles",
-      "title": "Targeted Category Fit",
-      "description": "Brands may include gaba in products designed for relaxation routines, sleep-support formulas, and calm-focused supplement labels."
+      "title": "Non-Stimulant Positioning",
+      "description": "GABA is often used in caffeine-free calm and evening formulas."
     },
     {
-      "icon": "heart-pulse",
-      "title": "Safety-Aware Selection",
-      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
-    }
-  ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
-  "typical_dose": "Commonly 100-750 mg per serving",
-  "dosage": "Commonly 100-750 mg per serving",
-  "dosage_content": "Commonly 100-750 mg per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain gaba unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "GABA may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
-  "side_effects": [
-    "Digestive discomfort",
-    "Headache or sensitivity",
-    "Unexpected tolerance changes",
-    "Allergic reaction in sensitive individuals"
-  ],
-  "side_effects_json": [
+      "icon": "clipboard-check",
+      "title": "Formula Timing Awareness",
+      "description": "The ingredient helps users compare daytime relaxation formulas versus nighttime sleep blends."
+    },
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+      "icon": "shield-check",
+      "title": "Sedation Safety Review",
+      "description": "GABA labels highlight why alcohol, driving, and sedating medication cautions matter."
     },
     {
       "icon": "activity",
-      "title": "Tolerance Varies",
-      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+      "title": "Stacking Context",
+      "description": "It is often paired with magnesium, L-theanine, lemon balm, valerian, or melatonin."
+    }
+  ],
+  "dosage_title": "Typical GABA Dosage",
+  "dosage_subtitle": "Serving size varies by calm formula, sleep blend, chewable, powder, or capsule format.",
+  "typical_dose": "GABA supplements often range from about 100 mg to 750 mg per serving, but users should follow the finished product label.",
+  "dosage": "GABA supplements often range from about 100 mg to 750 mg per serving, but users should follow the finished product label.",
+  "dosage_content": "<p>GABA dosage varies widely by intended use and formula. Some products use lower amounts for daytime calm support, while sleep formulas may include GABA with melatonin or herbs. More is not automatically better because drowsiness and additive effects can occur.</p><p>Start only with label directions, avoid alcohol, and do not drive or operate machinery until personal response is known. People using sedatives, sleep medication, anti-anxiety medication, blood pressure medication, or seizure medication should seek professional guidance.</p>",
+  "safety_title": "GABA Safety Information",
+  "safety_subtitle": "GABA requires caution with drowsiness, alcohol, sedating medications, blood pressure medication, pregnancy, and breastfeeding.",
+  "side_effects": [
+    "Drowsiness",
+    "Dizziness",
+    "Digestive Upset",
+    "Additive Sedation"
+  ],
+  "side_effects_json": [
+    {
+      "icon": "moon",
+      "title": "Drowsiness",
+      "description": "Sleepiness or reduced alertness may occur, especially in nighttime formulas."
+    },
+    {
+      "icon": "activity",
+      "title": "Dizziness",
+      "description": "Some users may experience dizziness, lightheadedness, or fatigue."
+    },
+    {
+      "icon": "stomach",
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or mild digestive changes can occur."
     },
     {
       "icon": "alert-circle",
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
-    },
-    {
-      "icon": "shield-alert",
-      "title": "Dose Awareness",
-      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+      "title": "Additive Sedation",
+      "description": "Alcohol, sedatives, or sleep aids may increase drowsiness or impairment."
     }
   ],
   "drug_interactions_json": [
-    "Review gaba with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing L-theanine, magnesium glycinate, 5-HTP, and melatonin.",
-    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
-    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+    "Sedatives, sleep medications, anti-anxiety medications, and alcohol may have additive effects with GABA formulas.",
+    "Blood pressure medications should be reviewed because some GABA research discusses blood pressure effects.",
+    "Seizure medications or neurological prescriptions should be reviewed before use.",
+    "Multiple sleep supplements containing melatonin, valerian, hops, or lemon balm should not be stacked casually."
   ],
   "who_should_avoid_json": [
-    "People with known allergy or sensitivity to gaba or its source material.",
-    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
-    "People taking medication for sedatives, sleep medications, anxiety treatment, pregnancy, nursing, or driving after use without professional review.",
-    "Children unless specifically directed by a qualified healthcare professional.",
-    "Anyone expecting gaba to replace medical diagnosis, prescribed treatment, or emergency care."
+    "Pregnant or breastfeeding individuals unless advised by a qualified professional.",
+    "People using sedatives, sleep medication, anti-anxiety medication, or alcohol without professional guidance.",
+    "People who need to drive, operate machinery, or remain alert after taking the product.",
+    "People with persistent insomnia, anxiety, depression, or panic symptoms who need medical support.",
+    "Anyone using GABA as a replacement for mental health care or prescribed treatment."
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Answers to common questions about gaba, label comparison, dosage context, and safety.",
+  "food_sources_title": "GABA Food Sources",
+  "food_sources_subtitle": "GABA can occur in some fermented foods and teas, though supplement amounts differ.",
+  "food_sources_content": "<p>GABA may be found in some fermented foods, sprouted grains, fermented teas, kimchi, miso, and GABA-enriched products. Dietary exposure is not the same as concentrated supplement use, and amounts vary widely by food preparation.</p>",
+  "food_sources_json": [
+    {
+      "icon": "cup-soda",
+      "title": "Fermented teas",
+      "description": "Some teas may contain measurable GABA depending on processing."
+    },
+    {
+      "icon": "leaf",
+      "title": "Fermented foods",
+      "description": "Foods like kimchi or miso may contribute small amounts in some preparations."
+    },
+    {
+      "icon": "pill",
+      "title": "GABA supplements",
+      "description": "Capsules, powders, gummies, and chewables provide concentrated amounts."
+    }
+  ],
+  "faq_title": "GABA FAQs",
+  "faq_subtitle": "Common questions about GABA, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
       "question": "What is GABA?",
-      "answer": "GABA is a amino acid derivative commonly discussed in supplement education for relaxation routines, sleep-support formulas, and calm-focused supplement labels."
+      "answer": "GABA is gamma-aminobutyric acid, a compound that acts as an inhibitory neurotransmitter in the body."
     },
     {
-      "question": "What is GABA commonly used for?",
-      "answer": "It is commonly researched or included in formulas related to relaxation and stress-response supplement routines, depending on the product and dose."
+      "question": "Do GABA supplements help sleep?",
+      "answer": "Some research suggests possible sleep or relaxation support, but evidence is mixed and product effects vary."
     },
     {
-      "question": "Is GABA a medicine?",
-      "answer": "No. GABA supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
+      "question": "Can GABA treat anxiety?",
+      "answer": "No. GABA supplements should not replace mental health care, therapy, or prescribed medication."
     },
     {
-      "question": "What dose of GABA is common?",
-      "answer": "Labels often list commonly 100-750 mg per serving, but product form, potency, and serving frequency should be compared carefully."
+      "question": "Does GABA cross the blood-brain barrier?",
+      "answer": "This remains debated. Oral GABA may have effects, but mechanisms are still being studied."
     },
     {
-      "question": "Can GABA cause side effects?",
-      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
+      "question": "When should GABA be taken?",
+      "answer": "Timing depends on the product. Daytime calm products and nighttime sleep formulas may use different directions."
     },
     {
-      "question": "Who should be cautious with GABA?",
-      "answer": "People with sedatives, sleep medications, anxiety treatment, pregnancy, nursing, or driving after use should discuss use with a healthcare professional before starting."
+      "question": "Can GABA cause drowsiness?",
+      "answer": "Yes. Drowsiness, dizziness, or reduced alertness may occur, especially with sleep formulas."
     },
     {
-      "question": "Can GABA be combined with other supplements?",
-      "answer": "Some formulas combine it with ingredients such as L-theanine, magnesium glycinate, 5-HTP, and melatonin, but stacking should be reviewed for dose overlap and safety."
+      "question": "Can I take GABA with melatonin?",
+      "answer": "Some products combine them, but stacking sleep aids should be done carefully and according to label directions."
+    },
+    {
+      "question": "Who should avoid GABA?",
+      "answer": "Pregnant or breastfeeding individuals and people using sedatives, sleep medications, or alcohol should seek guidance."
+    },
+    {
+      "question": "Is GABA found in food?",
+      "answer": "Some fermented foods and teas may contain GABA, but amounts vary and differ from supplements."
     },
     {
       "question": "How should I compare GABA products?",
-      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
-    },
-    {
-      "question": "How long does GABA take to work?",
-      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
-    },
-    {
-      "question": "Is GABA safe for daily use?",
-      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+      "answer": "Compare dose, timing, formula partners, sedating ingredients, sweeteners, and safety warnings."
     }
   ],
-  "sidebar_profile_title": "GABA Snapshot",
-  "sidebar_profile_content": "GABA is a amino acid derivative commonly reviewed for relaxation routines, sleep-support formulas, and calm-focused supplement labels. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "sidebar_profile_title": "GABA Profile Snapshot",
+  "sidebar_profile_content": "<p>GABA is a calm-focused amino acid compound used in relaxation and sleep-support formulas. Compare dose, timing, and sedating formula partners.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Amino acid derivative"
+      "value": "Amino acid neurotransmitter",
+      "icon": "brain"
     },
     {
       "label": "Typical Dose",
-      "value": "Commonly 100-750 mg per serving"
+      "value": "Often 100-750 mg per serving",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Relaxation and stress-response supplement routines"
+      "value": "Calm and sleep label education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Review sedatives, sleep medications, anxiety treatment, pregnancy, nursing, or driving after use"
+      "value": "Review sedatives and alcohol",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Naturally occurring neurotransmitter compound"
+      "value": "Produced in body; supplement forms vary",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Purified compound"
+      "value": "Isolated GABA compound",
+      "icon": "flask-conical"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, chewable, or sleep blend"
+      "value": "Capsule, powder, gummy, or chewable",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Mildly savory or neutral"
+      "value": "Mild to slightly savory in powders",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "- Amino acid derivative used in supplement education\n- Commonly discussed for relaxation routines, sleep-support formulas, and calm-focused supplement labels\n- Compare form, dose, and supporting ingredients\n- Often compared with L-theanine, magnesium glycinate, 5-HTP, and melatonin\n- Not a substitute for personal medical advice",
-  "full_description": "GABA is a amino acid derivative included in Suppriva's ingredient library for relaxation routines, sleep-support formulas, and calm-focused supplement labels.",
-  "best_for": "Relaxation and stress-response supplement routines",
-  "safety_level": "Review sedatives, sleep medications, anxiety treatment, pregnancy, nursing, or driving after use",
-  "origin_country": "Naturally occurring neurotransmitter compound",
-  "part_used": "Purified compound",
-  "ingredient_form": "Capsule, powder, chewable, or sleep blend",
-  "taste_profile": "Mildly savory or neutral",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
+  "sidebar_at_a_glance_content": "<p>GABA is best compared by dose, timing, daytime versus nighttime use, formula partners, and drowsiness cautions. It is not a replacement for mental health or sleep disorder care.</p>",
+  "full_description": "GABA is gamma-aminobutyric acid, used in calm, relaxation, and sleep-support supplement education.",
+  "best_for": "Calm support, sleep routine education, and non-stimulant relaxation formula comparison",
+  "safety_level": "Review drowsiness, alcohol, sedatives, pregnancy, breastfeeding, and neurological medication",
+  "origin_country": "Body-produced compound and supplement ingredient",
+  "part_used": "Isolated GABA",
+  "ingredient_form": "Capsule, powder, gummy, chewable, or drink mix",
+  "taste_profile": "Mild and formula-dependent",
+  "rating": 4.4,
+  "evidence_level": "Emerging",
+  "uses_title": "GABA Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>GABA may appear in formulas related to calm support, sleep routine education, and non-stimulant relaxation formula comparison. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Sleep Routine Context",
+      "description": "Appears in nighttime relaxation formulas."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Daytime Calm Formulas",
+      "description": "Used in some non-stimulant stress-support blends."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Stack Comparison",
+      "description": "Often paired with L-theanine, magnesium, or melatonin."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Drowsiness Safety",
+      "description": "Helps users review sedation and alcohol cautions."
+    }
+  ],
+  "research_title": "GABA Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Oral GABA research includes sleep, relaxation, mood, and blood pressure contexts, but results are mixed and mechanisms remain under investigation.</p><p>Safety reviews suggest good tolerance in studied amounts, but medically complex users and sedating medication combinations require caution.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Depends on Form",
+      "description": "Research should be interpreted by ingredient form, dose, population, study duration, and the complete formula."
+    },
+    {
+      "icon": "search",
+      "title": "Label Claims Need Context",
+      "description": "Front-label wellness claims should be checked against serving size, standardization, safety cautions, and product quality."
+    }
+  ],
+  "references_title": "GABA References",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "GABA Benefits, Dosage and Safety | Suppriva",
-  "seo_focus_keyword": "GABA",
-  "seo_description": "Explore gaba benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "related_ingredients_json": [
+    "l-theanine",
+    "magnesium",
+    "melatonin",
+    "chamomile-extract"
+  ],
+  "seo_title": "GABA Benefits, Sleep Support, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "GABA supplement",
+  "seo_description": "Learn about GABA supplements, calm and sleep support, dosage, side effects, interactions, drowsiness cautions, and label comparison.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/gaba",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "GABA Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore gaba benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+  "meta_title": "GABA Benefits, Sleep Support, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about GABA supplements, calm and sleep support, dosage, side effects, interactions, drowsiness cautions, and label comparison."
 }

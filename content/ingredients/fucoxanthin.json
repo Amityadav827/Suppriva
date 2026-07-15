@@ -1,227 +1,274 @@
 {
   "name": "Fucoxanthin",
-  "status": "published",
-  "scientific_name": "Fucoxanthin",
+  "scientific_name": "Marine carotenoid from brown seaweed",
   "ingredient_category": "Antioxidants",
-  "hero_badge": null,
-  "short_description": "Fucoxanthin is a marine carotenoid naturally found in brown seaweeds and researched for antioxidant and metabolic wellness support, with practical safety and label context for supplement shoppers.",
-  "overview_title": "Fucoxanthin Overview",
-  "overview_subtitle": "A practical look at fucoxanthin as a supplement ingredient.",
-  "overview_content": "<p>Fucoxanthin is a marine carotenoid naturally found in brown seaweeds and researched for antioxidant and metabolic wellness support. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Fucoxanthin through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Fucoxanthin should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Fucoxanthin gives many brown seaweeds their olive-brown color, even though it belongs to the same broad carotenoid family as brighter orange pigments.</p>",
+  "hero_badge": "Marine Carotenoid",
+  "short_description": "Fucoxanthin is a brown seaweed carotenoid studied for antioxidant activity and weight-management formula context.",
+  "overview_title": "What Is Fucoxanthin?",
+  "overview_subtitle": "A practical guide to this brown seaweed carotenoid, metabolism-focused labels, and thyroid-aware safety review.",
+  "overview_content": "<p>Fucoxanthin is a naturally occurring carotenoid pigment found in brown seaweeds such as wakame, kombu, hijiki, and other marine algae. It gives brown seaweed part of its characteristic color and belongs to the same broad nutrient family as lutein, beta-carotene, and astaxanthin, though its structure and food sources are different. In supplement products, fucoxanthin is usually positioned for antioxidant support, body-composition education, metabolic wellness, and marine plant nutrition.</p><p>Interest in fucoxanthin has grown because laboratory, animal, and early human research have explored its effects on lipid metabolism, oxidative stress, and energy-balance pathways. These findings are not the same as proven weight-loss treatment. A supplement containing fucoxanthin should not be marketed as a fat-burning guarantee, obesity therapy, thyroid booster, or replacement for nutrition, exercise, sleep, or medical care. The responsible framing is that fucoxanthin is a marine carotenoid under study, often included in weight-management formulas.</p><p>Product labels can vary significantly. Some products list pure fucoxanthin, some list brown seaweed extract standardized for fucoxanthin, and others combine it with pomegranate seed oil, green tea, caffeine, capsaicin, or iodine-containing seaweed. This matters because the safety and user experience of the final formula may depend more on the full blend than fucoxanthin alone. If a label does not disclose fucoxanthin amount or seaweed source, comparison becomes difficult.</p><p>Seaweed-derived ingredients also raise iodine and thyroid questions. Purified fucoxanthin may not provide the same iodine exposure as whole kelp powder, but many products use seaweed extracts or combine marine ingredients. People with thyroid disease, iodine sensitivity, pregnancy, breastfeeding, or thyroid medication should read labels carefully and ask a healthcare professional before use. A product that contains kelp or bladderwrack alongside fucoxanthin deserves extra thyroid review.</p><p>Fucoxanthin is fat-soluble, so some formulas pair it with oils to support absorption. That does not mean higher intake is always better. Human evidence remains limited, and long-term safety data in diverse populations are not as extensive as for essential vitamins or minerals. Users should avoid stacking multiple thermogenic or weight-management products with overlapping stimulants, green tea extracts, or thyroid-related seaweed ingredients.</p><p>For Suppriva readers, fucoxanthin is best understood as an ingredient for education around marine antioxidants and weight-management label claims. It may be interesting, but it should be compared through dose transparency, standardization, formula partners, iodine context, stimulant content, quality testing, and realistic expectations. Weight-management supplements should never replace medical evaluation for unexplained weight changes, metabolic disease, or thyroid symptoms.</p><p>A premium fucoxanthin product should clearly identify the source, amount per serving, whether the extract is standardized, and whether the formula contains iodine-rich seaweed or stimulants. This level of detail helps shoppers separate thoughtful marine carotenoid formulas from vague fat-loss marketing. The best buying decision is based on the full label, not on the novelty of the ingredient name.</p>",
+  "interesting_fact_label": "Marine Pigment Insight",
+  "interesting_fact": "<p>Fucoxanthin is one of the pigments that helps brown seaweed capture light underwater, giving it a distinct role among dietary carotenoids.</p>",
   "how_it_works_title": "How Fucoxanthin Works",
-  "how_it_works_subtitle": "The main mechanisms behind fucoxanthin in wellness formulas.",
-  "how_it_works_highlight_title": "Marine carotenoid support profile",
-  "how_it_works_highlight_description": "Fucoxanthin is commonly evaluated through carotenoid antioxidant activity, marine polyphenol context, and its role in formulas positioned around healthy metabolism and body composition support.",
-  "how_it_works_content": "<p>Fucoxanthin works through carotenoid antioxidant activity, marine polyphenol context, and its role in formulas positioned around healthy metabolism and body composition support. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Fucoxanthin is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
-  "benefits_title": "Potential Fucoxanthin Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "how_it_works_subtitle": "Fucoxanthin is studied for antioxidant activity, fat-soluble carotenoid behavior, and metabolic-signaling context.",
+  "how_it_works_highlight_title": "Brown Seaweed Carotenoid",
+  "how_it_works_highlight_description": "The most useful labels identify fucoxanthin amount, seaweed source, standardization, iodine context, and formula partners.",
+  "how_it_works_content": "<p>Fucoxanthin is a fat-soluble carotenoid that is metabolized into compounds such as fucoxanthinol. Research has examined antioxidant signaling, lipid-metabolism pathways, and energy-balance markers, but findings should not be translated into guaranteed weight-loss outcomes.</p><p>Absorption may depend on meal fat and product format. Some formulas include oils or lipid carriers, while others use brown seaweed extracts. Comparing the delivery system, standardization, and total formula is more useful than looking only at the front label.</p><p>Because some seaweed ingredients can contain iodine, shoppers should consider thyroid context. Fucoxanthin itself is not the same as kelp iodine, but product blends may include both.</p>",
+  "benefits_title": "Potential Benefits of Fucoxanthin",
+  "benefits_subtitle": "Educational benefits commonly discussed for marine carotenoid and brown seaweed formulas.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Fucoxanthin is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "icon": "waves",
+      "title": "Marine Antioxidant Context",
+      "description": "Fucoxanthin is a seaweed carotenoid studied for antioxidant activity and marine plant nutrition."
     },
     {
       "icon": "activity",
-      "title": "Supports Marine Antioxidant And Metabolic Wellness Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around marine antioxidant and metabolic wellness support."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+      "title": "Metabolic Formula Education",
+      "description": "It appears in body-composition formulas, though evidence does not support guaranteed weight-loss claims."
     },
     {
       "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Fucoxanthin often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Brown Seaweed Source",
+      "description": "Fucoxanthin helps readers understand how brown algae extracts differ from common land botanicals."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Standardization Awareness",
+      "description": "Labels should clarify whether they provide pure fucoxanthin or brown seaweed extract."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+      "title": "Thyroid Label Review",
+      "description": "Seaweed-based formulas encourage careful review of iodine and thyroid medication context."
     },
     {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Fucoxanthin by mechanism, evidence level, safety context, and practical product positioning."
+      "icon": "sparkles",
+      "title": "Carotenoid Diversity",
+      "description": "Fucoxanthin broadens carotenoid education beyond beta-carotene, lutein, and astaxanthin."
     }
   ],
   "dosage_title": "Typical Fucoxanthin Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common supplement servings often provide 2 mg to 8 mg of fucoxanthin daily, depending on extract standardization and formula context.",
-  "dosage": "Common supplement servings often provide 2 mg to 8 mg of fucoxanthin daily, depending on extract standardization and formula context.",
-  "dosage_content": "<p>Common supplement servings often provide 2 mg to 8 mg of fucoxanthin daily, depending on extract standardization and formula context.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Fucoxanthin without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size varies by purified fucoxanthin, seaweed extract, standardization, and formula design.",
+  "typical_dose": "Fucoxanthin products often use low milligram amounts, but users should follow the finished product label and compare standardization.",
+  "dosage": "Fucoxanthin products often use low milligram amounts, but users should follow the finished product label and compare standardization.",
+  "dosage_content": "<p>Fucoxanthin dosage varies because labels may list purified fucoxanthin, brown seaweed extract, or a proprietary blend. Low milligram amounts may be meaningful if the product is standardized, while larger seaweed-extract amounts may not disclose active fucoxanthin clearly.</p><p>Follow the product label and avoid stacking multiple weight-management formulas. People with thyroid conditions, iodine sensitivity, pregnancy, breastfeeding, or medication use should seek professional guidance before use.</p>",
   "safety_title": "Fucoxanthin Safety Information",
-  "safety_subtitle": "Important safety context before using fucoxanthin supplements.",
+  "safety_subtitle": "Fucoxanthin requires review of seaweed source, iodine context, formula stimulants, pregnancy, breastfeeding, and thyroid medication.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Thyroid Context",
+    "Formula Stimulants",
+    "Allergy or Seaweed Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Fucoxanthin may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "icon": "stomach",
+      "title": "Digestive Upset",
+      "description": "Some users may experience nausea, stomach discomfort, or changes in bowel habits."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "icon": "activity",
+      "title": "Thyroid Context",
+      "description": "Seaweed formulas may require iodine and thyroid-medication review."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "icon": "alert-circle",
+      "title": "Formula Stimulants",
+      "description": "Weight-management blends may include caffeine or thermogenic ingredients beyond fucoxanthin."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Fucoxanthin is combined with similar ingredients or multi-ingredient products."
+      "icon": "shield-alert",
+      "title": "Allergy or Seaweed Sensitivity",
+      "description": "People sensitive to seaweed or marine ingredients should review labels carefully."
     }
   ],
   "drug_interactions_json": [
-    "Review Fucoxanthin with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People with seaweed allergies, thyroid concerns, iodine-sensitive conditions, or medication routines should review fucoxanthin supplements with a qualified healthcare professional.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    "Thyroid medications or thyroid conditions require review if the formula includes iodine-rich seaweed.",
+    "Stimulant-containing weight-management products may interact with caffeine sensitivity, blood pressure medication, or heart conditions.",
+    "Anticoagulant or antiplatelet medication should be reviewed if fucoxanthin appears in broad botanical blends.",
+    "Multiple weight-management supplements should not be stacked without professional guidance."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Fucoxanthin or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    "People with thyroid disease or iodine sensitivity unless cleared by a healthcare professional.",
+    "Pregnant or breastfeeding individuals unless professionally advised.",
+    "People using stimulant-heavy fat-loss formulas with heart or blood pressure concerns.",
+    "People allergic or sensitive to seaweed or marine ingredients.",
+    "Anyone using fucoxanthin as a replacement for medical care, nutrition, or exercise."
   ],
   "food_sources_title": "Fucoxanthin Food Sources",
-  "food_sources_subtitle": "Food and source context for fucoxanthin.",
-  "food_sources_content": "<p>Fucoxanthin is naturally present in several brown seaweed foods, but supplement amounts depend on extract concentration rather than normal dietary intake alone.</p>",
+  "food_sources_subtitle": "Fucoxanthin occurs naturally in brown seaweeds, though supplement extracts can be more concentrated.",
+  "food_sources_content": "<p>Dietary sources include brown seaweeds such as wakame, kombu, hijiki, and other algae. Food exposure varies by serving size, species, preparation, and iodine content. Supplements may isolate or concentrate fucoxanthin and should not be treated as identical to eating seaweed.</p>",
   "food_sources_json": [
     {
+      "icon": "waves",
       "title": "Wakame",
-      "description": "Wakame can contribute to marine antioxidant and metabolic wellness support, though supplement potency depends on serving size, form, and standardization."
+      "description": "A brown seaweed commonly discussed as a dietary source of fucoxanthin."
     },
     {
+      "icon": "waves",
       "title": "Kombu",
-      "description": "Kombu can contribute to marine antioxidant and metabolic wellness support, though supplement potency depends on serving size, form, and standardization."
+      "description": "A seaweed source that may also contain significant iodine."
     },
     {
-      "title": "Hijiki",
-      "description": "Hijiki can contribute to marine antioxidant and metabolic wellness support, though supplement potency depends on serving size, form, and standardization."
-    },
-    {
-      "title": "Other edible brown seaweeds",
-      "description": "Other edible brown seaweeds can contribute to marine antioxidant and metabolic wellness support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "pill",
+      "title": "Brown seaweed extracts",
+      "description": "Supplements may standardize extracts for fucoxanthin content."
     }
   ],
   "faq_title": "Fucoxanthin FAQs",
-  "faq_subtitle": "Common questions about fucoxanthin supplements.",
+  "faq_subtitle": "Common questions about Fucoxanthin, supplement labels, dosage, safety, and practical comparison.",
   "faq_json": [
     {
-      "question": "What is Fucoxanthin?",
-      "answer": "Fucoxanthin is a marine carotenoid naturally found in brown seaweeds and researched for antioxidant and metabolic wellness support. It is used in supplement formulas for marine antioxidant and metabolic wellness support, not as a substitute for medical treatment."
+      "question": "What is fucoxanthin?",
+      "answer": "Fucoxanthin is a carotenoid pigment found in brown seaweed and used in antioxidant and metabolic wellness supplements."
     },
     {
-      "question": "What is Fucoxanthin commonly used for?",
-      "answer": "It is commonly positioned around metabolic wellness, antioxidant support, and marine carotenoid formulas. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "Is fucoxanthin a weight-loss supplement?",
+      "answer": "It appears in weight-management formulas, but it should not be treated as a guaranteed fat-loss product."
     },
     {
-      "question": "How does Fucoxanthin work?",
-      "answer": "Fucoxanthin is usually discussed through carotenoid antioxidant activity, marine polyphenol context, and its role in formulas positioned around healthy metabolism and body composition support. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "Where does fucoxanthin come from?",
+      "answer": "It naturally occurs in brown seaweeds such as wakame and kombu."
     },
     {
-      "question": "What is a typical Fucoxanthin dose?",
-      "answer": "Common supplement servings often provide 2 mg to 8 mg of fucoxanthin daily, depending on extract standardization and formula context. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "Is fucoxanthin the same as kelp iodine?",
+      "answer": "No. Fucoxanthin is a carotenoid, but some seaweed products may also contain iodine."
     },
     {
-      "question": "Is Fucoxanthin safe for daily use?",
-      "answer": "Generally well tolerated in label-directed servings. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "Who should be cautious with fucoxanthin?",
+      "answer": "People with thyroid conditions, iodine sensitivity, pregnancy, breastfeeding, or complex medication use should seek guidance."
     },
     {
-      "question": "Can Fucoxanthin cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "Can fucoxanthin replace diet and exercise?",
+      "answer": "No. It should not replace nutrition, activity, sleep, or medical care."
     },
     {
-      "question": "Can Fucoxanthin interact with medication?",
-      "answer": "People with seaweed allergies, thyroid concerns, iodine-sensitive conditions, or medication routines should review fucoxanthin supplements with a qualified healthcare professional. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "What should I look for on the label?",
+      "answer": "Look for fucoxanthin amount, seaweed source, standardization, iodine context, and other formula ingredients."
     },
     {
-      "question": "What should I compare on a Fucoxanthin supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Can fucoxanthin cause side effects?",
+      "answer": "Digestive upset or sensitivity may occur, and blended products may cause effects from other ingredients."
     },
     {
-      "question": "What foods contain Fucoxanthin or related compounds?",
-      "answer": "Fucoxanthin is naturally present in several brown seaweed foods, but supplement amounts depend on extract concentration rather than normal dietary intake alone."
+      "question": "Is fucoxanthin vegan?",
+      "answer": "Fucoxanthin from brown algae is plant-like and often suitable for vegan formulas, but capsules and excipients should be checked."
     },
     {
-      "question": "Can Fucoxanthin replace medical care?",
-      "answer": "No. Fucoxanthin supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "How should I compare fucoxanthin products?",
+      "answer": "Compare active amount, extract standardization, iodine exposure, stimulant content, quality testing, and safety warnings."
     }
   ],
   "sidebar_profile_title": "Fucoxanthin Profile Snapshot",
-  "sidebar_profile_content": "Fucoxanthin is a marine carotenoid used in supplements for marine antioxidant and metabolic wellness support.",
+  "sidebar_profile_content": "<p>Fucoxanthin is a brown seaweed carotenoid used in antioxidant and metabolic wellness formulas. Compare active amount, seaweed source, and thyroid context.</p>",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Marine carotenoid"
+      "value": "Marine carotenoid",
+      "icon": "waves"
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement servings often provide 2 mg to 8 mg of fucoxanthin daily, depending on extract standardization and formula context."
+      "value": "Product-specific low mg amount",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Metabolic wellness, antioxidant support, and marine carotenoid formulas"
+      "value": "Marine antioxidant education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated in label-directed servings"
+      "value": "Review iodine and thyroid context",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Brown seaweed species such as wakame and kombu"
+      "value": "Brown seaweed",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Carotenoid pigment from seaweed"
+      "value": "Algae pigment extract",
+      "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, softgel, standardized extract"
+      "value": "Capsule, softgel, or blend",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Neutral in capsules; mildly marine in powders"
+      "value": "Usually neutral in capsules",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Fucoxanthin is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Fucoxanthin is a marine carotenoid naturally found in brown seaweeds and researched for antioxidant and metabolic wellness support, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Metabolic wellness, antioxidant support, and marine carotenoid formulas",
-  "safety_level": "Generally well tolerated in label-directed servings",
-  "origin_country": "Brown seaweed species such as wakame and kombu",
-  "part_used": "Carotenoid pigment from seaweed",
-  "ingredient_form": "Capsule, softgel, standardized extract",
-  "taste_profile": "Neutral in capsules; mildly marine in powders",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
+  "sidebar_at_a_glance_content": "<p>Fucoxanthin is best compared by active amount, seaweed source, standardization, iodine context, and formula partners. It is not a stand-alone treatment or guaranteed weight-loss solution.</p>",
+  "full_description": "Fucoxanthin is a brown seaweed carotenoid used in antioxidant and metabolic wellness supplement education.",
+  "best_for": "Marine antioxidant education, metabolic formula comparison, and brown seaweed ingredient review",
+  "safety_level": "Review thyroid conditions, iodine exposure, pregnancy, breastfeeding, and stimulant blends",
+  "origin_country": "Brown seaweed",
+  "part_used": "Carotenoid pigment extract",
+  "ingredient_form": "Capsule, softgel, or blend",
+  "taste_profile": "Neutral in capsules; marine if powdered",
+  "rating": 4.5,
+  "evidence_level": "Emerging",
+  "uses_title": "Fucoxanthin Uses",
+  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
+  "uses_content": "<p>Fucoxanthin may appear in formulas related to marine antioxidant education, metabolic formula comparison, and brown seaweed ingredient review. Use should be guided by the finished product label, the full ingredient stack, and personal health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Marine Antioxidant Context",
+      "description": "Used in formulas highlighting brown seaweed carotenoids."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Metabolic Formula Context",
+      "description": "Appears in weight-management formulas with careful claim review."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Seaweed Label Education",
+      "description": "Helps users compare seaweed extracts, iodine, and active standardization."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Carotenoid Diversity",
+      "description": "Broadens antioxidant education beyond common plant carotenoids."
+    }
+  ],
+  "research_title": "Fucoxanthin Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Fucoxanthin research includes laboratory, animal, and limited human studies on antioxidant and metabolic markers. Evidence is promising but not strong enough for treatment claims.</p><p>Safety interpretation depends on whether the product is purified fucoxanthin or a seaweed blend with iodine, stimulants, or other weight-management ingredients.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Depends on Form",
+      "description": "Research should be interpreted by ingredient form, dose, population, study duration, and the complete formula."
+    },
+    {
+      "icon": "search",
+      "title": "Label Claims Need Context",
+      "description": "Front-label wellness claims should be checked against serving size, standardization, safety cautions, and product quality."
+    }
+  ],
+  "references_title": "Fucoxanthin References",
+  "references_subtitle": "References should be reviewed by ingredient form, dose, and health context.",
   "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Fucoxanthin Benefits, Dosage, and Safety | Suppriva",
+  "related_ingredients_json": [
+    "wakame-extract",
+    "kelp",
+    "iodine",
+    "green-tea-extract"
+  ],
+  "seo_title": "Fucoxanthin Benefits, Brown Seaweed Uses, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "fucoxanthin",
-  "seo_description": "Explore Fucoxanthin benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Learn about fucoxanthin, brown seaweed carotenoids, antioxidant and metabolic formula uses, dosage, side effects, thyroid cautions, and label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/fucoxanthin",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Fucoxanthin Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Fucoxanthin benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Fucoxanthin Benefits, Brown Seaweed Uses, Dosage, and Safety | Suppriva",
+  "meta_description": "Learn about fucoxanthin, brown seaweed carotenoids, antioxidant and metabolic formula uses, dosage, side effects, thyroid cautions, and label tips."
 }
