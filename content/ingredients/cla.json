@@ -1,274 +1,288 @@
 {
   "name": "CLA (Conjugated Linoleic Acid)",
   "scientific_name": "Conjugated linoleic acid",
-  "hero_badge": null,
-  "short_description": "CLA (Conjugated Linoleic Acid) is a fatty acid supplement used in wellness supplements for body composition and weight-management supplement education.",
-  "overview_title": "CLA (Conjugated Linoleic Acid) Overview",
-  "overview_subtitle": "A practical look at CLA (Conjugated Linoleic Acid) and how it appears in supplement formulas.",
-  "overview_content": "<p>CLA (Conjugated Linoleic Acid) is a fatty acid supplement associated with body composition and weight-management supplement education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of CLA (Conjugated Linoleic Acid) depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>CLA (Conjugated Linoleic Acid) is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
-  "how_it_works_title": "How CLA (Conjugated Linoleic Acid) Works",
-  "how_it_works_subtitle": "How CLA (Conjugated Linoleic Acid) is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Body Composition Claim Review",
-  "how_it_works_highlight_description": "CLA (Conjugated Linoleic Acid) is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>CLA (Conjugated Linoleic Acid) is commonly discussed through fatty acid isomers and body-composition claim education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding CLA (Conjugated Linoleic Acid) to a supplement routine.</p>",
-  "benefits_title": "Potential CLA (Conjugated Linoleic Acid) Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with CLA (Conjugated Linoleic Acid) in supplement routines.",
+  "ingredient_category": "Fatty Acids",
+  "hero_badge": "Fatty Acid",
+  "short_description": "CLA is a group of linoleic acid isomers used in body-composition and metabolic wellness supplements.",
+  "overview_title": "What Is CLA?",
+  "overview_subtitle": "A naturally occurring fatty acid family commonly used in weight-management support formulas.",
+  "overview_content": "<p>CLA, short for conjugated linoleic acid, refers to a family of fatty acid isomers related to linoleic acid. Small amounts occur naturally in dairy foods and meat from ruminant animals, while supplement forms are usually produced from plant oils such as safflower or sunflower oil. In wellness products, CLA is most often positioned for body-composition, weight-management, and metabolic support.</p>\n\n<p>The supplement conversation around CLA can be confusing because the ingredient is often marketed with strong fat-loss language. A responsible interpretation is more measured. CLA may support a wellness routine for some users, but it does not replace calorie balance, protein intake, strength training, sleep, or medical guidance. It should not be described as a treatment for obesity, diabetes, high cholesterol, or metabolic disease.</p>\n\n<p>CLA supplements usually provide a mixture of isomers, commonly including c9,t11 and t10,c12 forms. These isomers may behave differently in the body, which is one reason product quality and label transparency matter. Two CLA products may not be identical even if the front label uses the same ingredient name.</p>\n\n<p>CLA is often paired with green tea extract, caffeine, L-carnitine, chromium, apple cider vinegar, or fiber ingredients in weight-management formulas. These combinations can make a product more complex. Users should evaluate stimulant content, medication cautions, digestive tolerance, and whether the formula makes realistic claims.</p>\n\n<p>Dietary CLA from food is different from concentrated supplement use. Food sources provide CLA as part of a normal diet along with protein, fat, vitamins, and minerals. Capsules provide isolated or concentrated fatty acid blends, often in gram-level servings. This difference is important for safety and expectations.</p>\n\n<p>Possible side effects include digestive upset, nausea, loose stools, fatigue, changes in lipid markers, and blood sugar concerns in some people. People with diabetes, insulin resistance, liver disease, metabolic syndrome, pregnancy, nursing, or blood-thinning medication use should speak with a healthcare professional before using CLA.</p>\n\n<p>For Suppriva readers, CLA is best understood as a body-composition ingredient with mixed evidence and important context. It can be compared with L-carnitine, green tea extract, omega-3 fatty acids, and fiber-based weight-management ingredients, but it should not be treated as a stand-alone shortcut. The strongest approach is to review the dose, isomer information, product claims, and personal health context before deciding whether it fits a routine.</p>\n\n<p>A practical CLA review should also look at the total supplement stack. If the product includes stimulants, appetite-positioned herbs, or glucose-support minerals, side effects and interactions may come from the formula as a whole rather than CLA alone. This is why users should avoid judging a multi-ingredient product from one familiar name.</p>\n\n<p>People comparing CLA products should look for clear softgel serving size, total grams per day, oil source, isomer profile when available, and whether the company avoids guaranteed fat-loss language. Conservative education is a better trust signal than dramatic claims about rapid body transformation.</p>\n\n<p>CLA may be reasonable for some healthy adults who want a non-stimulant ingredient to compare within a broader wellness plan. It is less appropriate for users who have metabolic disease, unstable blood sugar, liver concerns, or expectations that a fatty acid supplement will replace nutrition and activity habits.</p>",
+  "interesting_fact_label": "Not One Single Fat",
+  "interesting_fact": "<p>CLA is not one single molecule; it is a family of conjugated linoleic acid isomers that can vary by source and supplement formulation.</p>",
+  "how_it_works_title": "How CLA Works",
+  "how_it_works_subtitle": "CLA is studied for fatty acid metabolism and body-composition related pathways.",
+  "how_it_works_highlight_title": "Body-Composition Context",
+  "how_it_works_highlight_description": "CLA appears in weight-management formulas because of its research history around fat metabolism and lean mass support.",
+  "how_it_works_content": "<p>CLA is studied for its potential influence on lipid metabolism, energy balance, and body-composition markers. The practical effect in supplement users can vary and should not be assumed to produce dramatic weight changes.</p>\n\n<p>Different CLA isomers may have different biological effects. This makes product quality, source, and dose important when comparing supplements.</p>\n\n<p>CLA works best as a supportive ingredient within a broader nutrition and activity routine, not as a replacement for lifestyle changes or medical care.</p>",
+  "benefits_title": "Potential Benefits of CLA",
+  "benefits_subtitle": "Common wellness reasons CLA appears in body-composition formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Fatty Acid Education",
-      "description": "Fatty Acid Education helps readers evaluate CLA (Conjugated Linoleic Acid) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Weight-Management Context",
-      "description": "Weight-Management Context helps readers evaluate CLA (Conjugated Linoleic Acid) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "scale",
+      "title": "Body-Composition Support",
+      "description": "Often included in formulas designed to support weight-management routines."
     },
     {
       "icon": "activity",
-      "title": "Meal-Time Routine Fit",
-      "description": "Meal-Time Routine Fit helps readers evaluate CLA (Conjugated Linoleic Acid) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Fatty Acid Metabolism",
+      "description": "Provides conjugated fatty acids studied in metabolism-related research."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Body Composition Claim Review",
-      "description": "Body Composition Claim Review helps readers evaluate CLA (Conjugated Linoleic Acid) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "dumbbell",
+      "title": "Fitness Formula Fit",
+      "description": "Commonly appears in products aimed at active adults and training support."
     },
     {
       "icon": "search",
-      "title": "Softgel Convenience",
-      "description": "Softgel Convenience helps readers evaluate CLA (Conjugated Linoleic Acid) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Ingredient Comparison",
+      "description": "Helps users compare fat-based ingredients with stimulants and fiber formulas."
     },
     {
-      "icon": "sparkles",
-      "title": "Realistic Expectation Setting",
-      "description": "Realistic Expectation Setting helps readers evaluate CLA (Conjugated Linoleic Acid) by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "leaf",
+      "title": "Non-Stimulant Option",
+      "description": "Can fit stimulant-free body-composition products."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Expectation Awareness",
+      "description": "Encourages realistic claims and medical caution for metabolic conditions."
     }
   ],
-  "dosage_title": "Typical CLA (Conjugated Linoleic Acid) Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common supplement labels often provide 1 g to 3 g daily, usually divided with meals.",
-  "dosage": "Common supplement labels often provide 1 g to 3 g daily, usually divided with meals.",
-  "dosage_content": "<p>Common supplement labels often provide 1 g to 3 g daily, usually divided with meals. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
-  "safety_title": "CLA (Conjugated Linoleic Acid) Safety Information",
-  "safety_subtitle": "CLA may cause digestive symptoms and may not be appropriate for some metabolic or liver-health situations.",
+  "dosage_title": "CLA Dosage",
+  "dosage_subtitle": "CLA supplements are commonly used in gram-level servings.",
+  "typical_dose": "Common products provide 1-6 grams daily, often split with meals.",
+  "dosage": "Common products provide 1-6 grams daily, often split with meals.",
+  "dosage_content": "<p>CLA products commonly provide gram-level servings, often between 1 and 6 grams daily. Some users split the serving with meals to improve tolerance.</p>\n\n<p>People with diabetes, liver disease, metabolic syndrome, pregnancy, nursing, or complex medication use should speak with a healthcare professional before using CLA.</p>",
+  "safety_title": "CLA Safety Information",
+  "safety_subtitle": "CLA requires caution for metabolic, liver, and medication-related concerns.",
   "side_effects": [
-    "Digestive upset",
-    "Nausea",
-    "Changes in appetite",
-    "Metabolic caution for some users"
+    "Digestive upset, nausea, loose stools, or stomach discomfort may occur.",
+    "Fatigue or mild headache may occur in sensitive users.",
+    "Changes in blood sugar markers may be relevant for some people.",
+    "Liver or lipid marker concerns have been discussed with high or prolonged intake."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Digestive upset, nausea, loose stools, or stomach discomfort may occur."
     },
     {
-      "icon": "activity",
-      "title": "Nausea",
-      "description": "Nausea may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Fatigue or mild headache may occur in sensitive users."
     },
     {
-      "icon": "alert-circle",
-      "title": "Changes in appetite",
-      "description": "Changes in appetite may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Changes in blood sugar markers may be relevant for some people."
     },
     {
-      "icon": "shield-alert",
-      "title": "Metabolic caution for some users",
-      "description": "Metabolic caution for some users may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Liver or lipid marker concerns have been discussed with high or prolonged intake."
     }
   ],
   "drug_interactions_json": [
     {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "CLA (Conjugated Linoleic Acid) should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "text": "Use caution with diabetes medication or glucose-monitoring routines."
     },
     {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use CLA (Conjugated Linoleic Acid) as a substitute for medical care or monitoring."
+      "text": "Discuss use with a clinician if taking blood thinners or lipid-management medication."
     },
     {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "text": "Avoid stacking with multiple weight-management products without guidance."
     },
     {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining CLA (Conjugated Linoleic Acid) with formulas that target the same pathway or contain similar active compounds."
+      "text": "Use caution with liver-related conditions or medications affecting the liver."
     }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of CLA (Conjugated Linoleic Acid).",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to safflower oil or other linoleic-acid sources.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting CLA (Conjugated Linoleic Acid) to replace diagnosis, treatment, or prescribed care."
+    {
+      "text": "People with liver disease unless medically supervised."
+    },
+    {
+      "text": "People with diabetes or insulin resistance who have not discussed supplement use with a clinician."
+    },
+    {
+      "text": "Pregnant or nursing individuals unless approved by a clinician."
+    },
+    {
+      "text": "Anyone expecting CLA to replace nutrition, exercise, or medical care."
+    }
   ],
-  "food_sources_title": "CLA (Conjugated Linoleic Acid) Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Small amounts occur naturally in dairy and ruminant meats.</p>",
+  "food_sources_title": "CLA Food Sources",
+  "food_sources_subtitle": "CLA occurs naturally in select animal-derived foods.",
+  "food_sources_content": "<p>Small amounts of CLA occur in dairy foods and meat from ruminant animals such as cows, sheep, and goats. Supplement CLA is usually more concentrated than normal dietary intake.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Small amounts occur naturally in dairy and ruminant meats",
-      "description": "Small amounts occur naturally in dairy and ruminant meats may help explain the dietary or source context for CLA (Conjugated Linoleic Acid)."
+      "text": "Dairy foods"
+    },
+    {
+      "text": "Beef"
+    },
+    {
+      "text": "Lamb"
+    },
+    {
+      "text": "Goat products"
+    },
+    {
+      "text": "Butter"
+    },
+    {
+      "text": "Cheese"
     }
   ],
-  "faq_title": "CLA (Conjugated Linoleic Acid) FAQs",
-  "faq_subtitle": "Common questions about CLA (Conjugated Linoleic Acid), dosage, safety, and supplement use.",
+  "faq_title": "CLA FAQ",
+  "faq_subtitle": "Common questions about CLA, dosage, and safety.",
   "faq_json": [
     {
-      "question": "What is CLA (Conjugated Linoleic Acid)?",
-      "answer": "CLA (Conjugated Linoleic Acid) is a fatty acid supplement used in supplements for body composition and weight-management supplement education."
+      "question": "What is CLA?",
+      "answer": "CLA stands for conjugated linoleic acid, a family of fatty acid isomers related to linoleic acid."
     },
     {
-      "question": "What is CLA (Conjugated Linoleic Acid) commonly used for?",
-      "answer": "It is commonly discussed for body composition and weight-management supplement education, but its role depends on the product formula, serving size, and user context."
+      "question": "Why is CLA used in supplements?",
+      "answer": "It is commonly used in weight-management and body-composition support formulas."
     },
     {
-      "question": "How does CLA (Conjugated Linoleic Acid) work?",
-      "answer": "CLA (Conjugated Linoleic Acid) is usually evaluated through fatty acid isomers and body-composition claim education, along with dose, quality, and safety considerations."
+      "question": "Does CLA burn fat?",
+      "answer": "CLA should not be treated as a fat-loss treatment. Evidence is mixed and results vary."
     },
     {
-      "question": "What is a typical CLA (Conjugated Linoleic Acid) dose?",
-      "answer": "Common supplement labels often provide 1 g to 3 g daily, usually divided with meals."
+      "question": "How much CLA is common?",
+      "answer": "Many products provide 1-6 grams daily, often split with meals."
     },
     {
-      "question": "Is CLA (Conjugated Linoleic Acid) safe?",
-      "answer": "CLA (Conjugated Linoleic Acid) may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "Is CLA a stimulant?",
+      "answer": "No. CLA is a fatty acid ingredient and does not act like caffeine."
     },
     {
-      "question": "Can CLA (Conjugated Linoleic Acid) cause side effects?",
-      "answer": "Possible side effects include digestive upset, nausea, changes in appetite, especially when serving sizes are high or tolerance is low."
+      "question": "Can CLA affect blood sugar?",
+      "answer": "It may be relevant for some people with glucose concerns, so medical guidance is recommended."
     },
     {
-      "question": "Can CLA (Conjugated Linoleic Acid) interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting CLA (Conjugated Linoleic Acid)."
+      "question": "What foods contain CLA?",
+      "answer": "Dairy products and meat from ruminant animals contain small natural amounts."
     },
     {
-      "question": "Is CLA (Conjugated Linoleic Acid) found in foods?",
-      "answer": "Small amounts occur naturally in dairy and ruminant meats."
+      "question": "Who should avoid CLA?",
+      "answer": "People with liver disease, diabetes, pregnancy, nursing, or complex medication use should seek guidance."
     },
     {
-      "question": "What should I look for on a CLA (Conjugated Linoleic Acid) label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Can CLA replace exercise?",
+      "answer": "No. It should be viewed as supportive and cannot replace nutrition or activity."
     },
     {
-      "question": "Is CLA (Conjugated Linoleic Acid) a substitute for medical treatment?",
-      "answer": "No. CLA (Conjugated Linoleic Acid) is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What should I compare CLA with?",
+      "answer": "Compare it with L-carnitine, green tea extract, omega-3 fatty acids, and fiber ingredients."
     }
   ],
-  "sidebar_profile_title": "CLA (Conjugated Linoleic Acid) Profile Snapshot",
-  "sidebar_profile_content": "<p>CLA (Conjugated Linoleic Acid) is categorized as a fatty acid supplement and is most often reviewed for body composition and weight-management supplement education.</p>",
+  "sidebar_profile_title": "CLA (Conjugated Linoleic Acid) Profile",
+  "sidebar_profile_content": "A conjugated fatty acid ingredient used in body-composition and metabolic wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Fatty acid supplement",
-      "icon": "flask-conical"
+      "value": "Fatty acid"
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement labels often provide 1 g to 3 g daily, usually divided with meals.",
-      "icon": "clipboard-check"
+      "value": "1-6 g"
     },
     {
       "label": "Best For",
-      "value": "Body composition and weight-management supplement education",
-      "icon": "target"
+      "value": "Body composition"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
-      "icon": "shield-check"
+      "value": "Moderate"
     },
     {
       "label": "Origin",
-      "value": "Safflower oil or other linoleic-acid sources",
-      "icon": "map-pin"
+      "value": "Dairy, meat, plant oil supplements"
     },
     {
       "label": "Part Used",
-      "value": "Fatty acid isomers",
-      "icon": "leaf"
+      "value": "Fatty acid isomers"
     },
     {
       "label": "Form",
-      "value": "Softgel, capsule, oil blend",
-      "icon": "pill"
+      "value": "Softgel or capsule"
     },
     {
       "label": "Taste",
-      "value": "Neutral in softgels",
-      "icon": "sparkles"
+      "value": "Neutral to oily"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>CLA (Conjugated Linoleic Acid) is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "CLA (Conjugated Linoleic Acid) is reviewed by Suppriva as a fatty acid supplement for body composition and weight-management supplement education.",
-  "best_for": "Body composition and weight-management supplement education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Safflower oil or other linoleic-acid sources",
+  "sidebar_at_a_glance_content": "<p>CLA is a non-stimulant fatty acid ingredient used in weight-management formulas. It requires realistic expectations and caution for people with metabolic or liver-related concerns.</p>",
+  "full_description": "CLA is a group of conjugated linoleic acid isomers used in body-composition and metabolic wellness supplements.",
+  "best_for": "Body-composition support",
+  "safety_level": "Moderate",
+  "origin_country": "Dairy, meat, and plant-oil-derived supplements",
   "part_used": "Fatty acid isomers",
-  "ingredient_form": "Softgel, capsule, oil blend",
-  "taste_profile": "Neutral in softgels",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "ingredient_form": "Softgel or capsule",
+  "taste_profile": "Neutral to oily",
+  "rating": 4.3,
+  "evidence_level": "Mixed",
   "uses_title": "CLA (Conjugated Linoleic Acid) Uses",
-  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>CLA (Conjugated Linoleic Acid) may appear in formulas related to body composition and weight-management supplement education. Use should be guided by label directions and personal health context.</p>",
+  "uses_subtitle": "CLA appears in body-composition and weight-management formulas.",
+  "uses_content": "<p>CLA is used in non-stimulant weight-management products, fitness support formulas, and body-composition supplement stacks.</p>",
   "uses_json": [
     {
-      "icon": "check-circle",
-      "title": "Fatty Acid Education",
-      "description": "Fatty Acid Education is a common context for evaluating CLA (Conjugated Linoleic Acid)."
+      "text": "Body composition"
     },
     {
-      "icon": "check-circle",
-      "title": "Weight-Management Context",
-      "description": "Weight-Management Context is a common context for evaluating CLA (Conjugated Linoleic Acid)."
+      "text": "Weight-management support"
     },
     {
-      "icon": "check-circle",
-      "title": "Meal-Time Routine Fit",
-      "description": "Meal-Time Routine Fit is a common context for evaluating CLA (Conjugated Linoleic Acid)."
+      "text": "Fitness formulas"
     },
     {
-      "icon": "check-circle",
-      "title": "Body Composition Claim Review",
-      "description": "Body Composition Claim Review is a common context for evaluating CLA (Conjugated Linoleic Acid)."
+      "text": "Non-stimulant supplement stacks"
     }
   ],
   "research_title": "CLA (Conjugated Linoleic Acid) Research Notes",
-  "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around CLA (Conjugated Linoleic Acid) focuses on fatty acid isomers and body-composition claim education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_subtitle": "Research focuses on CLA isomers, lipid metabolism, and body-composition markers.",
+  "research_content": "<p>CLA research has produced mixed results, and outcomes can vary by isomer profile, dose, duration, and user health status.</p>",
   "research_json": [
     {
-      "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "text": "CLA isomer research"
     },
     {
-      "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "text": "Body-composition studies"
+    },
+    {
+      "text": "Metabolic marker research"
+    },
+    {
+      "text": "Safety and liver marker discussions"
     }
   ],
-  "references_title": "CLA (Conjugated Linoleic Acid) References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "CLA (Conjugated Linoleic Acid) Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "cla conjugated linoleic acid",
-  "seo_description": "CLA (Conjugated Linoleic Acid) guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "references_title": "CLA (Conjugated Linoleic Acid) Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "CLA supplement research"
+    },
+    {
+      "text": "Fatty acid metabolism"
+    },
+    {
+      "text": "Body-composition supplement safety"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "omega-3-fatty-acids"
+    },
+    {
+      "slug": "green-tea-extract"
+    },
+    {
+      "slug": "chromium"
+    },
+    {
+      "slug": "glucomannan"
+    }
+  ],
+  "seo_title": "CLA Benefits, Dosage, Weight Management and Safety",
+  "seo_focus_keyword": "CLA",
+  "seo_description": "Learn what CLA is, how conjugated linoleic acid is used in weight-management formulas, and what to know about dosage, benefits, safety, and interactions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/cla",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "CLA (Conjugated Linoleic Acid) Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "CLA (Conjugated Linoleic Acid) guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "CLA Benefits, Dosage, Weight Management and Safety",
+  "meta_description": "Learn what CLA is, how conjugated linoleic acid is used in weight-management formulas, and what to know about dosage, benefits, safety, and interactions."
 }

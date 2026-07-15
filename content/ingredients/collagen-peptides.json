@@ -1,289 +1,288 @@
 {
   "name": "Collagen Peptides",
   "scientific_name": "Hydrolyzed collagen peptides",
-  "hero_badge": null,
-  "short_description": "Collagen Peptides is a protein peptide ingredient used in wellness supplements for skin, joint, hair, and connective tissue nutrition education.",
-  "overview_title": "Collagen Peptides Overview",
-  "overview_subtitle": "A practical look at Collagen Peptides and how it appears in supplement formulas.",
-  "overview_content": "<p>Collagen Peptides is a protein peptide ingredient associated with skin, joint, hair, and connective tissue nutrition education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Collagen Peptides depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Collagen Peptides is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
-  "how_it_works_title": "How Collagen Peptides Works",
-  "how_it_works_subtitle": "How Collagen Peptides is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Connective Tissue Protein Support",
-  "how_it_works_highlight_description": "Collagen Peptides is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Collagen Peptides is commonly discussed through hydrolyzed collagen peptides and connective tissue support education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Collagen Peptides to a supplement routine.</p>",
-  "benefits_title": "Potential Collagen Peptides Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Collagen Peptides in supplement routines.",
+  "ingredient_category": "Amino Acids",
+  "hero_badge": "Protein Peptides",
+  "short_description": "Collagen peptides are hydrolyzed protein fragments used in skin, joint, hair, nail, and connective tissue support formulas.",
+  "overview_title": "What Are Collagen Peptides?",
+  "overview_subtitle": "Hydrolyzed collagen fragments commonly used in beauty and joint support supplements.",
+  "overview_content": "<p>Collagen peptides are short protein fragments produced by hydrolyzing collagen from animal sources such as bovine hide, fish skin, chicken cartilage, or porcine collagen. Hydrolysis breaks collagen into smaller peptides that dissolve more easily in drinks, powders, capsules, and functional foods.</p>\n\n<p>Collagen is the most abundant structural protein in the human body and is found in skin, tendons, ligaments, cartilage, bones, blood vessels, and connective tissue. Collagen peptides do not travel directly to one body part as ready-made skin or joint tissue. Instead, they provide amino acids and peptide signals that may support normal collagen turnover.</p>\n\n<p>Supplement marketing often focuses on skin elasticity, hydration, wrinkles, joint comfort, hair, nails, and healthy aging. These are wellness support areas, not disease-treatment claims. Collagen peptides should not be described as a treatment for arthritis, osteoporosis, injury, hair loss disease, or skin disorders.</p>\n\n<p>Different collagen sources may emphasize different types. Bovine collagen often provides type I and III collagen, marine collagen is commonly associated with type I, and chicken cartilage products may contain type II collagen. Hydrolyzed collagen peptides are different from undenatured type II collagen, so product type matters.</p>\n\n<p>Collagen peptides are often paired with vitamin C, hyaluronic acid, biotin, silica, MSM, zinc, copper, or antioxidants. Vitamin C is especially relevant because it supports normal collagen synthesis. A complete beauty or joint formula may combine collagen with nutrients that support connective tissue pathways.</p>\n\n<p>Safety is generally favorable for most healthy adults, but source allergies and digestive tolerance matter. Marine collagen may not suit people with fish allergy, bovine collagen may not fit certain dietary preferences, and some products may contain sweeteners or flavorings. Digestive upset, fullness, or aftertaste can occur.</p>\n\n<p>For Suppriva readers, Collagen Peptides are best evaluated by source, dose, protein amount, added nutrients, flavoring, testing, and realistic claims. They can support a wellness routine, but they should complement adequate protein intake, sleep, hydration, sun protection, resistance training, and medical care when needed.</p>\n\n<p>The category is also useful for comparing beauty supplements. Some products include only collagen, while others add vitamin C, biotin, hyaluronic acid, zinc, copper, or antioxidants. Added nutrients can be useful, but they also make it important to check total intake from multivitamins and other supplements.</p>\n\n<p>Timing is usually flexible. Many users mix collagen into coffee, smoothies, oatmeal, or water because hydrolyzed peptides dissolve easily. What matters more is consistency, adequate total protein, and choosing a product that fits dietary preferences and allergen needs.</p>\n\n<p>Collagen peptides should be discussed honestly: they are not vegan, they are not complete protein replacements in the same way as whey or soy, and they do not guarantee visible changes for every user. Their best role is targeted connective tissue nutrition within a complete wellness routine.</p>\n\n<p>Product quality is another important consideration. Collagen may come from marine, bovine, porcine, or chicken sources, and users may care about allergens, sustainability, religious dietary preferences, or third-party testing. Clear sourcing helps people choose a product that matches their needs.</p>\n\n<p>Because collagen is often marketed visually, users should be cautious with before-and-after promises. Skin, joint, hair, and nail changes are influenced by age, genetics, sun exposure, training load, protein intake, hormones, and medical conditions. Collagen can support nutrition, but it cannot control all of those factors.</p>",
+  "interesting_fact_label": "Hydrolyzed for Mixing",
+  "interesting_fact": "<p>Collagen peptides are hydrolyzed, which helps them dissolve more easily in coffee, smoothies, water, and functional nutrition products.</p>",
+  "how_it_works_title": "How Collagen Peptides Work",
+  "how_it_works_subtitle": "Collagen peptides provide amino acids and small peptides relevant to connective tissue support.",
+  "how_it_works_highlight_title": "Connective Tissue Nutrition",
+  "how_it_works_highlight_description": "Collagen peptides supply glycine, proline, hydroxyproline, and peptide fragments used in skin and joint wellness formulas.",
+  "how_it_works_content": "<p>Collagen peptides provide amino acids such as glycine, proline, and hydroxyproline. These amino acids are important components of collagen-rich tissues.</p>\n\n<p>Some collagen peptides may also act as signaling fragments in research contexts. The body still determines how amino acids and peptides are used based on overall nutrition and health status.</p>\n\n<p>Collagen works best when paired with adequate dietary protein and supporting nutrients such as vitamin C, zinc, and copper.</p>",
+  "benefits_title": "Potential Benefits of Collagen Peptides",
+  "benefits_subtitle": "Common wellness reasons collagen peptides appear in beauty and joint formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Skin Elasticity Context",
-      "description": "Skin Elasticity Context helps readers evaluate Collagen Peptides by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "sparkles",
+      "title": "Skin Wellness",
+      "description": "Often used to support skin hydration, elasticity, and healthy aging routines."
+    },
+    {
+      "icon": "bone",
+      "title": "Joint Comfort Support",
+      "description": "Appears in formulas for cartilage and connective tissue wellness."
+    },
+    {
+      "icon": "scissors",
+      "title": "Hair and Nail Formula Fit",
+      "description": "Common in beauty supplements focused on structural protein support."
+    },
+    {
+      "icon": "dumbbell",
+      "title": "Active Lifestyle Support",
+      "description": "May complement protein intake for connective tissue support in active adults."
+    },
+    {
+      "icon": "droplets",
+      "title": "Easy Powder Format",
+      "description": "Hydrolyzed peptides mix well into drinks and daily routines."
     },
     {
       "icon": "shield-check",
-      "title": "Joint Comfort Education",
-      "description": "Joint Comfort Education helps readers evaluate Collagen Peptides by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "activity",
-      "title": "Protein Peptide Intake",
-      "description": "Protein Peptide Intake helps readers evaluate Collagen Peptides by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Hair and Nail Support Claims",
-      "description": "Hair and Nail Support Claims helps readers evaluate Collagen Peptides by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Source Transparency",
-      "description": "Source Transparency helps readers evaluate Collagen Peptides by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Daily Powder Routine",
-      "description": "Daily Powder Routine helps readers evaluate Collagen Peptides by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Source Awareness",
+      "description": "Requires review for fish, bovine, porcine, or chicken source preferences and allergies."
     }
   ],
-  "dosage_title": "Typical Collagen Peptides Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Common powder servings often range from 2.5 g to 15 g daily, depending on product and goal.",
-  "dosage": "Common powder servings often range from 2.5 g to 15 g daily, depending on product and goal.",
-  "dosage_content": "<p>Common powder servings often range from 2.5 g to 15 g daily, depending on product and goal. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_title": "Collagen Peptides Dosage",
+  "dosage_subtitle": "Collagen peptides are usually used in gram-level servings.",
+  "typical_dose": "Common products provide 2.5-15 grams daily depending on formula and goal.",
+  "dosage": "Common products provide 2.5-15 grams daily depending on formula and goal.",
+  "dosage_content": "<p>Collagen peptide products commonly provide 2.5 to 15 grams per day. Beauty products may use lower doses, while joint or protein-focused products may use larger servings.</p>\n\n<p>Users should check the collagen source, serving size, protein amount, added nutrients, sweeteners, and allergen information. Collagen should complement total protein intake rather than replace balanced nutrition.</p>",
   "safety_title": "Collagen Peptides Safety Information",
-  "safety_subtitle": "Source allergies, dietary restrictions, and protein intake goals should be considered when choosing collagen.",
+  "safety_subtitle": "Collagen is generally well tolerated, but source, allergies, and product quality matter.",
   "side_effects": [
-    "Digestive fullness",
-    "Unpleasant aftertaste",
-    "Source allergy concern",
-    "Dietary restriction mismatch"
+    "Digestive fullness, bloating, or stomach discomfort may occur.",
+    "Aftertaste or nausea may occur with some powders.",
+    "Allergic reactions are possible depending on fish, bovine, chicken, or porcine source.",
+    "Some flavored products may contain sweeteners or additives that affect tolerance."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive fullness",
-      "description": "Digestive fullness may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Digestive fullness, bloating, or stomach discomfort may occur."
     },
     {
-      "icon": "activity",
-      "title": "Unpleasant aftertaste",
-      "description": "Unpleasant aftertaste may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Aftertaste or nausea may occur with some powders."
     },
     {
-      "icon": "alert-circle",
-      "title": "Source allergy concern",
-      "description": "Source allergy concern may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Allergic reactions are possible depending on fish, bovine, chicken, or porcine source."
     },
     {
-      "icon": "shield-alert",
-      "title": "Dietary restriction mismatch",
-      "description": "Dietary restriction mismatch may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Some flavored products may contain sweeteners or additives that affect tolerance."
     }
   ],
   "drug_interactions_json": [
     {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Collagen Peptides should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "text": "No major medication interactions are typical, but product additives should be reviewed."
     },
     {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Collagen Peptides as a substitute for medical care or monitoring."
+      "text": "People with protein-restricted diets should discuss use with a clinician."
     },
     {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "text": "Use caution with allergy-sensitive users depending on collagen source."
     },
     {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Collagen Peptides with formulas that target the same pathway or contain similar active compounds."
+      "text": "Separate from medical treatment plans for joint, bone, or skin disease unless supervised."
     }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Collagen Peptides.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to bovine, marine, porcine, or poultry collagen sources.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Collagen Peptides to replace diagnosis, treatment, or prescribed care."
+    {
+      "text": "People with allergies to the collagen source."
+    },
+    {
+      "text": "People following strict vegetarian or vegan diets."
+    },
+    {
+      "text": "People with kidney disease or protein restrictions unless medically supervised."
+    },
+    {
+      "text": "Anyone expecting collagen to treat arthritis, injury, osteoporosis, or skin disease."
+    }
   ],
-  "food_sources_title": "Collagen Peptides Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Bone broth, gelatin, connective tissue-rich foods, and collagen supplements provide collagen-derived amino acids.</p>",
+  "food_sources_title": "Collagen Peptide Food Sources",
+  "food_sources_subtitle": "Collagen comes from animal connective tissues and hydrolyzed supplement sources.",
+  "food_sources_content": "<p>Food sources related to collagen include bone broth, skin-on poultry, connective tissue cuts, fish skin, and gelatin-containing foods. Collagen peptides are a processed supplement form designed for easier mixing.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Bone broth",
-      "description": "Bone broth may help explain the dietary or source context for Collagen Peptides."
+      "text": "Bone broth"
     },
     {
-      "icon": "leaf",
-      "title": "gelatin",
-      "description": "gelatin may help explain the dietary or source context for Collagen Peptides."
+      "text": "Gelatin"
     },
     {
-      "icon": "leaf",
-      "title": "connective tissue-rich foods",
-      "description": "connective tissue-rich foods may help explain the dietary or source context for Collagen Peptides."
+      "text": "Fish skin"
     },
     {
-      "icon": "leaf",
-      "title": "and collagen supplements provide collagen-derived amino acids",
-      "description": "and collagen supplements provide collagen-derived amino acids may help explain the dietary or source context for Collagen Peptides."
+      "text": "Chicken cartilage"
+    },
+    {
+      "text": "Bovine collagen"
+    },
+    {
+      "text": "Marine collagen"
     }
   ],
-  "faq_title": "Collagen Peptides FAQs",
-  "faq_subtitle": "Common questions about Collagen Peptides, dosage, safety, and supplement use.",
+  "faq_title": "Collagen Peptides FAQ",
+  "faq_subtitle": "Common questions about Collagen Peptides, sources, and safety.",
   "faq_json": [
     {
-      "question": "What is Collagen Peptides?",
-      "answer": "Collagen Peptides is a protein peptide ingredient used in supplements for skin, joint, hair, and connective tissue nutrition education."
+      "question": "What are collagen peptides?",
+      "answer": "They are hydrolyzed collagen fragments used in powders, capsules, and beauty or joint support formulas."
     },
     {
-      "question": "What is Collagen Peptides commonly used for?",
-      "answer": "It is commonly discussed for skin, joint, hair, and connective tissue nutrition education, but its role depends on the product formula, serving size, and user context."
+      "question": "Are collagen peptides the same as gelatin?",
+      "answer": "They are related, but collagen peptides are hydrolyzed to dissolve more easily and usually do not gel like gelatin."
     },
     {
-      "question": "How does Collagen Peptides work?",
-      "answer": "Collagen Peptides is usually evaluated through hydrolyzed collagen peptides and connective tissue support education, along with dose, quality, and safety considerations."
+      "question": "Do collagen peptides rebuild skin directly?",
+      "answer": "No. They provide amino acids and peptides that may support normal collagen turnover."
     },
     {
-      "question": "What is a typical Collagen Peptides dose?",
-      "answer": "Common powder servings often range from 2.5 g to 15 g daily, depending on product and goal."
+      "question": "How much collagen is common?",
+      "answer": "Many products provide 2.5-15 grams daily depending on the goal and format."
     },
     {
-      "question": "Is Collagen Peptides safe?",
-      "answer": "Collagen Peptides may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "What is marine collagen?",
+      "answer": "Marine collagen is typically sourced from fish and is often associated with type I collagen."
     },
     {
-      "question": "Can Collagen Peptides cause side effects?",
-      "answer": "Possible side effects include digestive fullness, unpleasant aftertaste, source allergy concern, especially when serving sizes are high or tolerance is low."
+      "question": "Can collagen help joints?",
+      "answer": "Collagen peptides appear in joint wellness formulas, but they are not a treatment for arthritis or injury."
     },
     {
-      "question": "Can Collagen Peptides interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Collagen Peptides."
+      "question": "Should collagen be taken with vitamin C?",
+      "answer": "Vitamin C supports normal collagen synthesis, so many formulas include it or pair well with vitamin C intake."
     },
     {
-      "question": "Is Collagen Peptides found in foods?",
-      "answer": "Bone broth, gelatin, connective tissue-rich foods, and collagen supplements provide collagen-derived amino acids."
+      "question": "Is collagen vegan?",
+      "answer": "No. Collagen is animal-derived."
     },
     {
-      "question": "What should I look for on a Collagen Peptides label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "Who should avoid collagen peptides?",
+      "answer": "People with source allergies, strict vegan diets, kidney disease, or protein restrictions should be cautious."
     },
     {
-      "question": "Is Collagen Peptides a substitute for medical treatment?",
-      "answer": "No. Collagen Peptides is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What should I compare collagen with?",
+      "answer": "Compare it with hyaluronic acid, vitamin C, biotin, MSM, silica, and undenatured type II collagen."
     }
   ],
-  "sidebar_profile_title": "Collagen Peptides Profile Snapshot",
-  "sidebar_profile_content": "<p>Collagen Peptides is categorized as a protein peptide ingredient and is most often reviewed for skin, joint, hair, and connective tissue nutrition education.</p>",
+  "sidebar_profile_title": "Collagen Peptides Profile",
+  "sidebar_profile_content": "Hydrolyzed collagen protein fragments used in skin, joint, beauty, and connective tissue support formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Protein peptide ingredient",
-      "icon": "flask-conical"
+      "value": "Protein peptides"
     },
     {
       "label": "Typical Dose",
-      "value": "Common powder servings often range from 2.5 g to 15 g daily, depending on product and goal.",
-      "icon": "clipboard-check"
+      "value": "2.5-15 g"
     },
     {
       "label": "Best For",
-      "value": "Skin, joint, hair, and connective tissue nutrition education",
-      "icon": "target"
+      "value": "Skin and joints"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
-      "icon": "shield-check"
+      "value": "Generally well tolerated"
     },
     {
       "label": "Origin",
-      "value": "Bovine, marine, porcine, or poultry collagen sources",
-      "icon": "map-pin"
+      "value": "Animal collagen"
     },
     {
       "label": "Part Used",
-      "value": "Hydrolyzed collagen protein",
-      "icon": "leaf"
+      "value": "Hydrolyzed protein"
     },
     {
       "label": "Form",
-      "value": "Powder, capsule, liquid, bar",
-      "icon": "pill"
+      "value": "Powder or capsule"
     },
     {
       "label": "Taste",
-      "value": "Neutral to mildly savory",
-      "icon": "sparkles"
+      "value": "Neutral to mild"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Collagen Peptides is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Collagen Peptides is reviewed by Suppriva as a protein peptide ingredient for skin, joint, hair, and connective tissue nutrition education.",
-  "best_for": "Skin, joint, hair, and connective tissue nutrition education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "Bovine, marine, porcine, or poultry collagen sources",
+  "sidebar_at_a_glance_content": "<p>Collagen peptides are widely used for beauty and joint wellness. Source, dose, added nutrients, and allergy context are the key comparison points.</p>",
+  "full_description": "Collagen peptides are hydrolyzed collagen fragments used in skin, joint, hair, nail, and connective tissue support supplements.",
+  "best_for": "Skin and joint support",
+  "safety_level": "Generally well tolerated",
+  "origin_country": "Bovine, marine, chicken, or porcine collagen",
   "part_used": "Hydrolyzed collagen protein",
-  "ingredient_form": "Powder, capsule, liquid, bar",
-  "taste_profile": "Neutral to mildly savory",
-  "rating": 4.6,
+  "ingredient_form": "Powder, capsule, or functional food",
+  "taste_profile": "Neutral to mild",
+  "rating": 4.8,
   "evidence_level": "Moderate",
   "uses_title": "Collagen Peptides Uses",
-  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Collagen Peptides may appear in formulas related to skin, joint, hair, and connective tissue nutrition education. Use should be guided by label directions and personal health context.</p>",
+  "uses_subtitle": "Collagen peptides appear in beauty, joint, and healthy aging formulas.",
+  "uses_content": "<p>Collagen peptides are used in skin hydration products, joint support formulas, hair and nail blends, protein powders, and healthy aging supplements.</p>",
   "uses_json": [
     {
-      "icon": "check-circle",
-      "title": "Skin Elasticity Context",
-      "description": "Skin Elasticity Context is a common context for evaluating Collagen Peptides."
+      "text": "Skin wellness"
     },
     {
-      "icon": "check-circle",
-      "title": "Joint Comfort Education",
-      "description": "Joint Comfort Education is a common context for evaluating Collagen Peptides."
+      "text": "Joint support"
     },
     {
-      "icon": "check-circle",
-      "title": "Protein Peptide Intake",
-      "description": "Protein Peptide Intake is a common context for evaluating Collagen Peptides."
+      "text": "Hair and nail formulas"
     },
     {
-      "icon": "check-circle",
-      "title": "Hair and Nail Support Claims",
-      "description": "Hair and Nail Support Claims is a common context for evaluating Collagen Peptides."
+      "text": "Connective tissue nutrition"
     }
   ],
   "research_title": "Collagen Peptides Research Notes",
-  "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Collagen Peptides focuses on hydrolyzed collagen peptides and connective tissue support education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_subtitle": "Research focuses on skin hydration, elasticity, joint comfort, and peptide absorption.",
+  "research_content": "<p>Collagen peptide research varies by source, dose, and peptide preparation. Results should be interpreted as wellness support rather than disease treatment.</p>",
   "research_json": [
     {
-      "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "text": "Hydrolyzed collagen studies"
     },
     {
-      "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "text": "Skin elasticity research"
+    },
+    {
+      "text": "Joint comfort research"
+    },
+    {
+      "text": "Collagen source comparisons"
     }
   ],
-  "references_title": "Collagen Peptides References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Collagen Peptides Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "collagen peptides",
-  "seo_description": "Collagen Peptides guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "references_title": "Collagen Peptides Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Collagen peptide clinical research"
+    },
+    {
+      "text": "Protein and connective tissue nutrition"
+    },
+    {
+      "text": "Vitamin C and collagen synthesis"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "vitamin-c"
+    },
+    {
+      "slug": "biotin-vitamin-b7"
+    },
+    {
+      "slug": "hyaluronic-acid"
+    },
+    {
+      "slug": "msm"
+    }
+  ],
+  "seo_title": "Collagen Peptides Benefits, Dosage and Safety",
+  "seo_focus_keyword": "Collagen Peptides",
+  "seo_description": "Learn how Collagen Peptides support skin, joint, hair, nail, and connective tissue wellness, including dosage, sources, benefits, and safety.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/collagen-peptides",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Collagen Peptides Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Collagen Peptides guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Collagen Peptides Benefits, Dosage and Safety",
+  "meta_description": "Learn how Collagen Peptides support skin, joint, hair, nail, and connective tissue wellness, including dosage, sources, benefits, and safety."
 }

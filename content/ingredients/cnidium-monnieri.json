@@ -1,274 +1,279 @@
 {
   "name": "Cnidium Monnieri",
   "scientific_name": "Cnidium monnieri",
-  "hero_badge": null,
-  "short_description": "Cnidium Monnieri is a botanical seed extract used in wellness supplements for men's wellness, circulation, and traditional botanical education.",
-  "overview_title": "Cnidium Monnieri Overview",
-  "overview_subtitle": "A practical look at Cnidium Monnieri and how it appears in supplement formulas.",
-  "overview_content": "<p>Cnidium Monnieri is a botanical seed extract associated with men's wellness, circulation, and traditional botanical education. On Suppriva, it is reviewed as an educational ingredient profile so readers can understand what it is, why it appears on supplement labels, and what safety questions to consider before use.</p><p>The usefulness of Cnidium Monnieri depends on the formula, serving size, ingredient form, quality controls, and whether it fits the user's broader health context. Supplements should support informed wellness decisions, not replace professional medical care.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Cnidium Monnieri is often recognized by supplement shoppers because it connects traditional use, modern formulation, and label-specific quality details in one ingredient.</p>",
+  "ingredient_category": "Herbal Extracts",
+  "hero_badge": "Traditional Botanical",
+  "short_description": "Cnidium monnieri is a traditional botanical seed extract often discussed in sexual wellness and circulation-support supplement formulas.",
+  "overview_title": "What Is Cnidium Monnieri?",
+  "overview_subtitle": "A traditional botanical used in specialty wellness formulas, often standardized for osthole.",
+  "overview_content": "<p>Cnidium monnieri is a botanical used in traditional wellness systems, especially the dried seed of the plant. In supplements, it is often discussed in relation to sexual wellness, circulation support, skin comfort, and vitality formulas. The compound most commonly associated with cnidium is osthole, a natural coumarin-like constituent found in the seed.</p>\n\n<p>Modern supplement use should be interpreted carefully. While cnidium has a long history of traditional use and laboratory research interest, human supplement evidence is limited. It should not be described as a treatment for erectile dysfunction, infertility, hormone disorders, skin disease, or cardiovascular conditions.</p>\n\n<p>Cnidium monnieri often appears in men's wellness formulas alongside horny goat weed, maca, tribulus, ginseng, tongkat ali, L-arginine, or yohimbe-like ingredients. These combinations can make a product more stimulating or interaction-prone, so users should read the full label rather than focusing only on cnidium.</p>\n\n<p>Some products standardize cnidium extract for osthole content. Standardization can improve label clarity, but it does not guarantee safety or effectiveness. The dose, extract ratio, other ingredients, and user health status all matter. A traditional herb in concentrated capsule form may carry different considerations than historical use.</p>\n\n<p>Safety information for cnidium supplements is not as robust as for common nutrients. Possible concerns include digestive upset, dizziness, headache, allergy, photosensitivity-like reactions, and medication interactions. Because osthole and related compounds may influence pathways connected to circulation and enzymes, caution is appropriate.</p>\n\n<p>People taking blood pressure medication, blood thinners, nitrates, erectile dysfunction medication, sedatives, hormone therapies, or complex prescription regimens should seek professional guidance before use. Pregnant or nursing individuals should avoid cnidium unless a qualified clinician specifically recommends it.</p>\n\n<p>For Suppriva readers, Cnidium Monnieri is best treated as a specialty botanical. It can be useful for comparing sexual wellness and vitality products, but responsible education should emphasize limited human evidence, careful label review, and medical caution for cardiovascular or medication-related concerns.</p>\n\n<p>This herb also illustrates why traditional-use ingredients need modern safety review. A plant may have a long history of use, but concentrated extracts, standardized compounds, and combination formulas can change exposure. A capsule with cnidium, ginseng, yohimbe-like stimulants, and nitric-oxide ingredients is a different context than traditional botanical use.</p>\n\n<p>Users should be especially careful if a product makes aggressive claims about sexual performance, circulation, or hormone changes. These symptoms can be related to cardiovascular health, endocrine status, stress, medication effects, or other medical issues that deserve proper evaluation rather than self-treatment.</p>\n\n<p>A responsible cnidium product should clearly list extract strength, serving size, other active ingredients, and safety warnings. For comparison, users can look at whether a formula relies mainly on traditional herbs, amino acids such as L-arginine, adaptogens like ginseng, or stimulant-like ingredients that may increase risk.</p>\n\n<p>For content and product research, cnidium should be presented with careful language. It may belong in a sexual wellness or men's vitality ingredient library, but it should never be positioned as a guaranteed solution for performance concerns. Any persistent or sudden change in sexual function deserves medical attention because it can be an early sign of broader health issues.</p>\n\n<p>Cnidium also requires extra caution because many shoppers encounter it inside products that combine several bold ingredients. A transparent formula should explain the purpose of each ingredient, avoid hidden blends, and provide enough detail for users to discuss the product with a healthcare professional.</p>",
+  "interesting_fact_label": "Osthole Association",
+  "interesting_fact": "<p>Cnidium monnieri supplements are often standardized for osthole, a botanical constituent frequently discussed in research and traditional-use contexts.</p>",
   "how_it_works_title": "How Cnidium Monnieri Works",
-  "how_it_works_subtitle": "How Cnidium Monnieri is commonly discussed in wellness supplement education.",
-  "how_it_works_highlight_title": "Traditional Men's Wellness Botanical",
-  "how_it_works_highlight_description": "Cnidium Monnieri is best evaluated by ingredient form, serving size, product quality, safety cautions, and whether the formula makes realistic claims.",
-  "how_it_works_content": "<p>Cnidium Monnieri is commonly discussed through traditional botanical use and circulation-support claim education. The practical interpretation depends on whether the product uses a standardized extract, whole-food ingredient, isolated nutrient, or blended formula.</p><p>Readers should compare labels carefully, review dosage directions, and consider health status or medication use before adding Cnidium Monnieri to a supplement routine.</p>",
-  "benefits_title": "Potential Cnidium Monnieri Benefits",
-  "benefits_subtitle": "Educational benefits commonly associated with Cnidium Monnieri in supplement routines.",
+  "how_it_works_subtitle": "Cnidium is studied for botanical compounds connected to circulation and cell-signaling pathways.",
+  "how_it_works_highlight_title": "Specialty Vitality Herb",
+  "how_it_works_highlight_description": "Cnidium appears in sexual wellness formulas because of traditional use and research interest in osthole.",
+  "how_it_works_content": "<p>Cnidium monnieri contains osthole and other compounds studied in laboratory and traditional-use contexts. These compounds are discussed in relation to circulation, smooth muscle, skin, and vitality pathways.</p>\n\n<p>Human supplement evidence is limited, so claims should stay conservative. Cnidium should not be used as a substitute for medical evaluation of sexual health, cardiovascular symptoms, or hormone concerns.</p>\n\n<p>Because cnidium often appears in multi-ingredient formulas, the full product should be evaluated for stimulants, blood pressure effects, and medication interactions.</p>",
+  "benefits_title": "Potential Benefits of Cnidium Monnieri",
+  "benefits_subtitle": "Common wellness reasons cnidium appears in specialty formulas.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Men's Wellness Context",
-      "description": "Men's Wellness Context helps readers evaluate Cnidium Monnieri by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Circulation Claim Review",
-      "description": "Circulation Claim Review helps readers evaluate Cnidium Monnieri by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "heart",
+      "title": "Circulation Formula Fit",
+      "description": "Often included in vitality products that discuss healthy blood flow support."
     },
     {
       "icon": "activity",
-      "title": "Traditional Use Education",
-      "description": "Traditional Use Education helps readers evaluate Cnidium Monnieri by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Sexual Wellness Context",
+      "description": "Appears in men's wellness and libido-focused supplement blends."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Formula Pairing Awareness",
-      "description": "Formula Pairing Awareness helps readers evaluate Cnidium Monnieri by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
-    },
-    {
-      "icon": "search",
-      "title": "Dose Transparency",
-      "description": "Dose Transparency helps readers evaluate Cnidium Monnieri by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "icon": "leaf",
+      "title": "Traditional Botanical",
+      "description": "Has a history of use in traditional wellness systems."
     },
     {
       "icon": "sparkles",
-      "title": "Safety Caution Review",
-      "description": "Safety Caution Review helps readers evaluate Cnidium Monnieri by looking at intended use, ingredient quality, dose, safety cautions, and realistic wellness expectations."
+      "title": "Osthole Research Interest",
+      "description": "Frequently discussed because of its naturally occurring osthole content."
+    },
+    {
+      "icon": "search",
+      "title": "Formula Comparison",
+      "description": "Helps users compare specialty herbs with amino acids and adaptogens."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Medication Awareness",
+      "description": "Requires caution with cardiovascular, blood pressure, or sexual health medications."
     }
   ],
-  "dosage_title": "Typical Cnidium Monnieri Dosage",
-  "dosage_subtitle": "Serving size depends on form, concentration, and label directions.",
-  "typical_dose": "Serving sizes vary widely by extract concentration and formula design.",
-  "dosage": "Serving sizes vary widely by extract concentration and formula design.",
-  "dosage_content": "<p>Serving sizes vary widely by extract concentration and formula design. Different formulas may use different strengths, extracts, or delivery formats, so the product label should always be the starting point.</p><p>People with medical conditions, medication use, pregnancy, or nursing should ask a qualified healthcare professional before using supplements.</p>",
+  "dosage_title": "Cnidium Monnieri Dosage",
+  "dosage_subtitle": "No universal standard dose exists for cnidium supplements.",
+  "typical_dose": "Products commonly vary from 250-1,000 mg daily or use standardized extract amounts.",
+  "dosage": "Products commonly vary from 250-1,000 mg daily or use standardized extract amounts.",
+  "dosage_content": "<p>Cnidium dosage depends on extract strength, osthole standardization, and the full formula. Products may use whole seed powder or concentrated extract, so milligram amounts are not always comparable.</p>\n\n<p>People using cardiovascular medication, blood pressure medication, sexual health medication, sedatives, or hormone therapies should speak with a clinician before use.</p>",
   "safety_title": "Cnidium Monnieri Safety Information",
-  "safety_subtitle": "People with blood pressure concerns, medication use, or hormone-sensitive conditions should seek professional advice.",
+  "safety_subtitle": "Cnidium requires caution because human safety data and interaction information are limited.",
   "side_effects": [
-    "Digestive upset",
-    "Headache",
-    "Blood pressure caution",
-    "Medication interaction uncertainty"
+    "Digestive upset, nausea, or stomach discomfort may occur.",
+    "Headache, dizziness, or flushing may occur in sensitive users.",
+    "Allergic or skin reactions are possible.",
+    "Effects may be stronger in multi-ingredient sexual wellness formulas."
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive upset",
-      "description": "Digestive upset may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Digestive upset, nausea, or stomach discomfort may occur."
     },
     {
-      "icon": "activity",
-      "title": "Headache",
-      "description": "Headache may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Headache, dizziness, or flushing may occur in sensitive users."
     },
     {
-      "icon": "alert-circle",
-      "title": "Blood pressure caution",
-      "description": "Blood pressure caution may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Allergic or skin reactions are possible."
     },
     {
-      "icon": "shield-alert",
-      "title": "Medication interaction uncertainty",
-      "description": "Medication interaction uncertainty may occur in some users depending on serving size, product format, health status, and personal tolerance."
+      "text": "Effects may be stronger in multi-ingredient sexual wellness formulas."
     }
   ],
   "drug_interactions_json": [
     {
-      "icon": "pill",
-      "title": "Medication Review",
-      "description": "Cnidium Monnieri should be reviewed with a qualified professional when prescription or over-the-counter medications are used."
+      "text": "Use caution with blood pressure medication or nitrates."
     },
     {
-      "icon": "activity",
-      "title": "Condition-Specific Caution",
-      "description": "People managing diagnosed health conditions should not use Cnidium Monnieri as a substitute for medical care or monitoring."
+      "text": "Avoid combining with erectile dysfunction medication unless supervised."
     },
     {
-      "icon": "calendar",
-      "title": "Surgery Planning",
-      "description": "Stop or start decisions around surgery should be guided by a clinician because some supplements can affect bleeding, sedation, or recovery considerations."
+      "text": "Discuss use with a clinician if taking blood thinners or sedatives."
     },
     {
-      "icon": "shield-alert",
-      "title": "Stacking Awareness",
-      "description": "Use caution when combining Cnidium Monnieri with formulas that target the same pathway or contain similar active compounds."
+      "text": "Avoid stacking with stimulant-heavy or yohimbe-like formulas without guidance."
     }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless a qualified clinician approves use of Cnidium Monnieri.",
-    "Children, unless a pediatric healthcare professional specifically recommends the ingredient.",
-    "Anyone with a known allergy or sensitivity to east asian botanical traditions.",
-    "People using medications or managing medical conditions without professional guidance.",
-    "Anyone expecting Cnidium Monnieri to replace diagnosis, treatment, or prescribed care."
+    {
+      "text": "Pregnant or nursing individuals."
+    },
+    {
+      "text": "People with heart disease, uncontrolled blood pressure, or unexplained sexual health symptoms."
+    },
+    {
+      "text": "People using nitrates, blood pressure medication, or erectile dysfunction medication without clinician guidance."
+    },
+    {
+      "text": "Anyone expecting cnidium to replace medical evaluation."
+    }
   ],
   "food_sources_title": "Cnidium Monnieri Food Sources",
-  "food_sources_subtitle": "Food-source context helps readers understand whether the ingredient is dietary, supplemental, or both.",
-  "food_sources_content": "<p>Cnidium is used as a supplement or traditional botanical ingredient rather than a common food.</p>",
+  "food_sources_subtitle": "Cnidium is used as a botanical seed ingredient, not a common food.",
+  "food_sources_content": "<p>Cnidium monnieri is not typically consumed as a regular food. Supplement products usually use dried seed powder or standardized seed extract.</p>",
   "food_sources_json": [
     {
-      "icon": "leaf",
-      "title": "Cnidium is used as a supplement or traditional botanical ingredient rather than a common food",
-      "description": "Cnidium is used as a supplement or traditional botanical ingredient rather than a common food may help explain the dietary or source context for Cnidium Monnieri."
+      "text": "Cnidium seed"
+    },
+    {
+      "text": "Seed extract"
+    },
+    {
+      "text": "Standardized osthole extract"
     }
   ],
-  "faq_title": "Cnidium Monnieri FAQs",
-  "faq_subtitle": "Common questions about Cnidium Monnieri, dosage, safety, and supplement use.",
+  "faq_title": "Cnidium Monnieri FAQ",
+  "faq_subtitle": "Common questions about Cnidium Monnieri, osthole, and safety.",
   "faq_json": [
     {
-      "question": "What is Cnidium Monnieri?",
-      "answer": "Cnidium Monnieri is a botanical seed extract used in supplements for men's wellness, circulation, and traditional botanical education."
+      "question": "What is Cnidium monnieri?",
+      "answer": "Cnidium monnieri is a botanical seed used in traditional wellness systems and specialty supplements."
     },
     {
-      "question": "What is Cnidium Monnieri commonly used for?",
-      "answer": "It is commonly discussed for men's wellness, circulation, and traditional botanical education, but its role depends on the product formula, serving size, and user context."
+      "question": "What is osthole?",
+      "answer": "Osthole is a natural compound found in cnidium that is often discussed in research and supplement standardization."
     },
     {
-      "question": "How does Cnidium Monnieri work?",
-      "answer": "Cnidium Monnieri is usually evaluated through traditional botanical use and circulation-support claim education, along with dose, quality, and safety considerations."
+      "question": "Why is cnidium used in men's wellness products?",
+      "answer": "It appears in vitality and sexual wellness formulas because of traditional use and circulation-related research interest."
     },
     {
-      "question": "What is a typical Cnidium Monnieri dose?",
-      "answer": "Serving sizes vary widely by extract concentration and formula design."
+      "question": "Can cnidium treat erectile dysfunction?",
+      "answer": "No. It should not replace medical evaluation or prescribed treatment for sexual health concerns."
     },
     {
-      "question": "Is Cnidium Monnieri safe?",
-      "answer": "Cnidium Monnieri may be appropriate for some adults, but safety depends on health status, medications, allergies, dose, and product quality."
+      "question": "How much cnidium is common?",
+      "answer": "Products vary widely, often using 250-1,000 mg or standardized extract amounts."
     },
     {
-      "question": "Can Cnidium Monnieri cause side effects?",
-      "answer": "Possible side effects include digestive upset, headache, blood pressure caution, especially when serving sizes are high or tolerance is low."
+      "question": "Can cnidium interact with medication?",
+      "answer": "Yes. Caution is important with blood pressure medication, nitrates, blood thinners, and sexual health medications."
     },
     {
-      "question": "Can Cnidium Monnieri interact with medications?",
-      "answer": "Yes, interactions are possible for some users. Anyone using medication should ask a qualified healthcare professional before starting Cnidium Monnieri."
+      "question": "Is cnidium safe for women?",
+      "answer": "Safety data are limited. Pregnant or nursing individuals should avoid it unless medically supervised."
     },
     {
-      "question": "Is Cnidium Monnieri found in foods?",
-      "answer": "Cnidium is used as a supplement or traditional botanical ingredient rather than a common food."
+      "question": "Can cnidium be combined with ginseng?",
+      "answer": "It may appear in formulas with ginseng, but combination products require careful medication and stimulant review."
     },
     {
-      "question": "What should I look for on a Cnidium Monnieri label?",
-      "answer": "Look for the ingredient form, serving size, standardization details where relevant, allergen information, third-party quality cues, and clear usage directions."
+      "question": "What side effects are possible?",
+      "answer": "Digestive upset, headache, dizziness, flushing, or allergic reactions may occur."
     },
     {
-      "question": "Is Cnidium Monnieri a substitute for medical treatment?",
-      "answer": "No. Cnidium Monnieri is educationally reviewed as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What should I compare cnidium with?",
+      "answer": "Compare it with maca, Panax ginseng, L-arginine, horny goat weed, and tribulus-style formulas."
     }
   ],
-  "sidebar_profile_title": "Cnidium Monnieri Profile Snapshot",
-  "sidebar_profile_content": "<p>Cnidium Monnieri is categorized as a botanical seed extract and is most often reviewed for men's wellness, circulation, and traditional botanical education.</p>",
+  "sidebar_profile_title": "Cnidium Monnieri Profile",
+  "sidebar_profile_content": "A traditional seed extract used in specialty vitality and sexual wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Botanical seed extract",
-      "icon": "flask-conical"
+      "value": "Botanical extract"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary widely by extract concentration and formula design.",
-      "icon": "clipboard-check"
+      "value": "250-1,000 mg"
     },
     {
       "label": "Best For",
-      "value": "Men's wellness, circulation, and traditional botanical education",
-      "icon": "target"
+      "value": "Vitality formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Review cautions before use",
-      "icon": "shield-check"
+      "value": "Use caution"
     },
     {
       "label": "Origin",
-      "value": "East Asian botanical traditions",
-      "icon": "map-pin"
+      "value": "Cnidium seed"
     },
     {
       "label": "Part Used",
-      "value": "Seed or fruit",
-      "icon": "leaf"
+      "value": "Seed"
     },
     {
       "label": "Form",
-      "value": "Capsule, extract, blend ingredient",
-      "icon": "pill"
+      "value": "Capsule or extract"
     },
     {
       "label": "Taste",
-      "value": "Bitter and herbal",
-      "icon": "sparkles"
+      "value": "Bitter herbal"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Cnidium Monnieri is best understood by checking the ingredient form, serving size, intended use, and safety cautions on the finished product label.</p>",
-  "full_description": "Cnidium Monnieri is reviewed by Suppriva as a botanical seed extract for men's wellness, circulation, and traditional botanical education.",
-  "best_for": "Men's wellness, circulation, and traditional botanical education",
-  "safety_level": "Review cautions before use",
-  "origin_country": "East Asian botanical traditions",
-  "part_used": "Seed or fruit",
-  "ingredient_form": "Capsule, extract, blend ingredient",
-  "taste_profile": "Bitter and herbal",
-  "rating": 4.6,
-  "evidence_level": "Moderate",
+  "sidebar_at_a_glance_content": "<p>Cnidium monnieri is a specialty botanical with limited human evidence and important medication cautions. It is best evaluated as part of a complete formula rather than in isolation.</p>",
+  "full_description": "Cnidium monnieri is a traditional botanical seed extract used in sexual wellness, vitality, and circulation-support formulas.",
+  "best_for": "Specialty vitality support",
+  "safety_level": "Use caution",
+  "origin_country": "Cnidium seed",
+  "part_used": "Seed",
+  "ingredient_form": "Capsule or extract",
+  "taste_profile": "Bitter herbal",
+  "rating": 4.1,
+  "evidence_level": "Limited",
   "uses_title": "Cnidium Monnieri Uses",
-  "uses_subtitle": "Common supplement-use contexts for this ingredient.",
-  "uses_content": "<p>Cnidium Monnieri may appear in formulas related to men's wellness, circulation, and traditional botanical education. Use should be guided by label directions and personal health context.</p>",
+  "uses_subtitle": "Cnidium appears in specialty vitality and men's wellness formulas.",
+  "uses_content": "<p>Cnidium monnieri is used in sexual wellness, vitality, circulation-positioned, and traditional botanical supplement blends.</p>",
   "uses_json": [
     {
-      "icon": "check-circle",
-      "title": "Men's Wellness Context",
-      "description": "Men's Wellness Context is a common context for evaluating Cnidium Monnieri."
+      "text": "Vitality formulas"
     },
     {
-      "icon": "check-circle",
-      "title": "Circulation Claim Review",
-      "description": "Circulation Claim Review is a common context for evaluating Cnidium Monnieri."
+      "text": "Sexual wellness blends"
     },
     {
-      "icon": "check-circle",
-      "title": "Traditional Use Education",
-      "description": "Traditional Use Education is a common context for evaluating Cnidium Monnieri."
+      "text": "Traditional botanical support"
     },
     {
-      "icon": "check-circle",
-      "title": "Formula Pairing Awareness",
-      "description": "Formula Pairing Awareness is a common context for evaluating Cnidium Monnieri."
+      "text": "Circulation-positioned products"
     }
   ],
   "research_title": "Cnidium Monnieri Research Notes",
-  "research_subtitle": "A balanced interpretation of available supplement research.",
-  "research_content": "<p>Research interest around Cnidium Monnieri focuses on traditional botanical use and circulation-support claim education. Evidence quality can vary by extract form, population, dose, and study design.</p>",
+  "research_subtitle": "Research focuses on osthole and traditional-use botanical pathways.",
+  "research_content": "<p>Cnidium research includes laboratory and traditional-use context, but human supplement evidence is limited and should be interpreted cautiously.</p>",
   "research_json": [
     {
-      "icon": "book-open",
-      "title": "Form Matters",
-      "description": "Research conclusions may not apply to every supplement form or serving size."
+      "text": "Osthole research"
     },
     {
-      "icon": "search",
-      "title": "Population Matters",
-      "description": "Outcomes can vary depending on age, health status, baseline diet, and product quality."
+      "text": "Traditional-use context"
+    },
+    {
+      "text": "Circulation pathway studies"
+    },
+    {
+      "text": "Sexual wellness formula safety"
     }
   ],
-  "references_title": "Cnidium Monnieri References",
-  "references_subtitle": "References should be reviewed by ingredient form and health context.",
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Cnidium Monnieri Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "cnidium monnieri",
-  "seo_description": "Cnidium Monnieri guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips.",
+  "references_title": "Cnidium Monnieri Reference Topics",
+  "references_subtitle": "Suggested topics for independent research and healthcare conversations.",
+  "references_json": [
+    {
+      "text": "Cnidium monnieri osthole research"
+    },
+    {
+      "text": "Traditional botanical safety"
+    },
+    {
+      "text": "Sexual wellness supplement interaction cautions"
+    }
+  ],
+  "related_ingredients_json": [
+    {
+      "slug": "panax-ginseng"
+    },
+    {
+      "slug": "maca-root"
+    },
+    {
+      "slug": "l-arginine"
+    },
+    {
+      "slug": "tribulus-terrestris"
+    }
+  ],
+  "seo_title": "Cnidium Monnieri Benefits, Osthole, Dosage and Safety",
+  "seo_focus_keyword": "Cnidium Monnieri",
+  "seo_description": "Learn what Cnidium Monnieri is, why osthole appears in vitality supplements, and what to know about dosage, benefits, safety, and interactions.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/cnidium-monnieri",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Cnidium Monnieri Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Cnidium Monnieri guide covering benefits, dosage, safety, side effects, interactions, food sources, FAQs, and supplement label tips."
+  "meta_title": "Cnidium Monnieri Benefits, Osthole, Dosage and Safety",
+  "meta_description": "Learn what Cnidium Monnieri is, why osthole appears in vitality supplements, and what to know about dosage, benefits, safety, and interactions."
 }
