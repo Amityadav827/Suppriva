@@ -1,227 +1,324 @@
 {
   "name": "Hibiscus",
   "status": "published",
-  "scientific_name": "Hibiscus sabdariffa",
+  "scientific_name": "Hibiscus sabdariffa calyx extract",
   "ingredient_category": "Herbal Extracts",
-  "hero_badge": null,
-  "short_description": "Hibiscus is a tart botanical flower commonly used in teas and supplements for antioxidant and heart-wellness positioning, with practical safety and label context for supplement shoppers.",
+  "hero_badge": "Tart Botanical",
+  "short_description": "Hibiscus is a tart botanical calyx extract used in supplement education for antioxidant, blood-pressure-aware, and fluid-balance formulas.",
   "overview_title": "Hibiscus Overview",
-  "overview_subtitle": "A practical look at hibiscus as a supplement ingredient.",
-  "overview_content": "<p>Hibiscus is a tart botanical flower commonly used in teas and supplements for antioxidant and heart-wellness positioning. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Hibiscus through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Hibiscus should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
+  "overview_subtitle": "A practical guide to Hibiscus sabdariffa, anthocyanins, and cardiovascular-wellness claims.",
+  "overview_content": "<p>Hibiscus is a botanical ingredient most often sourced from the calyces of Hibiscus sabdariffa. It is used as tea, powder, capsule, and extract, and it is known for a tart cranberry-like flavor. In supplements, hibiscus appears in antioxidant, cardiovascular-wellness, blood-pressure-aware, and fluid-balance formulas.</p><p>Hibiscus contains anthocyanins, organic acids, and polyphenols that contribute to its color and tartness. Some studies have explored hibiscus tea or extracts in relation to blood pressure and lipid markers, but product form, dose, diet, and baseline health status matter.</p><p>Because hibiscus is often connected to blood-pressure language, users should be careful not to treat it as a substitute for prescribed medication or medical monitoring. People with hypertension, low blood pressure, kidney concerns, or cardiovascular disease should use clinician guidance.</p><p>Hibiscus may be combined with dandelion, cranberry, green tea, potassium-containing products, or weight-management ingredients. These formulas may influence fluid balance, caffeine exposure, or medication context.</p><p>A complete Hibiscus review should go beyond the headline benefit. The same ingredient can appear in very different formulas depending on extract strength, active markers, serving size, companion ingredients, and the audience the product is designed for. Suppriva treats ingredient pages as decision-support resources, not as simple claim lists.</p><p>Readers should also separate general wellness support from medical treatment language. Hibiscus may have a useful role in supplement education, but it should not be used to diagnose, treat, cure, or prevent disease. People with medical conditions, pregnancy, nursing, medication routines, or unusual symptoms should use this information to ask better questions, not to replace professional guidance.</p><p>For practical comparison, review the ingredient form, amount per serving, standardization details, safety warnings, and whether the claims match the evidence. This keeps expectations realistic and helps shoppers compare Hibiscus with related ingredients in a more responsible way.</p><p>The finished product also matters because Hibiscus may be combined with caffeine, minerals, amino acids, fibers, probiotics, botanicals, or other extracts that change the overall safety profile. A single-ingredient study does not automatically apply to a multi-ingredient supplement. Shoppers should check the Supplement Facts panel, serving instructions, allergen notes, and any warnings about medications, surgery, pregnancy, nursing, liver health, blood pressure, blood sugar, or stimulant sensitivity.</p><p>Suppriva's ingredient profiles are designed for educational comparison. They explain what the ingredient is, why brands use it, what evidence themes exist, and which cautions deserve attention before buying. The best choice is usually not the product with the loudest claim, but the one with transparent dosing, realistic language, clear safety directions, and a formula that matches the user's personal wellness goal.</p><p>When reviewing Hibiscus, it is also helpful to compare it with adjacent ingredients in the same health category. Similar ingredients can share marketing language while differing in mechanism, dose range, strength of evidence, and medication cautions. This comparison-first approach helps readers decide whether Hibiscus is central to a formula or simply one part of a broader wellness blend.</p><p>This is especially important for users who already take supplements, track symptoms, or manage a condition with professional support.</p><p>Conservative label review keeps the ingredient useful without overstating what a supplement can do.</p>",
   "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>The deep red color of hibiscus tea comes from anthocyanins, the same pigment family found in many red and purple plant foods.</p>",
+  "interesting_fact": "<p>The deep red color of hibiscus tea comes from anthocyanin pigments, a class of polyphenols also found in berries and purple botanicals.</p>",
   "how_it_works_title": "How Hibiscus Works",
-  "how_it_works_subtitle": "The main mechanisms behind hibiscus in wellness formulas.",
-  "how_it_works_highlight_title": "Botanical flower extract support profile",
-  "how_it_works_highlight_description": "Hibiscus is commonly evaluated through anthocyanins, organic acids, and polyphenols that support its role in antioxidant and cardiovascular wellness formulas.",
-  "how_it_works_content": "<p>Hibiscus works through anthocyanins, organic acids, and polyphenols that support its role in antioxidant and cardiovascular wellness formulas. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Hibiscus is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "How hibiscus polyphenols are discussed in antioxidant and cardiovascular-wellness formulas.",
+  "how_it_works_highlight_title": "Anthocyanin-rich calyx extract",
+  "how_it_works_highlight_description": "Hibiscus is best evaluated by form, serving size, blood-pressure context, and medication cautions.",
+  "how_it_works_content": "<p>Hibiscus is discussed through polyphenol antioxidant activity, vascular signaling, and fluid-balance pathways. These mechanisms explain why it appears in cardiovascular-wellness formulas.</p><p>Tea, powder, and standardized extracts may differ. A tea serving should not be assumed equivalent to a capsule extract.</p><p>Because blood pressure and fluid balance can be medically important, hibiscus should be evaluated with personal health status and medication use in mind.</p>",
   "benefits_title": "Potential Hibiscus Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Educational benefits associated with hibiscus in supplement and tea formulas.",
   "benefits_json": [
     {
       "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Hibiscus is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "title": "Antioxidant Polyphenol Context",
+      "description": "Explains hibiscus anthocyanins and plant compounds."
     },
     {
-      "icon": "activity",
-      "title": "Supports Heart And Antioxidant Botanical Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around heart and antioxidant botanical support."
+      "icon": "heart-pulse",
+      "title": "Blood-Pressure-Aware Review",
+      "description": "Supports cautious interpretation of cardiovascular wellness claims."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+      "icon": "droplets",
+      "title": "Fluid-Balance Formula Context",
+      "description": "Useful when hibiscus appears with dandelion or cranberry."
     },
     {
-      "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Hibiscus often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "icon": "cup-soda",
+      "title": "Tea vs Extract Comparison",
+      "description": "Helps compare brewed hibiscus and concentrated supplements."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+      "title": "Medication Safety Awareness",
+      "description": "Highlights blood pressure, diuretic, and diabetes medication cautions."
     },
     {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Hibiscus by mechanism, evidence level, safety context, and practical product positioning."
+      "icon": "search",
+      "title": "Label Transparency",
+      "description": "Encourages review of serving size, form, and blend design."
     }
   ],
   "dosage_title": "Typical Hibiscus Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common supplement servings range from 500 mg to 1,000 mg of hibiscus extract, while teas are usually prepared according to product directions.",
-  "dosage": "Common supplement servings range from 500 mg to 1,000 mg of hibiscus extract, while teas are usually prepared according to product directions.",
-  "dosage_content": "<p>Common supplement servings range from 500 mg to 1,000 mg of hibiscus extract, while teas are usually prepared according to product directions.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Hibiscus without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Dose depends on whether hibiscus is used as tea, powder, or extract.",
+  "typical_dose": "Common use ranges from hibiscus tea servings to extract capsules; follow product directions because concentration varies.",
+  "dosage": "Common use ranges from hibiscus tea servings to extract capsules; follow product directions because concentration varies.",
+  "dosage_content": "<p>Hibiscus dosage differs by form. Tea products may specify steeped servings, while capsules or extracts provide concentrated amounts.</p><p>People using blood pressure medication, diuretics, diabetes medication, or kidney-related treatment should ask a clinician before using hibiscus supplements.</p><p>Do not use hibiscus to replace blood pressure monitoring or prescribed cardiovascular care.</p>",
   "safety_title": "Hibiscus Safety Information",
-  "safety_subtitle": "Important safety context before using hibiscus supplements.",
+  "safety_subtitle": "Review blood pressure, diuretics, diabetes medications, pregnancy, kidney status, and surgery timing.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Stomach discomfort, gas, or loose stool may occur.",
+    "People sensitive to blood-pressure changes may feel lightheaded.",
+    "Hibiscus may be relevant for people using blood pressure medication.",
+    "Botanical sensitivity is possible in some users."
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Hibiscus may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "icon": "alert-circle",
+      "title": "Digestive Upset",
+      "text": "Stomach discomfort, gas, or loose stool may occur."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "icon": "alert-circle",
+      "title": "Dizziness",
+      "text": "People sensitive to blood-pressure changes may feel lightheaded."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "icon": "alert-triangle",
+      "title": "Low Blood Pressure Context",
+      "text": "Hibiscus may be relevant for people using blood pressure medication."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Hibiscus is combined with similar ingredients or multi-ingredient products."
+      "icon": "alert-circle",
+      "title": "Allergy Sensitivity",
+      "text": "Botanical sensitivity is possible in some users."
     }
   ],
   "drug_interactions_json": [
-    "Review Hibiscus with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People taking blood pressure medication, diabetes medication, diuretics, or pregnancy-related supplements should seek professional guidance before concentrated hibiscus use.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
-  ],
-  "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Hibiscus or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
-  ],
-  "food_sources_title": "Hibiscus Food Sources",
-  "food_sources_subtitle": "Food and source context for hibiscus.",
-  "food_sources_content": "<p>Hibiscus is commonly consumed as a tart herbal tea, while supplements may use concentrated extracts standardized for polyphenol content.</p>",
-  "food_sources_json": [
     {
-      "title": "Hibiscus tea",
-      "description": "Hibiscus tea can contribute to heart and antioxidant botanical support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Blood Pressure Medication",
+      "text": "Use with antihypertensives should be reviewed with a clinician."
     },
     {
-      "title": "Dried hibiscus calyces",
-      "description": "Dried hibiscus calyces can contribute to heart and antioxidant botanical support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Diuretics",
+      "text": "Fluid-balance formulas may complicate diuretic use."
     },
     {
-      "title": "Botanical drink blends",
-      "description": "Botanical drink blends can contribute to heart and antioxidant botanical support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Diabetes Medication",
+      "text": "May be relevant for people monitoring blood sugar."
     },
     {
-      "title": "Herbal powders",
-      "description": "Herbal powders can contribute to heart and antioxidant botanical support, though supplement potency depends on serving size, form, and standardization."
+      "icon": "shield-alert",
+      "title": "Acetaminophen Timing",
+      "text": "Some sources advise caution with timing; ask a clinician if using frequently."
     }
   ],
-  "faq_title": "Hibiscus FAQs",
-  "faq_subtitle": "Common questions about hibiscus supplements.",
+  "who_should_avoid_json": [
+    {
+      "icon": "x-circle",
+      "title": "Pregnancy or Nursing",
+      "text": "Use only with professional guidance."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Low Blood Pressure",
+      "text": "Avoid unsupervised use if prone to dizziness or hypotension."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Kidney Disease",
+      "text": "Ask a clinician before use."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Cardiovascular Medication",
+      "text": "Do not combine without medical guidance."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Replacing Care",
+      "text": "Do not substitute hibiscus for prescribed blood-pressure treatment."
+    }
+  ],
+  "food_sources_title": "Hibiscus Food Sources",
+  "food_sources_subtitle": "Hibiscus is commonly consumed as a tart herbal tea and used in extracts.",
+  "food_sources_content": "<p>Hibiscus tea is the most familiar food-like form, often consumed hot or cold. Supplements may provide more concentrated extracts.</p><p>Serving size, preparation strength, and blend ingredients can change how much hibiscus is consumed.</p>",
+  "food_sources_json": [
+    {
+      "icon": "cup-soda",
+      "title": "Hibiscus Tea",
+      "description": "Brewed from dried calyces."
+    },
+    {
+      "icon": "flower2",
+      "title": "Dried Calyx",
+      "description": "The tart plant part used in tea and extracts."
+    },
+    {
+      "icon": "pill",
+      "title": "Extract Capsules",
+      "description": "Concentrated supplement form."
+    }
+  ],
+  "faq_title": "Hibiscus FAQ",
+  "faq_subtitle": "Common questions about Hibiscus, supplement labels, and safety.",
   "faq_json": [
     {
       "question": "What is Hibiscus?",
-      "answer": "Hibiscus is a tart botanical flower commonly used in teas and supplements for antioxidant and heart-wellness positioning. It is used in supplement formulas for heart and antioxidant botanical support, not as a substitute for medical treatment."
+      "answer": "Hibiscus is a tart botanical ingredient from Hibiscus sabdariffa calyces, used as tea and supplement extract."
     },
     {
-      "question": "What is Hibiscus commonly used for?",
-      "answer": "It is commonly positioned around heart wellness, antioxidant support, and botanical tea routines. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "What is Hibiscus used for in supplements?",
+      "answer": "It is used in antioxidant, blood-pressure-aware, cardiovascular-wellness, and fluid-balance formulas."
     },
     {
-      "question": "How does Hibiscus work?",
-      "answer": "Hibiscus is usually discussed through anthocyanins, organic acids, and polyphenols that support its role in antioxidant and cardiovascular wellness formulas. This helps explain its supplement positioning without treating it as a cure or medication."
-    },
-    {
-      "question": "What is a typical Hibiscus dose?",
-      "answer": "Common supplement servings range from 500 mg to 1,000 mg of hibiscus extract, while teas are usually prepared according to product directions. Always follow the specific product label because extract strength and format can vary widely."
-    },
-    {
-      "question": "Is Hibiscus safe for daily use?",
-      "answer": "Generally well tolerated; use caution with blood pressure or glucose medication. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
-    },
-    {
-      "question": "Can Hibiscus cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
-    },
-    {
-      "question": "Can Hibiscus interact with medication?",
-      "answer": "People taking blood pressure medication, diabetes medication, diuretics, or pregnancy-related supplements should seek professional guidance before concentrated hibiscus use. This is especially important for people managing medical conditions or using multiple supplements."
-    },
-    {
-      "question": "What should I compare on a Hibiscus supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
-    },
-    {
-      "question": "What foods contain Hibiscus or related compounds?",
-      "answer": "Hibiscus is commonly consumed as a tart herbal tea, while supplements may use concentrated extracts standardized for polyphenol content."
+      "question": "How long does Hibiscus take to work?",
+      "answer": "Response time varies by dose, form, formula quality, baseline health, diet, and consistency. It should be evaluated as part of a broader wellness routine rather than as a quick-result ingredient."
     },
     {
       "question": "Can Hibiscus replace medical care?",
-      "answer": "No. Hibiscus supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "answer": "No. Supplements are not substitutes for diagnosis, prescribed medication, or care from a qualified healthcare professional."
+    },
+    {
+      "question": "What should I compare on a Hibiscus label?",
+      "answer": "Compare serving size, ingredient form, standardization, companion ingredients, allergen details, warnings, and third-party testing where available."
+    },
+    {
+      "question": "Is Hibiscus safe for daily use?",
+      "answer": "Daily use depends on blood pressure, medication use, kidney status, pregnancy, and product concentration."
+    },
+    {
+      "question": "Who should talk with a clinician before using Hibiscus?",
+      "answer": "People using blood pressure medication, diuretics, diabetes medication, or those with kidney disease should ask a clinician."
+    },
+    {
+      "question": "Can Hibiscus interact with medications?",
+      "answer": "Hibiscus may interact with blood pressure medications, diuretics, diabetes medications, and some medication timing routines."
+    },
+    {
+      "question": "Is Hibiscus found in foods?",
+      "answer": "Hibiscus is commonly consumed as herbal tea; supplement extracts are more concentrated."
+    },
+    {
+      "question": "How does Suppriva evaluate Hibiscus?",
+      "answer": "Suppriva evaluates intended use, evidence context, dose transparency, safety cautions, related ingredients, and whether the finished product makes realistic wellness claims."
     }
   ],
   "sidebar_profile_title": "Hibiscus Profile Snapshot",
-  "sidebar_profile_content": "Hibiscus is a botanical flower extract used in supplements for heart and antioxidant botanical support.",
+  "sidebar_profile_content": "Hibiscus is an anthocyanin-rich botanical calyx used in antioxidant and cardiovascular-wellness supplement education.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Botanical flower extract"
+      "value": "Botanical calyx extract",
+      "icon": "flower2"
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement servings range from 500 mg to 1,000 mg of hibiscus extract, while teas are usually prepared according to product directions."
+      "value": "Varies by tea strength or extract concentration",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Heart wellness, antioxidant support, and botanical tea routines"
+      "value": "Antioxidant and blood-pressure-aware label review",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; use caution with blood pressure or glucose medication"
+      "value": "Review blood pressure, diuretics, kidney status, and pregnancy",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Tropical and subtropical growing regions"
+      "value": "Hibiscus sabdariffa plant",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Calyx and flower material"
+      "value": "Calyx",
+      "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Tea, capsule, powder, extract"
+      "value": "Tea, powder, capsule, extract",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Tart, cranberry-like, floral"
+      "value": "Tart, cranberry-like, and fruity",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Hibiscus is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Hibiscus is a tart botanical flower commonly used in teas and supplements for antioxidant and heart-wellness positioning, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Heart wellness, antioxidant support, and botanical tea routines",
-  "safety_level": "Generally well tolerated; use caution with blood pressure or glucose medication",
-  "origin_country": "Tropical and subtropical growing regions",
-  "part_used": "Calyx and flower material",
-  "ingredient_form": "Tea, capsule, powder, extract",
-  "taste_profile": "Tart, cranberry-like, floral",
-  "rating": null,
-  "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Hibiscus Benefits, Dosage, and Safety | Suppriva",
+  "sidebar_at_a_glance_content": "<p>Hibiscus is best compared by tea versus extract form, serving size, blood-pressure context, medication cautions, and whether it is part of a fluid-balance blend.</p>",
+  "full_description": "Hibiscus is a tart botanical calyx extract used in supplement education for antioxidant, blood-pressure-aware, and fluid-balance formulas.",
+  "best_for": "Antioxidant, cardiovascular-wellness, and fluid-balance label education",
+  "safety_level": "Review blood pressure medication, diuretics, kidney status, pregnancy, nursing, and dizziness risk",
+  "origin_country": "Hibiscus sabdariffa plant",
+  "part_used": "Calyx",
+  "ingredient_form": "Tea, powder, capsule, or extract",
+  "taste_profile": "Tart, cranberry-like, and fruity",
+  "rating": 4.7,
+  "evidence_level": "Moderate",
+  "uses_title": "Hibiscus Uses",
+  "uses_subtitle": "Common supplement-use contexts for Hibiscus.",
+  "uses_content": "<p>Hibiscus may appear in antioxidant, cardiovascular wellness, and fluid-balance supplements, as well as herbal teas.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Antioxidant Tea",
+      "description": "Used as a polyphenol-rich herbal tea."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Blood Pressure Context",
+      "description": "Appears in cardiovascular wellness formulas."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Fluid Balance",
+      "description": "Often paired with dandelion or cranberry."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Label Comparison",
+      "description": "Requires form and medication review."
+    }
+  ],
+  "research_title": "Hibiscus Research Notes",
+  "research_subtitle": "A balanced interpretation of available supplement research.",
+  "research_content": "<p>Hibiscus research includes blood pressure, lipid markers, antioxidant activity, and tea or extract use. Product form and population affect interpretation.</p><p>Safety review should include blood pressure medication, diuretics, diabetes medication, kidney status, pregnancy, nursing, and dizziness risk.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Evidence Depends on Form",
+      "description": "Research should be interpreted by extract form, dose, active markers, population, and study duration."
+    },
+    {
+      "icon": "search",
+      "title": "Label Context Matters",
+      "description": "Claims should be checked against serving size, standardization, medication cautions, and the complete formula."
+    }
+  ],
+  "references_title": "Hibiscus References",
+  "references_subtitle": "References should be reviewed by ingredient form and health context.",
+  "references_json": [
+    {
+      "title": "NIH Office of Dietary Supplements",
+      "url": "https://ods.od.nih.gov/"
+    },
+    {
+      "title": "Memorial Sloan Kettering herb and supplement database",
+      "url": "https://www.mskcc.org/cancer-care/diagnosis-treatment/symptom-management/integrative-medicine/herbs"
+    },
+    {
+      "title": "PubMed biomedical literature",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/"
+    }
+  ],
+  "related_ingredients_json": [
+    "dandelion",
+    "cranberry-extract",
+    "pomegranate-extract",
+    "grape-seed-extract"
+  ],
+  "seo_title": "Hibiscus Benefits, Dosage, Side Effects, and Safety | Suppriva",
   "seo_focus_keyword": "hibiscus",
-  "seo_description": "Explore Hibiscus benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Learn about hibiscus tea and extract benefits, dosage, blood-pressure context, side effects, interactions, and safety tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/hibiscus",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Hibiscus Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Hibiscus benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Hibiscus Benefits, Dosage, Side Effects, and Safety | Suppriva",
+  "meta_description": "Learn about hibiscus tea and extract benefits, dosage, blood-pressure context, side effects, interactions, and safety tips."
 }
