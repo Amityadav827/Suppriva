@@ -1,208 +1,248 @@
 {
   "name": "Blueberry",
+  "status": "published",
   "scientific_name": "Vaccinium spp.",
   "ingredient_category": "Fruits & Botanicals",
   "hero_badge": null,
-  "short_description": "Blueberry is a berry ingredient used in supplement formulas for antioxidant, cognitive wellness, and fruit-based formulas, with label quality depending on source, form, and dose transparency.",
-  "overview_title": "Blueberry Overview",
-  "overview_subtitle": "A practical guide to blueberry as a supplement ingredient.",
-  "overview_content": "<p>Blueberry is a berry ingredient used in wellness supplements for antioxidant, cognitive wellness, and fruit-based formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Blueberry is often discussed because it contains or represents anthocyanins, proanthocyanidins, vitamin C, and polyphenols. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Blueberry should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Blueberries are one of the most commonly researched berries in nutrition studies because they are easy to include in everyday diets.</p>",
+  "short_description": "Blueberry is a fruit-derived ingredient used in supplements for anthocyanins, polyphenols, antioxidant support, and cognitive or cardiovascular wellness positioning.",
+  "overview_title": "What Is Blueberry?",
+  "overview_subtitle": "A practical guide to blueberry powders, extracts, anthocyanins, and fruit-based supplement labels.",
+  "overview_content": "<p>Blueberry refers to fruits from Vaccinium species that are widely consumed as foods and also used in supplement powders, extracts, gummies, drink mixes, and antioxidant blends. In supplement labels, blueberry may appear as whole fruit powder, blueberry extract, anthocyanin-rich extract, berry blend, or polyphenol complex. These formats are not identical.</p><p>Blueberries are best known for anthocyanins, the pigments responsible for their blue-purple color, along with other polyphenols, vitamin C, fiber, and organic acids. This profile explains why blueberry ingredients are commonly positioned around antioxidant support, healthy aging, eye wellness, cognitive wellness, cardiovascular wellness, and metabolic health education. Those are broad wellness topics, not disease-treatment promises.</p><p>A key issue is the difference between food and supplements. Eating blueberries provides water, fiber, natural sugars, and a complex food matrix. A capsule or extract may concentrate selected polyphenols but may not provide the same nutritional profile as whole fruit. A high-quality label should identify whether it uses whole fruit powder, extract, or standardized anthocyanins.</p><p>Blueberry products also vary by species, harvest quality, drying method, extract concentration, and storage conditions. Anthocyanins can be sensitive to processing and time, so product quality and packaging matter. Shoppers should be cautious with formulas that simply use a tiny amount of blueberry for label appeal without disclosing meaningful serving information.</p><p>Because blueberry is a familiar food, it is usually viewed as gentle. Even so, concentrated supplements should still be reviewed for digestive tolerance, allergy, sugar content in gummies or powders, and interactions with medications when part of a broader formula. People on blood thinners, diabetes medication, or complex supplement routines should check the full product label.</p><p>Suppriva evaluates blueberry as a fruit-derived ingredient for label literacy. The goal is to help readers compare whole fruit powders, extracts, anthocyanin claims, and berry blends without assuming that every blueberry mention reflects the same quality or dose.</p><p>A responsible blueberry review also keeps expectations realistic. Blueberries can be part of a healthy diet and may provide beneficial polyphenols, but a supplement should not be used to replace a balanced diet, prescribed care, eye exams, cardiovascular care, or medical evaluation. Look for transparent labels and use the ingredient as one part of a broader wellness routine.</p><p>Blueberry is also a good example of why familiar food ingredients still need supplement scrutiny. A label may show a blueberry image, but the actual formula might contain a small amount of powder, a concentrated extract, a flavoring system, or a larger fruit complex. The supplement facts panel is more important than the front-panel image when judging value.</p><p>For readers comparing antioxidant formulas, blueberry should be viewed alongside diet quality and other polyphenol sources. A capsule can be convenient, but it does not replace the benefits of eating a varied pattern of fruits, vegetables, fiber-rich foods, and minimally processed meals. The most responsible blueberry products support that broader routine rather than implying a single ingredient can carry the entire wellness plan.</p><p>For this reason, Suppriva treats blueberry as a useful but often oversimplified fruit ingredient. The strongest labels explain whether they use whole fruit powder, extract, or standardized anthocyanins, and they avoid pretending that a capsule replaces a fruit-rich diet.</p>",
+  "interesting_fact_label": "Anthocyanin Color",
+  "interesting_fact": "<p>Blueberry's deep blue-purple color comes largely from anthocyanins, a family of polyphenol pigments also used as a marker in many berry extracts.</p>",
   "how_it_works_title": "How Blueberry Works",
-  "how_it_works_subtitle": "Blueberry is evaluated by its compound profile, source quality, and formula context.",
-  "how_it_works_highlight_title": "Source and standardization matter",
-  "how_it_works_highlight_description": "Two blueberry products can differ significantly if they use different forms, serving sizes, or extract standards.",
-  "how_it_works_content": "<p>Blueberry works mainly through fruit polyphenol and antioxidant support. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Blueberry depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Blueberry with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
-  "benefits_title": "Potential Blueberry Benefits",
-  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "how_it_works_subtitle": "Blueberry is evaluated through anthocyanins, polyphenols, food matrix, and extract quality.",
+  "how_it_works_highlight_title": "Anthocyanin-Rich Fruit",
+  "how_it_works_highlight_description": "Blueberry labels are most useful when they clarify whether the product is whole fruit powder, extract, or standardized for anthocyanins.",
+  "how_it_works_content": "<p>Blueberry is mainly discussed through anthocyanins and other polyphenols that are studied for antioxidant and cell-signaling roles. This does not mean blueberry supplements treat disease. It means the ingredient is often included in formulas that support general antioxidant and healthy-aging education.</p><p>The delivery format matters. Whole fruit powder provides a broader food-like profile, while extract may concentrate polyphenols. Gummies and drink mixes may also add sugar, sweeteners, or flavoring ingredients that should be reviewed alongside the blueberry content.</p><p>In finished products, blueberry is often paired with bilberry, lutein, grape seed, vitamin C, resveratrol, or other polyphenol ingredients. The whole formula should be evaluated for dose transparency, overlapping antioxidants, and realistic label claims.</p>",
+  "benefits_title": "Potential Benefits of Blueberry",
+  "benefits_subtitle": "Educational benefits commonly discussed for Blueberry in supplement label contexts.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Formula Context",
-      "description": "Blueberry helps shoppers evaluate supplements that use berry ingredient positioning for antioxidant, cognitive wellness, and fruit-based formulas."
-    },
-    {
       "icon": "sparkles",
-      "title": "Key Compound Profile",
-      "description": "It is commonly reviewed for anthocyanins, proanthocyanidins, vitamin C, and polyphenols, which influence how brands position it on supplement labels."
+      "title": "Anthocyanin Education",
+      "description": "Helps readers understand why blueberry appears in antioxidant and polyphenol formulas."
     },
     {
-      "icon": "shield-check",
-      "title": "Label Transparency",
-      "description": "The best products clearly disclose form, serving size, standardization, and whether Blueberry is part of a broader blend."
+      "icon": "eye",
+      "title": "Eye-Wellness Label Context",
+      "description": "Often paired with vision-support ingredients such as bilberry, lutein, or zeaxanthin."
     },
     {
-      "icon": "activity",
-      "title": "Routine Fit",
-      "description": "Blueberry is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+      "icon": "brain",
+      "title": "Cognitive Wellness Positioning",
+      "description": "Used in some formulas focused on healthy aging and cognitive wellness education."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Cardiovascular Label Review",
+      "description": "Polyphenol language is common in heart and circulation wellness products."
+    },
+    {
+      "icon": "apple",
+      "title": "Food-Based Ingredient Context",
+      "description": "Helps compare whole fruit powders with concentrated extracts."
     },
     {
       "icon": "search",
-      "title": "Comparison Value",
-      "description": "Comparing Blueberry across products can reveal differences in source quality, concentration, and supporting ingredients."
-    },
-    {
-      "icon": "heart",
-      "title": "Safety Awareness",
-      "description": "Understanding cautions and interactions helps users decide whether Blueberry fits their health status and medication profile."
+      "title": "Standardization Review",
+      "description": "Encourages checking anthocyanin content, serving size, and blend transparency."
     }
   ],
   "dosage_title": "Typical Blueberry Dosage",
-  "dosage_subtitle": "Use the product label as the primary dose reference.",
-  "typical_dose": "Follow label directions; blueberry powder and extract doses vary by anthocyanin content.",
-  "dosage": "Follow the product label and avoid combining multiple blueberry products unless a healthcare professional has reviewed the routine.",
-  "dosage_content": "<p>There is no single universal dose for blueberry because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using blueberry.</p>",
+  "dosage_subtitle": "Dose guidance depends on product form, label directions, and individual safety context.",
+  "typical_dose": "Doses vary widely; whole fruit powders may use gram servings, while extracts may use lower milligram amounts depending on anthocyanin concentration.",
+  "dosage": "Doses vary widely; whole fruit powders may use gram servings, while extracts may use lower milligram amounts depending on anthocyanin concentration.",
+  "dosage_content": "<p>Blueberry dosage depends on format. A powder serving, gummy blend, capsule extract, and anthocyanin-standardized product can represent very different levels of fruit compounds.</p><p>Follow the label and compare the actual blueberry amount rather than the front-panel marketing. People with diabetes medication, blood-thinning medication, food allergies, or sensitive digestion should review concentrated formulas with a healthcare professional.</p>",
   "safety_title": "Blueberry Safety Information",
-  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "safety_subtitle": "Blueberry is food-derived, but concentrated extracts, sweetened products, allergies, and medication context still matter.",
   "side_effects": [
-    "Digestive discomfort",
-    "Nausea",
-    "Headache",
-    "Sensitivity reaction"
+    "Digestive Upset",
+    "Allergy or Sensitivity",
+    "Blood Sugar Context",
+    "Formula Overlap"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Blueberry may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+      "icon": "stomach",
+      "title": "Digestive Upset",
+      "description": "Powders or extracts may cause bloating or stomach discomfort in sensitive users."
     },
     {
-      "title": "Sensitivity or Allergy",
-      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review blueberry carefully before use."
+      "icon": "alert-circle",
+      "title": "Allergy or Sensitivity",
+      "description": "Berry allergy is uncommon but possible."
     },
     {
+      "icon": "droplets",
+      "title": "Blood Sugar Context",
+      "description": "Sweetened gummies or powders may matter for people monitoring glucose."
+    },
+    {
+      "icon": "activity",
       "title": "Formula Overlap",
-      "description": "Side effects may be more likely when blueberry is combined with several ingredients that have similar wellness positioning."
-    },
-    {
-      "title": "Dose-Related Concerns",
-      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+      "description": "Berry blends can stack many polyphenol ingredients."
     }
   ],
   "drug_interactions_json": [
-    "Review use with blood sugar medications, anticoagulants, or formulas that already include multiple concentrated berry extracts.",
-    "Review use if taking prescription medication or managing a diagnosed condition.",
-    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a healthcare professional before use during pregnancy or nursing."
+    {
+      "icon": "pill",
+      "title": "Diabetes Medication Review",
+      "description": "People using glucose-lowering medication should review supplement formulas professionally."
+    },
+    {
+      "icon": "droplets",
+      "title": "Blood Thinner Review",
+      "description": "High-polyphenol blends should be discussed if using anticoagulant medication."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Stacked Antioxidants",
+      "description": "Multiple antioxidant formulas can overlap."
+    },
+    {
+      "icon": "search",
+      "title": "Added Sugar Check",
+      "description": "Gummies and powders may add sugars or sweeteners."
+    }
   ],
   "who_should_avoid_json": [
-    "People with berry allergies or those monitoring blood sugar should consider total fruit powder intake.",
-    "People with known allergy or sensitivity related to blueberry.",
-    "People taking medication without reviewing supplement interactions.",
-    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
-    "Children unless directed by a qualified healthcare provider."
-  ],
-  "food_sources_title": "Blueberry Food Sources",
-  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
-  "food_sources_content": "<p>Fresh blueberries, frozen blueberries, blueberry powder, and berry blends provide related dietary compounds.</p>",
-  "food_sources_json": [
     {
-      "title": "Dietary Sources",
-      "description": "Fresh blueberries, frozen blueberries, blueberry powder, and berry blends provide related dietary compounds."
+      "icon": "user-x",
+      "title": "Berry Allergy",
+      "description": "Avoid if allergic or sensitive to blueberries or related berries."
     },
     {
-      "title": "Supplement Forms",
-      "description": "Blueberry is commonly sold as powder, extract, whole-food blend, depending on the product category."
+      "icon": "heart-pulse",
+      "title": "Strict Glucose Monitoring",
+      "description": "Check sweetened formulas and ask a clinician if needed."
     },
     {
-      "title": "Label Review",
-      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+      "icon": "baby",
+      "title": "Pregnancy or Nursing Supplements",
+      "description": "Use concentrated extracts only with professional guidance."
+    },
+    {
+      "icon": "stethoscope",
+      "title": "Medication-Heavy Routines",
+      "description": "Review concentrated polyphenol products with a clinician."
     }
   ],
   "faq_title": "Blueberry FAQs",
-  "faq_subtitle": "Common questions about blueberry supplements and label comparison.",
+  "faq_subtitle": "Common questions about Blueberry, supplement labels, dosage context, and safety.",
   "faq_json": [
     {
-      "question": "What is Blueberry used for in supplements?",
-      "answer": "Blueberry is commonly used in formulas positioned around antioxidant, cognitive wellness, and fruit-based formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+      "question": "What is Blueberry?",
+      "answer": "Blueberry is blueberry is a fruit-derived ingredient used in supplements for anthocyanins, polyphenols, antioxidant support, and cognitive or cardiovascular wellness positioning. Suppriva covers it as an educational ingredient so readers can compare supplement labels, serving formats, safety notes, and formula context more clearly."
     },
     {
-      "question": "What is the main active profile of Blueberry?",
-      "answer": "Supplement labels usually discuss Blueberry in relation to anthocyanins, proanthocyanidins, vitamin C, and polyphenols. The exact profile can vary by source and processing method."
+      "question": "What is Blueberry commonly used for in supplements?",
+      "answer": "Blueberry is commonly positioned around antioxidant and fruit-based supplement label comparison. These uses should be interpreted as wellness-support positioning, not as proof that a product treats or prevents disease."
     },
     {
-      "question": "Is Blueberry a medicine?",
-      "answer": "No. Blueberry is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+      "question": "Is Blueberry the same in every product?",
+      "answer": "No. Products can differ by source, extract type, serving amount, standardization, processing quality, and companion ingredients. For Blueberry, source, form, serving size, and quality language are especially important."
     },
     {
-      "question": "How should I compare Blueberry products?",
-      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+      "question": "How should I compare Blueberry supplements?",
+      "answer": "Compare the exact ingredient form, dose per serving, testing language, allergen notes, safety warnings, and whether the product explains why the ingredient is included."
     },
     {
-      "question": "Can Blueberry be taken every day?",
-      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+      "question": "What is a typical Blueberry dosage?",
+      "answer": "Doses vary widely; whole fruit powders may use gram servings, while extracts may use lower milligram amounts depending on anthocyanin concentration."
     },
     {
-      "question": "What dose of Blueberry should I use?",
-      "answer": "Follow label directions; blueberry powder and extract doses vary by anthocyanin content. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
+      "question": "Can Blueberry be used every day?",
+      "answer": "Some products are designed for daily use, but use should follow the product label. Daily use is not automatically appropriate for everyone, especially when medication, pregnancy, nursing, thyroid concerns, or chronic health conditions are involved."
     },
     {
-      "question": "Does Blueberry have side effects?",
-      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+      "question": "What side effects are possible with Blueberry?",
+      "answer": "Blueberry is food-derived, but concentrated extracts, sweetened products, allergies, and medication context still matter."
     },
     {
       "question": "Can Blueberry interact with medication?",
-      "answer": "Review use with blood sugar medications, anticoagulants, or formulas that already include multiple concentrated berry extracts. Medication users should review supplement use with a qualified healthcare professional."
+      "answer": "It can be relevant to medication review depending on the ingredient and the user's health history. People taking prescription drugs, managing a condition, preparing for surgery, or using several overlapping supplements should ask a qualified healthcare professional before use."
     },
     {
-      "question": "Is Blueberry found in foods?",
-      "answer": "Fresh blueberries, frozen blueberries, blueberry powder, and berry blends provide related dietary compounds."
+      "question": "Who should be cautious with Blueberry?",
+      "answer": "Blueberry is food-derived, but concentrated extracts, sweetened products, allergies, and medication context still matter."
     },
     {
-      "question": "Who should avoid Blueberry?",
-      "answer": "People with berry allergies or those monitoring blood sugar should consider total fruit powder intake. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+      "question": "Is Blueberry a substitute for medical care?",
+      "answer": "No. Blueberry is a supplement ingredient or food-derived compound. It should not replace diagnosis, prescribed treatment, emergency care, or individualized medical advice."
     }
   ],
   "sidebar_profile_title": "Blueberry Profile Snapshot",
-  "sidebar_profile_content": "A widely used berry ingredient included in antioxidant and brain-wellness supplement formulas.",
+  "sidebar_profile_content": "A fruit-derived ingredient used in antioxidant, anthocyanin, eye-wellness, cognitive, and healthy-aging supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Berry ingredient"
+      "value": "Berry fruit"
     },
     {
       "label": "Typical Dose",
-      "value": "Follow label directions; blueberry powder and extract doses vary by anthocyanin content."
+      "value": "Varies by powder or extract"
     },
     {
       "label": "Best For",
-      "value": "Antioxidant, cognitive wellness, and fruit-based formulas"
+      "value": "Anthocyanin label review"
     },
     {
       "label": "Safety Level",
-      "value": "Review label directions and medication context"
+      "value": "Generally food-derived"
     },
     {
       "label": "Origin",
-      "value": "North America and global cultivated regions"
+      "value": "Vaccinium berries"
     },
     {
       "label": "Part Used",
-      "value": "Berry"
+      "value": "Fruit"
     },
     {
       "label": "Form",
-      "value": "Powder, extract, whole-food blend"
+      "value": "Powder, extract, gummy"
     },
     {
       "label": "Taste",
-      "value": "Sweet and tart"
+      "value": "Sweet-tart berry"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Blueberry is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
-  "full_description": "Blueberry is a berry ingredient used in supplement formulas for antioxidant, cognitive wellness, and fruit-based formulas.",
-  "best_for": "Antioxidant, cognitive wellness, and fruit-based formulas",
-  "safety_level": "Review label directions and medication context",
-  "origin_country": "North America and global cultivated regions",
-  "part_used": "Berry",
-  "ingredient_form": "Powder, extract, whole-food blend",
-  "taste_profile": "Sweet and tart",
+  "sidebar_at_a_glance_content": "<p>Blueberry is best compared by fruit form, extract concentration, anthocyanin disclosure, serving size, and whether added sugars are present.</p>",
+  "full_description": "Blueberry is a fruit-derived ingredient used in supplements for anthocyanins, polyphenols, antioxidant support, and cognitive or cardiovascular wellness positioning.",
+  "best_for": "Antioxidant and fruit-based supplement label comparison",
+  "safety_level": "Generally food-derived; review concentrated formulas and added sugars",
+  "origin_country": "Vaccinium berries",
+  "part_used": "Fruit",
+  "ingredient_form": "Whole fruit, powder, extract, gummy",
+  "taste_profile": "Sweet-tart berry",
   "rating": null,
   "evidence_level": null,
   "uses_title": null,
   "uses_subtitle": null,
   "uses_content": null,
   "uses_json": [],
+  "food_sources_title": "Blueberry Food Sources",
+  "food_sources_subtitle": "Blueberries are widely consumed as whole foods.",
+  "food_sources_content": "<p>Fresh blueberries, frozen blueberries, dried blueberries, powders, and extracts all provide blueberry-derived compounds, but they differ in fiber, sugar, concentration, and processing.</p>",
+  "food_sources_json": [
+    {
+      "title": "Fresh Blueberries",
+      "description": "Whole fruit with water, fiber, and polyphenols."
+    },
+    {
+      "title": "Frozen Blueberries",
+      "description": "A common year-round food source."
+    },
+    {
+      "title": "Blueberry Powder",
+      "description": "Often used in smoothie and greens powders."
+    },
+    {
+      "title": "Blueberry Extract",
+      "description": "May concentrate anthocyanins or polyphenols."
+    }
+  ],
   "research_title": null,
   "research_subtitle": null,
   "research_content": null,
@@ -210,13 +250,18 @@
   "references_title": null,
   "references_subtitle": null,
   "references_json": [],
-  "related_ingredients_json": [],
+  "related_ingredients_json": [
+    "bilberry-extract",
+    "black-currant-extract",
+    "grape-seed-extract",
+    "lutein"
+  ],
   "seo_title": "Blueberry Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "blueberry",
-  "seo_description": "Explore blueberry benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore blueberry benefits, anthocyanins, dosage, safety notes, food sources, FAQs, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/blueberry",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Blueberry Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore blueberry benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore blueberry benefits, anthocyanins, dosage, safety notes, food sources, FAQs, and supplement label tips in Suppriva's ingredient library."
 }
