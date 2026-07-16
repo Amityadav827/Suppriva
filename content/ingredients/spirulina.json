@@ -1,212 +1,287 @@
 {
   "name": "Spirulina",
   "scientific_name": "Arthrospira platensis",
-  "hero_badge": null,
-  "short_description": "Spirulina is a blue-green microalgae ingredient used in greens powders, tablets, and general wellness formulas. Suppriva reviews it for nutrient density, plant-based protein, antioxidant pigments, quality testing, and safety considerations.",
+  "ingredient_category": "Specialty Ingredients",
+  "status": "published",
+  "hero_badge": "Blue-Green Algae",
+  "short_description": "Spirulina is a nutrient-dense blue-green algae used in greens powders, antioxidant blends, and daily wellness supplements.",
   "overview_title": "What Is Spirulina?",
-  "overview_subtitle": "A practical guide to this blue-green microalgae and why it appears in greens, energy, and wellness formulas.",
-  "overview_content": "Spirulina is a blue-green microalgae, most commonly from Arthrospira species, used in powders, tablets, capsules, and greens blends. It is naturally rich in protein, pigments such as phycocyanin, minerals, and other nutrients. Because it has a strong color and distinctive taste, spirulina is often used in smoothie powders, superfood blends, plant-based nutrition products, and wellness formulas positioned around everyday nutrient support.\n\nSpirulina should be evaluated carefully because quality varies. Algae products can be affected by cultivation, harvesting, drying, storage, and contamination control. A trustworthy product should provide third-party testing or clear quality standards, especially for heavy metals, microcystins, and microbial contamination. This is one of the most important considerations for spirulina supplements.\n\nIn supplement education, spirulina is commonly discussed for plant-based protein, antioxidant support, nutrient density, immune-wellness positioning, and general vitality. It is not a substitute for a balanced diet, prescribed care, or treatment for nutrient deficiencies. People with autoimmune conditions, phenylketonuria, seafood or algae sensitivities, pregnancy or nursing considerations, or those taking immune-related medication should review spirulina with a qualified healthcare professional.",
-  "interesting_fact_label": "Superfood Insight",
-  "interesting_fact": "Spirulina's deep blue-green color comes partly from phycocyanin, a pigment-protein complex that is often highlighted in antioxidant-focused algae research.",
+  "overview_subtitle": "A blue-green algae profile for greens powders, protein, pigments, and contamination awareness.",
+  "overview_content": "<p>Spirulina is included in Suppriva's ingredient library so readers can understand what the ingredient is, where it comes from, how it is commonly used in supplement labels, and what safety questions should be asked before use. In finished products, spirulina is usually positioned around greens powders, nutrient support, antioxidant blends, and plant-based wellness formulas. This profile is educational and should not be read as a claim that the ingredient diagnoses, treats, cures, or prevents disease.</p>\n\n<p>The first step is ingredient identity. A product label should make clear whether it uses a whole-food powder, extract, oil, standardized material, or branded ingredient. That distinction matters because the same ingredient name can represent very different preparations. Serving size, extraction method, standardization, source quality, and companion ingredients all influence how the formula should be interpreted.</p>\n\n<p>Spirulina provides plant-based protein, phycocyanin pigments, minerals, and naturally occurring nutrients, but quality testing is important because algae products can be contaminated if poorly sourced. This context can help shoppers compare formulas, but it does not replace clinical judgment. Evidence quality may vary by preparation, dose, study population, and outcome measured. Some ingredients have strong nutrition history as foods, while concentrated supplement forms require a separate safety review.</p>\n\n<p>Safety is especially important when an ingredient appears in multiple product categories. It may be used in antioxidant blends, immune products, skin or oral-care products, digestive formulas, weight-management products, or general wellness supplements. The same ingredient may be appropriate in one context and unsuitable in another, especially for people using medication, managing a diagnosed condition, pregnant, nursing, preparing for surgery, or buying products for children.</p>\n\n<p>A practical label review should ask five questions: What exact form is used? How much is provided per serving? Are active compounds or standardization disclosed? What other ingredients are included? Does the label provide realistic caution language? If a product hides important amounts in proprietary blends or promises disease-level results, that is a reason to slow down and compare alternatives.</p>\n\n<p>It is also useful to separate food familiarity from supplement concentration. Many shoppers recognize spirulina from foods, oils, traditional preparations, or wellness trends, but a capsule, extract, powder, or topical formula may behave differently from everyday exposure. Processing can concentrate certain compounds, remove others, or add companion ingredients that change the product's purpose. This is why the supplement facts panel and usage directions matter more than the ingredient name by itself.</p>\n\n<p>For daily wellness routines, spirulina should be viewed as one piece of a broader lifestyle picture. Nutrition, sleep, hydration, physical activity, stress management, and regular medical care matter more than any single supplement. If symptoms are persistent, severe, or unexplained, professional evaluation should come before self-directed supplementation.</p>\n\n<p>Suppriva's goal is to make ingredient research easier. Use this page to understand the role spirulina may play in supplements, what benefits are commonly discussed, what cautions deserve attention, and how to compare product labels with more confidence. The best product choice is the one that fits your goal, uses transparent labeling, and respects your personal safety context.</p>\n\n<p>When comparing products, look for plain-language explanations instead of dramatic claims. Responsible brands usually describe the ingredient's supportive role, list meaningful amounts, identify the source or extract type, and explain who should avoid use. A product that clearly states limitations is often easier to trust than one that promises fast results without context. Use this profile as a checklist for asking better questions before buying.</p>",
+  "interesting_fact_label": "Colorful Pigment",
+  "interesting_fact": "<p>Spirulina's blue-green color comes partly from phycocyanin, a pigment often highlighted in algae supplement marketing.</p>",
   "how_it_works_title": "How Spirulina Works",
-  "how_it_works_subtitle": "Spirulina is valued for nutrient density, plant protein, pigments, and antioxidant-related compounds.",
-  "how_it_works_highlight_title": "Nutrient-Dense Microalgae",
-  "how_it_works_highlight_description": "Spirulina contributes protein, pigments, minerals, and plant compounds, but product quality and contamination testing are essential for responsible supplement selection.",
-  "how_it_works_content": "Spirulina works as a nutrient-dense food-derived ingredient rather than a single isolated compound. Its protein, pigments, minerals, and antioxidant-related compounds explain why it appears in greens powders, wellness blends, and plant-based nutrition products. The ingredient is often marketed for energy and vitality, though those effects depend on overall diet, health status, and product quality.\n\nPhycocyanin is one of spirulina's signature pigments and is frequently discussed in antioxidant research. Spirulina also contains naturally occurring iron and other minerals, but the amount and usefulness depend on the serving size and product composition. It should not be used to self-treat anemia or replace medical nutrient testing.\n\nQuality testing is central. Poorly sourced algae products may contain contaminants. For that reason, shoppers should prioritize brands that disclose testing, sourcing, and safety standards. Spirulina should also be reviewed carefully by people with autoimmune conditions or those using medications that affect immune function.",
-  "benefits_title": "Potential Benefits of Spirulina",
-  "benefits_subtitle": "Educational benefits commonly discussed for spirulina in greens, plant-based nutrition, and wellness routines.",
+  "how_it_works_subtitle": "Spirulina is used in greens and wellness formulas where sourcing and testing matter.",
+  "how_it_works_highlight_title": "Quality Testing Matters",
+  "how_it_works_highlight_description": "Algae products should be tested for heavy metals, microbes, and microcystin contamination.",
+  "how_it_works_content": "<p>Spirulina is commonly used in powders, tablets, capsules, and greens formulas. It contributes protein, pigments, and micronutrients, but amounts vary by serving size and product quality.</p>\n\n<p>Because spirulina is grown in aquatic environments, sourcing and contaminant testing are central. Responsible labels should provide quality language rather than relying only on superfood claims.</p>\n\n<p>Because spirulina may appear in broad formulas, evaluate the full supplement facts panel, not the ingredient name alone.</p>",
+  "benefits_title": "Potential Spirulina Benefits",
+  "benefits_subtitle": "Benefits depend on product form, formula quality, serving size, and individual context.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Nutrient-Dense Greens Support",
-      "description": "Spirulina is often included in greens powders because it contributes protein, pigments, minerals, and plant compounds."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Antioxidant Pigment Context",
-      "description": "Phycocyanin and other pigments make spirulina a common ingredient in antioxidant-focused wellness formulas."
-    },
-    {
-      "icon": "utensils",
-      "title": "Plant-Based Protein",
-      "description": "Spirulina contains protein and is frequently used in vegan, vegetarian, and plant-forward supplement routines."
-    },
-    {
-      "icon": "zap",
-      "title": "Vitality Formula Fit",
-      "description": "Greens and superfood blends often include spirulina in products positioned around daily energy and wellness habits."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Quality Testing Awareness",
-      "description": "Spirulina helps shoppers learn why algae supplements should be checked for heavy metals, microcystins, and purity."
+      "title": "Greens Powder Fit",
+      "description": "Commonly included in plant-based greens and daily wellness powders."
     },
     {
       "icon": "sparkles",
-      "title": "Smoothie and Powder Use",
-      "description": "Its strong color and nutrient profile make spirulina common in powders, tablets, and blended wellness drinks."
-    }
-  ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving sizes vary widely between tablets, capsules, and greens powders.",
-  "typical_dose": "Many spirulina products list 1 gram to 3 grams per serving, while some powders use higher daily serving sizes.",
-  "dosage": "Many spirulina products list 1 gram to 3 grams per serving, while some powders use higher daily serving sizes.",
-  "dosage_content": "Spirulina dosage depends on product format. Tablets and capsules may provide smaller servings, while powders and greens blends may use gram-level scoop sizes. Many products list 1 gram to 3 grams per serving, though some use higher amounts.\n\nBecause spirulina has a strong taste and can affect digestion, people often start with the labeled serving and monitor tolerance. It should be taken as a food-like supplement, not as a replacement for meals, medical nutrition therapy, or prescribed care.\n\nQuality is just as important as dose. Choose products that disclose sourcing and testing for heavy metals, microcystins, and microbial contamination. Pregnant or nursing individuals, people with autoimmune conditions, phenylketonuria, or those taking immune-related medication should consult a healthcare professional before using spirulina.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Spirulina quality testing, contamination control, and immune-related cautions are the most important safety themes.",
-  "side_effects": [
-    "Digestive discomfort",
-    "Nausea",
-    "Headache",
-    "Allergic or sensitivity reactions"
-  ],
-  "side_effects_json": [
+      "title": "Antioxidant Pigments",
+      "description": "Contains phycocyanin and other naturally occurring pigments."
+    },
     {
-      "icon": "stomach",
-      "title": "Digestive Changes",
-      "description": "Spirulina may cause gas, nausea, loose stools, or stomach discomfort in some users."
+      "icon": "dumbbell",
+      "title": "Plant Protein Context",
+      "description": "Provides plant-based protein in small supplemental amounts."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Quality Awareness",
+      "description": "Encourages testing for contaminants and transparent sourcing."
     },
     {
       "icon": "activity",
-      "title": "Headache or Tolerance Issues",
-      "description": "Some people report headache or general discomfort, especially when starting greens powders."
+      "title": "Daily Energy Formulas",
+      "description": "Often used in vitality, nutrition, and performance blends."
     },
     {
-      "icon": "alert-circle",
-      "title": "Allergy or Sensitivity",
-      "description": "People sensitive to algae, seafood, or certain greens products should review ingredients carefully."
+      "icon": "search",
+      "title": "Label Comparison",
+      "description": "Helps shoppers compare powder, tablet, serving size, and testing language."
+    }
+  ],
+  "dosage_title": "Typical Spirulina Dosage",
+  "dosage_subtitle": "Serving size depends on the preparation, label directions, and safety considerations.",
+  "typical_dose": "Follow spirulina product label",
+  "dosage": "Use label directions and choose tested products from reputable sources.",
+  "dosage_content": "<p>Spirulina serving sizes vary from small tablets to larger powder scoops. A greens powder may include spirulina as one ingredient among many, while standalone products may provide larger amounts.</p>\n\n<p>Choose products with contaminant testing. People with autoimmune disease, phenylketonuria, seafood or algae sensitivity, pregnancy, nursing, or medication use should seek professional guidance.</p>\n\n<p>Do not exceed label directions. People using medication, managing a health condition, pregnant, nursing, buying for children, or preparing for surgery should ask a qualified healthcare professional before use.</p>",
+  "safety_title": "Spirulina Safety Information",
+  "safety_subtitle": "Review spirulina safety based on product form, dose, personal health status, and medication use.",
+  "side_effects": [
+    "Digestive Upset",
+    "Allergic Reaction",
+    "Contamination Risk",
+    "Immune Sensitivity"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Upset",
+      "description": "Gas, nausea, or stomach discomfort may occur."
     },
     {
-      "icon": "shield-alert",
-      "title": "Contamination Concern",
-      "description": "Poorly tested algae products may contain contaminants, making third-party quality testing important."
+      "title": "Allergic Reaction",
+      "description": "Algae sensitivity may cause itching, rash, or breathing concerns."
+    },
+    {
+      "title": "Contamination Risk",
+      "description": "Poor-quality products may contain heavy metals or toxins."
+    },
+    {
+      "title": "Immune Sensitivity",
+      "description": "Use caution with autoimmune conditions or immune-related medication."
     }
   ],
   "drug_interactions_json": [
-    "Immune-suppressing medications or immune-related therapies should be reviewed with a healthcare professional before spirulina use.",
-    "Blood-thinning medication users should review spirulina products with a clinician because nutrient and vitamin K content can vary by product.",
-    "People using medications for autoimmune conditions should not add spirulina without professional guidance.",
-    "Combination greens powders may contain many additional herbs or nutrients that should be checked against current medications."
+    {
+      "title": "Immunosuppressants",
+      "description": "Use only with professional guidance if taking immune-suppressing medication."
+    },
+    {
+      "title": "Blood Thinners",
+      "description": "Discuss use if taking anticoagulant medication."
+    },
+    {
+      "title": "Phenylketonuria Management",
+      "description": "Spirulina contains amino acids and may not be appropriate for PKU without guidance."
+    },
+    {
+      "title": "Diabetes Medication",
+      "description": "Monitor carefully if combined with glucose-related supplements or medication."
+    }
   ],
   "who_should_avoid_json": [
-    "People with autoimmune conditions unless cleared by a healthcare professional.",
-    "People with phenylketonuria should avoid spirulina unless a clinician specifically advises otherwise.",
-    "Pregnant or nursing individuals unless advised by a qualified healthcare professional.",
-    "People with algae or seafood-related sensitivities who have not reviewed the product source.",
-    "Anyone using an untested algae product without clear contamination screening."
+    {
+      "title": "Poorly Tested Products",
+      "description": "Avoid algae products without quality or contaminant testing."
+    },
+    {
+      "title": "Autoimmune Conditions",
+      "description": "Ask a healthcare professional before use."
+    },
+    {
+      "title": "Phenylketonuria",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only tested products and professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under guidance."
+    }
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Common questions about spirulina, greens powders, quality testing, and safety.",
+  "food_sources_title": "Spirulina Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Spirulina is made from Arthrospira species cultivated for food and supplement use. It is sold as powder, tablets, capsules, and greens-blend ingredients.</p>\n\n<p>Supplement forms may differ from food or traditional uses. Compare source material, processing, extraction, serving size, and safety directions before choosing a product.</p>",
+  "food_sources_json": [
+    {
+      "title": "Cultivated Algae",
+      "description": "The source material used for spirulina powders and tablets."
+    },
+    {
+      "title": "Greens Powders",
+      "description": "Common formula type where spirulina appears."
+    },
+    {
+      "title": "Tablets and Capsules",
+      "description": "Convenient standalone spirulina formats."
+    }
+  ],
+  "faq_title": "Spirulina FAQs",
+  "faq_subtitle": "Common questions about spirulina supplements and label comparison.",
   "faq_json": [
     {
       "question": "What is spirulina?",
-      "answer": "Spirulina is a blue-green microalgae used in powders, tablets, capsules, and greens blends."
+      "answer": "Spirulina is a blue-green algae used in powders, tablets, capsules, and greens formulas."
     },
     {
-      "question": "Is spirulina a vitamin supplement?",
-      "answer": "No. Spirulina is a food-like algae ingredient that naturally contains protein, pigments, minerals, and other nutrients."
+      "question": "What is spirulina used for?",
+      "answer": "It is commonly used for daily wellness, greens powders, plant protein context, and antioxidant-pigment positioning."
+    },
+    {
+      "question": "Is spirulina a complete protein?",
+      "answer": "It contains amino acids and protein, but supplement servings may not provide large protein amounts."
     },
     {
       "question": "What is phycocyanin?",
-      "answer": "Phycocyanin is a blue pigment-protein complex found in spirulina and often discussed in antioxidant research."
+      "answer": "Phycocyanin is a blue pigment in spirulina often highlighted in supplement marketing."
     },
     {
-      "question": "What is spirulina commonly used for?",
-      "answer": "It is commonly used in greens powders, plant-based nutrition products, antioxidant formulas, and general wellness routines."
+      "question": "Can spirulina be contaminated?",
+      "answer": "Yes. Poor-quality algae products can contain contaminants, so testing matters."
+    },
+    {
+      "question": "Who should avoid spirulina?",
+      "answer": "People with autoimmune conditions, PKU, allergies, pregnancy, nursing, or medication use should seek guidance."
+    },
+    {
+      "question": "Is spirulina safe for children?",
+      "answer": "Use only age-appropriate, tested products under professional guidance."
     },
     {
       "question": "Can spirulina replace vegetables?",
-      "answer": "No. Spirulina may complement a balanced diet but should not replace whole vegetables, meals, or medical nutrition advice."
+      "answer": "No. It may complement a routine but should not replace a balanced diet."
     },
     {
-      "question": "What dose is common on supplement labels?",
-      "answer": "Many products list 1 gram to 3 grams per serving, though powders may provide larger scoop-based servings."
-    },
-    {
-      "question": "Why does spirulina quality testing matter?",
-      "answer": "Algae products can be contaminated if poorly sourced, so testing for heavy metals, microcystins, and microbes is important."
-    },
-    {
-      "question": "Who should be cautious with spirulina?",
-      "answer": "People with autoimmune conditions, phenylketonuria, pregnancy or nursing considerations, or immune-related medications should seek professional guidance."
+      "question": "What should I compare on labels?",
+      "answer": "Compare serving size, form, testing, source, and whether it is standalone or in a blend."
     },
     {
       "question": "Does spirulina taste strong?",
-      "answer": "Yes. Spirulina has a distinct earthy, marine, and slightly bitter taste, especially in powder form."
-    },
-    {
-      "question": "How should I compare spirulina products?",
-      "answer": "Compare source, testing standards, serving size, format, added ingredients, taste, and whether the brand discloses contaminant screening."
+      "answer": "Powdered spirulina often tastes earthy, marine, or grassy."
     }
   ],
-  "sidebar_profile_title": "Spirulina Snapshot",
-  "sidebar_profile_content": "Spirulina is a nutrient-dense blue-green microalgae used in greens powders, tablets, and general wellness formulas. Quality testing is essential because algae products depend heavily on clean sourcing.",
+  "sidebar_profile_title": "Spirulina Profile Snapshot",
+  "sidebar_profile_content": "Spirulina is a blue-green algae used in greens powders, antioxidant blends, tablets, and plant-based wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Blue-green microalgae"
+      "value": "Blue-green algae"
     },
     {
       "label": "Typical Dose",
-      "value": "Often 1-3 grams per serving"
+      "value": "Follow product label"
     },
     {
       "label": "Best For",
-      "value": "Greens and plant-based nutrition formulas"
+      "value": "Greens and wellness formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Choose tested products and review immune cautions"
+      "value": "Choose tested products"
     },
     {
       "label": "Origin",
-      "value": "Cultivated algae farms"
+      "value": "Cultivated Arthrospira"
     },
     {
       "label": "Part Used",
-      "value": "Whole microalgae biomass"
+      "value": "Whole algae biomass"
     },
     {
       "label": "Form",
-      "value": "Powder, tablet, capsule, or blend"
+      "value": "Powder, tablets, capsules"
     },
     {
       "label": "Taste",
-      "value": "Earthy, marine, and bitter"
+      "value": "Earthy, marine, grassy"
     }
   ],
-  "sidebar_at_a_glance_content": "- Blue-green microalgae used in greens and superfood formulas\n- Contains protein, minerals, and pigments such as phycocyanin\n- Quality testing for contaminants is essential\n- Not a substitute for vegetables, meals, or medical care\n- Immune-related cautions should be reviewed",
-  "full_description": "Spirulina is a blue-green microalgae ingredient used in greens powders and general wellness supplements for nutrient density, plant protein, and antioxidant pigment context.",
-  "best_for": "Greens and plant-based nutrition formulas",
-  "safety_level": "Choose tested products and review immune cautions",
-  "origin_country": "Cultivated globally",
-  "part_used": "Whole microalgae biomass",
-  "ingredient_form": "Powder, tablet, capsule, or blend",
-  "taste_profile": "Earthy, marine, and bitter",
+  "sidebar_at_a_glance_content": "<p>Spirulina is best evaluated by serving size, source quality, contaminant testing, formula context, and personal sensitivity.</p>",
+  "full_description": "Spirulina is a blue-green algae used in greens powders, antioxidant blends, tablets, and plant-based wellness formulas.",
+  "best_for": "Greens powders, daily nutrition blends, antioxidant wellness, and plant-based formulas",
+  "safety_level": "Use tested products; caution with autoimmune issues",
+  "origin_country": "Cultivated Arthrospira",
+  "part_used": "Whole algae biomass",
+  "ingredient_form": "Powder, tablets, capsules",
+  "taste_profile": "Earthy, marine, grassy",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Spirulina Benefits, Dosage and Safety | Suppriva",
+  "uses_title": "Spirulina Uses",
+  "uses_subtitle": "Common wellness contexts where spirulina appears.",
+  "uses_content": "<p>Spirulina is commonly used in greens powders, daily nutrition blends, antioxidant wellness, and plant-based formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Greens powders, daily nutrition blends, antioxidant wellness, and plant-based formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, source, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Spirulina Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on spirulina varies by preparation, dose, population, and outcome measured. Ingredient evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Spirulina References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "chlorella",
+    "moringa",
+    "wheatgrass",
+    "chlorogenic-acid",
+    "green-tea-extract"
+  ],
+  "seo_title": "Spirulina Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "spirulina",
-  "seo_description": "Explore spirulina benefits, typical dosage, greens powder use, phycocyanin, quality testing, side effects, and safety considerations.",
+  "seo_description": "Explore Spirulina benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/spirulina",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Spirulina Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore spirulina benefits, typical dosage, greens powder use, phycocyanin, quality testing, side effects, and safety considerations."
+  "meta_title": "Spirulina Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore Spirulina benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

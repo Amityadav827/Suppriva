@@ -1,208 +1,287 @@
 {
   "name": "Soursop",
   "scientific_name": "Annona muricata",
-  "hero_badge": null,
-  "short_description": "Soursop is a tropical fruit botanical used in supplement formulas for tropical fruit botanical and antioxidant-positioned formulas.",
-  "overview_title": "Soursop Overview",
-  "overview_subtitle": "A practical guide to soursop in modern supplement formulas.",
-  "overview_content": "<p>Soursop is a tropical fruit botanical that appears in wellness products because of tropical fruit compounds and traditional leaf or fruit use. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing soursop products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Soursop supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Soursop fruit is also known as graviola in many supplement labels.</p>",
+  "ingredient_category": "Fruits & Botanicals",
+  "status": "published",
+  "hero_badge": "Tropical Botanical",
+  "short_description": "Soursop is a tropical fruit botanical used in antioxidant, fruit-based, and traditional wellness supplement formulas.",
+  "overview_title": "What Is Soursop?",
+  "overview_subtitle": "A tropical fruit botanical profile focused on label claims, traditional use, and safety cautions.",
+  "overview_content": "<p>Soursop is included in Suppriva's ingredient library so readers can understand what the ingredient is, where it comes from, how it is commonly used in supplement labels, and what safety questions should be asked before use. In finished products, soursop is usually positioned around antioxidant wellness, fruit-based botanical blends, and traditional wellness education. This profile is educational and should not be read as a claim that the ingredient diagnoses, treats, cures, or prevents disease.</p>\n\n<p>The first step is ingredient identity. A product label should make clear whether it uses a whole-food powder, extract, oil, standardized material, or branded ingredient. That distinction matters because the same ingredient name can represent very different preparations. Serving size, extraction method, standardization, source quality, and companion ingredients all influence how the formula should be interpreted.</p>\n\n<p>Soursop contains naturally occurring plant compounds, including acetogenins, flavonoids, and fruit polyphenols, but concentrated extracts require careful safety review. This context can help shoppers compare formulas, but it does not replace clinical judgment. Evidence quality may vary by preparation, dose, study population, and outcome measured. Some ingredients have strong nutrition history as foods, while concentrated supplement forms require a separate safety review.</p>\n\n<p>Safety is especially important when an ingredient appears in multiple product categories. It may be used in antioxidant blends, immune products, skin or oral-care products, digestive formulas, weight-management products, or general wellness supplements. The same ingredient may be appropriate in one context and unsuitable in another, especially for people using medication, managing a diagnosed condition, pregnant, nursing, preparing for surgery, or buying products for children.</p>\n\n<p>A practical label review should ask five questions: What exact form is used? How much is provided per serving? Are active compounds or standardization disclosed? What other ingredients are included? Does the label provide realistic caution language? If a product hides important amounts in proprietary blends or promises disease-level results, that is a reason to slow down and compare alternatives.</p>\n\n<p>It is also useful to separate food familiarity from supplement concentration. Many shoppers recognize soursop from foods, oils, traditional preparations, or wellness trends, but a capsule, extract, powder, or topical formula may behave differently from everyday exposure. Processing can concentrate certain compounds, remove others, or add companion ingredients that change the product's purpose. This is why the supplement facts panel and usage directions matter more than the ingredient name by itself.</p>\n\n<p>For daily wellness routines, soursop should be viewed as one piece of a broader lifestyle picture. Nutrition, sleep, hydration, physical activity, stress management, and regular medical care matter more than any single supplement. If symptoms are persistent, severe, or unexplained, professional evaluation should come before self-directed supplementation.</p>\n\n<p>Suppriva's goal is to make ingredient research easier. Use this page to understand the role soursop may play in supplements, what benefits are commonly discussed, what cautions deserve attention, and how to compare product labels with more confidence. The best product choice is the one that fits your goal, uses transparent labeling, and respects your personal safety context.</p>\n\n<p>When comparing products, look for plain-language explanations instead of dramatic claims. Responsible brands usually describe the ingredient's supportive role, list meaningful amounts, identify the source or extract type, and explain who should avoid use. A product that clearly states limitations is often easier to trust than one that promises fast results without context. Use this profile as a checklist for asking better questions before buying.</p>",
+  "interesting_fact_label": "Fruit With Caution",
+  "interesting_fact": "<p>Soursop is eaten as a fruit in some regions, but concentrated leaf, seed, or extract supplements are very different from food use.</p>",
   "how_it_works_title": "How Soursop Works",
-  "how_it_works_subtitle": "How soursop supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Tropical Antioxidant Support",
-  "how_it_works_highlight_description": "Soursop is most often positioned around tropical antioxidant support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Soursop works through fruit polyphenols and botanical constituents that support its role in antioxidant-positioned supplements. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare soursop by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Soursop is used in botanical formulas where plant part and safety context matter.",
+  "how_it_works_highlight_title": "Plant Part Matters",
+  "how_it_works_highlight_description": "Fruit pulp, leaf, seed, and extract forms should not be treated as equivalent.",
+  "how_it_works_content": "<p>Soursop supplements may use fruit powder, leaf extract, or broader botanical blends. Marketing often highlights antioxidant or traditional-use language, but the exact plant part and extract strength are important.</p>\n\n<p>Some soursop plant compounds have raised safety concerns in concentrated or inappropriate use. Consumers should avoid products that make cancer-treatment or disease-cure claims.</p>\n\n<p>Because soursop may appear in broad formulas, evaluate the full supplement facts panel, not the ingredient name alone.</p>",
   "benefits_title": "Potential Soursop Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether soursop fits the full formula.",
+  "benefits_subtitle": "Benefits depend on product form, formula quality, serving size, and individual context.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Tropical antioxidant support",
-      "description": "Soursop is commonly evaluated for tropical antioxidant support within supplement formulas and wellness routines."
+      "icon": "sparkles",
+      "title": "Antioxidant Label Context",
+      "description": "Often used in fruit-based formulas with antioxidant positioning."
     },
     {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Soursop to support a more targeted product story around tropical fruit botanical and antioxidant-positioned formulas."
+      "icon": "leaf",
+      "title": "Traditional Botanical Identity",
+      "description": "Provides a recognizable tropical plant used in traditional wellness settings."
     },
     {
       "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "title": "Plant-Part Awareness",
+      "description": "Encourages review of fruit, leaf, seed, and extract differences."
     },
     {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Soursop may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "apple",
+      "title": "Fruit-Based Formula Fit",
+      "description": "May appear in superfruit powders or botanical blends."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Soursop supplements."
+      "icon": "shield",
+      "title": "Safety Education",
+      "description": "Highlights why concentrated extracts require caution."
     },
     {
       "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Soursop helps readers make more informed decisions instead of relying only on front-label claims."
+      "title": "Claim Review",
+      "description": "Helps shoppers avoid exaggerated disease-treatment marketing."
     }
   ],
   "dosage_title": "Typical Soursop Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Supplement serving sizes vary widely by leaf, fruit powder, tea, or extract; follow label directions.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Supplement serving sizes vary widely by leaf, fruit powder, tea, or extract; follow label directions.</p><p>Because soursop can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the preparation, label directions, and safety considerations.",
+  "typical_dose": "Follow product label; avoid high-dose extracts",
+  "dosage": "Use only as directed and avoid concentrated forms making disease-treatment claims.",
+  "dosage_content": "<p>Soursop supplement serving sizes vary widely by fruit powder, leaf extract, tea, or blend. These forms are not interchangeable.</p>\n\n<p>Avoid high-dose or poorly explained soursop extracts. Anyone with neurological concerns, liver or kidney disease, pregnancy, nursing, or medication use should seek professional guidance.</p>\n\n<p>Do not exceed label directions. People using medication, managing a health condition, pregnant, nursing, buying for children, or preparing for surgery should ask a qualified healthcare professional before use.</p>",
   "safety_title": "Soursop Safety Information",
-  "safety_subtitle": "Use soursop with label awareness and personal health context in mind.",
+  "safety_subtitle": "Review soursop safety based on product form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Digestive Upset",
+    "Neurological Concern",
+    "Low Blood Pressure",
+    "Liver or Kidney Stress"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Soursop may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or diarrhea may occur."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Neurological Concern",
+      "description": "Concentrated or inappropriate use has raised neurological safety concerns."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Low Blood Pressure",
+      "description": "Some products may not be appropriate for people managing blood pressure."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Liver or Kidney Stress",
+      "description": "Use caution with concentrated extracts or existing organ concerns."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    {
+      "title": "Blood Pressure Medication",
+      "description": "Use caution if taking medication for blood pressure."
+    },
+    {
+      "title": "Diabetes Medication",
+      "description": "Ask a clinician before combining with glucose-related therapies."
+    },
+    {
+      "title": "Sedatives",
+      "description": "Use caution with calming products or medications."
+    },
+    {
+      "title": "Cancer Therapies",
+      "description": "Do not use as an alternative to oncology care; discuss supplements with the care team."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Soursop or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Avoid concentrated forms unless directed by a clinician."
+    },
+    {
+      "title": "Neurological Conditions",
+      "description": "Use professional guidance due to safety concerns."
+    },
+    {
+      "title": "Liver or Kidney Disease",
+      "description": "Ask a healthcare professional before use."
+    },
+    {
+      "title": "Children",
+      "description": "Not intended for unsupervised child use."
+    },
+    {
+      "title": "Disease-Treatment Claims",
+      "description": "Avoid products marketed as cures or replacements for care."
+    }
+  ],
+  "food_sources_title": "Soursop Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Soursop comes from Annona muricata, a tropical fruit tree. Supplements may use fruit powder, leaf material, teas, or extracts.</p>\n\n<p>Supplement forms may differ from food or traditional uses. Compare source material, processing, extraction, serving size, and safety directions before choosing a product.</p>",
+  "food_sources_json": [
+    {
+      "title": "Fruit Pulp",
+      "description": "Used in foods and some fruit-powder products."
+    },
+    {
+      "title": "Leaf Material",
+      "description": "Used in teas or extracts; not equivalent to fruit pulp."
+    },
+    {
+      "title": "Botanical Blends",
+      "description": "Sometimes included in antioxidant or traditional wellness formulas."
+    }
   ],
   "faq_title": "Soursop FAQs",
   "faq_subtitle": "Common questions about soursop supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Soursop used for in supplements?",
-      "answer": "Soursop is commonly used in formulas focused on tropical fruit botanical and antioxidant-positioned formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is soursop?",
+      "answer": "Soursop is a tropical fruit from Annona muricata used as food and in some botanical supplements."
     },
     {
-      "question": "Is Soursop a medicine?",
-      "answer": "No. Soursop is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is soursop fruit the same as soursop extract?",
+      "answer": "No. Fruit pulp, leaf, seed, tea, and concentrated extract forms are different."
     },
     {
-      "question": "What form of Soursop should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "What is soursop used for in supplements?",
+      "answer": "It is commonly positioned around antioxidant and traditional wellness language."
     },
     {
-      "question": "How long does Soursop take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Can soursop treat cancer?",
+      "answer": "No. Avoid products that claim soursop treats or cures cancer or any disease."
     },
     {
-      "question": "Can Soursop cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Is soursop safe?",
+      "answer": "Food use differs from concentrated supplement use. Some forms require caution."
     },
     {
-      "question": "Can I take Soursop every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can soursop affect the nervous system?",
+      "answer": "Concentrated or inappropriate use has raised neurological safety concerns, so caution is important."
     },
     {
-      "question": "What should I check on a Soursop label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Can soursop interact with medication?",
+      "answer": "It may be a concern with blood pressure, diabetes, sedative, or cancer therapies."
     },
     {
-      "question": "Does Soursop interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Is soursop safe during pregnancy?",
+      "answer": "Concentrated forms should be avoided unless directed by a healthcare professional."
     },
     {
-      "question": "Is Soursop suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "What should I compare on labels?",
+      "answer": "Compare plant part, extract type, serving size, and safety directions."
     },
     {
-      "question": "Can Soursop replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Should I use soursop daily?",
+      "answer": "Follow product directions and avoid long-term use without professional guidance."
     }
   ],
   "sidebar_profile_title": "Soursop Profile Snapshot",
-  "sidebar_profile_content": "Soursop is a tropical fruit botanical commonly evaluated for tropical fruit botanical and antioxidant-positioned formulas.",
+  "sidebar_profile_content": "Soursop is a tropical fruit botanical used in antioxidant, superfruit, and traditional wellness supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Tropical fruit botanical"
+      "value": "Fruit botanical"
     },
     {
       "label": "Typical Dose",
-      "value": "Supplement serving sizes vary widely by leaf, fruit powder, tea, or extract; follow label directions."
+      "value": "Follow label; avoid high-dose extracts"
     },
     {
       "label": "Best For",
-      "value": "Tropical fruit botanical and antioxidant-positioned formulas"
+      "value": "Antioxidant botanical education"
     },
     {
       "label": "Safety Level",
-      "value": "Use caution with concentrated extracts and long-term use"
+      "value": "Use caution with extracts"
     },
     {
       "label": "Origin",
-      "value": "Tropical Americas and Caribbean regions"
+      "value": "Annona muricata tree"
     },
     {
       "label": "Part Used",
-      "value": "Fruit or leaf depending on product"
+      "value": "Fruit, leaf, or extract"
     },
     {
       "label": "Form",
-      "value": "Tea, powder, capsule, extract"
+      "value": "Powders, teas, capsules"
     },
     {
       "label": "Taste",
-      "value": "Sweet-tart tropical fruit"
+      "value": "Sweet, tart, tropical"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Soursop is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Soursop is used in supplement formulas for tropical fruit botanical and antioxidant-positioned formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Tropical fruit botanical and antioxidant-positioned formulas",
-  "safety_level": "Use caution with concentrated extracts and long-term use",
-  "origin_country": "Tropical Americas and Caribbean regions",
-  "part_used": "Fruit or leaf depending on product",
-  "ingredient_form": "Tea, powder, capsule, extract",
-  "taste_profile": "Sweet-tart tropical fruit",
+  "sidebar_at_a_glance_content": "<p>Soursop is best evaluated by plant part, extract type, claim language, and safety cautions around concentrated use.</p>",
+  "full_description": "Soursop is a tropical fruit botanical used in antioxidant, superfruit, and traditional wellness supplement formulas.",
+  "best_for": "Antioxidant botanical blends, fruit-based wellness formulas, and label education",
+  "safety_level": "Use caution with concentrated extracts",
+  "origin_country": "Annona muricata tree",
+  "part_used": "Fruit, leaf, or extract",
+  "ingredient_form": "Powders, teas, capsules",
+  "taste_profile": "Sweet, tart, tropical",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Soursop Uses",
+  "uses_subtitle": "Common wellness contexts where soursop appears.",
+  "uses_content": "<p>Soursop is commonly used in antioxidant botanical blends, fruit-based wellness formulas, and label education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Antioxidant botanical blends, fruit-based wellness formulas, and label education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, source, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Soursop Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on soursop varies by preparation, dose, population, and outcome measured. Ingredient evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Soursop References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "pomegranate-extract",
+    "acai-extract",
+    "blueberry",
+    "cranberry-extract",
+    "grape-seed-extract"
+  ],
   "seo_title": "Soursop Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "soursop",
-  "seo_description": "Explore soursop benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Soursop benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/soursop",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Soursop Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore soursop benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Soursop benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

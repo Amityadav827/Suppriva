@@ -1,142 +1,188 @@
 {
   "name": "Tea Tree Oil",
   "scientific_name": "Melaleuca alternifolia oil",
-  "hero_badge": null,
-  "short_description": "Tea Tree Oil is a essential oil used in supplement formulas for topical skin, scalp, and nail-care product routines.",
-  "overview_title": "Tea Tree Oil Overview",
-  "overview_subtitle": "A practical guide to tea tree oil in modern supplement formulas.",
-  "overview_content": "<p>Tea Tree Oil is a essential oil that appears in wellness products because of terpinen-4-ol-rich essential oil widely used in topical care products. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing tea tree oil products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Tea Tree Oil supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Tea tree oil is one of the best-known essential oils for topical skin and scalp products.</p>",
+  "ingredient_category": "Oils",
+  "status": "published",
+  "hero_badge": "Essential Oil",
+  "short_description": "Tea tree oil is an essential oil used in topical skin, scalp, oral-care, and cleansing product formulas, not as an ingestible supplement.",
+  "overview_title": "What Is Tea Tree Oil?",
+  "overview_subtitle": "An essential oil profile focused on topical use, dilution, oral safety, and label literacy.",
+  "overview_content": "<p>Tea Tree Oil is included in Suppriva's ingredient library so readers can understand what the ingredient is, where it comes from, how it is commonly used in supplement labels, and what safety questions should be asked before use. In finished products, tea tree oil is usually positioned around topical skin products, scalp care, oral-care products, and cleansing formulas. This profile is educational and should not be read as a claim that the ingredient diagnoses, treats, cures, or prevents disease.</p>\n\n<p>The first step is ingredient identity. A product label should make clear whether it uses a whole-food powder, extract, oil, standardized material, or branded ingredient. That distinction matters because the same ingredient name can represent very different preparations. Serving size, extraction method, standardization, source quality, and companion ingredients all influence how the formula should be interpreted.</p>\n\n<p>Tea tree oil contains terpene compounds such as terpinen-4-ol, but it must be used with careful topical dilution and should not be swallowed. This context can help shoppers compare formulas, but it does not replace clinical judgment. Evidence quality may vary by preparation, dose, study population, and outcome measured. Some ingredients have strong nutrition history as foods, while concentrated supplement forms require a separate safety review.</p>\n\n<p>Safety is especially important when an ingredient appears in multiple product categories. It may be used in antioxidant blends, immune products, skin or oral-care products, digestive formulas, weight-management products, or general wellness supplements. The same ingredient may be appropriate in one context and unsuitable in another, especially for people using medication, managing a diagnosed condition, pregnant, nursing, preparing for surgery, or buying products for children.</p>\n\n<p>A practical label review should ask five questions: What exact form is used? How much is provided per serving? Are active compounds or standardization disclosed? What other ingredients are included? Does the label provide realistic caution language? If a product hides important amounts in proprietary blends or promises disease-level results, that is a reason to slow down and compare alternatives.</p>\n\n<p>It is also useful to separate food familiarity from supplement concentration. Many shoppers recognize tea tree oil from foods, oils, traditional preparations, or wellness trends, but a capsule, extract, powder, or topical formula may behave differently from everyday exposure. Processing can concentrate certain compounds, remove others, or add companion ingredients that change the product's purpose. This is why the supplement facts panel and usage directions matter more than the ingredient name by itself.</p>\n\n<p>For daily wellness routines, tea tree oil should be viewed as one piece of a broader lifestyle picture. Nutrition, sleep, hydration, physical activity, stress management, and regular medical care matter more than any single supplement. If symptoms are persistent, severe, or unexplained, professional evaluation should come before self-directed supplementation.</p>\n\n<p>Suppriva's goal is to make ingredient research easier. Use this page to understand the role tea tree oil may play in supplements, what benefits are commonly discussed, what cautions deserve attention, and how to compare product labels with more confidence. The best product choice is the one that fits your goal, uses transparent labeling, and respects your personal safety context.</p>\n\n<p>When comparing products, look for plain-language explanations instead of dramatic claims. Responsible brands usually describe the ingredient's supportive role, list meaningful amounts, identify the source or extract type, and explain who should avoid use. A product that clearly states limitations is often easier to trust than one that promises fast results without context. Use this profile as a checklist for asking better questions before buying.</p>",
+  "interesting_fact_label": "Topical Only",
+  "interesting_fact": "<p>Tea tree oil should not be swallowed; ingestion can be dangerous and requires urgent medical attention.</p>",
   "how_it_works_title": "How Tea Tree Oil Works",
-  "how_it_works_subtitle": "How tea tree oil supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Topical Cleansing Support",
-  "how_it_works_highlight_description": "Tea Tree Oil is most often positioned around topical cleansing support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Tea Tree Oil works through volatile terpenes that explain its role in cleansing and topical wellness formulations. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare tea tree oil by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Tea tree oil appears in topical formulas where concentration, dilution, and safety directions matter.",
+  "how_it_works_highlight_title": "Never Ingest",
+  "how_it_works_highlight_description": "Tea tree oil belongs in properly formulated topical products, not oral supplement routines.",
+  "how_it_works_content": "<p>Tea tree oil is an essential oil distilled from Melaleuca alternifolia leaves. It is commonly used in topical skin, scalp, cleansing, and oral-care products where the final concentration matters.</p>\n\n<p>Essential oils are concentrated. Undiluted tea tree oil can irritate skin, and swallowing tea tree oil can be toxic. Product labels should provide clear topical-use directions and warnings.</p>\n\n<p>Because tea tree oil may appear in broad formulas, evaluate the full supplement facts panel, not the ingredient name alone.</p>",
   "benefits_title": "Potential Tea Tree Oil Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether tea tree oil fits the full formula.",
+  "benefits_subtitle": "Benefits depend on product form, formula quality, serving size, and individual context.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Topical cleansing support",
-      "description": "Tea Tree Oil is commonly evaluated for topical cleansing support within supplement formulas and wellness routines."
+      "icon": "droplets",
+      "title": "Topical Formula Context",
+      "description": "Used in skin, scalp, and cleansing products."
     },
     {
       "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Tea Tree Oil to support a more targeted product story around topical skin, scalp, and nail-care product routines."
+      "title": "Fresh Botanical Identity",
+      "description": "Provides a recognizable essential-oil profile."
+    },
+    {
+      "icon": "shield",
+      "title": "Oral-Safety Education",
+      "description": "Highlights that tea tree oil should not be swallowed."
     },
     {
       "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "title": "Dilution Awareness",
+      "description": "Encourages review of concentration and usage directions."
     },
     {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Tea Tree Oil may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "scissors",
+      "title": "Scalp and Nail Products",
+      "description": "Often appears in hair, scalp, foot, and nail-care formulas."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Tea Tree Oil supplements."
-    },
-    {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Tea Tree Oil helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "alert-circle",
+      "title": "Irritation Caution",
+      "description": "Supports careful patch testing and avoidance of sensitive areas."
     }
   ],
   "dosage_title": "Typical Tea Tree Oil Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Use only as directed; tea tree oil is usually topical and should be diluted appropriately.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Use only as directed; tea tree oil is usually topical and should be diluted appropriately.</p><p>Because tea tree oil can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the preparation, label directions, and safety considerations.",
+  "typical_dose": "Topical use only; follow product label",
+  "dosage": "Do not ingest. Use only as directed in properly diluted topical products.",
+  "dosage_content": "<p>Tea tree oil is not a dietary supplement ingredient for swallowing. It should be used only in topical or appropriately labeled products, following the manufacturer's directions.</p>\n\n<p>Patch test first and avoid eyes, mucous membranes, deep wounds, and use on children or pets unless a qualified professional approves.</p>\n\n<p>Do not exceed label directions. People using medication, managing a health condition, pregnant, nursing, buying for children, or preparing for surgery should ask a qualified healthcare professional before use.</p>",
   "safety_title": "Tea Tree Oil Safety Information",
-  "safety_subtitle": "Use tea tree oil with label awareness and personal health context in mind.",
+  "safety_subtitle": "Review tea tree oil safety based on product form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Skin Sensitivity",
-    "Digestive Upset",
-    "Allergy Awareness",
-    "Dose and Dilution Concerns"
+    "Skin Irritation",
+    "Allergic Contact Dermatitis",
+    "Eye or Mucous Irritation",
+    "Toxicity if Swallowed"
   ],
   "side_effects_json": [
     {
-      "title": "Skin Sensitivity",
-      "description": "Tea Tree Oil may cause irritation or sensitivity, especially when used undiluted or on sensitive skin."
+      "title": "Skin Irritation",
+      "description": "Redness, burning, itching, or dryness may occur."
     },
     {
-      "title": "Digestive Upset",
-      "description": "Internal use is not appropriate unless the product is specifically formulated and labeled for that purpose."
+      "title": "Allergic Contact Dermatitis",
+      "description": "Some users may develop allergic rash or sensitivity."
     },
     {
-      "title": "Allergy Awareness",
-      "description": "Stop use if rash, itching, swelling, or other sensitivity signs occur."
+      "title": "Eye or Mucous Irritation",
+      "description": "Avoid contact with eyes, mouth, and sensitive tissues."
     },
     {
-      "title": "Dose and Dilution Concerns",
-      "description": "Concentrated oils require careful label-directed use and should not be treated like ordinary foods."
+      "title": "Toxicity if Swallowed",
+      "description": "Ingestion can cause serious symptoms and requires urgent help."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    {
+      "title": "Topical Medications",
+      "description": "Ask a clinician before combining with acne, eczema, antifungal, or steroid products."
+    },
+    {
+      "title": "Sensitive Skin Treatments",
+      "description": "Use caution with exfoliating acids, retinoids, or irritating actives."
+    },
+    {
+      "title": "Oral-Care Products",
+      "description": "Use only products specifically formulated and labeled for oral-care use; do not swallow oil."
+    },
+    {
+      "title": "Pet Products",
+      "description": "Do not use around pets unless veterinary guidance supports it."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Tea Tree Oil or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Oral Ingestion",
+      "description": "Never swallow tea tree oil."
+    },
+    {
+      "title": "Known Essential Oil Allergy",
+      "description": "Avoid if allergic or previously reactive."
+    },
+    {
+      "title": "Infants and Young Children",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use topical products only with appropriate guidance."
+    },
+    {
+      "title": "Open Wounds or Eyes",
+      "description": "Avoid sensitive tissues and broken skin unless directed by a clinician."
+    }
+  ],
+  "food_sources_title": "Tea Tree Oil Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Tea tree oil is steam-distilled from Melaleuca alternifolia leaves. It is used in topical oils, shampoos, cleansers, creams, foot products, and oral-care products formulated for external use.</p>\n\n<p>Supplement forms may differ from food or traditional uses. Compare source material, processing, extraction, serving size, and safety directions before choosing a product.</p>",
+  "food_sources_json": [
+    {
+      "title": "Melaleuca alternifolia Leaves",
+      "description": "The source material for tea tree essential oil."
+    },
+    {
+      "title": "Topical Products",
+      "description": "Common in skin, scalp, foot, and nail-care formulas."
+    },
+    {
+      "title": "Diluted Essential Oil Blends",
+      "description": "Requires careful concentration and patch testing."
+    }
   ],
   "faq_title": "Tea Tree Oil FAQs",
   "faq_subtitle": "Common questions about tea tree oil supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Tea Tree Oil used for in supplements?",
-      "answer": "Tea Tree Oil is commonly used in formulas focused on topical skin, scalp, and nail-care product routines. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is tea tree oil?",
+      "answer": "Tea tree oil is an essential oil distilled from Melaleuca alternifolia leaves."
     },
     {
-      "question": "Is Tea Tree Oil a medicine?",
-      "answer": "No. Tea Tree Oil is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Can tea tree oil be swallowed?",
+      "answer": "No. Tea tree oil should not be ingested and can be dangerous if swallowed."
     },
     {
-      "question": "What form of Tea Tree Oil should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "What is tea tree oil used for?",
+      "answer": "It is commonly used in topical skin, scalp, foot, nail, cleansing, and oral-care products."
     },
     {
-      "question": "How long does Tea Tree Oil take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Should tea tree oil be diluted?",
+      "answer": "Yes. Concentrated essential oils can irritate skin and should be used according to product directions."
     },
     {
-      "question": "Can Tea Tree Oil cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Can tea tree oil irritate skin?",
+      "answer": "Yes. Redness, itching, burning, dryness, or allergic rash may occur."
     },
     {
-      "question": "Can I take Tea Tree Oil every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can I use tea tree oil near my eyes?",
+      "answer": "No. Avoid eyes and mucous membranes."
     },
     {
-      "question": "What should I check on a Tea Tree Oil label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Is tea tree oil safe for children?",
+      "answer": "Use only age-appropriate products and professional guidance."
     },
     {
-      "question": "Does Tea Tree Oil interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Can tea tree oil be used on pets?",
+      "answer": "Do not use around pets unless a veterinarian approves."
     },
     {
-      "question": "Is Tea Tree Oil suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "What should I compare on labels?",
+      "answer": "Compare concentration, dilution, intended use, safety warnings, and whether the product is topical only."
     },
     {
-      "question": "Can Tea Tree Oil replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "What should I do if tea tree oil is swallowed?",
+      "answer": "Seek urgent medical or poison-control guidance immediately."
     }
   ],
   "sidebar_profile_title": "Tea Tree Oil Profile Snapshot",
-  "sidebar_profile_content": "Tea Tree Oil is a essential oil commonly evaluated for topical skin, scalp, and nail-care product routines.",
+  "sidebar_profile_content": "Tea Tree Oil is a concentrated essential oil used in topical skin, scalp, nail, foot, cleansing, and oral-care products; it should not be swallowed.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -144,19 +190,19 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Use only as directed; tea tree oil is usually topical and should be diluted appropriately."
+      "value": "Topical use only"
     },
     {
       "label": "Best For",
-      "value": "Topical skin, scalp, and nail-care product routines"
+      "value": "Skin and scalp formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Topical-use caution required; not for ingestion"
+      "value": "Do not ingest"
     },
     {
       "label": "Origin",
-      "value": "Australia"
+      "value": "Melaleuca alternifolia leaves"
     },
     {
       "label": "Part Used",
@@ -164,45 +210,78 @@
     },
     {
       "label": "Form",
-      "value": "Essential oil, topical blend, shampoo, serum"
+      "value": "Topical oils, shampoos, creams"
     },
     {
       "label": "Taste",
-      "value": "Sharp medicinal aroma"
+      "value": "Not for ingestion"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Tea Tree Oil is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Tea Tree Oil is used in supplement formulas for topical skin, scalp, and nail-care product routines and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Topical skin, scalp, and nail-care product routines",
-  "safety_level": "Topical-use caution required; not for ingestion",
-  "origin_country": "Australia",
+  "sidebar_at_a_glance_content": "<p>Tea Tree Oil is best evaluated by topical concentration, dilution, intended use, patch-test guidance, and strict non-ingestion warnings.</p>",
+  "full_description": "Tea Tree Oil is a concentrated essential oil used in topical skin, scalp, nail, foot, cleansing, and oral-care products; it should not be swallowed.",
+  "best_for": "Topical skin, scalp, nail, foot, cleansing, and oral-care product education",
+  "safety_level": "Topical only; toxic if swallowed",
+  "origin_country": "Melaleuca alternifolia leaves",
   "part_used": "Leaf oil",
-  "ingredient_form": "Essential oil, topical blend, shampoo, serum",
-  "taste_profile": "Sharp medicinal aroma",
+  "ingredient_form": "Topical oils, shampoos, creams",
+  "taste_profile": "Not for ingestion",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Tea Tree Oil Uses",
+  "uses_subtitle": "Common wellness contexts where tea tree oil appears.",
+  "uses_content": "<p>Tea Tree Oil is commonly used in topical skin, scalp, nail, foot, cleansing, and oral-care product education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Topical skin, scalp, nail, foot, cleansing, and oral-care product education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, source, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Tea Tree Oil Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on tea tree oil varies by preparation, dose, population, and outcome measured. Ingredient evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Tea Tree Oil References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "neem",
+    "lavender-oil",
+    "lemongrass-oil",
+    "undecylenic-acid",
+    "aloe-vera"
+  ],
   "seo_title": "Tea Tree Oil Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "tea tree oil",
-  "seo_description": "Explore tea tree oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Tea Tree Oil benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/tea-tree-oil",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Tea Tree Oil Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore tea tree oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Tea Tree Oil benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
