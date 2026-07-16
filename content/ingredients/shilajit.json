@@ -1,223 +1,287 @@
 {
   "name": "Shilajit",
-  "status": "published",
   "scientific_name": "Asphaltum punjabianum",
   "ingredient_category": "Specialty Ingredients",
-  "hero_badge": null,
-  "short_description": "Shilajit is a purified mineral resin used in wellness supplements for fulvic acid, trace mineral, and adaptogen-style positioning, with practical safety and label context for supplement shoppers.",
-  "overview_title": "Shilajit Overview",
-  "overview_subtitle": "A practical look at shilajit as a supplement ingredient.",
-  "overview_content": "<p>Shilajit is a purified mineral resin used in wellness supplements for fulvic acid, trace mineral, and adaptogen-style positioning. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Shilajit through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Shilajit should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>High-quality shilajit products should be purified and tested because raw mineral pitch can contain contaminants.</p>",
+  "status": "published",
+  "hero_badge": "Mineral-Rich Resin",
+  "short_description": "Shilajit is a mineral-rich resin used in energy, vitality, men's wellness, and performance-oriented supplement formulas.",
+  "overview_title": "What Is Shilajit?",
+  "overview_subtitle": "A specialty ingredient profile focused on purification, fulvic acid, and safety-aware label review.",
+  "overview_content": "<p>Shilajit is an ingredient profile in Suppriva's wellness library, where readers can compare the source, supplement form, label language, safety context, and practical use of common dietary supplement ingredients. In product formulas, shilajit is usually included for vitality formulas, men's wellness, energy-support positioning, and performance supplement education. The most helpful labels explain the ingredient identity clearly, including the form used, serving size, standardization when relevant, and whether the ingredient is part of a broader blend.</p>\n\n<p>This ingredient should be evaluated as part of the finished supplement, not in isolation. A formula that includes shilajit may also include vitamins, minerals, botanicals, amino acids, probiotics, enzymes, or branded complexes that change the intended audience and the safety profile. For that reason, two products can mention the same ingredient while supporting different wellness goals. Compare the supplement facts panel, the serving instructions, and the caution language before assuming two formulas are equivalent.</p>\n\n<p>Shilajit is commonly discussed for fulvic acid, humic substances, and trace minerals, but product quality and purification are central safety considerations. This does not mean the ingredient treats, cures, or prevents disease. Suppriva presents ingredient information for education and label literacy, not as medical advice. People managing symptoms, using prescription medication, preparing for surgery, pregnant, nursing, or caring for children should use qualified healthcare guidance before relying on any supplement.</p>\n\n<p>Quality markers matter. For botanicals and specialty ingredients, look for the plant part, extract ratio, standardized compounds, and third-party quality language. For minerals, look at the chemical form and the actual elemental amount. For mushroom ingredients, distinguish fruiting body, mycelium, extract, and whole powder. These details shape how a supplement is positioned and how confidently shoppers can compare one product to another.</p>\n\n<p>The best use of shilajit is realistic and context-aware. It may support a wellness routine when paired with appropriate nutrition, sleep, movement, hydration, stress management, and professional care where needed. It should not be used to delay evaluation for persistent symptoms or to replace prescribed treatment. If a label uses exaggerated claims, hides amounts in proprietary blends, or makes disease-treatment promises, that product deserves extra caution.</p>\n\n<p>For Suppriva readers, the goal is not hype. It is to understand what shilajit is, why it appears on supplement labels, what questions to ask, and when safety considerations should come first. Use this profile as a starting point for comparing product pages, ingredient combinations, and health-goal categories with a more informed eye.</p>\n\n<p>A useful ingredient review separates three questions: what the ingredient is, what the formula is trying to support, and whether the product fits your personal context. Shilajit may be appropriate for some adults and unnecessary or unsuitable for others. Transparent labeling, conservative expectations, and professional guidance are especially important when combining supplements or using them alongside medication.</p>\n\n<p>It also helps to check whether the product explains who should avoid the ingredient, how long the suggested routine is meant to last, and what other lifestyle steps are expected. Supplement benefits are often framed around support rather than guaranteed outcomes, so the most trustworthy product pages avoid absolute promises. If you are comparing multiple products that include shilajit, prioritize the one with clearer sourcing, safer directions, realistic claims, and enough context to understand the full formula.</p>",
+  "interesting_fact_label": "Purification Matters",
+  "interesting_fact": "<p>Raw or poorly purified shilajit can contain contaminants, so supplement quality controls are especially important.</p>",
   "how_it_works_title": "How Shilajit Works",
-  "how_it_works_subtitle": "The main mechanisms behind shilajit in wellness formulas.",
-  "how_it_works_highlight_title": "Purified mineral resin support profile",
-  "how_it_works_highlight_description": "Shilajit is commonly evaluated through fulvic compounds, humic substances, and trace mineral content that support its role in energy and resilience-focused formulas.",
-  "how_it_works_content": "<p>Shilajit works through fulvic compounds, humic substances, and trace mineral content that support its role in energy and resilience-focused formulas. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Shilajit is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "Shilajit is used in vitality formulas where source, purification, and testing matter more than hype.",
+  "how_it_works_highlight_title": "Testing Is Essential",
+  "how_it_works_highlight_description": "Responsible shilajit labels should emphasize purified material, contaminant testing, and clear serving directions.",
+  "how_it_works_content": "<p>Shilajit is a resinous material collected from mountainous regions and processed for supplement use. It is often positioned around energy, vitality, men's wellness, and performance routines.</p>\n\n<p>Quality is the main issue. Because shilajit is naturally mineral-rich and sourced from the environment, products should be purified and tested for heavy metals, microbes, and adulterants. Raw shilajit should not be consumed casually.</p>\n\n<p>Because shilajit is often used inside multi-ingredient products, shoppers should review the full formula and not judge safety or expected benefits from one ingredient name alone.</p>",
   "benefits_title": "Potential Shilajit Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and the overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Shilajit is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "icon": "zap",
+      "title": "Vitality Formula Context",
+      "description": "Commonly used in energy and daily vitality supplement positioning."
     },
     {
-      "icon": "activity",
-      "title": "Supports Mineral Resin And Energy Wellness Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around mineral resin and energy wellness support."
+      "icon": "users",
+      "title": "Men's Wellness",
+      "description": "Often appears in men's health and performance-oriented formulas."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
-    },
-    {
-      "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Shilajit often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "icon": "mountain",
+      "title": "Mineral-Rich Identity",
+      "description": "Known for fulvic acid, humic substances, and trace mineral language."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+      "title": "Quality Awareness",
+      "description": "Encourages review of purification and contaminant testing."
     },
     {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Shilajit by mechanism, evidence level, safety context, and practical product positioning."
+      "icon": "activity",
+      "title": "Performance Blends",
+      "description": "Sometimes combined with adaptogens, minerals, or amino acids."
+    },
+    {
+      "icon": "search",
+      "title": "Label Comparison",
+      "description": "Helps shoppers compare resin, powder, extract, and branded forms."
     }
   ],
   "dosage_title": "Typical Shilajit Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common purified shilajit servings often range from 250 mg to 500 mg daily, depending on fulvic acid standardization and label directions.",
-  "dosage": "Common purified shilajit servings often range from 250 mg to 500 mg daily, depending on fulvic acid standardization and label directions.",
-  "dosage_content": "<p>Common purified shilajit servings often range from 250 mg to 500 mg daily, depending on fulvic acid standardization and label directions.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Shilajit without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Follow purified shilajit label",
+  "dosage": "Use only purified, tested shilajit products and follow label directions carefully.",
+  "dosage_content": "<p>Shilajit serving sizes vary by resin, powder, capsule, extract, and branded ingredient. More is not better, and raw material should be avoided unless properly purified and tested.</p>\n\n<p>People with gout, high iron levels, kidney disease, blood pressure issues, diabetes medication use, pregnancy, or nursing should seek professional guidance before using shilajit.</p>\n\n<p>Do not exceed label directions. People using medication, managing a medical condition, pregnant, nursing, or preparing for surgery should ask a qualified healthcare professional before use.</p>",
   "safety_title": "Shilajit Safety Information",
-  "safety_subtitle": "Important safety context before using shilajit supplements.",
+  "safety_subtitle": "Use shilajit with label directions, personal context, and medication awareness in mind.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Headache or Dizziness",
+    "Contaminant Risk",
+    "Mineral Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Shilajit may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or loose stool may occur."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "title": "Headache or Dizziness",
+      "description": "Some users may notice headache or lightheadedness."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "title": "Contaminant Risk",
+      "description": "Poor-quality products may contain heavy metals or adulterants."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Shilajit is combined with similar ingredients or multi-ingredient products."
+      "title": "Mineral Sensitivity",
+      "description": "Use caution with iron overload, gout, or kidney concerns."
     }
   ],
   "drug_interactions_json": [
-    "Review Shilajit with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Avoid raw, untested shilajit. People with iron disorders, gout, kidney concerns, pregnancy, or medication use should seek medical guidance before using it.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    {
+      "title": "Diabetes Medication",
+      "description": "Monitor carefully because some products may affect glucose-related routines."
+    },
+    {
+      "title": "Blood Pressure Medication",
+      "description": "Ask a clinician before use if managing blood pressure."
+    },
+    {
+      "title": "Iron Supplements",
+      "description": "Use caution with iron overload or hemochromatosis concerns."
+    },
+    {
+      "title": "Gout Medications",
+      "description": "Discuss use with a clinician if prone to gout or high uric acid."
+    }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Shilajit or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    {
+      "title": "Raw Shilajit",
+      "description": "Avoid unpurified material due to contaminant risk."
+    },
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Avoid unless directed by a clinician."
+    },
+    {
+      "title": "Iron Overload",
+      "description": "Use only with medical guidance."
+    },
+    {
+      "title": "Kidney Disease",
+      "description": "Ask a healthcare professional before use."
+    },
+    {
+      "title": "Children",
+      "description": "Not intended for unsupervised use."
+    }
   ],
-  "food_sources_title": "Shilajit Food Sources",
-  "food_sources_subtitle": "Food and source context for shilajit.",
-  "food_sources_content": "<p>Shilajit is not normally obtained from everyday foods; supplement quality depends heavily on purification and contaminant testing.</p>",
+  "food_sources_title": "Shilajit Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Shilajit is a resin-like material associated with mountainous rock formations. Supplement products may use purified resin, powder, capsules, or standardized forms that disclose fulvic acid content.</p>\n\n<p>When comparing supplements, review source material, extract type, serving size, standardization, and whether the formula uses transparent or proprietary amounts.</p>",
   "food_sources_json": [
     {
-      "title": "Not a conventional food source",
-      "description": "Not a conventional food source can contribute to mineral resin and energy wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Purified Resin",
+      "description": "A common supplement form when properly processed and tested."
     },
     {
-      "title": "Purified shilajit resin",
-      "description": "Purified shilajit resin can contribute to mineral resin and energy wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Powder or Capsules",
+      "description": "Convenient forms used in vitality formulas."
     },
     {
-      "title": "Standardized shilajit extract",
-      "description": "Standardized shilajit extract can contribute to mineral resin and energy wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Standardized Extracts",
+      "description": "Some labels disclose fulvic acid or branded ingredient forms."
     }
   ],
   "faq_title": "Shilajit FAQs",
-  "faq_subtitle": "Common questions about shilajit supplements.",
+  "faq_subtitle": "Common questions about shilajit supplements, label comparison, and safe use.",
   "faq_json": [
     {
-      "question": "What is Shilajit?",
-      "answer": "Shilajit is a purified mineral resin used in wellness supplements for fulvic acid, trace mineral, and adaptogen-style positioning. It is used in supplement formulas for mineral resin and energy wellness support, not as a substitute for medical treatment."
+      "question": "What is shilajit?",
+      "answer": "Shilajit is a mineral-rich resinous material used in vitality and men's wellness supplements."
     },
     {
-      "question": "What is Shilajit commonly used for?",
-      "answer": "It is commonly positioned around energy, mineral support, and adaptogen-style wellness routines. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "What is shilajit used for?",
+      "answer": "It is commonly positioned around energy, vitality, performance, and men's wellness."
     },
     {
-      "question": "How does Shilajit work?",
-      "answer": "Shilajit is usually discussed through fulvic compounds, humic substances, and trace mineral content that support its role in energy and resilience-focused formulas. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "Is raw shilajit safe?",
+      "answer": "Raw or poorly purified shilajit can contain contaminants and should be avoided."
     },
     {
-      "question": "What is a typical Shilajit dose?",
-      "answer": "Common purified shilajit servings often range from 250 mg to 500 mg daily, depending on fulvic acid standardization and label directions. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "What is fulvic acid?",
+      "answer": "Fulvic acid is one of the compounds often highlighted on shilajit supplement labels."
     },
     {
-      "question": "Is Shilajit safe for daily use?",
-      "answer": "Requires purified, tested sourcing; avoid raw or unverified material. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "What should I look for on a shilajit label?",
+      "answer": "Look for purified material, contaminant testing, serving size, source, and clear directions."
     },
     {
-      "question": "Can Shilajit cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "Can shilajit interact with medications?",
+      "answer": "Yes. Use professional guidance with diabetes, blood pressure, gout, or iron-related concerns."
     },
     {
-      "question": "Can Shilajit interact with medication?",
-      "answer": "Avoid raw, untested shilajit. People with iron disorders, gout, kidney concerns, pregnancy, or medication use should seek medical guidance before using it. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "Is shilajit safe during pregnancy?",
+      "answer": "Pregnancy and nursing use should be avoided unless directed by a healthcare professional."
     },
     {
-      "question": "What should I compare on a Shilajit supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Can shilajit replace medical care for fatigue?",
+      "answer": "No. Persistent fatigue should be evaluated by a healthcare professional."
     },
     {
-      "question": "What foods contain Shilajit or related compounds?",
-      "answer": "Shilajit is not normally obtained from everyday foods; supplement quality depends heavily on purification and contaminant testing."
+      "question": "Does shilajit contain minerals?",
+      "answer": "It may contain trace minerals and humic substances, but amounts vary by source and product quality."
     },
     {
-      "question": "Can Shilajit replace medical care?",
-      "answer": "No. Shilajit supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Is more shilajit better?",
+      "answer": "No. Follow label directions and prioritize tested, purified products over high amounts."
     }
   ],
   "sidebar_profile_title": "Shilajit Profile Snapshot",
-  "sidebar_profile_content": "Shilajit is a purified mineral resin used in supplements for mineral resin and energy wellness support.",
+  "sidebar_profile_content": "Shilajit is a mineral-rich resin used in vitality, energy, men's wellness, and performance-oriented supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Purified mineral resin"
+      "value": "Specialty mineral resin"
     },
     {
       "label": "Typical Dose",
-      "value": "Common purified shilajit servings often range from 250 mg to 500 mg daily, depending on fulvic acid standardization and label directions."
+      "value": "Follow purified product label"
     },
     {
       "label": "Best For",
-      "value": "Energy, mineral support, and adaptogen-style wellness routines"
+      "value": "Vitality and men's wellness"
     },
     {
       "label": "Safety Level",
-      "value": "Requires purified, tested sourcing; avoid raw or unverified material"
+      "value": "Quality testing essential"
     },
     {
       "label": "Origin",
-      "value": "Mountain regions including the Himalayas and Central Asia"
+      "value": "Mountain resinous material"
     },
     {
       "label": "Part Used",
-      "value": "Purified mineral pitch resin"
+      "value": "Purified resin"
     },
     {
       "label": "Form",
-      "value": "Capsule, resin, powder, extract"
+      "value": "Resin, capsules, powders"
     },
     {
       "label": "Taste",
-      "value": "Earthy, mineral, bitter"
+      "value": "Earthy, bitter, mineral"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Shilajit is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Shilajit is a purified mineral resin used in wellness supplements for fulvic acid, trace mineral, and adaptogen-style positioning, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Energy, mineral support, and adaptogen-style wellness routines",
-  "safety_level": "Requires purified, tested sourcing; avoid raw or unverified material",
-  "origin_country": "Mountain regions including the Himalayas and Central Asia",
-  "part_used": "Purified mineral pitch resin",
-  "ingredient_form": "Capsule, resin, powder, extract",
-  "taste_profile": "Earthy, mineral, bitter",
+  "sidebar_at_a_glance_content": "<p>Shilajit is best evaluated by purification, contaminant testing, fulvic acid disclosure, serving size, and personal safety factors.</p>",
+  "full_description": "Shilajit is a mineral-rich resin used in vitality, energy, men's wellness, and performance-oriented supplement formulas.",
+  "best_for": "Vitality, energy-support, men's wellness, and performance supplement education",
+  "safety_level": "Use only purified, tested products",
+  "origin_country": "Mountain resinous material",
+  "part_used": "Purified resin",
+  "ingredient_form": "Resin, capsules, powders",
+  "taste_profile": "Earthy, bitter, mineral",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Shilajit Uses",
+  "uses_subtitle": "Common wellness contexts where shilajit appears.",
+  "uses_content": "<p>Shilajit is commonly used in vitality, energy-support, men's wellness, and performance supplement education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Vitality, energy-support, men's wellness, and performance supplement education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, source, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Shilajit Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on shilajit varies by preparation, dose, population, and outcome measured. Ingredient evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Shilajit References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "panax-ginseng",
+    "ashwagandha",
+    "maca-root",
+    "zinc",
+    "magnesium"
+  ],
   "seo_title": "Shilajit Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "shilajit",
-  "seo_description": "Explore Shilajit benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Shilajit benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/shilajit",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Shilajit Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Shilajit benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Shilajit benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

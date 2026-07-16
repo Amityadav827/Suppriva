@@ -1,227 +1,287 @@
 {
   "name": "Shiitake Mushroom",
-  "status": "published",
   "scientific_name": "Lentinula edodes",
   "ingredient_category": "Herbal Extracts",
-  "hero_badge": null,
-  "short_description": "Shiitake Mushroom is a culinary and functional mushroom used for immune-support and nutrition-focused supplement formulas, with practical safety and label context for supplement shoppers.",
-  "overview_title": "Shiitake Mushroom Overview",
-  "overview_subtitle": "A practical look at shiitake mushroom as a supplement ingredient.",
-  "overview_content": "<p>Shiitake Mushroom is a culinary and functional mushroom used for immune-support and nutrition-focused supplement formulas. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Shiitake Mushroom through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Shiitake Mushroom should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Shiitake is both a widely eaten culinary mushroom and a common ingredient in functional mushroom supplements.</p>",
+  "status": "published",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "Shiitake mushroom is a culinary and functional mushroom used in immune, antioxidant, and wellness-support supplement formulas.",
+  "overview_title": "What Is Shiitake Mushroom?",
+  "overview_subtitle": "A functional mushroom profile for immune-support labels, extract forms, and safety.",
+  "overview_content": "<p>Shiitake Mushroom is an ingredient profile in Suppriva's wellness library, where readers can compare the source, supplement form, label language, safety context, and practical use of common dietary supplement ingredients. In product formulas, shiitake mushroom is usually included for immune-support formulas, functional mushroom blends, antioxidant wellness, and daily health products. The most helpful labels explain the ingredient identity clearly, including the form used, serving size, standardization when relevant, and whether the ingredient is part of a broader blend.</p>\n\n<p>This ingredient should be evaluated as part of the finished supplement, not in isolation. A formula that includes shiitake mushroom may also include vitamins, minerals, botanicals, amino acids, probiotics, enzymes, or branded complexes that change the intended audience and the safety profile. For that reason, two products can mention the same ingredient while supporting different wellness goals. Compare the supplement facts panel, the serving instructions, and the caution language before assuming two formulas are equivalent.</p>\n\n<p>Shiitake mushroom contains beta-glucans and other mushroom compounds that are often discussed in immune and functional mushroom supplement contexts. This does not mean the ingredient treats, cures, or prevents disease. Suppriva presents ingredient information for education and label literacy, not as medical advice. People managing symptoms, using prescription medication, preparing for surgery, pregnant, nursing, or caring for children should use qualified healthcare guidance before relying on any supplement.</p>\n\n<p>Quality markers matter. For botanicals and specialty ingredients, look for the plant part, extract ratio, standardized compounds, and third-party quality language. For minerals, look at the chemical form and the actual elemental amount. For mushroom ingredients, distinguish fruiting body, mycelium, extract, and whole powder. These details shape how a supplement is positioned and how confidently shoppers can compare one product to another.</p>\n\n<p>The best use of shiitake mushroom is realistic and context-aware. It may support a wellness routine when paired with appropriate nutrition, sleep, movement, hydration, stress management, and professional care where needed. It should not be used to delay evaluation for persistent symptoms or to replace prescribed treatment. If a label uses exaggerated claims, hides amounts in proprietary blends, or makes disease-treatment promises, that product deserves extra caution.</p>\n\n<p>For Suppriva readers, the goal is not hype. It is to understand what shiitake mushroom is, why it appears on supplement labels, what questions to ask, and when safety considerations should come first. Use this profile as a starting point for comparing product pages, ingredient combinations, and health-goal categories with a more informed eye.</p>\n\n<p>A useful ingredient review separates three questions: what the ingredient is, what the formula is trying to support, and whether the product fits your personal context. Shiitake Mushroom may be appropriate for some adults and unnecessary or unsuitable for others. Transparent labeling, conservative expectations, and professional guidance are especially important when combining supplements or using them alongside medication.</p>\n\n<p>It also helps to check whether the product explains who should avoid the ingredient, how long the suggested routine is meant to last, and what other lifestyle steps are expected. Supplement benefits are often framed around support rather than guaranteed outcomes, so the most trustworthy product pages avoid absolute promises. If you are comparing multiple products that include shiitake mushroom, prioritize the one with clearer sourcing, safer directions, realistic claims, and enough context to understand the full formula.</p>",
+  "interesting_fact_label": "Food and Supplement",
+  "interesting_fact": "<p>Shiitake is widely eaten as a food, but concentrated mushroom extracts used in supplements are not the same as culinary servings.</p>",
   "how_it_works_title": "How Shiitake Mushroom Works",
-  "how_it_works_subtitle": "The main mechanisms behind shiitake mushroom in wellness formulas.",
-  "how_it_works_highlight_title": "Functional culinary mushroom support profile",
-  "how_it_works_highlight_description": "Shiitake Mushroom is commonly evaluated through mushroom beta-glucans, lentinan-related polysaccharides, and nutrient compounds that support immune wellness positioning.",
-  "how_it_works_content": "<p>Shiitake Mushroom works through mushroom beta-glucans, lentinan-related polysaccharides, and nutrient compounds that support immune wellness positioning. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Shiitake Mushroom is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "Shiitake appears in mushroom blends where fruiting body, mycelium, and extract form matter.",
+  "how_it_works_highlight_title": "Mushroom Form Matters",
+  "how_it_works_highlight_description": "Compare fruiting body, mycelium, whole powder, and extract forms before comparing products.",
+  "how_it_works_content": "<p>Shiitake mushroom supplements are typically positioned around immune wellness and functional mushroom education. Products may use fruiting body powder, mycelium, extracts, or blends with reishi, maitake, turkey tail, and cordyceps.</p>\n\n<p>Mushroom labels can be confusing. Fruiting body and mycelium ingredients are not identical, and extracts may disclose beta-glucan content or extract ratios. Transparent labels make comparison easier.</p>\n\n<p>Because shiitake mushroom is often used inside multi-ingredient products, shoppers should review the full formula and not judge safety or expected benefits from one ingredient name alone.</p>",
   "benefits_title": "Potential Shiitake Mushroom Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and the overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Shiitake Mushroom is commonly used in formulas that support antioxidant balance and general cellular wellness."
-    },
-    {
-      "icon": "activity",
-      "title": "Supports Immune Nutrition And Functional Mushroom Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around immune nutrition and functional mushroom support."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+      "icon": "shield",
+      "title": "Immune Formula Context",
+      "description": "Commonly used in immune-support and functional mushroom blends."
     },
     {
       "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Shiitake Mushroom often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Culinary Mushroom Familiarity",
+      "description": "A recognizable edible mushroom with strong wellness appeal."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Antioxidant Wellness",
+      "description": "Often positioned in daily wellness and healthy-aging formulas."
+    },
+    {
+      "icon": "search",
+      "title": "Extract Education",
+      "description": "Encourages comparison of fruiting body, mycelium, and beta-glucan language."
+    },
+    {
+      "icon": "users",
+      "title": "Mushroom Blend Fit",
+      "description": "Frequently paired with reishi, maitake, turkey tail, and cordyceps."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
-    },
-    {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Shiitake Mushroom by mechanism, evidence level, safety context, and practical product positioning."
+      "title": "Safety-Aware Labeling",
+      "description": "Highlights immune-condition and medication cautions."
     }
   ],
   "dosage_title": "Typical Shiitake Mushroom Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Supplement servings often range from 500 mg to 1,500 mg daily, depending on mushroom powder, extract ratio, and formula design.",
-  "dosage": "Supplement servings often range from 500 mg to 1,500 mg daily, depending on mushroom powder, extract ratio, and formula design.",
-  "dosage_content": "<p>Supplement servings often range from 500 mg to 1,500 mg daily, depending on mushroom powder, extract ratio, and formula design.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Shiitake Mushroom without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Follow mushroom product label",
+  "dosage": "Use the label serving size and compare whether the product uses powder, extract, fruiting body, or mycelium.",
+  "dosage_content": "<p>Shiitake dosage depends on product form. Whole mushroom powder, fruiting body extract, and multi-mushroom blends can use different serving sizes and potency markers.</p>\n\n<p>People with mushroom allergies, immune disorders, or medication use should review the formula with a healthcare professional before using concentrated mushroom supplements.</p>\n\n<p>Do not exceed label directions. People using medication, managing a medical condition, pregnant, nursing, or preparing for surgery should ask a qualified healthcare professional before use.</p>",
   "safety_title": "Shiitake Mushroom Safety Information",
-  "safety_subtitle": "Important safety context before using shiitake mushroom supplements.",
+  "safety_subtitle": "Use shiitake mushroom with label directions, personal context, and medication awareness in mind.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Allergic Reaction",
+    "Skin Rash",
+    "Immune Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Shiitake Mushroom may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "title": "Digestive Upset",
+      "description": "Gas, bloating, or stomach discomfort may occur."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "title": "Allergic Reaction",
+      "description": "People sensitive to mushrooms may react."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "title": "Skin Rash",
+      "description": "Rare shiitake-related skin reactions have been reported, especially with certain exposures."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Shiitake Mushroom is combined with similar ingredients or multi-ingredient products."
+      "title": "Immune Sensitivity",
+      "description": "Use caution with immune conditions or immune-related medications."
     }
   ],
   "drug_interactions_json": [
-    "Review Shiitake Mushroom with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People with mushroom allergies, immune-related conditions, or medication concerns should use label-directed caution.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    {
+      "title": "Immunosuppressants",
+      "description": "Use only with professional guidance if taking immune-suppressing medication."
+    },
+    {
+      "title": "Blood Thinners",
+      "description": "Discuss mushroom blends with a clinician if using anticoagulants."
+    },
+    {
+      "title": "Diabetes Medication",
+      "description": "Monitor carefully if combining with formulas that affect blood sugar."
+    },
+    {
+      "title": "Cancer Therapies",
+      "description": "Use only with oncology-team guidance."
+    }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Shiitake Mushroom or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    {
+      "title": "Mushroom Allergy",
+      "description": "Avoid if allergic or sensitive to mushrooms."
+    },
+    {
+      "title": "Autoimmune Conditions",
+      "description": "Ask a healthcare professional before use."
+    },
+    {
+      "title": "Immunosuppressant Use",
+      "description": "Use only with clinician guidance."
+    },
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use supplement forms only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Not intended for unsupervised use."
+    }
   ],
-  "food_sources_title": "Shiitake Mushroom Food Sources",
-  "food_sources_subtitle": "Food and source context for shiitake mushroom.",
-  "food_sources_content": "<p>Culinary shiitake provides food-based mushroom compounds, while extracts concentrate selected mushroom constituents.</p>",
+  "food_sources_title": "Shiitake Mushroom Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Shiitake comes from Lentinula edodes mushrooms. Supplements may use dried powder, fruiting body extract, mycelium-based ingredients, or functional mushroom blends.</p>\n\n<p>When comparing supplements, review source material, extract type, serving size, standardization, and whether the formula uses transparent or proprietary amounts.</p>",
   "food_sources_json": [
     {
-      "title": "Fresh shiitake mushrooms",
-      "description": "Fresh shiitake mushrooms can contribute to immune nutrition and functional mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Fruiting Body",
+      "description": "The visible mushroom structure used in many mushroom supplements."
     },
     {
-      "title": "Dried shiitake mushrooms",
-      "description": "Dried shiitake mushrooms can contribute to immune nutrition and functional mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Mycelium",
+      "description": "Root-like fungal material used in some products."
     },
     {
-      "title": "Shiitake powders",
-      "description": "Shiitake powders can contribute to immune nutrition and functional mushroom support, though supplement potency depends on serving size, form, and standardization."
-    },
-    {
-      "title": "Mushroom extract blends",
-      "description": "Mushroom extract blends can contribute to immune nutrition and functional mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Extracts",
+      "description": "Concentrated forms that may disclose beta-glucans or extract ratios."
     }
   ],
   "faq_title": "Shiitake Mushroom FAQs",
-  "faq_subtitle": "Common questions about shiitake mushroom supplements.",
+  "faq_subtitle": "Common questions about shiitake mushroom supplements, label comparison, and safe use.",
   "faq_json": [
     {
-      "question": "What is Shiitake Mushroom?",
-      "answer": "Shiitake Mushroom is a culinary and functional mushroom used for immune-support and nutrition-focused supplement formulas. It is used in supplement formulas for immune nutrition and functional mushroom support, not as a substitute for medical treatment."
+      "question": "What is shiitake mushroom?",
+      "answer": "Shiitake is an edible mushroom, Lentinula edodes, used as food and in functional mushroom supplements."
     },
     {
-      "question": "What is Shiitake Mushroom commonly used for?",
-      "answer": "It is commonly positioned around immune wellness, nutrition support, and functional mushroom blends. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "What is shiitake used for in supplements?",
+      "answer": "It is commonly used in immune-support, antioxidant, and functional mushroom formulas."
     },
     {
-      "question": "How does Shiitake Mushroom work?",
-      "answer": "Shiitake Mushroom is usually discussed through mushroom beta-glucans, lentinan-related polysaccharides, and nutrient compounds that support immune wellness positioning. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "Is shiitake food the same as shiitake extract?",
+      "answer": "No. Culinary shiitake and concentrated supplement extracts differ in serving size and preparation."
     },
     {
-      "question": "What is a typical Shiitake Mushroom dose?",
-      "answer": "Supplement servings often range from 500 mg to 1,500 mg daily, depending on mushroom powder, extract ratio, and formula design. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "What does fruiting body mean?",
+      "answer": "Fruiting body refers to the visible mushroom structure used in some supplements."
     },
     {
-      "question": "Is Shiitake Mushroom safe for daily use?",
-      "answer": "Generally well tolerated; mushroom sensitivity is possible. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "What does mycelium mean?",
+      "answer": "Mycelium is the root-like fungal network used in some mushroom products."
     },
     {
-      "question": "Can Shiitake Mushroom cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "Can shiitake cause allergies?",
+      "answer": "Yes. People with mushroom sensitivity should avoid or use professional guidance."
     },
     {
-      "question": "Can Shiitake Mushroom interact with medication?",
-      "answer": "People with mushroom allergies, immune-related conditions, or medication concerns should use label-directed caution. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "Can shiitake interact with immune medication?",
+      "answer": "It may not be appropriate with immunosuppressants unless a clinician approves."
     },
     {
-      "question": "What should I compare on a Shiitake Mushroom supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Is shiitake safe during pregnancy?",
+      "answer": "Food use differs from supplement use; concentrated supplements should be discussed with a clinician."
     },
     {
-      "question": "What foods contain Shiitake Mushroom or related compounds?",
-      "answer": "Culinary shiitake provides food-based mushroom compounds, while extracts concentrate selected mushroom constituents."
+      "question": "What should I compare on labels?",
+      "answer": "Compare fruiting body versus mycelium, extract ratio, beta-glucan language, and serving size."
     },
     {
-      "question": "Can Shiitake Mushroom replace medical care?",
-      "answer": "No. Shiitake Mushroom supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Can shiitake replace immune care?",
+      "answer": "No. It should not replace medical evaluation, vaccines, or prescribed treatment."
     }
   ],
   "sidebar_profile_title": "Shiitake Mushroom Profile Snapshot",
-  "sidebar_profile_content": "Shiitake Mushroom is a functional culinary mushroom used in supplements for immune nutrition and functional mushroom support.",
+  "sidebar_profile_content": "Shiitake Mushroom is a functional mushroom used in immune-support, antioxidant, and multi-mushroom wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Functional culinary mushroom"
+      "value": "Functional mushroom"
     },
     {
       "label": "Typical Dose",
-      "value": "Supplement servings often range from 500 mg to 1,500 mg daily, depending on mushroom powder, extract ratio, and formula design."
+      "value": "Follow product label"
     },
     {
       "label": "Best For",
-      "value": "Immune wellness, nutrition support, and functional mushroom blends"
+      "value": "Immune-support formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; mushroom sensitivity is possible"
+      "value": "Avoid with mushroom allergy"
     },
     {
       "label": "Origin",
-      "value": "East Asia and cultivated mushroom farms worldwide"
+      "value": "Lentinula edodes mushroom"
     },
     {
       "label": "Part Used",
-      "value": "Fruiting body"
+      "value": "Fruiting body or mycelium"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract, food powder"
+      "value": "Capsules, powders, extracts"
     },
     {
       "label": "Taste",
       "value": "Savory, earthy, umami"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Shiitake Mushroom is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Shiitake Mushroom is a culinary and functional mushroom used for immune-support and nutrition-focused supplement formulas, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Immune wellness, nutrition support, and functional mushroom blends",
-  "safety_level": "Generally well tolerated; mushroom sensitivity is possible",
-  "origin_country": "East Asia and cultivated mushroom farms worldwide",
-  "part_used": "Fruiting body",
-  "ingredient_form": "Capsule, powder, extract, food powder",
+  "sidebar_at_a_glance_content": "<p>Shiitake Mushroom is best evaluated by fruiting body versus mycelium, extract standardization, mushroom blend context, and immune-related cautions.</p>",
+  "full_description": "Shiitake Mushroom is a functional mushroom used in immune-support, antioxidant, and multi-mushroom wellness formulas.",
+  "best_for": "Immune-support, mushroom blends, antioxidant wellness, and daily health formulas",
+  "safety_level": "Use caution with mushroom allergy or immune medications",
+  "origin_country": "Lentinula edodes mushroom",
+  "part_used": "Fruiting body or mycelium",
+  "ingredient_form": "Capsules, powders, extracts",
   "taste_profile": "Savory, earthy, umami",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Shiitake Mushroom Uses",
+  "uses_subtitle": "Common wellness contexts where shiitake mushroom appears.",
+  "uses_content": "<p>Shiitake Mushroom is commonly used in immune-support, mushroom blends, antioxidant wellness, and daily health formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Immune-support, mushroom blends, antioxidant wellness, and daily health formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, source, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Shiitake Mushroom Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on shiitake mushroom varies by preparation, dose, population, and outcome measured. Ingredient evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Shiitake Mushroom References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "reishi-mushroom",
+    "maitake-mushroom",
+    "turkey-tail-mushroom",
+    "cordyceps-extract",
+    "beta-glucan"
+  ],
   "seo_title": "Shiitake Mushroom Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "shiitake mushroom",
-  "seo_description": "Explore Shiitake Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Shiitake Mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/shiitake-mushroom",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Shiitake Mushroom Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Shiitake Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Shiitake Mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
