@@ -2,159 +2,187 @@
   "name": "Royal Agaricus",
   "scientific_name": "Agaricus subrufescens",
   "ingredient_category": "Specialty Ingredients",
-  "hero_badge": null,
-  "short_description": "Royal Agaricus is a functional mushroom used in supplement formulas for functional mushroom and immune-wellness formulas, with label quality depending on source, form, and dose transparency.",
-  "overview_title": "Royal Agaricus Overview",
-  "overview_subtitle": "A practical guide to royal agaricus as a supplement ingredient.",
-  "overview_content": "<p>Royal Agaricus is a functional mushroom used in wellness supplements for functional mushroom and immune-wellness formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Royal Agaricus is often discussed because it contains or represents beta-glucans, polysaccharides, ergosterol, and mushroom-derived compounds. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Royal Agaricus should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Royal Agaricus is also known as Agaricus blazei in many supplement labels, though taxonomic naming can vary.</p>",
+  "status": "published",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "Royal Agaricus is a functional mushroom used in immune-support and healthy-aging formulas, often discussed for beta-glucans and mushroom polysaccharides.",
+  "overview_title": "What Is Royal Agaricus?",
+  "overview_subtitle": "A guide to Agaricus mushroom supplements, beta-glucans, and label quality.",
+  "overview_content": "<p>Royal Agaricus is a functional mushroom commonly associated with Agaricus subrufescens, also historically marketed under names such as Agaricus blazei or Agaricus brasiliensis. It appears in immune-support, healthy-aging, mushroom complex, and specialty wellness supplements. Like other functional mushrooms, its value depends heavily on species identity, part used, extraction method, and product quality.</p>\n\n<p>Royal Agaricus products may use mushroom fruiting body, mycelium, powder, hot-water extract, or standardized materials. Labels may highlight beta-glucans, polysaccharides, or mushroom immune-support positioning. These terms are useful, but they require context. A vague mushroom blend with no amounts is harder to evaluate than a transparent product that discloses exact serving size, mushroom part, and testing.</p>\n\n<p>Consumers should be careful with aggressive immune or disease-related claims. Functional mushrooms can be interesting wellness ingredients, but they should not be marketed as treatments for cancer, infections, autoimmune disease, or serious fatigue. Anyone managing a medical condition should rely on qualified healthcare guidance rather than supplement claims.</p>\n\n<p>Quality and safety are central when evaluating Royal Agaricus. Mushroom products can vary by cultivation, substrate, extraction, and contaminant testing. Some Agaricus products have raised safety questions in certain contexts, so people with liver concerns, immune conditions, cancer treatment, medication use, pregnancy, or nursing should seek professional guidance before use.</p>\n\n<p>Royal Agaricus is often compared with reishi, maitake, shiitake, turkey tail, chaga, and cordyceps. Each mushroom has a different tradition, compound profile, and label positioning. A multi-mushroom product may be useful, but only if the label explains the species and amounts clearly.</p>\n\n<p>Suppriva includes Royal Agaricus as a specialty mushroom profile to support better supplement literacy. Readers should focus on species name, extract type, beta-glucan disclosure, testing, transparent dosing, and realistic wellness language.</p>\n\n<p>A useful way to read a Royal Agaricus label is to separate ingredient identity from product promise. Ingredient identity includes the exact name, source, form, extract type, and serving size. Product promise is the marketing language around what the finished supplement is meant to support. This distinction helps shoppers compare products without assuming that every Royal Agaricus formula is equivalent or that one ingredient can replace nutrition, sleep, movement, medical care, or a clinician-guided plan.</p>\n\n<p>Royal Agaricus may appear as a standalone ingredient, but it is often used inside a broader formula. Companion ingredients can change the intended audience, tolerability, and safety considerations. A product positioned for weight management, immune wellness, adaptogen support, mood education, or healthy aging may use the same ingredient name while creating a very different supplement experience. Always review the whole facts panel, not just the front label.</p>\n\n<p>For Suppriva readers, the goal is practical ingredient literacy. Look for transparent amounts, clear directions, realistic claims, and safety language that acknowledges medication use, pregnancy, nursing, surgery, and health conditions. If a product hides key amounts in a proprietary blend or uses disease-treatment claims, it deserves extra caution. Supplements can support wellness routines, but they should not be used as substitutes for medical evaluation or prescribed treatment. A careful label review is especially useful when the same ingredient appears in multiple product categories with different audiences and claims.</p>",
+  "interesting_fact_label": "Many Names, One Label Challenge",
+  "interesting_fact": "<p>Royal Agaricus may appear under several names, including Agaricus subrufescens, Agaricus blazei, or Agaricus brasiliensis, making label identity especially important.</p>",
   "how_it_works_title": "How Royal Agaricus Works",
-  "how_it_works_subtitle": "Royal Agaricus is evaluated by its compound profile, source quality, and formula context.",
-  "how_it_works_highlight_title": "Source and standardization matter",
-  "how_it_works_highlight_description": "Two royal agaricus products can differ significantly if they use different forms, serving sizes, or extract standards.",
-  "how_it_works_content": "<p>Royal Agaricus works mainly through mushroom polysaccharide and immune-wellness support. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Royal Agaricus depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Royal Agaricus with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "how_it_works_subtitle": "Royal Agaricus is used in functional mushroom formulas centered on immune wellness education.",
+  "how_it_works_highlight_title": "Species Identity Matters",
+  "how_it_works_highlight_description": "Because Agaricus mushrooms can be labeled under different names, clear species disclosure helps shoppers compare products.",
+  "how_it_works_content": "<p>Royal Agaricus supplements may provide mushroom polysaccharides, beta-glucans, and related compounds depending on the source and extraction process. These compounds are often discussed in immune-support supplement education.</p>\n\n<p>The finished product matters more than the name alone. Fruiting body powders, mycelium products, and hot-water extracts can differ significantly in composition and strength.</p>\n\n<p>Transparent labels should disclose amount, mushroom part, extract ratio, testing, and whether the product is part of a broader mushroom complex.</p>",
   "benefits_title": "Potential Royal Agaricus Benefits",
-  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and overall wellness routine.",
   "benefits_json": [
     {
+      "icon": "shield",
+      "title": "Immune Wellness Positioning",
+      "description": "Commonly appears in mushroom formulas focused on immune-support education."
+    },
+    {
       "icon": "leaf",
-      "title": "Formula Context",
-      "description": "Royal Agaricus helps shoppers evaluate supplements that use functional mushroom positioning for functional mushroom and immune-wellness formulas."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Key Compound Profile",
-      "description": "It is commonly reviewed for beta-glucans, polysaccharides, ergosterol, and mushroom-derived compounds, which influence how brands position it on supplement labels."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Label Transparency",
-      "description": "The best products clearly disclose form, serving size, standardization, and whether Royal Agaricus is part of a broader blend."
-    },
-    {
-      "icon": "activity",
-      "title": "Routine Fit",
-      "description": "Royal Agaricus is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+      "title": "Functional Mushroom Profile",
+      "description": "Provides a specialty mushroom identity distinct from reishi or turkey tail."
     },
     {
       "icon": "search",
-      "title": "Comparison Value",
-      "description": "Comparing Royal Agaricus across products can reveal differences in source quality, concentration, and supporting ingredients."
+      "title": "Species Label Awareness",
+      "description": "Encourages careful review of Agaricus naming and source disclosure."
     },
     {
-      "icon": "heart",
-      "title": "Safety Awareness",
-      "description": "Understanding cautions and interactions helps users decide whether Royal Agaricus fits their health status and medication profile."
+      "icon": "sparkles",
+      "title": "Healthy-Aging Context",
+      "description": "Often included in antioxidant and longevity-positioned mushroom blends."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Quality Testing Emphasis",
+      "description": "Highlights the importance of transparent sourcing and contaminant testing."
+    },
+    {
+      "icon": "book-open",
+      "title": "Mushroom Education",
+      "description": "Helps shoppers compare beta-glucans, extract type, and blend transparency."
     }
   ],
   "dosage_title": "Typical Royal Agaricus Dosage",
-  "dosage_subtitle": "Use the product label as the primary dose reference.",
-  "typical_dose": "Follow label directions; extract ratio and beta-glucan disclosure matter for comparison.",
-  "dosage": "Follow the product label and avoid combining multiple royal agaricus products unless a healthcare professional has reviewed the routine.",
-  "dosage_content": "<p>There is no single universal dose for royal agaricus because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using royal agaricus.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Follow extract label",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Royal Agaricus dosage varies by powder, extract, and blend format. Follow the label and compare mushroom part, extract ratio, and beta-glucan disclosure when available.</p>\n\n<p>Avoid assuming that all Agaricus mushroom products are equivalent. Species identity, cultivation method, and testing can make a meaningful difference.</p>\n\n<p>People with liver concerns, immune conditions, cancer treatment, medication use, pregnancy, or nursing should seek professional guidance before use.</p>",
   "safety_title": "Royal Agaricus Safety Information",
-  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive discomfort",
-    "Nausea",
-    "Headache",
-    "Sensitivity reaction"
+    "Digestive Upset",
+    "Allergic Reaction",
+    "Liver Concern Signals",
+    "Formula Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Royal Agaricus may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+      "title": "Digestive Upset",
+      "description": "Mushroom products may cause nausea, gas, or stomach discomfort."
     },
     {
-      "title": "Sensitivity or Allergy",
-      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review royal agaricus carefully before use."
+      "title": "Allergic Reaction",
+      "description": "People with mushroom sensitivity should avoid it."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects may be more likely when royal agaricus is combined with several ingredients that have similar wellness positioning."
+      "title": "Liver Concern Signals",
+      "description": "Stop use and seek care for unusual fatigue, yellowing skin, dark urine, or persistent nausea."
     },
     {
-      "title": "Dose-Related Concerns",
-      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+      "title": "Formula Sensitivity",
+      "description": "Effects may come from companion mushrooms or botanicals in blends."
     }
   ],
   "drug_interactions_json": [
-    "Use caution with immunosuppressants, diabetes medication, anticoagulants, or multi-mushroom immune formulas.",
-    "Review use if taking prescription medication or managing a diagnosed condition.",
-    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a healthcare professional before use during pregnancy or nursing."
+    {
+      "title": "Immune-Suppressing Therapy",
+      "description": "Functional mushroom products should be reviewed by a healthcare professional."
+    },
+    {
+      "title": "Cancer Treatment",
+      "description": "Do not combine with oncology care unless approved by the treating team."
+    },
+    {
+      "title": "Diabetes Medications",
+      "description": "Some mushroom formulas may require blood sugar monitoring guidance."
+    },
+    {
+      "title": "Liver-Affecting Medications",
+      "description": "Use caution if taking medications with liver considerations."
+    }
   ],
   "who_should_avoid_json": [
-    "People with mushroom allergies, autoimmune conditions, or immune-suppressing medication should review use with a clinician.",
-    "People with known allergy or sensitivity related to royal agaricus.",
-    "People taking medication without reviewing supplement interactions.",
-    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Liver Disease",
+      "description": "Avoid concentrated mushroom products unless cleared by a clinician."
+    },
+    {
+      "title": "Mushroom Allergy",
+      "description": "Avoid if allergic or reactive to mushrooms."
+    },
+    {
+      "title": "Active Cancer Treatment",
+      "description": "Use only with oncology-team approval."
+    },
+    {
+      "title": "Immune-Suppressed Users",
+      "description": "Seek professional guidance before use."
+    }
   ],
-  "food_sources_title": "Royal Agaricus Food Sources",
-  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
-  "food_sources_content": "<p>Royal Agaricus is usually used as powder or extract rather than as a common culinary mushroom.</p>",
+  "food_sources_title": "Royal Agaricus Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Royal Agaricus is associated with agaricus subrufescens mushroom. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>\n\n<p>When available, compare source material, extract type, serving size, standardization, and whether the formula uses transparent or proprietary amounts.</p>",
   "food_sources_json": [
     {
-      "title": "Dietary Sources",
-      "description": "Royal Agaricus is usually used as powder or extract rather than as a common culinary mushroom."
+      "title": "Agaricus subrufescens Mushroom",
+      "description": "The mushroom source used for Royal Agaricus supplements."
     },
     {
-      "title": "Supplement Forms",
-      "description": "Royal Agaricus is commonly sold as capsule, powder, extract, depending on the product category."
+      "title": "Fruiting Body Products",
+      "description": "May be used as powders or extracts."
     },
     {
-      "title": "Label Review",
-      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+      "title": "Mushroom Complexes",
+      "description": "Often combined with reishi, maitake, shiitake, or turkey tail."
     }
   ],
   "faq_title": "Royal Agaricus FAQs",
-  "faq_subtitle": "Common questions about royal agaricus supplements and label comparison.",
+  "faq_subtitle": "Common questions about royal agaricus mushroom supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Royal Agaricus used for in supplements?",
-      "answer": "Royal Agaricus is commonly used in formulas positioned around functional mushroom and immune-wellness formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+      "question": "What is Royal Agaricus?",
+      "answer": "Royal Agaricus is a functional mushroom commonly associated with Agaricus subrufescens."
     },
     {
-      "question": "What is the main active profile of Royal Agaricus?",
-      "answer": "Supplement labels usually discuss Royal Agaricus in relation to beta-glucans, polysaccharides, ergosterol, and mushroom-derived compounds. The exact profile can vary by source and processing method."
+      "question": "Is Royal Agaricus the same as Agaricus blazei?",
+      "answer": "The naming history is complex, and some labels use Agaricus blazei or Agaricus brasiliensis. Species disclosure matters."
     },
     {
-      "question": "Is Royal Agaricus a medicine?",
-      "answer": "No. Royal Agaricus is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+      "question": "What is Royal Agaricus used for?",
+      "answer": "It is commonly used in immune-support and healthy-aging mushroom formulas."
     },
     {
-      "question": "How should I compare Royal Agaricus products?",
-      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+      "question": "What should I compare on labels?",
+      "answer": "Compare species name, mushroom part, extract type, beta-glucan disclosure, testing, and serving size."
     },
     {
-      "question": "Can Royal Agaricus be taken every day?",
-      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+      "question": "Can Royal Agaricus treat disease?",
+      "answer": "No. It should not be used to diagnose, treat, cure, or prevent disease."
     },
     {
-      "question": "What dose of Royal Agaricus should I use?",
-      "answer": "Follow label directions; extract ratio and beta-glucan disclosure matter for comparison. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
-    },
-    {
-      "question": "Does Royal Agaricus have side effects?",
-      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
-    },
-    {
-      "question": "Can Royal Agaricus interact with medication?",
-      "answer": "Use caution with immunosuppressants, diabetes medication, anticoagulants, or multi-mushroom immune formulas. Medication users should review supplement use with a qualified healthcare professional."
-    },
-    {
-      "question": "Is Royal Agaricus found in foods?",
-      "answer": "Royal Agaricus is usually used as powder or extract rather than as a common culinary mushroom."
+      "question": "Can it cause side effects?",
+      "answer": "Digestive upset, allergy, or sensitivity may occur, and liver-related concerns should be taken seriously."
     },
     {
       "question": "Who should avoid Royal Agaricus?",
-      "answer": "People with mushroom allergies, autoimmune conditions, or immune-suppressing medication should review use with a clinician. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+      "answer": "Pregnant or nursing users, people with liver disease, immune suppression, mushroom allergy, or oncology treatment should seek guidance."
+    },
+    {
+      "question": "Is fruiting body better than mycelium?",
+      "answer": "They are different materials. Quality depends on testing, transparency, and product design."
+    },
+    {
+      "question": "Can it be combined with other mushrooms?",
+      "answer": "Many formulas combine mushrooms, but blend transparency and total dose should be reviewed."
+    },
+    {
+      "question": "Does Royal Agaricus need refrigeration?",
+      "answer": "Most capsules and powders are shelf-stable, but follow the specific product label."
     }
   ],
   "sidebar_profile_title": "Royal Agaricus Profile Snapshot",
-  "sidebar_profile_content": "A functional mushroom used in immune-wellness and mushroom complex supplement formulas.",
+  "sidebar_profile_content": "Royal Agaricus is a functional mushroom also known as Agaricus subrufescens or Agaricus blazei, used in immune and healthy-aging supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -162,61 +190,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Follow label directions; extract ratio and beta-glucan disclosure matter for comparison."
+      "value": "Follow extract label"
     },
     {
       "label": "Best For",
-      "value": "Functional mushroom and immune-wellness formulas"
+      "value": "Immune and healthy-aging formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Review label directions and medication context"
+      "value": "Use caution with liver or immune concerns"
     },
     {
       "label": "Origin",
-      "value": "Brazil and cultivated global regions"
+      "value": "Agaricus subrufescens mushroom"
     },
     {
       "label": "Part Used",
-      "value": "Fruiting body"
+      "value": "Fruiting body or mycelium"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract"
+      "value": "Capsules, powders, extracts"
     },
     {
       "label": "Taste",
       "value": "Earthy and mushroom-like"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Royal Agaricus is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
-  "full_description": "Royal Agaricus is a functional mushroom used in supplement formulas for functional mushroom and immune-wellness formulas.",
-  "best_for": "Functional mushroom and immune-wellness formulas",
-  "safety_level": "Review label directions and medication context",
-  "origin_country": "Brazil and cultivated global regions",
-  "part_used": "Fruiting body",
-  "ingredient_form": "Capsule, powder, extract",
+  "sidebar_at_a_glance_content": "<p>Royal Agaricus is best evaluated by source, form, serving size, standardization, safety directions, and whether the finished product matches your wellness goal.</p>",
+  "full_description": "Royal Agaricus is a functional mushroom also known as Agaricus subrufescens or Agaricus blazei, used in immune and healthy-aging supplement formulas.",
+  "best_for": "Mushroom complexes, immune wellness, and healthy-aging education",
+  "safety_level": "Use caution with liver, immune, or oncology concerns",
+  "origin_country": "Agaricus subrufescens mushroom",
+  "part_used": "Fruiting body or mycelium",
+  "ingredient_form": "Capsules, powders, extracts",
   "taste_profile": "Earthy and mushroom-like",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Royal Agaricus Uses",
+  "uses_subtitle": "Common wellness contexts where royal agaricus mushroom appears.",
+  "uses_content": "<p>Royal Agaricus is commonly used in mushroom complexes, immune wellness, and healthy-aging education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Mushroom complexes, immune wellness, and healthy-aging education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, standardization, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Royal Agaricus Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on royal agaricus mushroom varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Royal Agaricus References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "reishi-mushroom",
+    "maitake-mushroom",
+    "shiitake-mushroom",
+    "turkey-tail-mushroom",
+    "chaga-mushroom-extract"
+  ],
   "seo_title": "Royal Agaricus Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "royal agaricus",
-  "seo_description": "Explore royal agaricus benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_focus_keyword": "royal agaricus mushroom",
+  "seo_description": "Explore royal agaricus mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/royal-agaricus",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Royal Agaricus Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore royal agaricus benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore royal agaricus mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

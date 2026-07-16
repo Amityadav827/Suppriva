@@ -1,146 +1,188 @@
 {
   "name": "Saffron Extract",
   "scientific_name": "Crocus sativus",
-  "hero_badge": null,
-  "short_description": "Saffron Extract is reviewed in Suppriva's ingredient library for mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
+  "ingredient_category": "Herbal Extracts",
+  "status": "published",
+  "hero_badge": "Botanical Extract",
+  "short_description": "Saffron extract is a botanical extract from Crocus sativus used in supplements for mood, emotional wellness, appetite-support, and eye-health positioning.",
   "overview_title": "What Is Saffron Extract?",
-  "overview_subtitle": "A practical overview of saffron extract and why it appears in modern supplement formulas.",
-  "overview_content": "Saffron Extract is commonly found in supplement formulas connected to mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating saffron extract, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Saffron Extract may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding saffron extract to a routine.",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "Saffron is one of the world's most labor-intensive botanicals because the stigmas are collected from individual flowers.",
+  "overview_subtitle": "A guide to saffron extract, standardization, mood-support labels, and safety.",
+  "overview_content": "<p>Saffron extract comes from the stigmas of Crocus sativus, the same plant used to produce the culinary spice saffron. Because saffron is labor-intensive and expensive, supplement labels often use concentrated extracts rather than large spice amounts. Saffron extract is commonly positioned around mood support, emotional wellness, appetite support, stress-related snacking, and eye-health formulas.</p>\n\n<p>The most discussed saffron compounds include crocin, crocetin, picrocrocin, and safranal. Some products use branded or standardized extracts that disclose marker compounds or clinical-style serving sizes. This matters because saffron powder, culinary saffron, and standardized saffron extract are not identical. A strong label should explain the extract form, amount, and standardization rather than relying only on saffron's premium reputation.</p>\n\n<p>Mood-support language requires responsibility. Saffron supplements should not be used as substitutes for mental-health care, antidepressants, therapy, or medical evaluation. People with depression, anxiety, bipolar disorder, suicidal thoughts, or medication use should speak with a qualified healthcare professional before using saffron extract. Supplement labels should avoid disease-treatment promises.</p>\n\n<p>Saffron also appears in appetite and weight-management formulas. In that context, it may be positioned around emotional eating or snack control, but outcomes vary and should be paired with realistic nutrition habits. If a product combines saffron with stimulants, green tea, chromium, or other weight-management ingredients, the whole formula should be reviewed.</p>\n\n<p>Safety depends on dose and individual context. Culinary saffron is used in foods, but concentrated extracts are different. High amounts may be unsafe, and saffron may not be appropriate during pregnancy or when combined with certain mood-related medications. Side effects can include digestive upset, headache, dizziness, sleepiness, or changes in mood or energy.</p>\n\n<p>Suppriva presents saffron extract as an educational botanical profile. Readers should compare standardization, serving size, intended use, companion ingredients, and mental-health cautions before deciding whether a saffron-containing supplement fits their routine.</p>\n\n<p>A useful way to read a Saffron Extract label is to separate ingredient identity from product promise. Ingredient identity includes the exact name, source, form, extract type, and serving size. Product promise is the marketing language around what the finished supplement is meant to support. This distinction helps shoppers compare products without assuming that every Saffron Extract formula is equivalent or that one ingredient can replace nutrition, sleep, movement, medical care, or a clinician-guided plan.</p>\n\n<p>Saffron Extract may appear as a standalone ingredient, but it is often used inside a broader formula. Companion ingredients can change the intended audience, tolerability, and safety considerations. A product positioned for weight management, immune wellness, adaptogen support, mood education, or healthy aging may use the same ingredient name while creating a very different supplement experience. Always review the whole facts panel, not just the front label.</p>\n\n<p>For Suppriva readers, the goal is practical ingredient literacy. Look for transparent amounts, clear directions, realistic claims, and safety language that acknowledges medication use, pregnancy, nursing, surgery, and health conditions. If a product hides key amounts in a proprietary blend or uses disease-treatment claims, it deserves extra caution. Supplements can support wellness routines, but they should not be used as substitutes for medical evaluation or prescribed treatment. A careful label review is especially useful when the same ingredient appears in multiple product categories with different audiences and claims.</p>",
+  "interesting_fact_label": "Spice to Supplement",
+  "interesting_fact": "<p>Saffron is one of the world's most labor-intensive spices, and supplements usually use concentrated extracts rather than culinary spice amounts.</p>",
   "how_it_works_title": "How Saffron Extract Works",
-  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to saffron extract.",
-  "how_it_works_highlight_title": "Botanical Extract Context",
-  "how_it_works_highlight_description": "Saffron Extract is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
-  "how_it_works_content": "Saffron Extract does not work as a universal quick fix. It is typically discussed in relation to mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Saffron Extract is often compared with 5-HTP, GABA, L-theanine, and magnesium glycinate.\n\nSafety context matters. Anyone with antidepressants, bipolar disorder, pregnancy, nursing, or mood disorder treatment should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
-  "benefits_title": "Potential Benefits of Saffron Extract",
-  "benefits_subtitle": "Educational benefits commonly discussed for saffron extract in supplement routines and label comparison.",
+  "how_it_works_subtitle": "Saffron extract is used in mood, appetite, and eye-health supplement positioning.",
+  "how_it_works_highlight_title": "Standardization Matters",
+  "how_it_works_highlight_description": "Saffron extracts may disclose crocin, safranal, or branded extract forms to clarify quality and serving size.",
+  "how_it_works_content": "<p>Saffron extract contributes botanical compounds such as crocin, crocetin, and safranal depending on extract type. These compounds are often discussed in mood, emotional wellness, appetite, and eye-health research contexts.</p>\n\n<p>Finished products vary widely. Some are standalone saffron extracts, while others combine saffron with magnesium, L-theanine, B vitamins, green tea, or weight-management ingredients.</p>\n\n<p>Because saffron is often used in mood-related formulas, medication and mental-health context matter. It should not replace professional care.</p>",
+  "benefits_title": "Potential Saffron Extract Benefits",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "shield-check",
-      "title": "Wellness Routine Support",
-      "description": "Saffron Extract is commonly researched or used in formulas connected to mood, appetite, and antioxidant research."
+      "icon": "heart",
+      "title": "Mood-Support Positioning",
+      "description": "Commonly appears in emotional wellness formulas with careful, non-medical language."
     },
     {
-      "icon": "activity",
-      "title": "Label Comparison Value",
-      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
+      "icon": "scale",
+      "title": "Appetite Formula Context",
+      "description": "Often used in products positioned around snacking and weight-management routines."
     },
     {
-      "icon": "leaf",
-      "title": "Formula Stacking Context",
-      "description": "Saffron Extract often appears alongside complementary ingredients such as 5-HTP, GABA, L-theanine, and magnesium glycinate."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Everyday Education",
-      "description": "Understanding saffron extract helps shoppers separate educational ingredient context from exaggerated supplement claims."
+      "icon": "eye",
+      "title": "Eye-Health Interest",
+      "description": "Appears in some vision-support formulas and antioxidant blends."
     },
     {
       "icon": "sparkles",
-      "title": "Targeted Category Fit",
-      "description": "Brands may include saffron extract in products designed for mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison."
+      "title": "Premium Botanical Identity",
+      "description": "Provides a recognizable spice-derived ingredient with strong label appeal."
     },
     {
-      "icon": "heart-pulse",
-      "title": "Safety-Aware Selection",
-      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+      "icon": "search",
+      "title": "Standardization Education",
+      "description": "Encourages review of crocin, safranal, branded extracts, and serving size."
+    },
+    {
+      "icon": "shield",
+      "title": "Safety-Aware Use",
+      "description": "Highlights the importance of mental-health and medication review."
     }
   ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
-  "typical_dose": "Often 28-30 mg per serving",
-  "dosage": "Often 28-30 mg per serving",
-  "dosage_content": "Often 28-30 mg per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain saffron extract unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Saffron Extract may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "dosage_title": "Typical Saffron Extract Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Follow standardized extract label",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Saffron extract dosage depends on extract type and standardization. Follow the product label and avoid using high amounts beyond directions.</p>\n\n<p>Mood-support and appetite-support products may use different serving strategies. Review whether the product is standalone or combined with stimulants, amino acids, vitamins, or botanicals.</p>\n\n<p>People taking antidepressants, mood stabilizers, sedatives, blood pressure medications, or those with bipolar disorder, pregnancy, or nursing should seek professional guidance before use.</p>",
+  "safety_title": "Saffron Extract Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive discomfort",
-    "Headache or sensitivity",
-    "Unexpected tolerance changes",
-    "Allergic reaction in sensitive individuals"
+    "Digestive Upset",
+    "Headache or Dizziness",
+    "Drowsiness",
+    "Mood or Energy Changes"
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or dry mouth may occur."
     },
     {
-      "icon": "activity",
-      "title": "Tolerance Varies",
-      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+      "title": "Headache or Dizziness",
+      "description": "Some users may experience headache, dizziness, or lightheadedness."
     },
     {
-      "icon": "alert-circle",
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+      "title": "Drowsiness",
+      "description": "Saffron may feel calming or sedating in some users."
     },
     {
-      "icon": "shield-alert",
-      "title": "Dose Awareness",
-      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+      "title": "Mood or Energy Changes",
+      "description": "People with mood conditions should use professional guidance."
     }
   ],
   "drug_interactions_json": [
-    "Review saffron extract with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing 5-HTP, GABA, L-theanine, and magnesium glycinate.",
-    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
-    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
-  ],
-  "who_should_avoid_json": [
-    "People with known allergy or sensitivity to saffron extract or its source material.",
-    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
-    "People taking medication for antidepressants, bipolar disorder, pregnancy, nursing, or mood disorder treatment without professional review.",
-    "Children unless specifically directed by a qualified healthcare professional.",
-    "Anyone expecting saffron extract to replace medical diagnosis, prescribed treatment, or emergency care."
-  ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Answers to common questions about saffron extract, label comparison, dosage context, and safety.",
-  "faq_json": [
     {
-      "question": "What is Saffron Extract?",
-      "answer": "Saffron Extract is a botanical extract commonly discussed in supplement education for mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison."
+      "title": "Antidepressants",
+      "description": "Use only with professional guidance because mood-related interactions are possible."
     },
     {
-      "question": "What is Saffron Extract commonly used for?",
-      "answer": "It is commonly researched or included in formulas related to mood, appetite, and antioxidant research, depending on the product and dose."
+      "title": "Mood Stabilizers",
+      "description": "People with bipolar disorder or mood treatment should seek clinician input."
     },
     {
-      "question": "Is Saffron Extract a medicine?",
-      "answer": "No. Saffron Extract supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
+      "title": "Sedatives",
+      "description": "Combining calming ingredients may increase drowsiness."
     },
     {
-      "question": "What dose of Saffron Extract is common?",
-      "answer": "Labels often list often 28-30 mg per serving, but product form, potency, and serving frequency should be compared carefully."
-    },
-    {
-      "question": "Can Saffron Extract cause side effects?",
-      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
-    },
-    {
-      "question": "Who should be cautious with Saffron Extract?",
-      "answer": "People with antidepressants, bipolar disorder, pregnancy, nursing, or mood disorder treatment should discuss use with a healthcare professional before starting."
-    },
-    {
-      "question": "Can Saffron Extract be combined with other supplements?",
-      "answer": "Some formulas combine it with ingredients such as 5-HTP, GABA, L-theanine, and magnesium glycinate, but stacking should be reviewed for dose overlap and safety."
-    },
-    {
-      "question": "How should I compare Saffron Extract products?",
-      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
-    },
-    {
-      "question": "How long does Saffron Extract take to work?",
-      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
-    },
-    {
-      "question": "Is Saffron Extract safe for daily use?",
-      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+      "title": "Blood Pressure Medications",
+      "description": "Ask a clinician if managing blood pressure."
     }
   ],
-  "sidebar_profile_title": "Saffron Extract Snapshot",
-  "sidebar_profile_content": "Saffron Extract is a botanical extract commonly reviewed for mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "who_should_avoid_json": [
+    {
+      "title": "Pregnancy",
+      "description": "Avoid concentrated saffron extracts unless directed by a clinician."
+    },
+    {
+      "title": "Bipolar Disorder",
+      "description": "Use only with medical guidance due to mood-related concerns."
+    },
+    {
+      "title": "Antidepressant Use",
+      "description": "Ask a healthcare professional before combining."
+    },
+    {
+      "title": "Children",
+      "description": "Not intended for unsupervised use."
+    },
+    {
+      "title": "High-Dose Use",
+      "description": "Do not exceed label directions; high amounts may be unsafe."
+    }
+  ],
+  "food_sources_title": "Saffron Extract Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Saffron Extract is associated with crocus sativus stigmas. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>\n\n<p>When available, compare source material, extract type, serving size, standardization, and whether the formula uses transparent or proprietary amounts.</p>",
+  "food_sources_json": [
+    {
+      "title": "Crocus sativus Stigmas",
+      "description": "The spice and extract source comes from saffron flower stigmas."
+    },
+    {
+      "title": "Standardized Extracts",
+      "description": "Supplements may standardize for saffron marker compounds."
+    },
+    {
+      "title": "Mood and Appetite Blends",
+      "description": "Often combined with calming nutrients or weight-management ingredients."
+    }
+  ],
+  "faq_title": "Saffron Extract FAQs",
+  "faq_subtitle": "Common questions about saffron extract supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is saffron extract?",
+      "answer": "It is a concentrated extract from Crocus sativus stigmas, the same plant used for culinary saffron."
+    },
+    {
+      "question": "What is saffron extract used for?",
+      "answer": "It is commonly used in mood, emotional wellness, appetite-support, and eye-health formulas."
+    },
+    {
+      "question": "Is saffron extract the same as saffron spice?",
+      "answer": "No. Extracts are concentrated supplement forms and may be standardized for marker compounds."
+    },
+    {
+      "question": "What are crocin and safranal?",
+      "answer": "They are saffron compounds often discussed in extract standardization and research."
+    },
+    {
+      "question": "Can saffron replace antidepressants?",
+      "answer": "No. Saffron supplements should not replace mental-health care or prescribed treatment."
+    },
+    {
+      "question": "Can saffron interact with medication?",
+      "answer": "Yes. Use professional guidance with antidepressants, mood stabilizers, sedatives, or blood pressure medications."
+    },
+    {
+      "question": "Is saffron safe during pregnancy?",
+      "answer": "Concentrated saffron extract should be avoided unless directed by a healthcare professional."
+    },
+    {
+      "question": "Can saffron cause drowsiness?",
+      "answer": "Some users may feel calm or drowsy, especially in combination formulas."
+    },
+    {
+      "question": "What should I compare on labels?",
+      "answer": "Compare extract amount, standardization, branded form, companion ingredients, and safety directions."
+    },
+    {
+      "question": "Is saffron extract good for weight management?",
+      "answer": "It may appear in appetite-support formulas, but it should be paired with realistic nutrition habits and compliant expectations."
+    }
+  ],
+  "sidebar_profile_title": "Saffron Extract Profile Snapshot",
+  "sidebar_profile_content": "Saffron Extract is a concentrated extract from Crocus sativus stigmas, used in mood, emotional wellness, appetite, and eye-health supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -148,65 +190,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Often 28-30 mg per serving"
+      "value": "Follow standardized extract label"
     },
     {
       "label": "Best For",
-      "value": "Mood, appetite, and antioxidant research"
+      "value": "Mood and appetite-support formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Review antidepressants, bipolar disorder, pregnancy, nursing, or mood disorder treatment"
+      "value": "Use caution with mood medications"
     },
     {
       "label": "Origin",
-      "value": "Saffron crocus flower"
+      "value": "Crocus sativus stigmas"
     },
     {
       "label": "Part Used",
-      "value": "Stigma extract"
+      "value": "Stigma"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, or mood blend"
+      "value": "Capsules, tablets, powders"
     },
     {
       "label": "Taste",
-      "value": "Floral, earthy, and slightly bitter"
+      "value": "Floral, earthy, bitter"
     }
   ],
-  "sidebar_at_a_glance_content": "- Botanical extract used in supplement education\n- Commonly discussed for mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison\n- Compare form, dose, and supporting ingredients\n- Often compared with 5-HTP, GABA, L-theanine, and magnesium glycinate\n- Not a substitute for personal medical advice",
-  "full_description": "Saffron Extract is a botanical extract included in Suppriva's ingredient library for mood-support research, appetite and craving support context, antioxidant wellness, and premium botanical comparison.",
-  "best_for": "Mood, appetite, and antioxidant research",
-  "safety_level": "Review antidepressants, bipolar disorder, pregnancy, nursing, or mood disorder treatment",
-  "origin_country": "Saffron crocus flower",
-  "part_used": "Stigma extract",
-  "ingredient_form": "Capsule, tablet, or mood blend",
-  "taste_profile": "Floral, earthy, and slightly bitter",
+  "sidebar_at_a_glance_content": "<p>Saffron Extract is best evaluated by source, form, serving size, standardization, safety directions, and whether the finished product matches your wellness goal.</p>",
+  "full_description": "Saffron Extract is a concentrated extract from Crocus sativus stigmas, used in mood, emotional wellness, appetite, and eye-health supplement formulas.",
+  "best_for": "Mood support, appetite-support, and eye-health supplement education",
+  "safety_level": "Use caution with mood medications and pregnancy",
+  "origin_country": "Crocus sativus stigmas",
+  "part_used": "Stigma",
+  "ingredient_form": "Capsules, tablets, powders",
+  "taste_profile": "Floral, earthy, bitter",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Saffron Extract Benefits, Dosage and Safety | Suppriva",
+  "uses_title": "Saffron Extract Uses",
+  "uses_subtitle": "Common wellness contexts where saffron extract appears.",
+  "uses_content": "<p>Saffron Extract is commonly used in mood support, appetite-support, and eye-health supplement education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Mood support, appetite-support, and eye-health supplement education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, standardization, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Saffron Extract Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on saffron extract varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Saffron Extract References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "l-theanine",
+    "magnesium",
+    "gaba",
+    "ashwagandha",
+    "rhodiola-rosea"
+  ],
+  "seo_title": "Saffron Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "saffron extract",
-  "seo_description": "Explore saffron extract benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "seo_description": "Explore saffron extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/saffron-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Saffron Extract Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore saffron extract benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+  "meta_title": "Saffron Extract Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore saffron extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

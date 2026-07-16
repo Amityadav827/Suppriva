@@ -1,161 +1,188 @@
 {
   "name": "Reishi Mushroom",
-  "status": "published",
   "scientific_name": "Ganoderma lucidum",
   "ingredient_category": "Herbal Extracts",
-  "hero_badge": null,
-  "short_description": "Reishi Mushroom is a functional mushroom used in immune, relaxation, and daily resilience supplement formulas, with practical safety and label context for supplement shoppers.",
-  "overview_title": "Reishi Mushroom Overview",
-  "overview_subtitle": "A practical look at reishi mushroom as a supplement ingredient.",
-  "overview_content": "<p>Reishi Mushroom is a functional mushroom used in immune, relaxation, and daily resilience supplement formulas. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Reishi Mushroom through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Reishi Mushroom should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Reishi is sometimes called the lingzhi mushroom in traditional East Asian wellness systems.</p>",
+  "status": "published",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "Reishi mushroom is a functional mushroom used in supplements for immune wellness, stress-support positioning, and healthy-aging ingredient education.",
+  "overview_title": "What Is Reishi Mushroom?",
+  "overview_subtitle": "A practical guide to reishi extracts, beta-glucans, and mushroom supplement labels.",
+  "overview_content": "<p>Reishi mushroom, commonly associated with Ganoderma lucidum, is one of the best-known functional mushrooms in supplement products. It has a long history of traditional use and is now found in capsules, powders, coffee alternatives, immune blends, stress-support formulas, and mushroom complexes. On labels, reishi may be described as fruiting body, mycelium, extract, dual extract, or standardized beta-glucan ingredient.</p>\n\n<p>The part and extraction method matter. Fruiting body products are made from the mushroom structure most people recognize, while mycelium products may be grown on grain. Extracts may use hot water, alcohol, or dual extraction to target different groups of compounds. Beta-glucans are often highlighted in immune-focused mushroom formulas, while triterpenes are often discussed in relation to reishi's bitter profile and extract identity.</p>\n\n<p>Reishi is commonly positioned around immune wellness, relaxation, resilience, and healthy aging. These are supportive wellness contexts, not disease-treatment claims. Consumers should be cautious with products implying that reishi can treat cancer, autoimmune disease, infections, liver disease, or serious fatigue. Medical conditions require professional care.</p>\n\n<p>Safety considerations are important because concentrated reishi extracts may not be suitable for everyone. Reishi can cause digestive upset, dry mouth, dizziness, rash, or sensitivity in some people. It may also interact with blood thinners, blood pressure medicines, diabetes medications, immune-suppressing therapy, or surgery planning. People with liver concerns should be especially careful with concentrated mushroom extracts.</p>\n\n<p>A strong reishi label should disclose the mushroom part, extract type, serving size, beta-glucan content if claimed, and whether the product is tested for contaminants. Mushroom products can vary significantly in quality, and vague proprietary blends make comparison difficult.</p>\n\n<p>Suppriva presents reishi as an ingredient profile for functional mushroom literacy. The goal is to help readers compare fruiting body versus mycelium, understand extraction language, evaluate immune-support claims responsibly, and decide whether reishi fits a broader wellness routine.</p>\n\n<p>A useful way to read a Reishi Mushroom label is to separate ingredient identity from product promise. Ingredient identity includes the exact name, source, form, extract type, and serving size. Product promise is the marketing language around what the finished supplement is meant to support. This distinction helps shoppers compare products without assuming that every Reishi Mushroom formula is equivalent or that one ingredient can replace nutrition, sleep, movement, medical care, or a clinician-guided plan.</p>\n\n<p>Reishi Mushroom may appear as a standalone ingredient, but it is often used inside a broader formula. Companion ingredients can change the intended audience, tolerability, and safety considerations. A product positioned for weight management, immune wellness, adaptogen support, mood education, or healthy aging may use the same ingredient name while creating a very different supplement experience. Always review the whole facts panel, not just the front label.</p>\n\n<p>For Suppriva readers, the goal is practical ingredient literacy. Look for transparent amounts, clear directions, realistic claims, and safety language that acknowledges medication use, pregnancy, nursing, surgery, and health conditions. If a product hides key amounts in a proprietary blend or uses disease-treatment claims, it deserves extra caution. Supplements can support wellness routines, but they should not be used as substitutes for medical evaluation or prescribed treatment. A careful label review is especially useful when the same ingredient appears in multiple product categories with different audiences and claims.</p>",
+  "interesting_fact_label": "Bitter Mushroom Profile",
+  "interesting_fact": "<p>Reishi is naturally bitter, and that bitterness is one reason many reishi products use capsules or blended drink formats rather than simple tea alone.</p>",
   "how_it_works_title": "How Reishi Mushroom Works",
-  "how_it_works_subtitle": "The main mechanisms behind reishi mushroom in wellness formulas.",
-  "how_it_works_highlight_title": "Functional mushroom support profile",
-  "how_it_works_highlight_description": "Reishi Mushroom is commonly evaluated through beta-glucans, triterpenes, and mushroom polysaccharides that support its immune and stress-wellness positioning.",
-  "how_it_works_content": "<p>Reishi Mushroom works through beta-glucans, triterpenes, and mushroom polysaccharides that support its immune and stress-wellness positioning. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Reishi Mushroom is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "Reishi is used for functional mushroom and immune-wellness positioning.",
+  "how_it_works_highlight_title": "Fruiting Body vs Mycelium",
+  "how_it_works_highlight_description": "Reishi labels can differ significantly depending on mushroom part, extraction method, and beta-glucan disclosure.",
+  "how_it_works_content": "<p>Reishi supplements may provide mushroom polysaccharides, beta-glucans, triterpenes, and other naturally occurring compounds depending on source and extraction. These compounds are often discussed in immune and healthy-aging supplement education.</p>\n\n<p>Hot-water extraction is commonly used for polysaccharides, while alcohol extraction may target different compounds. Dual extracts attempt to capture both water-soluble and alcohol-soluble fractions.</p>\n\n<p>Because mushroom quality varies, compare extract type, part used, testing, serving size, and whether the product uses transparent amounts rather than proprietary blends.</p>",
   "benefits_title": "Potential Reishi Mushroom Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Reishi Mushroom is commonly used in formulas that support antioxidant balance and general cellular wellness."
-    },
-    {
-      "icon": "activity",
-      "title": "Supports Immune And Stress Wellness Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around immune and stress wellness support."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+      "icon": "shield",
+      "title": "Immune Wellness Positioning",
+      "description": "Commonly appears in formulas focused on immune and resilience support."
     },
     {
       "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Reishi Mushroom often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Functional Mushroom Identity",
+      "description": "Provides a recognizable mushroom ingredient with a long traditional-use history."
     },
     {
-      "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+      "icon": "sparkles",
+      "title": "Healthy-Aging Context",
+      "description": "Often included in antioxidant and longevity-positioned mushroom blends."
+    },
+    {
+      "icon": "moon",
+      "title": "Calm Routine Fit",
+      "description": "Used in evening powders and stress-support formulas, depending on the product."
+    },
+    {
+      "icon": "search",
+      "title": "Label Quality Education",
+      "description": "Helps shoppers compare fruiting body, mycelium, extract type, and beta-glucans."
     },
     {
       "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Reishi Mushroom by mechanism, evidence level, safety context, and practical product positioning."
+      "title": "Mushroom Literacy",
+      "description": "Supports better understanding of extraction methods and functional mushroom claims."
     }
   ],
   "dosage_title": "Typical Reishi Mushroom Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common extract servings often range from 500 mg to 1,500 mg daily, depending on beta-glucan content and extract ratio.",
-  "dosage": "Common extract servings often range from 500 mg to 1,500 mg daily, depending on beta-glucan content and extract ratio.",
-  "dosage_content": "<p>Common extract servings often range from 500 mg to 1,500 mg daily, depending on beta-glucan content and extract ratio.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Reishi Mushroom without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Follow extract label",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Reishi dosage depends on whether the product uses powder, extract, dual extract, or a blend. Follow the product label and compare extract ratio and beta-glucan disclosure when available.</p>\n\n<p>Start conservatively if you are new to mushroom products. Reishi's bitter compounds and concentrated extracts may not suit everyone.</p>\n\n<p>Ask a healthcare professional before using reishi if you take blood thinners, blood pressure medication, diabetes medication, immune-suppressing therapy, or have liver concerns.</p>",
   "safety_title": "Reishi Mushroom Safety Information",
-  "safety_subtitle": "Important safety context before using reishi mushroom supplements.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Dry Mouth or Throat",
+    "Dizziness",
+    "Rash or Allergy"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Reishi Mushroom may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or loose stools may occur."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "title": "Dry Mouth or Throat",
+      "description": "Some users report dryness with reishi products."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "title": "Dizziness",
+      "description": "May occur in sensitive users or when combined with blood pressure-related therapies."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Reishi Mushroom is combined with similar ingredients or multi-ingredient products."
+      "title": "Rash or Allergy",
+      "description": "Stop use if allergic-type symptoms appear."
     }
   ],
   "drug_interactions_json": [
-    "Review Reishi Mushroom with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People taking blood thinners, immunosuppressants, blood pressure medication, or preparing for surgery should review reishi use with a clinician.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    {
+      "title": "Blood Thinners",
+      "description": "Reishi may not be suitable with anticoagulant or antiplatelet therapy without guidance."
+    },
+    {
+      "title": "Blood Pressure Medications",
+      "description": "Use caution if taking medication that affects blood pressure."
+    },
+    {
+      "title": "Diabetes Medications",
+      "description": "Monitor carefully and ask a clinician if managing blood sugar."
+    },
+    {
+      "title": "Immune-Suppressing Therapy",
+      "description": "Functional mushroom products should be reviewed by a healthcare professional."
+    }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Reishi Mushroom or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Liver Concerns",
+      "description": "Avoid concentrated extracts unless cleared by a clinician."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Disclose reishi and stop only as directed by a clinician."
+    },
+    {
+      "title": "Mushroom Allergy",
+      "description": "Avoid if allergic or reactive to mushrooms."
+    },
+    {
+      "title": "Medication-Heavy Routines",
+      "description": "Review with a professional if using prescription therapies."
+    }
   ],
-  "food_sources_title": "Reishi Mushroom Food Sources",
-  "food_sources_subtitle": "Food and source context for reishi mushroom.",
-  "food_sources_content": "<p>Reishi is usually consumed as an extract or powder rather than a culinary mushroom because of its tough texture and bitter taste.</p>",
+  "food_sources_title": "Reishi Mushroom Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Reishi Mushroom is associated with ganoderma lucidum mushroom. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>\n\n<p>When available, compare source material, extract type, serving size, standardization, and whether the formula uses transparent or proprietary amounts.</p>",
   "food_sources_json": [
     {
-      "title": "Reishi mushroom powders",
-      "description": "Reishi mushroom powders can contribute to immune and stress wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Ganoderma lucidum Fruiting Body",
+      "description": "A common source for reishi mushroom products."
     },
     {
-      "title": "Reishi extracts",
-      "description": "Reishi extracts can contribute to immune and stress wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Extract Powders",
+      "description": "Hot-water, alcohol, or dual extracts are used in supplements."
     },
     {
-      "title": "Functional mushroom drink blends",
-      "description": "Functional mushroom drink blends can contribute to immune and stress wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Mushroom Blends",
+      "description": "Often paired with cordyceps, lion's mane, chaga, or turkey tail."
     }
   ],
   "faq_title": "Reishi Mushroom FAQs",
-  "faq_subtitle": "Common questions about reishi mushroom supplements.",
+  "faq_subtitle": "Common questions about reishi mushroom supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Reishi Mushroom?",
-      "answer": "Reishi Mushroom is a functional mushroom used in immune, relaxation, and daily resilience supplement formulas. It is used in supplement formulas for immune and stress wellness support, not as a substitute for medical treatment."
+      "question": "What is reishi mushroom?",
+      "answer": "Reishi is a functional mushroom, usually Ganoderma lucidum, used in wellness supplements."
     },
     {
-      "question": "What is Reishi Mushroom commonly used for?",
-      "answer": "It is commonly positioned around immune wellness, stress-support routines, and functional mushroom formulas. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "What is reishi used for?",
+      "answer": "It is commonly used in immune, resilience, stress-support, and healthy-aging formulas."
     },
     {
-      "question": "How does Reishi Mushroom work?",
-      "answer": "Reishi Mushroom is usually discussed through beta-glucans, triterpenes, and mushroom polysaccharides that support its immune and stress-wellness positioning. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "Is fruiting body better than mycelium?",
+      "answer": "They are different materials. Compare part used, extract type, testing, and beta-glucan disclosure."
     },
     {
-      "question": "What is a typical Reishi Mushroom dose?",
-      "answer": "Common extract servings often range from 500 mg to 1,500 mg daily, depending on beta-glucan content and extract ratio. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "What is dual-extracted reishi?",
+      "answer": "Dual extraction uses water and alcohol to target different mushroom compound groups."
     },
     {
-      "question": "Is Reishi Mushroom safe for daily use?",
-      "answer": "Generally well tolerated; use caution with anticoagulants and immune-related conditions. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "Can reishi cause side effects?",
+      "answer": "Yes. Digestive upset, dry mouth, dizziness, rash, or sensitivity can occur."
     },
     {
-      "question": "Can Reishi Mushroom cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "Can reishi interact with medication?",
+      "answer": "Yes. Use caution with blood thinners, blood pressure medicines, diabetes medications, and immune therapies."
     },
     {
-      "question": "Can Reishi Mushroom interact with medication?",
-      "answer": "People taking blood thinners, immunosuppressants, blood pressure medication, or preparing for surgery should review reishi use with a clinician. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "Is reishi safe for daily use?",
+      "answer": "Some products are designed for routine use, but long-term use should be guided by tolerance and health status."
     },
     {
-      "question": "What should I compare on a Reishi Mushroom supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Does reishi treat disease?",
+      "answer": "No. Reishi supplements should not be used to diagnose, treat, cure, or prevent disease."
     },
     {
-      "question": "What foods contain Reishi Mushroom or related compounds?",
-      "answer": "Reishi is usually consumed as an extract or powder rather than a culinary mushroom because of its tough texture and bitter taste."
+      "question": "What should I compare on labels?",
+      "answer": "Compare mushroom part, extract type, beta-glucan disclosure, serving size, testing, and blend transparency."
     },
     {
-      "question": "Can Reishi Mushroom replace medical care?",
-      "answer": "No. Reishi Mushroom supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Who should avoid reishi?",
+      "answer": "Pregnant or nursing users, people with liver concerns, mushroom allergy, surgery plans, or medication use should seek guidance."
     }
   ],
   "sidebar_profile_title": "Reishi Mushroom Profile Snapshot",
-  "sidebar_profile_content": "Reishi Mushroom is a functional mushroom used in supplements for immune and stress wellness support.",
+  "sidebar_profile_content": "Reishi Mushroom is a functional mushroom known as Ganoderma lucidum, commonly used in immune, stress-support, and healthy-aging supplement formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -163,61 +190,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Common extract servings often range from 500 mg to 1,500 mg daily, depending on beta-glucan content and extract ratio."
+      "value": "Follow extract label"
     },
     {
       "label": "Best For",
-      "value": "Immune wellness, stress-support routines, and functional mushroom formulas"
+      "value": "Immune and resilience formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; use caution with anticoagulants and immune-related conditions"
+      "value": "Use caution with medications"
     },
     {
       "label": "Origin",
-      "value": "East Asia and cultivated mushroom-growing regions worldwide"
+      "value": "Ganoderma lucidum mushroom"
     },
     {
       "label": "Part Used",
-      "value": "Fruiting body or mycelium depending on product"
+      "value": "Fruiting body or mycelium"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract, drink mix"
+      "value": "Capsules, powders, extracts"
     },
     {
       "label": "Taste",
-      "value": "Bitter, earthy, woody"
+      "value": "Bitter, earthy"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Reishi Mushroom is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Reishi Mushroom is a functional mushroom used in immune, relaxation, and daily resilience supplement formulas, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Immune wellness, stress-support routines, and functional mushroom formulas",
-  "safety_level": "Generally well tolerated; use caution with anticoagulants and immune-related conditions",
-  "origin_country": "East Asia and cultivated mushroom-growing regions worldwide",
-  "part_used": "Fruiting body or mycelium depending on product",
-  "ingredient_form": "Capsule, powder, extract, drink mix",
-  "taste_profile": "Bitter, earthy, woody",
+  "sidebar_at_a_glance_content": "<p>Reishi Mushroom is best evaluated by source, form, serving size, standardization, safety directions, and whether the finished product matches your wellness goal.</p>",
+  "full_description": "Reishi Mushroom is a functional mushroom known as Ganoderma lucidum, commonly used in immune, stress-support, and healthy-aging supplement formulas.",
+  "best_for": "Functional mushroom blends, immune wellness, and healthy-aging education",
+  "safety_level": "Use caution with medications and liver concerns",
+  "origin_country": "Ganoderma lucidum mushroom",
+  "part_used": "Fruiting body or mycelium",
+  "ingredient_form": "Capsules, powders, extracts",
+  "taste_profile": "Bitter and earthy",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Reishi Mushroom Uses",
+  "uses_subtitle": "Common wellness contexts where reishi mushroom appears.",
+  "uses_content": "<p>Reishi Mushroom is commonly used in functional mushroom blends, immune wellness, and healthy-aging education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Functional mushroom blends, immune wellness, and healthy-aging education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, standardization, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Reishi Mushroom Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on reishi mushroom varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Reishi Mushroom References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "turkey-tail-mushroom",
+    "chaga-mushroom-extract",
+    "cordyceps-extract",
+    "lions-mane",
+    "shiitake-mushroom"
+  ],
   "seo_title": "Reishi Mushroom Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "reishi mushroom",
-  "seo_description": "Explore Reishi Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore reishi mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/reishi-mushroom",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Reishi Mushroom Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Reishi Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore reishi mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
