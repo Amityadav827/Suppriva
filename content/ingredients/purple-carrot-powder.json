@@ -1,142 +1,188 @@
 {
   "name": "Purple Carrot Powder",
   "scientific_name": "Daucus carota subsp. sativus",
-  "hero_badge": null,
-  "short_description": "Purple Carrot Powder is a vegetable powder used in supplement formulas for anthocyanin, colorful-food, and antioxidant-support formulas.",
-  "overview_title": "Purple Carrot Powder Overview",
-  "overview_subtitle": "A practical guide to purple carrot powder in modern supplement formulas.",
-  "overview_content": "<p>Purple Carrot Powder is a vegetable powder that appears in wellness products because of anthocyanins and carotenoid pigments from purple carrot root. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing purple carrot powder products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Purple Carrot Powder supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Purple carrots contain anthocyanins, the same pigment family found in many blue and purple fruits.</p>",
+  "ingredient_category": "Antioxidants",
+  "status": "published",
+  "hero_badge": "Color-Rich Botanical",
+  "short_description": "Purple carrot powder is a color-rich botanical powder made from purple carrots and used in wellness formulas for antioxidant-focused nutrition and natural phytonutrient support.",
+  "overview_title": "What Is Purple Carrot Powder?",
+  "overview_subtitle": "A guide to purple carrot powder, anthocyanins, and antioxidant-focused formulas.",
+  "overview_content": "<p>Purple carrot powder is made from purple varieties of Daucus carota, the same broad carrot species as orange carrots but with a deeper pigment profile. The purple color comes largely from anthocyanins, a group of plant compounds also found in foods such as berries, purple corn, and black rice. In supplement and functional food labels, purple carrot powder is usually positioned as a color-rich botanical ingredient rather than a concentrated vitamin or mineral.</p>\n\n<p>Unlike a standardized extract that may target one marker compound, purple carrot powder is typically closer to a whole-food style ingredient. It can contain naturally occurring pigments, fiber fractions, and other carrot phytonutrients depending on how it is dried and processed. This makes it useful in greens powders, antioxidant blends, drink mixes, and natural color systems where the ingredient supports both visual appeal and wellness-oriented label language.</p>\n\n<p>The most practical way to evaluate purple carrot powder is to look at form, serving size, and processing quality. Freeze-dried or gently dried powders may be marketed differently than conventional vegetable powders. Some labels disclose anthocyanin content, while others simply list the ingredient as a food powder. Products that rely on purple carrot mainly for color may use smaller amounts than products that present it as a meaningful botanical component.</p>\n\n<p>Purple carrot powder is not a substitute for eating vegetables. It may help add plant compounds to a formula, but it does not fully replace the texture, volume, and broader nutrient profile of whole vegetables. For that reason, Suppriva treats it as an ingredient to understand within a product's overall formula rather than as a standalone solution.</p>\n\n<p>Because purple carrot powder is food-based, it is generally easy to understand for most consumers. Still, people with carrot allergy, sensitivity to root vegetables, or strict dietary requirements should review labels carefully. Formulas may combine purple carrot with sweeteners, caffeine sources, probiotics, mushrooms, or herbal extracts that change the safety profile of the finished product.</p>\n\n<p>This ingredient page helps readers compare purple carrot powder by source, color intensity, serving size, supporting ingredients, and intended use. It is most useful when reading antioxidant, superfood, beauty, and general wellness labels that use plant pigments as part of a broader nutritional story.</p>\n\n<p>A useful way to read a Purple Carrot Powder label is to separate ingredient identity from product promise. Ingredient identity includes the exact name, source, form, and serving size. Product promise is the marketing language around what the finished formula is meant to support. This distinction helps shoppers compare products without assuming that every Purple Carrot Powder supplement is equivalent or that a single ingredient can replace nutrition, sleep, movement, medical care, or a clinician-guided plan.</p>\n\n<p>It is also important to review the surrounding formula. Purple Carrot Powder may appear alone, but it is often combined with complementary nutrients, botanicals, fibers, enzymes, or specialty delivery systems. Those companion ingredients can change the intended audience, tolerability, and safety considerations. A formula designed for digestive wellness, immune support, antioxidant support, or men's wellness may use the same ingredient name while creating a very different product experience.</p>\n\n<p>For Suppriva readers, the goal is practical ingredient literacy. Look for transparent amounts, clear directions, safety language, and realistic claims. If a product hides key amounts in a proprietary blend or uses disease-treatment language, it deserves extra caution. When health conditions, pregnancy, nursing, medication use, surgery, or persistent symptoms are involved, a qualified healthcare professional should guide supplement decisions.</p>",
+  "interesting_fact_label": "Natural Purple Pigments",
+  "interesting_fact": "<p>Purple carrots contain anthocyanin pigments, the same broad family of plant compounds responsible for many red, blue, and purple colors in fruits and vegetables.</p>",
   "how_it_works_title": "How Purple Carrot Powder Works",
-  "how_it_works_subtitle": "How purple carrot powder supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Colorful Antioxidant Support",
-  "how_it_works_highlight_description": "Purple Carrot Powder is most often positioned around colorful antioxidant support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Purple Carrot Powder works through colorful plant pigments that support its use in antioxidant and phytonutrient-focused blends. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare purple carrot powder by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Its role is mainly nutritional, color-rich, and antioxidant focused.",
+  "how_it_works_highlight_title": "Anthocyanin-Rich Color",
+  "how_it_works_highlight_description": "The deep purple color signals naturally occurring plant pigments that are often used in antioxidant-positioned formulas.",
+  "how_it_works_content": "<p>Purple carrot powder works as a plant-food ingredient rather than a targeted drug-like compound. It contributes naturally occurring anthocyanins and other phytonutrients that help support the antioxidant positioning of a formula. The amount present depends on serving size, processing, and whether the powder is used for nutrition, color, or both.</p>\n\n<p>In drink powders and superfood blends, purple carrot powder may support flavor, color, and label appeal. Its deep color can help reduce the need for synthetic colorants while also giving the formula a more recognizable plant-based identity.</p>\n\n<p>When comparing products, look for clear serving size, source disclosure, and whether the formula includes other antioxidant ingredients such as berries, pomegranate, grape seed, vitamin C, or green tea extract.</p>",
   "benefits_title": "Potential Purple Carrot Powder Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether purple carrot powder fits the full formula.",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Colorful antioxidant support",
-      "description": "Purple Carrot Powder is commonly evaluated for colorful antioxidant support within supplement formulas and wellness routines."
-    },
-    {
       "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Purple Carrot Powder to support a more targeted product story around anthocyanin, colorful-food, and antioxidant-support formulas."
+      "title": "Color-Rich Antioxidant Support",
+      "description": "Provides naturally occurring purple pigments associated with antioxidant-focused plant nutrition."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "icon": "leaf",
+      "title": "Whole-Food Style Ingredient",
+      "description": "Often used as a vegetable powder rather than a highly isolated compound."
     },
     {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Purple Carrot Powder may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "droplets",
+      "title": "Supports Drink Mix Appeal",
+      "description": "Can improve color and plant-forward positioning in powders and blends."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Purple Carrot Powder supplements."
+      "icon": "heart",
+      "title": "Fits General Wellness Formulas",
+      "description": "Pairs well with fruit, berry, greens, and polyphenol ingredients."
+    },
+    {
+      "icon": "shield",
+      "title": "Label-Friendly Botanical",
+      "description": "Easy for consumers to recognize as a food-derived ingredient."
     },
     {
       "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Purple Carrot Powder helps readers make more informed decisions instead of relying only on front-label claims."
+      "title": "Useful for Ingredient Education",
+      "description": "Helps explain anthocyanins, plant pigments, and color-based phytonutrients."
     }
   ],
   "dosage_title": "Typical Purple Carrot Powder Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Serving sizes vary by greens powder, drink mix, or capsule format; use the product label as the guide.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Serving sizes vary by greens powder, drink mix, or capsule format; use the product label as the guide.</p><p>Because purple carrot powder can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by formula",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Purple carrot powder serving sizes vary widely because some products use it as a meaningful food powder while others use it mainly for color. Follow the product label and compare the amount listed per serving when available.</p>\n\n<p>Standalone vegetable powders may use gram-based servings. Multi-ingredient antioxidant or greens formulas may include smaller amounts within a blend. If a product uses a proprietary blend, the exact amount may not be clear.</p>\n\n<p>Purple carrot powder should be viewed as supportive nutrition, not a replacement for vegetables, balanced meals, or medical care.</p>",
   "safety_title": "Purple Carrot Powder Safety Information",
-  "safety_subtitle": "Use purple carrot powder with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
+    "Digestive Sensitivity",
     "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Color Changes",
+    "Formula-Dependent Effects"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Purple Carrot Powder may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Digestive Sensitivity",
+      "description": "Large amounts of vegetable powders may cause gas or digestive changes in sensitive users."
     },
     {
       "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "description": "People with carrot allergy should avoid carrot-derived ingredients."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Color Changes",
+      "description": "Deep pigments may affect the color of powders, drinks, or occasionally stool depending on intake."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Formula-Dependent Effects",
+      "description": "Side effects may come from other ingredients in the finished product, not purple carrot alone."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    {
+      "title": "Antioxidant Blends",
+      "description": "Often combined with other polyphenol sources; review total formula intensity."
+    },
+    {
+      "title": "Blood Sugar Plans",
+      "description": "People on strict nutrition plans should review carbohydrate content in powdered blends."
+    },
+    {
+      "title": "Medication Use",
+      "description": "No common direct interaction is expected from typical food amounts, but complex formulas should be reviewed."
+    },
+    {
+      "title": "Allergen Cross-Contact",
+      "description": "Check labels for manufacturing and allergen statements if sensitive."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Purple Carrot Powder or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Known Carrot Allergy",
+      "description": "Avoid if allergic or reactive to carrot or related ingredients."
+    },
+    {
+      "title": "Unclear Multi-Ingredient Formulas",
+      "description": "Use caution when other active botanicals are included and not well disclosed."
+    },
+    {
+      "title": "Strict Dietary Protocols",
+      "description": "Check sweeteners, fillers, and carbohydrate contribution."
+    },
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Food amounts are common, but concentrated supplement blends should be discussed with a clinician."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products and professional guidance."
+    }
+  ],
+  "food_sources_title": "Purple Carrot Powder Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Purple Carrot Powder is associated with purple carrot root. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>\n\n<p>When available, compare the source material, extract type, serving size, and whether the formula uses standardized or branded ingredients.</p>",
+  "food_sources_json": [
+    {
+      "title": "Purple Carrots",
+      "description": "The primary source is purple varieties of Daucus carota."
+    },
+    {
+      "title": "Functional Powders",
+      "description": "Often used in greens powders, antioxidant blends, and drink mixes."
+    },
+    {
+      "title": "Natural Color Systems",
+      "description": "May be used for color as well as phytonutrient positioning."
+    }
   ],
   "faq_title": "Purple Carrot Powder FAQs",
-  "faq_subtitle": "Common questions about purple carrot powder supplements and label comparison.",
+  "faq_subtitle": "Common questions about purple carrot powder antioxidants supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Purple Carrot Powder used for in supplements?",
-      "answer": "Purple Carrot Powder is commonly used in formulas focused on anthocyanin, colorful-food, and antioxidant-support formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is purple carrot powder?",
+      "answer": "It is a powdered ingredient made from purple carrots and used for plant pigments, color, and antioxidant-focused nutrition."
     },
     {
-      "question": "Is Purple Carrot Powder a medicine?",
-      "answer": "No. Purple Carrot Powder is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Why is purple carrot powder purple?",
+      "answer": "The color comes largely from anthocyanin pigments naturally found in purple carrot varieties."
     },
     {
-      "question": "What form of Purple Carrot Powder should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Is purple carrot powder the same as carrot extract?",
+      "answer": "Not always. Powder is usually closer to a food powder, while extracts may be more concentrated or standardized."
     },
     {
-      "question": "How long does Purple Carrot Powder take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Does purple carrot powder replace vegetables?",
+      "answer": "No. It can support a formula but should not replace whole vegetables in the diet."
     },
     {
-      "question": "Can Purple Carrot Powder cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Is purple carrot powder safe?",
+      "answer": "It is generally food-like for many adults, but people with carrot allergy should avoid it."
     },
     {
-      "question": "Can I take Purple Carrot Powder every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "What products use purple carrot powder?",
+      "answer": "It can appear in greens powders, antioxidant blends, drink mixes, beauty formulas, and natural color systems."
     },
     {
-      "question": "What should I check on a Purple Carrot Powder label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Does purple carrot powder contain vitamin A?",
+      "answer": "Carrots may contain carotenoids, but purple carrot powder is usually promoted more for pigments and phytonutrients."
     },
     {
-      "question": "Does Purple Carrot Powder interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Can purple carrot powder cause side effects?",
+      "answer": "Large servings may cause digestive changes in some users, and finished formulas may contain other active ingredients."
     },
     {
-      "question": "Is Purple Carrot Powder suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "What should I compare on labels?",
+      "answer": "Compare serving size, source quality, blend transparency, added sweeteners, and supporting antioxidant ingredients."
     },
     {
-      "question": "Can Purple Carrot Powder replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Is purple carrot powder an antioxidant?",
+      "answer": "It contains antioxidant-associated plant pigments, but supplement labels should be read carefully and responsibly."
     }
   ],
   "sidebar_profile_title": "Purple Carrot Powder Profile Snapshot",
-  "sidebar_profile_content": "Purple Carrot Powder is a vegetable powder commonly evaluated for anthocyanin, colorful-food, and antioxidant-support formulas.",
+  "sidebar_profile_content": "Purple Carrot Powder is a powdered vegetable ingredient from purple carrots, valued for natural anthocyanin pigments, plant polyphenols, and color-rich nutrition positioning.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -144,19 +190,19 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary by greens powder, drink mix, or capsule format; use the product label as the guide."
+      "value": "Varies by formula"
     },
     {
       "label": "Best For",
-      "value": "Anthocyanin, colorful-food, and antioxidant-support formulas"
+      "value": "Antioxidant and superfood blends"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated as a food-derived ingredient"
+      "value": "Generally food-like for most adults"
     },
     {
       "label": "Origin",
-      "value": "Cultivated carrot-growing regions worldwide"
+      "value": "Purple carrot root"
     },
     {
       "label": "Part Used",
@@ -164,45 +210,78 @@
     },
     {
       "label": "Form",
-      "value": "Powder, capsule, drink mix"
+      "value": "Powder"
     },
     {
       "label": "Taste",
-      "value": "Mild earthy carrot"
+      "value": "Mild, earthy, slightly sweet"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Purple Carrot Powder is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Purple Carrot Powder is used in supplement formulas for anthocyanin, colorful-food, and antioxidant-support formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Anthocyanin, colorful-food, and antioxidant-support formulas",
-  "safety_level": "Generally well tolerated as a food-derived ingredient",
-  "origin_country": "Cultivated carrot-growing regions worldwide",
+  "sidebar_at_a_glance_content": "<p>Purple carrot powder is best evaluated by serving size, source quality, anthocyanin positioning, and whether it is used for nutrition, color, or both.</p>",
+  "full_description": "Purple Carrot Powder is a powdered vegetable ingredient from purple carrots, valued for natural anthocyanin pigments, plant polyphenols, and color-rich nutrition positioning.",
+  "best_for": "Antioxidant blends, greens powders, and plant-based wellness formulas",
+  "safety_level": "Generally food-like for most adults",
+  "origin_country": "Purple carrot root",
   "part_used": "Root",
-  "ingredient_form": "Powder, capsule, drink mix",
-  "taste_profile": "Mild earthy carrot",
+  "ingredient_form": "Powder",
+  "taste_profile": "Earthy and mildly sweet",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Purple Carrot Powder Uses",
+  "uses_subtitle": "Common wellness contexts where purple carrot powder antioxidants appears.",
+  "uses_content": "<p>Purple Carrot Powder is commonly used in antioxidant blends, greens powders, and plant-based wellness formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Antioxidant blends, greens powders, and plant-based wellness formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, standardization, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Purple Carrot Powder Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on purple carrot powder antioxidants varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Purple Carrot Powder References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "pomegranate-extract",
+    "acai-extract",
+    "blueberry",
+    "grape-seed-extract",
+    "vitamin-c"
+  ],
   "seo_title": "Purple Carrot Powder Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "purple carrot powder",
-  "seo_description": "Explore purple carrot powder benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_focus_keyword": "purple carrot powder antioxidants",
+  "seo_description": "Explore purple carrot powder antioxidants benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/purple-carrot-powder",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Purple Carrot Powder Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore purple carrot powder benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore purple carrot powder antioxidants benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

@@ -1,114 +1,287 @@
 {
   "name": "Pygeum",
   "scientific_name": "Prunus africana",
-  "hero_badge": null,
-  "short_description": "Pygeum is a bark extract used in men's health and prostate-support supplements, often paired with saw palmetto, nettle root, and beta-sitosterol.",
-  "overview_title": "Pygeum Overview",
-  "overview_subtitle": "A prostate-support botanical sourced from African cherry bark.",
-  "overview_content": "<p>Pygeum is an extract from the bark of <em>Prunus africana</em>, also known as African cherry. It is most commonly found in men's health supplements positioned around prostate and urinary wellness.</p><p>Pygeum is often combined with saw palmetto, nettle root, pumpkin seed, zinc, or beta-sitosterol. In these formulas, pygeum is used as one part of a broader prostate-support stack rather than a standalone medical treatment.</p><p>Because urinary symptoms can be linked to conditions that require medical evaluation, pygeum should not be used to delay diagnosis or replace professional care.</p>",
-  "interesting_fact_label": "Sourcing Matters",
-  "interesting_fact": "<p>Pygeum comes from tree bark, so responsible sourcing and supplier transparency are especially important when comparing supplements.</p>",
+  "ingredient_category": "Herbal Extracts",
+  "status": "published",
+  "hero_badge": "Herbal Extract",
+  "short_description": "Pygeum is a bark extract from Prunus africana used in men's wellness supplements, especially formulas focused on urinary comfort and prostate-health education.",
+  "overview_title": "What Is Pygeum?",
+  "overview_subtitle": "A responsible guide to pygeum bark extract and men's wellness labels.",
+  "overview_content": "<p>Pygeum is an herbal extract made from the bark of Prunus africana, an evergreen tree native to parts of Africa. In dietary supplement labels, pygeum is most often associated with men's wellness, urinary comfort, and prostate-support formulas. It is usually presented as a botanical extract rather than a general nutrition ingredient, which means extract strength, sourcing, and standardization matter when comparing products.</p>\n\n<p>The traditional and commercial use of pygeum has created strong consumer recognition in men's health formulas, but the ingredient should be understood carefully. Supplement products cannot diagnose, treat, cure, or prevent prostate disease. Instead, pygeum-containing products should be evaluated as supportive wellness formulas, and any urinary symptoms, pain, blood, fever, or sudden changes should be discussed with a qualified healthcare professional.</p>\n\n<p>Pygeum labels may list bark extract, Prunus africana, or standardized extract. Some products combine pygeum with saw palmetto, nettle root, beta-sitosterol, pumpkin seed, zinc, selenium, or lycopene. These combinations are common in prostate-focused supplements, but they also make it harder to know which ingredient is responsible for a user's experience. Transparent labels are preferable because they show exact amounts and avoid vague proprietary blends.</p>\n\n<p>Sourcing is also important. Prunus africana bark has conservation and sustainability considerations because bark harvesting can affect trees if not managed responsibly. Better labels may mention sustainable sourcing, extract quality, or supplier standards. For consumers comparing products, this is part of responsible ingredient evaluation, not just a marketing detail.</p>\n\n<p>Pygeum is generally discussed in adult male wellness contexts, but it is not appropriate for everyone. People taking medications, managing prostate or urinary conditions, preparing for surgery, or experiencing unexplained urinary symptoms should seek medical guidance before using pygeum. Pregnant or nursing individuals and children should avoid it unless specifically directed by a clinician.</p>\n\n<p>This Suppriva profile helps readers understand pygeum as a botanical ingredient within men's wellness labels. The goal is to support better comparison of extract form, serving size, combination ingredients, sourcing quality, and safety considerations before choosing a supplement.</p>\n\n<p>A useful way to read a Pygeum label is to separate ingredient identity from product promise. Ingredient identity includes the exact name, source, form, and serving size. Product promise is the marketing language around what the finished formula is meant to support. This distinction helps shoppers compare products without assuming that every Pygeum supplement is equivalent or that a single ingredient can replace nutrition, sleep, movement, medical care, or a clinician-guided plan.</p>\n\n<p>It is also important to review the surrounding formula. Pygeum may appear alone, but it is often combined with complementary nutrients, botanicals, fibers, enzymes, or specialty delivery systems. Those companion ingredients can change the intended audience, tolerability, and safety considerations. A formula designed for digestive wellness, immune support, antioxidant support, or men's wellness may use the same ingredient name while creating a very different product experience.</p>\n\n<p>For Suppriva readers, the goal is practical ingredient literacy. Look for transparent amounts, clear directions, safety language, and realistic claims. If a product hides key amounts in a proprietary blend or uses disease-treatment language, it deserves extra caution. When health conditions, pregnancy, nursing, medication use, surgery, or persistent symptoms are involved, a qualified healthcare professional should guide supplement decisions.</p>",
+  "interesting_fact_label": "Bark Extract with Sourcing Concerns",
+  "interesting_fact": "<p>Pygeum comes from Prunus africana bark, so responsible sourcing matters because unsustainable bark harvesting can affect tree health and supply quality.</p>",
   "how_it_works_title": "How Pygeum Works",
-  "how_it_works_subtitle": "Pygeum is positioned around prostate and urinary wellness pathways.",
-  "how_it_works_highlight_title": "Common prostate formula ingredient",
-  "how_it_works_highlight_description": "Pygeum is frequently paired with saw palmetto, nettle root, and beta-sitosterol in men's health supplements.",
-  "how_it_works_content": "<p>Pygeum bark extract contains phytosterols, triterpenes, and other plant constituents researched in relation to prostate and urinary wellness. Supplement brands usually position it around healthy urinary comfort and age-related men's wellness.</p><p>Its role in formulas is often complementary. Rather than relying on pygeum alone, many products combine it with other botanicals and minerals to support a broader prostate-health positioning.</p><p>Users should review serving size, standardization if provided, sourcing information, and the full formula before purchasing.</p>",
+  "how_it_works_subtitle": "Pygeum is used in formulas focused on urinary comfort and men's wellness support.",
+  "how_it_works_highlight_title": "Extract Quality Matters",
+  "how_it_works_highlight_description": "Pygeum products can vary by bark source, extract ratio, standardization, and companion ingredients.",
+  "how_it_works_content": "<p>Pygeum is typically used as a botanical extract in adult men's wellness formulas. It may be paired with other ingredients that are commonly discussed in urinary comfort and prostate-health education, but dietary supplement claims must remain supportive and non-medical.</p>\n\n<p>The practical effect of a pygeum supplement depends on extract type, serving size, and formula design. A standalone pygeum product is different from a multi-ingredient prostate blend, especially when the label includes saw palmetto, nettle root, pumpkin seed, zinc, or plant sterols.</p>\n\n<p>Consumers should also consider symptom context. Supplements are not a substitute for evaluation of urinary symptoms or prostate concerns, and professional guidance is especially important when symptoms are new, worsening, or disruptive.</p>",
   "benefits_title": "Potential Pygeum Benefits",
-  "benefits_subtitle": "Pygeum is most relevant to men's health and prostate-support formulas.",
+  "benefits_subtitle": "Benefits depend on formula quality, serving size, personal needs, and overall wellness routine.",
   "benefits_json": [
-    { "icon": "shield-check", "title": "Prostate-Support Positioning", "description": "Pygeum is commonly included in supplements designed for prostate wellness." },
-    { "icon": "droplets", "title": "Urinary Wellness Support", "description": "Many formulas position pygeum around urinary comfort and routine support." },
-    { "icon": "users", "title": "Men's Health Fit", "description": "Pygeum appears frequently in age-related men's wellness products." },
-    { "icon": "layers", "title": "Combination Formula Value", "description": "It is often paired with saw palmetto, nettle root, beta-sitosterol, pumpkin seed, and zinc." },
-    { "icon": "tree-pine", "title": "Botanical Bark Extract", "description": "Pygeum provides a distinct bark-derived botanical profile within prostate formulas." },
-    { "icon": "search", "title": "Label Comparison Value", "description": "Pygeum helps shoppers evaluate extract dose, standardization, sourcing, and formula design." }
+    {
+      "icon": "shield",
+      "title": "Men's Wellness Positioning",
+      "description": "Commonly appears in formulas designed for adult men's urinary and prostate wellness education."
+    },
+    {
+      "icon": "leaf",
+      "title": "Botanical Extract Identity",
+      "description": "Provides a recognizable plant-based ingredient in men's health supplements."
+    },
+    {
+      "icon": "search",
+      "title": "Useful for Label Comparison",
+      "description": "Helps consumers compare extract form, serving size, and combination ingredients."
+    },
+    {
+      "icon": "scale",
+      "title": "Pairs with Common Prostate Ingredients",
+      "description": "Often appears with nettle root, saw palmetto, zinc, selenium, or pumpkin seed."
+    },
+    {
+      "icon": "book-open",
+      "title": "Encourages Symptom Awareness",
+      "description": "Supports responsible education that separates wellness support from medical treatment."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Sourcing Discussion",
+      "description": "Highlights the importance of sustainability and extract quality."
+    }
   ],
   "dosage_title": "Typical Pygeum Dosage",
-  "dosage_subtitle": "Serving size depends on extract concentration and formula type.",
-  "typical_dose": "Follow label directions; pygeum is commonly provided as a capsule extract in prostate-support formulas.",
-  "dosage": "Use only the label-directed serving and consult a healthcare professional for urinary or prostate symptoms.",
-  "dosage_content": "<p>Pygeum dosage varies by extract strength, standardization, and whether it is used alone or in a combination supplement. Labels may list bark extract, extract ratio, or standardized phytosterol content.</p><p>People with prostate symptoms, urinary concerns, medication use, or diagnosed conditions should seek medical guidance rather than self-managing with supplements.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Follow extract label",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Pygeum dosage depends on extract concentration and whether the product is standalone or part of a blend. Follow the supplement label and avoid assuming that all pygeum extracts are equivalent.</p>\n\n<p>Many men's wellness products combine pygeum with other botanicals and nutrients. When comparing labels, review the exact pygeum amount, extract ratio, standardization, and total formula serving size.</p>\n\n<p>People with urinary symptoms, prostate concerns, medication use, or upcoming procedures should speak with a healthcare professional before using pygeum.</p>",
   "safety_title": "Pygeum Safety Information",
-  "safety_subtitle": "Pygeum is generally used in adult men's supplements, but symptom evaluation matters.",
-  "side_effects": ["Digestive upset", "Nausea", "Headache", "Allergic reaction"],
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
+  "side_effects": [
+    "Digestive Upset",
+    "Headache",
+    "Formula Sensitivity",
+    "Allergic Reaction"
+  ],
   "side_effects_json": [
-    { "title": "Digestive Discomfort", "description": "Some users may experience nausea, stomach upset, or loose stools." },
-    { "title": "Headache", "description": "Headache has been reported by some supplement users." },
-    { "title": "Allergy Awareness", "description": "Stop use if signs of sensitivity or allergic reaction occur." },
-    { "title": "Medical Evaluation Reminder", "description": "Urinary or prostate symptoms should be evaluated by a healthcare professional." }
+    {
+      "title": "Digestive Upset",
+      "description": "Some users may experience nausea, stomach discomfort, constipation, or loose stools."
+    },
+    {
+      "title": "Headache",
+      "description": "Headache has been reported with some herbal supplement use."
+    },
+    {
+      "title": "Formula Sensitivity",
+      "description": "Effects may come from companion ingredients in multi-ingredient prostate blends."
+    },
+    {
+      "title": "Allergic Reaction",
+      "description": "Stop use and seek help if rash, swelling, or breathing difficulty occurs."
+    }
   ],
   "drug_interactions_json": [
-    "Review use with a healthcare professional if taking medications for prostate or urinary conditions.",
-    "Use caution when combining multiple men's health supplements.",
-    "Discuss use before surgery or if managing chronic medical conditions.",
-    "Ask a clinician before combining with hormone-related medications or therapies."
+    {
+      "title": "Prostate or Urinary Medications",
+      "description": "Ask a clinician before combining pygeum with medications for urinary or prostate symptoms."
+    },
+    {
+      "title": "Hormone-Sensitive Contexts",
+      "description": "Men's wellness blends may include other ingredients that require professional review."
+    },
+    {
+      "title": "Surgery",
+      "description": "Disclose pygeum and all supplements before procedures."
+    },
+    {
+      "title": "Multi-Ingredient Blends",
+      "description": "Check for saw palmetto, nettle root, zinc, or other active ingredients."
+    }
   ],
   "who_should_avoid_json": [
-    "People with unexplained urinary symptoms who have not been medically evaluated.",
-    "People taking prostate, urinary, or hormone-related medications without professional guidance.",
-    "People with known sensitivity to pygeum or bark-derived botanical extracts.",
-    "People who are pregnant or nursing; pygeum is generally not intended for this use.",
-    "Children unless specifically directed by a qualified healthcare professional."
+    {
+      "title": "Unexplained Urinary Symptoms",
+      "description": "Do not self-treat pain, blood, fever, or sudden urinary changes with supplements."
+    },
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Pygeum is not intended for pregnancy or nursing use."
+    },
+    {
+      "title": "Children",
+      "description": "Pygeum is generally positioned for adults and should not be used by children unless directed."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a healthcare professional before combining with prescription treatments."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or reactive to pygeum or related botanicals."
+    }
+  ],
+  "food_sources_title": "Pygeum Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Pygeum is associated with prunus africana bark. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>\n\n<p>When available, compare the source material, extract type, serving size, and whether the formula uses standardized or branded ingredients.</p>",
+  "food_sources_json": [
+    {
+      "title": "Prunus africana Bark",
+      "description": "Pygeum extract is sourced from the bark of the African plum tree."
+    },
+    {
+      "title": "Men's Wellness Blends",
+      "description": "Commonly combined with saw palmetto, nettle root, zinc, selenium, or pumpkin seed."
+    },
+    {
+      "title": "Sustainability Check",
+      "description": "Responsible sourcing is important because bark harvesting affects tree supply."
+    }
   ],
   "faq_title": "Pygeum FAQs",
-  "faq_subtitle": "Common questions about pygeum and prostate-support supplements.",
+  "faq_subtitle": "Common questions about pygeum bark extract supplements and label comparison.",
   "faq_json": [
-    { "question": "What is pygeum used for?", "answer": "Pygeum is commonly used in men's health supplements positioned around prostate and urinary wellness." },
-    { "question": "What plant does pygeum come from?", "answer": "Pygeum is sourced from the bark of Prunus africana, also known as African cherry." },
-    { "question": "Is pygeum the same as saw palmetto?", "answer": "No. They are different botanicals, but they often appear together in prostate-support formulas." },
-    { "question": "Can pygeum treat prostate disease?", "answer": "No. Pygeum supplements are not treatments and should not replace medical evaluation or prescribed care." },
-    { "question": "What should I compare on a pygeum label?", "answer": "Compare serving size, bark extract amount, standardization if listed, sourcing transparency, and companion ingredients." },
-    { "question": "Can pygeum help urinary comfort?", "answer": "It is commonly positioned around urinary wellness, but symptoms should be medically evaluated." },
-    { "question": "Is pygeum usually taken alone?", "answer": "Many products combine pygeum with saw palmetto, nettle root, beta-sitosterol, zinc, or pumpkin seed." },
-    { "question": "Who should avoid pygeum?", "answer": "People with unexplained urinary symptoms, medication use, or diagnosed prostate conditions should avoid unsupervised use." },
-    { "question": "Does pygeum have side effects?", "answer": "Possible side effects include stomach upset, nausea, headache, or allergic reaction." },
-    { "question": "Can pygeum replace medical care?", "answer": "No. It should not replace professional diagnosis, treatment, or ongoing care." }
+    {
+      "question": "What is pygeum?",
+      "answer": "Pygeum is an herbal extract made from Prunus africana bark and commonly used in men's wellness supplements."
+    },
+    {
+      "question": "Is pygeum the same as saw palmetto?",
+      "answer": "No. They are different botanicals, though both may appear in prostate-support formulas."
+    },
+    {
+      "question": "What is pygeum used for in supplements?",
+      "answer": "It is typically used in adult men's wellness formulas focused on urinary comfort and prostate-health education."
+    },
+    {
+      "question": "Can pygeum treat prostate problems?",
+      "answer": "No supplement should be used to diagnose, treat, cure, or prevent prostate disease. Symptoms require medical guidance."
+    },
+    {
+      "question": "What should I compare on pygeum labels?",
+      "answer": "Compare extract amount, extract ratio, standardization, sourcing, and companion ingredients."
+    },
+    {
+      "question": "Does pygeum have side effects?",
+      "answer": "Possible effects include digestive upset, headache, or sensitivity to other ingredients in a blend."
+    },
+    {
+      "question": "Can pygeum be taken with medication?",
+      "answer": "Ask a healthcare professional, especially if using urinary, prostate, hormone-related, or prescription medicines."
+    },
+    {
+      "question": "Is pygeum suitable for women?",
+      "answer": "It is usually marketed for adult men's wellness and is not intended for pregnancy or nursing use."
+    },
+    {
+      "question": "Why does pygeum sourcing matter?",
+      "answer": "Because it comes from bark, responsible harvesting helps protect tree supply and ingredient quality."
+    },
+    {
+      "question": "When should I avoid pygeum?",
+      "answer": "Avoid self-treating unexplained urinary symptoms, pain, blood, fever, or sudden changes with supplements."
+    }
   ],
   "sidebar_profile_title": "Pygeum Profile Snapshot",
-  "sidebar_profile_content": "A bark extract used in men's health and prostate-support supplements, often as part of a multi-ingredient formula.",
+  "sidebar_profile_content": "Pygeum is an herbal bark extract from Prunus africana, commonly discussed in men's wellness, urinary comfort, and botanical supplement formulas.",
   "sidebar_quick_facts_json": [
-    { "label": "Type", "value": "Botanical bark extract" },
-    { "label": "Typical Dose", "value": "Label-directed capsule extract" },
-    { "label": "Best For", "value": "Prostate-support formulas" },
-    { "label": "Safety Level", "value": "Use with medical awareness for urinary symptoms" },
-    { "label": "Origin", "value": "Sub-Saharan Africa" },
-    { "label": "Part Used", "value": "Bark" },
-    { "label": "Form", "value": "Capsule, extract" },
-    { "label": "Taste", "value": "Bitter and woody" }
+    {
+      "label": "Type",
+      "value": "Herbal bark extract"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Follow extract label"
+    },
+    {
+      "label": "Best For",
+      "value": "Men's urinary wellness formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Use professional guidance for symptoms"
+    },
+    {
+      "label": "Origin",
+      "value": "Prunus africana bark"
+    },
+    {
+      "label": "Part Used",
+      "value": "Bark"
+    },
+    {
+      "label": "Form",
+      "value": "Capsules, tablets, blends"
+    },
+    {
+      "label": "Taste",
+      "value": "Bitter, woody"
+    }
   ],
-  "sidebar_at_a_glance_content": "<p>Pygeum is best compared by extract dose, standardization, sourcing transparency, and supporting prostate ingredients.</p>",
-  "full_description": "Pygeum is a bark extract used in men's health and prostate-support supplements.",
-  "best_for": "Men's wellness, prostate-support, and urinary wellness formulas",
-  "safety_level": "Use with medical awareness for urinary symptoms and medication use",
-  "origin_country": "Sub-Saharan Africa",
+  "sidebar_at_a_glance_content": "<p>Pygeum is best evaluated by extract quality, dose transparency, companion ingredients, symptom context, and responsible sourcing. It should not replace medical evaluation of urinary or prostate concerns.</p>",
+  "full_description": "Pygeum is an herbal bark extract from Prunus africana, commonly discussed in men's wellness, urinary comfort, and botanical supplement formulas.",
+  "best_for": "Men's urinary wellness and prostate-support education",
+  "safety_level": "Use caution with urinary symptoms or medication use",
+  "origin_country": "Prunus africana bark",
   "part_used": "Bark",
-  "ingredient_form": "Capsule, extract",
+  "ingredient_form": "Capsules, tablets, blends",
   "taste_profile": "Bitter and woody",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Pygeum Uses",
+  "uses_subtitle": "Common wellness contexts where pygeum bark extract appears.",
+  "uses_content": "<p>Pygeum is commonly used in men's urinary wellness and prostate-support education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Men's urinary wellness and prostate-support education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, standardization, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Pygeum Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on pygeum bark extract varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Pygeum References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "nettle-root",
+    "zinc",
+    "selenium",
+    "lycopene",
+    "pumpkin-seed"
+  ],
   "seo_title": "Pygeum Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "pygeum",
-  "seo_description": "Explore pygeum benefits, dosage, safety notes, and prostate-support supplement label tips.",
+  "seo_focus_keyword": "pygeum bark extract",
+  "seo_description": "Explore pygeum bark extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/pygeum",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Pygeum Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore pygeum benefits, dosage, safety notes, and prostate-support supplement label tips."
+  "meta_description": "Explore pygeum bark extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
-
