@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "L-Carnitine may cause nausea, cramps, diarrhea, or stomach discomfort."
+      "text": "L-Carnitine may cause nausea, cramps, diarrhea, or stomach discomfort.",
+      "description": "L-Carnitine may cause nausea, cramps, diarrhea, or stomach discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Fishy Odor",
-      "text": "Some users notice a fishy body odor, especially at higher servings."
+      "text": "Some users notice a fishy body odor, especially at higher servings.",
+      "description": "Some users notice a fishy body odor, especially at higher servings."
     },
     {
       "icon": "alert-circle",
       "title": "Restlessness",
-      "text": "Some formulas combine carnitine with stimulants that may affect sleep or comfort."
+      "text": "Some formulas combine carnitine with stimulants that may affect sleep or comfort.",
+      "description": "Some formulas combine carnitine with stimulants that may affect sleep or comfort."
     },
     {
       "icon": "alert-circle",
       "title": "Tolerance Issues",
-      "text": "Large servings may be harder to tolerate than split or lower servings."
+      "text": "Large servings may be harder to tolerate than split or lower servings.",
+      "description": "Large servings may be harder to tolerate than split or lower servings."
     }
   ],
   "drug_interactions_json": [

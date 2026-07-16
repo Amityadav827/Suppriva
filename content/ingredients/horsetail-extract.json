@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Discomfort",
-      "text": "Horsetail extract may cause nausea, stomach upset, or loose stool in sensitive users."
+      "text": "Horsetail extract may cause nausea, stomach upset, or loose stool in sensitive users.",
+      "description": "Horsetail extract may cause nausea, stomach upset, or loose stool in sensitive users."
     },
     {
       "icon": "alert-circle",
       "title": "Urination Changes",
-      "text": "Some formulas may have mild diuretic-like effects, so hydration and medication context matter."
+      "text": "Some formulas may have mild diuretic-like effects, so hydration and medication context matter.",
+      "description": "Some formulas may have mild diuretic-like effects, so hydration and medication context matter."
     },
     {
       "icon": "alert-circle",
       "title": "Thiamine Concern",
-      "text": "Poor-quality horsetail preparations may raise concern for thiaminase exposure, especially with long-term use."
+      "text": "Poor-quality horsetail preparations may raise concern for thiaminase exposure, especially with long-term use.",
+      "description": "Poor-quality horsetail preparations may raise concern for thiaminase exposure, especially with long-term use."
     },
     {
       "icon": "alert-circle",
       "title": "Allergy or Sensitivity",
-      "text": "Stop use if rash, itching, swelling, or unusual symptoms occur."
+      "text": "Stop use if rash, itching, swelling, or unusual symptoms occur.",
+      "description": "Stop use if rash, itching, swelling, or unusual symptoms occur."
     }
   ],
   "drug_interactions_json": [

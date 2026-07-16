@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Nausea or Stomach Upset",
-      "text": "Cholinergic activity may contribute to nausea, cramping, or digestive discomfort."
+      "text": "Cholinergic activity may contribute to nausea, cramping, or digestive discomfort.",
+      "description": "Cholinergic activity may contribute to nausea, cramping, or digestive discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Headache or Dizziness",
-      "text": "Some users report headache, dizziness, or unusual alertness."
+      "text": "Some users report headache, dizziness, or unusual alertness.",
+      "description": "Some users report headache, dizziness, or unusual alertness."
     },
     {
       "icon": "alert-circle",
       "title": "Sleep Disruption",
-      "text": "Late-day use may interfere with sleep or cause vivid dreams in sensitive users."
+      "text": "Late-day use may interfere with sleep or cause vivid dreams in sensitive users.",
+      "description": "Late-day use may interfere with sleep or cause vivid dreams in sensitive users."
     },
     {
       "icon": "alert-circle",
       "title": "Slow Heart Rate Symptoms",
-      "text": "Seek medical guidance if lightheadedness, faintness, or unusual heart-rate symptoms occur."
+      "text": "Seek medical guidance if lightheadedness, faintness, or unusual heart-rate symptoms occur.",
+      "description": "Seek medical guidance if lightheadedness, faintness, or unusual heart-rate symptoms occur."
     }
   ],
   "drug_interactions_json": [

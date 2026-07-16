@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Jitteriness or Anxiety",
-      "text": "Caffeine-containing products may cause nervousness or restlessness."
+      "text": "Caffeine-containing products may cause nervousness or restlessness.",
+      "description": "Caffeine-containing products may cause nervousness or restlessness."
     },
     {
       "icon": "alert-circle",
       "title": "Sleep Disruption",
-      "text": "Late-day use may interfere with sleep, especially in caffeine-sensitive users."
+      "text": "Late-day use may interfere with sleep, especially in caffeine-sensitive users.",
+      "description": "Late-day use may interfere with sleep, especially in caffeine-sensitive users."
     },
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Some users report nausea, stomach discomfort, or loose stool."
+      "text": "Some users report nausea, stomach discomfort, or loose stool.",
+      "description": "Some users report nausea, stomach discomfort, or loose stool."
     },
     {
       "icon": "alert-triangle",
       "title": "Blood Pressure Context",
-      "text": "Stimulant exposure may be relevant for people monitoring blood pressure or heart rhythm."
+      "text": "Stimulant exposure may be relevant for people monitoring blood pressure or heart rhythm.",
+      "description": "Stimulant exposure may be relevant for people monitoring blood pressure or heart rhythm."
     }
   ],
   "drug_interactions_json": [

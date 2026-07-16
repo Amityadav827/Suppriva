@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Discomfort",
-      "text": "Nausea, bloating, cramps, or loose stool may occur in some users."
+      "text": "Nausea, bloating, cramps, or loose stool may occur in some users.",
+      "description": "Nausea, bloating, cramps, or loose stool may occur in some users."
     },
     {
       "icon": "alert-circle",
       "title": "Sulfur-Like Taste",
-      "text": "Some liquid or liposomal forms may have a sulfur-like taste or aftertaste."
+      "text": "Some liquid or liposomal forms may have a sulfur-like taste or aftertaste.",
+      "description": "Some liquid or liposomal forms may have a sulfur-like taste or aftertaste."
     },
     {
       "icon": "alert-triangle",
       "title": "Asthma Caution",
-      "text": "People with asthma should seek clinician guidance before using glutathione products."
+      "text": "People with asthma should seek clinician guidance before using glutathione products.",
+      "description": "People with asthma should seek clinician guidance before using glutathione products."
     },
     {
       "icon": "alert-circle",
       "title": "Formula Sensitivity",
-      "text": "Blends may include additional ingredients that change the safety profile."
+      "text": "Blends may include additional ingredients that change the safety profile.",
+      "description": "Blends may include additional ingredients that change the safety profile."
     }
   ],
   "drug_interactions_json": [

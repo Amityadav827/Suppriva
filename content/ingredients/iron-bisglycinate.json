@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Constipation",
-      "text": "Iron supplements may cause constipation, though bisglycinate is often chosen for gentler tolerability."
+      "text": "Iron supplements may cause constipation, though bisglycinate is often chosen for gentler tolerability.",
+      "description": "Iron supplements may cause constipation, though bisglycinate is often chosen for gentler tolerability."
     },
     {
       "icon": "alert-circle",
       "title": "Nausea",
-      "text": "Taking iron on an empty stomach may cause nausea or stomach discomfort."
+      "text": "Taking iron on an empty stomach may cause nausea or stomach discomfort.",
+      "description": "Taking iron on an empty stomach may cause nausea or stomach discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Dark Stool",
-      "text": "Iron can darken stool, which is common but should be distinguished from concerning symptoms."
+      "text": "Iron can darken stool, which is common but should be distinguished from concerning symptoms.",
+      "description": "Iron can darken stool, which is common but should be distinguished from concerning symptoms."
     },
     {
       "icon": "alert-circle",
       "title": "Metallic Taste",
-      "text": "Liquid or chewable formats may leave a metallic taste."
+      "text": "Liquid or chewable formats may leave a metallic taste.",
+      "description": "Liquid or chewable formats may leave a metallic taste."
     }
   ],
   "drug_interactions_json": [

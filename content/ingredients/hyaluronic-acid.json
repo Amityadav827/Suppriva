@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Mild Digestive Upset",
-      "text": "Some oral products may cause nausea, bloating, or stomach discomfort."
+      "text": "Some oral products may cause nausea, bloating, or stomach discomfort.",
+      "description": "Some oral products may cause nausea, bloating, or stomach discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Allergy or Sensitivity",
-      "text": "Stop use if rash, swelling, itching, or unusual symptoms occur."
+      "text": "Stop use if rash, swelling, itching, or unusual symptoms occur.",
+      "description": "Stop use if rash, swelling, itching, or unusual symptoms occur."
     },
     {
       "icon": "alert-circle",
       "title": "Formula Additives",
-      "text": "Flavored powders or beauty blends may contain sweeteners or allergens."
+      "text": "Flavored powders or beauty blends may contain sweeteners or allergens.",
+      "description": "Flavored powders or beauty blends may contain sweeteners or allergens."
     },
     {
       "icon": "alert-circle",
       "title": "Expectation Mismatch",
-      "text": "Oral supplements should not be expected to act like injectable medical treatments."
+      "text": "Oral supplements should not be expected to act like injectable medical treatments.",
+      "description": "Oral supplements should not be expected to act like injectable medical treatments."
     }
   ],
   "drug_interactions_json": [

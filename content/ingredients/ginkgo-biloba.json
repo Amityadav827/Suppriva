@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Some people report stomach discomfort, nausea, diarrhea, or general digestive changes."
+      "text": "Some people report stomach discomfort, nausea, diarrhea, or general digestive changes.",
+      "description": "Some people report stomach discomfort, nausea, diarrhea, or general digestive changes."
     },
     {
       "icon": "alert-circle",
       "title": "Headache or Dizziness",
-      "text": "Headache, dizziness, or restlessness may occur in sensitive users."
+      "text": "Headache, dizziness, or restlessness may occur in sensitive users.",
+      "description": "Headache, dizziness, or restlessness may occur in sensitive users."
     },
     {
       "icon": "alert-triangle",
       "title": "Bleeding Risk Context",
-      "text": "Ginkgo may be relevant for people using anticoagulant or antiplatelet medications."
+      "text": "Ginkgo may be relevant for people using anticoagulant or antiplatelet medications.",
+      "description": "Ginkgo may be relevant for people using anticoagulant or antiplatelet medications."
     },
     {
       "icon": "alert-triangle",
       "title": "Allergy or Skin Reaction",
-      "text": "Allergic reactions are uncommon but possible, especially in people sensitive to related botanicals."
+      "text": "Allergic reactions are uncommon but possible, especially in people sensitive to related botanicals.",
+      "description": "Allergic reactions are uncommon but possible, especially in people sensitive to related botanicals."
     }
   ],
   "drug_interactions_json": [

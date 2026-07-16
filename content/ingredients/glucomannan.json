@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Bloating or Gas",
-      "text": "Fiber increases may cause bloating, gas, or abdominal fullness."
+      "text": "Fiber increases may cause bloating, gas, or abdominal fullness.",
+      "description": "Fiber increases may cause bloating, gas, or abdominal fullness."
     },
     {
       "icon": "alert-circle",
       "title": "Loose Stool or Constipation",
-      "text": "Digestive response varies, especially when water intake is low."
+      "text": "Digestive response varies, especially when water intake is low.",
+      "description": "Digestive response varies, especially when water intake is low."
     },
     {
       "icon": "alert-triangle",
       "title": "Choking or Esophageal Risk",
-      "text": "Dry fiber can swell and may be unsafe for people with swallowing difficulty."
+      "text": "Dry fiber can swell and may be unsafe for people with swallowing difficulty.",
+      "description": "Dry fiber can swell and may be unsafe for people with swallowing difficulty."
     },
     {
       "icon": "alert-circle",
       "title": "Medication Absorption Timing",
-      "text": "Glucomannan may affect how quickly some medications or nutrients are absorbed."
+      "text": "Glucomannan may affect how quickly some medications or nutrients are absorbed.",
+      "description": "Glucomannan may affect how quickly some medications or nutrients are absorbed."
     }
   ],
   "drug_interactions_json": [

@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Thyroid Symptoms",
-      "text": "Excess iodine from kelp may affect thyroid function in susceptible individuals."
+      "text": "Excess iodine from kelp may affect thyroid function in susceptible individuals.",
+      "description": "Excess iodine from kelp may affect thyroid function in susceptible individuals."
     },
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Seaweed powders or tablets may cause nausea or stomach discomfort."
+      "text": "Seaweed powders or tablets may cause nausea or stomach discomfort.",
+      "description": "Seaweed powders or tablets may cause nausea or stomach discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Mineral Taste",
-      "text": "Kelp may have a strong ocean-like taste or odor."
+      "text": "Kelp may have a strong ocean-like taste or odor.",
+      "description": "Kelp may have a strong ocean-like taste or odor."
     },
     {
       "icon": "alert-circle",
       "title": "Contaminant Concern",
-      "text": "Poorly tested seaweed may raise concern for heavy metals or environmental contaminants."
+      "text": "Poorly tested seaweed may raise concern for heavy metals or environmental contaminants.",
+      "description": "Poorly tested seaweed may raise concern for heavy metals or environmental contaminants."
     }
   ],
   "drug_interactions_json": [

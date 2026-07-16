@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Nausea, stomach discomfort, or loose stool may occur."
+      "text": "Nausea, stomach discomfort, or loose stool may occur.",
+      "description": "Nausea, stomach discomfort, or loose stool may occur."
     },
     {
       "icon": "alert-triangle",
       "title": "Low Blood Sugar Context",
-      "text": "May be relevant for people using glucose-lowering medication."
+      "text": "May be relevant for people using glucose-lowering medication.",
+      "description": "May be relevant for people using glucose-lowering medication."
     },
     {
       "icon": "alert-circle",
       "title": "Taste Changes",
-      "text": "Sweet taste perception may change temporarily."
+      "text": "Sweet taste perception may change temporarily.",
+      "description": "Sweet taste perception may change temporarily."
     },
     {
       "icon": "alert-circle",
       "title": "Formula Sensitivity",
-      "text": "Blends may include other glucose-support ingredients."
+      "text": "Blends may include other glucose-support ingredients.",
+      "description": "Blends may include other glucose-support ingredients."
     }
   ],
   "drug_interactions_json": [

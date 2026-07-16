@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Drowsiness",
-      "text": "Some users may feel too relaxed or sleepy, especially with sedating ingredients."
+      "text": "Some users may feel too relaxed or sleepy, especially with sedating ingredients.",
+      "description": "Some users may feel too relaxed or sleepy, especially with sedating ingredients."
     },
     {
       "icon": "alert-circle",
       "title": "Headache",
-      "text": "Occasional headache may occur in sensitive users."
+      "text": "Occasional headache may occur in sensitive users.",
+      "description": "Occasional headache may occur in sensitive users."
     },
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Capsules or powders may cause mild stomach discomfort."
+      "text": "Capsules or powders may cause mild stomach discomfort.",
+      "description": "Capsules or powders may cause mild stomach discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Formula Stacking",
-      "text": "Effects may change when combined with caffeine, magnesium, GABA, or herbs."
+      "text": "Effects may change when combined with caffeine, magnesium, GABA, or herbs.",
+      "description": "Effects may change when combined with caffeine, magnesium, GABA, or herbs."
     }
   ],
   "drug_interactions_json": [

@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Thyroid Symptoms",
-      "text": "Too much or too little iodine may affect thyroid function in susceptible individuals."
+      "text": "Too much or too little iodine may affect thyroid function in susceptible individuals.",
+      "description": "Too much or too little iodine may affect thyroid function in susceptible individuals."
     },
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Some supplements may cause nausea or stomach discomfort."
+      "text": "Some supplements may cause nausea or stomach discomfort.",
+      "description": "Some supplements may cause nausea or stomach discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Metallic Taste",
-      "text": "High or concentrated forms may cause a metallic taste or mouth irritation."
+      "text": "High or concentrated forms may cause a metallic taste or mouth irritation.",
+      "description": "High or concentrated forms may cause a metallic taste or mouth irritation."
     },
     {
       "icon": "alert-circle",
       "title": "Skin or Sensitivity Reactions",
-      "text": "Stop use if rash, swelling, or unusual symptoms occur."
+      "text": "Stop use if rash, swelling, or unusual symptoms occur.",
+      "description": "Stop use if rash, swelling, or unusual symptoms occur."
     }
   ],
   "drug_interactions_json": [

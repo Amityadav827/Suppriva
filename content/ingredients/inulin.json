@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Gas and Bloating",
-      "text": "Fermentation can increase gas, especially when starting with a high serving."
+      "text": "Fermentation can increase gas, especially when starting with a high serving.",
+      "description": "Fermentation can increase gas, especially when starting with a high serving."
     },
     {
       "icon": "alert-circle",
       "title": "Cramping",
-      "text": "Sensitive users may experience abdominal discomfort."
+      "text": "Sensitive users may experience abdominal discomfort.",
+      "description": "Sensitive users may experience abdominal discomfort."
     },
     {
       "icon": "alert-circle",
       "title": "Loose Stool",
-      "text": "Higher fiber servings may affect bowel habits."
+      "text": "Higher fiber servings may affect bowel habits.",
+      "description": "Higher fiber servings may affect bowel habits."
     },
     {
       "icon": "alert-circle",
       "title": "FODMAP Sensitivity",
-      "text": "People with IBS or FODMAP sensitivity may tolerate inulin poorly."
+      "text": "People with IBS or FODMAP sensitivity may tolerate inulin poorly.",
+      "description": "People with IBS or FODMAP sensitivity may tolerate inulin poorly."
     }
   ],
   "drug_interactions_json": [

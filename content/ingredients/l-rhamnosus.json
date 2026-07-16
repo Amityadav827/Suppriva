@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Gas or Bloating",
-      "text": "Temporary gas or bloating can occur when starting probiotics."
+      "text": "Temporary gas or bloating can occur when starting probiotics.",
+      "description": "Temporary gas or bloating can occur when starting probiotics."
     },
     {
       "icon": "alert-circle",
       "title": "Stool Changes",
-      "text": "Some users notice changes in bowel habits during the adjustment period."
+      "text": "Some users notice changes in bowel habits during the adjustment period.",
+      "description": "Some users notice changes in bowel habits during the adjustment period."
     },
     {
       "icon": "alert-circle",
       "title": "Digestive Discomfort",
-      "text": "Higher CFU blends may be harder to tolerate for sensitive users."
+      "text": "Higher CFU blends may be harder to tolerate for sensitive users.",
+      "description": "Higher CFU blends may be harder to tolerate for sensitive users."
     },
     {
       "icon": "alert-circle",
       "title": "Rare Infection Risk",
-      "text": "Immunocompromised or medically fragile users require professional guidance."
+      "text": "Immunocompromised or medically fragile users require professional guidance.",
+      "description": "Immunocompromised or medically fragile users require professional guidance."
     }
   ],
   "drug_interactions_json": [

@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Nausea, stomach discomfort, or loose stool may occur."
+      "text": "Nausea, stomach discomfort, or loose stool may occur.",
+      "description": "Nausea, stomach discomfort, or loose stool may occur."
     },
     {
       "icon": "alert-circle",
       "title": "Drowsiness",
-      "text": "Calming blends may cause sleepiness in sensitive users."
+      "text": "Calming blends may cause sleepiness in sensitive users.",
+      "description": "Calming blends may cause sleepiness in sensitive users."
     },
     {
       "icon": "alert-triangle",
       "title": "Blood Sugar Context",
-      "text": "Tulsi may be relevant for people using glucose-lowering medication."
+      "text": "Tulsi may be relevant for people using glucose-lowering medication.",
+      "description": "Tulsi may be relevant for people using glucose-lowering medication."
     },
     {
       "icon": "alert-circle",
       "title": "Allergy Sensitivity",
-      "text": "People sensitive to basil-family plants should check labels carefully."
+      "text": "People sensitive to basil-family plants should check labels carefully.",
+      "description": "People sensitive to basil-family plants should check labels carefully."
     }
   ],
   "drug_interactions_json": [

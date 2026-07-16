@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Stomach discomfort, gas, or loose stool may occur."
+      "text": "Stomach discomfort, gas, or loose stool may occur.",
+      "description": "Stomach discomfort, gas, or loose stool may occur."
     },
     {
       "icon": "alert-circle",
       "title": "Dizziness",
-      "text": "People sensitive to blood-pressure changes may feel lightheaded."
+      "text": "People sensitive to blood-pressure changes may feel lightheaded.",
+      "description": "People sensitive to blood-pressure changes may feel lightheaded."
     },
     {
       "icon": "alert-triangle",
       "title": "Low Blood Pressure Context",
-      "text": "Hibiscus may be relevant for people using blood pressure medication."
+      "text": "Hibiscus may be relevant for people using blood pressure medication.",
+      "description": "Hibiscus may be relevant for people using blood pressure medication."
     },
     {
       "icon": "alert-circle",
       "title": "Allergy Sensitivity",
-      "text": "Botanical sensitivity is possible in some users."
+      "text": "Botanical sensitivity is possible in some users.",
+      "description": "Botanical sensitivity is possible in some users."
     }
   ],
   "drug_interactions_json": [

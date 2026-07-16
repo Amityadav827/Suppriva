@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Stomach discomfort, nausea, or loose stool may occur."
+      "text": "Stomach discomfort, nausea, or loose stool may occur.",
+      "description": "Stomach discomfort, nausea, or loose stool may occur."
     },
     {
       "icon": "alert-circle",
       "title": "Headache",
-      "text": "Some users may notice headache or mild dizziness."
+      "text": "Some users may notice headache or mild dizziness.",
+      "description": "Some users may notice headache or mild dizziness."
     },
     {
       "icon": "alert-triangle",
       "title": "Bleeding-Risk Context",
-      "text": "Review with a clinician if using blood thinners or antiplatelet medication."
+      "text": "Review with a clinician if using blood thinners or antiplatelet medication.",
+      "description": "Review with a clinician if using blood thinners or antiplatelet medication."
     },
     {
       "icon": "alert-circle",
       "title": "Citrus Sensitivity",
-      "text": "People sensitive to citrus-derived ingredients should check labels carefully."
+      "text": "People sensitive to citrus-derived ingredients should check labels carefully.",
+      "description": "People sensitive to citrus-derived ingredients should check labels carefully."
     }
   ],
   "drug_interactions_json": [

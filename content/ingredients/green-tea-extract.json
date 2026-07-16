@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Jitteriness",
-      "text": "Caffeine-containing extracts may cause nervousness, palpitations, or restlessness."
+      "text": "Caffeine-containing extracts may cause nervousness, palpitations, or restlessness.",
+      "description": "Caffeine-containing extracts may cause nervousness, palpitations, or restlessness."
     },
     {
       "icon": "alert-circle",
       "title": "Sleep Disruption",
-      "text": "Late-day use may interfere with sleep."
+      "text": "Late-day use may interfere with sleep.",
+      "description": "Late-day use may interfere with sleep."
     },
     {
       "icon": "alert-triangle",
       "title": "Liver Warning",
-      "text": "Rare liver concerns have been reported with concentrated green tea extracts."
+      "text": "Rare liver concerns have been reported with concentrated green tea extracts.",
+      "description": "Rare liver concerns have been reported with concentrated green tea extracts."
     },
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Nausea or stomach discomfort may occur, especially when taken fasting."
+      "text": "Nausea or stomach discomfort may occur, especially when taken fasting.",
+      "description": "Nausea or stomach discomfort may occur, especially when taken fasting."
     }
   ],
   "drug_interactions_json": [

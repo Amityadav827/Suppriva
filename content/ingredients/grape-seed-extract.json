@@ -66,22 +66,26 @@
     {
       "icon": "alert-circle",
       "title": "Digestive Upset",
-      "text": "Nausea, stomach discomfort, or dry mouth may occur in some users."
+      "text": "Nausea, stomach discomfort, or dry mouth may occur in some users.",
+      "description": "Nausea, stomach discomfort, or dry mouth may occur in some users."
     },
     {
       "icon": "alert-circle",
       "title": "Headache",
-      "text": "Headache or dizziness may occur, especially in sensitive users."
+      "text": "Headache or dizziness may occur, especially in sensitive users.",
+      "description": "Headache or dizziness may occur, especially in sensitive users."
     },
     {
       "icon": "alert-triangle",
       "title": "Bleeding-Risk Context",
-      "text": "Medication users should review blood-thinner and antiplatelet cautions."
+      "text": "Medication users should review blood-thinner and antiplatelet cautions.",
+      "description": "Medication users should review blood-thinner and antiplatelet cautions."
     },
     {
       "icon": "alert-circle",
       "title": "Allergy Sensitivity",
-      "text": "People with grape or wine-related sensitivities should check product ingredients carefully."
+      "text": "People with grape or wine-related sensitivities should check product ingredients carefully.",
+      "description": "People with grape or wine-related sensitivities should check product ingredients carefully."
     }
   ],
   "drug_interactions_json": [
