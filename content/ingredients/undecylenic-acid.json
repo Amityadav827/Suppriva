@@ -1,208 +1,287 @@
 {
   "name": "Undecylenic Acid",
   "scientific_name": "Undec-10-enoic acid",
-  "hero_badge": null,
-  "short_description": "Undecylenic Acid is a fatty acid derivative used in supplement formulas for topical nail, skin, and foot-care formulas.",
-  "overview_title": "Undecylenic Acid Overview",
-  "overview_subtitle": "A practical guide to undecylenic acid in modern supplement formulas.",
-  "overview_content": "<p>Undecylenic Acid is a fatty acid derivative that appears in wellness products because of a fatty acid derivative commonly used in topical wellness and nail-care products. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing undecylenic acid products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Undecylenic Acid supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Undecylenic acid is often associated with foot and nail-care products rather than general nutrition formulas.</p>",
+  "ingredient_category": "Specialty Ingredients",
+  "status": "published",
+  "hero_badge": "Specialty Fatty Acid",
+  "short_description": "Undecylenic acid is a specialty fatty acid used mainly in topical foot, nail, and skin-care formulas rather than general oral supplements.",
+  "overview_title": "What Is Undecylenic Acid?",
+  "overview_subtitle": "A specialty ingredient profile for topical use, nail-care products, and safety directions.",
+  "overview_content": "<p>Undecylenic Acid is part of Suppriva's ingredient library because it appears frequently in modern supplement formulas and deserves a careful, practical explanation. Shoppers may see undecylenic acid in products positioned for topical foot, nail, and skin-care products, especially formulas positioned around fungal-prone areas. This page explains how the ingredient is commonly presented, what label details matter, and which safety questions should be reviewed before using a product that contains it.</p>\n\n<p>Ingredient identity is the starting point. A supplement may use a whole-food source, isolated nutrient, standardized botanical extract, essential compound, mushroom extract, or specialty derivative. Those forms are not automatically interchangeable. For undecylenic acid, the label should make clear the source, serving size, preparation type, and whether any marker compound or standardized amount is disclosed.</p>\n\n<p>Undecylenic acid is a fatty acid derivative commonly used in topical products; concentration, route of use, and label directions are central to safety. This context is useful for education, but it does not mean the ingredient treats, cures, or prevents disease. Suppriva uses supportive wellness language because dietary supplements should be understood as optional tools within a broader health routine, not replacements for medical care, diagnosis, medication, or clinician-guided treatment.</p>\n\n<p>The finished formula matters as much as the ingredient. Undecylenic Acid may be paired with vitamins, minerals, botanicals, amino acids, probiotics, oils, or branded complexes that change the product's intent. A men's wellness formula, sleep product, joint-support blend, immune supplement, or topical-care product may use the same ingredient name while creating a very different user experience. Always read the full supplement facts panel or product directions.</p>\n\n<p>Quality and transparency should guide comparison. Look for meaningful amounts, clear directions, realistic claims, and caution statements that mention medication use, pregnancy, nursing, surgery, children, allergies, and relevant health conditions. If a product hides key amounts in proprietary blends or makes aggressive disease-treatment promises, it deserves extra scrutiny even if the ingredient itself is familiar.</p>\n\n<p>Safety depends on dose, form, and personal context. Some ingredients are essential nutrients, while others are concentrated botanicals or specialty compounds. Even nutrients can be problematic when stacked across multiple products. Botanicals and oils may require extra caution because preparation, concentration, and route of use can strongly affect tolerability.</p>\n\n<p>For best results, use undecylenic acid as part of a realistic routine. Nutrition, sleep, activity, hydration, stress management, and professional care still matter. Supplements may support wellness goals, but they cannot compensate for unsafe dosing, poor-quality sourcing, ignored symptoms, or unresolved medical concerns.</p>\n\n<p>This Suppriva profile is designed to help readers ask better questions: What form is used? Is the amount clear? Is the ingredient appropriate for my goal? Are there medication or condition cautions? Does the product explain what the ingredient can and cannot do? The most trustworthy product pages usually answer these questions without exaggeration.</p>\n\n<p>It is also worth comparing how the ingredient fits your current routine. A product may look appealing because of one familiar ingredient, but the best choice usually depends on total formula design, repeated daily use, affordability, tolerability, and whether the directions match your lifestyle. This is especially important when an ingredient appears in gummies, capsules, powders, liquids, or topical products with different supporting ingredients.</p>\n\n<p>Use this page as a label-reading guide for undecylenic acid. It brings together potential uses, dosage context, safety notes, side effects, interactions, and common FAQs so you can compare supplements with more confidence and avoid relying on front-label marketing alone.</p>",
+  "interesting_fact_label": "Topical Specialty",
+  "interesting_fact": "<p>Undecylenic acid is most relevant to topical care products, not everyday ingestible wellness supplements.</p>",
   "how_it_works_title": "How Undecylenic Acid Works",
-  "how_it_works_subtitle": "How undecylenic acid supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Topical Nail And Skin Support",
-  "how_it_works_highlight_description": "Undecylenic Acid is most often positioned around topical nail and skin support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Undecylenic Acid works through a targeted fatty acid profile that supports its use in specialized topical formulations. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare undecylenic acid by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Undecylenic acid appears in topical formulas where concentration and intended use matter.",
+  "how_it_works_highlight_title": "Use As Directed",
+  "how_it_works_highlight_description": "Topical products should be used only according to label instructions and not on deep wounds or sensitive tissues.",
+  "how_it_works_content": "<p>Undecylenic acid is used in specialty topical products for feet, nails, and skin. It may appear in liquids, creams, powders, or nail-care applications.</p>\n\n<p>Because product use is topical, the concentration and application directions matter more than general supplement-style dosing. Do not ingest topical products.</p>\n\n<p>Because undecylenic acid may appear in multi-ingredient products, the full formula should always be reviewed before making assumptions about expected results or safety.</p>",
   "benefits_title": "Potential Undecylenic Acid Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether undecylenic acid fits the full formula.",
+  "benefits_subtitle": "Benefits depend on form, serving size, formula quality, and the user's overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Topical nail and skin support",
-      "description": "Undecylenic Acid is commonly evaluated for topical nail and skin support within supplement formulas and wellness routines."
+      "icon": "scissors",
+      "title": "Nail-Care Product Context",
+      "description": "Often appears in nail and foot-care formulas."
     },
     {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Undecylenic Acid to support a more targeted product story around topical nail, skin, and foot-care formulas."
+      "icon": "droplets",
+      "title": "Topical Formula Fit",
+      "description": "Used in creams, liquids, and powders."
+    },
+    {
+      "icon": "shield",
+      "title": "Directed Use",
+      "description": "Encourages careful label-following for topical products."
     },
     {
       "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "title": "Concentration Review",
+      "description": "Helps shoppers compare product strength and directions."
     },
     {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Undecylenic Acid may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "sparkles",
+      "title": "Skin-Care Positioning",
+      "description": "May appear in cleansing or specialty skin products."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Undecylenic Acid supplements."
-    },
-    {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Undecylenic Acid helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "alert-circle",
+      "title": "Irritation Awareness",
+      "description": "Highlights patch testing and sensitive-skin cautions."
     }
   ],
   "dosage_title": "Typical Undecylenic Acid Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Use depends on product format; topical products should be used exactly as directed on the label.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Use depends on product format; topical products should be used exactly as directed on the label.</p><p>Because undecylenic acid can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the product form, label directions, and personal safety factors.",
+  "typical_dose": "Topical use only; follow label",
+  "dosage": "Use only as directed by topical product instructions and avoid ingestion.",
+  "dosage_content": "<p>Undecylenic acid products vary by concentration and delivery form. Follow application frequency, duration, and area instructions exactly.</p>\n\n<p>Avoid eyes, mucous membranes, deep wounds, and use on children unless directed by a qualified professional.</p>\n\n<p>Do not exceed label directions. Ask a qualified healthcare professional before use if you take medication, manage a health condition, are pregnant or nursing, are buying for a child, or are preparing for surgery.</p>",
   "safety_title": "Undecylenic Acid Safety Information",
-  "safety_subtitle": "Use undecylenic acid with label awareness and personal health context in mind.",
+  "safety_subtitle": "Review undecylenic acid safety based on form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Skin Irritation",
+    "Allergic Reaction",
+    "Mucous Membrane Irritation",
+    "Worsening Symptoms"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Undecylenic Acid may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Skin Irritation",
+      "description": "Burning, stinging, redness, or dryness may occur."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Allergic Reaction",
+      "description": "Rash, swelling, or itching may occur in sensitive users."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Mucous Membrane Irritation",
+      "description": "Avoid eyes and sensitive tissues."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Worsening Symptoms",
+      "description": "Stop use and seek guidance if irritation becomes severe."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    {
+      "title": "Topical Medications",
+      "description": "Ask a clinician before layering with other medicated products."
+    },
+    {
+      "title": "Open Wound Care",
+      "description": "Use only as directed by a healthcare professional."
+    },
+    {
+      "title": "Sensitive Skin Treatments",
+      "description": "Use caution with exfoliants or irritating actives."
+    },
+    {
+      "title": "Pediatric Products",
+      "description": "Use only age-appropriate directions."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Undecylenic Acid or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under guidance."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a clinician before combining with prescription medication."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Discuss supplement use before planned procedures."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or previously reactive."
+    }
+  ],
+  "food_sources_title": "Undecylenic Acid Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Undecylenic acid is a specialty fatty acid derivative commonly used in topical products. It may be found in foot, nail, powder, cream, or liquid formulas.</p>\n\n<p>Supplement preparations may differ from food, traditional, or clinical forms. Compare source material, processing, serving size, standardization, and whether the ingredient appears alone or in a broader blend.</p>",
+  "food_sources_json": [
+    {
+      "title": "Specialty Fatty Acid",
+      "description": "Used in topical-care formulations."
+    },
+    {
+      "title": "Foot and Nail Products",
+      "description": "Common product category for this ingredient."
+    },
+    {
+      "title": "Creams and Liquids",
+      "description": "Typical delivery forms for topical use."
+    }
   ],
   "faq_title": "Undecylenic Acid FAQs",
   "faq_subtitle": "Common questions about undecylenic acid supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Undecylenic Acid used for in supplements?",
-      "answer": "Undecylenic Acid is commonly used in formulas focused on topical nail, skin, and foot-care formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is Undecylenic Acid?",
+      "answer": "Undecylenic Acid is a specialty unsaturated fatty acid used in topical foot, nail, and skin-care products."
     },
     {
-      "question": "Is Undecylenic Acid a medicine?",
-      "answer": "No. Undecylenic Acid is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What is Undecylenic Acid used for?",
+      "answer": "It is commonly used in supplements positioned for topical foot, nail, and skin-care products, especially formulas positioned around fungal-prone areas."
     },
     {
-      "question": "What form of Undecylenic Acid should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "How does Undecylenic Acid work?",
+      "answer": "Undecylenic acid is a fatty acid derivative commonly used in topical products; concentration, route of use, and label directions are central to safety."
     },
     {
-      "question": "How long does Undecylenic Acid take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "What form of Undecylenic Acid should I look for?",
+      "answer": "Look for topical concentration, product type, application area, and safety directions. The best form depends on the finished product and your personal context."
+    },
+    {
+      "question": "Can Undecylenic Acid replace medical care?",
+      "answer": "No. Undecylenic Acid should not replace diagnosis, prescribed treatment, or professional care."
     },
     {
       "question": "Can Undecylenic Acid cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "answer": "Yes. Possible concerns include skin irritation, allergic reaction, mucous membrane irritation, worsening symptoms."
     },
     {
-      "question": "Can I take Undecylenic Acid every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can Undecylenic Acid interact with medication?",
+      "answer": "It may. Review the full formula with a healthcare professional if you use medication or manage a health condition."
     },
     {
-      "question": "What should I check on a Undecylenic Acid label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Is Undecylenic Acid safe during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance before using concentrated supplement forms."
     },
     {
-      "question": "Does Undecylenic Acid interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "What should I compare on labels?",
+      "answer": "Compare source, form, serving size, standardization, companion ingredients, warnings, and directions."
     },
     {
-      "question": "Is Undecylenic Acid suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
-    },
-    {
-      "question": "Can Undecylenic Acid replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Who should be careful with Undecylenic Acid?",
+      "answer": "People with allergies, medication use, diagnosed conditions, pregnancy, nursing, surgery plans, or unusual symptoms should seek professional guidance."
     }
   ],
   "sidebar_profile_title": "Undecylenic Acid Profile Snapshot",
-  "sidebar_profile_content": "Undecylenic Acid is a fatty acid derivative commonly evaluated for topical nail, skin, and foot-care formulas.",
+  "sidebar_profile_content": "Undecylenic Acid is a specialty fatty acid used in topical foot, nail, and skin-care products; it is not a general oral supplement ingredient.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Fatty acid derivative"
+      "value": "Specialty fatty acid"
     },
     {
       "label": "Typical Dose",
-      "value": "Use depends on product format; topical products should be used exactly as directed on the label."
+      "value": "Topical label directions"
     },
     {
       "label": "Best For",
-      "value": "Topical nail, skin, and foot-care formulas"
+      "value": "Foot and nail-care products"
     },
     {
       "label": "Safety Level",
-      "value": "Generally topical-use only unless otherwise directed"
+      "value": "Topical use only"
     },
     {
       "label": "Origin",
-      "value": "Often derived from castor oil"
-    },
-    {
-      "label": "Part Used",
       "value": "Fatty acid derivative"
     },
     {
+      "label": "Part Used",
+      "value": "Isolated compound"
+    },
+    {
       "label": "Form",
-      "value": "Topical solution, cream, serum, capsule in specialty formulas"
+      "value": "Creams, liquids, powders"
     },
     {
       "label": "Taste",
-      "value": "Not typically used for taste"
+      "value": "Not for ingestion"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Undecylenic Acid is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Undecylenic Acid is used in supplement formulas for topical nail, skin, and foot-care formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Topical nail, skin, and foot-care formulas",
-  "safety_level": "Generally topical-use only unless otherwise directed",
-  "origin_country": "Often derived from castor oil",
-  "part_used": "Fatty acid derivative",
-  "ingredient_form": "Topical solution, cream, serum, capsule in specialty formulas",
-  "taste_profile": "Not typically used for taste",
+  "sidebar_at_a_glance_content": "<p>Undecylenic Acid is best evaluated by topical concentration, application directions, irritation warnings, and intended product area.</p>",
+  "full_description": "Undecylenic Acid is a specialty fatty acid used in topical foot, nail, and skin-care products; it is not a general oral supplement ingredient.",
+  "best_for": "Topical foot, nail, and skin-care product education",
+  "safety_level": "Topical use only; avoid sensitive areas",
+  "origin_country": "Fatty acid derivative",
+  "part_used": "Isolated compound",
+  "ingredient_form": "Creams, liquids, powders",
+  "taste_profile": "Not for ingestion",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Undecylenic Acid Uses",
+  "uses_subtitle": "Common wellness contexts where undecylenic acid appears.",
+  "uses_content": "<p>Undecylenic Acid is commonly used in topical foot, nail, and skin-care product education. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Topical foot, nail, and skin-care product education"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing source, form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Undecylenic Acid Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on undecylenic acid varies by preparation, dose, population, and outcome measured. Evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Undecylenic Acid References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "tea-tree-oil",
+    "neem",
+    "lemongrass-oil",
+    "biotin-vitamin-b7",
+    "zinc"
+  ],
   "seo_title": "Undecylenic Acid Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "undecylenic acid",
-  "seo_description": "Explore undecylenic acid benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Undecylenic Acid benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/undecylenic-acid",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Undecylenic Acid Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore undecylenic acid benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Undecylenic Acid benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

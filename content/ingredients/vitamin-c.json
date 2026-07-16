@@ -1,0 +1,287 @@
+{
+  "name": "Vitamin C",
+  "scientific_name": "Ascorbic acid",
+  "ingredient_category": "Teeth & Gums",
+  "status": "published",
+  "hero_badge": "Essential Vitamin",
+  "short_description": "Vitamin C is an essential water-soluble vitamin used in immune, antioxidant, collagen, gum, and skin-support formulas.",
+  "overview_title": "What Is Vitamin C?",
+  "overview_subtitle": "An essential vitamin profile for immune labels, collagen support, and stomach tolerance.",
+  "overview_content": "<p>Vitamin C is part of Suppriva's ingredient library because it appears frequently in modern supplement formulas and deserves a careful, practical explanation. Shoppers may see vitamin c in products positioned for immune-support products, antioxidant formulas, collagen support, gum health, and skin wellness. This page explains how the ingredient is commonly presented, what label details matter, and which safety questions should be reviewed before using a product that contains it.</p>\n\n<p>Ingredient identity is the starting point. A supplement may use a whole-food source, isolated nutrient, standardized botanical extract, essential compound, mushroom extract, or specialty derivative. Those forms are not automatically interchangeable. For vitamin c, the label should make clear the source, serving size, preparation type, and whether any marker compound or standardized amount is disclosed.</p>\n\n<p>Vitamin C supports normal collagen formation, antioxidant protection, immune function, and iron absorption. This context is useful for education, but it does not mean the ingredient treats, cures, or prevents disease. Suppriva uses supportive wellness language because dietary supplements should be understood as optional tools within a broader health routine, not replacements for medical care, diagnosis, medication, or clinician-guided treatment.</p>\n\n<p>The finished formula matters as much as the ingredient. Vitamin C may be paired with vitamins, minerals, botanicals, amino acids, probiotics, oils, or branded complexes that change the product's intent. A men's wellness formula, sleep product, joint-support blend, immune supplement, or topical-care product may use the same ingredient name while creating a very different user experience. Always read the full supplement facts panel or product directions.</p>\n\n<p>Quality and transparency should guide comparison. Look for meaningful amounts, clear directions, realistic claims, and caution statements that mention medication use, pregnancy, nursing, surgery, children, allergies, and relevant health conditions. If a product hides key amounts in proprietary blends or makes aggressive disease-treatment promises, it deserves extra scrutiny even if the ingredient itself is familiar.</p>\n\n<p>Safety depends on dose, form, and personal context. Some ingredients are essential nutrients, while others are concentrated botanicals or specialty compounds. Even nutrients can be problematic when stacked across multiple products. Botanicals and oils may require extra caution because preparation, concentration, and route of use can strongly affect tolerability.</p>\n\n<p>For best results, use vitamin c as part of a realistic routine. Nutrition, sleep, activity, hydration, stress management, and professional care still matter. Supplements may support wellness goals, but they cannot compensate for unsafe dosing, poor-quality sourcing, ignored symptoms, or unresolved medical concerns.</p>\n\n<p>This Suppriva profile is designed to help readers ask better questions: What form is used? Is the amount clear? Is the ingredient appropriate for my goal? Are there medication or condition cautions? Does the product explain what the ingredient can and cannot do? The most trustworthy product pages usually answer these questions without exaggeration.</p>\n\n<p>It is also worth comparing how the ingredient fits your current routine. A product may look appealing because of one familiar ingredient, but the best choice usually depends on total formula design, repeated daily use, affordability, tolerability, and whether the directions match your lifestyle. This is especially important when an ingredient appears in gummies, capsules, powders, liquids, or topical products with different supporting ingredients.</p>\n\n<p>Use this page as a label-reading guide for vitamin c. It brings together potential uses, dosage context, safety notes, side effects, interactions, and common FAQs so you can compare supplements with more confidence and avoid relying on front-label marketing alone.</p>",
+  "interesting_fact_label": "Collagen Cofactor",
+  "interesting_fact": "<p>Vitamin C is required for normal collagen formation, which is why it appears in skin, gum, and connective-tissue formulas.</p>",
+  "how_it_works_title": "How Vitamin C Works",
+  "how_it_works_subtitle": "Vitamin C appears in immune and collagen formulas where form, dose, and tolerance matter.",
+  "how_it_works_highlight_title": "Buffered Forms May Differ",
+  "how_it_works_highlight_description": "Labels may use ascorbic acid, mineral ascorbates, liposomal forms, or whole-food blends.",
+  "how_it_works_content": "<p>Vitamin C is one of the most common supplement ingredients. It appears in immune products, collagen blends, skin formulas, antioxidant products, and multivitamins.</p>\n\n<p>Higher doses are not always better. Some people tolerate buffered or divided servings better than large ascorbic acid servings.</p>\n\n<p>Because vitamin c may appear in multi-ingredient products, the full formula should always be reviewed before making assumptions about expected results or safety.</p>",
+  "benefits_title": "Potential Vitamin C Benefits",
+  "benefits_subtitle": "Benefits depend on form, serving size, formula quality, and the user's overall wellness routine.",
+  "benefits_json": [
+    {
+      "icon": "shield",
+      "title": "Immune Formula Context",
+      "description": "Commonly used in immune-support supplements."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Antioxidant Support",
+      "description": "Helps support normal antioxidant defenses."
+    },
+    {
+      "icon": "heart",
+      "title": "Collagen Formation",
+      "description": "Required for normal collagen production."
+    },
+    {
+      "icon": "smile",
+      "title": "Gum Health Context",
+      "description": "Often appears in oral and gum-support formulas."
+    },
+    {
+      "icon": "droplets",
+      "title": "Iron Absorption",
+      "description": "Can support absorption of non-heme iron."
+    },
+    {
+      "icon": "search",
+      "title": "Form Comparison",
+      "description": "Encourages review of ascorbic acid, buffered, and liposomal forms."
+    }
+  ],
+  "dosage_title": "Typical Vitamin C Dosage",
+  "dosage_subtitle": "Serving size depends on the product form, label directions, and personal safety factors.",
+  "typical_dose": "Follow vitamin C product label",
+  "dosage": "Use label directions and consider tolerance, total intake, and kidney-stone history.",
+  "dosage_content": "<p>Vitamin C serving sizes vary widely. Products may use ascorbic acid, sodium ascorbate, calcium ascorbate, liposomal vitamin C, or fruit-based blends.</p>\n\n<p>Large servings may cause digestive discomfort. People with kidney stone history, iron overload, kidney disease, or medication concerns should use professional guidance.</p>\n\n<p>Do not exceed label directions. Ask a qualified healthcare professional before use if you take medication, manage a health condition, are pregnant or nursing, are buying for a child, or are preparing for surgery.</p>",
+  "safety_title": "Vitamin C Safety Information",
+  "safety_subtitle": "Review vitamin c safety based on form, dose, personal health status, and medication use.",
+  "side_effects": [
+    "Digestive Upset",
+    "Acid Sensitivity",
+    "Kidney Stone Concern",
+    "Iron Overload Concern"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Upset",
+      "description": "Gas, cramps, or diarrhea may occur with high intake."
+    },
+    {
+      "title": "Acid Sensitivity",
+      "description": "Ascorbic acid may bother sensitive stomachs."
+    },
+    {
+      "title": "Kidney Stone Concern",
+      "description": "High intake may not suit some people with stone history."
+    },
+    {
+      "title": "Iron Overload Concern",
+      "description": "Use caution with iron overload conditions."
+    }
+  ],
+  "drug_interactions_json": [
+    {
+      "title": "Iron Supplements",
+      "description": "Vitamin C can increase non-heme iron absorption."
+    },
+    {
+      "title": "Kidney Disease Care",
+      "description": "Use clinician guidance."
+    },
+    {
+      "title": "Chemotherapy or Radiation",
+      "description": "Discuss antioxidant supplements with the care team."
+    },
+    {
+      "title": "Certain Lab Tests",
+      "description": "High doses may affect some test interpretations."
+    }
+  ],
+  "who_should_avoid_json": [
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under guidance."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a clinician before combining with prescription medication."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Discuss supplement use before planned procedures."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or previously reactive."
+    }
+  ],
+  "food_sources_title": "Vitamin C Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Vitamin C occurs naturally in citrus fruits, berries, kiwi, peppers, broccoli, and other fruits and vegetables. Supplements may use ascorbic acid, buffered ascorbates, liposomal forms, or whole-food blends.</p>\n\n<p>Supplement preparations may differ from food, traditional, or clinical forms. Compare source material, processing, serving size, standardization, and whether the ingredient appears alone or in a broader blend.</p>",
+  "food_sources_json": [
+    {
+      "title": "Citrus and Berries",
+      "description": "Common food sources of vitamin C."
+    },
+    {
+      "title": "Ascorbic Acid",
+      "description": "Common supplement form."
+    },
+    {
+      "title": "Buffered or Liposomal Forms",
+      "description": "Used for tolerance or delivery positioning."
+    }
+  ],
+  "faq_title": "Vitamin C FAQs",
+  "faq_subtitle": "Common questions about vitamin c supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is Vitamin C?",
+      "answer": "Vitamin C is an essential water-soluble vitamin also known as ascorbic acid."
+    },
+    {
+      "question": "What is Vitamin C used for?",
+      "answer": "It is commonly used in supplements positioned for immune-support products, antioxidant formulas, collagen support, gum health, and skin wellness."
+    },
+    {
+      "question": "How does Vitamin C work?",
+      "answer": "Vitamin C supports normal collagen formation, antioxidant protection, immune function, and iron absorption."
+    },
+    {
+      "question": "What form of Vitamin C should I look for?",
+      "answer": "Look for ascorbic acid, mineral ascorbate, liposomal form, whole-food blend, and serving size. The best form depends on the finished product and your personal context."
+    },
+    {
+      "question": "Can Vitamin C replace medical care?",
+      "answer": "No. Vitamin C should not replace diagnosis, prescribed treatment, or professional care."
+    },
+    {
+      "question": "Can Vitamin C cause side effects?",
+      "answer": "Yes. Possible concerns include digestive upset, acid sensitivity, kidney stone concern, iron overload concern."
+    },
+    {
+      "question": "Can Vitamin C interact with medication?",
+      "answer": "It may. Review the full formula with a healthcare professional if you use medication or manage a health condition."
+    },
+    {
+      "question": "Is Vitamin C safe during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance before using concentrated supplement forms."
+    },
+    {
+      "question": "What should I compare on labels?",
+      "answer": "Compare source, form, serving size, standardization, companion ingredients, warnings, and directions."
+    },
+    {
+      "question": "Who should be careful with Vitamin C?",
+      "answer": "People with allergies, medication use, diagnosed conditions, pregnancy, nursing, surgery plans, or unusual symptoms should seek professional guidance."
+    }
+  ],
+  "sidebar_profile_title": "Vitamin C Profile Snapshot",
+  "sidebar_profile_content": "Vitamin C is an essential water-soluble vitamin used in immune, antioxidant, collagen, gum, and skin-support formulas.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Water-soluble vitamin"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Follow product label"
+    },
+    {
+      "label": "Best For",
+      "value": "Immune and collagen formulas"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Dose and tolerance matter"
+    },
+    {
+      "label": "Origin",
+      "value": "Foods and supplements"
+    },
+    {
+      "label": "Part Used",
+      "value": "Ascorbic acid vitamin"
+    },
+    {
+      "label": "Form",
+      "value": "Capsules, tablets, powders"
+    },
+    {
+      "label": "Taste",
+      "value": "Tart, acidic"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Vitamin C is best evaluated by form, serving size, stomach tolerance, total intake, and kidney-stone or iron-overload cautions.</p>",
+  "full_description": "Vitamin C is an essential water-soluble vitamin used in immune, antioxidant, collagen, gum, and skin-support formulas.",
+  "best_for": "Immune support, collagen formation, antioxidant wellness, skin, gum, and oral health formulas",
+  "safety_level": "Generally well tolerated; high doses may cause digestive issues",
+  "origin_country": "Foods and supplements",
+  "part_used": "Ascorbic acid vitamin",
+  "ingredient_form": "Capsules, tablets, powders",
+  "taste_profile": "Tart, acidic",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": "Vitamin C Uses",
+  "uses_subtitle": "Common wellness contexts where vitamin c appears.",
+  "uses_content": "<p>Vitamin C is commonly used in immune support, collagen formation, antioxidant wellness, skin, gum, and oral health formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Immune support, collagen formation, antioxidant wellness, skin, gum, and oral health formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing source, form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Vitamin C Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on vitamin c varies by preparation, dose, population, and outcome measured. Evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Vitamin C References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "zinc",
+    "selenium",
+    "vitamin-e",
+    "collagen-peptides",
+    "rose-hips"
+  ],
+  "seo_title": "Vitamin C Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "vitamin c",
+  "seo_description": "Explore Vitamin C benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/vitamin-c",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Vitamin C Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore Vitamin C benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
+}

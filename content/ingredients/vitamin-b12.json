@@ -1,146 +1,188 @@
 {
   "name": "Vitamin B12",
   "scientific_name": "Cobalamin",
-  "hero_badge": null,
-  "short_description": "Vitamin B12 is reviewed in Suppriva's ingredient library for energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
+  "ingredient_category": "Vitamins",
+  "status": "published",
+  "hero_badge": "Essential B Vitamin",
+  "short_description": "Vitamin B12 is an essential B vitamin used in energy, nerve, red blood cell, and methylation-support supplement formulas.",
   "overview_title": "What Is Vitamin B12?",
-  "overview_subtitle": "A practical overview of vitamin b12 and why it appears in modern supplement formulas.",
-  "overview_content": "Vitamin B12 is commonly found in supplement formulas connected to energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating vitamin b12, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Vitamin B12 may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding vitamin b12 to a routine.",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "B12 supplements may use forms such as cyanocobalamin, methylcobalamin, adenosylcobalamin, or hydroxocobalamin.",
+  "overview_subtitle": "An essential vitamin profile for energy labels, forms, deficiency context, and safe use.",
+  "overview_content": "<p>Vitamin B12 is part of Suppriva's ingredient library because it appears frequently in modern supplement formulas and deserves a careful, practical explanation. Shoppers may see vitamin b12 in products positioned for energy-support products, nerve-health formulas, red blood cell support, and methylation blends. This page explains how the ingredient is commonly presented, what label details matter, and which safety questions should be reviewed before using a product that contains it.</p>\n\n<p>Ingredient identity is the starting point. A supplement may use a whole-food source, isolated nutrient, standardized botanical extract, essential compound, mushroom extract, or specialty derivative. Those forms are not automatically interchangeable. For vitamin b12, the label should make clear the source, serving size, preparation type, and whether any marker compound or standardized amount is disclosed.</p>\n\n<p>Vitamin B12 supports normal red blood cell formation, nerve function, DNA synthesis, and methylation-related processes. This context is useful for education, but it does not mean the ingredient treats, cures, or prevents disease. Suppriva uses supportive wellness language because dietary supplements should be understood as optional tools within a broader health routine, not replacements for medical care, diagnosis, medication, or clinician-guided treatment.</p>\n\n<p>The finished formula matters as much as the ingredient. Vitamin B12 may be paired with vitamins, minerals, botanicals, amino acids, probiotics, oils, or branded complexes that change the product's intent. A men's wellness formula, sleep product, joint-support blend, immune supplement, or topical-care product may use the same ingredient name while creating a very different user experience. Always read the full supplement facts panel or product directions.</p>\n\n<p>Quality and transparency should guide comparison. Look for meaningful amounts, clear directions, realistic claims, and caution statements that mention medication use, pregnancy, nursing, surgery, children, allergies, and relevant health conditions. If a product hides key amounts in proprietary blends or makes aggressive disease-treatment promises, it deserves extra scrutiny even if the ingredient itself is familiar.</p>\n\n<p>Safety depends on dose, form, and personal context. Some ingredients are essential nutrients, while others are concentrated botanicals or specialty compounds. Even nutrients can be problematic when stacked across multiple products. Botanicals and oils may require extra caution because preparation, concentration, and route of use can strongly affect tolerability.</p>\n\n<p>For best results, use vitamin b12 as part of a realistic routine. Nutrition, sleep, activity, hydration, stress management, and professional care still matter. Supplements may support wellness goals, but they cannot compensate for unsafe dosing, poor-quality sourcing, ignored symptoms, or unresolved medical concerns.</p>\n\n<p>This Suppriva profile is designed to help readers ask better questions: What form is used? Is the amount clear? Is the ingredient appropriate for my goal? Are there medication or condition cautions? Does the product explain what the ingredient can and cannot do? The most trustworthy product pages usually answer these questions without exaggeration.</p>\n\n<p>It is also worth comparing how the ingredient fits your current routine. A product may look appealing because of one familiar ingredient, but the best choice usually depends on total formula design, repeated daily use, affordability, tolerability, and whether the directions match your lifestyle. This is especially important when an ingredient appears in gummies, capsules, powders, liquids, or topical products with different supporting ingredients.</p>\n\n<p>Use this page as a label-reading guide for vitamin b12. It brings together potential uses, dosage context, safety notes, side effects, interactions, and common FAQs so you can compare supplements with more confidence and avoid relying on front-label marketing alone.</p>",
+  "interesting_fact_label": "Animal-Food Nutrient",
+  "interesting_fact": "<p>Vitamin B12 is naturally found mainly in animal-derived foods, which is why vegan diets often require careful B12 planning.</p>",
   "how_it_works_title": "How Vitamin B12 Works",
-  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to vitamin b12.",
-  "how_it_works_highlight_title": "Water-Soluble Vitamin Context",
-  "how_it_works_highlight_description": "Vitamin B12 is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
-  "how_it_works_content": "Vitamin B12 does not work as a universal quick fix. It is typically discussed in relation to energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Vitamin B12 is often compared with folate, vitamin B6, iron, and magnesium.\n\nSafety context matters. Anyone with B12 deficiency symptoms, medication-related malabsorption, pregnancy, nursing, or neurological symptoms should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
-  "benefits_title": "Potential Benefits of Vitamin B12",
-  "benefits_subtitle": "Educational benefits commonly discussed for vitamin b12 in supplement routines and label comparison.",
+  "how_it_works_subtitle": "Vitamin B12 is used in energy and nerve formulas where form and deficiency context matter.",
+  "how_it_works_highlight_title": "Form Choices Matter",
+  "how_it_works_highlight_description": "Labels may list cyanocobalamin, methylcobalamin, adenosylcobalamin, or hydroxocobalamin.",
+  "how_it_works_content": "<p>Vitamin B12 appears in multivitamins, energy products, methylation formulas, nerve-support supplements, lozenges, drops, and injections through clinicians.</p>\n\n<p>B12 can support normal energy metabolism, but it is not a stimulant and may not improve fatigue unless intake or status is relevant.</p>\n\n<p>Because vitamin b12 may appear in multi-ingredient products, the full formula should always be reviewed before making assumptions about expected results or safety.</p>",
+  "benefits_title": "Potential Vitamin B12 Benefits",
+  "benefits_subtitle": "Benefits depend on form, serving size, formula quality, and the user's overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "shield-check",
-      "title": "Wellness Routine Support",
-      "description": "Vitamin B12 is commonly researched or used in formulas connected to energy metabolism, nerve health, and red blood cell support."
+      "icon": "zap",
+      "title": "Energy Metabolism",
+      "description": "Supports normal cellular energy processes."
     },
     {
-      "icon": "activity",
-      "title": "Label Comparison Value",
-      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
+      "icon": "brain",
+      "title": "Nerve Function",
+      "description": "Important for normal nerve health."
+    },
+    {
+      "icon": "droplets",
+      "title": "Red Blood Cell Support",
+      "description": "Needed for normal red blood cell formation."
+    },
+    {
+      "icon": "dna",
+      "title": "Methylation Context",
+      "description": "Appears in methylation and homocysteine formulas."
     },
     {
       "icon": "leaf",
-      "title": "Formula Stacking Context",
-      "description": "Vitamin B12 often appears alongside complementary ingredients such as folate, vitamin B6, iron, and magnesium."
+      "title": "Vegan Diet Planning",
+      "description": "Important nutrient for plant-based diets."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Everyday Education",
-      "description": "Understanding vitamin b12 helps shoppers separate educational ingredient context from exaggerated supplement claims."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Targeted Category Fit",
-      "description": "Brands may include vitamin b12 in products designed for energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition."
-    },
-    {
-      "icon": "heart-pulse",
-      "title": "Safety-Aware Selection",
-      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+      "icon": "search",
+      "title": "Form Comparison",
+      "description": "Encourages review of cobalamin form and serving size."
     }
   ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
-  "typical_dose": "Often 25-1,000 mcg per serving",
-  "dosage": "Often 25-1,000 mcg per serving",
-  "dosage_content": "Often 25-1,000 mcg per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain vitamin b12 unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Vitamin B12 may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "dosage_title": "Typical Vitamin B12 Dosage",
+  "dosage_subtitle": "Serving size depends on the product form, label directions, and personal safety factors.",
+  "typical_dose": "Follow B12 product label",
+  "dosage": "Use label directions and seek testing or clinician guidance when deficiency is suspected.",
+  "dosage_content": "<p>Vitamin B12 doses vary widely by multivitamin, lozenge, capsule, spray, and clinical recommendation. Higher label amounts do not always mean a better fit.</p>\n\n<p>People with suspected deficiency, anemia, neuropathy symptoms, digestive disorders, bariatric surgery history, vegan diets, or medication use should consider professional guidance.</p>\n\n<p>Do not exceed label directions. Ask a qualified healthcare professional before use if you take medication, manage a health condition, are pregnant or nursing, are buying for a child, or are preparing for surgery.</p>",
+  "safety_title": "Vitamin B12 Safety Information",
+  "safety_subtitle": "Review vitamin b12 safety based on form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Digestive discomfort",
-    "Headache or sensitivity",
-    "Unexpected tolerance changes",
-    "Allergic reaction in sensitive individuals"
+    "Acne-Like Breakouts",
+    "Digestive Upset",
+    "Restlessness",
+    "Masking Concerns"
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+      "title": "Acne-Like Breakouts",
+      "description": "Some users report skin changes."
     },
     {
-      "icon": "activity",
-      "title": "Tolerance Varies",
-      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+      "title": "Digestive Upset",
+      "description": "Mild nausea or stomach discomfort may occur."
     },
     {
-      "icon": "alert-circle",
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+      "title": "Restlessness",
+      "description": "Some people feel overstimulated with high-dose products."
     },
     {
-      "icon": "shield-alert",
-      "title": "Dose Awareness",
-      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+      "title": "Masking Concerns",
+      "description": "Symptoms require evaluation rather than guessing."
     }
   ],
   "drug_interactions_json": [
-    "Review vitamin b12 with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing folate, vitamin B6, iron, and magnesium.",
-    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
-    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+    {
+      "title": "Metformin",
+      "description": "Long-term use may affect B12 status; ask a clinician."
+    },
+    {
+      "title": "Acid-Reducing Medication",
+      "description": "Some medications may affect B12 absorption."
+    },
+    {
+      "title": "Chloramphenicol",
+      "description": "May affect red blood cell response; clinician guidance required."
+    },
+    {
+      "title": "Folate Supplements",
+      "description": "B12 and folate status should be interpreted together."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known allergy or sensitivity to vitamin b12 or its source material.",
-    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
-    "People taking medication for B12 deficiency symptoms, medication-related malabsorption, pregnancy, nursing, or neurological symptoms without professional review.",
-    "Children unless specifically directed by a qualified healthcare professional.",
-    "Anyone expecting vitamin b12 to replace medical diagnosis, prescribed treatment, or emergency care."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under guidance."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a clinician before combining with prescription medication."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Discuss supplement use before planned procedures."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or previously reactive."
+    }
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Answers to common questions about vitamin b12, label comparison, dosage context, and safety.",
+  "food_sources_title": "Vitamin B12 Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Vitamin B12 is naturally found in animal foods such as fish, meat, poultry, eggs, and dairy. Supplements may use cyanocobalamin, methylcobalamin, adenosylcobalamin, or hydroxocobalamin.</p>\n\n<p>Supplement preparations may differ from food, traditional, or clinical forms. Compare source material, processing, serving size, standardization, and whether the ingredient appears alone or in a broader blend.</p>",
+  "food_sources_json": [
+    {
+      "title": "Animal Foods",
+      "description": "Fish, meat, poultry, eggs, and dairy."
+    },
+    {
+      "title": "Fortified Foods",
+      "description": "Some cereals and plant milks contain added B12."
+    },
+    {
+      "title": "Supplements",
+      "description": "Capsules, lozenges, sprays, drops, and multivitamins."
+    }
+  ],
+  "faq_title": "Vitamin B12 FAQs",
+  "faq_subtitle": "Common questions about vitamin b12 supplements and label comparison.",
   "faq_json": [
     {
       "question": "What is Vitamin B12?",
-      "answer": "Vitamin B12 is a water-soluble vitamin commonly discussed in supplement education for energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition."
+      "answer": "Vitamin B12 is an essential water-soluble B vitamin also known as cobalamin."
     },
     {
-      "question": "What is Vitamin B12 commonly used for?",
-      "answer": "It is commonly researched or included in formulas related to energy metabolism, nerve health, and red blood cell support, depending on the product and dose."
+      "question": "What is Vitamin B12 used for?",
+      "answer": "It is commonly used in supplements positioned for energy-support products, nerve-health formulas, red blood cell support, and methylation blends."
     },
     {
-      "question": "Is Vitamin B12 a medicine?",
-      "answer": "No. Vitamin B12 supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
+      "question": "How does Vitamin B12 work?",
+      "answer": "Vitamin B12 supports normal red blood cell formation, nerve function, DNA synthesis, and methylation-related processes."
     },
     {
-      "question": "What dose of Vitamin B12 is common?",
-      "answer": "Labels often list often 25-1,000 mcg per serving, but product form, potency, and serving frequency should be compared carefully."
+      "question": "What form of Vitamin B12 should I look for?",
+      "answer": "Look for cyanocobalamin, methylcobalamin, adenosylcobalamin, hydroxocobalamin, serving size, and delivery form. The best form depends on the finished product and your personal context."
+    },
+    {
+      "question": "Can Vitamin B12 replace medical care?",
+      "answer": "No. Vitamin B12 should not replace diagnosis, prescribed treatment, or professional care."
     },
     {
       "question": "Can Vitamin B12 cause side effects?",
-      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
+      "answer": "Yes. Possible concerns include acne-like breakouts, digestive upset, restlessness, masking concerns."
     },
     {
-      "question": "Who should be cautious with Vitamin B12?",
-      "answer": "People with B12 deficiency symptoms, medication-related malabsorption, pregnancy, nursing, or neurological symptoms should discuss use with a healthcare professional before starting."
+      "question": "Can Vitamin B12 interact with medication?",
+      "answer": "It may. Review the full formula with a healthcare professional if you use medication or manage a health condition."
     },
     {
-      "question": "Can Vitamin B12 be combined with other supplements?",
-      "answer": "Some formulas combine it with ingredients such as folate, vitamin B6, iron, and magnesium, but stacking should be reviewed for dose overlap and safety."
+      "question": "Is Vitamin B12 safe during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance before using concentrated supplement forms."
     },
     {
-      "question": "How should I compare Vitamin B12 products?",
-      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
+      "question": "What should I compare on labels?",
+      "answer": "Compare source, form, serving size, standardization, companion ingredients, warnings, and directions."
     },
     {
-      "question": "How long does Vitamin B12 take to work?",
-      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
-    },
-    {
-      "question": "Is Vitamin B12 safe for daily use?",
-      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+      "question": "Who should be careful with Vitamin B12?",
+      "answer": "People with allergies, medication use, diagnosed conditions, pregnancy, nursing, surgery plans, or unusual symptoms should seek professional guidance."
     }
   ],
-  "sidebar_profile_title": "Vitamin B12 Snapshot",
-  "sidebar_profile_content": "Vitamin B12 is a water-soluble vitamin commonly reviewed for energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "sidebar_profile_title": "Vitamin B12 Profile Snapshot",
+  "sidebar_profile_content": "Vitamin B12 is an essential water-soluble vitamin used in energy, nerve, red blood cell, and methylation-support formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -148,65 +190,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Often 25-1,000 mcg per serving"
+      "value": "Follow product label"
     },
     {
       "label": "Best For",
-      "value": "Energy metabolism, nerve health, and red blood cell support"
+      "value": "Energy and nerve support"
     },
     {
       "label": "Safety Level",
-      "value": "Review B12 deficiency symptoms, medication-related malabsorption, pregnancy, nursing, or neurological symptoms"
+      "value": "Generally well tolerated"
     },
     {
       "label": "Origin",
-      "value": "Animal foods, fortified foods, or fermentation-derived supplement forms"
+      "value": "Foods, fortified foods, supplements"
     },
     {
       "label": "Part Used",
-      "value": "Vitamin compound"
+      "value": "Cobalamin vitamin"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, gummy, liquid, lozenge, or injection by clinician"
+      "value": "Capsules, lozenges, sprays"
     },
     {
       "label": "Taste",
-      "value": "Mildly sweet or neutral"
+      "value": "Mild, sweet in lozenges"
     }
   ],
-  "sidebar_at_a_glance_content": "- Water-soluble vitamin used in supplement education\n- Commonly discussed for energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition\n- Compare form, dose, and supporting ingredients\n- Often compared with folate, vitamin B6, iron, and magnesium\n- Not a substitute for personal medical advice",
-  "full_description": "Vitamin B12 is a water-soluble vitamin included in Suppriva's ingredient library for energy metabolism, nerve wellness, red blood cell formation, methylation context, and vegetarian or vegan nutrition.",
-  "best_for": "Energy metabolism, nerve health, and red blood cell support",
-  "safety_level": "Review B12 deficiency symptoms, medication-related malabsorption, pregnancy, nursing, or neurological symptoms",
-  "origin_country": "Animal foods, fortified foods, or fermentation-derived supplement forms",
-  "part_used": "Vitamin compound",
-  "ingredient_form": "Capsule, tablet, gummy, liquid, lozenge, or injection by clinician",
-  "taste_profile": "Mildly sweet or neutral",
+  "sidebar_at_a_glance_content": "<p>Vitamin B12 is best evaluated by form, dose, diet pattern, deficiency risk, and whether symptoms require testing.</p>",
+  "full_description": "Vitamin B12 is an essential water-soluble vitamin used in energy, nerve, red blood cell, and methylation-support formulas.",
+  "best_for": "Energy metabolism, nerve support, red blood cell support, and methylation formulas",
+  "safety_level": "Generally well tolerated; deficiency symptoms need evaluation",
+  "origin_country": "Foods, fortified foods, supplements",
+  "part_used": "Cobalamin vitamin",
+  "ingredient_form": "Capsules, lozenges, sprays",
+  "taste_profile": "Mild, sweet in lozenges",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Vitamin B12 Benefits, Dosage and Safety | Suppriva",
-  "seo_focus_keyword": "vitamin B12",
-  "seo_description": "Explore vitamin b12 benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "uses_title": "Vitamin B12 Uses",
+  "uses_subtitle": "Common wellness contexts where vitamin b12 appears.",
+  "uses_content": "<p>Vitamin B12 is commonly used in energy metabolism, nerve support, red blood cell support, and methylation formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Energy metabolism, nerve support, red blood cell support, and methylation formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing source, form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Vitamin B12 Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on vitamin b12 varies by preparation, dose, population, and outcome measured. Evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Vitamin B12 References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "vitamin-b6",
+    "folate-methylfolate",
+    "iron",
+    "magnesium",
+    "choline"
+  ],
+  "seo_title": "Vitamin B12 Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "vitamin b12",
+  "seo_description": "Explore Vitamin B12 benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/vitamin-b12",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Vitamin B12 Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore vitamin b12 benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+  "meta_title": "Vitamin B12 Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore Vitamin B12 benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

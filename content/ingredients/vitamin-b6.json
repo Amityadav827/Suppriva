@@ -1,208 +1,287 @@
 {
   "name": "Vitamin B6",
   "scientific_name": "Pyridoxine / pyridoxal-5-phosphate",
-  "hero_badge": null,
-  "short_description": "Vitamin B6 is a water-soluble b vitamin used in supplement formulas for energy metabolism, nervous-system, and b-complex formulas.",
-  "overview_title": "Vitamin B6 Overview",
-  "overview_subtitle": "A practical guide to vitamin b6 in modern supplement formulas.",
-  "overview_content": "<p>Vitamin B6 is a water-soluble b vitamin that appears in wellness products because of pyridoxine and active P-5-P forms involved in amino acid and neurotransmitter metabolism. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing vitamin b6 products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Vitamin B6 supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Vitamin B6 is involved in more than 100 enzyme reactions in the body.</p>",
+  "ingredient_category": "Vitamins",
+  "status": "published",
+  "hero_badge": "Essential B Vitamin",
+  "short_description": "Vitamin B6 is an essential B vitamin used in energy, mood, nerve, hormone, and metabolism-support supplement formulas.",
+  "overview_title": "What Is Vitamin B6?",
+  "overview_subtitle": "An essential vitamin profile for P-5-P forms, nerve safety, and B-complex label review.",
+  "overview_content": "<p>Vitamin B6 is part of Suppriva's ingredient library because it appears frequently in modern supplement formulas and deserves a careful, practical explanation. Shoppers may see vitamin b6 in products positioned for energy metabolism, mood-support formulas, nerve-health blends, and hormone-cycle support products. This page explains how the ingredient is commonly presented, what label details matter, and which safety questions should be reviewed before using a product that contains it.</p>\n\n<p>Ingredient identity is the starting point. A supplement may use a whole-food source, isolated nutrient, standardized botanical extract, essential compound, mushroom extract, or specialty derivative. Those forms are not automatically interchangeable. For vitamin b6, the label should make clear the source, serving size, preparation type, and whether any marker compound or standardized amount is disclosed.</p>\n\n<p>Vitamin B6 supports normal amino acid metabolism, neurotransmitter synthesis, glycogen metabolism, and nervous system function. This context is useful for education, but it does not mean the ingredient treats, cures, or prevents disease. Suppriva uses supportive wellness language because dietary supplements should be understood as optional tools within a broader health routine, not replacements for medical care, diagnosis, medication, or clinician-guided treatment.</p>\n\n<p>The finished formula matters as much as the ingredient. Vitamin B6 may be paired with vitamins, minerals, botanicals, amino acids, probiotics, oils, or branded complexes that change the product's intent. A men's wellness formula, sleep product, joint-support blend, immune supplement, or topical-care product may use the same ingredient name while creating a very different user experience. Always read the full supplement facts panel or product directions.</p>\n\n<p>Quality and transparency should guide comparison. Look for meaningful amounts, clear directions, realistic claims, and caution statements that mention medication use, pregnancy, nursing, surgery, children, allergies, and relevant health conditions. If a product hides key amounts in proprietary blends or makes aggressive disease-treatment promises, it deserves extra scrutiny even if the ingredient itself is familiar.</p>\n\n<p>Safety depends on dose, form, and personal context. Some ingredients are essential nutrients, while others are concentrated botanicals or specialty compounds. Even nutrients can be problematic when stacked across multiple products. Botanicals and oils may require extra caution because preparation, concentration, and route of use can strongly affect tolerability.</p>\n\n<p>For best results, use vitamin b6 as part of a realistic routine. Nutrition, sleep, activity, hydration, stress management, and professional care still matter. Supplements may support wellness goals, but they cannot compensate for unsafe dosing, poor-quality sourcing, ignored symptoms, or unresolved medical concerns.</p>\n\n<p>This Suppriva profile is designed to help readers ask better questions: What form is used? Is the amount clear? Is the ingredient appropriate for my goal? Are there medication or condition cautions? Does the product explain what the ingredient can and cannot do? The most trustworthy product pages usually answer these questions without exaggeration.</p>\n\n<p>It is also worth comparing how the ingredient fits your current routine. A product may look appealing because of one familiar ingredient, but the best choice usually depends on total formula design, repeated daily use, affordability, tolerability, and whether the directions match your lifestyle. This is especially important when an ingredient appears in gummies, capsules, powders, liquids, or topical products with different supporting ingredients.</p>\n\n<p>Use this page as a label-reading guide for vitamin b6. It brings together potential uses, dosage context, safety notes, side effects, interactions, and common FAQs so you can compare supplements with more confidence and avoid relying on front-label marketing alone.</p>",
+  "interesting_fact_label": "Dose Awareness",
+  "interesting_fact": "<p>Vitamin B6 is essential, but chronic high intake can cause nerve-related side effects in some people.</p>",
   "how_it_works_title": "How Vitamin B6 Works",
-  "how_it_works_subtitle": "How vitamin b6 supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "B-vitamin Nervous-system Support",
-  "how_it_works_highlight_description": "Vitamin B6 is most often positioned around B-vitamin nervous-system support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Vitamin B6 works through coenzyme activity that supports protein metabolism, nervous-system function, and red blood cell-related pathways. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare vitamin b6 by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Vitamin B6 appears in B-complex formulas where form and total dose should be checked.",
+  "how_it_works_highlight_title": "Watch Total B6",
+  "how_it_works_highlight_description": "B6 can appear in multivitamins, B-complex products, energy formulas, and mood blends at the same time.",
+  "how_it_works_content": "<p>Vitamin B6 is included in many multivitamins and B-complex supplements. Labels may list pyridoxine hydrochloride or pyridoxal-5-phosphate, often abbreviated P-5-P.</p>\n\n<p>Because B6 is common across products, total daily intake matters. More is not always better, especially with long-term high-dose use.</p>\n\n<p>Because vitamin b6 may appear in multi-ingredient products, the full formula should always be reviewed before making assumptions about expected results or safety.</p>",
   "benefits_title": "Potential Vitamin B6 Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether vitamin b6 fits the full formula.",
+  "benefits_subtitle": "Benefits depend on form, serving size, formula quality, and the user's overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "B-vitamin nervous-system support",
-      "description": "Vitamin B6 is commonly evaluated for B-vitamin nervous-system support within supplement formulas and wellness routines."
+      "icon": "zap",
+      "title": "Energy Metabolism",
+      "description": "Supports normal nutrient metabolism."
     },
     {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Vitamin B6 to support a more targeted product story around energy metabolism, nervous-system, and b-complex formulas."
+      "icon": "brain",
+      "title": "Nervous System Support",
+      "description": "Important for normal nerve function."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "icon": "heart",
+      "title": "Mood Formula Context",
+      "description": "Appears in neurotransmitter-support blends."
     },
     {
       "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Vitamin B6 may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "title": "Hormone-Cycle Products",
+      "description": "Often used in PMS or cycle-support formulas."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Vitamin B6 supplements."
+      "icon": "search",
+      "title": "B-Complex Review",
+      "description": "Encourages checking total B6 across multiple supplements."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Vitamin B6 helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "shield",
+      "title": "Nerve Safety Awareness",
+      "description": "Highlights long-term high-dose cautions."
     }
   ],
   "dosage_title": "Typical Vitamin B6 Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Common supplement doses range from the daily value level to higher label-directed amounts; long-term high-dose use should be clinician-guided.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Common supplement doses range from the daily value level to higher label-directed amounts; long-term high-dose use should be clinician-guided.</p><p>Because vitamin b6 can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the product form, label directions, and personal safety factors.",
+  "typical_dose": "Follow B6 product label",
+  "dosage": "Use label directions and avoid stacking high-dose B6 products long term.",
+  "dosage_content": "<p>Vitamin B6 serving size varies by multivitamin, B-complex, P-5-P product, mood formula, and energy blend. Compare total B6 from all products.</p>\n\n<p>Long-term high intake may cause nerve symptoms. Seek professional guidance if you have neuropathy, take medication, or use multiple B-vitamin products.</p>\n\n<p>Do not exceed label directions. Ask a qualified healthcare professional before use if you take medication, manage a health condition, are pregnant or nursing, are buying for a child, or are preparing for surgery.</p>",
   "safety_title": "Vitamin B6 Safety Information",
-  "safety_subtitle": "Use vitamin b6 with label awareness and personal health context in mind.",
+  "safety_subtitle": "Review vitamin b6 safety based on form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Nerve Symptoms",
+    "Digestive Upset",
+    "Vivid Dreams",
+    "Photosensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Vitamin B6 may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Nerve Symptoms",
+      "description": "High long-term intake may cause tingling or numbness."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Digestive Upset",
+      "description": "Nausea or stomach discomfort may occur."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Vivid Dreams",
+      "description": "Some users notice dream changes."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Photosensitivity",
+      "description": "Rare sensitivity reactions may occur."
     }
   ],
   "drug_interactions_json": [
-    "Check total daily intake from multivitamins, fortified foods, and other supplements.",
-    "Review use with medications that may affect absorption or nutrient status.",
-    "Avoid stacking multiple high-dose formulas unless clinician-guided.",
-    "Discuss use if pregnant, nursing, or managing a diagnosed deficiency."
+    {
+      "title": "Levodopa",
+      "description": "B6 may interact with some Parkinson's treatments unless combined appropriately."
+    },
+    {
+      "title": "Anti-Seizure Medication",
+      "description": "Use professional guidance."
+    },
+    {
+      "title": "Multiple B-Complex Products",
+      "description": "Avoid accidental high total intake."
+    },
+    {
+      "title": "Medication for Neuropathy",
+      "description": "Do not self-treat nerve symptoms without evaluation."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Vitamin B6 or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under guidance."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a clinician before combining with prescription medication."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Discuss supplement use before planned procedures."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or previously reactive."
+    }
+  ],
+  "food_sources_title": "Vitamin B6 Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Vitamin B6 occurs in foods such as poultry, fish, potatoes, chickpeas, bananas, and fortified grains. Supplements may use pyridoxine or pyridoxal-5-phosphate.</p>\n\n<p>Supplement preparations may differ from food, traditional, or clinical forms. Compare source material, processing, serving size, standardization, and whether the ingredient appears alone or in a broader blend.</p>",
+  "food_sources_json": [
+    {
+      "title": "Foods",
+      "description": "Poultry, fish, chickpeas, potatoes, bananas, and fortified grains."
+    },
+    {
+      "title": "Pyridoxine",
+      "description": "Common supplement form."
+    },
+    {
+      "title": "P-5-P",
+      "description": "Active form used in some formulas."
+    }
   ],
   "faq_title": "Vitamin B6 FAQs",
   "faq_subtitle": "Common questions about vitamin b6 supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Vitamin B6 used for in supplements?",
-      "answer": "Vitamin B6 is commonly used in formulas focused on energy metabolism, nervous-system, and b-complex formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is Vitamin B6?",
+      "answer": "Vitamin B6 is an essential water-soluble B vitamin found as pyridoxine or active P-5-P forms."
     },
     {
-      "question": "Is Vitamin B6 a medicine?",
-      "answer": "No. Vitamin B6 is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What is Vitamin B6 used for?",
+      "answer": "It is commonly used in supplements positioned for energy metabolism, mood-support formulas, nerve-health blends, and hormone-cycle support products."
     },
     {
-      "question": "What form of Vitamin B6 should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "How does Vitamin B6 work?",
+      "answer": "Vitamin B6 supports normal amino acid metabolism, neurotransmitter synthesis, glycogen metabolism, and nervous system function."
     },
     {
-      "question": "How long does Vitamin B6 take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "What form of Vitamin B6 should I look for?",
+      "answer": "Look for pyridoxine, pyridoxal-5-phosphate, serving size, and total intake across products. The best form depends on the finished product and your personal context."
+    },
+    {
+      "question": "Can Vitamin B6 replace medical care?",
+      "answer": "No. Vitamin B6 should not replace diagnosis, prescribed treatment, or professional care."
     },
     {
       "question": "Can Vitamin B6 cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "answer": "Yes. Possible concerns include nerve symptoms, digestive upset, vivid dreams, photosensitivity."
     },
     {
-      "question": "Can I take Vitamin B6 every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can Vitamin B6 interact with medication?",
+      "answer": "It may. Review the full formula with a healthcare professional if you use medication or manage a health condition."
     },
     {
-      "question": "What should I check on a Vitamin B6 label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Is Vitamin B6 safe during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance before using concentrated supplement forms."
     },
     {
-      "question": "Does Vitamin B6 interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "What should I compare on labels?",
+      "answer": "Compare source, form, serving size, standardization, companion ingredients, warnings, and directions."
     },
     {
-      "question": "Is Vitamin B6 suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
-    },
-    {
-      "question": "Can Vitamin B6 replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Who should be careful with Vitamin B6?",
+      "answer": "People with allergies, medication use, diagnosed conditions, pregnancy, nursing, surgery plans, or unusual symptoms should seek professional guidance."
     }
   ],
   "sidebar_profile_title": "Vitamin B6 Profile Snapshot",
-  "sidebar_profile_content": "Vitamin B6 is a water-soluble b vitamin commonly evaluated for energy metabolism, nervous-system, and b-complex formulas.",
+  "sidebar_profile_content": "Vitamin B6 is an essential water-soluble vitamin used in energy, mood, nerve, metabolism, and hormone-support formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Water-soluble B vitamin"
+      "value": "Water-soluble vitamin"
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement doses range from the daily value level to higher label-directed amounts; long-term high-dose use should be clinician-guided."
+      "value": "Follow product label"
     },
     {
       "label": "Best For",
-      "value": "Energy metabolism, nervous-system, and B-complex formulas"
+      "value": "B-complex formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Generally safe at appropriate doses; avoid excessive long-term intake"
+      "value": "Avoid chronic high doses"
     },
     {
       "label": "Origin",
-      "value": "Dietary vitamin found in many foods"
+      "value": "Foods and supplements"
     },
     {
       "label": "Part Used",
-      "value": "Vitamin compound"
+      "value": "B6 vitamin compound"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, powder, B-complex"
+      "value": "Capsules, tablets, powders"
     },
     {
       "label": "Taste",
-      "value": "Neutral to slightly bitter"
+      "value": "Usually mild"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Vitamin B6 is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Vitamin B6 is used in supplement formulas for energy metabolism, nervous-system, and b-complex formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Energy metabolism, nervous-system, and B-complex formulas",
-  "safety_level": "Generally safe at appropriate doses; avoid excessive long-term intake",
-  "origin_country": "Dietary vitamin found in many foods",
-  "part_used": "Vitamin compound",
-  "ingredient_form": "Capsule, tablet, powder, B-complex",
-  "taste_profile": "Neutral to slightly bitter",
+  "sidebar_at_a_glance_content": "<p>Vitamin B6 is best evaluated by form, total daily amount, B-complex stacking, and nerve-safety cautions.</p>",
+  "full_description": "Vitamin B6 is an essential water-soluble vitamin used in energy, mood, nerve, metabolism, and hormone-support formulas.",
+  "best_for": "Energy metabolism, mood-support, nerve-support, and B-complex formulas",
+  "safety_level": "Avoid chronic high-dose intake",
+  "origin_country": "Foods and supplements",
+  "part_used": "B6 vitamin compound",
+  "ingredient_form": "Capsules, tablets, powders",
+  "taste_profile": "Usually mild",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Vitamin B6 Uses",
+  "uses_subtitle": "Common wellness contexts where vitamin b6 appears.",
+  "uses_content": "<p>Vitamin B6 is commonly used in energy metabolism, mood-support, nerve-support, and b-complex formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Energy metabolism, mood-support, nerve-support, and B-complex formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing source, form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Vitamin B6 Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on vitamin b6 varies by preparation, dose, population, and outcome measured. Evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Vitamin B6 References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "vitamin-b12",
+    "folate-methylfolate",
+    "magnesium",
+    "gaba",
+    "choline"
+  ],
   "seo_title": "Vitamin B6 Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "vitamin b6",
-  "seo_description": "Explore vitamin b6 benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Vitamin B6 benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/vitamin-b6",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Vitamin B6 Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore vitamin b6 benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Vitamin B6 benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

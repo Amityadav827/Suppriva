@@ -1,161 +1,188 @@
 {
   "name": "Turkey Tail Mushroom",
-  "status": "published",
   "scientific_name": "Trametes versicolor",
   "ingredient_category": "Herbal Extracts",
-  "hero_badge": null,
-  "short_description": "Turkey Tail Mushroom is a functional mushroom used in immune-support and gut-immune wellness supplement formulas, with practical safety and label context for supplement shoppers.",
-  "overview_title": "Turkey Tail Mushroom Overview",
-  "overview_subtitle": "A practical look at turkey tail mushroom as a supplement ingredient.",
-  "overview_content": "<p>Turkey Tail Mushroom is a functional mushroom used in immune-support and gut-immune wellness supplement formulas. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Turkey Tail Mushroom through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Turkey Tail Mushroom should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Turkey tail gets its name from the fan-shaped bands of color that resemble a wild turkey's tail feathers.</p>",
+  "status": "published",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "Turkey tail mushroom is a functional mushroom used in immune-support, mushroom-complex, and daily wellness formulas.",
+  "overview_title": "What Is Turkey Tail Mushroom?",
+  "overview_subtitle": "A functional mushroom profile for beta-glucans, extract quality, and immune-safety context.",
+  "overview_content": "<p>Turkey Tail Mushroom is part of Suppriva's ingredient library because it appears frequently in modern supplement formulas and deserves a careful, practical explanation. Shoppers may see turkey tail mushroom in products positioned for immune-support formulas, functional mushroom complexes, and antioxidant wellness blends. This page explains how the ingredient is commonly presented, what label details matter, and which safety questions should be reviewed before using a product that contains it.</p>\n\n<p>Ingredient identity is the starting point. A supplement may use a whole-food source, isolated nutrient, standardized botanical extract, essential compound, mushroom extract, or specialty derivative. Those forms are not automatically interchangeable. For turkey tail mushroom, the label should make clear the source, serving size, preparation type, and whether any marker compound or standardized amount is disclosed.</p>\n\n<p>Turkey tail mushroom contains polysaccharides and beta-glucans that are commonly discussed in immune-support supplement contexts. This context is useful for education, but it does not mean the ingredient treats, cures, or prevents disease. Suppriva uses supportive wellness language because dietary supplements should be understood as optional tools within a broader health routine, not replacements for medical care, diagnosis, medication, or clinician-guided treatment.</p>\n\n<p>The finished formula matters as much as the ingredient. Turkey Tail Mushroom may be paired with vitamins, minerals, botanicals, amino acids, probiotics, oils, or branded complexes that change the product's intent. A men's wellness formula, sleep product, joint-support blend, immune supplement, or topical-care product may use the same ingredient name while creating a very different user experience. Always read the full supplement facts panel or product directions.</p>\n\n<p>Quality and transparency should guide comparison. Look for meaningful amounts, clear directions, realistic claims, and caution statements that mention medication use, pregnancy, nursing, surgery, children, allergies, and relevant health conditions. If a product hides key amounts in proprietary blends or makes aggressive disease-treatment promises, it deserves extra scrutiny even if the ingredient itself is familiar.</p>\n\n<p>Safety depends on dose, form, and personal context. Some ingredients are essential nutrients, while others are concentrated botanicals or specialty compounds. Even nutrients can be problematic when stacked across multiple products. Botanicals and oils may require extra caution because preparation, concentration, and route of use can strongly affect tolerability.</p>\n\n<p>For best results, use turkey tail mushroom as part of a realistic routine. Nutrition, sleep, activity, hydration, stress management, and professional care still matter. Supplements may support wellness goals, but they cannot compensate for unsafe dosing, poor-quality sourcing, ignored symptoms, or unresolved medical concerns.</p>\n\n<p>This Suppriva profile is designed to help readers ask better questions: What form is used? Is the amount clear? Is the ingredient appropriate for my goal? Are there medication or condition cautions? Does the product explain what the ingredient can and cannot do? The most trustworthy product pages usually answer these questions without exaggeration.</p>\n\n<p>It is also worth comparing how the ingredient fits your current routine. A product may look appealing because of one familiar ingredient, but the best choice usually depends on total formula design, repeated daily use, affordability, tolerability, and whether the directions match your lifestyle. This is especially important when an ingredient appears in gummies, capsules, powders, liquids, or topical products with different supporting ingredients.</p>\n\n<p>Use this page as a label-reading guide for turkey tail mushroom. It brings together potential uses, dosage context, safety notes, side effects, interactions, and common FAQs so you can compare supplements with more confidence and avoid relying on front-label marketing alone.</p>",
+  "interesting_fact_label": "Colorful Fan Shape",
+  "interesting_fact": "<p>Turkey tail gets its common name from its layered, fan-like appearance that resembles a turkey's tail feathers.</p>",
   "how_it_works_title": "How Turkey Tail Mushroom Works",
-  "how_it_works_subtitle": "The main mechanisms behind turkey tail mushroom in wellness formulas.",
-  "how_it_works_highlight_title": "Functional mushroom support profile",
-  "how_it_works_highlight_description": "Turkey Tail Mushroom is commonly evaluated through beta-glucans and mushroom polysaccharides that help explain its immune and microbiome-adjacent positioning.",
-  "how_it_works_content": "<p>Turkey Tail Mushroom works through beta-glucans and mushroom polysaccharides that help explain its immune and microbiome-adjacent positioning. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Turkey Tail Mushroom is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "Turkey tail appears in mushroom formulas where fruiting body, mycelium, and beta-glucan language matter.",
+  "how_it_works_highlight_title": "Mushroom Form Matters",
+  "how_it_works_highlight_description": "Compare fruiting body, mycelium, extract ratio, beta-glucan disclosure, and testing.",
+  "how_it_works_content": "<p>Turkey tail is often included in immune wellness and multi-mushroom formulas. Transparent labels may identify fruiting body, mycelium, extract ratio, or beta-glucan content.</p>\n\n<p>It should not replace medical care for immune disorders, cancer care, infections, or chronic symptoms. People receiving treatment should discuss mushroom supplements with their care team.</p>\n\n<p>Because turkey tail mushroom may appear in multi-ingredient products, the full formula should always be reviewed before making assumptions about expected results or safety.</p>",
   "benefits_title": "Potential Turkey Tail Mushroom Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Benefits depend on form, serving size, formula quality, and the user's overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Turkey Tail Mushroom is commonly used in formulas that support antioxidant balance and general cellular wellness."
-    },
-    {
-      "icon": "activity",
-      "title": "Supports Immune And Gut-Immune Mushroom Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around immune and gut-immune mushroom support."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
+      "icon": "shield",
+      "title": "Immune Formula Context",
+      "description": "Commonly used in immune-support mushroom blends."
     },
     {
       "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Turkey Tail Mushroom often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Functional Mushroom Identity",
+      "description": "Provides recognizable mushroom wellness positioning."
+    },
+    {
+      "icon": "search",
+      "title": "Beta-Glucan Education",
+      "description": "Encourages comparison of extract and beta-glucan language."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Antioxidant Wellness",
+      "description": "Often appears in daily wellness and healthy-aging formulas."
+    },
+    {
+      "icon": "users",
+      "title": "Mushroom Blend Fit",
+      "description": "Frequently paired with reishi, shiitake, maitake, and cordyceps."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
-    },
-    {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Turkey Tail Mushroom by mechanism, evidence level, safety context, and practical product positioning."
+      "title": "Safety-Aware Use",
+      "description": "Highlights immune-medication and oncology-care cautions."
     }
   ],
   "dosage_title": "Typical Turkey Tail Mushroom Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common extract servings often range from 500 mg to 2,000 mg daily, depending on beta-glucan content and formula direction.",
-  "dosage": "Common extract servings often range from 500 mg to 2,000 mg daily, depending on beta-glucan content and formula direction.",
-  "dosage_content": "<p>Common extract servings often range from 500 mg to 2,000 mg daily, depending on beta-glucan content and formula direction.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Turkey Tail Mushroom without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on the product form, label directions, and personal safety factors.",
+  "typical_dose": "Follow mushroom extract label",
+  "dosage": "Use label directions and compare fruiting body, mycelium, extract, and beta-glucan details.",
+  "dosage_content": "<p>Turkey tail serving sizes vary by powder, extract, capsule, and blend. Extracts may use smaller servings than whole mushroom powders.</p>\n\n<p>Use professional guidance with immune disorders, immunosuppressants, cancer treatment, pregnancy, nursing, or mushroom allergy.</p>\n\n<p>Do not exceed label directions. Ask a qualified healthcare professional before use if you take medication, manage a health condition, are pregnant or nursing, are buying for a child, or are preparing for surgery.</p>",
   "safety_title": "Turkey Tail Mushroom Safety Information",
-  "safety_subtitle": "Important safety context before using turkey tail mushroom supplements.",
+  "safety_subtitle": "Review turkey tail mushroom safety based on form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Allergic Reaction",
+    "Dark Stool or Nausea",
+    "Immune Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Turkey Tail Mushroom may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "title": "Digestive Upset",
+      "description": "Gas, bloating, or stomach discomfort may occur."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "title": "Allergic Reaction",
+      "description": "Mushroom-sensitive users may react."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "title": "Dark Stool or Nausea",
+      "description": "Some users report digestive changes."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Turkey Tail Mushroom is combined with similar ingredients or multi-ingredient products."
+      "title": "Immune Sensitivity",
+      "description": "Use caution with immune conditions."
     }
   ],
   "drug_interactions_json": [
-    "Review Turkey Tail Mushroom with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People with immune disorders, transplant medication, mushroom allergy, or cancer treatment plans should use only with professional guidance.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    {
+      "title": "Immunosuppressants",
+      "description": "Use only with clinician guidance."
+    },
+    {
+      "title": "Cancer Therapies",
+      "description": "Discuss with oncology professionals before use."
+    },
+    {
+      "title": "Blood Thinners",
+      "description": "Ask a clinician before combining mushroom blends."
+    },
+    {
+      "title": "Diabetes Medication",
+      "description": "Monitor carefully with glucose-related formulas."
+    }
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Turkey Tail Mushroom or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under guidance."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a clinician before combining with prescription medication."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Discuss supplement use before planned procedures."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or previously reactive."
+    }
   ],
-  "food_sources_title": "Turkey Tail Mushroom Food Sources",
-  "food_sources_subtitle": "Food and source context for turkey tail mushroom.",
-  "food_sources_content": "<p>Turkey tail is typically used as an extract or powder rather than a culinary mushroom because of its texture.</p>",
+  "food_sources_title": "Turkey Tail Mushroom Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Turkey tail comes from Trametes versicolor mushrooms. Supplements may use fruiting body powder, mycelium, extracts, or mushroom-complex blends.</p>\n\n<p>Supplement preparations may differ from food, traditional, or clinical forms. Compare source material, processing, serving size, standardization, and whether the ingredient appears alone or in a broader blend.</p>",
   "food_sources_json": [
     {
-      "title": "Turkey tail mushroom extract",
-      "description": "Turkey tail mushroom extract can contribute to immune and gut-immune mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Fruiting Body",
+      "description": "Visible mushroom material used in many supplements."
     },
     {
-      "title": "Turkey tail powder",
-      "description": "Turkey tail powder can contribute to immune and gut-immune mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Mycelium",
+      "description": "Fungal network material used in some products."
     },
     {
-      "title": "Functional mushroom blends",
-      "description": "Functional mushroom blends can contribute to immune and gut-immune mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Extracts",
+      "description": "May disclose extract ratio or beta-glucans."
     }
   ],
   "faq_title": "Turkey Tail Mushroom FAQs",
-  "faq_subtitle": "Common questions about turkey tail mushroom supplements.",
+  "faq_subtitle": "Common questions about turkey tail mushroom supplements and label comparison.",
   "faq_json": [
     {
       "question": "What is Turkey Tail Mushroom?",
-      "answer": "Turkey Tail Mushroom is a functional mushroom used in immune-support and gut-immune wellness supplement formulas. It is used in supplement formulas for immune and gut-immune mushroom support, not as a substitute for medical treatment."
+      "answer": "Turkey Tail Mushroom is a functional mushroom, Trametes versicolor, used in mushroom supplement blends."
     },
     {
-      "question": "What is Turkey Tail Mushroom commonly used for?",
-      "answer": "It is commonly positioned around immune support, gut-immune wellness, and functional mushroom stacks. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "What is Turkey Tail Mushroom used for?",
+      "answer": "It is commonly used in supplements positioned for immune-support formulas, functional mushroom complexes, and antioxidant wellness blends."
     },
     {
       "question": "How does Turkey Tail Mushroom work?",
-      "answer": "Turkey Tail Mushroom is usually discussed through beta-glucans and mushroom polysaccharides that help explain its immune and microbiome-adjacent positioning. This helps explain its supplement positioning without treating it as a cure or medication."
+      "answer": "Turkey tail mushroom contains polysaccharides and beta-glucans that are commonly discussed in immune-support supplement contexts."
     },
     {
-      "question": "What is a typical Turkey Tail Mushroom dose?",
-      "answer": "Common extract servings often range from 500 mg to 2,000 mg daily, depending on beta-glucan content and formula direction. Always follow the specific product label because extract strength and format can vary widely."
-    },
-    {
-      "question": "Is Turkey Tail Mushroom safe for daily use?",
-      "answer": "Generally well tolerated with label-aware use. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
-    },
-    {
-      "question": "Can Turkey Tail Mushroom cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
-    },
-    {
-      "question": "Can Turkey Tail Mushroom interact with medication?",
-      "answer": "People with immune disorders, transplant medication, mushroom allergy, or cancer treatment plans should use only with professional guidance. This is especially important for people managing medical conditions or using multiple supplements."
-    },
-    {
-      "question": "What should I compare on a Turkey Tail Mushroom supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
-    },
-    {
-      "question": "What foods contain Turkey Tail Mushroom or related compounds?",
-      "answer": "Turkey tail is typically used as an extract or powder rather than a culinary mushroom because of its texture."
+      "question": "What form of Turkey Tail Mushroom should I look for?",
+      "answer": "Look for fruiting body, mycelium, extract ratio, beta-glucan disclosure, and testing language. The best form depends on the finished product and your personal context."
     },
     {
       "question": "Can Turkey Tail Mushroom replace medical care?",
-      "answer": "No. Turkey Tail Mushroom supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "answer": "No. Turkey Tail Mushroom should not replace diagnosis, prescribed treatment, or professional care."
+    },
+    {
+      "question": "Can Turkey Tail Mushroom cause side effects?",
+      "answer": "Yes. Possible concerns include digestive upset, allergic reaction, dark stool or nausea, immune sensitivity."
+    },
+    {
+      "question": "Can Turkey Tail Mushroom interact with medication?",
+      "answer": "It may. Review the full formula with a healthcare professional if you use medication or manage a health condition."
+    },
+    {
+      "question": "Is Turkey Tail Mushroom safe during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance before using concentrated supplement forms."
+    },
+    {
+      "question": "What should I compare on labels?",
+      "answer": "Compare source, form, serving size, standardization, companion ingredients, warnings, and directions."
+    },
+    {
+      "question": "Who should be careful with Turkey Tail Mushroom?",
+      "answer": "People with allergies, medication use, diagnosed conditions, pregnancy, nursing, surgery plans, or unusual symptoms should seek professional guidance."
     }
   ],
   "sidebar_profile_title": "Turkey Tail Mushroom Profile Snapshot",
-  "sidebar_profile_content": "Turkey Tail Mushroom is a functional mushroom used in supplements for immune and gut-immune mushroom support.",
+  "sidebar_profile_content": "Turkey Tail Mushroom is a functional mushroom used in immune-support and multi-mushroom wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -163,61 +190,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Common extract servings often range from 500 mg to 2,000 mg daily, depending on beta-glucan content and formula direction."
+      "value": "Follow product label"
     },
     {
       "label": "Best For",
-      "value": "Immune support, gut-immune wellness, and functional mushroom stacks"
+      "value": "Immune-support blends"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated with label-aware use"
+      "value": "Use caution with immune medication"
     },
     {
       "label": "Origin",
-      "value": "Temperate forests and cultivated mushroom sources worldwide"
+      "value": "Trametes versicolor mushroom"
     },
     {
       "label": "Part Used",
-      "value": "Fruiting body"
+      "value": "Fruiting body or mycelium"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract, drink mix"
+      "value": "Capsules, powders, extracts"
     },
     {
       "label": "Taste",
-      "value": "Earthy and mildly bitter"
+      "value": "Earthy, woody"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Turkey Tail Mushroom is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Turkey Tail Mushroom is a functional mushroom used in immune-support and gut-immune wellness supplement formulas, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Immune support, gut-immune wellness, and functional mushroom stacks",
-  "safety_level": "Generally well tolerated with label-aware use",
-  "origin_country": "Temperate forests and cultivated mushroom sources worldwide",
-  "part_used": "Fruiting body",
-  "ingredient_form": "Capsule, powder, extract, drink mix",
-  "taste_profile": "Earthy and mildly bitter",
+  "sidebar_at_a_glance_content": "<p>Turkey Tail Mushroom is best evaluated by mushroom part, extract ratio, beta-glucan disclosure, testing, and immune-related cautions.</p>",
+  "full_description": "Turkey Tail Mushroom is a functional mushroom used in immune-support and multi-mushroom wellness formulas.",
+  "best_for": "Immune-support formulas, mushroom complexes, and antioxidant wellness blends",
+  "safety_level": "Use caution with immune conditions or therapies",
+  "origin_country": "Trametes versicolor mushroom",
+  "part_used": "Fruiting body or mycelium",
+  "ingredient_form": "Capsules, powders, extracts",
+  "taste_profile": "Earthy, woody",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Turkey Tail Mushroom Uses",
+  "uses_subtitle": "Common wellness contexts where turkey tail mushroom appears.",
+  "uses_content": "<p>Turkey Tail Mushroom is commonly used in immune-support formulas, mushroom complexes, and antioxidant wellness blends. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Immune-support formulas, mushroom complexes, and antioxidant wellness blends"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing source, form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "Turkey Tail Mushroom Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on turkey tail mushroom varies by preparation, dose, population, and outcome measured. Evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Turkey Tail Mushroom References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH, NCCIH, and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "reishi-mushroom",
+    "shiitake-mushroom",
+    "maitake-mushroom",
+    "cordyceps-extract",
+    "beta-glucan"
+  ],
   "seo_title": "Turkey Tail Mushroom Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "turkey tail mushroom",
-  "seo_description": "Explore Turkey Tail Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore Turkey Tail Mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/turkey-tail-mushroom",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Turkey Tail Mushroom Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Turkey Tail Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore Turkey Tail Mushroom benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
