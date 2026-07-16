@@ -1,222 +1,260 @@
 {
   "name": "Nori Extract",
-  "scientific_name": "Pyropia yezoensis",
+  "scientific_name": "Pyropia species",
   "ingredient_category": "Specialty Ingredients",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Nori Extract is a marine algae extract used in supplement formulas for marine mineral and seaweed-based formulas, with label quality depending on source, form, and dose transparency.",
+  "short_description": "Nori Extract is a red seaweed ingredient derived from edible nori and used in mineral, iodine, antioxidant, and marine plant supplement discussions.",
   "overview_title": "Nori Extract Overview",
-  "overview_subtitle": "A practical guide to nori extract as a supplement ingredient.",
-  "overview_content": "<p>Nori Extract is a marine algae extract used in wellness supplements for marine mineral and seaweed-based formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, Nori Extract is often discussed because it contains or represents iodine, marine polysaccharides, amino acids, minerals, and pigments. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>Nori Extract should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Nori is the seaweed commonly used to wrap sushi, but supplement extracts may be more concentrated than food servings.</p>",
+  "overview_subtitle": "A guide to nori extract, iodine awareness, marine nutrients, and seaweed supplement labels.",
+  "overview_content": "<p>Nori extract comes from edible red seaweed, commonly known as the seaweed used in sushi wraps. In supplements, nori may appear as a powder, extract, greens-blend ingredient, iodine source, marine antioxidant ingredient, or general sea vegetable. While eating nori as food is familiar to many people, concentrated extracts should be evaluated differently because the dose, iodine level, mineral content, and processing can vary.</p><p>Seaweed ingredients are nutritionally interesting because they may provide iodine, minerals, fiber-like compounds, pigments, amino acids, and marine plant polyphenols. Nori is generally lower in iodine than some brown seaweeds like kelp, but the actual amount can still vary by species, harvest location, processing, and serving size. That makes label transparency essential. A product that contains nori extract should ideally disclose iodine content if iodine is relevant to the formula.</p><p>Iodine deserves special attention because both too little and too much can matter for thyroid health. People with thyroid disease, those taking thyroid medication, pregnant or nursing users, and anyone already using iodine, kelp, bladderwrack, or seaweed supplements should be cautious about stacking multiple iodine sources. Nori extract should not be used to self-treat thyroid symptoms or replace medical evaluation.</p><p>Nori extract may also be included in antioxidant, greens, detox-style, immune, or metabolic wellness formulas. Some of those categories use broad marketing language, so consumers should stay grounded in the facts panel. Seaweed does not automatically detox the body, cure thyroid issues, or provide guaranteed weight loss. The strongest products explain the amount of nori extract, whether it is standardized, and how much iodine or key minerals are present.</p><p>For Suppriva readers, nori extract is a marine ingredient that teaches careful label comparison. It may be a useful part of greens formulas or sea vegetable blends, but it should be compared alongside kelp, wakame, bladderwrack, spirulina, chlorella, and iodine. These ingredients can overlap in category while differing greatly in nutrient concentration.</p><p>Nori extract can fit educational wellness routines when used responsibly, especially for people interested in marine plant nutrition. However, thyroid status, iodine exposure, medication use, and heavy metal testing should be part of the conversation when evaluating concentrated seaweed products.</p><p>A useful way to research Nori Extract is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether nori extract is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Nori Extract should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Sea Vegetable Note",
+  "interesting_fact": "<p>Nori is the seaweed commonly used to wrap sushi, but concentrated extracts can differ from eating a normal food serving.</p>",
   "how_it_works_title": "How Nori Extract Works",
-  "how_it_works_subtitle": "Nori Extract is evaluated by its compound profile, source quality, and formula context.",
-  "how_it_works_highlight_title": "Source and standardization matter",
-  "how_it_works_highlight_description": "Two nori extract products can differ significantly if they use different forms, serving sizes, or extract standards.",
-  "how_it_works_content": "<p>Nori Extract works mainly through marine nutrient and polysaccharide support. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of Nori Extract depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine Nori Extract with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "how_it_works_subtitle": "Nori extract contributes marine plant compounds and minerals, with iodine awareness being especially important.",
+  "how_it_works_highlight_title": "Seaweed concentration matters",
+  "how_it_works_highlight_description": "Seaweed ingredients can vary widely in iodine content, so labels should disclose mineral amounts clearly.",
+  "how_it_works_content": "<p>Nori extract contributes marine plant nutrients and bioactive compounds that may include iodine, minerals, pigments, amino acids, and polyphenols depending on the product.</p><p>Its practical role depends heavily on concentration and testing. A greens blend with a small amount of nori is different from a seaweed supplement positioned as an iodine source.</p><p>Because seaweed can accumulate minerals and contaminants from water, quality testing and transparent sourcing are important.</p>",
   "benefits_title": "Potential Nori Extract Benefits",
-  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Formula Context",
-      "description": "Nori Extract helps shoppers evaluate supplements that use marine algae extract positioning for marine mineral and seaweed-based formulas."
+      "icon": "waves",
+      "title": "Marine Plant Nutrition",
+      "description": "Provides a sea vegetable context for comparing greens and mineral formulas."
+    },
+    {
+      "icon": "flask-conical",
+      "title": "Iodine Label Awareness",
+      "description": "Encourages review of iodine content and thyroid-related cautions."
     },
     {
       "icon": "sparkles",
-      "title": "Key Compound Profile",
-      "description": "It is commonly reviewed for iodine, marine polysaccharides, amino acids, minerals, and pigments, which influence how brands position it on supplement labels."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Label Transparency",
-      "description": "The best products clearly disclose form, serving size, standardization, and whether Nori Extract is part of a broader blend."
-    },
-    {
-      "icon": "activity",
-      "title": "Routine Fit",
-      "description": "Nori Extract is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+      "title": "Antioxidant Context",
+      "description": "Nori may contribute marine pigments and plant compounds depending on extract quality."
     },
     {
       "icon": "search",
-      "title": "Comparison Value",
-      "description": "Comparing Nori Extract across products can reveal differences in source quality, concentration, and supporting ingredients."
+      "title": "Seaweed Comparison",
+      "description": "Useful for comparing nori, kelp, wakame, bladderwrack, spirulina, and chlorella."
     },
     {
-      "icon": "heart",
-      "title": "Safety Awareness",
-      "description": "Understanding cautions and interactions helps users decide whether Nori Extract fits their health status and medication profile."
+      "icon": "shield-check",
+      "title": "Sourcing Awareness",
+      "description": "Highlights the importance of contaminant testing and harvest transparency."
+    },
+    {
+      "icon": "leaf",
+      "title": "Greens Blend Fit",
+      "description": "Commonly appears in greens powders and sea vegetable blends."
     }
   ],
   "dosage_title": "Typical Nori Extract Dosage",
-  "dosage_subtitle": "Use the product label as the primary dose reference.",
-  "typical_dose": "Follow the product label; iodine and mineral contribution should guide serving decisions.",
-  "dosage": "Follow the product label and avoid combining multiple nori extract products unless a healthcare professional has reviewed the routine.",
-  "dosage_content": "<p>There is no single universal dose for nori extract because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using nori extract.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by powder or extract",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Nori extract serving sizes vary widely by powder, greens blend, capsule, or iodine-focused formula. There is no single dose that applies to every product.</p><p>Review iodine content, total seaweed exposure, and thyroid-related cautions. People with thyroid conditions or thyroid medication should consult a healthcare professional before using concentrated seaweed products.</p>",
   "safety_title": "Nori Extract Safety Information",
-  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive discomfort",
-    "Nausea",
-    "Headache",
-    "Sensitivity reaction"
+    "Digestive Changes",
+    "Iodine Sensitivity",
+    "Allergic Reaction",
+    "Mineral Overlap"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Nori Extract may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+      "title": "Digestive Changes",
+      "description": "Seaweed powders or extracts may cause bloating, nausea, or stool changes in some users."
     },
     {
-      "title": "Sensitivity or Allergy",
-      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review nori extract carefully before use."
+      "title": "Iodine Sensitivity",
+      "description": "Sensitive users may experience thyroid-related concerns if iodine intake becomes excessive."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects may be more likely when nori extract is combined with several ingredients that have similar wellness positioning."
+      "title": "Allergic Reaction",
+      "description": "Seaweed or marine-derived ingredients may trigger reactions in sensitive individuals."
     },
     {
-      "title": "Dose-Related Concerns",
-      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+      "title": "Mineral Overlap",
+      "description": "Stacking multiple seaweed products may increase iodine or mineral exposure."
     }
   ],
   "drug_interactions_json": [
-    "Use caution with thyroid medication, iodine supplements, lithium, or formulas containing multiple seaweed ingredients.",
-    "Review use if taking prescription medication or managing a diagnosed condition.",
-    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a healthcare professional before use during pregnancy or nursing."
+    "Use caution with thyroid medication or thyroid conditions due to possible iodine content.",
+    "Avoid stacking with kelp, bladderwrack, iodine drops, or multiple seaweed supplements unless reviewed by a professional.",
+    "Ask a clinician before use during pregnancy or nursing because iodine needs and limits matter.",
+    "People on low-iodine diets or preparing for thyroid procedures should avoid unsupervised seaweed supplements."
   ],
   "who_should_avoid_json": [
-    "People with thyroid conditions should review iodine-containing seaweed products with a healthcare professional.",
-    "People with known allergy or sensitivity related to nori extract.",
-    "People taking medication without reviewing supplement interactions.",
-    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with thyroid disease unless guided by a healthcare professional.",
+    "People taking thyroid medication without reviewing iodine exposure.",
+    "Pregnant or nursing users without professional guidance.",
+    "People using multiple iodine or seaweed products already.",
+    "Anyone concerned about marine allergies or contaminant exposure."
   ],
-  "food_sources_title": "Nori Extract Food Sources",
-  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
-  "food_sources_content": "<p>Dried nori sheets, seaweed snacks, and seaweed blends provide dietary exposure to related marine compounds.</p>",
+  "food_sources_title": "Nori Extract Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Nori Extract is typically associated with edible red seaweed used in nori sheets. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
   "food_sources_json": [
     {
-      "title": "Dietary Sources",
-      "description": "Dried nori sheets, seaweed snacks, and seaweed blends provide dietary exposure to related marine compounds."
+      "title": "Primary Source",
+      "description": "Edible red seaweed used in nori sheets"
     },
     {
-      "title": "Supplement Forms",
-      "description": "Nori Extract is commonly sold as powder, capsule, extract, depending on the product category."
+      "title": "Common Form",
+      "description": "Powder, extract, capsule, greens blend"
     },
     {
-      "title": "Label Review",
-      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
     }
   ],
   "faq_title": "Nori Extract FAQs",
   "faq_subtitle": "Common questions about nori extract supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Nori Extract used for in supplements?",
-      "answer": "Nori Extract is commonly used in formulas positioned around marine mineral and seaweed-based formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+      "question": "What is nori extract?",
+      "answer": "Nori extract is a supplement ingredient derived from edible red seaweed commonly known from sushi wraps."
     },
     {
-      "question": "What is the main active profile of Nori Extract?",
-      "answer": "Supplement labels usually discuss Nori Extract in relation to iodine, marine polysaccharides, amino acids, minerals, and pigments. The exact profile can vary by source and processing method."
+      "question": "Is nori extract the same as eating nori sheets?",
+      "answer": "No. Concentrated extracts can differ in serving size, iodine content, and processing."
     },
     {
-      "question": "Is Nori Extract a medicine?",
-      "answer": "No. Nori Extract is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+      "question": "Does nori contain iodine?",
+      "answer": "Nori can contain iodine, although levels vary by species, harvest, processing, and serving size."
     },
     {
-      "question": "How should I compare Nori Extract products?",
-      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+      "question": "Is nori extract good for thyroid health?",
+      "answer": "It should not be used to self-treat thyroid issues. People with thyroid concerns should review iodine exposure with a clinician."
     },
     {
-      "question": "Can Nori Extract be taken every day?",
-      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+      "question": "How is nori different from kelp?",
+      "answer": "Nori is a red seaweed, while kelp is a brown seaweed that is often much higher in iodine."
     },
     {
-      "question": "What dose of Nori Extract should I use?",
-      "answer": "Follow the product label; iodine and mineral contribution should guide serving decisions. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
+      "question": "What should I check on a nori label?",
+      "answer": "Check serving size, iodine amount, sourcing, contaminant testing, and other seaweed ingredients."
     },
     {
-      "question": "Does Nori Extract have side effects?",
-      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+      "question": "Can nori extract be in greens powders?",
+      "answer": "Yes. It may appear in greens blends, sea vegetable formulas, or marine plant supplements."
     },
     {
-      "question": "Can Nori Extract interact with medication?",
-      "answer": "Use caution with thyroid medication, iodine supplements, lithium, or formulas containing multiple seaweed ingredients. Medication users should review supplement use with a qualified healthcare professional."
+      "question": "Can I combine nori with iodine supplements?",
+      "answer": "Do not stack iodine sources without professional guidance, especially if thyroid health is a concern."
     },
     {
-      "question": "Is Nori Extract found in foods?",
-      "answer": "Dried nori sheets, seaweed snacks, and seaweed blends provide dietary exposure to related marine compounds."
+      "question": "Are seaweed supplements tested for contaminants?",
+      "answer": "Quality products should address heavy metals and sourcing, but testing practices vary."
     },
     {
-      "question": "Who should avoid Nori Extract?",
-      "answer": "People with thyroid conditions should review iodine-containing seaweed products with a healthcare professional. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+      "question": "Who should avoid nori extract?",
+      "answer": "People with thyroid disease, iodine restrictions, pregnancy, nursing, or marine allergies should seek guidance first."
     }
   ],
   "sidebar_profile_title": "Nori Extract Profile Snapshot",
-  "sidebar_profile_content": "A red seaweed extract used in marine mineral, iodine-aware, and specialty wellness formulas.",
+  "sidebar_profile_content": "Nori Extract is a red seaweed ingredient derived from edible nori and used in mineral, iodine, antioxidant, and marine plant supplement discussions.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Marine algae extract"
+      "value": "Red seaweed extract"
     },
     {
       "label": "Typical Dose",
-      "value": "Follow the product label; iodine and mineral contribution should guide serving decisions."
+      "value": "Varies by powder or extract"
     },
     {
       "label": "Best For",
-      "value": "Marine mineral and seaweed-based formulas"
+      "value": "Marine plant label research"
     },
     {
       "label": "Safety Level",
-      "value": "Review label directions and medication context"
+      "value": "Iodine-aware"
     },
     {
       "label": "Origin",
-      "value": "Coastal East Asia"
+      "value": "Edible nori seaweed"
     },
     {
       "label": "Part Used",
-      "value": "Red seaweed"
+      "value": "Seaweed thallus"
     },
     {
       "label": "Form",
-      "value": "Powder, capsule, extract"
+      "value": "Powder or capsule"
     },
     {
       "label": "Taste",
-      "value": "Savory and marine"
+      "value": "Savory marine"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Nori Extract is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
-  "full_description": "Nori Extract is a marine algae extract used in supplement formulas for marine mineral and seaweed-based formulas.",
-  "best_for": "Marine mineral and seaweed-based formulas",
-  "safety_level": "Review label directions and medication context",
-  "origin_country": "Coastal East Asia",
-  "part_used": "Red seaweed",
-  "ingredient_form": "Powder, capsule, extract",
-  "taste_profile": "Savory and marine",
+  "sidebar_at_a_glance_content": "<p>Nori Extract is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Nori Extract is a red seaweed ingredient derived from edible nori and used in mineral, iodine, antioxidant, and marine plant supplement discussions.",
+  "best_for": "Marine plant nutrition research, iodine label awareness, and seaweed-based formulas",
+  "safety_level": "Iodine-aware",
+  "origin_country": "Edible red seaweed used in nori sheets",
+  "part_used": "Seaweed thallus extract",
+  "ingredient_form": "Powder, extract, capsule, greens blend",
+  "taste_profile": "Marine, savory, umami",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Nori Extract Uses",
+  "uses_subtitle": "Common wellness contexts where nori extract appears.",
+  "uses_content": "<p>Nori Extract is commonly used in marine plant nutrition research, iodine label awareness, and seaweed-based formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Marine plant nutrition research, iodine label awareness, and seaweed-based formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Nori Extract Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on nori extract varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Nori Extract References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "iodine",
+    "kelp",
+    "wakame-extract",
+    "bladderwrack",
+    "spirulina"
+  ],
   "seo_title": "Nori Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "nori extract",
-  "seo_description": "Explore nori extract benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore nori extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/nori-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Nori Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore nori extract benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore nori extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

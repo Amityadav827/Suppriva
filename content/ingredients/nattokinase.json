@@ -1,212 +1,260 @@
 {
   "name": "Nattokinase",
   "scientific_name": "Enzyme from Bacillus subtilis natto",
+  "ingredient_category": "Specialty Ingredients",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Nattokinase is reviewed in Suppriva's ingredient library for circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
-  "overview_title": "What Is Nattokinase?",
-  "overview_subtitle": "A practical overview of nattokinase and why it appears in modern supplement formulas.",
-  "overview_content": "Nattokinase is commonly found in supplement formulas connected to circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating nattokinase, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Nattokinase may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding nattokinase to a routine.",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "Nattokinase activity is often listed in fibrinolytic units, abbreviated as FU, rather than only milligrams.",
+  "short_description": "Nattokinase is a proteolytic enzyme derived from natto, a traditional fermented soybean food, and used in supplements for cardiovascular wellness education.",
+  "overview_title": "Nattokinase Overview",
+  "overview_subtitle": "A practical guide to nattokinase, enzyme activity, supplement labels, and safety considerations.",
+  "overview_content": "<p>Nattokinase is an enzyme produced during the fermentation of soybeans into natto, a traditional Japanese food. In the supplement world, it is usually positioned around cardiovascular wellness, circulation support, and fibrin-related enzyme activity. It is important to frame nattokinase responsibly: it is not a substitute for heart medication, blood pressure treatment, cholesterol care, emergency clot treatment, or medical evaluation. People often discover it while researching circulation formulas, but the most useful approach is to compare the exact product label and safety cautions rather than assuming every nattokinase supplement is equivalent.</p><p>The main point shoppers should understand is that nattokinase is an enzyme, not a vitamin or botanical extract. Many labels discuss enzyme activity, sometimes using fibrinolytic units or other activity descriptions. These details matter because a capsule with a higher milligram amount is not automatically stronger if the activity standard is different. Quality, fermentation source, testing, and whether the product contains vitamin K are also relevant because natto naturally contains vitamin K2, while many nattokinase supplements are processed differently.</p><p>Safety is central with nattokinase. Because it is commonly discussed in relation to blood flow and fibrin, it may not be appropriate for people taking anticoagulants, antiplatelet drugs, aspirin therapy, or medications that affect clotting. It should also be avoided before surgery unless a clinician gives clear guidance. Anyone with a bleeding disorder, history of stroke, active ulcer, uncontrolled blood pressure, or complex cardiovascular condition should not self-experiment with nattokinase.</p><p>Nattokinase research is interesting but not a permission slip to replace prescribed care. Studies have explored blood pressure, clotting markers, and cardiovascular risk factors, but evidence varies by dose, population, duration, and product standardization. Consumers should be cautious with disease-treatment claims and look for labels that use educational language, clear serving directions, and third-party quality information.</p><p>For Suppriva readers, nattokinase belongs in the ingredient library as a label literacy ingredient. It helps users ask better questions: What activity unit is listed? Is the product free of vitamin K if that matters to the user? Is there a warning for blood thinners? Is it paired with garlic, omega-3, ginkgo, or other ingredients that may also affect bleeding risk? These questions are more useful than relying on a single headline benefit.</p><p>A well-selected nattokinase supplement should fit the user's health status, medication profile, and professional guidance. If cardiovascular symptoms, leg swelling, chest pain, shortness of breath, or clot concerns are present, supplement research should stop and medical care should take priority.</p><p>A useful way to research Nattokinase is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether nattokinase is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Nattokinase should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Fermentation Fact",
+  "interesting_fact": "<p>Nattokinase is named after natto, a Japanese fermented soybean food, but supplement labels can vary widely in enzyme activity and serving size.</p>",
   "how_it_works_title": "How Nattokinase Works",
-  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to nattokinase.",
-  "how_it_works_highlight_title": "Specialty Enzyme Context",
-  "how_it_works_highlight_description": "Nattokinase is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
-  "how_it_works_content": "Nattokinase does not work as a universal quick fix. It is typically discussed in relation to circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Nattokinase is often compared with omega-3 fatty acids, grape seed extract, pine bark extract, and garlic.\n\nSafety context matters. Anyone with blood thinners, bleeding disorders, surgery, soy allergy, pregnancy, nursing, or cardiovascular medication should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
-  "benefits_title": "Potential Benefits of Nattokinase",
-  "benefits_subtitle": "Educational benefits commonly discussed for nattokinase in supplement routines and label comparison.",
+  "how_it_works_subtitle": "Nattokinase is studied for fibrin-related enzyme activity, but supplement use requires careful safety awareness.",
+  "how_it_works_highlight_title": "Enzyme activity matters",
+  "how_it_works_highlight_description": "Nattokinase labels are best compared by enzyme activity units, dose, purity testing, and cautions around blood-thinning medications.",
+  "how_it_works_content": "<p>Nattokinase is described as a proteolytic enzyme, meaning it can break down certain proteins under specific conditions. Supplement discussions often focus on fibrin-related activity, but that does not mean it should be used to treat or prevent blood clots.</p><p>Because enzyme activity can differ by manufacturing process, label standardization is important. Shoppers should compare activity units, serving instructions, soybean allergen warnings, and whether the formula includes other circulation-focused ingredients.</p><p>Its practical role is educational and supportive: it may appear in cardiovascular wellness formulas, but medical conditions involving clotting, bleeding, blood pressure, or circulation require professional evaluation.</p>",
+  "benefits_title": "Potential Nattokinase Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "shield-check",
-      "title": "Wellness Routine Support",
-      "description": "Nattokinase is commonly researched or used in formulas connected to circulation and cardiovascular wellness research."
+      "icon": "heart-pulse",
+      "title": "Circulation Label Literacy",
+      "description": "Helps shoppers compare circulation-focused formulas with a clearer understanding of enzyme activity and safety cautions."
     },
     {
       "icon": "activity",
-      "title": "Label Comparison Value",
-      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
+      "title": "Fibrin Research Context",
+      "description": "Often researched for fibrin-related enzyme activity, while still requiring responsible, non-medical framing."
     },
     {
-      "icon": "leaf",
-      "title": "Formula Stacking Context",
-      "description": "Nattokinase often appears alongside complementary ingredients such as omega-3 fatty acids, grape seed extract, pine bark extract, and garlic."
+      "icon": "search",
+      "title": "Product Comparison Value",
+      "description": "Encourages comparison of activity units, source, serving size, and combination ingredients."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Safety Awareness",
+      "description": "Highlights why blood-thinner warnings and surgery cautions are essential on supplement labels."
+    },
+    {
+      "icon": "sprout",
+      "title": "Fermented Food Origin",
+      "description": "Connects supplement education to natto, a traditional fermented soybean food."
     },
     {
       "icon": "clipboard-check",
-      "title": "Everyday Education",
-      "description": "Understanding nattokinase helps shoppers separate educational ingredient context from exaggerated supplement claims."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Targeted Category Fit",
-      "description": "Brands may include nattokinase in products designed for circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison."
-    },
-    {
-      "icon": "heart-pulse",
-      "title": "Safety-Aware Selection",
-      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+      "title": "Formula Transparency",
+      "description": "Best evaluated through standardized activity, allergen disclosure, and clear directions."
     }
   ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
-  "typical_dose": "Often 100-200 mg or 2,000 FU per serving",
-  "dosage": "Often 100-200 mg or 2,000 FU per serving",
-  "dosage_content": "Often 100-200 mg or 2,000 FU per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain nattokinase unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Nattokinase may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "dosage_title": "Typical Nattokinase Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by enzyme activity units",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Nattokinase products vary by enzyme activity and serving size. Many labels use capsule servings once or twice daily, but the right approach depends on the product standardization and individual health status.</p><p>Do not combine nattokinase with blood thinners, antiplatelet drugs, aspirin therapy, surgery preparation, or bleeding-risk conditions without clinician guidance. Follow label directions exactly and avoid using multiple circulation supplements at the same time unless reviewed by a professional.</p>",
+  "safety_title": "Nattokinase Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive discomfort",
-    "Headache or sensitivity",
-    "Unexpected tolerance changes",
-    "Allergic reaction in sensitive individuals"
+    "Bleeding or Bruising Risk",
+    "Digestive Upset",
+    "Headache or Dizziness",
+    "Soy Sensitivity"
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+      "title": "Bleeding or Bruising Risk",
+      "description": "May increase bleeding tendency in sensitive users or when combined with clotting-related medications."
     },
     {
-      "icon": "activity",
-      "title": "Tolerance Varies",
-      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+      "title": "Digestive Upset",
+      "description": "Some people may notice nausea, stomach discomfort, or changes in digestion."
     },
     {
-      "icon": "alert-circle",
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+      "title": "Headache or Dizziness",
+      "description": "Occasional headache, dizziness, or lightheadedness may occur."
     },
     {
-      "icon": "shield-alert",
-      "title": "Dose Awareness",
-      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+      "title": "Soy Sensitivity",
+      "description": "People with soy allergy or intolerance should review the source and allergen labeling carefully."
     }
   ],
   "drug_interactions_json": [
-    "Review nattokinase with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing omega-3 fatty acids, grape seed extract, pine bark extract, and garlic.",
-    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
-    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+    "Do not use with warfarin, heparin, direct oral anticoagulants, antiplatelet drugs, or aspirin therapy unless directed by a clinician.",
+    "Use caution with garlic, ginkgo, fish oil, high-dose vitamin E, turmeric, and other supplements that may affect bleeding risk.",
+    "Stop before surgery or dental procedures only according to clinician instructions.",
+    "Discuss use with a healthcare professional if taking blood pressure medication or managing cardiovascular disease."
   ],
   "who_should_avoid_json": [
-    "People with known allergy or sensitivity to nattokinase or its source material.",
-    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
-    "People taking medication for blood thinners, bleeding disorders, surgery, soy allergy, pregnancy, nursing, or cardiovascular medication without professional review.",
-    "Children unless specifically directed by a qualified healthcare professional.",
-    "Anyone expecting nattokinase to replace medical diagnosis, prescribed treatment, or emergency care."
+    "People using anticoagulant or antiplatelet medication.",
+    "People with bleeding disorders or unexplained bruising.",
+    "Anyone preparing for surgery or dental procedures without clinician guidance.",
+    "Pregnant or nursing users unless approved by a healthcare professional.",
+    "People with soy allergy unless the product is clearly reviewed for allergen risk."
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Answers to common questions about nattokinase, label comparison, dosage context, and safety.",
-  "faq_json": [
+  "food_sources_title": "Nattokinase Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Nattokinase is typically associated with fermented soybean natto cultures. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
     {
-      "question": "What is Nattokinase?",
-      "answer": "Nattokinase is a specialty enzyme commonly discussed in supplement education for circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison."
+      "title": "Primary Source",
+      "description": "Fermented soybean natto cultures"
     },
     {
-      "question": "What is Nattokinase commonly used for?",
-      "answer": "It is commonly researched or included in formulas related to circulation and cardiovascular wellness research, depending on the product and dose."
+      "title": "Common Form",
+      "description": "Capsule, tablet, softgel, enzyme blend"
     },
     {
-      "question": "Is Nattokinase a medicine?",
-      "answer": "No. Nattokinase supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
-    },
-    {
-      "question": "What dose of Nattokinase is common?",
-      "answer": "Labels often list often 100-200 mg or 2,000 fu per serving, but product form, potency, and serving frequency should be compared carefully."
-    },
-    {
-      "question": "Can Nattokinase cause side effects?",
-      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
-    },
-    {
-      "question": "Who should be cautious with Nattokinase?",
-      "answer": "People with blood thinners, bleeding disorders, surgery, soy allergy, pregnancy, nursing, or cardiovascular medication should discuss use with a healthcare professional before starting."
-    },
-    {
-      "question": "Can Nattokinase be combined with other supplements?",
-      "answer": "Some formulas combine it with ingredients such as omega-3 fatty acids, grape seed extract, pine bark extract, and garlic, but stacking should be reviewed for dose overlap and safety."
-    },
-    {
-      "question": "How should I compare Nattokinase products?",
-      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
-    },
-    {
-      "question": "How long does Nattokinase take to work?",
-      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
-    },
-    {
-      "question": "Is Nattokinase safe for daily use?",
-      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
     }
   ],
-  "sidebar_profile_title": "Nattokinase Snapshot",
-  "sidebar_profile_content": "Nattokinase is a specialty enzyme commonly reviewed for circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "faq_title": "Nattokinase FAQs",
+  "faq_subtitle": "Common questions about nattokinase supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is nattokinase?",
+      "answer": "Nattokinase is an enzyme produced during natto fermentation and used in supplements mainly for cardiovascular wellness education."
+    },
+    {
+      "question": "Is nattokinase the same as natto?",
+      "answer": "No. Natto is a fermented soybean food, while nattokinase supplements usually contain extracted or standardized enzyme activity."
+    },
+    {
+      "question": "Can nattokinase replace blood thinners?",
+      "answer": "No. It should never replace prescribed anticoagulant, antiplatelet, blood pressure, or cardiovascular medication."
+    },
+    {
+      "question": "What should I compare on a nattokinase label?",
+      "answer": "Look for enzyme activity, serving size, soy allergen information, vitamin K notes, warnings, and combination ingredients."
+    },
+    {
+      "question": "Can I take nattokinase with aspirin?",
+      "answer": "Do not combine it with aspirin therapy unless your healthcare professional specifically approves it."
+    },
+    {
+      "question": "Does nattokinase contain vitamin K?",
+      "answer": "Some products are processed to remove or limit vitamin K, but labels vary, so users on warfarin should be especially cautious."
+    },
+    {
+      "question": "When is nattokinase usually taken?",
+      "answer": "Labels vary. Follow the product directions and ask a clinician if you have clotting, bleeding, blood pressure, or heart concerns."
+    },
+    {
+      "question": "Who should avoid nattokinase?",
+      "answer": "People on blood thinners, those with bleeding disorders, surgery patients, pregnant or nursing users, and people with soy allergy should avoid unsupervised use."
+    },
+    {
+      "question": "Is higher dose always better?",
+      "answer": "No. Enzyme activity, safety, and individual risk matter more than simply choosing a larger serving."
+    },
+    {
+      "question": "Is nattokinase FDA-approved to treat disease?",
+      "answer": "No. Dietary supplements are not approved to diagnose, treat, cure, or prevent disease."
+    }
+  ],
+  "sidebar_profile_title": "Nattokinase Profile Snapshot",
+  "sidebar_profile_content": "Nattokinase is a proteolytic enzyme derived from natto, a traditional fermented soybean food, and used in supplements for cardiovascular wellness education.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Specialty enzyme"
-    },
-    {
-      "label": "Typical Dose",
-      "value": "Often 100-200 mg or 2,000 FU per serving"
-    },
-    {
-      "label": "Best For",
-      "value": "Circulation and cardiovascular wellness research"
-    },
-    {
-      "label": "Safety Level",
-      "value": "Review blood thinners, bleeding disorders, surgery, soy allergy, pregnancy, nursing, or cardiovascular medication"
-    },
-    {
-      "label": "Origin",
-      "value": "Fermented soy natto"
-    },
-    {
-      "label": "Part Used",
       "value": "Fermentation-derived enzyme"
     },
     {
+      "label": "Typical Dose",
+      "value": "Varies by enzyme activity units"
+    },
+    {
+      "label": "Best For",
+      "value": "Circulation formula research"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Use caution with bleeding risk"
+    },
+    {
+      "label": "Origin",
+      "value": "Natto fermentation"
+    },
+    {
+      "label": "Part Used",
+      "value": "Enzyme extract"
+    },
+    {
       "label": "Form",
-      "value": "Capsule or enzyme blend"
+      "value": "Capsule or tablet"
     },
     {
       "label": "Taste",
-      "value": "Neutral in capsules"
+      "value": "Usually neutral in capsules"
     }
   ],
-  "sidebar_at_a_glance_content": "- Specialty enzyme used in supplement education\n- Commonly discussed for circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison\n- Compare form, dose, and supporting ingredients\n- Often compared with omega-3 fatty acids, grape seed extract, pine bark extract, and garlic\n- Not a substitute for personal medical advice",
-  "full_description": "Nattokinase is a specialty enzyme included in Suppriva's ingredient library for circulation wellness, fibrinolytic enzyme research, and cardiovascular supplement comparison.",
-  "best_for": "Circulation and cardiovascular wellness research",
-  "safety_level": "Review blood thinners, bleeding disorders, surgery, soy allergy, pregnancy, nursing, or cardiovascular medication",
-  "origin_country": "Fermented soy natto",
+  "sidebar_at_a_glance_content": "<p>Nattokinase is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Nattokinase is a proteolytic enzyme derived from natto, a traditional fermented soybean food, and used in supplements for cardiovascular wellness education.",
+  "best_for": "Cardiovascular wellness research, circulation-focused formulas, and label comparison",
+  "safety_level": "Use caution with bleeding risk",
+  "origin_country": "Fermented soybean natto cultures",
   "part_used": "Fermentation-derived enzyme",
-  "ingredient_form": "Capsule or enzyme blend",
-  "taste_profile": "Neutral in capsules",
+  "ingredient_form": "Capsule, tablet, softgel, enzyme blend",
+  "taste_profile": "Usually neutral in capsules; natto itself has a strong fermented taste",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Nattokinase Benefits, Dosage and Safety | Suppriva",
+  "uses_title": "Nattokinase Uses",
+  "uses_subtitle": "Common wellness contexts where nattokinase appears.",
+  "uses_content": "<p>Nattokinase is commonly used in cardiovascular wellness research, circulation-focused formulas, and label comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Cardiovascular wellness research, circulation-focused formulas, and label comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Nattokinase Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on nattokinase varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Nattokinase References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "omega-3-fatty-acids",
+    "garlic",
+    "ginkgo-biloba",
+    "coq10",
+    "pine-bark-extract"
+  ],
+  "seo_title": "Nattokinase Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "nattokinase",
-  "seo_description": "Explore nattokinase benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "seo_description": "Explore nattokinase benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/nattokinase",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Nattokinase Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore nattokinase benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+  "meta_title": "Nattokinase Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore nattokinase benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

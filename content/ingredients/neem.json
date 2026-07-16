@@ -1,142 +1,161 @@
 {
   "name": "Neem",
   "scientific_name": "Azadirachta indica",
+  "ingredient_category": "Herbal Extracts",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Neem is a botanical extract used in supplement formulas for traditional botanical wellness, skin-focused products, and cleansing routines.",
+  "short_description": "Neem is a traditional botanical from the neem tree used in wellness, oral care, skin care, and herbal supplement discussions.",
   "overview_title": "Neem Overview",
-  "overview_subtitle": "A practical guide to neem in modern supplement formulas.",
-  "overview_content": "<p>Neem is a botanical extract that appears in wellness products because of bitter limonoids and traditional botanical use in skin and wellness products. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing neem products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Neem supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Neem has been used in traditional wellness and personal-care routines for centuries across South Asia.</p>",
+  "overview_subtitle": "A responsible guide to neem, traditional use, supplement forms, and safety boundaries.",
+  "overview_content": "<p>Neem is a botanical ingredient from the Azadirachta indica tree, widely known in traditional wellness systems and modern personal-care products. It appears in supplements, herbal powders, oral care formulas, skin products, and topical oils. Because neem is used in many different ways, the first step is to identify the part of the plant and the product format. Neem leaf extract, neem bark, neem seed oil, and neem-containing toothpaste should not be treated as the same ingredient.</p><p>In supplement research, neem is often discussed for herbal wellness, antioxidant activity, oral hygiene, skin-focused routines, and metabolic research. These are educational contexts, not disease-treatment promises. Neem should not be promoted as a cure for infections, diabetes, fertility concerns, parasites, inflammation, or skin disease. Many traditional uses are not the same as clinically proven supplement outcomes, especially when the dose, extract, and safety profile differ.</p><p>Safety is especially important with neem. Neem oil and some concentrated preparations can be toxic if swallowed, particularly for children. Internal neem use may not be appropriate during pregnancy, while nursing, when trying to conceive, or when managing liver, kidney, autoimmune, blood sugar, or fertility-related concerns. People using diabetes medication, immune-modulating medication, or hepatotoxic medications should speak with a healthcare professional before considering oral neem supplements.</p><p>Neem labels can be confusing because the ingredient may be included for very different reasons. A toothpaste may use neem for oral care positioning, a skin product may use neem oil topically, and a capsule may use leaf extract as an herbal supplement. Consumers should not transfer claims from one format to another. The route of use, concentration, and safety directions matter.</p><p>For Suppriva readers, neem belongs in an ingredient library because it teaches botanical nuance. The same plant can produce several ingredient types, and each one needs its own safety lens. A responsible label should clearly state the plant part, extract ratio if available, serving size, route of use, and cautions. If a product simply says neem without explaining the form, it deserves extra scrutiny.</p><p>Neem can be a useful ingredient to understand when comparing herbal formulas, but it should be approached carefully. Strong botanicals are not automatically safer because they are natural. Professional guidance is important for internal use, and topical products should still be patch-tested when appropriate.</p><p>A useful way to research Neem is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether neem is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Neem should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Bitter Botanical",
+  "interesting_fact": "<p>Neem is known for its intensely bitter taste, and different parts of the tree can have very different uses and safety profiles.</p>",
   "how_it_works_title": "How Neem Works",
-  "how_it_works_subtitle": "How neem supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Traditional Botanical Support",
-  "how_it_works_highlight_description": "Neem is most often positioned around traditional botanical support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Neem works through plant compounds such as azadirachtin-related limonoids that support its traditional use profile. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare neem by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Neem contains complex plant compounds, but internal use requires careful safety review.",
+  "how_it_works_highlight_title": "Part-used matters",
+  "how_it_works_highlight_description": "Neem leaf, bark, and seed oil are not interchangeable, so label form and intended use are essential.",
+  "how_it_works_content": "<p>Neem contains limonoids and other plant compounds that are studied for antioxidant, microbial, skin, oral care, and metabolic research contexts. The practical effect depends on the part used, extraction method, and route of use.</p><p>Leaf powders and extracts are different from seed oil. Neem oil is commonly used topically in diluted products, but internal use of neem oil can be unsafe and should not be treated like a normal supplement.</p><p>Because neem is biologically active, label cautions should be taken seriously, especially around pregnancy, fertility, children, liver health, and blood sugar medication.</p>",
   "benefits_title": "Potential Neem Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether neem fits the full formula.",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Traditional botanical support",
-      "description": "Neem is commonly evaluated for traditional botanical support within supplement formulas and wellness routines."
+      "title": "Botanical Education",
+      "description": "Helps users understand traditional herbal ingredients and the importance of plant part identification."
+    },
+    {
+      "icon": "smile",
+      "title": "Oral Care Context",
+      "description": "Often appears in toothpaste and oral care formulas where neem leaf or extract is used for herbal positioning."
     },
     {
       "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Neem to support a more targeted product story around traditional botanical wellness, skin-focused products, and cleansing routines."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
-    },
-    {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Neem may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "title": "Skin Routine Awareness",
+      "description": "Neem oil and extracts are common in topical products, though topical and oral uses differ."
     },
     {
       "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Neem supplements."
+      "title": "Label Safety Review",
+      "description": "Encourages careful review of pregnancy, child, liver, fertility, and blood sugar cautions."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Neem helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "search",
+      "title": "Ingredient Comparison",
+      "description": "Useful for comparing botanical extracts, powders, oils, and personal-care formulas."
+    },
+    {
+      "icon": "sprout",
+      "title": "Traditional Use Context",
+      "description": "Connects modern supplement labels with a long history of traditional botanical use."
     }
   ],
   "dosage_title": "Typical Neem Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Serving sizes vary by leaf, bark, seed, or oil form; always follow the specific product label.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Serving sizes vary by leaf, bark, seed, or oil form; always follow the specific product label.</p><p>Because neem can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies widely by form",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Neem dosage varies widely by form, including leaf powder, standardized extract, tea, topical oil, and oral care products. There is no universal serving that applies to all neem products.</p><p>Follow the product label and avoid internal neem oil use unless specifically directed by a qualified clinician. Pregnant users, children, and people with medical conditions should avoid unsupervised internal use.</p>",
   "safety_title": "Neem Safety Information",
-  "safety_subtitle": "Use neem with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Digestive Upset",
+    "Skin Irritation",
+    "Blood Sugar Changes",
+    "Toxicity Risk with Oil"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Neem may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Digestive Upset",
+      "description": "Oral neem may cause nausea, stomach upset, diarrhea, or discomfort in some users."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Skin Irritation",
+      "description": "Topical neem products can irritate sensitive skin or cause allergic reactions."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Blood Sugar Changes",
+      "description": "Neem may affect blood sugar, which matters for people using diabetes medication."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Toxicity Risk with Oil",
+      "description": "Neem oil can be dangerous if swallowed, especially by children."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    "Use caution with diabetes medications because neem may affect blood sugar.",
+    "Discuss use with a clinician if taking immune-modulating medication or managing autoimmune conditions.",
+    "Avoid combining strong herbal extracts without professional guidance, especially if liver or kidney issues are present.",
+    "Do not ingest neem oil unless a qualified clinician specifically directs it."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Neem or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "Pregnant or nursing users unless advised by a qualified clinician.",
+    "Children, especially for oral neem oil or concentrated preparations.",
+    "People trying to conceive or managing fertility concerns.",
+    "People taking diabetes medications without medical guidance.",
+    "People with liver, kidney, or autoimmune conditions unless reviewed by a professional."
+  ],
+  "food_sources_title": "Neem Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Neem is typically associated with neem tree native to south asia. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Neem tree native to South Asia"
+    },
+    {
+      "title": "Common Form",
+      "description": "Capsule, powder, extract, oil, oral care ingredient"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
   ],
   "faq_title": "Neem FAQs",
   "faq_subtitle": "Common questions about neem supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Neem used for in supplements?",
-      "answer": "Neem is commonly used in formulas focused on traditional botanical wellness, skin-focused products, and cleansing routines. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is neem?",
+      "answer": "Neem is a botanical ingredient from the Azadirachta indica tree used in traditional wellness, topical products, oral care, and some supplements."
     },
     {
-      "question": "Is Neem a medicine?",
-      "answer": "No. Neem is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is neem leaf the same as neem oil?",
+      "answer": "No. Neem leaf, bark, and seed oil have different uses and safety profiles."
     },
     {
-      "question": "What form of Neem should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Can neem oil be taken internally?",
+      "answer": "Neem oil should not be swallowed casually and can be dangerous, especially for children."
     },
     {
-      "question": "How long does Neem take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Why is neem used in oral care?",
+      "answer": "Neem appears in some toothpaste and mouth care products because of its traditional herbal oral-care use."
     },
     {
-      "question": "Can Neem cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Is neem safe during pregnancy?",
+      "answer": "Pregnant users should avoid internal neem unless a qualified clinician specifically advises otherwise."
     },
     {
-      "question": "Can I take Neem every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can neem affect blood sugar?",
+      "answer": "Neem may influence blood sugar, so people using diabetes medication should seek professional guidance."
     },
     {
-      "question": "What should I check on a Neem label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "What should I look for on a neem label?",
+      "answer": "Check plant part, form, route of use, serving size, warnings, and whether the product is topical or oral."
     },
     {
-      "question": "Does Neem interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Does neem cure infections?",
+      "answer": "No. Neem supplements are not approved to treat infections or replace medical care."
     },
     {
-      "question": "Is Neem suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Can neem irritate skin?",
+      "answer": "Yes. Topical neem can irritate sensitive skin, so patch testing may be useful."
     },
     {
-      "question": "Can Neem replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Who should avoid neem?",
+      "answer": "Children, pregnant or nursing users, people trying to conceive, and people with blood sugar or liver concerns should avoid unsupervised use."
     }
   ],
   "sidebar_profile_title": "Neem Profile Snapshot",
-  "sidebar_profile_content": "Neem is a botanical extract commonly evaluated for traditional botanical wellness, skin-focused products, and cleansing routines.",
+  "sidebar_profile_content": "Neem is a traditional botanical from the neem tree used in wellness, oral care, skin care, and herbal supplement discussions.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -144,65 +163,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary by leaf, bark, seed, or oil form; always follow the specific product label."
+      "value": "Varies widely by form"
     },
     {
       "label": "Best For",
-      "value": "Traditional botanical wellness, skin-focused products, and cleansing routines"
+      "value": "Herbal and oral care research"
     },
     {
       "label": "Safety Level",
-      "value": "Use caution; not appropriate for pregnancy or children unless directed by a clinician"
+      "value": "Use caution internally"
     },
     {
       "label": "Origin",
-      "value": "Indian subcontinent"
+      "value": "South Asian neem tree"
     },
     {
       "label": "Part Used",
-      "value": "Leaf, bark, seed, or oil depending on product"
+      "value": "Leaf, bark, seed oil"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract, oil, topical product"
+      "value": "Capsule, powder, oil, extract"
     },
     {
       "label": "Taste",
-      "value": "Very bitter and herbal"
+      "value": "Very bitter"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Neem is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Neem is used in supplement formulas for traditional botanical wellness, skin-focused products, and cleansing routines and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Traditional botanical wellness, skin-focused products, and cleansing routines",
-  "safety_level": "Use caution; not appropriate for pregnancy or children unless directed by a clinician",
-  "origin_country": "Indian subcontinent",
-  "part_used": "Leaf, bark, seed, or oil depending on product",
-  "ingredient_form": "Capsule, powder, extract, oil, topical product",
+  "sidebar_at_a_glance_content": "<p>Neem is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Neem is a traditional botanical from the neem tree used in wellness, oral care, skin care, and herbal supplement discussions.",
+  "best_for": "Herbal wellness research, oral care formulas, skin-focused products, and botanical label comparison",
+  "safety_level": "Use caution internally",
+  "origin_country": "Neem tree native to South Asia",
+  "part_used": "Leaf, bark, seed oil, and extract depending on product",
+  "ingredient_form": "Capsule, powder, extract, oil, oral care ingredient",
   "taste_profile": "Very bitter and herbal",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Neem Uses",
+  "uses_subtitle": "Common wellness contexts where neem appears.",
+  "uses_content": "<p>Neem is commonly used in herbal wellness research, oral care formulas, skin-focused products, and botanical label comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Herbal wellness research, oral care formulas, skin-focused products, and botanical label comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Neem Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on neem varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Neem References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "tea-tree-oil",
+    "moringa",
+    "turmeric",
+    "aloe-vera",
+    "licorice-extract"
+  ],
   "seo_title": "Neem Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "neem",
-  "seo_description": "Explore neem benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore neem benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/neem",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Neem Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore neem benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore neem benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

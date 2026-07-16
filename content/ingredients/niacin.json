@@ -1,208 +1,260 @@
 {
   "name": "Niacin",
   "scientific_name": "Vitamin B3",
+  "ingredient_category": "Vitamins",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Niacin is a water-soluble b vitamin used in supplement formulas for energy metabolism and b-complex formulas.",
+  "short_description": "Niacin is an essential B vitamin used for energy metabolism, cellular function, and supplement label education.",
   "overview_title": "Niacin Overview",
-  "overview_subtitle": "A practical guide to niacin in modern supplement formulas.",
-  "overview_content": "<p>Niacin is a water-soluble b vitamin that appears in wellness products because of vitamin B3 forms used for NAD/NADP-related energy metabolism. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing niacin products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Niacin supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Niacin can cause a temporary warming flush, especially in immediate-release forms.</p>",
+  "overview_subtitle": "A responsible guide to vitamin B3 forms, metabolism support, and flushing safety.",
+  "overview_content": "<p>Niacin is vitamin B3, an essential nutrient involved in energy metabolism, cellular function, and the production of coenzymes used throughout the body. It appears in multivitamins, B-complex products, energy formulas, skin-health supplements, and sometimes standalone high-dose products. Because niacin is both an essential vitamin and a supplement ingredient, it is important to separate basic nutritional support from therapeutic use. High-dose niacin has a medical history in cholesterol management, but that use requires clinician supervision and should not be copied with over-the-counter supplements.</p><p>There are several forms of niacin on supplement labels. Nicotinic acid is the form most associated with the classic niacin flush, a warm, red, tingling sensation that can be uncomfortable. Niacinamide, also called nicotinamide, is another form of vitamin B3 that does not generally produce the same flushing effect and is commonly used in multivitamins and skin-focused products. Inositol hexanicotinate is sometimes marketed as flush-free niacin, but its behavior may differ from nicotinic acid.</p><p>Niacin supports normal metabolism because the body uses it to make NAD and NADP, coenzymes involved in energy production, cellular repair processes, and nutrient metabolism. This does not mean taking more niacin creates more energy for everyone. If a person already gets enough vitamin B3 from food and supplements, additional niacin may not provide noticeable benefits and may increase side effects.</p><p>Safety depends heavily on dose and form. Low amounts in multivitamins are usually very different from high-dose standalone niacin. Higher intakes can cause flushing, itching, headache, digestive upset, blood sugar changes, gout concerns, liver stress, and medication interactions. Extended-release niacin products deserve extra caution because certain forms have been associated with liver-related safety concerns when used improperly.</p><p>For Suppriva readers, niacin is a label literacy ingredient. Users should check whether a product lists niacin as nicotinic acid, niacinamide, or another form, and should compare the amount against daily value. A pre-workout, B-complex, multivitamin, and cholesterol-focused product may all use niacin for different reasons. More is not automatically better.</p><p>Niacin can be useful as part of balanced nutrition, but high-dose use belongs in a medical conversation. Anyone with liver disease, diabetes, gout, ulcers, heavy alcohol use, pregnancy, nursing, or prescription medication use should seek professional guidance before using high-dose niacin.</p><p>A useful way to research Niacin is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether niacin is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Niacin should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Flush Form Note",
+  "interesting_fact": "<p>Nicotinic acid niacin can cause a warm skin flush, while niacinamide is a different form that is commonly used when flushing is not desired.</p>",
   "how_it_works_title": "How Niacin Works",
-  "how_it_works_subtitle": "How niacin supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Energy Metabolism Support",
-  "how_it_works_highlight_description": "Niacin is most often positioned around energy metabolism support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Niacin works through coenzyme pathways that support cellular energy production and normal nutrient metabolism. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare niacin by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Niacin supports normal energy metabolism as part of essential B vitamin nutrition.",
+  "how_it_works_highlight_title": "Form changes the experience",
+  "how_it_works_highlight_description": "Nicotinic acid, niacinamide, and inositol hexanicotinate can feel different and should not be treated as identical.",
+  "how_it_works_content": "<p>Niacin helps form NAD and NADP, coenzymes involved in energy metabolism and cellular biochemical reactions. This is why vitamin B3 is considered essential.</p><p>Different niacin forms behave differently. Nicotinic acid can cause flushing, while niacinamide is commonly used when flushing is not desired.</p><p>High-dose niacin can affect liver markers, blood sugar, uric acid, and medications, so supplement labels should be read carefully.</p>",
   "benefits_title": "Potential Niacin Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether niacin fits the full formula.",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Energy metabolism support",
-      "description": "Niacin is commonly evaluated for energy metabolism support within supplement formulas and wellness routines."
+      "icon": "zap",
+      "title": "Energy Metabolism",
+      "description": "Supports normal nutrient metabolism as an essential B vitamin."
     },
     {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Niacin to support a more targeted product story around energy metabolism and b-complex formulas."
+      "icon": "brain",
+      "title": "Cellular Function",
+      "description": "Helps form coenzymes involved in many cellular reactions."
     },
     {
       "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
-    },
-    {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Niacin may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "title": "Form Awareness",
+      "description": "Teaches shoppers to distinguish nicotinic acid, niacinamide, and flush-free forms."
     },
     {
       "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Niacin supplements."
+      "title": "Dose Safety Review",
+      "description": "Encourages careful comparison of daily-value amounts versus high-dose products."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Niacin helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "sparkles",
+      "title": "Skin Formula Context",
+      "description": "Niacinamide is common in skin-focused supplements and topical discussions."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "B-Complex Label Reading",
+      "description": "Useful for comparing multivitamins, B-complex formulas, and energy supplements."
     }
   ],
   "dosage_title": "Typical Niacin Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Dose varies greatly by niacin form; high-dose niacin should only be used with medical supervision.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Dose varies greatly by niacin form; high-dose niacin should only be used with medical supervision.</p><p>Because niacin can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies from daily value to high dose",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Niacin needs are normally measured in milligrams of niacin equivalents. Multivitamins usually provide modest daily-value amounts, while standalone products may contain much higher doses.</p><p>Do not use high-dose niacin for cholesterol or other medical purposes without clinician supervision. Review the form, dose, release type, and warnings before use.</p>",
   "safety_title": "Niacin Safety Information",
-  "safety_subtitle": "Use niacin with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Niacin Flush",
+    "Digestive Upset",
+    "Headache or Dizziness",
+    "Liver Stress"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Niacin may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Niacin Flush",
+      "description": "Nicotinic acid may cause warmth, redness, tingling, or itching."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or diarrhea can occur, especially with higher doses."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Headache or Dizziness",
+      "description": "Some users may experience headache, dizziness, or lightheadedness."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Liver Stress",
+      "description": "High doses or certain extended-release products may raise liver safety concerns."
     }
   ],
   "drug_interactions_json": [
-    "Check total daily intake from multivitamins, fortified foods, and other supplements.",
-    "Review use with medications that may affect absorption or nutrient status.",
-    "Avoid stacking multiple high-dose formulas unless clinician-guided.",
-    "Discuss use if pregnant, nursing, or managing a diagnosed deficiency."
+    "Discuss high-dose niacin with a clinician if using cholesterol medications or statins.",
+    "Use caution with diabetes medications because niacin may affect blood sugar.",
+    "Avoid high-dose use with liver disease, heavy alcohol use, or hepatotoxic medications unless supervised.",
+    "Ask a clinician before use if taking blood pressure medication, gout medication, or anticoagulants."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Niacin or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with liver disease unless supervised by a clinician.",
+    "People with active ulcers, gout, or poorly controlled diabetes without medical guidance.",
+    "People using high-dose cholesterol medication plans without clinician oversight.",
+    "Pregnant or nursing users considering high-dose niacin.",
+    "Anyone who has reacted strongly to niacin flush or extended-release niacin."
+  ],
+  "food_sources_title": "Niacin Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Niacin is typically associated with dietary vitamin found in foods and supplement forms. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Dietary vitamin found in foods and supplement forms"
+    },
+    {
+      "title": "Common Form",
+      "description": "Capsule, tablet, multivitamin, B-complex, niacinamide, nicotinic acid"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
   ],
   "faq_title": "Niacin FAQs",
   "faq_subtitle": "Common questions about niacin supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Niacin used for in supplements?",
-      "answer": "Niacin is commonly used in formulas focused on energy metabolism and b-complex formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is niacin?",
+      "answer": "Niacin is vitamin B3, an essential nutrient involved in energy metabolism and cellular function."
     },
     {
-      "question": "Is Niacin a medicine?",
-      "answer": "No. Niacin is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "What causes niacin flush?",
+      "answer": "Nicotinic acid can cause temporary warmth, redness, tingling, and itching known as a niacin flush."
     },
     {
-      "question": "What form of Niacin should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Is niacinamide the same as niacin?",
+      "answer": "Niacinamide is a form of vitamin B3, but it does not usually cause the same flushing effect as nicotinic acid."
     },
     {
-      "question": "How long does Niacin take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Can niacin boost energy?",
+      "answer": "Niacin supports normal metabolism, but extra niacin does not necessarily create more energy if your intake is already adequate."
     },
     {
-      "question": "Can Niacin cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Is high-dose niacin safe?",
+      "answer": "High-dose niacin should be used only with professional guidance because it can affect liver, blood sugar, and other health markers."
     },
     {
-      "question": "Can I take Niacin every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can niacin help cholesterol?",
+      "answer": "Prescription-level niacin use for cholesterol is a medical decision and should not be self-managed with supplements."
     },
     {
-      "question": "What should I check on a Niacin label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "What should I check on a niacin label?",
+      "answer": "Check the form, dose, percent daily value, release type, and warnings."
     },
     {
-      "question": "Does Niacin interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Can niacin interact with medication?",
+      "answer": "Yes. It may interact with cholesterol drugs, diabetes medication, blood pressure medication, and other therapies."
     },
     {
-      "question": "Is Niacin suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Who should avoid high-dose niacin?",
+      "answer": "People with liver disease, gout, ulcers, diabetes, heavy alcohol use, or pregnancy should avoid unsupervised high-dose use."
     },
     {
-      "question": "Can Niacin replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Is more niacin better?",
+      "answer": "No. Once nutritional needs are met, higher doses may increase side effects without added benefit."
     }
   ],
   "sidebar_profile_title": "Niacin Profile Snapshot",
-  "sidebar_profile_content": "Niacin is a water-soluble b vitamin commonly evaluated for energy metabolism and b-complex formulas.",
+  "sidebar_profile_content": "Niacin is an essential B vitamin used for energy metabolism, cellular function, and supplement label education.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Water-soluble B vitamin"
+      "value": "Vitamin B3"
     },
     {
       "label": "Typical Dose",
-      "value": "Dose varies greatly by niacin form; high-dose niacin should only be used with medical supervision."
+      "value": "Varies from daily value to high dose"
     },
     {
       "label": "Best For",
-      "value": "Energy metabolism and B-complex formulas"
+      "value": "B-vitamin label research"
     },
     {
       "label": "Safety Level",
-      "value": "Dose-sensitive; flushing and liver concerns can occur with high-dose forms"
+      "value": "Dose-dependent"
     },
     {
       "label": "Origin",
-      "value": "Dietary vitamin found in foods and supplements"
+      "value": "Foods and supplements"
     },
     {
       "label": "Part Used",
-      "value": "Vitamin compound"
+      "value": "Nutrient compound"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, powder, B-complex"
+      "value": "Nicotinic acid or niacinamide"
     },
     {
       "label": "Taste",
-      "value": "Neutral to bitter"
+      "value": "Usually neutral"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Niacin is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Niacin is used in supplement formulas for energy metabolism and b-complex formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Energy metabolism and B-complex formulas",
-  "safety_level": "Dose-sensitive; flushing and liver concerns can occur with high-dose forms",
-  "origin_country": "Dietary vitamin found in foods and supplements",
-  "part_used": "Vitamin compound",
-  "ingredient_form": "Capsule, tablet, powder, B-complex",
-  "taste_profile": "Neutral to bitter",
+  "sidebar_at_a_glance_content": "<p>Niacin is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Niacin is an essential B vitamin used for energy metabolism, cellular function, and supplement label education.",
+  "best_for": "Vitamin B complex research, energy metabolism education, and deficiency-awareness labels",
+  "safety_level": "Dose-dependent",
+  "origin_country": "Dietary vitamin found in foods and supplement forms",
+  "part_used": "Vitamin B3 compound",
+  "ingredient_form": "Capsule, tablet, multivitamin, B-complex, niacinamide, nicotinic acid",
+  "taste_profile": "Usually neutral in capsules or tablets",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Niacin Uses",
+  "uses_subtitle": "Common wellness contexts where niacin appears.",
+  "uses_content": "<p>Niacin is commonly used in vitamin b complex research, energy metabolism education, and deficiency-awareness labels. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Vitamin B complex research, energy metabolism education, and deficiency-awareness labels"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Niacin Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on niacin varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Niacin References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "vitamin-b12",
+    "vitamin-b6",
+    "folate-methylfolate",
+    "biotin",
+    "choline"
+  ],
   "seo_title": "Niacin Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "niacin",
-  "seo_description": "Explore niacin benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore niacin benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/niacin",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Niacin Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore niacin benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore niacin benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
