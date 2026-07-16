@@ -1,142 +1,161 @@
 {
   "name": "Lavender Oil",
   "scientific_name": "Lavandula angustifolia oil",
+  "ingredient_category": "Oils",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Lavender Oil is a essential oil used in supplement formulas for relaxation, sleep-support routines, and aromatic wellness products.",
+  "short_description": "Lavender Oil is an aromatic essential oil used in wellness products for relaxation-focused routines, topical care, and sensory support.",
   "overview_title": "Lavender Oil Overview",
-  "overview_subtitle": "A practical guide to lavender oil in modern supplement formulas.",
-  "overview_content": "<p>Lavender Oil is a essential oil that appears in wellness products because of linalool and linalyl acetate-rich volatile oil commonly used in relaxation-focused products. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing lavender oil products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Lavender Oil supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Lavender oil quality is often judged by its linalool and linalyl acetate profile.</p>",
+  "overview_subtitle": "A practical look at lavender oil as an aromatic wellness ingredient.",
+  "overview_content": "<p>Lavender oil is a concentrated aromatic oil commonly distilled from the flowering tops of Lavandula angustifolia. In wellness products, it is best understood as a sensory and topical-support ingredient rather than a nutrient. People usually encounter lavender oil in aromatherapy blends, massage oils, bath products, roll-ons, sleep-support products, and some specialized supplement formats. Its familiar floral scent is one reason it has become one of the most recognizable essential oils in the consumer wellness space.</p><p>The main quality question with lavender oil is not whether the ingredient sounds familiar, but how it is sourced and used. Essential oils are highly concentrated, so a small amount can carry a strong aroma and biological activity. A good product should identify the botanical species, disclose whether the oil is pure or diluted, provide clear directions, and avoid implying that aroma alone can replace medical care. Lavender oil used on skin should generally be diluted in an appropriate carrier oil unless a finished product has already been formulated for direct topical use.</p><p>Lavender oil is often discussed for relaxation, sleep environment, and stress-management routines. This does not mean it works like a medication or guarantees sleep. Instead, it may help create a calmer sensory context when paired with good sleep hygiene, reduced screen exposure, consistent timing, and a comfortable environment. In topical products, lavender oil is included more for aroma and soothing-positioned product experience than as a stand-alone treatment for skin conditions.</p><p>Users should also understand the difference between lavender oil and lavender herb. Essential oil concentrates volatile aromatic compounds, while teas or herbal extracts may contain a different range of plant constituents. Because of this, dose and safety considerations are not interchangeable. Ingesting essential oils can be risky unless the product is specifically designed for internal use and directed by a qualified professional.</p><p>Lavender oil is best evaluated through label transparency, botanical identity, third-party testing, dilution guidance, packaging, and intended use. It can be a useful part of a relaxation-focused routine, but it should be used carefully, kept away from eyes and mucous membranes, and discussed with a healthcare professional when pregnancy, medication use, allergies, or chronic health conditions are involved.</p><p>For Suppriva readers, lavender oil should be evaluated in the same way as any other supplement ingredient: by matching the form to the goal, checking whether the label explains the source clearly, and reviewing the full formula instead of judging one ingredient in isolation. A product that lists Lavender Oil alongside several other active ingredients may behave differently from a single-ingredient product. Serving size, standardization, extraction method, route of use, and quality testing can all affect whether the ingredient fits a specific wellness routine.</p><p>It is also important to separate educational interest from medical decision-making. Research papers and traditional use can help explain why an ingredient appears in supplements, but they do not mean every consumer product has the same strength or outcome. People with ongoing symptoms, diagnosed conditions, medication use, pregnancy, nursing, or planned surgery should use professional guidance before adding concentrated botanicals, oils, or functional ingredients. This is especially important when an ingredient may overlap with sleep support, blood pressure, blood sugar, immune function, skin sensitivity, or digestive comfort.</p><p>The most practical way to compare lavender oil products is to look for transparent labeling. Strong labels identify the exact ingredient form, botanical or source name, plant part when relevant, amount per serving, intended route of use, cautions, and whether third-party testing is mentioned. Avoid products that make disease-treatment promises or hide important details behind vague blends. Used responsibly, Lavender Oil can be part of a thoughtful wellness routine, but it should complement balanced nutrition, healthy lifestyle habits, and qualified medical care when needed.</p>",
+  "interesting_fact_label": "Aroma Note",
+  "interesting_fact": "<p>Lavender oil is valued for its linalool and linalyl acetate content, two naturally occurring aromatic compounds that help define its recognizable floral scent.</p>",
   "how_it_works_title": "How Lavender Oil Works",
-  "how_it_works_subtitle": "How lavender oil supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Relaxation Support",
-  "how_it_works_highlight_description": "Lavender Oil is most often positioned around relaxation support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Lavender Oil works through aromatic constituents that support its role in calming routines and sensory wellness formulations. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare lavender oil by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Lavender oil is mainly used for sensory, relaxation, and topical wellness support.",
+  "how_it_works_highlight_title": "Aromatic relaxation profile",
+  "how_it_works_highlight_description": "Lavender oil contains naturally occurring aromatic compounds that make it useful in calm-focused and sleep-support wellness routines.",
+  "how_it_works_content": "<p>Lavender oil works primarily through its volatile aromatic compounds. When inhaled, these compounds contribute to the sensory experience that people associate with calm, relaxation, and bedtime routines. The effect is highly individual and depends on aroma preference, product quality, setting, and consistency of use.</p><p>When used topically, lavender oil must be diluted properly because essential oils can irritate skin when applied too strongly. Finished products may combine lavender oil with carrier oils, lotions, or balms to make the ingredient easier to use. The label should clearly explain whether the product is ready to apply or needs dilution.</p><p>The ingredient should not be viewed as a cure for anxiety, insomnia, pain, or skin disease. Its most responsible use is as a supportive sensory tool that complements healthy routines and professional care when needed.</p>",
   "benefits_title": "Potential Lavender Oil Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether lavender oil fits the full formula.",
+  "benefits_subtitle": "Benefits depend on form, quality, serving size, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Relaxation support",
-      "description": "Lavender Oil is commonly evaluated for relaxation support within supplement formulas and wellness routines."
-    },
-    {
       "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Lavender Oil to support a more targeted product story around relaxation, sleep-support routines, and aromatic wellness products."
+      "title": "Relaxation Routine Support",
+      "description": "Lavender oil is commonly used in evening wellness routines because its aroma is associated with a calming sensory experience."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "icon": "moon",
+      "title": "Sleep Environment Fit",
+      "description": "It may be used in diffusers or topical products designed to support a relaxed bedtime setting."
     },
     {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Lavender Oil may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "leaf",
+      "title": "Botanical Aroma",
+      "description": "The floral-herbal scent helps distinguish lavender oil from sharper mint, citrus, or spice oils."
+    },
+    {
+      "icon": "droplets",
+      "title": "Topical Formula Use",
+      "description": "When properly diluted, lavender oil is often included in massage oils, bath products, and skin-care blends."
     },
     {
       "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Lavender Oil supplements."
+      "title": "Label Awareness",
+      "description": "Its concentrated nature makes dilution, quality testing, and usage directions especially important."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Lavender Oil helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "search",
+      "title": "Product Comparison Value",
+      "description": "Lavender oil helps users compare essential oil purity, plant source, dilution instructions, and intended use."
     }
   ],
   "dosage_title": "Typical Lavender Oil Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Use according to the product label; oral lavender oil products and topical/aromatic products have different serving guidance.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Use according to the product label; oral lavender oil products and topical/aromatic products have different serving guidance.</p><p>Because lavender oil can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the product format and label directions.",
+  "typical_dose": "Use according to diffuser or topical label",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Lavender oil dosage depends heavily on route of use. Aromatherapy products may use a few drops in a diffuser according to device instructions. Topical products should follow the finished product label, and pure essential oil generally requires dilution before skin application.</p><p>Oral use should be approached cautiously and only with products specifically formulated for ingestion. Essential oils are concentrated and should not be swallowed casually. People who are pregnant, nursing, using sedatives, managing allergies, or preparing for surgery should consult a qualified healthcare professional before use.</p>",
   "safety_title": "Lavender Oil Safety Information",
-  "safety_subtitle": "Use lavender oil with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Skin Sensitivity",
-    "Digestive Upset",
-    "Allergy Awareness",
-    "Dose and Dilution Concerns"
+    "Skin Irritation",
+    "Headache or Aroma Sensitivity",
+    "Allergic Reaction",
+    "Drowsiness"
   ],
   "side_effects_json": [
     {
-      "title": "Skin Sensitivity",
-      "description": "Lavender Oil may cause irritation or sensitivity, especially when used undiluted or on sensitive skin."
+      "title": "Skin Irritation",
+      "description": "Undiluted or overly concentrated lavender oil may cause redness, burning, itching, or sensitivity."
     },
     {
-      "title": "Digestive Upset",
-      "description": "Internal use is not appropriate unless the product is specifically formulated and labeled for that purpose."
+      "title": "Headache or Aroma Sensitivity",
+      "description": "Strong aromas can trigger headaches, nausea, or discomfort in sensitive individuals."
     },
     {
-      "title": "Allergy Awareness",
-      "description": "Stop use if rash, itching, swelling, or other sensitivity signs occur."
+      "title": "Allergic Reaction",
+      "description": "Discontinue use if rash, swelling, wheezing, or other allergy symptoms occur."
     },
     {
-      "title": "Dose and Dilution Concerns",
-      "description": "Concentrated oils require careful label-directed use and should not be treated like ordinary foods."
+      "title": "Drowsiness",
+      "description": "Relaxation-focused products may feel sedating for some users, especially when combined with other calming ingredients."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    "Use caution when combining with sedatives, sleep aids, alcohol, or other calming supplements.",
+    "Review use with a clinician before surgery because some products may overlap with relaxation or sedation routines.",
+    "Avoid applying near medicated topical products unless cleared by a healthcare professional.",
+    "Discuss use during pregnancy, nursing, or pediatric care before using concentrated essential oils."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Lavender Oil or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with known lavender or fragrance sensitivity.",
+    "People who have reacted to essential oils or topical fragrance blends.",
+    "Pregnant or nursing users unless advised by a qualified professional.",
+    "Children unless the product is specifically age-appropriate and clinician-approved.",
+    "Anyone planning to ingest lavender oil without professional guidance."
+  ],
+  "food_sources_title": "Lavender Oil Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Lavender Oil is typically sourced from flowering tops of Lavandula angustifolia oil. Supplement formats may differ from culinary or traditional preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Lavandula angustifolia oil"
+    },
+    {
+      "title": "Common Form",
+      "description": "Essential oil, diluted topical oil, capsule in select products"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review plant part, serving size, extraction method, and safety directions."
+    }
   ],
   "faq_title": "Lavender Oil FAQs",
   "faq_subtitle": "Common questions about lavender oil supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Lavender Oil used for in supplements?",
-      "answer": "Lavender Oil is commonly used in formulas focused on relaxation, sleep-support routines, and aromatic wellness products. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is lavender oil used for?",
+      "answer": "Lavender oil is commonly used in aromatherapy, massage, bath, and relaxation-focused wellness products."
     },
     {
-      "question": "Is Lavender Oil a medicine?",
-      "answer": "No. Lavender Oil is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is lavender oil the same as lavender extract?",
+      "answer": "No. Lavender oil concentrates volatile aromatic compounds, while extracts or teas may contain different plant constituents."
     },
     {
-      "question": "What form of Lavender Oil should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Can lavender oil help with sleep?",
+      "answer": "It may support a calming bedtime environment for some people, but it should not be treated as a cure for insomnia."
     },
     {
-      "question": "How long does Lavender Oil take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Can I apply lavender oil directly to skin?",
+      "answer": "Pure essential oil usually needs dilution. Follow the finished product label and patch test if you are sensitive."
     },
     {
-      "question": "Can Lavender Oil cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Is lavender oil safe to swallow?",
+      "answer": "Do not ingest essential oils unless the product is specifically designed for internal use and a qualified professional has advised it."
     },
     {
-      "question": "Can I take Lavender Oil every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "What should I compare on a lavender oil label?",
+      "answer": "Compare botanical species, purity, dilution instructions, testing, country of origin, and intended route of use."
     },
     {
-      "question": "What should I check on a Lavender Oil label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Can lavender oil cause allergies?",
+      "answer": "Yes. Fragrance-sensitive users may experience irritation or allergic reactions."
     },
     {
-      "question": "Does Lavender Oil interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Can I use lavender oil with sleep supplements?",
+      "answer": "Use caution because calming products can overlap. Ask a clinician if you use sedatives or have medical concerns."
     },
     {
-      "question": "Is Lavender Oil suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Is lavender oil safe for children?",
+      "answer": "Use pediatric products only as directed and consult a healthcare professional for young children."
     },
     {
-      "question": "Can Lavender Oil replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Can lavender oil replace medical treatment?",
+      "answer": "No. Lavender oil is a wellness ingredient and should not replace diagnosis, treatment, or prescribed medication."
     }
   ],
   "sidebar_profile_title": "Lavender Oil Profile Snapshot",
-  "sidebar_profile_content": "Lavender Oil is a essential oil commonly evaluated for relaxation, sleep-support routines, and aromatic wellness products.",
+  "sidebar_profile_content": "Lavender Oil is an aromatic essential oil used in wellness products for relaxation-focused routines, topical care, and sensory support.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -144,65 +163,96 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Use according to the product label; oral lavender oil products and topical/aromatic products have different serving guidance."
+      "value": "Use according to diffuser or topical label"
     },
     {
       "label": "Best For",
-      "value": "Relaxation, sleep-support routines, and aromatic wellness products"
+      "value": "Relaxation and aroma routines"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated when properly diluted and label-directed"
+      "value": "Use carefully and dilute for skin"
     },
     {
       "label": "Origin",
-      "value": "Mediterranean regions"
+      "value": "Lavender flowering tops"
     },
     {
       "label": "Part Used",
-      "value": "Flowering tops"
+      "value": "Flowers"
     },
     {
       "label": "Form",
-      "value": "Essential oil, softgel, topical blend, aromatherapy product"
+      "value": "Oil, roll-on, topical blend"
     },
     {
       "label": "Taste",
-      "value": "Floral and herbal"
+      "value": "Not intended for casual ingestion"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Lavender Oil is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Lavender Oil is used in supplement formulas for relaxation, sleep-support routines, and aromatic wellness products and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Relaxation, sleep-support routines, and aromatic wellness products",
-  "safety_level": "Generally well tolerated when properly diluted and label-directed",
-  "origin_country": "Mediterranean regions",
+  "sidebar_at_a_glance_content": "<p>Lavender Oil is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Lavender Oil is an aromatic essential oil used in wellness products for relaxation-focused routines, topical care, and sensory support.",
+  "best_for": "Relaxation routines, aromatherapy products, and topical wellness formulas",
+  "safety_level": "Use carefully and dilute for skin",
+  "origin_country": "Mediterranean regions and cultivated global farms",
   "part_used": "Flowering tops",
-  "ingredient_form": "Essential oil, softgel, topical blend, aromatherapy product",
-  "taste_profile": "Floral and herbal",
+  "ingredient_form": "Essential oil, diluted topical oil, capsule in select products",
+  "taste_profile": "Floral, herbal, and aromatic",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Lavender Oil Uses",
+  "uses_subtitle": "Common wellness contexts where lavender oil appears.",
+  "uses_content": "<p>Lavender Oil is commonly used in relaxation routines, aromatherapy products, and topical wellness formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Relaxation routines, aromatherapy products, and topical wellness formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Lavender Oil Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on lavender oil varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Lavender Oil References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "lemongrass-oil",
+    "chamomile-extract",
+    "california-poppy-seed"
+  ],
   "seo_title": "Lavender Oil Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "lavender oil",
-  "seo_description": "Explore lavender oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore lavender oil benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/lavender-oil",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Lavender Oil Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore lavender oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore lavender oil benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library."
 }

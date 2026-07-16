@@ -1,162 +1,181 @@
 {
   "name": "Lemongrass",
   "scientific_name": "Cymbopogon citratus",
+  "ingredient_category": "Herbal Extracts",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Lemongrass is a aromatic botanical herb used in supplement formulas for digestive comfort, aromatic herbal wellness, and relaxation-focused routines.",
+  "short_description": "Lemongrass is a citrus-scented botanical used in teas, herbal blends, and wellness formulas for digestive and sensory support positioning.",
   "overview_title": "Lemongrass Overview",
-  "overview_subtitle": "A practical guide to lemongrass in modern supplement formulas.",
-  "overview_content": "<p>Lemongrass is a aromatic botanical herb that appears in wellness products because of citral-rich aromatic compounds and traditional culinary-herbal use. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing lemongrass products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Lemongrass supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Lemongrass gets its lemon-like aroma from citral, even though it is not a citrus fruit.</p>",
+  "overview_subtitle": "A practical look at lemongrass as a citrus-forward botanical ingredient.",
+  "overview_content": "<p>Lemongrass is a tall aromatic grass, most often associated with Cymbopogon citratus, that is used in teas, culinary recipes, herbal blends, and dietary supplements. Its bright lemon-like scent can make it seem similar to citrus peel, but the plant belongs to the grass family and has a different compound profile. In wellness products, lemongrass is usually positioned around herbal refreshment, digestive comfort, antioxidant support, and general botanical wellness.</p><p>The form matters. Lemongrass tea or powder is not the same as lemongrass essential oil. The whole herb provides a broader plant matrix, while the essential oil concentrates volatile aromatic constituents and requires different safety precautions. Supplement shoppers should check whether a label lists lemongrass leaf, aerial parts, extract, powder, or oil, because these forms should not be compared as if they are identical.</p><p>Lemongrass is often used in digestion-focused blends because it has a long history in herbal traditions and a light flavor that fits after-meal teas. Responsible product language should avoid promising treatment for digestive disease. Instead, lemongrass can be understood as a supportive botanical that may fit a routine that already includes balanced meals, hydration, fiber, movement, and appropriate medical care when symptoms are persistent.</p><p>The plant also contains naturally occurring compounds such as citral and other phytochemicals that are studied for antioxidant and microbial-context activity in laboratory research. However, lab findings do not automatically prove clinical benefits from a supplement. For everyday users, the practical value of lemongrass is often its combination of flavor, aroma, botanical tradition, and compatibility with other gentle herbs.</p><p>Lemongrass is best evaluated by ingredient form, serving size, extract standardization, country of origin, and whether the product is intended as tea, capsule, powder, or oil. People who are pregnant, nursing, taking medication, or managing a health condition should consult a qualified healthcare professional before using concentrated lemongrass products.</p><p>For Suppriva readers, lemongrass should be evaluated in the same way as any other supplement ingredient: by matching the form to the goal, checking whether the label explains the source clearly, and reviewing the full formula instead of judging one ingredient in isolation. A product that lists Lemongrass alongside several other active ingredients may behave differently from a single-ingredient product. Serving size, standardization, extraction method, route of use, and quality testing can all affect whether the ingredient fits a specific wellness routine.</p><p>It is also important to separate educational interest from medical decision-making. Research papers and traditional use can help explain why an ingredient appears in supplements, but they do not mean every consumer product has the same strength or outcome. People with ongoing symptoms, diagnosed conditions, medication use, pregnancy, nursing, or planned surgery should use professional guidance before adding concentrated botanicals, oils, or functional ingredients. This is especially important when an ingredient may overlap with sleep support, blood pressure, blood sugar, immune function, skin sensitivity, or digestive comfort.</p><p>The most practical way to compare lemongrass products is to look for transparent labeling. Strong labels identify the exact ingredient form, botanical or source name, plant part when relevant, amount per serving, intended route of use, cautions, and whether third-party testing is mentioned. Avoid products that make disease-treatment promises or hide important details behind vague blends. Used responsibly, Lemongrass can be part of a thoughtful wellness routine, but it should complement balanced nutrition, healthy lifestyle habits, and qualified medical care when needed.</p>",
+  "interesting_fact_label": "Botanical Note",
+  "interesting_fact": "<p>Lemongrass gets its lemon-like aroma from naturally occurring compounds such as citral, even though it is a grass rather than a citrus fruit.</p>",
   "how_it_works_title": "How Lemongrass Works",
-  "how_it_works_subtitle": "How lemongrass supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Aromatic Digestive Support",
-  "how_it_works_highlight_description": "Lemongrass is most often positioned around aromatic digestive support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Lemongrass works through aromatic plant constituents that support its use in digestive and calming herbal blends. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare lemongrass by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Lemongrass supports wellness through aromatic compounds and traditional botanical use.",
+  "how_it_works_highlight_title": "Citrus botanical profile",
+  "how_it_works_highlight_description": "Lemongrass provides a bright herbal flavor and aroma that makes it common in teas, digestion-focused products, and wellness blends.",
+  "how_it_works_content": "<p>Lemongrass works through a combination of aromatic compounds, polyphenols, and traditional herbal use. In teas and powders, the plant provides a citrusy flavor and gentle botanical profile that can support a pleasant wellness ritual.</p><p>In supplement formulas, lemongrass may be paired with ginger, peppermint, dandelion, green tea, or other botanicals depending on the product goal. Its role is usually supportive rather than primary, helping round out flavor, aroma, and herbal positioning.</p><p>Users should distinguish lemongrass herb from lemongrass oil. The oil is much more concentrated and should be handled according to essential oil safety directions.</p>",
   "benefits_title": "Potential Lemongrass Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether lemongrass fits the full formula.",
+  "benefits_subtitle": "Benefits depend on form, quality, serving size, and overall wellness routine.",
   "benefits_json": [
     {
       "icon": "leaf",
-      "title": "Aromatic digestive support",
-      "description": "Lemongrass is commonly evaluated for aromatic digestive support within supplement formulas and wellness routines."
+      "title": "Herbal Wellness Support",
+      "description": "Lemongrass is commonly used in botanical products designed to complement daily wellness routines."
     },
     {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Lemongrass to support a more targeted product story around digestive comfort, aromatic herbal wellness, and relaxation-focused routines."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "icon": "cup-soda",
+      "title": "Tea-Friendly Flavor",
+      "description": "Its citrus-grass taste works well in caffeine-free teas and herbal drink blends."
     },
     {
       "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Lemongrass may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "title": "Digestive Routine Fit",
+      "description": "Lemongrass is often positioned in formulas that support comfortable digestion and post-meal routines."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Lemongrass supplements."
+      "icon": "sparkles",
+      "title": "Antioxidant Compounds",
+      "description": "The plant contains naturally occurring polyphenols and aromatic constituents studied for antioxidant activity."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Lemongrass helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "wind",
+      "title": "Fresh Sensory Profile",
+      "description": "Its clean aroma makes it useful in products focused on freshness and sensory appeal."
+    },
+    {
+      "icon": "search",
+      "title": "Label Comparison Value",
+      "description": "Lemongrass helps users compare whole herb, extract strength, tea format, and essential oil distinctions."
     }
   ],
   "dosage_title": "Typical Lemongrass Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Supplement servings vary widely; teas and powders are commonly label-directed, while concentrated extracts use smaller servings.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Supplement servings vary widely; teas and powders are commonly label-directed, while concentrated extracts use smaller servings.</p><p>Because lemongrass can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the product format and label directions.",
+  "typical_dose": "Varies by tea, powder, or extract",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Lemongrass dosage varies by form. Tea products may use one serving of dried herb per cup, while capsules and extracts should follow the supplement facts label. There is no single universal dose that applies to every product.</p><p>Start with the labeled serving and avoid combining multiple concentrated lemongrass products without guidance. Pregnant or nursing users, children, and people taking medications should ask a qualified healthcare professional before using concentrated extracts.</p>",
   "safety_title": "Lemongrass Safety Information",
-  "safety_subtitle": "Use lemongrass with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Digestive Sensitivity",
+    "Allergy Symptoms",
+    "Headache or Dizziness",
+    "Skin Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Lemongrass may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Digestive Sensitivity",
+      "description": "Some users may notice stomach upset, nausea, or loose stools with concentrated products."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Allergy Symptoms",
+      "description": "People sensitive to grasses or botanicals may react to lemongrass."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Headache or Dizziness",
+      "description": "Strong herbal products may feel unpleasant for sensitive users."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Skin Sensitivity",
+      "description": "Topical exposure to concentrated lemongrass products may irritate skin."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    "Discuss use with a clinician if taking medication for blood pressure or blood sugar.",
+    "Use caution when combining with diuretic-style herbs or detox-positioned products.",
+    "Avoid stacking multiple concentrated botanical extracts without professional guidance.",
+    "Review use before surgery or if managing a chronic medical condition."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Lemongrass or related ingredients.",
     "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with known grass or lemongrass sensitivity.",
+    "Children unless directed by a qualified clinician.",
+    "People with persistent digestive symptoms that require medical evaluation.",
+    "Anyone using concentrated lemongrass oil as if it were the same as tea or powder."
+  ],
+  "food_sources_title": "Lemongrass Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Lemongrass is typically sourced from leaf and stalk of Cymbopogon citratus. Supplement formats may differ from culinary or traditional preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Cymbopogon citratus"
+    },
+    {
+      "title": "Common Form",
+      "description": "Tea, powder, extract, capsule"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review plant part, serving size, extraction method, and safety directions."
+    }
   ],
   "faq_title": "Lemongrass FAQs",
   "faq_subtitle": "Common questions about lemongrass supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Lemongrass used for in supplements?",
-      "answer": "Lemongrass is commonly used in formulas focused on digestive comfort, aromatic herbal wellness, and relaxation-focused routines. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is lemongrass used for?",
+      "answer": "Lemongrass is used in teas, culinary products, and supplements for herbal wellness, flavor, aroma, and digestion-focused routines."
     },
     {
-      "question": "Is Lemongrass a medicine?",
-      "answer": "No. Lemongrass is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is lemongrass a citrus ingredient?",
+      "answer": "No. It has a lemon-like scent but is a grass, not a citrus fruit."
     },
     {
-      "question": "What form of Lemongrass should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Is lemongrass oil the same as lemongrass herb?",
+      "answer": "No. Lemongrass oil is a concentrated essential oil, while lemongrass herb is used in teas, powders, and extracts."
     },
     {
-      "question": "How long does Lemongrass take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Can lemongrass support digestion?",
+      "answer": "It is commonly used in digestion-focused herbal routines, but it should not replace medical care for ongoing symptoms."
     },
     {
-      "question": "Can Lemongrass cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Does lemongrass contain caffeine?",
+      "answer": "Plain lemongrass herb is naturally caffeine-free."
     },
     {
-      "question": "Can I take Lemongrass every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "What should I compare on a label?",
+      "answer": "Compare form, serving size, plant part, extract strength, testing, and whether the product uses herb or essential oil."
     },
     {
-      "question": "What should I check on a Lemongrass label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Can lemongrass cause side effects?",
+      "answer": "Yes. Some users may experience digestive upset, allergy symptoms, or sensitivity."
     },
     {
-      "question": "Does Lemongrass interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Can I take lemongrass every day?",
+      "answer": "Many teas are used routinely, but concentrated extracts should follow label directions and personal tolerance."
     },
     {
-      "question": "Is Lemongrass suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Who should be cautious with lemongrass?",
+      "answer": "Pregnant or nursing users, children, and people taking medication should consult a healthcare professional."
     },
     {
-      "question": "Can Lemongrass replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Can lemongrass treat disease?",
+      "answer": "No. Lemongrass supplements are not intended to diagnose, treat, cure, or prevent disease."
     }
   ],
   "sidebar_profile_title": "Lemongrass Profile Snapshot",
-  "sidebar_profile_content": "Lemongrass is a aromatic botanical herb commonly evaluated for digestive comfort, aromatic herbal wellness, and relaxation-focused routines.",
+  "sidebar_profile_content": "Lemongrass is a citrus-scented botanical used in teas, herbal blends, and wellness formulas for digestive and sensory support positioning.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Aromatic botanical herb"
+      "value": "Herbal botanical"
     },
     {
       "label": "Typical Dose",
-      "value": "Supplement servings vary widely; teas and powders are commonly label-directed, while concentrated extracts use smaller servings."
+      "value": "Varies by tea, powder, or extract"
     },
     {
       "label": "Best For",
-      "value": "Digestive comfort, aromatic herbal wellness, and relaxation-focused routines"
+      "value": "Herbal wellness and digestion routines"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated in typical food and tea amounts"
+      "value": "Generally gentle as tea; caution with extracts"
     },
     {
       "label": "Origin",
-      "value": "South and Southeast Asia"
+      "value": "Tropical grass"
     },
     {
       "label": "Part Used",
@@ -168,41 +187,72 @@
     },
     {
       "label": "Taste",
-      "value": "Bright citrus-herbal"
+      "value": "Citrusy and grassy"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Lemongrass is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Lemongrass is used in supplement formulas for digestive comfort, aromatic herbal wellness, and relaxation-focused routines and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Digestive comfort, aromatic herbal wellness, and relaxation-focused routines",
-  "safety_level": "Generally well tolerated in typical food and tea amounts",
-  "origin_country": "South and Southeast Asia",
+  "sidebar_at_a_glance_content": "<p>Lemongrass is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Lemongrass is a citrus-scented botanical used in teas, herbal blends, and wellness formulas for digestive and sensory support positioning.",
+  "best_for": "Herbal teas, digestive wellness blends, and citrus-botanical formulas",
+  "safety_level": "Generally gentle as tea; caution with extracts",
+  "origin_country": "Tropical Asia and cultivated warm regions",
   "part_used": "Leaf and stalk",
-  "ingredient_form": "Tea, powder, capsule, extract",
-  "taste_profile": "Bright citrus-herbal",
+  "ingredient_form": "Tea, powder, extract, capsule",
+  "taste_profile": "Bright, citrusy, grassy",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Lemongrass Uses",
+  "uses_subtitle": "Common wellness contexts where lemongrass appears.",
+  "uses_content": "<p>Lemongrass is commonly used in herbal teas, digestive wellness blends, and citrus-botanical formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Herbal teas, digestive wellness blends, and citrus-botanical formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Lemongrass Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on lemongrass varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Lemongrass References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "lemongrass-oil",
+    "ginger-root",
+    "peppermint"
+  ],
   "seo_title": "Lemongrass Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "lemongrass",
-  "seo_description": "Explore lemongrass benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore lemongrass benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/lemongrass",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Lemongrass Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore lemongrass benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore lemongrass benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library."
 }

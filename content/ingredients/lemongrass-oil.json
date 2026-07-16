@@ -1,142 +1,161 @@
 {
   "name": "Lemongrass Oil",
   "scientific_name": "Cymbopogon citratus oil",
+  "ingredient_category": "Oils",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Lemongrass Oil is a essential oil used in supplement formulas for aromatic wellness and topical product formulations.",
+  "short_description": "Lemongrass Oil is a concentrated essential oil known for a bright citrus aroma and use in topical, aromatic, and freshness-focused wellness products.",
   "overview_title": "Lemongrass Oil Overview",
-  "overview_subtitle": "A practical guide to lemongrass oil in modern supplement formulas.",
-  "overview_content": "<p>Lemongrass Oil is a essential oil that appears in wellness products because of concentrated citral-rich volatile oil used mainly in aromatic and topical wellness products. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing lemongrass oil products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Lemongrass Oil supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>A small amount of essential oil represents a much larger amount of plant material, which is why dilution and label directions matter.</p>",
+  "overview_subtitle": "A practical look at concentrated lemongrass essential oil.",
+  "overview_content": "<p>Lemongrass oil is a concentrated essential oil typically distilled from the leaves of Cymbopogon citratus or related lemongrass species. It has a bright, sharp, lemon-like aroma and is common in diffuser blends, massage oils, personal care products, and freshness-focused wellness formulas. Although it comes from the same plant family as lemongrass herb, the oil is not interchangeable with tea, powder, or culinary lemongrass.</p><p>The most important point for consumers is concentration. Essential oils contain volatile aromatic compounds in a much stronger form than the whole plant. This makes lemongrass oil useful for scent and topical product design, but it also increases the need for dilution and caution. Applying undiluted lemongrass oil to skin may cause irritation, burning, redness, or sensitization. Finished products should clearly state whether they are ready to use or require dilution.</p><p>Lemongrass oil is often associated with freshness, alertness, massage routines, and clean aromatic environments. Its role is primarily sensory and topical rather than nutritional. It should not be promoted as a treatment for infections, pain, inflammation, or chronic disease. Some laboratory studies examine lemongrass oil compounds such as citral, but laboratory activity does not equal proven clinical outcomes from consumer products.</p><p>Quality can vary substantially. A transparent product should identify the botanical species, extraction method, purity, carrier oil if diluted, intended use, and safety directions. Packaging matters too, because essential oils are sensitive to light, heat, and oxidation. Products sold for aromatherapy should not automatically be used orally or on skin unless the label specifically supports that use.</p><p>Lemongrass oil can be a useful aromatic ingredient when used responsibly. It is best kept away from eyes, mucous membranes, broken skin, children, and pets unless professional guidance is available. People who are pregnant, nursing, taking medications, or managing medical conditions should speak with a qualified healthcare professional before using concentrated essential oils.</p><p>For Suppriva readers, lemongrass oil should be evaluated in the same way as any other supplement ingredient: by matching the form to the goal, checking whether the label explains the source clearly, and reviewing the full formula instead of judging one ingredient in isolation. A product that lists Lemongrass Oil alongside several other active ingredients may behave differently from a single-ingredient product. Serving size, standardization, extraction method, route of use, and quality testing can all affect whether the ingredient fits a specific wellness routine.</p><p>It is also important to separate educational interest from medical decision-making. Research papers and traditional use can help explain why an ingredient appears in supplements, but they do not mean every consumer product has the same strength or outcome. People with ongoing symptoms, diagnosed conditions, medication use, pregnancy, nursing, or planned surgery should use professional guidance before adding concentrated botanicals, oils, or functional ingredients. This is especially important when an ingredient may overlap with sleep support, blood pressure, blood sugar, immune function, skin sensitivity, or digestive comfort.</p><p>The most practical way to compare lemongrass oil products is to look for transparent labeling. Strong labels identify the exact ingredient form, botanical or source name, plant part when relevant, amount per serving, intended route of use, cautions, and whether third-party testing is mentioned. Avoid products that make disease-treatment promises or hide important details behind vague blends. Used responsibly, Lemongrass Oil can be part of a thoughtful wellness routine, but it should complement balanced nutrition, healthy lifestyle habits, and qualified medical care when needed.</p>",
+  "interesting_fact_label": "Essential Oil Note",
+  "interesting_fact": "<p>Lemongrass oil is much more concentrated than lemongrass tea, so the same plant name can represent very different safety and usage considerations.</p>",
   "how_it_works_title": "How Lemongrass Oil Works",
-  "how_it_works_subtitle": "How lemongrass oil supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Aromatic Topical Wellness",
-  "how_it_works_highlight_description": "Lemongrass Oil is most often positioned around aromatic topical wellness, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Lemongrass Oil works through volatile aromatic compounds that influence scent profile and product positioning in topical and aromatherapy formulas. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare lemongrass oil by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Lemongrass oil is mainly valued for aromatic freshness and topical product use.",
+  "how_it_works_highlight_title": "Concentrated citrus aroma",
+  "how_it_works_highlight_description": "Lemongrass oil delivers a strong lemon-like scent that makes it popular in diffuser blends, massage products, and freshness-focused routines.",
+  "how_it_works_content": "<p>Lemongrass oil works mainly through volatile aromatic compounds that evaporate easily and create a strong citrus-grass scent. In diffuser products, this aroma shapes the sensory environment and can make a space feel fresher or more energizing.</p><p>In topical products, lemongrass oil must be diluted in a carrier oil, lotion, or other base. The finished formula determines how the oil contacts skin and whether it is appropriate for massage or personal care use.</p><p>Because essential oils are concentrated, more is not better. Responsible use depends on dose, dilution, route of use, and personal sensitivity.</p>",
   "benefits_title": "Potential Lemongrass Oil Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether lemongrass oil fits the full formula.",
+  "benefits_subtitle": "Benefits depend on form, quality, serving size, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Aromatic topical wellness",
-      "description": "Lemongrass Oil is commonly evaluated for aromatic topical wellness within supplement formulas and wellness routines."
+      "icon": "wind",
+      "title": "Fresh Aromatic Support",
+      "description": "Lemongrass oil provides a crisp citrus-grass scent used in energizing and freshness-focused products."
     },
     {
       "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Lemongrass Oil to support a more targeted product story around aromatic wellness and topical product formulations."
+      "title": "Sensory Wellness Fit",
+      "description": "Its aroma can help shape the user experience in diffuser blends and topical wellness products."
     },
     {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "icon": "droplets",
+      "title": "Topical Blend Ingredient",
+      "description": "When properly diluted, it is commonly included in massage oils, body oils, and personal care formulas."
     },
     {
-      "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Lemongrass Oil may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "icon": "leaf",
+      "title": "Botanical Identity",
+      "description": "The oil is derived from a recognizable plant used in culinary and herbal traditions."
     },
     {
       "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Lemongrass Oil supplements."
+      "title": "Dilution Awareness",
+      "description": "Its concentrated nature makes careful use, skin testing, and clear label directions important."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Lemongrass Oil helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "search",
+      "title": "Label Comparison Value",
+      "description": "Lemongrass oil helps users compare purity, dilution, botanical species, and intended route of use."
     }
   ],
   "dosage_title": "Typical Lemongrass Oil Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Use only according to product directions; essential oils are highly concentrated and are usually not taken internally unless specifically formulated for that use.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Use only according to product directions; essential oils are highly concentrated and are usually not taken internally unless specifically formulated for that use.</p><p>Because lemongrass oil can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the product format and label directions.",
+  "typical_dose": "Follow diffuser or topical label",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Lemongrass oil usage depends on the finished product. Diffuser use may involve a small number of drops according to device instructions. Topical use should follow the label and typically requires dilution in a carrier oil or finished formula.</p><p>Do not ingest lemongrass oil unless a product is specifically formulated for internal use and a qualified professional has advised it. Stop use if irritation, headache, dizziness, or allergy symptoms occur.</p>",
   "safety_title": "Lemongrass Oil Safety Information",
-  "safety_subtitle": "Use lemongrass oil with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Skin Sensitivity",
-    "Digestive Upset",
-    "Allergy Awareness",
-    "Dose and Dilution Concerns"
+    "Skin Irritation",
+    "Aroma Sensitivity",
+    "Allergic Reaction",
+    "Eye or Mucous Membrane Irritation"
   ],
   "side_effects_json": [
     {
-      "title": "Skin Sensitivity",
-      "description": "Lemongrass Oil may cause irritation or sensitivity, especially when used undiluted or on sensitive skin."
+      "title": "Skin Irritation",
+      "description": "Concentrated lemongrass oil can cause redness, burning, itching, or rash, especially when undiluted."
     },
     {
-      "title": "Digestive Upset",
-      "description": "Internal use is not appropriate unless the product is specifically formulated and labeled for that purpose."
+      "title": "Aroma Sensitivity",
+      "description": "Strong scent exposure may trigger headache, nausea, or discomfort in sensitive users."
     },
     {
-      "title": "Allergy Awareness",
-      "description": "Stop use if rash, itching, swelling, or other sensitivity signs occur."
+      "title": "Allergic Reaction",
+      "description": "Discontinue use and seek medical help if swelling, wheezing, or widespread rash occurs."
     },
     {
-      "title": "Dose and Dilution Concerns",
-      "description": "Concentrated oils require careful label-directed use and should not be treated like ordinary foods."
+      "title": "Eye or Mucous Membrane Irritation",
+      "description": "Accidental contact can be painful and should be avoided."
     }
   ],
   "drug_interactions_json": [
-    "Review use with prescription medications before adding this ingredient to a daily routine.",
-    "Use caution when combining with supplements that have similar effects or overlapping active compounds.",
-    "Discuss use before surgery or when managing a chronic medical condition.",
-    "Ask a healthcare professional if pregnant, nursing, or using multiple supplement formulas."
+    "Avoid applying near prescription topical medications unless approved by a clinician.",
+    "Discuss essential oil use before surgery or medical procedures.",
+    "Use caution when combining with multiple scented or topical products that may irritate skin.",
+    "Ask a healthcare professional before using during pregnancy, nursing, or pediatric care."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Lemongrass Oil or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with known lemongrass, fragrance, or essential oil sensitivity.",
+    "People with broken, inflamed, or highly sensitive skin.",
+    "Pregnant or nursing users unless advised by a qualified professional.",
+    "Children and pets unless product-specific safety guidance is available.",
+    "Anyone planning to ingest the oil without professional supervision."
+  ],
+  "food_sources_title": "Lemongrass Oil Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Lemongrass Oil is typically sourced from leaf of Cymbopogon citratus oil. Supplement formats may differ from culinary or traditional preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Cymbopogon citratus oil"
+    },
+    {
+      "title": "Common Form",
+      "description": "Essential oil, diluted roll-on, topical blend"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review plant part, serving size, extraction method, and safety directions."
+    }
   ],
   "faq_title": "Lemongrass Oil FAQs",
   "faq_subtitle": "Common questions about lemongrass oil supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Lemongrass Oil used for in supplements?",
-      "answer": "Lemongrass Oil is commonly used in formulas focused on aromatic wellness and topical product formulations. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is lemongrass oil used for?",
+      "answer": "It is mainly used for aroma, topical blends, massage products, and freshness-focused wellness routines."
     },
     {
-      "question": "Is Lemongrass Oil a medicine?",
-      "answer": "No. Lemongrass Oil is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is lemongrass oil the same as lemongrass tea?",
+      "answer": "No. The oil is concentrated and has different safety considerations than the herb used for tea."
     },
     {
-      "question": "What form of Lemongrass Oil should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Can I put lemongrass oil on skin?",
+      "answer": "Only if it is properly diluted or included in a finished topical product designed for skin use."
     },
     {
-      "question": "How long does Lemongrass Oil take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Can lemongrass oil be swallowed?",
+      "answer": "Do not swallow essential oils unless a product is formulated for ingestion and a qualified professional advises it."
     },
     {
-      "question": "Can Lemongrass Oil cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Why does lemongrass oil smell lemon-like?",
+      "answer": "Its aroma comes from naturally occurring compounds such as citral."
     },
     {
-      "question": "Can I take Lemongrass Oil every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Can lemongrass oil irritate skin?",
+      "answer": "Yes. It can irritate skin, especially when used undiluted or in high amounts."
     },
     {
-      "question": "What should I check on a Lemongrass Oil label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "What should I compare on labels?",
+      "answer": "Compare botanical species, purity, dilution, extraction method, packaging, and intended use."
     },
     {
-      "question": "Does Lemongrass Oil interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Is lemongrass oil safe in a diffuser?",
+      "answer": "Many products are used this way, but follow device directions and avoid overexposure, especially around sensitive people or pets."
     },
     {
-      "question": "Is Lemongrass Oil suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Who should be cautious?",
+      "answer": "Pregnant or nursing users, children, people with allergies, and people with sensitive skin should seek guidance."
     },
     {
-      "question": "Can Lemongrass Oil replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Can lemongrass oil replace medical treatment?",
+      "answer": "No. It is not a substitute for medical care or prescribed treatment."
     }
   ],
   "sidebar_profile_title": "Lemongrass Oil Profile Snapshot",
-  "sidebar_profile_content": "Lemongrass Oil is a essential oil commonly evaluated for aromatic wellness and topical product formulations.",
+  "sidebar_profile_content": "Lemongrass Oil is a concentrated essential oil known for a bright citrus aroma and use in topical, aromatic, and freshness-focused wellness products.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -144,65 +163,96 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Use only according to product directions; essential oils are highly concentrated and are usually not taken internally unless specifically formulated for that use."
+      "value": "Follow diffuser or topical label"
     },
     {
       "label": "Best For",
-      "value": "Aromatic wellness and topical product formulations"
+      "value": "Fresh aroma and topical blends"
     },
     {
       "label": "Safety Level",
-      "value": "Requires careful use due to concentration and skin sensitivity potential"
+      "value": "Requires dilution and caution"
     },
     {
       "label": "Origin",
-      "value": "South and Southeast Asia"
+      "value": "Lemongrass leaves"
     },
     {
       "label": "Part Used",
-      "value": "Distilled leaf oil"
+      "value": "Leaf"
     },
     {
       "label": "Form",
-      "value": "Essential oil, topical blend, aromatherapy product"
+      "value": "Essential oil, roll-on, blend"
     },
     {
       "label": "Taste",
-      "value": "Strong citrus-herbal aroma"
+      "value": "Not for casual ingestion"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Lemongrass Oil is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Lemongrass Oil is used in supplement formulas for aromatic wellness and topical product formulations and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Aromatic wellness and topical product formulations",
-  "safety_level": "Requires careful use due to concentration and skin sensitivity potential",
-  "origin_country": "South and Southeast Asia",
-  "part_used": "Distilled leaf oil",
-  "ingredient_form": "Essential oil, topical blend, aromatherapy product",
-  "taste_profile": "Strong citrus-herbal aroma",
+  "sidebar_at_a_glance_content": "<p>Lemongrass Oil is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Lemongrass Oil is a concentrated essential oil known for a bright citrus aroma and use in topical, aromatic, and freshness-focused wellness products.",
+  "best_for": "Aromatherapy blends, topical products, and freshness-focused formulas",
+  "safety_level": "Requires dilution and caution",
+  "origin_country": "Tropical lemongrass-growing regions",
+  "part_used": "Leaf",
+  "ingredient_form": "Essential oil, diluted roll-on, topical blend",
+  "taste_profile": "Sharp citrus aroma; not for casual ingestion",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Lemongrass Oil Uses",
+  "uses_subtitle": "Common wellness contexts where lemongrass oil appears.",
+  "uses_content": "<p>Lemongrass Oil is commonly used in aromatherapy blends, topical products, and freshness-focused formulas. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Aromatherapy blends, topical products, and freshness-focused formulas"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Lemongrass Oil Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on lemongrass oil varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Lemongrass Oil References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "lemongrass",
+    "lavender-oil",
+    "tea-tree-oil"
+  ],
   "seo_title": "Lemongrass Oil Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "lemongrass oil",
-  "seo_description": "Explore lemongrass oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore lemongrass oil benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/lemongrass-oil",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Lemongrass Oil Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore lemongrass oil benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore lemongrass oil benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library."
 }
