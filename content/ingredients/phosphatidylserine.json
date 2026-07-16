@@ -1,0 +1,260 @@
+{
+  "name": "Phosphatidylserine",
+  "scientific_name": "Phosphatidylserine",
+  "ingredient_category": "Brain & Memory",
+  "status": "published",
+  "hero_badge": null,
+  "short_description": "Phosphatidylserine is a phospholipid found in cell membranes and used in brain health, focus, stress, and cognitive wellness supplements.",
+  "overview_title": "Phosphatidylserine Overview",
+  "overview_subtitle": "A clear guide to phosphatidylserine for brain, focus, and stress-support formulas.",
+  "overview_content": "<p>Phosphatidylserine is a phospholipid, a fat-like molecule that forms part of cell membranes. It is especially discussed in relation to brain health because nerve cells depend on healthy membranes for normal signaling. In supplements, phosphatidylserine is commonly used in nootropic formulas, focus products, memory-support blends, stress-response supplements, and sports formulas that discuss cortisol. It should be described responsibly: it is not a treatment for dementia, ADHD, anxiety, depression, or neurological disease.</p><p>Modern phosphatidylserine supplements are usually made from soy or sunflower lecithin. This matters for allergen concerns and label preference. Older products were sometimes derived from bovine sources, but plant-derived versions are now far more common. Shoppers should look for the source, dose per serving, whether it is standalone or part of a blend, and whether the formula adds caffeine, bacopa, ginkgo, acetyl-L-carnitine, citicoline, alpha-GPC, or other brain-support ingredients.</p><p>Research has explored phosphatidylserine in cognition, attention, memory, exercise stress, and cortisol-related responses. Results vary by population, dose, study design, and product source. A supplement label should not imply guaranteed memory improvement or disease treatment. The most useful framing is that phosphatidylserine is a membrane-support nutrient that may be relevant in cognitive wellness formulas.</p><p>Safety is generally manageable for many adults, but side effects can include stomach upset, insomnia, headache, or nervousness, especially when combined with stimulants. Because some products are soy-derived, people with soy allergy or sensitivity should review labels carefully. Anyone using medications for cognition, mood, sleep, blood thinning, or neurological conditions should ask a healthcare professional before use.</p><p>For Suppriva readers, phosphatidylserine is a strong example of why ingredient form and formula context matter. A 100 mg sunflower-sourced capsule is different from a high-stimulant focus blend that includes phosphatidylserine alongside caffeine. The ingredient may be gentle by itself, but the full product can change the experience.</p><p>Phosphatidylserine can be a useful ingredient to understand when comparing brain and memory supplements. It works best as part of a realistic approach that also considers sleep, nutrition, exercise, stress, medication review, and medical evaluation for persistent cognitive concerns.</p><p>A useful way to research Phosphatidylserine is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether phosphatidylserine is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Phosphatidylserine should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Membrane Nutrient",
+  "interesting_fact": "<p>Phosphatidylserine is naturally present in cell membranes, and modern supplements are commonly sourced from soy or sunflower rather than older animal-derived sources.</p>",
+  "how_it_works_title": "How Phosphatidylserine Works",
+  "how_it_works_subtitle": "Phosphatidylserine supports membrane structure and is studied in cognitive and stress-response contexts.",
+  "how_it_works_highlight_title": "Brain formula phospholipid",
+  "how_it_works_highlight_description": "Phosphatidylserine is best compared by source, dose, allergen status, and whether it is part of a broader nootropic blend.",
+  "how_it_works_content": "<p>Phosphatidylserine helps support cell membrane structure, including membranes in nerve cells.</p><p>It is studied in relation to communication between brain cells, cognitive performance, and stress-response markers, but outcomes depend on dose and user context.</p><p>Because it is often included in multi-ingredient nootropic formulas, the full label should be reviewed before judging effects or safety.</p>",
+  "benefits_title": "Potential Phosphatidylserine Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
+  "benefits_json": [
+    {
+      "icon": "brain",
+      "title": "Brain Health Context",
+      "description": "Supports label education around membrane nutrients used in cognitive wellness formulas."
+    },
+    {
+      "icon": "target",
+      "title": "Focus Formula Fit",
+      "description": "Often appears in nootropic products positioned around attention and mental performance."
+    },
+    {
+      "icon": "activity",
+      "title": "Stress-Response Research",
+      "description": "Sometimes studied in relation to exercise stress and cortisol-related markers."
+    },
+    {
+      "icon": "search",
+      "title": "Source Comparison",
+      "description": "Encourages checking sunflower versus soy source and allergen labeling."
+    },
+    {
+      "icon": "layers",
+      "title": "Nootropic Blend Review",
+      "description": "Useful for comparing formulas with citicoline, alpha-GPC, bacopa, ginkgo, or caffeine."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Medication Awareness",
+      "description": "Highlights caution for users taking mood, sleep, cognition, or blood-thinning medications."
+    }
+  ],
+  "dosage_title": "Typical Phosphatidylserine Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Often 100-300 mg daily",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Phosphatidylserine products commonly provide divided daily servings, but exact dose depends on the label and source.</p><p>Follow product directions. If using cognitive medications, mood medications, sleep medications, blood thinners, or stimulant blends, ask a healthcare professional before use.</p>",
+  "safety_title": "Phosphatidylserine Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
+  "side_effects": [
+    "Digestive Upset",
+    "Insomnia",
+    "Headache",
+    "Allergen Concern"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Digestive Upset",
+      "description": "Stomach discomfort, nausea, or loose stools can occur."
+    },
+    {
+      "title": "Insomnia",
+      "description": "Some users may notice sleep disruption, especially with stimulating blends."
+    },
+    {
+      "title": "Headache",
+      "description": "Headache or mental discomfort may occur in sensitive users."
+    },
+    {
+      "title": "Allergen Concern",
+      "description": "Soy-derived products may not be suitable for people with soy allergy."
+    }
+  ],
+  "drug_interactions_json": [
+    "Discuss use with a clinician if taking medications for cognition, mood, sleep, or neurological conditions.",
+    "Use caution with stimulant-heavy nootropic formulas.",
+    "Review soy allergy or sensitivity if the product is soy-derived.",
+    "Ask before combining with anticoagulants or complex medication routines."
+  ],
+  "who_should_avoid_json": [
+    "People with soy allergy if the product is soy-derived.",
+    "People with persistent memory or cognitive symptoms who have not been medically evaluated.",
+    "People taking neurological, psychiatric, sleep, or cognitive medications without guidance.",
+    "Pregnant or nursing users unless directed by a clinician.",
+    "Users who experience insomnia from brain or focus supplements."
+  ],
+  "food_sources_title": "Phosphatidylserine Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Phosphatidylserine is typically associated with sunflower lecithin, soy lecithin, or other phospholipid sources. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Sunflower lecithin, soy lecithin, or other phospholipid sources"
+    },
+    {
+      "title": "Common Form",
+      "description": "Capsule, softgel, tablet, powder, brain blend"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
+  ],
+  "faq_title": "Phosphatidylserine FAQs",
+  "faq_subtitle": "Common questions about phosphatidylserine supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is phosphatidylserine?",
+      "answer": "Phosphatidylserine is a phospholipid found in cell membranes and used in brain health supplements."
+    },
+    {
+      "question": "Is phosphatidylserine a nootropic?",
+      "answer": "It is commonly included in nootropic and cognitive wellness formulas."
+    },
+    {
+      "question": "What is phosphatidylserine made from?",
+      "answer": "Modern supplements are usually sourced from soy or sunflower lecithin."
+    },
+    {
+      "question": "Can phosphatidylserine improve memory?",
+      "answer": "It is studied for cognitive wellness, but it is not approved to treat memory disorders or dementia."
+    },
+    {
+      "question": "Can phosphatidylserine affect sleep?",
+      "answer": "Some users may experience insomnia, especially when it is combined with stimulants."
+    },
+    {
+      "question": "Is sunflower phosphatidylserine better than soy?",
+      "answer": "The choice often depends on allergen preference, source transparency, and product quality."
+    },
+    {
+      "question": "What should I check on a label?",
+      "answer": "Check dose, source, allergen status, other nootropic ingredients, and stimulant content."
+    },
+    {
+      "question": "Can I take phosphatidylserine with caffeine?",
+      "answer": "Some formulas combine them, but sensitive users should watch for jitters or sleep disruption."
+    },
+    {
+      "question": "Who should avoid phosphatidylserine?",
+      "answer": "Soy-allergic users, pregnant or nursing users, and people on neurological or psychiatric medications should seek guidance."
+    },
+    {
+      "question": "Is phosphatidylserine FDA-approved for disease treatment?",
+      "answer": "No. It is a dietary supplement ingredient, not a disease treatment."
+    }
+  ],
+  "sidebar_profile_title": "Phosphatidylserine Profile Snapshot",
+  "sidebar_profile_content": "Phosphatidylserine is a phospholipid found in cell membranes and used in brain health, focus, stress, and cognitive wellness supplements.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Phospholipid"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Often 100-300 mg daily"
+    },
+    {
+      "label": "Best For",
+      "value": "Brain formula research"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Generally moderate, source-aware"
+    },
+    {
+      "label": "Origin",
+      "value": "Sunflower or soy lecithin"
+    },
+    {
+      "label": "Part Used",
+      "value": "Membrane phospholipid"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule or softgel"
+    },
+    {
+      "label": "Taste",
+      "value": "Usually neutral"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Phosphatidylserine is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Phosphatidylserine is a phospholipid found in cell membranes and used in brain health, focus, stress, and cognitive wellness supplements.",
+  "best_for": "Brain health formulas, focus support, cognitive wellness research, and stress-response label comparison",
+  "safety_level": "Generally moderate, source-aware",
+  "origin_country": "Sunflower lecithin, soy lecithin, or other phospholipid sources",
+  "part_used": "Membrane phospholipid",
+  "ingredient_form": "Capsule, softgel, tablet, powder, brain blend",
+  "taste_profile": "Usually neutral in capsules",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": "Phosphatidylserine Uses",
+  "uses_subtitle": "Common wellness contexts where phosphatidylserine appears.",
+  "uses_content": "<p>Phosphatidylserine is commonly used in brain health formulas, focus support, cognitive wellness research, and stress-response label comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Brain health formulas, focus support, cognitive wellness research, and stress-response label comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Phosphatidylserine Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on phosphatidylserine varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Phosphatidylserine References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "citicoline",
+    "alpha-gpc",
+    "bacopa-monnieri",
+    "ginkgo-biloba",
+    "dha"
+  ],
+  "seo_title": "Phosphatidylserine Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "phosphatidylserine",
+  "seo_description": "Explore phosphatidylserine benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/phosphatidylserine",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Phosphatidylserine Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore phosphatidylserine benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
+}

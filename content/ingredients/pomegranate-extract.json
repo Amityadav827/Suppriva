@@ -1,165 +1,161 @@
 {
   "name": "Pomegranate Extract",
-  "status": "published",
   "scientific_name": "Punica granatum",
   "ingredient_category": "Fruits & Botanicals",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Pomegranate Extract is a polyphenol-rich fruit extract used in antioxidant and cardiovascular wellness supplement formulas, with practical safety and label context for supplement shoppers.",
+  "short_description": "Pomegranate Extract is a fruit-derived extract rich in polyphenols such as punicalagins and used in antioxidant, heart, skin, and metabolic wellness formulas.",
   "overview_title": "Pomegranate Extract Overview",
-  "overview_subtitle": "A practical look at pomegranate extract as a supplement ingredient.",
-  "overview_content": "<p>Pomegranate Extract is a polyphenol-rich fruit extract used in antioxidant and cardiovascular wellness supplement formulas. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Pomegranate Extract through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Pomegranate Extract should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Pomegranate extracts often emphasize punicalagins, a group of polyphenols found in the fruit peel and juice.</p>",
+  "overview_subtitle": "A guide to pomegranate polyphenols, supplement forms, and safety considerations.",
+  "overview_content": "<p>Pomegranate extract comes from Punica granatum, a fruit known for its deep red arils and tart juice. In supplements, pomegranate may appear as fruit extract, peel extract, juice concentrate, powder, or a standardized polyphenol ingredient. It is commonly used in antioxidant, heart wellness, skin support, metabolic health, and healthy aging formulas. The most discussed compounds include punicalagins, ellagic acid, anthocyanins, and related polyphenols.</p><p>The form matters. Drinking pomegranate juice is not the same as taking a concentrated peel extract capsule. Juice products may contain sugar and calories, while extracts may concentrate polyphenols from peel or whole fruit. Some labels standardize for punicalagins or ellagic acid, while others simply list pomegranate powder. A user comparing supplements should look for source, standardization, dose, and whether the product is part of a broader antioxidant blend.</p><p>Pomegranate extract is often discussed for antioxidant activity, endothelial function markers, exercise recovery, skin wellness, and metabolic research. These are educational contexts. It should not be promoted as a treatment for cancer, heart disease, high blood pressure, diabetes, inflammation, or hormonal conditions. Some laboratory and early clinical research is interesting, but supplement claims should remain conservative and label-based.</p><p>Safety is generally manageable for many adults, but pomegranate products may cause digestive upset, allergic reactions, or changes in how certain medications are handled. Because fruit extracts can interact with drug metabolism in some contexts, medication users should be careful, especially with blood pressure medication, statins, anticoagulants, cancer therapies, or medications with narrow safety margins. Pomegranate juice and concentrated extracts may not behave identically.</p><p>For Suppriva readers, pomegranate extract is a useful ingredient for learning fruit polyphenol label literacy. It often appears near grape seed extract, resveratrol, pine bark extract, green tea, vitamin C, and berry blends. The strongest labels explain whether the extract is from peel, fruit, juice, or whole pomegranate and whether polyphenols are standardized.</p><p>Pomegranate extract can be a thoughtful addition to antioxidant formula research, but it should complement diet and professional care. Users should not rely on it to manage medical conditions, and those taking medications should review potential interactions before starting concentrated products.</p><p>A useful way to research Pomegranate Extract is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether pomegranate extract is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Pomegranate Extract should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Punicalagin Note",
+  "interesting_fact": "<p>Punicalagins are signature pomegranate polyphenols, but labels differ in whether they use juice concentrate, peel extract, or standardized extract.</p>",
   "how_it_works_title": "How Pomegranate Extract Works",
-  "how_it_works_subtitle": "The main mechanisms behind pomegranate extract in wellness formulas.",
-  "how_it_works_highlight_title": "Fruit polyphenol extract support profile",
-  "how_it_works_highlight_description": "Pomegranate Extract is commonly evaluated through ellagitannins, punicalagins, and other fruit polyphenols that support antioxidant and vascular wellness positioning.",
-  "how_it_works_content": "<p>Pomegranate Extract works through ellagitannins, punicalagins, and other fruit polyphenols that support antioxidant and vascular wellness positioning. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Pomegranate Extract is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "Pomegranate extract is mainly valued for fruit polyphenols and antioxidant wellness context.",
+  "how_it_works_highlight_title": "Fruit extract, not fruit serving",
+  "how_it_works_highlight_description": "Pomegranate extract can be more concentrated than food, so form, dose, and medication cautions matter.",
+  "how_it_works_content": "<p>Pomegranate extract provides polyphenols such as punicalagins and ellagic acid that are studied for antioxidant and cellular signaling activity.</p><p>Depending on source, extracts may differ in polyphenol profile. Peel extracts can be different from juice concentrates or whole fruit powders.</p><p>Its role in formulas depends on whether the product is built around antioxidant, cardiovascular, skin, or metabolic wellness positioning.</p>",
   "benefits_title": "Potential Pomegranate Extract Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
       "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Pomegranate Extract is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "title": "Fruit Polyphenol Support",
+      "description": "Provides a label context for punicalagins, ellagic acid, and antioxidant compounds."
     },
     {
-      "icon": "activity",
-      "title": "Supports Fruit Polyphenol And Heart Wellness Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around fruit polyphenol and heart wellness support."
+      "icon": "heart-pulse",
+      "title": "Heart Wellness Research",
+      "description": "Often appears in formulas positioned around vascular and cardiometabolic wellness."
+    },
+    {
+      "icon": "scan",
+      "title": "Skin and Healthy Aging Context",
+      "description": "Commonly used in beauty-from-within and healthy aging supplement categories."
     },
     {
       "icon": "search",
-      "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
-    },
-    {
-      "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Pomegranate Extract often appears with complementary nutrients or botanicals that support a broader wellness goal."
+      "title": "Extract Source Comparison",
+      "description": "Helps shoppers distinguish juice concentrate, peel extract, and standardized polyphenol products."
     },
     {
       "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
+      "title": "Medication Review",
+      "description": "Encourages caution for medication users because fruit extracts may affect drug handling."
     },
     {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Pomegranate Extract by mechanism, evidence level, safety context, and practical product positioning."
+      "icon": "apple",
+      "title": "Food-Based Ingredient Literacy",
+      "description": "Connects familiar fruit nutrition with concentrated supplement forms."
     }
   ],
   "dosage_title": "Typical Pomegranate Extract Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common servings often range from 250 mg to 1,000 mg daily, depending on extract strength and polyphenol standardization.",
-  "dosage": "Common servings often range from 250 mg to 1,000 mg daily, depending on extract strength and polyphenol standardization.",
-  "dosage_content": "<p>Common servings often range from 250 mg to 1,000 mg daily, depending on extract strength and polyphenol standardization.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Pomegranate Extract without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by extract type",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Pomegranate extract dosage varies by juice concentrate, powder, standardized extract, or polyphenol blend. The label should identify serving size and extract type.</p><p>Follow product directions and seek professional guidance if taking blood pressure drugs, blood thinners, statins, cancer medications, or other narrow-therapeutic-index medications.</p>",
   "safety_title": "Pomegranate Extract Safety Information",
-  "safety_subtitle": "Important safety context before using pomegranate extract supplements.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Allergic Reaction",
+    "Medication Sensitivity",
+    "Sugar Considerations"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Pomegranate Extract may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or loose stools may occur."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "title": "Allergic Reaction",
+      "description": "Some people may be sensitive or allergic to pomegranate products."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "title": "Medication Sensitivity",
+      "description": "Concentrated extracts may matter for people taking certain medications."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Pomegranate Extract is combined with similar ingredients or multi-ingredient products."
+      "title": "Sugar Considerations",
+      "description": "Juice products may add sugar, unlike some capsule extracts."
     }
   ],
   "drug_interactions_json": [
-    "Review Pomegranate Extract with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People taking blood pressure medication, anticoagulants, or multiple antioxidant supplements should review pomegranate extract use with a healthcare professional.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    "Medication users should ask a clinician before using concentrated pomegranate extract.",
+    "Use caution with blood pressure medications, statins, anticoagulants, and therapies with narrow safety margins.",
+    "Cancer treatment patients should discuss pomegranate supplements with their care team.",
+    "Avoid assuming pomegranate juice and extract have identical interaction profiles."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Pomegranate Extract or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    "People allergic to pomegranate.",
+    "People taking complex medication regimens without professional review.",
+    "Pregnant or nursing users considering concentrated extracts unless guided by a clinician.",
+    "People using pomegranate to replace care for heart, metabolic, or cancer-related conditions.",
+    "People monitoring sugar intake should review juice-based products carefully."
   ],
-  "food_sources_title": "Pomegranate Extract Food Sources",
-  "food_sources_subtitle": "Food and source context for pomegranate extract.",
-  "food_sources_content": "<p>Pomegranate extract is more concentrated than eating the fruit, so labels should be reviewed for serving size and standardization.</p>",
+  "food_sources_title": "Pomegranate Extract Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Pomegranate Extract is typically associated with pomegranate fruit peel, juice, or whole fruit extract. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
   "food_sources_json": [
     {
-      "title": "Pomegranate arils",
-      "description": "Pomegranate arils can contribute to fruit polyphenol and heart wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Primary Source",
+      "description": "Pomegranate fruit peel, juice, or whole fruit extract"
     },
     {
-      "title": "Pomegranate juice",
-      "description": "Pomegranate juice can contribute to fruit polyphenol and heart wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Common Form",
+      "description": "Capsule, powder, liquid extract, juice concentrate, polyphenol blend"
     },
     {
-      "title": "Pomegranate peel extracts",
-      "description": "Pomegranate peel extracts can contribute to fruit polyphenol and heart wellness support, though supplement potency depends on serving size, form, and standardization."
-    },
-    {
-      "title": "Whole-fruit powders",
-      "description": "Whole-fruit powders can contribute to fruit polyphenol and heart wellness support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
     }
   ],
   "faq_title": "Pomegranate Extract FAQs",
-  "faq_subtitle": "Common questions about pomegranate extract supplements.",
+  "faq_subtitle": "Common questions about pomegranate extract supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Pomegranate Extract?",
-      "answer": "Pomegranate Extract is a polyphenol-rich fruit extract used in antioxidant and cardiovascular wellness supplement formulas. It is used in supplement formulas for fruit polyphenol and heart wellness support, not as a substitute for medical treatment."
+      "question": "What is pomegranate extract?",
+      "answer": "Pomegranate extract is a concentrated ingredient from Punica granatum fruit, peel, juice, or whole fruit."
     },
     {
-      "question": "What is Pomegranate Extract commonly used for?",
-      "answer": "It is commonly positioned around antioxidant, circulation, and heart-wellness formulas. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "What are punicalagins?",
+      "answer": "Punicalagins are signature pomegranate polyphenols often discussed in antioxidant research."
     },
     {
-      "question": "How does Pomegranate Extract work?",
-      "answer": "Pomegranate Extract is usually discussed through ellagitannins, punicalagins, and other fruit polyphenols that support antioxidant and vascular wellness positioning. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "Is pomegranate extract the same as juice?",
+      "answer": "No. Extracts can be more concentrated and may come from peel, fruit, or juice concentrate."
     },
     {
-      "question": "What is a typical Pomegranate Extract dose?",
-      "answer": "Common servings often range from 250 mg to 1,000 mg daily, depending on extract strength and polyphenol standardization. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "What is pomegranate extract used for?",
+      "answer": "It commonly appears in antioxidant, heart wellness, skin, and metabolic formulas."
     },
     {
-      "question": "Is Pomegranate Extract safe for daily use?",
-      "answer": "Generally well tolerated with label-aware use. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "Can pomegranate treat heart disease?",
+      "answer": "No. Supplements are not approved to treat heart disease or replace medical care."
     },
     {
-      "question": "Can Pomegranate Extract cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "Can pomegranate interact with medications?",
+      "answer": "It may matter for some medications, so users with prescriptions should ask a clinician."
     },
     {
-      "question": "Can Pomegranate Extract interact with medication?",
-      "answer": "People taking blood pressure medication, anticoagulants, or multiple antioxidant supplements should review pomegranate extract use with a healthcare professional. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "What should I check on a label?",
+      "answer": "Check source, standardization, serving size, sugar content if liquid, and medication cautions."
     },
     {
-      "question": "What should I compare on a Pomegranate Extract supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Is peel extract different from juice extract?",
+      "answer": "Yes. Peel and juice extracts can have different polyphenol profiles."
     },
     {
-      "question": "What foods contain Pomegranate Extract or related compounds?",
-      "answer": "Pomegranate extract is more concentrated than eating the fruit, so labels should be reviewed for serving size and standardization."
+      "question": "Can pomegranate be used for skin support?",
+      "answer": "It appears in some skin and healthy aging formulas, but results depend on the full product."
     },
     {
-      "question": "Can Pomegranate Extract replace medical care?",
-      "answer": "No. Pomegranate Extract supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Who should avoid pomegranate extract?",
+      "answer": "Allergic users, complex medication users, and pregnant or nursing users should avoid unsupervised concentrated extracts."
     }
   ],
   "sidebar_profile_title": "Pomegranate Extract Profile Snapshot",
-  "sidebar_profile_content": "Pomegranate Extract is a fruit polyphenol extract used in supplements for fruit polyphenol and heart wellness support.",
+  "sidebar_profile_content": "Pomegranate Extract is a fruit-derived extract rich in polyphenols such as punicalagins and used in antioxidant, heart, skin, and metabolic wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -167,61 +163,98 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Common servings often range from 250 mg to 1,000 mg daily, depending on extract strength and polyphenol standardization."
+      "value": "Varies by extract type"
     },
     {
       "label": "Best For",
-      "value": "Antioxidant, circulation, and heart-wellness formulas"
+      "value": "Antioxidant label research"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated with label-aware use"
+      "value": "Medication-aware"
     },
     {
       "label": "Origin",
-      "value": "Mediterranean, Middle Eastern, and subtropical fruit-growing regions"
+      "value": "Pomegranate fruit"
     },
     {
       "label": "Part Used",
-      "value": "Fruit, peel, seed, or whole-fruit extract depending on product"
+      "value": "Fruit, peel, juice"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, juice concentrate, extract"
+      "value": "Capsule, powder, liquid"
     },
     {
       "label": "Taste",
-      "value": "Tart, fruity, mildly astringent"
+      "value": "Tart and astringent"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Pomegranate Extract is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Pomegranate Extract is a polyphenol-rich fruit extract used in antioxidant and cardiovascular wellness supplement formulas, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Antioxidant, circulation, and heart-wellness formulas",
-  "safety_level": "Generally well tolerated with label-aware use",
-  "origin_country": "Mediterranean, Middle Eastern, and subtropical fruit-growing regions",
-  "part_used": "Fruit, peel, seed, or whole-fruit extract depending on product",
-  "ingredient_form": "Capsule, powder, juice concentrate, extract",
-  "taste_profile": "Tart, fruity, mildly astringent",
+  "sidebar_at_a_glance_content": "<p>Pomegranate Extract is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Pomegranate Extract is a fruit-derived extract rich in polyphenols such as punicalagins and used in antioxidant, heart, skin, and metabolic wellness formulas.",
+  "best_for": "Antioxidant formulas, fruit polyphenol research, heart wellness, and skin-support label comparison",
+  "safety_level": "Medication-aware",
+  "origin_country": "Pomegranate fruit peel, juice, or whole fruit extract",
+  "part_used": "Fruit, peel, juice, or aril extract",
+  "ingredient_form": "Capsule, powder, liquid extract, juice concentrate, polyphenol blend",
+  "taste_profile": "Tart, fruity, and astringent",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Pomegranate Extract Uses",
+  "uses_subtitle": "Common wellness contexts where pomegranate extract appears.",
+  "uses_content": "<p>Pomegranate Extract is commonly used in antioxidant formulas, fruit polyphenol research, heart wellness, and skin-support label comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Antioxidant formulas, fruit polyphenol research, heart wellness, and skin-support label comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Pomegranate Extract Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on pomegranate extract varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Pomegranate Extract References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "grape-seed-extract",
+    "pine-bark-extract",
+    "resveratrol",
+    "vitamin-c",
+    "acai-extract"
+  ],
   "seo_title": "Pomegranate Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "pomegranate extract",
-  "seo_description": "Explore Pomegranate Extract benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore pomegranate extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/pomegranate-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Pomegranate Extract Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Pomegranate Extract benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore pomegranate extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

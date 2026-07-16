@@ -1,0 +1,260 @@
+{
+  "name": "Passionflower",
+  "scientific_name": "Passiflora incarnata",
+  "ingredient_category": "Sleep & Relaxation",
+  "status": "published",
+  "hero_badge": null,
+  "short_description": "Passionflower is a calming botanical traditionally used in sleep, relaxation, and stress-support supplement formulas.",
+  "overview_title": "Passionflower Overview",
+  "overview_subtitle": "A practical guide to passionflower for calm-focused formulas, sleep blends, and safety awareness.",
+  "overview_content": "<p>Passionflower is a botanical ingredient from Passiflora incarnata, a climbing plant traditionally used in calming teas and herbal formulas. In modern supplements, it appears in sleep blends, stress-support capsules, relaxation tinctures, and formulas designed for evening routines. It is most often positioned around calm, occasional tension, and sleep quality support. Responsible language matters: passionflower should not be presented as a treatment for anxiety disorders, insomnia, panic attacks, depression, or withdrawal symptoms.</p><p>The most important label detail is context. Passionflower may appear alone, but it is commonly blended with valerian, lemon balm, chamomile, magnesium, L-theanine, GABA, hops, or melatonin. These combinations may be useful for some people, but they can also increase drowsiness. A user comparing products should look at the whole formula, serving size, extract type, alcohol content in tinctures, timing directions, and warnings about driving or medication use.</p><p>Passionflower is often discussed in relation to GABA-related calming pathways, although supplement effects depend on extract quality, dose, and individual sensitivity. Some users may find it gently relaxing, while others may feel sleepy, lightheaded, or unaffected. Because sleep and stress concerns can have many causes, passionflower works best as part of a broader routine that includes consistent sleep timing, reduced late caffeine, light management, and medical evaluation when symptoms are persistent.</p><p>Safety requires care. Passionflower may cause drowsiness, dizziness, confusion, nausea, or coordination changes in some users. It may increase the effects of sedatives, sleep medications, benzodiazepines, barbiturates, alcohol, antihistamines, opioids, and other calming supplements. It should generally be avoided before surgery unless a clinician provides direction. Pregnant users should avoid passionflower unless specifically advised by a qualified healthcare professional.</p><p>For Suppriva readers, passionflower is a label literacy ingredient for the sleep and relaxation category. It helps shoppers understand why calming formulas can feel different depending on herb combinations and timing. A product that pairs passionflower with melatonin is different from a daytime stress formula with L-theanine, and both are different from a tincture used as needed.</p><p>Passionflower can be an interesting botanical for people researching gentle relaxation support, but it should not replace diagnosis or treatment. If anxiety, panic, insomnia, mood symptoms, or daytime impairment are ongoing, a healthcare professional should be involved.</p><p>A useful way to research Passionflower is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether passionflower is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Passionflower should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Calming Botanical",
+  "interesting_fact": "<p>Passionflower is often paired with valerian, lemon balm, chamomile, magnesium, or GABA, so the full formula matters as much as the herb itself.</p>",
+  "how_it_works_title": "How Passionflower Works",
+  "how_it_works_subtitle": "Passionflower is studied for calming pathways, but it should be used carefully with sedating medications.",
+  "how_it_works_highlight_title": "Relaxation support, not sedation replacement",
+  "how_it_works_highlight_description": "Passionflower belongs in calming formulas, but persistent anxiety or insomnia needs professional evaluation.",
+  "how_it_works_content": "<p>Passionflower contains flavonoids and other plant compounds studied in relation to calming pathways and nervous system signaling.</p><p>Its effects are usually discussed as gentle relaxation support rather than forceful sedation. Still, formulas that combine multiple calming ingredients can increase drowsiness.</p><p>Because the ingredient is often used in evening formulas, users should pay attention to timing, driving cautions, alcohol use, and medication interactions.</p>",
+  "benefits_title": "Potential Passionflower Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
+  "benefits_json": [
+    {
+      "icon": "moon",
+      "title": "Relaxation Formula Context",
+      "description": "Commonly used in sleep and calming blends designed for evening routines."
+    },
+    {
+      "icon": "leaf",
+      "title": "Traditional Botanical Use",
+      "description": "Helps users understand a long-used calming herb in modern supplement labels."
+    },
+    {
+      "icon": "search",
+      "title": "Blend Comparison",
+      "description": "Useful for comparing formulas with valerian, lemon balm, chamomile, magnesium, GABA, or melatonin."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Sedation Safety Review",
+      "description": "Highlights medication, alcohol, surgery, and driving cautions."
+    },
+    {
+      "icon": "clock",
+      "title": "Evening Routine Fit",
+      "description": "Best evaluated by timing instructions and whether the product is meant for day or night use."
+    },
+    {
+      "icon": "book-open",
+      "title": "Calm Education",
+      "description": "Supports informed research without treating anxiety or insomnia as supplement-only issues."
+    }
+  ],
+  "dosage_title": "Typical Passionflower Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by tea, tincture, or extract",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Passionflower dosage varies by tea, tincture, capsule, and extract. Label directions may differ greatly depending on concentration and whether it is used alone or in a blend.</p><p>Use caution before driving or operating machinery. Do not combine with alcohol, sedatives, or sleep medications unless directed by a healthcare professional.</p>",
+  "safety_title": "Passionflower Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
+  "side_effects": [
+    "Drowsiness",
+    "Dizziness",
+    "Digestive Upset",
+    "Confusion or Fog"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Drowsiness",
+      "description": "Passionflower may cause sleepiness or reduced alertness, especially in blends."
+    },
+    {
+      "title": "Dizziness",
+      "description": "Some users may feel lightheaded or less coordinated."
+    },
+    {
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or mild digestive changes may occur."
+    },
+    {
+      "title": "Confusion or Fog",
+      "description": "Sensitive users may feel mentally foggy, especially with sedatives or alcohol."
+    }
+  ],
+  "drug_interactions_json": [
+    "Use caution with sedatives, benzodiazepines, barbiturates, sleep medications, opioids, antihistamines, and alcohol.",
+    "Avoid stacking with multiple calming supplements unless reviewed by a professional.",
+    "Tell clinicians about passionflower before surgery or procedures involving anesthesia.",
+    "Discuss use with a healthcare professional if taking psychiatric, seizure, or sleep-related medications."
+  ],
+  "who_should_avoid_json": [
+    "Pregnant or nursing users unless specifically advised by a qualified clinician.",
+    "People using sedatives, sleep medications, alcohol, or opioids without professional guidance.",
+    "People who need to drive or operate machinery after use.",
+    "Anyone preparing for surgery without medical review.",
+    "People with persistent anxiety, insomnia, or mood symptoms who have not been evaluated."
+  ],
+  "food_sources_title": "Passionflower Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Passionflower is typically associated with passionflower aerial parts. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Passionflower aerial parts"
+    },
+    {
+      "title": "Common Form",
+      "description": "Capsule, tea, tincture, extract, sleep blend"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
+  ],
+  "faq_title": "Passionflower FAQs",
+  "faq_subtitle": "Common questions about passionflower supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is passionflower?",
+      "answer": "Passionflower is a botanical from Passiflora incarnata commonly used in calming, relaxation, and sleep-support supplements."
+    },
+    {
+      "question": "Is passionflower a sleep supplement?",
+      "answer": "It often appears in sleep blends, but it should not replace medical evaluation for chronic insomnia."
+    },
+    {
+      "question": "Can passionflower make me drowsy?",
+      "answer": "Yes. Drowsiness, dizziness, or reduced alertness can occur, especially when combined with other calming ingredients."
+    },
+    {
+      "question": "Can I take passionflower with melatonin?",
+      "answer": "Some products combine them, but users should be cautious because the blend may increase sleepiness."
+    },
+    {
+      "question": "Does passionflower treat anxiety?",
+      "answer": "No. It is not an FDA-approved treatment for anxiety disorders or panic symptoms."
+    },
+    {
+      "question": "What should I check on a passionflower label?",
+      "answer": "Check form, serving size, extract strength, timing, other calming ingredients, and medication warnings."
+    },
+    {
+      "question": "Can passionflower interact with medication?",
+      "answer": "Yes. It may increase the effects of sedatives, sleep medicines, alcohol, and other calming substances."
+    },
+    {
+      "question": "Is passionflower safe during pregnancy?",
+      "answer": "Pregnant users should avoid passionflower unless a clinician specifically recommends it."
+    },
+    {
+      "question": "Can I use passionflower during the day?",
+      "answer": "Some people do, but it may cause drowsiness, so timing and response should be considered."
+    },
+    {
+      "question": "Who should avoid passionflower?",
+      "answer": "Sedative medication users, pregnant users, surgery patients, and people needing full alertness should avoid unsupervised use."
+    }
+  ],
+  "sidebar_profile_title": "Passionflower Profile Snapshot",
+  "sidebar_profile_content": "Passionflower is a calming botanical traditionally used in sleep, relaxation, and stress-support supplement formulas.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Calming botanical"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Varies by tea, tincture, or extract"
+    },
+    {
+      "label": "Best For",
+      "value": "Relaxation label research"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Sedation-aware"
+    },
+    {
+      "label": "Origin",
+      "value": "Passiflora incarnata"
+    },
+    {
+      "label": "Part Used",
+      "value": "Aerial parts"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, tea, tincture"
+    },
+    {
+      "label": "Taste",
+      "value": "Floral and earthy"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Passionflower is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Passionflower is a calming botanical traditionally used in sleep, relaxation, and stress-support supplement formulas.",
+  "best_for": "Relaxation formulas, occasional sleep support, and calming botanical label comparison",
+  "safety_level": "Sedation-aware",
+  "origin_country": "Passionflower aerial parts",
+  "part_used": "Aerial parts, leaf, flower, and vine",
+  "ingredient_form": "Capsule, tea, tincture, extract, sleep blend",
+  "taste_profile": "Mildly grassy, floral, and earthy",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": "Passionflower Uses",
+  "uses_subtitle": "Common wellness contexts where passionflower appears.",
+  "uses_content": "<p>Passionflower is commonly used in relaxation formulas, occasional sleep support, and calming botanical label comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Relaxation formulas, occasional sleep support, and calming botanical label comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Passionflower Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on passionflower varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Passionflower References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "melatonin",
+    "gaba",
+    "magnesium-glycinate",
+    "chamomile-extract",
+    "lemon-balm"
+  ],
+  "seo_title": "Passionflower Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "passionflower",
+  "seo_description": "Explore passionflower benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/passionflower",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Passionflower Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore passionflower benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
+}
