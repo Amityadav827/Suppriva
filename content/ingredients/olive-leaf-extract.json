@@ -1,212 +1,260 @@
 {
   "name": "Olive Leaf Extract",
   "scientific_name": "Olea europaea",
+  "ingredient_category": "Herbal Extracts",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Olive Leaf Extract is reviewed in Suppriva's ingredient library for polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
-  "overview_title": "What Is Olive Leaf Extract?",
-  "overview_subtitle": "A practical overview of olive leaf extract and why it appears in modern supplement formulas.",
-  "overview_content": "Olive Leaf Extract is commonly found in supplement formulas connected to polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating olive leaf extract, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Olive Leaf Extract may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding olive leaf extract to a routine.",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "Oleuropein is one of the best-known olive leaf compounds and is often used for extract standardization.",
+  "short_description": "Olive Leaf Extract is a botanical extract from olive tree leaves, known for polyphenols such as oleuropein and used in antioxidant and metabolic wellness formulas.",
+  "overview_title": "Olive Leaf Extract Overview",
+  "overview_subtitle": "A practical look at olive leaf polyphenols, supplement forms, and safety considerations.",
+  "overview_content": "<p>Olive leaf extract comes from the leaves of Olea europaea, the same tree that produces olives and olive oil. While olive oil is best known as a food, olive leaf extract is a concentrated botanical ingredient used in antioxidant, immune, cardiovascular, and metabolic wellness formulas. The most discussed compound is oleuropein, a bitter olive polyphenol, though olive leaf contains a broader range of plant compounds that may contribute to its supplement positioning.</p><p>Consumers should not confuse olive leaf extract with olive oil. Olive oil provides dietary fats and food-based polyphenols, while olive leaf supplements are usually capsules, tablets, powders, or liquid extracts. These products may be standardized to oleuropein or may simply list a raw extract amount. Standardization matters because two 500 mg olive leaf capsules can differ greatly in active polyphenol content and intended use.</p><p>Research around olive leaf extract includes antioxidant activity, blood pressure markers, metabolic health markers, and immune-related mechanisms. The evidence is not a license to treat hypertension, diabetes, infections, inflammation, or immune disorders with supplements. Instead, olive leaf should be viewed as a botanical ingredient with interesting wellness research and meaningful safety considerations.</p><p>Safety is especially relevant for people taking blood pressure medication, diabetes medication, anticoagulants, immune-related medications, or multiple herbal products. Olive leaf may influence blood pressure or blood sugar in some contexts, so users should be careful about combining it with medications that have similar effects. Digestive upset, headache, dizziness, or allergic reactions can occur in sensitive people.</p><p>For Suppriva readers, olive leaf extract is best researched by looking at the full label. Does the product list oleuropein percentage? Is it a leaf extract or a generic olive complex? Does it include garlic, berberine, cinnamon, hawthorn, or other cardiometabolic ingredients? Does the label warn medication users? These questions help separate thoughtful formulas from vague antioxidant claims.</p><p>Olive leaf extract can be part of a wellness routine for adults who understand its botanical nature and medication cautions. It should complement balanced diet, movement, sleep, and professional care rather than replace medical treatment for blood pressure, glucose, infection, or cardiovascular concerns.</p><p>A useful way to research Olive Leaf Extract is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether olive leaf extract is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Olive Leaf Extract should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Oleuropein Note",
+  "interesting_fact": "<p>Oleuropein is one of the signature polyphenols associated with olive leaf, but labels can vary in whether they disclose the standardized amount.</p>",
   "how_it_works_title": "How Olive Leaf Extract Works",
-  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to olive leaf extract.",
-  "how_it_works_highlight_title": "Botanical Extract Context",
-  "how_it_works_highlight_description": "Olive Leaf Extract is most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
-  "how_it_works_content": "Olive Leaf Extract does not work as a universal quick fix. It is typically discussed in relation to polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Olive Leaf Extract is often compared with green tea extract, grape seed extract, quercetin, and vitamin C.\n\nSafety context matters. Anyone with blood pressure medication, diabetes medication, pregnancy, nursing, or olive allergy should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
-  "benefits_title": "Potential Benefits of Olive Leaf Extract",
-  "benefits_subtitle": "Educational benefits commonly discussed for olive leaf extract in supplement routines and label comparison.",
+  "how_it_works_subtitle": "Olive leaf extract is mainly evaluated for polyphenol content and antioxidant wellness context.",
+  "how_it_works_highlight_title": "Polyphenol standardization",
+  "how_it_works_highlight_description": "The strongest olive leaf labels explain extract strength, oleuropein content, serving size, and medication cautions.",
+  "how_it_works_content": "<p>Olive leaf extract contains polyphenols such as oleuropein that are studied for antioxidant and cellular stress-response activity.</p><p>Its practical role depends on extract strength, oleuropein standardization, and the full formula. A standardized extract may be more transparent than a label that only lists a generic leaf powder amount.</p><p>Because some research discusses blood pressure or glucose markers, medication users should treat olive leaf as biologically active and review it with a healthcare professional.</p>",
+  "benefits_title": "Potential Olive Leaf Extract Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "shield-check",
-      "title": "Wellness Routine Support",
-      "description": "Olive Leaf Extract is commonly researched or used in formulas connected to antioxidant and immune wellness research."
-    },
-    {
-      "icon": "activity",
-      "title": "Label Comparison Value",
-      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
-    },
-    {
       "icon": "leaf",
-      "title": "Formula Stacking Context",
-      "description": "Olive Leaf Extract often appears alongside complementary ingredients such as green tea extract, grape seed extract, quercetin, and vitamin C."
-    },
-    {
-      "icon": "clipboard-check",
-      "title": "Everyday Education",
-      "description": "Understanding olive leaf extract helps shoppers separate educational ingredient context from exaggerated supplement claims."
+      "title": "Polyphenol Awareness",
+      "description": "Helps shoppers understand oleuropein standardization and botanical extract quality."
     },
     {
       "icon": "sparkles",
-      "title": "Targeted Category Fit",
-      "description": "Brands may include olive leaf extract in products designed for polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison."
+      "title": "Antioxidant Context",
+      "description": "Often used in formulas that focus on oxidative stress and cellular wellness education."
     },
     {
       "icon": "heart-pulse",
-      "title": "Safety-Aware Selection",
-      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+      "title": "Cardiometabolic Label Research",
+      "description": "Commonly appears in blood pressure and metabolic wellness formulas, requiring responsible claims review."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Medication Caution",
+      "description": "Encourages careful review for blood pressure, glucose, anticoagulant, and immune-related medication users."
+    },
+    {
+      "icon": "search",
+      "title": "Formula Comparison",
+      "description": "Useful for comparing olive leaf with garlic, hawthorn, berberine, cinnamon, or grape seed extract."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Standardization Check",
+      "description": "Best evaluated by extract ratio, oleuropein percentage, serving size, and warnings."
     }
   ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
-  "typical_dose": "Commonly 250-1,000 mg per serving",
-  "dosage": "Commonly 250-1,000 mg per serving",
-  "dosage_content": "Commonly 250-1,000 mg per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain olive leaf extract unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Olive Leaf Extract may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "dosage_title": "Typical Olive Leaf Extract Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by oleuropein standardization",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Olive leaf extract serving sizes vary widely, often based on extract strength and oleuropein standardization. Capsules and liquid extracts are not directly interchangeable.</p><p>Follow the product label. If using blood pressure medication, diabetes medication, blood thinners, or immune-related therapies, ask a healthcare professional before use.</p>",
+  "safety_title": "Olive Leaf Extract Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive discomfort",
-    "Headache or sensitivity",
-    "Unexpected tolerance changes",
-    "Allergic reaction in sensitive individuals"
+    "Digestive Upset",
+    "Headache",
+    "Dizziness",
+    "Allergic Reaction"
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+      "title": "Digestive Upset",
+      "description": "Nausea, stomach discomfort, or loose stools may occur in sensitive users."
     },
     {
-      "icon": "activity",
-      "title": "Tolerance Varies",
-      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+      "title": "Headache",
+      "description": "Some users may report headache or general discomfort."
     },
     {
-      "icon": "alert-circle",
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+      "title": "Dizziness",
+      "description": "Possible blood pressure effects may contribute to lightheadedness in some people."
     },
     {
-      "icon": "shield-alert",
-      "title": "Dose Awareness",
-      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+      "title": "Allergic Reaction",
+      "description": "People sensitive to olive tree products or botanicals may react."
     }
   ],
   "drug_interactions_json": [
-    "Review olive leaf extract with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing green tea extract, grape seed extract, quercetin, and vitamin C.",
-    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
-    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+    "Use caution with blood pressure medication because olive leaf may influence blood pressure markers.",
+    "Discuss use with a clinician if taking diabetes medication or monitoring blood sugar closely.",
+    "Ask before combining with blood thinners, antiplatelet drugs, or multiple cardiovascular herbs.",
+    "Review use if taking immune-related medications or preparing for surgery."
   ],
   "who_should_avoid_json": [
-    "People with known allergy or sensitivity to olive leaf extract or its source material.",
-    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
-    "People taking medication for blood pressure medication, diabetes medication, pregnancy, nursing, or olive allergy without professional review.",
-    "Children unless specifically directed by a qualified healthcare professional.",
-    "Anyone expecting olive leaf extract to replace medical diagnosis, prescribed treatment, or emergency care."
+    "People using blood pressure or diabetes medication without professional guidance.",
+    "Pregnant or nursing users unless advised by a clinician.",
+    "People with known olive or botanical allergies.",
+    "Anyone preparing for surgery without discussing supplement use.",
+    "People replacing prescribed cardiovascular or metabolic care with supplements."
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Answers to common questions about olive leaf extract, label comparison, dosage context, and safety.",
-  "faq_json": [
+  "food_sources_title": "Olive Leaf Extract Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Olive Leaf Extract is typically associated with olive tree leaves. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
     {
-      "question": "What is Olive Leaf Extract?",
-      "answer": "Olive Leaf Extract is a botanical extract commonly discussed in supplement education for polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison."
+      "title": "Primary Source",
+      "description": "Olive tree leaves"
     },
     {
-      "question": "What is Olive Leaf Extract commonly used for?",
-      "answer": "It is commonly researched or included in formulas related to antioxidant and immune wellness research, depending on the product and dose."
+      "title": "Common Form",
+      "description": "Capsule, tablet, liquid extract, powder"
     },
     {
-      "question": "Is Olive Leaf Extract a medicine?",
-      "answer": "No. Olive Leaf Extract supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
-    },
-    {
-      "question": "What dose of Olive Leaf Extract is common?",
-      "answer": "Labels often list commonly 250-1,000 mg per serving, but product form, potency, and serving frequency should be compared carefully."
-    },
-    {
-      "question": "Can Olive Leaf Extract cause side effects?",
-      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
-    },
-    {
-      "question": "Who should be cautious with Olive Leaf Extract?",
-      "answer": "People with blood pressure medication, diabetes medication, pregnancy, nursing, or olive allergy should discuss use with a healthcare professional before starting."
-    },
-    {
-      "question": "Can Olive Leaf Extract be combined with other supplements?",
-      "answer": "Some formulas combine it with ingredients such as green tea extract, grape seed extract, quercetin, and vitamin C, but stacking should be reviewed for dose overlap and safety."
-    },
-    {
-      "question": "How should I compare Olive Leaf Extract products?",
-      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
-    },
-    {
-      "question": "How long does Olive Leaf Extract take to work?",
-      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
-    },
-    {
-      "question": "Is Olive Leaf Extract safe for daily use?",
-      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
     }
   ],
-  "sidebar_profile_title": "Olive Leaf Extract Snapshot",
-  "sidebar_profile_content": "Olive Leaf Extract is a botanical extract commonly reviewed for polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "faq_title": "Olive Leaf Extract FAQs",
+  "faq_subtitle": "Common questions about olive leaf extract supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is olive leaf extract?",
+      "answer": "Olive leaf extract is a supplement ingredient made from olive tree leaves and often standardized for polyphenols such as oleuropein."
+    },
+    {
+      "question": "Is olive leaf extract the same as olive oil?",
+      "answer": "No. Olive oil is a food oil, while olive leaf extract is a concentrated botanical supplement."
+    },
+    {
+      "question": "What is oleuropein?",
+      "answer": "Oleuropein is a bitter olive polyphenol commonly used as a standardization marker in olive leaf supplements."
+    },
+    {
+      "question": "Can olive leaf lower blood pressure?",
+      "answer": "Some research explores blood pressure markers, but olive leaf should not replace prescribed treatment or medical care."
+    },
+    {
+      "question": "Can olive leaf affect blood sugar?",
+      "answer": "It may influence glucose-related markers in some contexts, so diabetes medication users should seek guidance."
+    },
+    {
+      "question": "What should I look for on a label?",
+      "answer": "Check extract strength, oleuropein percentage, serving size, warnings, and other cardiometabolic ingredients."
+    },
+    {
+      "question": "Is olive leaf safe every day?",
+      "answer": "Daily use depends on dose, health status, medications, and label directions."
+    },
+    {
+      "question": "Can I combine olive leaf with garlic or berberine?",
+      "answer": "Use caution because combinations may overlap in blood pressure, glucose, or bleeding-related effects."
+    },
+    {
+      "question": "Who should avoid olive leaf extract?",
+      "answer": "Medication users, pregnant or nursing users, and people with allergies should avoid unsupervised use."
+    },
+    {
+      "question": "Does olive leaf treat infections?",
+      "answer": "No. Supplements are not approved to treat infections or replace medical care."
+    }
+  ],
+  "sidebar_profile_title": "Olive Leaf Extract Profile Snapshot",
+  "sidebar_profile_content": "Olive Leaf Extract is a botanical extract from olive tree leaves, known for polyphenols such as oleuropein and used in antioxidant and metabolic wellness formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Botanical extract"
+      "value": "Botanical leaf extract"
     },
     {
       "label": "Typical Dose",
-      "value": "Commonly 250-1,000 mg per serving"
+      "value": "Varies by oleuropein standardization"
     },
     {
       "label": "Best For",
-      "value": "Antioxidant and immune wellness research"
+      "value": "Antioxidant label research"
     },
     {
       "label": "Safety Level",
-      "value": "Review blood pressure medication, diabetes medication, pregnancy, nursing, or olive allergy"
+      "value": "Medication-aware"
     },
     {
       "label": "Origin",
-      "value": "Mediterranean olive tree"
+      "value": "Olive tree leaves"
     },
     {
       "label": "Part Used",
-      "value": "Leaf extract"
+      "value": "Leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, liquid extract, or tea blend"
+      "value": "Capsule, liquid, powder"
     },
     {
       "label": "Taste",
       "value": "Bitter and herbal"
     }
   ],
-  "sidebar_at_a_glance_content": "- Botanical extract used in supplement education\n- Commonly discussed for polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison\n- Compare form, dose, and supporting ingredients\n- Often compared with green tea extract, grape seed extract, quercetin, and vitamin C\n- Not a substitute for personal medical advice",
-  "full_description": "Olive Leaf Extract is a botanical extract included in Suppriva's ingredient library for polyphenol support, antioxidant wellness, immune-season routines, and cardiovascular label comparison.",
-  "best_for": "Antioxidant and immune wellness research",
-  "safety_level": "Review blood pressure medication, diabetes medication, pregnancy, nursing, or olive allergy",
-  "origin_country": "Mediterranean olive tree",
-  "part_used": "Leaf extract",
-  "ingredient_form": "Capsule, liquid extract, or tea blend",
-  "taste_profile": "Bitter and herbal",
+  "sidebar_at_a_glance_content": "<p>Olive Leaf Extract is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Olive Leaf Extract is a botanical extract from olive tree leaves, known for polyphenols such as oleuropein and used in antioxidant and metabolic wellness formulas.",
+  "best_for": "Antioxidant wellness research, metabolic support formulas, and botanical label comparison",
+  "safety_level": "Medication-aware",
+  "origin_country": "Olive tree leaves",
+  "part_used": "Leaf",
+  "ingredient_form": "Capsule, tablet, liquid extract, powder",
+  "taste_profile": "Bitter, herbal, slightly astringent",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Olive Leaf Extract Benefits, Dosage and Safety | Suppriva",
+  "uses_title": "Olive Leaf Extract Uses",
+  "uses_subtitle": "Common wellness contexts where olive leaf extract appears.",
+  "uses_content": "<p>Olive Leaf Extract is commonly used in antioxidant wellness research, metabolic support formulas, and botanical label comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Antioxidant wellness research, metabolic support formulas, and botanical label comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Olive Leaf Extract Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on olive leaf extract varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Olive Leaf Extract References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "grape-seed-extract",
+    "berberine",
+    "cinnamon-bark-extract",
+    "green-tea-extract",
+    "quercetin-phytosome"
+  ],
+  "seo_title": "Olive Leaf Extract Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "olive leaf extract",
-  "seo_description": "Explore olive leaf extract benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "seo_description": "Explore olive leaf extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/olive-leaf-extract",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Olive Leaf Extract Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore olive leaf extract benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+  "meta_title": "Olive Leaf Extract Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore olive leaf extract benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }

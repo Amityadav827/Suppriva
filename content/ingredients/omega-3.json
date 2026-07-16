@@ -1,0 +1,260 @@
+{
+  "name": "Omega-3 (EPA/DHA)",
+  "scientific_name": "Eicosapentaenoic acid and docosahexaenoic acid",
+  "ingredient_category": "Heart Health",
+  "status": "published",
+  "hero_badge": null,
+  "short_description": "Omega-3 (EPA/DHA) is a marine omega-3 ingredient category centered on EPA and DHA, commonly used in heart, brain, eye, and inflammation-focused supplement formulas.",
+  "overview_title": "Omega-3 EPA/DHA Overview",
+  "overview_subtitle": "A practical guide to EPA and DHA forms, label amounts, and supplement safety.",
+  "overview_content": "<p>Omega-3 EPA/DHA refers to the long-chain omega-3 fatty acids eicosapentaenoic acid and docosahexaenoic acid. These fats are commonly found in fatty fish, fish oil, krill oil, and algal oil. In supplement labels, EPA and DHA are usually associated with heart wellness, brain and eye nutrition, inflammation-resolution pathways, and general cellular health. They should be described responsibly: omega-3 supplements are not cures for heart disease, depression, arthritis, memory loss, or inflammation.</p><p>One of the most important label lessons is that total fish oil is not the same as EPA plus DHA. A softgel may list 1,000 mg of fish oil but provide only a fraction of that amount as EPA and DHA. Higher-quality labels clearly show EPA, DHA, serving size, oil source, form, and testing. Algal oil is often used for vegetarian DHA or EPA/DHA formulas, while krill oil naturally contains phospholipid-bound fats and astaxanthin, though serving amounts may be lower.</p><p>Omega-3 form can also matter. Some labels mention triglyceride form, ethyl ester form, re-esterified triglyceride form, phospholipid form, or algal oil. These details can influence absorption, cost, and user preference, but the practical comparison still begins with the delivered EPA and DHA amount per serving. Enteric coating, freshness testing, oxidation control, and third-party purity testing are also important because marine oils can become rancid or carry contaminant concerns if poorly handled.</p><p>Safety is usually manageable for many adults, but omega-3 supplements can cause fishy burps, bad breath, reflux, nausea, loose stools, headache, or unpleasant aftertaste. Higher intakes may interact with anticoagulant or antiplatelet medications and can matter before surgery. People with fish or shellfish allergy should be cautious with fish oil or krill oil, while algal oil may be an alternative for some users.</p><p>For Suppriva readers, EPA/DHA omega-3 should be evaluated with precision. Ask: How much EPA? How much DHA? Is the source fish, algae, or krill? Is the oil tested for oxidation and contaminants? Does the label include vitamin A or D because it is fish liver oil rather than standard fish oil? These questions prevent confusing marketing language with meaningful nutrition facts.</p><p>EPA and DHA can be useful nutrients in a broader wellness routine, especially when dietary fish intake is low, but they should complement food choices and medical guidance. People using omega-3 for triglycerides, cardiovascular risk, pregnancy, mental health, or inflammatory conditions should work with a qualified professional.</p><p>A useful way to research Omega-3 (EPA/DHA) is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether omega-3 EPA DHA is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Omega-3 (EPA/DHA) should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "EPA/DHA Label Tip",
+  "interesting_fact": "<p>The front label may say 1,000 mg fish oil, but the useful comparison is how much EPA and DHA it actually provides.</p>",
+  "how_it_works_title": "How Omega-3 EPA/DHA Works",
+  "how_it_works_subtitle": "EPA and DHA are long-chain omega-3 fats used in cell membranes and wellness pathways.",
+  "how_it_works_highlight_title": "Look past total fish oil",
+  "how_it_works_highlight_description": "EPA and DHA amounts matter more than total oil weight when comparing omega-3 supplements.",
+  "how_it_works_content": "<p>EPA and DHA are incorporated into cell membranes and are involved in signaling pathways related to inflammation resolution and normal cellular function.</p><p>DHA is especially concentrated in the brain and retina, while EPA is often discussed in relation to inflammatory mediator balance and cardiovascular wellness research.</p><p>Supplement value depends on delivered EPA/DHA, freshness, form, source, and testing rather than front-label oil weight alone.</p>",
+  "benefits_title": "Potential Omega-3 (EPA/DHA) Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
+  "benefits_json": [
+    {
+      "icon": "heart-pulse",
+      "title": "Heart Wellness Context",
+      "description": "EPA and DHA are commonly researched in cardiovascular nutrition and triglyceride-related medical contexts."
+    },
+    {
+      "icon": "brain",
+      "title": "Brain and Eye Nutrition",
+      "description": "DHA is an important structural fat in the brain and retina."
+    },
+    {
+      "icon": "search",
+      "title": "EPA/DHA Label Clarity",
+      "description": "Helps shoppers compare actual EPA and DHA amounts instead of total oil weight."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Purity Awareness",
+      "description": "Encourages review of oxidation, heavy metal, and third-party testing claims."
+    },
+    {
+      "icon": "fish",
+      "title": "Marine Source Comparison",
+      "description": "Useful for comparing fish oil, krill oil, and algal oil products."
+    },
+    {
+      "icon": "clipboard-check",
+      "title": "Medication Safety Review",
+      "description": "Highlights blood-thinner, surgery, allergy, and high-dose cautions."
+    }
+  ],
+  "dosage_title": "Typical Omega-3 (EPA/DHA) Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by EPA/DHA amount",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>EPA/DHA serving sizes vary widely. Many general wellness products provide a few hundred milligrams combined EPA and DHA, while medical or high-triglyceride protocols use higher clinician-directed amounts.</p><p>Follow label directions and ask a healthcare professional before high-dose use, blood-thinner combinations, pregnancy use, surgery, or medical condition management.</p>",
+  "safety_title": "Omega-3 (EPA/DHA) Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
+  "side_effects": [
+    "Fishy Aftertaste",
+    "Digestive Upset",
+    "Headache",
+    "Bleeding Caution"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Fishy Aftertaste",
+      "description": "Fishy burps, bad breath, or unpleasant taste are common complaints."
+    },
+    {
+      "title": "Digestive Upset",
+      "description": "Reflux, nausea, loose stools, or stomach discomfort may occur."
+    },
+    {
+      "title": "Headache",
+      "description": "Some users may notice headache or mild discomfort."
+    },
+    {
+      "title": "Bleeding Caution",
+      "description": "Higher intakes may matter for people using blood-thinning therapies."
+    }
+  ],
+  "drug_interactions_json": [
+    "Discuss use with a clinician if taking anticoagulants, antiplatelet drugs, or high-dose aspirin.",
+    "Ask before surgery or dental procedures when using high-dose omega-3 supplements.",
+    "Use caution with fish or shellfish allergy depending on the oil source.",
+    "Avoid stacking multiple high-dose omega-3 products unless professionally reviewed."
+  ],
+  "who_should_avoid_json": [
+    "People with fish or shellfish allergy unless the source is appropriate and reviewed.",
+    "People on blood thinners or antiplatelet therapy without professional guidance.",
+    "Anyone using high-dose omega-3 for triglycerides without clinician supervision.",
+    "People preparing for surgery unless supplement use is disclosed.",
+    "Users of fish liver oil who may already be getting high vitamin A or D."
+  ],
+  "food_sources_title": "Omega-3 (EPA/DHA) Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Omega-3 (EPA/DHA) is typically associated with fish oil, algal oil, krill oil, or concentrated marine oils. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Fish oil, algal oil, krill oil, or concentrated marine oils"
+    },
+    {
+      "title": "Common Form",
+      "description": "Softgel, liquid oil, capsule, algal oil, triglyceride or ethyl ester concentrate"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
+  ],
+  "faq_title": "Omega-3 (EPA/DHA) FAQs",
+  "faq_subtitle": "Common questions about omega-3 EPA DHA supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What does EPA/DHA mean?",
+      "answer": "EPA and DHA are long-chain omega-3 fatty acids found in fish oil, algal oil, krill oil, and some marine foods."
+    },
+    {
+      "question": "Is 1,000 mg fish oil the same as 1,000 mg EPA/DHA?",
+      "answer": "No. Total fish oil includes other fats; compare the listed EPA and DHA amounts."
+    },
+    {
+      "question": "What is DHA best known for?",
+      "answer": "DHA is a structural fat concentrated in the brain and retina."
+    },
+    {
+      "question": "What is EPA best known for?",
+      "answer": "EPA is often discussed in relation to inflammatory mediator balance and cardiovascular wellness research."
+    },
+    {
+      "question": "Is algal oil a good omega-3 source?",
+      "answer": "Algal oil can provide vegetarian DHA and sometimes EPA, depending on the formula."
+    },
+    {
+      "question": "Can omega-3 interact with blood thinners?",
+      "answer": "High-dose omega-3 may matter for clotting-related medication users, so professional guidance is important."
+    },
+    {
+      "question": "What causes fishy burps?",
+      "answer": "Fishy burps can occur from oil quality, digestion, or capsule handling; enteric coating and freshness may help some users."
+    },
+    {
+      "question": "Should I choose fish oil or krill oil?",
+      "answer": "Compare EPA/DHA amount, testing, cost, source, and tolerance rather than assuming one is always better."
+    },
+    {
+      "question": "Can omega-3 replace heart medication?",
+      "answer": "No. Omega-3 supplements should not replace prescribed cardiovascular care."
+    },
+    {
+      "question": "What should I check before buying?",
+      "answer": "Check EPA, DHA, source, form, serving size, purity testing, freshness, and medication warnings."
+    }
+  ],
+  "sidebar_profile_title": "Omega-3 (EPA/DHA) Profile Snapshot",
+  "sidebar_profile_content": "Omega-3 (EPA/DHA) is a marine omega-3 ingredient category centered on EPA and DHA, commonly used in heart, brain, eye, and inflammation-focused supplement formulas.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Marine omega-3 fatty acids"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "Varies by EPA/DHA amount"
+    },
+    {
+      "label": "Best For",
+      "value": "EPA/DHA label comparison"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Generally moderate, dose-aware"
+    },
+    {
+      "label": "Origin",
+      "value": "Fish, krill, or algae"
+    },
+    {
+      "label": "Part Used",
+      "value": "EPA and DHA oils"
+    },
+    {
+      "label": "Form",
+      "value": "Softgel or liquid oil"
+    },
+    {
+      "label": "Taste",
+      "value": "Fishy or neutral"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Omega-3 (EPA/DHA) is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Omega-3 (EPA/DHA) is a marine omega-3 ingredient category centered on EPA and DHA, commonly used in heart, brain, eye, and inflammation-focused supplement formulas.",
+  "best_for": "Marine omega-3 label research, heart wellness formulas, and EPA/DHA comparison",
+  "safety_level": "Generally moderate, dose-aware",
+  "origin_country": "Fish oil, algal oil, krill oil, or concentrated marine oils",
+  "part_used": "EPA and DHA fatty acids",
+  "ingredient_form": "Softgel, liquid oil, capsule, algal oil, triglyceride or ethyl ester concentrate",
+  "taste_profile": "Fishy, marine, or neutral depending on processing",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": "Omega-3 (EPA/DHA) Uses",
+  "uses_subtitle": "Common wellness contexts where omega-3 EPA DHA appears.",
+  "uses_content": "<p>Omega-3 (EPA/DHA) is commonly used in marine omega-3 label research, heart wellness formulas, and epa/dha comparison. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Marine omega-3 label research, heart wellness formulas, and EPA/DHA comparison"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Omega-3 (EPA/DHA) Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on omega-3 EPA DHA varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Omega-3 (EPA/DHA) References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "omega-3-fatty-acids",
+    "krill-oil",
+    "coq10",
+    "vitamin-d3",
+    "astaxanthin"
+  ],
+  "seo_title": "Omega-3 (EPA/DHA) Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "omega-3 EPA DHA",
+  "seo_description": "Explore omega-3 EPA DHA benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/omega-3",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Omega-3 (EPA/DHA) Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore omega-3 EPA DHA benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
+}

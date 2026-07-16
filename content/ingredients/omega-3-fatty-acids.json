@@ -1,212 +1,260 @@
 {
   "name": "Omega-3 Fatty Acids",
-  "scientific_name": "EPA and DHA; alpha-linolenic acid",
+  "scientific_name": "ALA, EPA, and DHA",
+  "ingredient_category": "Specialty Ingredients",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Omega-3 Fatty Acids are reviewed in Suppriva's ingredient library for heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines. This profile helps readers compare supplement labels, understand practical safety context, and make more informed wellness decisions.",
-  "overview_title": "What Is Omega-3 Fatty Acids?",
-  "overview_subtitle": "A practical overview of omega-3 fatty acids and why it appears in modern supplement formulas.",
-  "overview_content": "Omega-3 Fatty Acids are commonly found in supplement formulas connected to heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines. In the Suppriva ingredient library, this profile is designed for education, label comparison, and safer decision-making rather than diagnosis or treatment advice.\n\nWhen evaluating omega-3 fatty acids, shoppers should look beyond a front-label claim and review the form, serving size, standardization or potency, supporting ingredients, safety cautions, and whether the product explains who should avoid it. Omega-3 Fatty Acids may appear as a standalone ingredient or as part of a broader formula with complementary nutrients, botanicals, or specialty compounds.\n\nSupplements should not replace prescribed medication, professional diagnosis, or individualized medical care. People with medical conditions, those taking medication, pregnant or nursing individuals, and anyone planning to use high-dose or long-term supplementation should speak with a qualified healthcare professional before adding omega-3 fatty acids to a routine.",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "EPA and DHA are long-chain omega-3s, while ALA is a plant omega-3 that converts inefficiently in the body.",
-  "how_it_works_title": "How Omega-3 Fatty Acids Works",
-  "how_it_works_subtitle": "A simple explanation of the main wellness pathways connected to omega-3 fatty acids.",
-  "how_it_works_highlight_title": "Essential Fatty Acids Context",
-  "how_it_works_highlight_description": "Omega-3 Fatty Acids are most useful to compare by form, serving amount, routine fit, and safety context. The best product choice depends on transparent labeling and personal health needs.",
-  "how_it_works_content": "Omega-3 Fatty Acids does not work as a universal quick fix. It is typically discussed in relation to heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines, and its usefulness depends on the ingredient form, dose, consistency, and the overall supplement formula.\n\nFor label comparison, the most important details are the exact form used, whether a potency or standardization is stated, how much is included per serving, and whether the formula includes ingredients that overlap with similar wellness goals. Omega-3 Fatty Acids is often compared with krill oil, flaxseed oil, fish oil, curcumin, and vitamin D3.\n\nSafety context matters. Anyone with blood thinners, seafood allergy, surgery, pregnancy, nursing, or high-dose use should review the ingredient with a healthcare professional. Educational ingredient research can help shoppers ask better questions, but it should not be used as a substitute for personal medical guidance.",
-  "benefits_title": "Potential Benefits of Omega-3 Fatty Acids",
-  "benefits_subtitle": "Educational benefits commonly discussed for omega-3 fatty acids in supplement routines and label comparison.",
+  "short_description": "Omega-3 Fatty Acids is a family of essential and conditionally important fats that includes ALA from plants and EPA/DHA from marine sources.",
+  "overview_title": "Omega-3 Fatty Acids Overview",
+  "overview_subtitle": "A broad guide to ALA, EPA, DHA, food sources, and supplement comparison.",
+  "overview_content": "<p>Omega-3 fatty acids are a family of fats that includes alpha-linolenic acid (ALA), eicosapentaenoic acid (EPA), and docosahexaenoic acid (DHA). ALA is considered essential because the body cannot make it and must obtain it from food. EPA and DHA are found mainly in marine sources such as fatty fish and algae. The body can convert some ALA into EPA and DHA, but the conversion is limited, which is why supplement labels often separate plant omega-3s from marine EPA/DHA products.</p><p>Food sources and supplement sources are not identical. Flaxseed, chia seeds, walnuts, and flax oil provide ALA. Fish oil, krill oil, and algal oil provide EPA and/or DHA. Some products simply say omega-3 on the front label, but the facts panel should tell shoppers which type is present and how much. This distinction is essential for comparing vegan formulas, heart-health softgels, prenatal DHA products, and general wellness oils.</p><p>Omega-3s are involved in normal cell membrane structure, signaling pathways, brain and eye nutrition, and the balance of fatty acids in the diet. They are often discussed in relation to heart health, triglycerides, pregnancy, cognition, mood, inflammation, and eye wellness. These contexts should be presented responsibly. Supplements are not guaranteed to prevent disease, and high-dose medical use is different from general wellness supplementation.</p><p>Safety depends on source and dose. Plant-based ALA sources are usually food-like, while concentrated oils can still cause digestive upset. Marine oils can cause fishy aftertaste, reflux, nausea, diarrhea, or allergy concerns. Higher-dose EPA/DHA products may matter for people using blood thinners or preparing for surgery. Fish liver oils may also contain vitamins A and D, which can become excessive at high intakes.</p><p>For Suppriva readers, omega-3 fatty acids are best understood as a category rather than one ingredient. ALA, EPA, DHA, flax oil, fish oil, krill oil, and algal oil can all sit under the omega-3 umbrella, but they do not serve identical label purposes. A shopper choosing a vegan omega-3 may prioritize algal DHA, while someone comparing general diet support may look at flax or chia-derived ALA.</p><p>A thoughtful omega-3 choice begins with diet, health goals, and transparency. The label should clearly state the omega-3 type, source, amount per serving, freshness or purity testing, and cautions. People managing triglycerides, pregnancy, bleeding risk, allergies, or medical conditions should use professional guidance.</p><p>A useful way to research Omega-3 Fatty Acids is to compare the ingredient form, serving size, supporting ingredients, and safety language together. Many supplement labels use similar front-of-bottle claims while relying on very different formulas behind the scenes. Suppriva's ingredient library is designed to help readers slow down, read the facts panel, and understand whether omega-3 fatty acids is being used as a primary ingredient, a supporting ingredient, or part of a broader blend.</p><p>People also respond differently to the same ingredient because of age, diet, medications, health conditions, dose, consistency, and product quality. For that reason, Omega-3 Fatty Acids should be viewed as an educational wellness ingredient rather than a guaranteed result. Anyone managing a medical condition, taking prescription medication, preparing for surgery, pregnant, nursing, or buying for a child should speak with a qualified healthcare professional before starting a new supplement.</p><p>For shoppers, the strongest labels explain what form is used, why the dose was chosen, and how the ingredient fits the complete formula. This makes it easier to compare products without relying only on marketing language.</p>",
+  "interesting_fact_label": "Omega Family Note",
+  "interesting_fact": "<p>ALA, EPA, and DHA are all omega-3s, but the body converts plant-based ALA to EPA and DHA inefficiently.</p>",
+  "how_it_works_title": "How Omega-3 Fatty Acids Work",
+  "how_it_works_subtitle": "Omega-3s support normal cell membrane structure and nutrient balance across food and supplement sources.",
+  "how_it_works_highlight_title": "ALA is not EPA/DHA",
+  "how_it_works_highlight_description": "Plant omega-3 sources are valuable, but they do not provide the same direct EPA/DHA amounts as fish or algal oils.",
+  "how_it_works_content": "<p>Omega-3 fatty acids become part of cell membranes and contribute to signaling molecules involved in normal physiology.</p><p>ALA can be converted into EPA and DHA, but conversion is limited, so direct EPA/DHA sources may be preferred for certain goals.</p><p>The balance between omega-3 and omega-6 intake is often discussed in nutrition research, but supplement use should still be individualized.</p>",
+  "benefits_title": "Potential Omega-3 Fatty Acids Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "shield-check",
-      "title": "Wellness Routine Support",
-      "description": "Omega-3 Fatty Acids is commonly researched or used in formulas connected to heart, brain, eye, and inflammation-response research."
-    },
-    {
-      "icon": "activity",
-      "title": "Label Comparison Value",
-      "description": "This ingredient can be compared by form, serving amount, potency, supporting ingredients, and safety cautions."
+      "icon": "layers",
+      "title": "Omega Family Education",
+      "description": "Helps users understand the difference between ALA, EPA, and DHA."
     },
     {
       "icon": "leaf",
-      "title": "Formula Stacking Context",
-      "description": "Omega-3 Fatty Acids often appears alongside complementary ingredients such as krill oil, flaxseed oil, fish oil, curcumin, and vitamin D3."
+      "title": "Plant Source Awareness",
+      "description": "Explains how flax, chia, walnuts, and plant oils provide ALA."
     },
     {
-      "icon": "clipboard-check",
-      "title": "Everyday Education",
-      "description": "Understanding omega-3 fatty acids helps shoppers separate educational ingredient context from exaggerated supplement claims."
+      "icon": "fish",
+      "title": "Marine Source Comparison",
+      "description": "Supports comparison of fish oil, krill oil, and algal oil."
     },
     {
-      "icon": "sparkles",
-      "title": "Targeted Category Fit",
-      "description": "Brands may include omega-3 fatty acids in products designed for heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines."
+      "icon": "brain",
+      "title": "Brain and Eye Nutrition Context",
+      "description": "DHA is a key structural fat in the brain and retina."
     },
     {
       "icon": "heart-pulse",
-      "title": "Safety-Aware Selection",
-      "description": "Reviewing dose, interactions, and who should avoid it supports more responsible supplement decisions."
+      "title": "Heart Wellness Research",
+      "description": "Omega-3s are widely studied in cardiovascular nutrition contexts."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Safety and Purity Review",
+      "description": "Encourages checking source, contaminants, freshness, allergies, and medication cautions."
     }
   ],
-  "dosage_title": "Typical Dosage",
-  "dosage_subtitle": "Serving amounts vary by product form, label purpose, and overall formula design.",
-  "typical_dose": "Often 250-1,000 mg combined EPA/DHA per serving",
-  "dosage": "Often 250-1,000 mg combined EPA/DHA per serving",
-  "dosage_content": "Often 250-1,000 mg combined EPA/DHA per serving is commonly seen on supplement labels, but the right comparison depends on form, potency, serving frequency, and whether the product is a single-ingredient supplement or a multi-ingredient blend.\n\nFollow the label directions for the specific product being used. Avoid combining multiple products that contain omega-3 fatty acids unless total intake and safety context have been reviewed. People with medical conditions, medication use, pregnancy, nursing, or unusual symptoms should seek professional guidance before use.",
-  "safety_title": "Safety Information",
-  "safety_subtitle": "Omega-3 Fatty Acids may be appropriate for some adults, but tolerance, dose, health status, and medication use should be reviewed.",
+  "dosage_title": "Typical Omega-3 Fatty Acids Dosage",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and individual safety factors.",
+  "typical_dose": "Varies by ALA/EPA/DHA",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Omega-3 intake can come from foods or supplements. Labels may list ALA, EPA, DHA, or total omega-3s, so compare the exact type and amount.</p><p>Follow product directions and seek professional guidance for high-dose EPA/DHA use, pregnancy, medical conditions, allergy concerns, or blood-thinner therapy.</p>",
+  "safety_title": "Omega-3 Fatty Acids Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive discomfort",
-    "Headache or sensitivity",
-    "Unexpected tolerance changes",
-    "Allergic reaction in sensitive individuals"
+    "Digestive Upset",
+    "Aftertaste",
+    "Allergy Concerns",
+    "Bleeding Caution"
   ],
   "side_effects_json": [
     {
-      "icon": "stomach",
-      "title": "Digestive Discomfort",
-      "description": "Some people may notice nausea, stomach upset, gas, loose stools, or appetite changes depending on the dose and format."
+      "title": "Digestive Upset",
+      "description": "Oil-based products may cause nausea, reflux, loose stools, or stomach discomfort."
     },
     {
-      "icon": "activity",
-      "title": "Tolerance Varies",
-      "description": "Individual response can vary based on health status, product quality, serving size, and overlapping supplements."
+      "title": "Aftertaste",
+      "description": "Marine oils can cause fishy burps or breath."
     },
     {
-      "icon": "alert-circle",
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if rash, swelling, severe discomfort, dizziness, or unusual symptoms occur."
+      "title": "Allergy Concerns",
+      "description": "Fish, shellfish, or algae sources may matter for sensitive users."
     },
     {
-      "icon": "shield-alert",
-      "title": "Dose Awareness",
-      "description": "Higher amounts are not automatically better and may increase the chance of unwanted effects."
+      "title": "Bleeding Caution",
+      "description": "Higher-dose EPA/DHA may be relevant for people using blood-thinning medications."
     }
   ],
   "drug_interactions_json": [
-    "Review omega-3 fatty acids with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "Use caution when combining with supplements that target similar wellness goals, especially formulas containing krill oil, flaxseed oil, fish oil, curcumin, and vitamin D3.",
-    "People using blood thinners, blood pressure medication, blood sugar medication, sedatives, thyroid medication, or immune-related therapies should check compatibility when relevant.",
-    "Stop use before procedures only if advised by a qualified clinician; surgery timing should be discussed with the care team."
+    "High-dose EPA/DHA should be discussed with a clinician if taking anticoagulants or antiplatelet drugs.",
+    "Tell healthcare providers about omega-3 use before surgery.",
+    "Review fish or shellfish allergy risk for marine oils.",
+    "Avoid stacking multiple omega-3 oils without understanding total EPA, DHA, ALA, vitamin A, and vitamin D intake."
   ],
   "who_should_avoid_json": [
-    "People with known allergy or sensitivity to omega-3 fatty acids or its source material.",
-    "Pregnant or nursing individuals unless a healthcare professional confirms it is appropriate.",
-    "People taking medication for blood thinners, seafood allergy, surgery, pregnancy, nursing, or high-dose use without professional review.",
-    "Children unless specifically directed by a qualified healthcare professional.",
-    "Anyone expecting omega-3 fatty acids to replace medical diagnosis, prescribed treatment, or emergency care."
+    "People with fish or shellfish allergy unless using a suitable source.",
+    "People on blood thinners without professional guidance for high-dose EPA/DHA.",
+    "People using fish liver oils without monitoring vitamin A and D exposure.",
+    "Pregnant or nursing users should choose appropriate products with clinician guidance.",
+    "Anyone expecting omega-3 supplements to replace medical treatment."
   ],
-  "faq_title": "Frequently Asked Questions",
-  "faq_subtitle": "Answers to common questions about omega-3 fatty acids, label comparison, dosage context, and safety.",
-  "faq_json": [
+  "food_sources_title": "Omega-3 Fatty Acids Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Omega-3 Fatty Acids is typically associated with fatty fish, algae, flaxseed, chia, walnuts, and other foods. Supplement formats can differ from food, traditional, or clinical preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
     {
-      "question": "What is Omega-3 Fatty Acids?",
-      "answer": "Omega-3 Fatty Acids is a essential fatty acids commonly discussed in supplement education for heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines."
+      "title": "Primary Source",
+      "description": "Fatty fish, algae, flaxseed, chia, walnuts, and other foods"
     },
     {
-      "question": "What is Omega-3 Fatty Acids commonly used for?",
-      "answer": "It is commonly researched or included in formulas related to heart, brain, eye, and inflammation-response research, depending on the product and dose."
+      "title": "Common Form",
+      "description": "Softgel, liquid oil, algal oil, flax oil, chia oil, food-based sources"
     },
     {
-      "question": "Is Omega-3 Fatty Acids a medicine?",
-      "answer": "No. Omega-3 Fatty Acids supplements are not medicines and should not replace diagnosis, prescribed treatment, or professional medical care."
-    },
-    {
-      "question": "What dose of Omega-3 Fatty Acids is common?",
-      "answer": "Labels often list often 250-1,000 mg combined epa/dha per serving, but product form, potency, and serving frequency should be compared carefully."
-    },
-    {
-      "question": "Can Omega-3 Fatty Acids cause side effects?",
-      "answer": "Yes. Possible effects may include digestive discomfort, sensitivity reactions, or tolerance changes, depending on the person and product."
-    },
-    {
-      "question": "Who should be cautious with Omega-3 Fatty Acids?",
-      "answer": "People with blood thinners, seafood allergy, surgery, pregnancy, nursing, or high-dose use should discuss use with a healthcare professional before starting."
-    },
-    {
-      "question": "Can Omega-3 Fatty Acids be combined with other supplements?",
-      "answer": "Some formulas combine it with ingredients such as krill oil, flaxseed oil, fish oil, curcumin, and vitamin D3, but stacking should be reviewed for dose overlap and safety."
-    },
-    {
-      "question": "How should I compare Omega-3 Fatty Acids products?",
-      "answer": "Compare the ingredient form, amount per serving, standardization if applicable, added ingredients, third-party quality cues, and warnings."
-    },
-    {
-      "question": "How long does Omega-3 Fatty Acids take to work?",
-      "answer": "Timelines vary by ingredient, dose, consistency, product quality, and personal health context. Avoid products promising unrealistic results."
-    },
-    {
-      "question": "Is Omega-3 Fatty Acids safe for daily use?",
-      "answer": "Daily use depends on the product, serving size, health status, medications, and duration. Follow the label and seek professional guidance when unsure."
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
     }
   ],
-  "sidebar_profile_title": "Omega-3 Fatty Acids Snapshot",
-  "sidebar_profile_content": "Omega-3 Fatty Acids is a essential fatty acids commonly reviewed for heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines. Suppriva summarizes its form, label context, safety considerations, and practical comparison points for supplement shoppers.",
+  "faq_title": "Omega-3 Fatty Acids FAQs",
+  "faq_subtitle": "Common questions about omega-3 fatty acids supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What are omega-3 fatty acids?",
+      "answer": "They are a family of fats that includes ALA, EPA, and DHA."
+    },
+    {
+      "question": "What is ALA?",
+      "answer": "ALA is a plant-based essential omega-3 found in foods like flaxseed, chia, walnuts, and some oils."
+    },
+    {
+      "question": "What are EPA and DHA?",
+      "answer": "EPA and DHA are long-chain omega-3 fats found mainly in fish, algae, and marine oils."
+    },
+    {
+      "question": "Can the body convert ALA to DHA?",
+      "answer": "The body can convert some ALA to EPA and DHA, but conversion is limited."
+    },
+    {
+      "question": "Are plant omega-3s enough?",
+      "answer": "Plant omega-3s can be valuable, but they do not provide the same direct EPA/DHA amounts as marine or algal oils."
+    },
+    {
+      "question": "What should I compare on a label?",
+      "answer": "Check whether the product provides ALA, EPA, DHA, or total omega-3s and how much of each is included."
+    },
+    {
+      "question": "Are omega-3 supplements safe?",
+      "answer": "Many people tolerate them, but side effects and interactions depend on dose, source, and medications."
+    },
+    {
+      "question": "Can omega-3s interact with blood thinners?",
+      "answer": "High-dose EPA/DHA may be relevant for blood-thinner users, so professional guidance is important."
+    },
+    {
+      "question": "Is fish liver oil the same as fish oil?",
+      "answer": "No. Fish liver oil may contain vitamins A and D in addition to omega-3s."
+    },
+    {
+      "question": "Do omega-3s cure inflammation?",
+      "answer": "No. Omega-3 supplements are not approved to cure inflammatory diseases or replace care."
+    }
+  ],
+  "sidebar_profile_title": "Omega-3 Fatty Acids Profile Snapshot",
+  "sidebar_profile_content": "Omega-3 Fatty Acids is a family of essential and conditionally important fats that includes ALA from plants and EPA/DHA from marine sources.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Essential fatty acids"
+      "value": "Essential fatty acid family"
     },
     {
       "label": "Typical Dose",
-      "value": "Often 250-1,000 mg combined EPA/DHA per serving"
+      "value": "Varies by ALA/EPA/DHA"
     },
     {
       "label": "Best For",
-      "value": "Heart, brain, eye, and inflammation-response research"
+      "value": "Omega-3 source comparison"
     },
     {
       "label": "Safety Level",
-      "value": "Review blood thinners, seafood allergy, surgery, pregnancy, nursing, or high-dose use"
+      "value": "Dose and source-aware"
     },
     {
       "label": "Origin",
-      "value": "Fish oil, algae oil, flaxseed, chia, or other sources"
+      "value": "Plants, fish, algae"
     },
     {
       "label": "Part Used",
-      "value": "Oil fraction"
+      "value": "Fatty acid oils"
     },
     {
       "label": "Form",
-      "value": "Softgel, liquid oil, gummy, or vegan algae capsule"
+      "value": "Food, oil, softgel"
     },
     {
       "label": "Taste",
-      "value": "Mild fishy or neutral depending on form"
+      "value": "Nutty or marine"
     }
   ],
-  "sidebar_at_a_glance_content": "- Essential fatty acids used in supplement education\n- Commonly discussed for heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines\n- Compare form, dose, and supporting ingredients\n- Often compared with krill oil, flaxseed oil, fish oil, curcumin, and vitamin D3\n- Not a substitute for personal medical advice",
-  "full_description": "Omega-3 Fatty Acids is a essential fatty acids included in Suppriva's ingredient library for heart wellness, brain and eye health context, triglyceride research, and inflammation-response supplement routines.",
-  "best_for": "Heart, brain, eye, and inflammation-response research",
-  "safety_level": "Review blood thinners, seafood allergy, surgery, pregnancy, nursing, or high-dose use",
-  "origin_country": "Fish oil, algae oil, flaxseed, chia, or other sources",
-  "part_used": "Oil fraction",
-  "ingredient_form": "Softgel, liquid oil, gummy, or vegan algae capsule",
-  "taste_profile": "Mild fishy or neutral depending on form",
+  "sidebar_at_a_glance_content": "<p>Omega-3 Fatty Acids is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Omega-3 Fatty Acids is a family of essential and conditionally important fats that includes ALA from plants and EPA/DHA from marine sources.",
+  "best_for": "Omega-3 family education, plant versus marine source comparison, and nutrition label research",
+  "safety_level": "Dose and source-aware",
+  "origin_country": "Fatty fish, algae, flaxseed, chia, walnuts, and other foods",
+  "part_used": "ALA, EPA, and DHA fatty acids",
+  "ingredient_form": "Softgel, liquid oil, algal oil, flax oil, chia oil, food-based sources",
+  "taste_profile": "Neutral, nutty, or marine depending on source",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Omega-3 Fatty Acids Benefits, Dosage and Safety | Suppriva",
+  "uses_title": "Omega-3 Fatty Acids Uses",
+  "uses_subtitle": "Common wellness contexts where omega-3 fatty acids appears.",
+  "uses_content": "<p>Omega-3 Fatty Acids is commonly used in omega-3 family education, plant versus marine source comparison, and nutrition label research. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Omega-3 family education, plant versus marine source comparison, and nutrition label research"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Omega-3 Fatty Acids Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on omega-3 fatty acids varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Omega-3 Fatty Acids References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "omega-3",
+    "flaxseed-oil",
+    "chia-seed",
+    "krill-oil",
+    "algal-oil"
+  ],
+  "seo_title": "Omega-3 Fatty Acids Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "omega-3 fatty acids",
-  "seo_description": "Explore omega-3 fatty acids benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library.",
+  "seo_description": "Explore omega-3 fatty acids benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/omega-3-fatty-acids",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Omega-3 Fatty Acids Benefits, Dosage and Safety | Suppriva",
-  "meta_description": "Explore omega-3 fatty acids benefits, dosage context, supplement forms, label comparison tips, and safety considerations in Suppriva's ingredient library."
+  "meta_title": "Omega-3 Fatty Acids Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore omega-3 fatty acids benefits, typical dosage, safety notes, side effects, interactions, and supplement label tips in Suppriva's ingredient library."
 }
