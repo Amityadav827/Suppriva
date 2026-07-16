@@ -2,179 +2,207 @@
   "name": "White Button Mushroom",
   "scientific_name": "Agaricus bisporus",
   "ingredient_category": "Specialty Ingredients",
-  "hero_badge": null,
-  "short_description": "White Button Mushroom is a culinary mushroom used in supplement formulas for food-based mushroom and antioxidant formulas, with label quality depending on source, form, and dose transparency.",
-  "overview_title": "White Button Mushroom Overview",
-  "overview_subtitle": "A practical guide to white button mushroom as a supplement ingredient.",
-  "overview_content": "<p>White Button Mushroom is a culinary mushroom used in wellness supplements for food-based mushroom and antioxidant formulas. It is best understood by looking at its source, form, serving size, and how it is combined with other ingredients on the label.</p><p>In supplement research, White Button Mushroom is often discussed because it contains or represents ergothioneine, beta-glucans, amino acids, minerals, and mushroom polyphenols. These compounds help explain its category fit, but they do not make every product equivalent. Extract strength, processing quality, and testing standards can change how useful a product is for comparison.</p><p>White Button Mushroom should be used as an educational supplement ingredient, not as a replacement for medical care, prescribed treatment, or a balanced diet. People with health conditions or medication use should review the ingredient with a qualified healthcare professional.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>White button, cremini, and portobello mushrooms are all forms of Agaricus bisporus harvested at different stages.</p>",
+  "status": "published",
+  "hero_badge": "Functional Mushroom",
+  "short_description": "White button mushroom is a familiar mushroom species used in immune, antioxidant, women's wellness, and functional food formulas.",
+  "overview_title": "What Is White Button Mushroom?",
+  "overview_subtitle": "A functional mushroom guide for Agaricus bisporus source, extract labels, and wellness formula comparison.",
+  "overview_content": "<p>White Button Mushroom is included in Suppriva's ingredient library because it appears in supplement formulas that shoppers often compare for functional mushroom blends, immune-support formulas, antioxidant products, and women's wellness ingredient research. A strong ingredient profile should do more than repeat front-label claims. It should explain what the ingredient is, how it is usually presented on labels, what form details matter, and which safety questions deserve attention before someone adds it to a daily routine.</p>\n\n<p>Identity is especially important for white button mushroom. Labels may use a nutrient name, botanical name, mushroom species, seaweed extract, standardized marker, or specific salt form. Those details can change how a supplement is positioned and how consumers should evaluate it. For this ingredient, readers should look for the source, serving size, form, standardization details, companion ingredients, and whether the directions are clear enough for consistent use.</p>\n\n<p>White button mushroom provides mushroom-derived compounds such as polysaccharides, antioxidants, and plant sterol-related nutrients that may support general wellness positioning. This educational context should not be read as a promise that the ingredient treats, cures, or prevents disease. Suppriva keeps the language wellness-focused because supplements are best understood as optional support tools, not substitutes for diagnosis, medication, treatment, or individualized medical care.</p>\n\n<p>The finished formula can change the user experience. White Button Mushroom may appear by itself or in blends with vitamins, minerals, botanicals, probiotics, antioxidants, amino acids, oils, or specialty extracts. Two products may list the same ingredient while using different amounts, delivery formats, and intended wellness goals. This is why the full Supplement Facts panel matters as much as the ingredient name.</p>\n\n<p>Quality signals are practical. A transparent product should explain its serving size, source material, instructions, intended audience, and relevant cautions. If a product hides important amounts in broad proprietary blends or uses aggressive disease-treatment language, it deserves extra scrutiny. A careful shopper should also compare third-party testing claims, allergen notes, and whether the product makes sense alongside other supplements already being used.</p>\n\n<p>Safety depends on dose, form, health history, and context. Some ingredients are essential nutrients that can still be overused. Others are concentrated botanicals, mushrooms, seaweed extracts, or specialty compounds that may not be appropriate for everyone. Medication use, pregnancy, nursing, surgery plans, allergies, and diagnosed conditions can all change whether an ingredient is a good fit.</p>\n\n<p>A balanced wellness routine matters more than a single ingredient. Sleep, nutrition, movement, hydration, stress management, and professional care all influence outcomes. White Button Mushroom may support a product's intended wellness theme, but it cannot compensate for unsafe dosing, unclear labels, unrealistic expectations, or ignored medical symptoms.</p>\n\n<p>This Suppriva page is designed to help readers ask better questions before comparing products: What form is used? Is the dose clear? Does the formula explain why this ingredient is included? Are there interactions or condition-specific cautions? Does the product describe realistic support instead of implying medical treatment? These questions make ingredient research more useful and less dependent on marketing language.</p>\n\n<p>Use this profile as a practical label-reading guide for white button mushroom. It brings together overview context, how-it-works notes, benefits, dosage considerations, safety information, side effects, interactions, food or source details, and FAQs so shoppers can make more informed supplement decisions.</p>",
+  "interesting_fact_label": "Common Mushroom",
+  "interesting_fact": "<p>White button mushroom, cremini, and portobello are related forms of Agaricus bisporus harvested at different stages.</p>",
   "how_it_works_title": "How White Button Mushroom Works",
-  "how_it_works_subtitle": "White Button Mushroom is evaluated by its compound profile, source quality, and formula context.",
-  "how_it_works_highlight_title": "Source and standardization matter",
-  "how_it_works_highlight_description": "Two white button mushroom products can differ significantly if they use different forms, serving sizes, or extract standards.",
-  "how_it_works_content": "<p>White Button Mushroom works mainly through food-derived mushroom nutrients and antioxidant positioning. This does not mean it treats disease; it means the ingredient is commonly positioned around those biological or nutritional pathways in supplement education.</p><p>The practical value of White Button Mushroom depends on whether the product discloses enough details to evaluate quality. Consumers should look for source information, standardization, dose per serving, and whether other ingredients overlap with similar wellness goals.</p><p>Because many supplements combine White Button Mushroom with additional botanicals, nutrients, or specialty compounds, it is important to compare the whole formula rather than judging the ingredient in isolation.</p>",
+  "how_it_works_subtitle": "White button mushroom appears in mushroom formulas where extract form and source transparency matter.",
+  "how_it_works_highlight_title": "Food and Extract Context",
+  "how_it_works_highlight_description": "A mushroom extract supplement is not the same as eating whole mushrooms, so form and serving size matter.",
+  "how_it_works_content": "<p>White button mushroom can appear as powder, extract, or part of a mushroom blend. Labels should clarify whether the product uses fruiting body, extract, powder, or standardized compounds.</p>\n\n<p>Functional mushroom products vary widely in preparation, so shoppers should compare source material, beta-glucan claims, testing, and whether the formula explains its intended wellness role.</p>\n\n<p>Because white button mushroom may appear in multi-ingredient products, the full formula should always be reviewed before making assumptions about expected results or safety.</p>",
   "benefits_title": "Potential White Button Mushroom Benefits",
-  "benefits_subtitle": "Benefits depend on product quality, serving size, and the complete formula.",
+  "benefits_subtitle": "Benefits depend on form, serving size, formula quality, and the user's overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Formula Context",
-      "description": "White Button Mushroom helps shoppers evaluate supplements that use culinary mushroom positioning for food-based mushroom and antioxidant formulas."
+      "icon": "mushroom",
+      "title": "Functional Mushroom Context",
+      "description": "Supports comparison of mushroom-based supplement formulas."
+    },
+    {
+      "icon": "shield",
+      "title": "Immune Formula Support",
+      "description": "Often included in immune and daily wellness blends."
     },
     {
       "icon": "sparkles",
-      "title": "Key Compound Profile",
-      "description": "It is commonly reviewed for ergothioneine, beta-glucans, amino acids, minerals, and mushroom polyphenols, which influence how brands position it on supplement labels."
+      "title": "Antioxidant Positioning",
+      "description": "May contribute mushroom-derived antioxidant context."
     },
     {
-      "icon": "shield-check",
-      "title": "Label Transparency",
-      "description": "The best products clearly disclose form, serving size, standardization, and whether White Button Mushroom is part of a broader blend."
-    },
-    {
-      "icon": "activity",
-      "title": "Routine Fit",
-      "description": "White Button Mushroom is usually evaluated as one part of a broader wellness routine rather than a stand-alone medical solution."
+      "icon": "flower",
+      "title": "Women's Wellness Interest",
+      "description": "Sometimes appears in formulas for women's wellness research."
     },
     {
       "icon": "search",
-      "title": "Comparison Value",
-      "description": "Comparing White Button Mushroom across products can reveal differences in source quality, concentration, and supporting ingredients."
+      "title": "Source Comparison",
+      "description": "Encourages review of fruiting body, powder, and extract labels."
     },
     {
-      "icon": "heart",
-      "title": "Safety Awareness",
-      "description": "Understanding cautions and interactions helps users decide whether White Button Mushroom fits their health status and medication profile."
+      "icon": "leaf",
+      "title": "Food-Based Familiarity",
+      "description": "A recognizable edible mushroom source."
     }
   ],
   "dosage_title": "Typical White Button Mushroom Dosage",
-  "dosage_subtitle": "Use the product label as the primary dose reference.",
-  "typical_dose": "Follow label directions; powder and extract servings vary by product type.",
-  "dosage": "Follow the product label and avoid combining multiple white button mushroom products unless a healthcare professional has reviewed the routine.",
-  "dosage_content": "<p>There is no single universal dose for white button mushroom because products may use different forms, concentrations, and extract ratios. A capsule, powder, food-based ingredient, and standardized extract can all represent different levels of activity.</p><p>Start with the label-directed serving and review tolerance before increasing intake. People who are pregnant, nursing, taking medication, managing a medical condition, or preparing for surgery should seek professional guidance before using white button mushroom.</p>",
+  "dosage_subtitle": "Serving size depends on product form, label directions, and personal safety factors.",
+  "typical_dose": "Follow mushroom powder or extract label directions",
+  "dosage": "Dose depends on whether the product uses whole mushroom powder, extract, or a multi-mushroom blend.",
+  "dosage_content": "<p>White button mushroom products may list milligrams of powder, extract amount, or blend totals. The form should be clearly identified.</p>\n\n<p>People with mushroom allergies, immune conditions, medication use, pregnancy, or nursing should seek guidance before concentrated mushroom supplements.</p>\n\n<p>Do not exceed label directions. Ask a qualified healthcare professional before use if you take medication, manage a health condition, are pregnant or nursing, are buying for a child, or are preparing for surgery.</p>",
   "safety_title": "White Button Mushroom Safety Information",
-  "safety_subtitle": "Safety depends on dose, health status, allergies, and medication use.",
+  "safety_subtitle": "Review white button mushroom safety based on form, dose, personal health status, and medication use.",
   "side_effects": [
-    "Digestive discomfort",
-    "Nausea",
+    "Digestive Upset",
+    "Allergy Concern",
     "Headache",
-    "Sensitivity reaction"
+    "Formula Overlap"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "White Button Mushroom may cause stomach upset, gas, nausea, or changes in bowel habits in sensitive users."
+      "title": "Digestive Upset",
+      "description": "Mushroom powders may cause bloating or stomach discomfort."
     },
     {
-      "title": "Sensitivity or Allergy",
-      "description": "People with allergy or sensitivity to related foods, botanicals, algae, or mushrooms should review white button mushroom carefully before use."
+      "title": "Allergy Concern",
+      "description": "Avoid with known mushroom allergy."
+    },
+    {
+      "title": "Headache",
+      "description": "Some users may be sensitive to mushroom blends."
     },
     {
       "title": "Formula Overlap",
-      "description": "Side effects may be more likely when white button mushroom is combined with several ingredients that have similar wellness positioning."
-    },
-    {
-      "title": "Dose-Related Concerns",
-      "description": "Higher servings or concentrated extracts may not be appropriate for every user, especially without label transparency."
+      "description": "Multi-mushroom products can stack several extracts."
     }
   ],
   "drug_interactions_json": [
-    "Review use with immune-modulating formulas, blood sugar medication, or multiple concentrated mushroom supplements.",
-    "Review use if taking prescription medication or managing a diagnosed condition.",
-    "Use caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a healthcare professional before use during pregnancy or nursing."
+    {
+      "title": "Immune-Suppressing Medication",
+      "description": "Discuss mushroom supplements with a clinician."
+    },
+    {
+      "title": "Diabetes Medication",
+      "description": "Use guidance with formulas affecting glucose context."
+    },
+    {
+      "title": "Blood Thinners",
+      "description": "Review full formula if other botanicals are included."
+    },
+    {
+      "title": "Other Mushroom Extracts",
+      "description": "Compare total intake across blends."
+    }
   ],
   "who_should_avoid_json": [
-    "People with mushroom allergy or sensitivity should avoid concentrated mushroom powders and extracts.",
-    "People with known allergy or sensitivity related to white button mushroom.",
-    "People taking medication without reviewing supplement interactions.",
-    "People who are pregnant, nursing, or trying to conceive unless advised by a clinician.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "title": "Pregnancy or Nursing",
+      "description": "Use only with professional guidance."
+    },
+    {
+      "title": "Children",
+      "description": "Use only age-appropriate products under qualified guidance."
+    },
+    {
+      "title": "Medication Use",
+      "description": "Ask a clinician before combining with prescription or over-the-counter medication."
+    },
+    {
+      "title": "Upcoming Surgery",
+      "description": "Discuss supplement use before planned procedures."
+    },
+    {
+      "title": "Known Allergy",
+      "description": "Avoid if allergic or previously reactive to the ingredient or source material."
+    }
   ],
-  "food_sources_title": "White Button Mushroom Food Sources",
-  "food_sources_subtitle": "Dietary sources and supplement forms can differ in concentration.",
-  "food_sources_content": "<p>White button mushrooms, cremini mushrooms, portobello mushrooms, and mushroom powders provide related dietary compounds.</p>",
+  "food_sources_title": "White Button Mushroom Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>White button mushroom comes from Agaricus bisporus. Supplements may use dried powder, fruiting body extract, or mushroom blend formats.</p>\n\n<p>Supplement preparations may differ from food, traditional, or clinical forms. Compare source material, processing, serving size, standardization, and whether the ingredient appears alone or in a broader blend.</p>",
   "food_sources_json": [
     {
-      "title": "Dietary Sources",
-      "description": "White button mushrooms, cremini mushrooms, portobello mushrooms, and mushroom powders provide related dietary compounds."
+      "title": "Whole Mushroom",
+      "description": "A familiar edible food source."
     },
     {
-      "title": "Supplement Forms",
-      "description": "White Button Mushroom is commonly sold as powder, extract, food-based blend, depending on the product category."
+      "title": "Mushroom Powder",
+      "description": "Dried powder used in capsules and blends."
     },
     {
-      "title": "Label Review",
-      "description": "Check serving size, source, processing method, and whether the formula discloses active compound levels."
+      "title": "Mushroom Extract",
+      "description": "Concentrated supplement form."
     }
   ],
   "faq_title": "White Button Mushroom FAQs",
   "faq_subtitle": "Common questions about white button mushroom supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is White Button Mushroom used for in supplements?",
-      "answer": "White Button Mushroom is commonly used in formulas positioned around food-based mushroom and antioxidant formulas. Its role depends on dose, form, ingredient quality, and the full supplement formula."
+      "question": "What is White Button Mushroom?",
+      "answer": "White Button Mushroom is the common edible mushroom species Agaricus bisporus, used as food and in mushroom-based supplements."
     },
     {
-      "question": "What is the main active profile of White Button Mushroom?",
-      "answer": "Supplement labels usually discuss White Button Mushroom in relation to ergothioneine, beta-glucans, amino acids, minerals, and mushroom polyphenols. The exact profile can vary by source and processing method."
+      "question": "What is White Button Mushroom commonly used for?",
+      "answer": "It is commonly used in supplements positioned for functional mushroom blends, immune-support formulas, antioxidant products, and women's wellness ingredient research."
     },
     {
-      "question": "Is White Button Mushroom a medicine?",
-      "answer": "No. White Button Mushroom is a supplement ingredient or food-derived compound, not a substitute for diagnosis, prescribed medication, or professional medical care."
+      "question": "How does White Button Mushroom work?",
+      "answer": "White button mushroom provides mushroom-derived compounds such as polysaccharides, antioxidants, and plant sterol-related nutrients that may support general wellness positioning."
     },
     {
-      "question": "How should I compare White Button Mushroom products?",
-      "answer": "Compare serving size, form, standardization, testing claims, added ingredients, warnings, and whether the label explains the source clearly."
+      "question": "What should I look for on a White Button Mushroom label?",
+      "answer": "Compare fruiting body source, powder or extract form, milligram amount, and blend transparency, serving size, directions, companion ingredients, warnings, and whether the product explains the intended use clearly."
     },
     {
-      "question": "Can White Button Mushroom be taken every day?",
-      "answer": "Some products are designed for daily use, but daily use should follow the product label and be reviewed with a healthcare professional when medication or medical conditions are involved."
+      "question": "Can White Button Mushroom replace medical care?",
+      "answer": "No. White Button Mushroom should not replace diagnosis, medication, prescribed treatment, or guidance from a qualified healthcare professional."
     },
     {
-      "question": "What dose of White Button Mushroom should I use?",
-      "answer": "Follow label directions; powder and extract servings vary by product type. Avoid assuming that different extracts, powders, or blends provide the same amount of active compounds."
-    },
-    {
-      "question": "Does White Button Mushroom have side effects?",
-      "answer": "Possible side effects can include digestive discomfort, sensitivity reactions, or effects related to its category. Stop use and seek guidance if unusual symptoms occur."
+      "question": "Can White Button Mushroom cause side effects?",
+      "answer": "Yes. Possible concerns include digestive upset, allergy concern, headache, formula overlap."
     },
     {
       "question": "Can White Button Mushroom interact with medication?",
-      "answer": "Review use with immune-modulating formulas, blood sugar medication, or multiple concentrated mushroom supplements. Medication users should review supplement use with a qualified healthcare professional."
+      "answer": "It may. People using medication or managing a health condition should review the full formula with a healthcare professional."
     },
     {
-      "question": "Is White Button Mushroom found in foods?",
-      "answer": "White button mushrooms, cremini mushrooms, portobello mushrooms, and mushroom powders provide related dietary compounds."
+      "question": "Is White Button Mushroom safe during pregnancy or nursing?",
+      "answer": "Pregnancy and nursing require professional guidance before using concentrated supplement forms."
     },
     {
-      "question": "Who should avoid White Button Mushroom?",
-      "answer": "People with mushroom allergy or sensitivity should avoid concentrated mushroom powders and extracts. Children, pregnant or nursing users, and people preparing for surgery should also seek professional guidance before use."
+      "question": "Is more White Button Mushroom always better?",
+      "answer": "No. Higher amounts are not automatically more helpful and may increase tolerability or safety concerns."
+    },
+    {
+      "question": "Who should be careful with White Button Mushroom?",
+      "answer": "People with allergies, medication use, diagnosed conditions, pregnancy, nursing, surgery plans, or unusual symptoms should seek professional guidance."
     }
   ],
   "sidebar_profile_title": "White Button Mushroom Profile Snapshot",
-  "sidebar_profile_content": "A common culinary mushroom used in food-based supplement blends and mushroom nutrition formulas.",
+  "sidebar_profile_content": "White button mushroom is an edible functional mushroom used in immune, antioxidant, mushroom blend, and women's wellness supplement contexts.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Culinary mushroom"
+      "value": "Functional mushroom"
     },
     {
       "label": "Typical Dose",
-      "value": "Follow label directions; powder and extract servings vary by product type."
+      "value": "Follow product label"
     },
     {
       "label": "Best For",
-      "value": "Food-based mushroom and antioxidant formulas"
+      "value": "Mushroom formulas"
     },
     {
       "label": "Safety Level",
-      "value": "Review label directions and medication context"
+      "value": "Avoid with mushroom allergy"
     },
     {
       "label": "Origin",
-      "value": "Global cultivated regions"
+      "value": "Agaricus bisporus"
     },
     {
       "label": "Part Used",
@@ -182,41 +210,82 @@
     },
     {
       "label": "Form",
-      "value": "Powder, extract, food-based blend"
+      "value": "Powder, extract"
     },
     {
       "label": "Taste",
-      "value": "Mild and earthy"
+      "value": "Mild/earthy"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>White Button Mushroom is best compared by source, serving size, form, standardization, safety notes, and how it fits with the complete supplement formula.</p>",
-  "full_description": "White Button Mushroom is a culinary mushroom used in supplement formulas for food-based mushroom and antioxidant formulas.",
-  "best_for": "Food-based mushroom and antioxidant formulas",
-  "safety_level": "Review label directions and medication context",
-  "origin_country": "Global cultivated regions",
+  "sidebar_at_a_glance_content": "<p>White button mushroom should be evaluated by fruiting body source, extract type, dose, allergy status, and whether it appears in a broader mushroom blend.</p>",
+  "full_description": "White button mushroom is an edible functional mushroom used in immune, antioxidant, mushroom blend, and women's wellness supplement contexts.",
+  "best_for": "Functional mushroom blends, immune-support formulas, antioxidant products, and women's wellness ingredient research",
+  "safety_level": "Generally food-familiar; avoid with mushroom allergy",
+  "origin_country": "Agaricus bisporus mushroom",
   "part_used": "Fruiting body",
-  "ingredient_form": "Powder, extract, food-based blend",
-  "taste_profile": "Mild and earthy",
+  "ingredient_form": "Powder, extract, capsules",
+  "taste_profile": "Mild/earthy",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "White Button Mushroom Benefits, Dosage, and Safety | Suppriva",
-  "seo_focus_keyword": "white button mushroom",
-  "seo_description": "Explore white button mushroom benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library.",
+  "uses_title": "White Button Mushroom Uses",
+  "uses_subtitle": "Common wellness contexts where white button mushroom appears.",
+  "uses_content": "<p>White Button Mushroom is commonly used in functional mushroom blends, immune-support formulas, antioxidant products, and women's wellness ingredient research. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Functional mushroom blends, immune-support formulas, antioxidant products, and women's wellness ingredient research"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing source, form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader health routine."
+    }
+  ],
+  "research_title": "White Button Mushroom Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on white button mushroom varies by preparation, dose, population, and outcome measured. Evidence should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, population, and outcome measured."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "White Button Mushroom References",
+  "references_subtitle": "Reference categories used for responsible ingredient education.",
+  "references_json": [
+    {
+      "title": "Clinical Context",
+      "description": "Review nutrient, botanical, or specialty ingredient evidence by form and dose."
+    },
+    {
+      "title": "Safety Context",
+      "description": "Consider medication use, allergies, pregnancy, nursing, and diagnosed conditions."
+    },
+    {
+      "title": "Label Context",
+      "description": "Compare Supplement Facts details, standardization, and directions."
+    }
+  ],
+  "related_ingredients_json": [
+    "reishi-mushroom",
+    "shiitake-mushroom",
+    "maitake-mushroom",
+    "turkey-tail-mushroom",
+    "royal-agaricus"
+  ],
+  "seo_title": "White Button Mushroom Benefits, Uses, Dosage & Safety | Suppriva",
+  "seo_focus_keyword": "White Button Mushroom",
+  "seo_description": "Learn about White Button Mushroom, including uses, benefits, dosage context, safety notes, interactions, FAQs, and supplement label guidance.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/white-button-mushroom",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "White Button Mushroom Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore white button mushroom benefits, typical dosage, safety notes, food sources, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "White Button Mushroom Benefits, Uses, Dosage & Safety | Suppriva",
+  "meta_description": "Explore White Button Mushroom supplement uses, benefits, safety considerations, dosage context, FAQs, and ingredient comparison guidance."
 }
