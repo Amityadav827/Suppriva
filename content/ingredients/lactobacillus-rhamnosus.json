@@ -1,208 +1,324 @@
 {
   "name": "Lactobacillus Rhamnosus",
+  "status": "published",
   "scientific_name": "Lacticaseibacillus rhamnosus",
-  "hero_badge": null,
-  "short_description": "Lactobacillus Rhamnosus is a probiotic strain used in supplement formulas for digestive, immune, and microbiome-support formulas.",
+  "ingredient_category": "Probiotics",
+  "hero_badge": "Digestive Probiotic Species",
+  "short_description": "Lactobacillus Rhamnosus is a common probiotic species used in digestive and immune-support formulas, best evaluated by strain identity and CFU transparency.",
   "overview_title": "Lactobacillus Rhamnosus Overview",
-  "overview_subtitle": "A practical guide to lactobacillus rhamnosus in modern supplement formulas.",
-  "overview_content": "<p>Lactobacillus Rhamnosus is a probiotic strain that appears in wellness products because of one of the most widely used probiotic species in digestive and immune-support products. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing lactobacillus rhamnosus products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Lactobacillus Rhamnosus supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
+  "overview_subtitle": "A practical guide to lactobacillus rhamnosus, probiotic strain labels, CFU, storage, and safety.",
+  "overview_content": "<p>Lactobacillus Rhamnosus is a probiotic species used in supplement formulas because of its role in digestive, immune, and microbiome supplement education. Probiotic labels can look simple, but a responsible review goes beyond the species name and looks for the exact strain, CFU count, delivery format, expiration dating, and storage instructions.</p><p>Probiotics are live microorganisms intended to support a health-related effect when provided in an appropriate amount. That definition makes quality control especially important. A formula should identify what organism is included, how many viable organisms are expected through the end of shelf life, and whether refrigeration or moisture protection is required.</p><p>Lactobacillus Rhamnosus should not be treated as a universal digestive solution. Different strains within the same species can behave differently. Research on one strain does not automatically apply to every product that uses the same species name. This is why Suppriva treats strain transparency as one of the most important probiotic label details.</p><p>For general wellness shoppers, lactobacillus rhamnosus may appear in capsules, powders, chewables, lozenges, sachets, oral-care blends, digestive formulas, and multi-strain probiotic stacks. Each format has different practical questions. A lozenge may be designed for oral exposure, while a delayed-release capsule may be designed for digestive delivery.</p><p>Safety context is also important. Healthy adults often tolerate probiotics well, but gas, bloating, and stool changes can occur when starting. People who are immunocompromised, medically fragile, hospitalized, have central venous catheters, or are using immune-suppressing medication should not treat live probiotics as casual wellness products without professional guidance.</p><p>Antibiotic timing is another common question. Some clinicians recommend separating probiotic use from antibiotic doses, but the right timing depends on the medication, product, and reason for use. A healthcare professional can help decide whether a probiotic is appropriate during or after antibiotic therapy.</p><p>When comparing lactobacillus rhamnosus, review CFU amount, strain code, blend transparency, prebiotic additions, allergen information, shelf-stability claims, and the expiration date. Higher CFU is not automatically better; the most useful product is the one with the right strain, dose, stability, and safety fit for the intended use.</p><p>It is also important to separate general microbiome support from medical treatment language. Probiotics may be part of a wellness routine, but they should not be used to self-treat infections, immune conditions, persistent digestive symptoms, or oral health concerns that require diagnosis. If symptoms are severe, recurring, or unexplained, professional care is the safer path.</p><p>Product context can change the practical value of lactobacillus rhamnosus. Some formulas pair probiotics with prebiotics such as inulin, while others combine several Lactobacillus or Bifidobacterium species. These blends may be useful for some people, but they can also make it harder to know which strain is responsible for tolerance or results.</p><p>Quality signals include strain naming, CFU through expiration, moisture protection, lot testing, allergen disclosure, and realistic directions. If a probiotic product only lists a total blend count without identifying strains, shoppers should be cautious about assuming research support. Clear labeling is especially important for people comparing oral-care probiotics, digestive capsules, and broad microbiome blends.</p><p>Suppriva presents probiotic ingredient pages as education, not treatment advice. Lactobacillus Rhamnosus may help readers understand supplement labels and compare formulas, but it should not replace medical care, diagnosis, or professional guidance for persistent digestive, oral, immune, or infection-related symptoms.</p><p>Good probiotic decisions are practical decisions. Choose labels that are transparent, avoid stacking many new probiotics at once, monitor digestive tolerance, and involve a clinician when there is a medical condition, pregnancy, nursing, immune compromise, or medication complexity.</p>",
+  "interesting_fact_label": "Probiotic Label Insight",
   "interesting_fact": "<p>Lactobacillus rhamnosus GG is one of the most studied probiotic strains, but not every L. rhamnosus product contains that exact strain.</p>",
   "how_it_works_title": "How Lactobacillus Rhamnosus Works",
-  "how_it_works_subtitle": "How lactobacillus rhamnosus supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Digestive Microbiome Support",
-  "how_it_works_highlight_description": "Lactobacillus Rhamnosus is most often positioned around digestive microbiome support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Lactobacillus Rhamnosus works through strain-specific activity related to digestive balance, microbial adhesion, and immune-system communication research. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare lactobacillus rhamnosus by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "How strain-specific probiotic activity shapes lactobacillus rhamnosus supplement positioning.",
+  "how_it_works_highlight_title": "Strain Identity Matters",
+  "how_it_works_highlight_description": "Lactobacillus Rhamnosus should be compared by exact strain, CFU through expiration, delivery format, storage, and intended use.",
+  "how_it_works_content": "<p>Lactobacillus Rhamnosus works through strain-specific microbial adhesion, digestive ecosystem support, and immune-system communication pathways that vary by studied strain. These effects are strain-specific, which means products using the same species name may not be interchangeable.</p><p>Probiotic usefulness also depends on whether the organisms remain viable through the end of shelf life and whether the delivery format matches the intended site of action. Storage, moisture protection, and expiration dating all matter.</p><p>Because probiotics are live organisms, safety review should include immune status, medical fragility, antibiotic use, pregnancy, nursing, and whether the product is being used for general wellness or a specific health concern.</p>",
   "benefits_title": "Potential Lactobacillus Rhamnosus Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether lactobacillus rhamnosus fits the full formula.",
+  "benefits_subtitle": "Educational benefits associated with lactobacillus rhamnosus in probiotic formulas.",
   "benefits_json": [
     {
       "icon": "badge-check",
-      "title": "Digestive microbiome support",
-      "description": "Lactobacillus Rhamnosus is commonly evaluated for digestive microbiome support within supplement formulas and wellness routines."
-    },
-    {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Lactobacillus Rhamnosus to support a more targeted product story around digestive, immune, and microbiome-support formulas."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "title": "Strain Label Awareness",
+      "description": "Helps shoppers understand why the exact Lactobacillus Rhamnosus strain matters more than species name alone."
     },
     {
       "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Lactobacillus Rhamnosus may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "title": "Microbiome Context",
+      "description": "Supports education around digestive or oral microbiome formulas without overstating outcomes."
+    },
+    {
+      "icon": "search",
+      "title": "CFU Comparison",
+      "description": "Encourages review of CFU count through expiration, storage, and delivery format."
     },
     {
       "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Lactobacillus Rhamnosus supplements."
+      "title": "Safety Screening",
+      "description": "Highlights immunocompromised, medically fragile, pregnancy, nursing, and medication cautions."
+    },
+    {
+      "icon": "pill",
+      "title": "Format Fit",
+      "description": "Helps compare capsules, powders, lozenges, sachets, and multi-strain blends."
     },
     {
       "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Lactobacillus Rhamnosus helps readers make more informed decisions instead of relying only on front-label claims."
+      "title": "Evidence Context",
+      "description": "Explains why strain-specific research should not be generalized across all products."
     }
   ],
   "dosage_title": "Typical Lactobacillus Rhamnosus Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Serving sizes vary by CFU count and strain; use the product's label and storage instructions.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Serving sizes vary by CFU count and strain; use the product's label and storage instructions.</p><p>Because lactobacillus rhamnosus can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on strain, CFU count, product format, and storage quality.",
+  "typical_dose": "Probiotic servings vary by exact strain, CFU count, delivery method, and storage requirements; many products provide billions of CFU per serving, but strain identity matters more than a generic number.",
+  "dosage": "Probiotic servings vary by exact strain, CFU count, delivery method, and storage requirements; many products provide billions of CFU per serving, but strain identity matters more than a generic number.",
+  "dosage_content": "<p>Probiotic servings vary by exact strain, CFU count, delivery method, and storage requirements; many products provide billions of CFU per serving, but strain identity matters more than a generic number.</p><p>Follow the finished product label rather than assuming all probiotics are equivalent. Look for CFU count through expiration, exact strain names, storage directions, allergen notes, and whether the product is intended for oral, digestive, or general microbiome support.</p><p>Start with one probiotic product at a time when possible, monitor tolerance, and ask a healthcare professional for guidance if using antibiotics, immune-suppressing medication, or managing a significant medical condition.</p>",
   "safety_title": "Lactobacillus Rhamnosus Safety Information",
-  "safety_subtitle": "Use lactobacillus rhamnosus with label awareness and personal health context in mind.",
+  "safety_subtitle": "Important cautions before using lactobacillus rhamnosus probiotic supplements.",
   "side_effects": [
-    "Digestive Adjustment",
-    "Temporary Discomfort",
-    "High-Risk Use",
-    "Storage Sensitivity"
+    "Gas or bloating",
+    "Stool changes",
+    "Digestive discomfort",
+    "Rare infection risk in high-risk users"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Adjustment",
-      "description": "Gas, bloating, or stool changes may occur when starting Lactobacillus Rhamnosus."
+      "icon": "alert-circle",
+      "title": "Gas or Bloating",
+      "text": "Temporary gas or bloating can occur when starting probiotics."
     },
     {
-      "title": "Temporary Discomfort",
-      "description": "Some users may need a lower starting serving or a different probiotic format."
+      "icon": "alert-circle",
+      "title": "Stool Changes",
+      "text": "Some users notice changes in bowel habits during the adjustment period."
     },
     {
+      "icon": "alert-circle",
+      "title": "Digestive Discomfort",
+      "text": "Higher CFU blends may be harder to tolerate for sensitive users."
+    },
+    {
+      "icon": "alert-triangle",
       "title": "High-Risk Use",
-      "description": "People with compromised immune systems need medical guidance before using live probiotics."
-    },
-    {
-      "title": "Storage Sensitivity",
-      "description": "Heat, moisture, and expired products may affect probiotic quality."
+      "text": "Immunocompromised or medically fragile users require professional guidance before using live probiotics."
     }
   ],
   "drug_interactions_json": [
-    "Ask a clinician before use if taking immune-suppressing medication.",
-    "Separate probiotic timing from antibiotics if directed by a healthcare professional.",
-    "Review use if medically fragile, immunocompromised, or hospitalized.",
-    "Check storage instructions because potency can affect expected results."
+    {
+      "icon": "shield-alert",
+      "title": "Antibiotics",
+      "text": "Timing may need adjustment when probiotics are used with antibiotics."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Immunosuppressive Medication",
+      "text": "Live microbes require clinician review for high-risk users."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Central Lines or Critical Illness",
+      "text": "Medically fragile users should avoid self-directed probiotic use."
+    },
+    {
+      "icon": "shield-alert",
+      "title": "Multiple Probiotic Products",
+      "text": "Stacking blends can increase GI discomfort and make response harder to interpret."
+    }
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Lactobacillus Rhamnosus or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    {
+      "icon": "x-circle",
+      "title": "Severely Immunocompromised",
+      "text": "Use only with medical supervision."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Hospitalized or Medically Fragile",
+      "text": "Avoid self-directed live probiotic use."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Central Venous Catheter",
+      "text": "Discuss probiotic use with a healthcare team."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Severe Pancreatitis or Critical Illness",
+      "text": "Use only if directed by a clinician."
+    },
+    {
+      "icon": "x-circle",
+      "title": "Children Without Guidance",
+      "text": "Use age-appropriate probiotic products only when recommended."
+    }
   ],
-  "faq_title": "Lactobacillus Rhamnosus FAQs",
-  "faq_subtitle": "Common questions about lactobacillus rhamnosus supplements and label comparison.",
+  "food_sources_title": "Lactobacillus Rhamnosus Food Sources",
+  "food_sources_subtitle": "Food and microbiome context for lactobacillus rhamnosus.",
+  "food_sources_content": "<p>Lactobacillus Rhamnosus may be associated with fermented foods, the oral microbiome, or the digestive microbiome depending on the species and strain. Supplements should still be evaluated separately because strain identity, CFU amount, and viability through expiration are product-specific.</p>",
+  "food_sources_json": [
+    {
+      "icon": "leaf",
+      "title": "Microbiome Context",
+      "description": "Human microbiome and fermented product-associated sources"
+    },
+    {
+      "icon": "pill",
+      "title": "Supplement Form",
+      "description": "Capsule, powder, sachet, chewable, lozenge, or multi-strain blend"
+    },
+    {
+      "icon": "search",
+      "title": "Label Check",
+      "description": "Look for exact strain, CFU through expiration, storage instructions, and allergen notes."
+    }
+  ],
+  "faq_title": "Lactobacillus Rhamnosus FAQ",
+  "faq_subtitle": "Common questions about lactobacillus rhamnosus, CFU, strain identity, storage, and safety.",
   "faq_json": [
     {
-      "question": "What is Lactobacillus Rhamnosus used for in supplements?",
-      "answer": "Lactobacillus Rhamnosus is commonly used in formulas focused on digestive, immune, and microbiome-support formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is Lactobacillus Rhamnosus?",
+      "answer": "Lactobacillus Rhamnosus is a probiotic species used in supplement formulas for digestive, immune, and microbiome supplement education."
     },
     {
-      "question": "Is Lactobacillus Rhamnosus a medicine?",
-      "answer": "No. Lactobacillus Rhamnosus is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is Lactobacillus Rhamnosus the same as a probiotic strain?",
+      "answer": "Not always. A species name is broader than a strain code. Strain identity is important because evidence and product behavior can vary."
     },
     {
-      "question": "What form of Lactobacillus Rhamnosus should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "What does CFU mean on a Lactobacillus Rhamnosus label?",
+      "answer": "CFU stands for colony-forming units. It describes viable microorganisms, ideally guaranteed through the product's expiration date."
     },
     {
-      "question": "How long does Lactobacillus Rhamnosus take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "Is a higher CFU count always better?",
+      "answer": "No. The right CFU depends on strain, product purpose, delivery format, and tolerance. Higher numbers are not automatically more effective."
     },
     {
       "question": "Can Lactobacillus Rhamnosus cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "answer": "Gas, bloating, stool changes, or digestive discomfort may occur, especially when starting a new probiotic."
     },
     {
-      "question": "Can I take Lactobacillus Rhamnosus every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Who should ask a clinician before using Lactobacillus Rhamnosus?",
+      "answer": "People who are immunocompromised, medically fragile, pregnant, nursing, hospitalized, or taking immune-suppressing medication should ask a clinician."
     },
     {
-      "question": "What should I check on a Lactobacillus Rhamnosus label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "Can Lactobacillus Rhamnosus be taken with antibiotics?",
+      "answer": "Timing depends on the antibiotic and product. A clinician or pharmacist can advise whether and when to use probiotics."
     },
     {
-      "question": "Does Lactobacillus Rhamnosus interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Does Lactobacillus Rhamnosus need refrigeration?",
+      "answer": "Some products do and some do not. Follow the storage instructions and check whether CFU is guaranteed through expiration."
     },
     {
-      "question": "Is Lactobacillus Rhamnosus suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Can Lactobacillus Rhamnosus replace medical treatment?",
+      "answer": "No. Probiotics should not replace diagnosis, prescribed treatment, or care for persistent symptoms."
     },
     {
-      "question": "Can Lactobacillus Rhamnosus replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "How does Suppriva evaluate Lactobacillus Rhamnosus?",
+      "answer": "Suppriva reviews strain transparency, CFU through expiration, delivery format, safety cautions, storage needs, and realistic label claims."
     }
   ],
   "sidebar_profile_title": "Lactobacillus Rhamnosus Profile Snapshot",
-  "sidebar_profile_content": "Lactobacillus Rhamnosus is a probiotic strain commonly evaluated for digestive, immune, and microbiome-support formulas.",
+  "sidebar_profile_content": "Lactobacillus Rhamnosus is a probiotic species used in supplement education for digestive, immune, and microbiome supplement education.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
-      "value": "Probiotic strain"
+      "value": "Probiotic species",
+      "icon": "leaf"
     },
     {
       "label": "Typical Dose",
-      "value": "Serving sizes vary by CFU count and strain; use the product's label and storage instructions."
+      "value": "Probiotic servings vary by exact strain, CFU count, delivery method, and storage requirements; many products provide billions of CFU per serving, but strain identity matters more than a generic number.",
+      "icon": "clipboard-check"
     },
     {
       "label": "Best For",
-      "value": "Digestive, immune, and microbiome-support formulas"
+      "value": "Digestive, immune, and microbiome supplement education",
+      "icon": "target"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; high-risk users should use clinician guidance"
+      "value": "Generally tolerated; high-risk users need clinician guidance",
+      "icon": "shield-check"
     },
     {
       "label": "Origin",
-      "value": "Human microbiome and fermented product-associated sources"
+      "value": "Human microbiome and fermented product-associated sources",
+      "icon": "map-pin"
     },
     {
       "label": "Part Used",
-      "value": "Live microorganism"
+      "value": "Live microorganism strain or blend component",
+      "icon": "leaf"
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, sachet, probiotic blend"
+      "value": "Capsule, powder, sachet, chewable, lozenge, or blend",
+      "icon": "pill"
     },
     {
       "label": "Taste",
-      "value": "Neutral to mildly fermented"
+      "value": "Neutral to mildly fermented depending on format",
+      "icon": "sparkles"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Lactobacillus Rhamnosus is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Lactobacillus Rhamnosus is used in supplement formulas for digestive, immune, and microbiome-support formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Digestive, immune, and microbiome-support formulas",
-  "safety_level": "Generally well tolerated; high-risk users should use clinician guidance",
+  "sidebar_at_a_glance_content": "<p>Lactobacillus Rhamnosus is best compared by exact strain, CFU through expiration, storage requirements, delivery format, and safety fit for the user.</p>",
+  "full_description": "Lactobacillus Rhamnosus is a probiotic species used in probiotic formulas for digestive, immune, and microbiome supplement education.",
+  "best_for": "Digestive, immune, and microbiome supplement education",
+  "safety_level": "Generally tolerated; high-risk users need clinician guidance",
   "origin_country": "Human microbiome and fermented product-associated sources",
-  "part_used": "Live microorganism",
-  "ingredient_form": "Capsule, powder, sachet, probiotic blend",
-  "taste_profile": "Neutral to mildly fermented",
-  "rating": null,
+  "part_used": "Live microorganism strain or blend component",
+  "ingredient_form": "Capsule, powder, sachet, chewable, lozenge, or blend",
+  "taste_profile": "Neutral to mildly fermented depending on format",
+  "rating": 4.6,
   "evidence_level": "Moderate",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
-  "seo_title": "Lactobacillus Rhamnosus Benefits, Dosage, and Safety | Suppriva",
+  "uses_title": "Lactobacillus Rhamnosus Uses",
+  "uses_subtitle": "Common use contexts for lactobacillus rhamnosus in probiotic formulas.",
+  "uses_content": "<p>Lactobacillus Rhamnosus may appear in products related to digestive, immune, and microbiome supplement education. Use depends on exact strain, CFU, delivery format, and the user's health context.</p>",
+  "uses_json": [
+    {
+      "icon": "check-circle",
+      "title": "Microbiome Formulas",
+      "description": "Used in oral, digestive, or general probiotic products depending on strain and format."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Label Education",
+      "description": "Helpful for comparing CFU, strain codes, and storage details."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Routine Review",
+      "description": "Useful when matching probiotic products to realistic wellness goals."
+    },
+    {
+      "icon": "check-circle",
+      "title": "Safety Screening",
+      "description": "Important for high-risk users and medication context."
+    }
+  ],
+  "research_title": "Lactobacillus Rhamnosus Research Notes",
+  "research_subtitle": "A cautious look at strain-specific probiotic evidence.",
+  "research_content": "<p>Research on lactobacillus rhamnosus depends heavily on exact strain, dose, population, and outcome. Evidence for one strain should not be generalized to every product with the same species name.</p><p>Suppriva presents probiotic research as educational context, not as a promise of personal results or medical benefit.</p>",
+  "research_json": [
+    {
+      "icon": "book-open",
+      "title": "Strain-Specific Evidence",
+      "description": "Exact strain identity matters when interpreting probiotic research."
+    },
+    {
+      "icon": "search",
+      "title": "Finished Product Matters",
+      "description": "CFU through expiration, storage, and delivery format affect practical value."
+    }
+  ],
+  "references_title": "Lactobacillus Rhamnosus References",
+  "references_subtitle": "Trusted sources used for general probiotic safety and evidence context.",
+  "references_json": [
+    {
+      "title": "NIH Office of Dietary Supplements",
+      "url": "https://ods.od.nih.gov/"
+    },
+    {
+      "title": "International Scientific Association for Probiotics and Prebiotics",
+      "url": "https://isappscience.org/"
+    },
+    {
+      "title": "PubMed biomedical literature",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/"
+    }
+  ],
+  "related_ingredients_json": [
+    "l-rhamnosus",
+    "lactobacillus-plantarum",
+    "lactobacillus-salivarius",
+    "probiotics"
+  ],
+  "seo_title": "Lactobacillus Rhamnosus Benefits, CFU, Side Effects, and Safety | Suppriva",
   "seo_focus_keyword": "lactobacillus rhamnosus",
-  "seo_description": "Explore lactobacillus rhamnosus benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Learn about Lactobacillus Rhamnosus, including probiotic benefits, CFU, strain identity, side effects, safety, storage, and label tips.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/lactobacillus-rhamnosus",
   "seo_noindex": false,
   "seo_nofollow": false,
-  "meta_title": "Lactobacillus Rhamnosus Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore lactobacillus rhamnosus benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_title": "Lactobacillus Rhamnosus Benefits, CFU, Side Effects, and Safety | Suppriva",
+  "meta_description": "Learn about Lactobacillus Rhamnosus, including probiotic benefits, CFU, strain identity, side effects, safety, storage, and label tips."
 }
