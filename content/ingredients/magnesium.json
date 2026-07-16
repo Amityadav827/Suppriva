@@ -1,0 +1,258 @@
+{
+  "name": "Magnesium",
+  "scientific_name": "Magnesium",
+  "ingredient_category": "Bone & Joint Health",
+  "status": "published",
+  "hero_badge": null,
+  "short_description": "Magnesium is an essential mineral involved in muscle function, nerve signaling, bone health, energy metabolism, and electrolyte balance.",
+  "overview_title": "Magnesium Overview",
+  "overview_subtitle": "A practical look at magnesium as an essential mineral supplement.",
+  "overview_content": "<p>Magnesium is an essential mineral required for normal human function. It is involved in muscle contraction and relaxation, nerve signaling, energy metabolism, protein synthesis, bone structure, blood pressure regulation, and electrolyte balance. Because it touches so many systems, magnesium appears in a wide range of supplements, including sleep-support products, muscle recovery formulas, electrolyte powders, bone health products, and daily mineral blends.</p><p>The first thing to understand is that magnesium is not one single supplement form. Labels may list magnesium glycinate, citrate, oxide, malate, taurate, chloride, lactate, or L-threonate. Each form provides magnesium, but they can differ in elemental magnesium content, cost, solubility, and digestive tolerance. Magnesium oxide, for example, often provides a high elemental amount but may be less gentle for some users. Magnesium glycinate is commonly chosen for tolerance and evening routines. Magnesium citrate is often used in products where bowel regularity is part of the context.</p><p>Magnesium is found naturally in foods such as nuts, seeds, legumes, whole grains, leafy greens, and some fortified foods. Supplements may be useful when dietary intake is low or when a product is designed to fill a specific wellness gap. However, magnesium supplements should not be used to self-treat cramps, insomnia, anxiety, migraines, high blood pressure, or heart rhythm concerns without medical guidance. Those symptoms may have many causes and deserve proper evaluation if persistent or severe.</p><p>Supplement shoppers should pay attention to elemental magnesium. A label may list the compound amount or the elemental mineral amount, and the supplement facts panel should clarify the actual magnesium delivered per serving. Users should also consider total daily intake from multivitamins, electrolyte drinks, sleep products, and separate magnesium capsules to avoid accidentally stacking too much.</p><p>For Suppriva readers, magnesium should be evaluated by matching the form to the goal, checking whether the label explains the source clearly, and reviewing the full formula instead of judging one ingredient in isolation. Magnesium paired with melatonin, herbs, or electrolytes may serve a different purpose than a plain mineral capsule. Serving size, form, medication use, kidney function, and digestive tolerance all matter.</p><p>Magnesium is generally safe within recommended supplemental ranges for many adults, but high doses can cause diarrhea, cramping, nausea, low blood pressure, or more serious issues in people with kidney disease. People taking antibiotics, bisphosphonates, thyroid medication, diuretics, or heart medications should separate timing or consult a qualified healthcare professional.</p><p>From a practical product-research standpoint, magnesium should be evaluated by looking beyond the front label. The same ingredient name can appear in very different formulas, serving sizes, and formats. A single-ingredient product may be easier to interpret, while a blend can make it harder to know which ingredient is responsible for the intended use. Users should check the supplement facts panel, the exact form, the amount per serving, directions, warnings, and whether the product provides testing or sourcing details.</p><p>It is also important to separate wellness support from medical treatment. Educational research can explain why Magnesium appears in supplements, but it does not mean every product is clinically proven for every claim. Symptoms such as persistent fatigue, sleep disruption, digestive changes, sexual health concerns, pain, mood changes, or mineral deficiency signs can have many causes. Supplements should complement healthy habits and professional care rather than delay appropriate evaluation.</p><p>The best use case for magnesium is a thoughtful routine that considers diet, lifestyle, medications, health history, and the full ingredient stack. People should avoid combining multiple products with overlapping effects unless they understand total intake and safety considerations. Pregnant or nursing users, children, older adults, and people with chronic conditions should be especially cautious. In a premium wellness library, Magnesium is most useful when presented with clear benefits, realistic limits, and transparent safety guidance.</p>",
+  "interesting_fact_label": "Mineral Note",
+  "interesting_fact": "<p>Magnesium participates in hundreds of enzyme-related processes, which is why it appears in formulas for muscles, nerves, bones, energy, and relaxation.</p>",
+  "how_it_works_title": "How Magnesium Works",
+  "how_it_works_subtitle": "Magnesium supports normal muscle, nerve, bone, and energy metabolism functions.",
+  "how_it_works_highlight_title": "Form matters",
+  "how_it_works_highlight_description": "Magnesium citrate, glycinate, oxide, malate, threonate, and other forms can differ in tolerance, elemental magnesium content, and intended use.",
+  "how_it_works_content": "<p>Magnesium works as a cofactor in many enzyme systems. It helps stabilize ATP, supports normal nerve transmission, contributes to muscle relaxation and contraction cycles, and participates in bone mineral metabolism.</p><p>Different supplement forms influence the user experience. Some forms are selected for digestive regularity, some for general mineral replenishment, and some for evening tolerance. The best form depends on the reason for use and personal response.</p><p>Because magnesium can interfere with absorption of certain medications, timing and professional guidance are important when prescription drugs are involved.</p>",
+  "benefits_title": "Potential Magnesium Benefits",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
+  "benefits_json": [
+    {
+      "icon": "activity",
+      "title": "Muscle Function Support",
+      "description": "Magnesium contributes to normal muscle contraction and relaxation processes."
+    },
+    {
+      "icon": "zap",
+      "title": "Energy Metabolism",
+      "description": "It is involved in ATP-related energy pathways and many enzyme systems."
+    },
+    {
+      "icon": "bone",
+      "title": "Bone Health Support",
+      "description": "Magnesium helps support normal bone structure as part of a balanced mineral routine."
+    },
+    {
+      "icon": "moon",
+      "title": "Relaxation Routine Fit",
+      "description": "Many people use magnesium in evening routines because of its role in nerve and muscle function."
+    },
+    {
+      "icon": "droplets",
+      "title": "Electrolyte Balance",
+      "description": "Magnesium works with other minerals involved in hydration and electrolyte balance."
+    },
+    {
+      "icon": "search",
+      "title": "Label Comparison Value",
+      "description": "Magnesium helps shoppers compare form, elemental amount, serving size, and digestive tolerance."
+    }
+  ],
+  "dosage_title": "Typical Magnesium Dosage",
+  "dosage_subtitle": "Serving size depends on the product form and label directions.",
+  "typical_dose": "100 to 400 mg elemental magnesium daily",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Supplemental magnesium doses vary widely, often from 100 mg to 400 mg of elemental magnesium daily depending on product type and individual needs. The tolerable upper intake level for supplemental magnesium is lower than total dietary intake because food magnesium is handled differently.</p><p>Follow the supplement facts label and avoid stacking multiple magnesium-containing products without checking total intake. People with kidney disease or medication use should consult a healthcare professional before supplementation.</p>",
+  "safety_title": "Magnesium Safety Information",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
+  "side_effects": [
+    "Loose Stools",
+    "Stomach Cramping",
+    "Low Blood Pressure Symptoms",
+    "Excess Magnesium Risk"
+  ],
+  "side_effects_json": [
+    {
+      "title": "Loose Stools",
+      "description": "Higher supplemental magnesium intake can cause diarrhea or bowel urgency."
+    },
+    {
+      "title": "Stomach Cramping",
+      "description": "Some forms may cause nausea, cramping, or digestive discomfort."
+    },
+    {
+      "title": "Low Blood Pressure Symptoms",
+      "description": "Very high intake may contribute to lightheadedness or weakness."
+    },
+    {
+      "title": "Excess Magnesium Risk",
+      "description": "People with kidney disease are at higher risk of magnesium accumulation."
+    }
+  ],
+  "drug_interactions_json": [
+    "Magnesium can reduce absorption of certain antibiotics if taken too close together.",
+    "Separate magnesium from bisphosphonates and thyroid medication unless directed otherwise.",
+    "Use caution with diuretics, heart medications, or blood pressure medication.",
+    "Ask a clinician before using high-dose magnesium with kidney disease."
+  ],
+  "who_should_avoid_json": [
+    "People with kidney disease unless supervised by a healthcare professional.",
+    "People taking interacting medications without timing guidance.",
+    "People with unexplained severe weakness, heart rhythm concerns, or persistent cramps needing evaluation.",
+    "Children unless directed by a qualified clinician.",
+    "Anyone already using multiple magnesium-containing supplements at high doses."
+  ],
+  "food_sources_title": "Magnesium Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Magnesium is typically sourced from foods, mineral salts, and supplement forms. Supplement formats can differ from food or traditional preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Magnesium"
+    },
+    {
+      "title": "Common Form",
+      "description": "Capsule, tablet, powder, liquid, topical products"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
+  ],
+  "faq_title": "Magnesium FAQs",
+  "faq_subtitle": "Common questions about magnesium supplements and label comparison.",
+  "faq_json": [
+    {
+      "question": "What is magnesium used for?",
+      "answer": "Magnesium supports normal muscle, nerve, bone, energy, and electrolyte functions."
+    },
+    {
+      "question": "Which magnesium form is best?",
+      "answer": "It depends on the goal. Glycinate, citrate, oxide, malate, and other forms differ in tolerance and intended use."
+    },
+    {
+      "question": "What does elemental magnesium mean?",
+      "answer": "Elemental magnesium is the actual amount of magnesium delivered by a supplement compound."
+    },
+    {
+      "question": "Can magnesium help sleep?",
+      "answer": "Magnesium supports nerve and muscle function and is often used in evening routines, but it is not a guaranteed sleep treatment."
+    },
+    {
+      "question": "Can magnesium cause diarrhea?",
+      "answer": "Yes. Higher doses or certain forms, especially citrate or oxide for some users, may loosen stools."
+    },
+    {
+      "question": "Can I take magnesium daily?",
+      "answer": "Many products are designed for daily use, but total intake and medication timing matter."
+    },
+    {
+      "question": "What foods contain magnesium?",
+      "answer": "Nuts, seeds, legumes, whole grains, leafy greens, and some fortified foods provide magnesium."
+    },
+    {
+      "question": "Does magnesium interact with medications?",
+      "answer": "Yes. It can affect absorption of antibiotics, thyroid medication, and bisphosphonates, among others."
+    },
+    {
+      "question": "Who should avoid magnesium supplements?",
+      "answer": "People with kidney disease or significant medication concerns should use professional guidance."
+    },
+    {
+      "question": "Can magnesium replace medical treatment?",
+      "answer": "No. Magnesium supplements should not replace diagnosis, treatment, or prescribed medication."
+    }
+  ],
+  "sidebar_profile_title": "Magnesium Profile Snapshot",
+  "sidebar_profile_content": "Magnesium is an essential mineral involved in muscle function, nerve signaling, bone health, energy metabolism, and electrolyte balance.",
+  "sidebar_quick_facts_json": [
+    {
+      "label": "Type",
+      "value": "Essential mineral"
+    },
+    {
+      "label": "Typical Dose",
+      "value": "100 to 400 mg elemental magnesium daily"
+    },
+    {
+      "label": "Best For",
+      "value": "Muscle, nerve, and mineral support"
+    },
+    {
+      "label": "Safety Level",
+      "value": "Dose and kidney function matter"
+    },
+    {
+      "label": "Origin",
+      "value": "Foods and mineral salts"
+    },
+    {
+      "label": "Part Used",
+      "value": "Elemental mineral"
+    },
+    {
+      "label": "Form",
+      "value": "Capsule, powder, tablet"
+    },
+    {
+      "label": "Taste",
+      "value": "Mineral or neutral"
+    }
+  ],
+  "sidebar_at_a_glance_content": "<p>Magnesium is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Magnesium is an essential mineral involved in muscle function, nerve signaling, bone health, energy metabolism, and electrolyte balance.",
+  "best_for": "Muscle, nerve, bone, sleep-support, and daily mineral routines",
+  "safety_level": "Dose and kidney function matter",
+  "origin_country": "Foods, mineral salts, and supplement forms",
+  "part_used": "Essential mineral",
+  "ingredient_form": "Capsule, tablet, powder, liquid, topical products",
+  "taste_profile": "Mineral, often neutral in capsules",
+  "rating": null,
+  "evidence_level": null,
+  "uses_title": "Magnesium Uses",
+  "uses_subtitle": "Common wellness contexts where magnesium appears.",
+  "uses_content": "<p>Magnesium is commonly used in muscle, nerve, bone, sleep-support, and daily mineral routines. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Muscle, nerve, bone, sleep-support, and daily mineral routines"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Magnesium Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on magnesium varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Magnesium References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "magnesium-glycinate",
+    "zinc",
+    "vitamin-d3"
+  ],
+  "seo_title": "Magnesium Benefits, Dosage, and Safety | Suppriva",
+  "seo_focus_keyword": "magnesium",
+  "seo_description": "Explore magnesium benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library.",
+  "seo_canonical_url": "https://suppriva.vercel.app/ingredient/magnesium",
+  "seo_noindex": false,
+  "seo_nofollow": false,
+  "meta_title": "Magnesium Benefits, Dosage, and Safety | Suppriva",
+  "meta_description": "Explore magnesium benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library."
+}

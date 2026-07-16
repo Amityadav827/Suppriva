@@ -1,165 +1,161 @@
 {
   "name": "Maitake Mushroom",
-  "status": "published",
   "scientific_name": "Grifola frondosa",
   "ingredient_category": "Herbal Extracts",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Maitake Mushroom is a functional mushroom valued in supplements for beta-glucans and immune-metabolic wellness positioning, with practical safety and label context for supplement shoppers.",
+  "short_description": "Maitake Mushroom is a functional mushroom used in immune-support, metabolic wellness, and mushroom complex formulas.",
   "overview_title": "Maitake Mushroom Overview",
-  "overview_subtitle": "A practical look at maitake mushroom as a supplement ingredient.",
-  "overview_content": "<p>Maitake Mushroom is a functional mushroom valued in supplements for beta-glucans and immune-metabolic wellness positioning. In supplement products, it is usually evaluated by form, dose, sourcing, and how clearly the brand explains its role in the formula.</p><p>Suppriva reviews Maitake Mushroom through a practical wellness lens: what it is, how it is commonly positioned, what safety considerations matter, and how shoppers can compare labels without relying on exaggerated claims.</p><p>Like any supplement ingredient, Maitake Mushroom should be used as part of a broader wellness routine and should not replace medical care, diagnosis, prescribed treatment, or a balanced diet.</p>",
-  "interesting_fact_label": "Ingredient Insight",
-  "interesting_fact": "<p>Maitake is also known as hen-of-the-woods because of its layered, feather-like appearance.</p>",
+  "overview_subtitle": "A practical look at maitake as a functional mushroom ingredient.",
+  "overview_content": "<p>Maitake mushroom, scientifically known as Grifola frondosa, is an edible and functional mushroom used in capsules, powders, extracts, and mushroom blends. It is often marketed for immune wellness, metabolic support, and general vitality. Maitake has culinary roots as a food mushroom, but supplement products usually concentrate or powder the fruiting body to make it easier to include in daily routines.</p><p>The main compounds discussed in maitake are polysaccharides, especially beta-glucans. These mushroom carbohydrates are part of the reason functional mushrooms are commonly positioned around immune wellness. However, immune support should be described carefully. Maitake supplements are not treatments for infections, cancer, autoimmune disease, diabetes, or any medical condition. They may be part of a general wellness routine, but medical concerns require professional care.</p><p>Maitake appears in two main ways: as a single-ingredient supplement or as part of a mushroom complex with reishi, shiitake, turkey tail, lion's mane, cordyceps, or chaga. Combination formulas can be useful, but they also make it harder to know how much maitake is actually included. Transparent labels should disclose serving size, extract ratio, fruiting body versus mycelium, beta-glucan content when available, and testing for contaminants such as heavy metals.</p><p>Some research explores maitake in relation to immune and metabolic pathways, but evidence varies by preparation and study design. Consumers should be cautious with products that overstate results or imply disease treatment. A responsible maitake product should focus on wellness education, label clarity, and realistic expectations rather than dramatic claims.</p><p>For Suppriva readers, maitake mushroom should be evaluated by matching the form to the goal, checking whether the label explains the source clearly, and reviewing the full formula instead of judging one ingredient in isolation. Fruiting body extracts, mycelium products, powders, and blended mushroom formulas can differ substantially. Dose, extract quality, beta-glucan disclosure, and third-party testing are especially important.</p><p>Maitake is generally tolerated by many adults, but mushroom allergies, digestive upset, medication use, immune conditions, blood sugar management, and surgery planning deserve caution. People taking diabetes medications, blood thinners, immune-related medications, or those with chronic conditions should consult a qualified healthcare professional before regular use.</p><p>From a practical product-research standpoint, maitake mushroom should be evaluated by looking beyond the front label. The same ingredient name can appear in very different formulas, serving sizes, and formats. A single-ingredient product may be easier to interpret, while a blend can make it harder to know which ingredient is responsible for the intended use. Users should check the supplement facts panel, the exact form, the amount per serving, directions, warnings, and whether the product provides testing or sourcing details.</p><p>It is also important to separate wellness support from medical treatment. Educational research can explain why Maitake Mushroom appears in supplements, but it does not mean every product is clinically proven for every claim. Symptoms such as persistent fatigue, sleep disruption, digestive changes, sexual health concerns, pain, mood changes, or mineral deficiency signs can have many causes. Supplements should complement healthy habits and professional care rather than delay appropriate evaluation.</p><p>The best use case for maitake mushroom is a thoughtful routine that considers diet, lifestyle, medications, health history, and the full ingredient stack. People should avoid combining multiple products with overlapping effects unless they understand total intake and safety considerations. Pregnant or nursing users, children, older adults, and people with chronic conditions should be especially cautious. In a premium wellness library, Maitake Mushroom is most useful when presented with clear benefits, realistic limits, and transparent safety guidance.</p>",
+  "interesting_fact_label": "Functional Mushroom Note",
+  "interesting_fact": "<p>Maitake is sometimes called hen of the woods because its layered fruiting body resembles ruffled feathers.</p>",
   "how_it_works_title": "How Maitake Mushroom Works",
-  "how_it_works_subtitle": "The main mechanisms behind maitake mushroom in wellness formulas.",
-  "how_it_works_highlight_title": "Functional mushroom support profile",
-  "how_it_works_highlight_description": "Maitake Mushroom is commonly evaluated through mushroom polysaccharides and beta-glucans that support its role in immune-focused and metabolic wellness blends.",
-  "how_it_works_content": "<p>Maitake Mushroom works through mushroom polysaccharides and beta-glucans that support its role in immune-focused and metabolic wellness blends. This does not mean every product will produce the same result; the formula, serving size, ingredient quality, and consistency of use all matter.</p><p>For shoppers, the most useful approach is to compare the ingredient form, standardized actives when listed, serving size, and whether the product clearly explains why Maitake Mushroom is included.</p><p>Evidence and expected use should be interpreted conservatively. Supplements can support wellness routines, but they are not substitutes for individualized medical guidance.</p>",
+  "how_it_works_subtitle": "Maitake is valued for beta-glucans and functional mushroom compounds.",
+  "how_it_works_highlight_title": "Beta-glucan profile",
+  "how_it_works_highlight_description": "Maitake contains mushroom polysaccharides, including beta-glucans, that support its role in immune-wellness formulas.",
+  "how_it_works_content": "<p>Maitake works through mushroom-derived compounds such as beta-glucans and other polysaccharides. These compounds are studied for their interaction with immune signaling pathways and general cellular wellness contexts.</p><p>In supplements, the product form matters. Extracts may concentrate certain compounds, while powders may provide a broader food-like mushroom profile. Fruiting body and mycelium products should not be assumed identical.</p><p>Because maitake may overlap with immune or blood sugar contexts, people with related medical conditions or medications should use professional guidance.</p>",
   "benefits_title": "Potential Maitake Mushroom Benefits",
-  "benefits_subtitle": "Benefits depend on dose, form, formula quality, and personal context.",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "sparkles",
-      "title": "Antioxidant Wellness Support",
-      "description": "Maitake Mushroom is commonly used in formulas that support antioxidant balance and general cellular wellness."
+      "icon": "shield-check",
+      "title": "Immune Wellness Support",
+      "description": "Maitake is commonly used in functional mushroom products positioned around immune system support."
+    },
+    {
+      "icon": "leaf",
+      "title": "Functional Mushroom Profile",
+      "description": "It contributes mushroom-derived polysaccharides and other compounds to wellness blends."
     },
     {
       "icon": "activity",
-      "title": "Supports Immune And Metabolic Mushroom Support",
-      "description": "Its ingredient profile helps explain why brands include it in products positioned around immune and metabolic mushroom support."
+      "title": "Metabolic Wellness Context",
+      "description": "Some formulas position maitake around blood sugar and metabolic wellness, though medical claims should be avoided."
+    },
+    {
+      "icon": "salad",
+      "title": "Food-Based Heritage",
+      "description": "Maitake is also an edible mushroom, which helps users understand its food-like origin."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Antioxidant Context",
+      "description": "Mushrooms contain naturally occurring compounds studied for antioxidant and cellular wellness activity."
     },
     {
       "icon": "search",
       "title": "Label Comparison Value",
-      "description": "This ingredient helps shoppers compare dose, form, standardization, and formula transparency across supplement products."
-    },
-    {
-      "icon": "leaf",
-      "title": "Formula Pairing Potential",
-      "description": "Maitake Mushroom often appears with complementary nutrients or botanicals that support a broader wellness goal."
-    },
-    {
-      "icon": "shield-check",
-      "title": "Routine-Friendly Positioning",
-      "description": "When used as directed, it can fit into daily supplement routines built around consistency and label-aware use."
-    },
-    {
-      "icon": "book-open",
-      "title": "Research-Informed Context",
-      "description": "Suppriva evaluates Maitake Mushroom by mechanism, evidence level, safety context, and practical product positioning."
+      "description": "Maitake helps shoppers compare fruiting body, extract ratio, beta-glucan content, and mushroom blend transparency."
     }
   ],
   "dosage_title": "Typical Maitake Mushroom Dosage",
-  "dosage_subtitle": "Dose depends on ingredient form and product label directions.",
-  "typical_dose": "Common supplement servings often range from 500 mg to 1,500 mg daily, depending on extract standardization and blend design.",
-  "dosage": "Common supplement servings often range from 500 mg to 1,500 mg daily, depending on extract standardization and blend design.",
-  "dosage_content": "<p>Common supplement servings often range from 500 mg to 1,500 mg daily, depending on extract standardization and blend design.</p><p>Start with the product's suggested serving unless a qualified healthcare professional gives different guidance. Avoid combining several products that contain Maitake Mushroom without checking total intake.</p><p>If you are pregnant, nursing, taking medication, managing a condition, or preparing for a procedure, review supplement use with a clinician before starting.</p>",
+  "dosage_subtitle": "Serving size depends on the product form and label directions.",
+  "typical_dose": "Several hundred mg to a few grams daily",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Maitake dosage varies by powder, capsule, extract ratio, and mushroom blend. Many products use several hundred milligrams to a few grams daily, but the supplement facts panel is the best guide.</p><p>Start with the labeled serving and avoid stacking multiple mushroom complexes without reviewing total intake. People using medications or managing immune, bleeding, or blood sugar concerns should consult a healthcare professional.</p>",
   "safety_title": "Maitake Mushroom Safety Information",
-  "safety_subtitle": "Important safety context before using maitake mushroom supplements.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Sensitivity Reactions",
-    "Dose-Related Effects",
-    "Formula Overlap"
+    "Digestive Upset",
+    "Allergy Symptoms",
+    "Blood Sugar Caution",
+    "Formula Sensitivity"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Maitake Mushroom may cause stomach upset, nausea, gas, or loose stools in sensitive users or at higher servings."
+      "title": "Digestive Upset",
+      "description": "Gas, bloating, nausea, or loose stools may occur, especially with powders or blends."
     },
     {
-      "title": "Sensitivity Reactions",
-      "description": "Stop use and seek guidance if you notice rash, itching, breathing changes, or other signs of sensitivity."
+      "title": "Allergy Symptoms",
+      "description": "Mushroom-sensitive users may experience rash, itching, swelling, or breathing symptoms."
     },
     {
-      "title": "Dose-Related Effects",
-      "description": "Higher servings may increase the chance of side effects, so label directions and tolerance matter."
+      "title": "Blood Sugar Caution",
+      "description": "People monitoring blood sugar should use caution with metabolic wellness formulas."
     },
     {
-      "title": "Formula Overlap",
-      "description": "Side effects can be more likely when Maitake Mushroom is combined with similar ingredients or multi-ingredient products."
+      "title": "Formula Sensitivity",
+      "description": "Side effects may come from other mushrooms or herbs in combination products."
     }
   ],
   "drug_interactions_json": [
-    "Review Maitake Mushroom with a healthcare professional if you take prescription medication or manage a chronic condition.",
-    "People taking diabetes medication, immune-modulating medication, or anticoagulants should consult a healthcare professional before concentrated use.",
-    "Use extra caution before surgery or when combining multiple supplements with overlapping effects.",
-    "Ask a clinician before use during pregnancy, nursing, or active medical treatment."
+    "Use caution with diabetes medications or blood sugar management plans.",
+    "Discuss use with a clinician if taking blood thinners or preparing for surgery.",
+    "Review use with immune-suppressing or immune-modulating medications.",
+    "Avoid stacking multiple mushroom supplements without checking total formula exposure."
   ],
   "who_should_avoid_json": [
-    "People who are pregnant or nursing unless advised by a qualified healthcare professional.",
-    "Children unless directed by a pediatric clinician.",
-    "People with known allergy or sensitivity to Maitake Mushroom or related ingredients.",
-    "People taking medications that may overlap with the ingredient's intended effect.",
-    "Anyone with a diagnosed medical condition who has not reviewed supplement use with their care team."
+    "People with mushroom allergies or sensitivity.",
+    "People taking diabetes medications without clinician guidance.",
+    "People on blood thinners or preparing for surgery unless advised otherwise.",
+    "People with immune conditions or immune-related medication use.",
+    "Pregnant or nursing users unless cleared by a qualified professional."
   ],
-  "food_sources_title": "Maitake Mushroom Food Sources",
-  "food_sources_subtitle": "Food and source context for maitake mushroom.",
-  "food_sources_content": "<p>Maitake can be eaten as food, but supplement extracts may provide more concentrated mushroom polysaccharides.</p>",
+  "food_sources_title": "Maitake Mushroom Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Maitake Mushroom is typically sourced from east asia, north america, and cultivated mushroom farms. Supplement formats can differ from food or traditional preparations, so label form and intended use matter.</p>",
   "food_sources_json": [
     {
-      "title": "Maitake mushrooms",
-      "description": "Maitake mushrooms can contribute to immune and metabolic mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Primary Source",
+      "description": "Grifola frondosa"
     },
     {
-      "title": "Dried maitake",
-      "description": "Dried maitake can contribute to immune and metabolic mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Common Form",
+      "description": "Capsule, powder, extract, mushroom blend"
     },
     {
-      "title": "Maitake powder",
-      "description": "Maitake powder can contribute to immune and metabolic mushroom support, though supplement potency depends on serving size, form, and standardization."
-    },
-    {
-      "title": "Maitake extract blends",
-      "description": "Maitake extract blends can contribute to immune and metabolic mushroom support, though supplement potency depends on serving size, form, and standardization."
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
     }
   ],
   "faq_title": "Maitake Mushroom FAQs",
-  "faq_subtitle": "Common questions about maitake mushroom supplements.",
+  "faq_subtitle": "Common questions about maitake mushroom supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Maitake Mushroom?",
-      "answer": "Maitake Mushroom is a functional mushroom valued in supplements for beta-glucans and immune-metabolic wellness positioning. It is used in supplement formulas for immune and metabolic mushroom support, not as a substitute for medical treatment."
+      "question": "What is maitake mushroom used for?",
+      "answer": "Maitake is commonly used in immune-wellness and functional mushroom supplement formulas."
     },
     {
-      "question": "What is Maitake Mushroom commonly used for?",
-      "answer": "It is commonly positioned around immune wellness, metabolic support formulas, and mushroom blends. The exact role depends on dose, form, and the other ingredients in the formula."
+      "question": "Is maitake an edible mushroom?",
+      "answer": "Yes. Maitake is edible, but supplements may use powders or extracts with different serving sizes."
     },
     {
-      "question": "How does Maitake Mushroom work?",
-      "answer": "Maitake Mushroom is usually discussed through mushroom polysaccharides and beta-glucans that support its role in immune-focused and metabolic wellness blends. This helps explain its supplement positioning without treating it as a cure or medication."
+      "question": "What are beta-glucans?",
+      "answer": "Beta-glucans are mushroom polysaccharides often discussed in immune wellness contexts."
     },
     {
-      "question": "What is a typical Maitake Mushroom dose?",
-      "answer": "Common supplement servings often range from 500 mg to 1,500 mg daily, depending on extract standardization and blend design. Always follow the specific product label because extract strength and format can vary widely."
+      "question": "Is maitake the same as reishi?",
+      "answer": "No. They are different mushrooms with different traditional uses and product profiles."
     },
     {
-      "question": "Is Maitake Mushroom safe for daily use?",
-      "answer": "Generally well tolerated; use caution with glucose or immune medications. Daily use should still be based on label directions, personal tolerance, medication status, and professional advice when needed."
+      "question": "Can maitake support blood sugar?",
+      "answer": "Some products position maitake around metabolic wellness, but it should not replace diabetes care or medication."
     },
     {
-      "question": "Can Maitake Mushroom cause side effects?",
-      "answer": "Possible side effects include digestive discomfort, sensitivity reactions, or dose-related effects. Stop use and seek guidance if symptoms are unusual or severe."
+      "question": "What should I compare on labels?",
+      "answer": "Compare fruiting body versus mycelium, extract ratio, beta-glucans, serving size, and testing."
     },
     {
-      "question": "Can Maitake Mushroom interact with medication?",
-      "answer": "People taking diabetes medication, immune-modulating medication, or anticoagulants should consult a healthcare professional before concentrated use. This is especially important for people managing medical conditions or using multiple supplements."
+      "question": "Can maitake cause side effects?",
+      "answer": "Digestive upset or mushroom allergy symptoms can occur."
     },
     {
-      "question": "What should I compare on a Maitake Mushroom supplement label?",
-      "answer": "Compare serving size, ingredient form, extract standardization, third-party testing, other active ingredients, and whether the brand explains the intended use clearly."
+      "question": "Can I take maitake with other mushrooms?",
+      "answer": "Many blends do, but check total dose and whether the formula adds other active ingredients."
     },
     {
-      "question": "What foods contain Maitake Mushroom or related compounds?",
-      "answer": "Maitake can be eaten as food, but supplement extracts may provide more concentrated mushroom polysaccharides."
+      "question": "Who should avoid maitake?",
+      "answer": "People with mushroom allergies, immune concerns, blood sugar medication, blood thinners, pregnancy, or nursing should seek guidance."
     },
     {
-      "question": "Can Maitake Mushroom replace medical care?",
-      "answer": "No. Maitake Mushroom supplements are educational wellness products and should not replace diagnosis, prescribed medication, or care from a qualified healthcare professional."
+      "question": "Can maitake replace medical treatment?",
+      "answer": "No. Maitake supplements are not substitutes for professional medical care."
     }
   ],
   "sidebar_profile_title": "Maitake Mushroom Profile Snapshot",
-  "sidebar_profile_content": "Maitake Mushroom is a functional mushroom used in supplements for immune and metabolic mushroom support.",
+  "sidebar_profile_content": "Maitake Mushroom is a functional mushroom used in immune-support, metabolic wellness, and mushroom complex formulas.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -167,19 +163,19 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Common supplement servings often range from 500 mg to 1,500 mg daily, depending on extract standardization and blend design."
+      "value": "Several hundred mg to a few grams daily"
     },
     {
       "label": "Best For",
-      "value": "Immune wellness, metabolic support formulas, and mushroom blends"
+      "value": "Immune-wellness mushroom blends"
     },
     {
       "label": "Safety Level",
-      "value": "Generally well tolerated; use caution with glucose or immune medications"
+      "value": "Generally tolerated; allergy and medication caution"
     },
     {
       "label": "Origin",
-      "value": "Japan, North America, and cultivated mushroom-growing regions"
+      "value": "Edible mushroom"
     },
     {
       "label": "Part Used",
@@ -187,41 +183,76 @@
     },
     {
       "label": "Form",
-      "value": "Capsule, powder, extract, drink mix"
+      "value": "Powder, capsule, extract"
     },
     {
       "label": "Taste",
-      "value": "Earthy, savory, mildly peppery"
+      "value": "Earthy and savory"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Maitake Mushroom is best compared by form, serving size, quality standards, safety context, and how well it fits the intended health goal.</p>",
-  "full_description": "Maitake Mushroom is a functional mushroom valued in supplements for beta-glucans and immune-metabolic wellness positioning, with practical supplement label and safety context for informed wellness decisions.",
-  "best_for": "Immune wellness, metabolic support formulas, and mushroom blends",
-  "safety_level": "Generally well tolerated; use caution with glucose or immune medications",
-  "origin_country": "Japan, North America, and cultivated mushroom-growing regions",
+  "sidebar_at_a_glance_content": "<p>Maitake Mushroom is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Maitake Mushroom is a functional mushroom used in immune-support, metabolic wellness, and mushroom complex formulas.",
+  "best_for": "Functional mushroom blends and immune-wellness routines",
+  "safety_level": "Generally tolerated; allergy and medication caution",
+  "origin_country": "East Asia, North America, and cultivated mushroom farms",
   "part_used": "Fruiting body",
-  "ingredient_form": "Capsule, powder, extract, drink mix",
-  "taste_profile": "Earthy, savory, mildly peppery",
+  "ingredient_form": "Capsule, powder, extract, mushroom blend",
+  "taste_profile": "Earthy and savory",
   "rating": null,
   "evidence_level": null,
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "uses_title": "Maitake Mushroom Uses",
+  "uses_subtitle": "Common wellness contexts where maitake mushroom appears.",
+  "uses_content": "<p>Maitake Mushroom is commonly used in functional mushroom blends and immune-wellness routines. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Functional mushroom blends and immune-wellness routines"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Maitake Mushroom Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on maitake mushroom varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Maitake Mushroom References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "reishi-mushroom",
+    "shiitake-mushroom",
+    "turkey-tail-mushroom"
+  ],
   "seo_title": "Maitake Mushroom Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "maitake mushroom",
-  "seo_description": "Explore Maitake Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore maitake mushroom benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/maitake-mushroom",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Maitake Mushroom Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore Maitake Mushroom benefits, typical dosage, food sources, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore maitake mushroom benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library."
 }

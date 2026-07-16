@@ -1,142 +1,161 @@
 {
   "name": "Manganese",
   "scientific_name": "Manganese",
+  "ingredient_category": "Minerals",
+  "status": "published",
   "hero_badge": null,
-  "short_description": "Manganese is a trace mineral used in supplement formulas for bone, connective tissue, and antioxidant enzyme support formulas.",
+  "short_description": "Manganese is an essential trace mineral involved in antioxidant enzymes, connective tissue formation, bone health, and normal metabolism.",
   "overview_title": "Manganese Overview",
-  "overview_subtitle": "A practical guide to manganese in modern supplement formulas.",
-  "overview_content": "<p>Manganese is a trace mineral that appears in wellness products because of trace mineral cofactors involved in connective tissue and antioxidant enzyme systems. It is best understood as part of a complete formula rather than as a stand-alone promise.</p><p>When comparing manganese products, shoppers should review serving size, ingredient form, quality testing, and whether the product clearly explains its intended use. The same ingredient can appear in very different formulas, so label context matters.</p><p>Manganese supplements should be used as educational wellness tools and are not substitutes for medical care, prescribed treatment, or professional diagnosis.</p>",
-  "interesting_fact_label": "Ingredient Note",
-  "interesting_fact": "<p>Manganese is needed only in small amounts, but those small amounts support important enzyme systems.</p>",
+  "overview_subtitle": "A practical look at manganese as an essential trace mineral.",
+  "overview_content": "<p>Manganese is an essential trace mineral required in small amounts for normal human function. It is involved in antioxidant enzyme activity, connective tissue formation, bone development, and metabolism of carbohydrates, amino acids, and cholesterol. Because the body needs only a small amount, manganese is often included in multivitamins, mineral complexes, bone formulas, and antioxidant-support products rather than used as a large stand-alone supplement.</p><p>Dietary manganese is found in foods such as whole grains, nuts, legumes, leafy vegetables, tea, and some fruits. Many people obtain manganese through diet, so supplementation should be approached with attention to total intake. More is not better with trace minerals. Excessive manganese exposure can be harmful, particularly for the nervous system, and people with liver disease may be at higher risk of accumulation.</p><p>Manganese is sometimes included in bone and joint formulas because it supports enzymes involved in connective tissue and bone formation. This does not mean manganese alone builds bone or treats arthritis. Bone health depends on many factors, including vitamin D, calcium, magnesium, protein, resistance exercise, hormones, age, medication use, and medical conditions. Manganese is one piece of a broader nutritional picture.</p><p>The mineral also contributes to manganese superoxide dismutase, an antioxidant enzyme located in mitochondria. This role makes manganese relevant to antioxidant enzyme nutrition, but it should not be marketed as a stand-alone antioxidant cure. A balanced diet and appropriate overall mineral intake are more important than high-dose manganese supplementation.</p><p>For Suppriva readers, manganese should be evaluated by matching the form to the goal, checking whether the label explains the source clearly, and reviewing the full formula instead of judging one ingredient in isolation. Multivitamins, bone formulas, hair products, and antioxidant complexes may all contain manganese. Users should check whether they are stacking multiple products that each contain trace minerals.</p><p>Manganese supplements should be used conservatively. People with liver disease, neurological conditions, occupational manganese exposure, pregnancy, nursing, or medication concerns should consult a qualified healthcare professional before using manganese beyond standard multivitamin amounts. The best supplement is one that supports nutritional adequacy without pushing intake unnecessarily high.</p><p>From a practical product-research standpoint, manganese should be evaluated by looking beyond the front label. The same ingredient name can appear in very different formulas, serving sizes, and formats. A single-ingredient product may be easier to interpret, while a blend can make it harder to know which ingredient is responsible for the intended use. Users should check the supplement facts panel, the exact form, the amount per serving, directions, warnings, and whether the product provides testing or sourcing details.</p><p>It is also important to separate wellness support from medical treatment. Educational research can explain why Manganese appears in supplements, but it does not mean every product is clinically proven for every claim. Symptoms such as persistent fatigue, sleep disruption, digestive changes, sexual health concerns, pain, mood changes, or mineral deficiency signs can have many causes. Supplements should complement healthy habits and professional care rather than delay appropriate evaluation.</p><p>The best use case for manganese is a thoughtful routine that considers diet, lifestyle, medications, health history, and the full ingredient stack. People should avoid combining multiple products with overlapping effects unless they understand total intake and safety considerations. Pregnant or nursing users, children, older adults, and people with chronic conditions should be especially cautious. In a premium wellness library, Manganese is most useful when presented with clear benefits, realistic limits, and transparent safety guidance.</p>",
+  "interesting_fact_label": "Trace Mineral Note",
+  "interesting_fact": "<p>Manganese is needed only in small amounts, but it plays a role in enzymes connected to antioxidant defense and connective tissue formation.</p>",
   "how_it_works_title": "How Manganese Works",
-  "how_it_works_subtitle": "How manganese supports its role in supplement formulas.",
-  "how_it_works_highlight_title": "Trace Mineral Support",
-  "how_it_works_highlight_description": "Manganese is most often positioned around trace mineral support, with results depending on form, dose, and formula quality.",
-  "how_it_works_content": "<p>Manganese works through cofactor roles in enzymes connected to metabolism, bone matrix formation, and manganese superoxide dismutase. This does not mean every product will have the same effect; ingredient quality, serving size, and the complete supplement formula all influence practical value.</p><p>For consumers, the most useful approach is to compare manganese by its form, label transparency, and fit with personal wellness goals. A clear label should explain what is included, how much is included, and how the ingredient supports the product's intended category.</p>",
+  "how_it_works_subtitle": "Manganese supports normal enzyme activity, bone formation, and metabolism.",
+  "how_it_works_highlight_title": "Small amount, important role",
+  "how_it_works_highlight_description": "Manganese is a trace mineral, meaning the body needs it in small amounts, but excessive intake can be harmful.",
+  "how_it_works_content": "<p>Manganese works as a cofactor for enzymes involved in metabolism, connective tissue formation, and antioxidant defense. One important example is manganese superoxide dismutase, an enzyme that helps manage oxidative stress inside mitochondria.</p><p>Because manganese is a trace mineral, the goal is adequacy rather than high intake. Supplements often provide small amounts as part of a broader vitamin and mineral formula.</p><p>The body regulates manganese differently depending on intake and health status. Liver function is important for manganese handling, which is why people with liver disease should be cautious.</p>",
   "benefits_title": "Potential Manganese Benefits",
-  "benefits_subtitle": "Benefits depend on dose, quality, and whether manganese fits the full formula.",
+  "benefits_subtitle": "Benefits depend on dose, form, product quality, and overall wellness routine.",
   "benefits_json": [
     {
-      "icon": "leaf",
-      "title": "Trace mineral support",
-      "description": "Manganese is commonly evaluated for trace mineral support within supplement formulas and wellness routines."
+      "icon": "shield-check",
+      "title": "Antioxidant Enzyme Support",
+      "description": "Manganese is part of manganese superoxide dismutase, an antioxidant enzyme in cells."
     },
     {
-      "icon": "sparkles",
-      "title": "Formula Positioning",
-      "description": "Brands often include Manganese to support a more targeted product story around bone, connective tissue, and antioxidant enzyme support formulas."
-    },
-    {
-      "icon": "search",
-      "title": "Label Comparison",
-      "description": "This ingredient gives shoppers a clear way to compare form, serving size, sourcing, and transparency across products."
+      "icon": "bone",
+      "title": "Bone Health Context",
+      "description": "It contributes to normal bone formation as part of a balanced mineral routine."
     },
     {
       "icon": "activity",
-      "title": "Daily Routine Fit",
-      "description": "Manganese may fit daily wellness routines when the dose, format, and safety context match the user's needs."
+      "title": "Metabolism Support",
+      "description": "Manganese participates in enzymes involved in carbohydrate, amino acid, and cholesterol metabolism."
     },
     {
-      "icon": "shield-check",
-      "title": "Quality Awareness",
-      "description": "Third-party testing, clear ingredient form, and honest serving information matter when comparing Manganese supplements."
+      "icon": "layers",
+      "title": "Connective Tissue Formation",
+      "description": "The mineral supports enzymes involved in normal connective tissue development."
     },
     {
-      "icon": "book-open",
-      "title": "Education Value",
-      "description": "Understanding Manganese helps readers make more informed decisions instead of relying only on front-label claims."
+      "icon": "salad",
+      "title": "Dietary Mineral Intake",
+      "description": "Whole grains, nuts, legumes, and tea can contribute manganese from the diet."
+    },
+    {
+      "icon": "search",
+      "title": "Label Comparison Value",
+      "description": "Manganese helps shoppers compare trace mineral dose, multivitamin overlap, and safe intake limits."
     }
   ],
   "dosage_title": "Typical Manganese Dosage",
-  "dosage_subtitle": "Serving guidance depends on form and product purpose.",
-  "typical_dose": "Supplement servings are usually measured in milligrams and should stay within label directions unless clinician-guided.",
-  "dosage": "Follow the product label and avoid combining multiple overlapping formulas without professional guidance.",
-  "dosage_content": "<p>Supplement servings are usually measured in milligrams and should stay within label directions unless clinician-guided.</p><p>Because manganese can appear in different forms, there is no single serving size that applies to every product. Always review the supplement facts panel and any label warnings before use.</p>",
+  "dosage_subtitle": "Serving size depends on the product form and label directions.",
+  "typical_dose": "Small amounts in multivitamins or mineral blends",
+  "dosage": "Follow the product label and use professional guidance when medication use, pregnancy, nursing, or medical conditions are involved.",
+  "dosage_content": "<p>Manganese doses in supplements are usually small and often included in multivitamins or mineral complexes. Users should compare the amount per serving with total intake from other supplements.</p><p>Avoid high-dose manganese unless supervised by a healthcare professional. People with liver disease, neurological concerns, pregnancy, nursing, or occupational exposure should seek guidance before using stand-alone manganese supplements.</p>",
   "safety_title": "Manganese Safety Information",
-  "safety_subtitle": "Use manganese with label awareness and personal health context in mind.",
+  "safety_subtitle": "Use label directions carefully and consider personal sensitivity, medication use, and health status.",
   "side_effects": [
-    "Digestive Discomfort",
-    "Allergy or Sensitivity",
-    "Medication Overlap",
-    "Dose Awareness"
+    "Digestive Upset",
+    "Excess Intake Risk",
+    "Supplement Stacking",
+    "Sensitivity to Mineral Formulas"
   ],
   "side_effects_json": [
     {
-      "title": "Digestive Discomfort",
-      "description": "Manganese may cause stomach upset, nausea, or stool changes in sensitive users."
+      "title": "Digestive Upset",
+      "description": "Some users may notice nausea or stomach discomfort with mineral supplements."
     },
     {
-      "title": "Allergy or Sensitivity",
-      "description": "Stop use if signs of allergy, rash, itching, or unusual symptoms occur."
+      "title": "Excess Intake Risk",
+      "description": "High manganese intake over time may be harmful, especially for neurological health."
     },
     {
-      "title": "Medication Overlap",
-      "description": "Review use with a healthcare professional if taking medication or managing a medical condition."
+      "title": "Supplement Stacking",
+      "description": "Multiple multivitamins or mineral blends can unintentionally increase total manganese."
     },
     {
-      "title": "Dose Awareness",
-      "description": "Higher servings are not automatically better and may increase the chance of side effects."
+      "title": "Sensitivity to Mineral Formulas",
+      "description": "Combination formulas may cause side effects from other minerals or additives."
     }
   ],
   "drug_interactions_json": [
-    "Check total daily intake from multivitamins, fortified foods, and other supplements.",
-    "Review use with medications that may affect absorption or nutrient status.",
-    "Avoid stacking multiple high-dose formulas unless clinician-guided.",
-    "Discuss use if pregnant, nursing, or managing a diagnosed deficiency."
+    "High mineral intake can compete with absorption of other minerals such as iron in some contexts.",
+    "Discuss supplementation with a clinician if managing liver disease or neurological conditions.",
+    "Review multivitamins, bone formulas, and hair supplements for overlapping manganese.",
+    "Ask a healthcare professional before use during pregnancy or nursing beyond standard prenatal guidance."
   ],
   "who_should_avoid_json": [
-    "People with known sensitivity or allergy to Manganese or related ingredients.",
-    "People who are pregnant or nursing unless advised by a healthcare professional.",
-    "People taking medication without reviewing supplement use with a clinician.",
-    "People preparing for surgery who have not discussed supplement routines with their care team.",
-    "Children unless directed by a qualified healthcare provider."
+    "People with liver disease unless supervised by a healthcare professional.",
+    "People with neurological conditions who have not discussed mineral supplementation with a clinician.",
+    "People already taking multiple manganese-containing supplements.",
+    "Children unless directed by a qualified healthcare provider.",
+    "Anyone considering high-dose manganese without medical supervision."
+  ],
+  "food_sources_title": "Manganese Sources",
+  "food_sources_subtitle": "Where this ingredient naturally comes from or how it is typically sourced.",
+  "food_sources_content": "<p>Manganese is typically sourced from foods and mineral supplement salts. Supplement formats can differ from food or traditional preparations, so label form and intended use matter.</p>",
+  "food_sources_json": [
+    {
+      "title": "Primary Source",
+      "description": "Manganese"
+    },
+    {
+      "title": "Common Form",
+      "description": "Capsule, tablet, multivitamin, mineral complex"
+    },
+    {
+      "title": "Label Check",
+      "description": "Review serving size, source, form, safety directions, and combination ingredients."
+    }
   ],
   "faq_title": "Manganese FAQs",
   "faq_subtitle": "Common questions about manganese supplements and label comparison.",
   "faq_json": [
     {
-      "question": "What is Manganese used for in supplements?",
-      "answer": "Manganese is commonly used in formulas focused on bone, connective tissue, and antioxidant enzyme support formulas. Its role depends on dose, form, and the other ingredients in the product."
+      "question": "What is manganese used for?",
+      "answer": "Manganese supports normal enzyme function, antioxidant defense, connective tissue formation, bone health, and metabolism."
     },
     {
-      "question": "Is Manganese a medicine?",
-      "answer": "No. Manganese is used as a supplement ingredient and should not replace medical care, diagnosis, or prescribed treatment."
+      "question": "Is manganese the same as magnesium?",
+      "answer": "No. Manganese and magnesium are different minerals with different roles and dose ranges."
     },
     {
-      "question": "What form of Manganese should I compare?",
-      "answer": "Compare the ingredient form, serving size, standardization details, and whether the product explains why that form was chosen."
+      "question": "Do I need a manganese supplement?",
+      "answer": "Many people get manganese from food or multivitamins. Need depends on diet, health status, and professional guidance."
     },
     {
-      "question": "How long does Manganese take to work?",
-      "answer": "Timing varies by ingredient type, product quality, and individual routine. Supplements usually work best when used consistently and realistically."
+      "question": "What foods contain manganese?",
+      "answer": "Whole grains, nuts, legumes, leafy vegetables, tea, and some fruits provide manganese."
     },
     {
-      "question": "Can Manganese cause side effects?",
-      "answer": "Side effects are possible, especially with higher servings, sensitivities, medication overlap, or concentrated extracts."
+      "question": "Can too much manganese be harmful?",
+      "answer": "Yes. Excessive manganese intake or exposure can be harmful, especially for neurological health."
     },
     {
-      "question": "Can I take Manganese every day?",
-      "answer": "Some products are designed for daily use, but daily use should match the label directions and your personal health context."
+      "question": "Why is manganese in bone formulas?",
+      "answer": "It supports enzymes involved in connective tissue and bone formation, but it is only one part of bone nutrition."
     },
     {
-      "question": "What should I check on a Manganese label?",
-      "answer": "Check dose, form, added ingredients, testing claims, warnings, and whether the label provides enough transparency for comparison."
+      "question": "What should I compare on labels?",
+      "answer": "Compare dose, percent daily value, other mineral content, and whether multiple supplements overlap."
     },
     {
-      "question": "Does Manganese interact with medications?",
-      "answer": "It may, depending on the ingredient and medication. Ask a healthcare professional if you take prescription medication or manage a condition."
+      "question": "Is manganese an antioxidant?",
+      "answer": "Manganese is part of an antioxidant enzyme system, but it is not a stand-alone cure or antioxidant treatment."
     },
     {
-      "question": "Is Manganese suitable for beginners?",
-      "answer": "Beginners should start with a clearly labeled product, avoid stacking multiple new supplements, and monitor tolerance."
+      "question": "Who should avoid manganese supplements?",
+      "answer": "People with liver disease, neurological concerns, or multiple mineral supplements should seek guidance."
     },
     {
-      "question": "Can Manganese replace a healthy routine?",
-      "answer": "No. Supplements should support a balanced routine, not replace nutrition, sleep, movement, or professional medical guidance."
+      "question": "Can manganese replace medical care?",
+      "answer": "No. Manganese supplements are not substitutes for medical diagnosis or treatment."
     }
   ],
   "sidebar_profile_title": "Manganese Profile Snapshot",
-  "sidebar_profile_content": "Manganese is a trace mineral commonly evaluated for bone, connective tissue, and antioxidant enzyme support formulas.",
+  "sidebar_profile_content": "Manganese is an essential trace mineral involved in antioxidant enzymes, connective tissue formation, bone health, and normal metabolism.",
   "sidebar_quick_facts_json": [
     {
       "label": "Type",
@@ -144,65 +163,96 @@
     },
     {
       "label": "Typical Dose",
-      "value": "Supplement servings are usually measured in milligrams and should stay within label directions unless clinician-guided."
+      "value": "Small amounts in multivitamins or mineral blends"
     },
     {
       "label": "Best For",
-      "value": "Bone, connective tissue, and antioxidant enzyme support formulas"
+      "value": "Trace mineral and enzyme support"
     },
     {
       "label": "Safety Level",
-      "value": "Trace-mineral dosing matters; avoid excessive intake"
+      "value": "Avoid excessive intake"
     },
     {
       "label": "Origin",
-      "value": "Dietary trace mineral"
+      "value": "Foods and mineral salts"
     },
     {
       "label": "Part Used",
-      "value": "Mineral compound"
+      "value": "Elemental trace mineral"
     },
     {
       "label": "Form",
-      "value": "Capsule, tablet, mineral blend"
+      "value": "Tablet, capsule, complex"
     },
     {
       "label": "Taste",
-      "value": "Neutral mineral"
+      "value": "Mineral or neutral"
     }
   ],
-  "sidebar_at_a_glance_content": "<p>Manganese is best compared by form, dose, quality testing, and whether the label clearly supports its intended wellness use.</p>",
-  "full_description": "Manganese is used in supplement formulas for bone, connective tissue, and antioxidant enzyme support formulas and should be evaluated by form, dose, and label transparency.",
-  "best_for": "Bone, connective tissue, and antioxidant enzyme support formulas",
-  "safety_level": "Trace-mineral dosing matters; avoid excessive intake",
-  "origin_country": "Dietary trace mineral",
-  "part_used": "Mineral compound",
-  "ingredient_form": "Capsule, tablet, mineral blend",
-  "taste_profile": "Neutral mineral",
+  "sidebar_at_a_glance_content": "<p>Manganese is best evaluated by form, serving size, sourcing transparency, safety directions, and whether the product matches your wellness goal.</p>",
+  "full_description": "Manganese is an essential trace mineral involved in antioxidant enzymes, connective tissue formation, bone health, and normal metabolism.",
+  "best_for": "Trace mineral support, bone formulas, and antioxidant enzyme nutrition",
+  "safety_level": "Avoid excessive intake",
+  "origin_country": "Foods and mineral supplement salts",
+  "part_used": "Essential trace mineral",
+  "ingredient_form": "Capsule, tablet, multivitamin, mineral complex",
+  "taste_profile": "Mineral or neutral in capsules",
   "rating": null,
-  "evidence_level": "Emerging",
-  "uses_title": null,
-  "uses_subtitle": null,
-  "uses_content": null,
-  "uses_json": [],
-  "food_sources_title": null,
-  "food_sources_subtitle": null,
-  "food_sources_content": null,
-  "food_sources_json": [],
-  "research_title": null,
-  "research_subtitle": null,
-  "research_content": null,
-  "research_json": [],
-  "references_title": null,
-  "references_subtitle": null,
-  "references_json": [],
-  "related_ingredients_json": [],
+  "evidence_level": null,
+  "uses_title": "Manganese Uses",
+  "uses_subtitle": "Common wellness contexts where manganese appears.",
+  "uses_content": "<p>Manganese is commonly used in trace mineral support, bone formulas, and antioxidant enzyme nutrition. Product positioning should remain educational and should not imply disease treatment.</p>",
+  "uses_json": [
+    {
+      "title": "Supplement Formulas",
+      "description": "Trace mineral support, bone formulas, and antioxidant enzyme nutrition"
+    },
+    {
+      "title": "Label Research",
+      "description": "Useful for comparing form, dose, and safety notes."
+    },
+    {
+      "title": "Wellness Education",
+      "description": "Best understood as one part of a broader routine."
+    }
+  ],
+  "research_title": "Manganese Research Notes",
+  "research_subtitle": "A responsible summary of the research context.",
+  "research_content": "<p>Research on manganese varies by preparation, dose, and study design. Human evidence may be limited for some uses, so supplement labels should be interpreted carefully and without disease-treatment assumptions.</p>",
+  "research_json": [
+    {
+      "title": "Evidence Context",
+      "description": "Research quality depends on form, dose, and population studied."
+    },
+    {
+      "title": "Practical Use",
+      "description": "Use supplements as supportive tools, not replacements for care."
+    }
+  ],
+  "references_title": "Manganese References",
+  "references_subtitle": "Trusted educational references used for responsible content framing.",
+  "references_json": [
+    {
+      "title": "NIH and PubMed",
+      "description": "General safety and research context for dietary supplement education."
+    },
+    {
+      "title": "Clinical Herb and Supplement References",
+      "description": "Used to frame interactions, cautions, and label-awareness guidance."
+    }
+  ],
+  "related_ingredients_json": [
+    "magnesium",
+    "copper",
+    "selenium"
+  ],
   "seo_title": "Manganese Benefits, Dosage, and Safety | Suppriva",
   "seo_focus_keyword": "manganese",
-  "seo_description": "Explore manganese benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library.",
+  "seo_description": "Explore manganese benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library.",
   "seo_canonical_url": "https://suppriva.vercel.app/ingredient/manganese",
   "seo_noindex": false,
   "seo_nofollow": false,
   "meta_title": "Manganese Benefits, Dosage, and Safety | Suppriva",
-  "meta_description": "Explore manganese benefits, typical dosage, safety notes, and supplement label tips in Suppriva's ingredient library."
+  "meta_description": "Explore manganese benefits, typical dosage, safety notes, side effects, and supplement label tips in Suppriva's ingredient library."
 }
