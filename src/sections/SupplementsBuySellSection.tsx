@@ -127,8 +127,7 @@ export function SupplementsBuySellSection({
               </PremiumButton>
             ) : null}
             <p className="mt-4 max-w-xl text-sm leading-7 text-muted">
-              Explore wellness products organized by health goals, ingredients,
-              and lifestyle needs.
+              {settings.bottom_description}
             </p>
           </div>
         </motion.div>

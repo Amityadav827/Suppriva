@@ -48,14 +48,26 @@ export class HomepageNewsletterService {
   }
 
   private normalizeInput(input: HomepageNewsletterCms): HomepageNewsletterCms {
+    const settings = {
+      ...DEFAULT_HOMEPAGE_NEWSLETTER.settings,
+      ...input.settings,
+    };
+
     return {
       settings: {
-        ...input.settings,
-        badge_text: input.settings.badge_text.trim(),
-        email_placeholder: input.settings.email_placeholder.trim(),
-        button_label: input.settings.button_label.trim(),
-        success_message: input.settings.success_message.trim(),
-        error_message: input.settings.error_message.trim(),
+        ...settings,
+        badge_text: settings.badge_text.trim(),
+        form_badge_text: settings.form_badge_text.trim(),
+        form_heading: settings.form_heading.trim(),
+        form_description: settings.form_description.trim(),
+        email_label: settings.email_label.trim(),
+        email_placeholder: settings.email_placeholder.trim(),
+        button_label: settings.button_label.trim(),
+        loading_text: settings.loading_text.trim(),
+        privacy_text: settings.privacy_text.trim(),
+        no_spam_text: settings.no_spam_text.trim(),
+        success_message: settings.success_message.trim(),
+        error_message: settings.error_message.trim(),
       },
       trust_chips: input.trust_chips.map((chip, index) => ({
         ...chip,

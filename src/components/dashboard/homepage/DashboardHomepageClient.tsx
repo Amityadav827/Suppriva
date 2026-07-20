@@ -1314,47 +1314,72 @@ export function DashboardHomepageClient() {
                 />
               </label>
 
-              <div className="grid gap-3">
-                <input
-                  type="text"
-                  value={section.title ?? ""}
-                  onChange={(event) =>
-                    updateSection(section.section_key, "title", event.target.value)
-                  }
-                  placeholder="Section title"
-                  className="h-12 rounded-2xl border border-border-light bg-white px-4 text-sm outline-none transition focus:border-gold"
-                />
-                <textarea
-                  value={section.subtitle ?? ""}
-                  onChange={(event) =>
-                    updateSection(section.section_key, "subtitle", event.target.value)
-                  }
-                  placeholder="Section subtitle"
-                  rows={3}
-                  className="rounded-2xl border border-border-light bg-white px-4 py-3 text-sm leading-6 outline-none transition focus:border-gold"
-                />
-              </div>
+              {section.section_key === "hero" ? (
+                <div />
+              ) : (
+                <div className="grid gap-3">
+                  <input
+                    type="text"
+                    value={section.title ?? ""}
+                    onChange={(event) =>
+                      updateSection(
+                        section.section_key,
+                        "title",
+                        event.target.value,
+                      )
+                    }
+                    placeholder="Section title"
+                    className="h-12 rounded-2xl border border-border-light bg-white px-4 text-sm outline-none transition focus:border-gold"
+                  />
+                  <textarea
+                    value={section.subtitle ?? ""}
+                    onChange={(event) =>
+                      updateSection(
+                        section.section_key,
+                        "subtitle",
+                        event.target.value,
+                      )
+                    }
+                    placeholder="Section subtitle"
+                    rows={3}
+                    className="rounded-2xl border border-border-light bg-white px-4 py-3 text-sm leading-6 outline-none transition focus:border-gold"
+                  />
+                </div>
+              )}
 
-              <div className="grid gap-3">
-                <input
-                  type="text"
-                  value={section.cta_label ?? ""}
-                  onChange={(event) =>
-                    updateSection(section.section_key, "cta_label", event.target.value)
-                  }
-                  placeholder="CTA label"
-                  className="h-12 rounded-2xl border border-border-light bg-white px-4 text-sm outline-none transition focus:border-gold"
-                />
-                <input
-                  type="text"
-                  value={section.cta_url ?? ""}
-                  onChange={(event) =>
-                    updateSection(section.section_key, "cta_url", event.target.value)
-                  }
-                  placeholder="/example or https://example.com"
-                  className="h-12 rounded-2xl border border-border-light bg-white px-4 text-sm outline-none transition focus:border-gold"
-                />
-              </div>
+              {section.section_key === "hero" ||
+              section.section_key === "newsletter" ? (
+                <div />
+              ) : (
+                <div className="grid gap-3">
+                  <input
+                    type="text"
+                    value={section.cta_label ?? ""}
+                    onChange={(event) =>
+                      updateSection(
+                        section.section_key,
+                        "cta_label",
+                        event.target.value,
+                      )
+                    }
+                    placeholder="CTA label"
+                    className="h-12 rounded-2xl border border-border-light bg-white px-4 text-sm outline-none transition focus:border-gold"
+                  />
+                  <input
+                    type="text"
+                    value={section.cta_url ?? ""}
+                    onChange={(event) =>
+                      updateSection(
+                        section.section_key,
+                        "cta_url",
+                        event.target.value,
+                      )
+                    }
+                    placeholder="/example or https://example.com"
+                    className="h-12 rounded-2xl border border-border-light bg-white px-4 text-sm outline-none transition focus:border-gold"
+                  />
+                </div>
+              )}
             </div>
           ))
         ) : (
@@ -1866,6 +1891,13 @@ export function DashboardHomepageClient() {
                     updateWellnessSolutionsSettings("left_cta_url", value)
                   }
                 />
+                <TextAreaField
+                  label="Bottom Informational Paragraph"
+                  value={wellnessSolutions.settings.bottom_description}
+                  onChange={(value) =>
+                    updateWellnessSolutionsSettings("bottom_description", value)
+                  }
+                />
               </div>
             </div>
 
@@ -2291,6 +2323,34 @@ export function DashboardHomepageClient() {
                   }
                 />
                 <InputField
+                  label="Form Badge"
+                  value={newsletter.settings.form_badge_text}
+                  onChange={(value) =>
+                    updateNewsletterSettings("form_badge_text", value)
+                  }
+                />
+                <InputField
+                  label="Form Heading"
+                  value={newsletter.settings.form_heading}
+                  onChange={(value) =>
+                    updateNewsletterSettings("form_heading", value)
+                  }
+                />
+                <TextAreaField
+                  label="Form Description"
+                  value={newsletter.settings.form_description}
+                  onChange={(value) =>
+                    updateNewsletterSettings("form_description", value)
+                  }
+                />
+                <InputField
+                  label="Email Label"
+                  value={newsletter.settings.email_label}
+                  onChange={(value) =>
+                    updateNewsletterSettings("email_label", value)
+                  }
+                />
+                <InputField
                   label="Email Placeholder"
                   value={newsletter.settings.email_placeholder}
                   onChange={(value) =>
@@ -2302,6 +2362,27 @@ export function DashboardHomepageClient() {
                   value={newsletter.settings.button_label}
                   onChange={(value) =>
                     updateNewsletterSettings("button_label", value)
+                  }
+                />
+                <InputField
+                  label="Loading Text"
+                  value={newsletter.settings.loading_text}
+                  onChange={(value) =>
+                    updateNewsletterSettings("loading_text", value)
+                  }
+                />
+                <InputField
+                  label="Privacy Text"
+                  value={newsletter.settings.privacy_text}
+                  onChange={(value) =>
+                    updateNewsletterSettings("privacy_text", value)
+                  }
+                />
+                <InputField
+                  label="No Spam Text"
+                  value={newsletter.settings.no_spam_text}
+                  onChange={(value) =>
+                    updateNewsletterSettings("no_spam_text", value)
                   }
                 />
               </div>

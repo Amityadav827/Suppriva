@@ -129,6 +129,7 @@ export class SupabaseHomepageWellnessSolutionsRepository
       left_description: settings.left_description.trim(),
       left_cta_label: settings.left_cta_label.trim(),
       left_cta_url: settings.left_cta_url.trim(),
+      bottom_description: settings.bottom_description.trim(),
     };
   }
 

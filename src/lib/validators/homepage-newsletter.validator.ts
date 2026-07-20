@@ -20,12 +20,40 @@ export function validateHomepageNewsletterInput(
       errors.push("Newsletter badge is required.");
     }
 
+    if (!hasText(settings.form_badge_text)) {
+      errors.push("Newsletter form badge is required.");
+    }
+
+    if (!hasText(settings.form_heading)) {
+      errors.push("Newsletter form heading is required.");
+    }
+
+    if (!hasText(settings.form_description)) {
+      errors.push("Newsletter form description is required.");
+    }
+
+    if (!hasText(settings.email_label)) {
+      errors.push("Newsletter email label is required.");
+    }
+
     if (!hasText(settings.email_placeholder)) {
       errors.push("Newsletter email placeholder is required.");
     }
 
     if (!hasText(settings.button_label)) {
       errors.push("Newsletter button label is required.");
+    }
+
+    if (!hasText(settings.loading_text)) {
+      errors.push("Newsletter loading text is required.");
+    }
+
+    if (!hasText(settings.privacy_text)) {
+      errors.push("Newsletter privacy text is required.");
+    }
+
+    if (!hasText(settings.no_spam_text)) {
+      errors.push("Newsletter no spam text is required.");
     }
 
     if (!hasText(settings.success_message)) {

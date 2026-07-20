@@ -90,8 +90,15 @@ export class SupabaseHomepageNewsletterRepository
   private toSettingsInput(settings: HomepageNewsletterSettings) {
     return {
       badge_text: settings.badge_text.trim(),
+      form_badge_text: settings.form_badge_text.trim(),
+      form_heading: settings.form_heading.trim(),
+      form_description: settings.form_description.trim(),
+      email_label: settings.email_label.trim(),
       email_placeholder: settings.email_placeholder.trim(),
       button_label: settings.button_label.trim(),
+      loading_text: settings.loading_text.trim(),
+      privacy_text: settings.privacy_text.trim(),
+      no_spam_text: settings.no_spam_text.trim(),
       success_message: settings.success_message.trim(),
       error_message: settings.error_message.trim(),
     };

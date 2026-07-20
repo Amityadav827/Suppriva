@@ -69,21 +69,20 @@ export function NewsletterForm({
       <div className="relative z-10">
         <span className="inline-flex items-center gap-2 rounded-pill border border-white/12 bg-white/10 px-3.5 py-2 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-emerald-50/90">
           <Sparkles className="size-4 text-gold" aria-hidden="true" />
-          Join the list
+          {settings.form_badge_text}
         </span>
         <h3 className="mt-5 font-heading text-2xl font-extrabold leading-tight text-white md:text-3xl">
-          Get smarter supplement picks in your inbox.
+          {settings.form_heading}
         </h3>
         <p className="mt-3 text-sm leading-6 text-emerald-50/85">
-          Curated guides, premium offers, and wellness insights. Built for
-          clarity, not inbox clutter.
+          {settings.form_description}
         </p>
 
         <label
           htmlFor="newsletter-email"
           className="mt-7 block font-heading text-sm font-semibold text-white"
         >
-          Email address
+          {settings.email_label}
         </label>
         <div className="mt-3 flex flex-col gap-3 rounded-[30px] border border-white/70 bg-white p-2.5 shadow-[0_24px_64px_rgba(0,0,0,0.22)] sm:flex-row sm:rounded-[34px]">
           <div className="flex min-h-16 flex-1 items-center gap-3 px-4">
@@ -106,7 +105,7 @@ export function NewsletterForm({
             transition={{ duration: 0.28 }}
             className="inline-flex min-h-16 items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-7 font-heading text-sm font-semibold text-white shadow-[0_18px_46px_rgba(11,93,59,0.34)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {loading ? "Subscribing..." : settings.button_label}
+            {loading ? settings.loading_text : settings.button_label}
             <Send className="size-4" aria-hidden="true" />
           </motion.button>
         </div>
@@ -125,11 +124,11 @@ export function NewsletterForm({
         <div className="mt-5 grid gap-2 sm:grid-cols-2">
           <p className="inline-flex items-center gap-2 text-sm text-emerald-50/85">
             <LockKeyhole className="size-4 text-gold" aria-hidden="true" />
-            Privacy protected
+            {settings.privacy_text}
           </p>
           <p className="inline-flex items-center gap-2 text-sm text-emerald-50/85">
             <BadgeCheck className="size-4 text-gold" aria-hidden="true" />
-            No spam, unsubscribe anytime
+            {settings.no_spam_text}
           </p>
         </div>
       </div>

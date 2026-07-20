@@ -50,14 +50,20 @@ export class HomepageWellnessSolutionsService {
   private normalizeInput(
     input: HomepageWellnessSolutionsCms,
   ): HomepageWellnessSolutionsCms {
+    const settings = {
+      ...DEFAULT_HOMEPAGE_WELLNESS_SOLUTIONS.settings,
+      ...input.settings,
+    };
+
     return {
       settings: {
-        ...input.settings,
-        left_badge: input.settings.left_badge.trim(),
-        left_heading: input.settings.left_heading.trim(),
-        left_description: input.settings.left_description.trim(),
-        left_cta_label: input.settings.left_cta_label.trim(),
-        left_cta_url: input.settings.left_cta_url.trim(),
+        ...settings,
+        left_badge: settings.left_badge.trim(),
+        left_heading: settings.left_heading.trim(),
+        left_description: settings.left_description.trim(),
+        left_cta_label: settings.left_cta_label.trim(),
+        left_cta_url: settings.left_cta_url.trim(),
+        bottom_description: settings.bottom_description.trim(),
       },
       feature_cards: input.feature_cards.map((card, index) => ({
         ...card,

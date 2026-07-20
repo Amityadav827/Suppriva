@@ -9,6 +9,7 @@ export type HomepageWellnessSolutionsSettings = {
   left_description: string;
   left_cta_label: string;
   left_cta_url: string;
+  bottom_description: string;
   created_at?: Timestamp;
   updated_at?: Timestamp;
 };
@@ -49,6 +50,8 @@ export const DEFAULT_HOMEPAGE_WELLNESS_SOLUTIONS: HomepageWellnessSolutionsCms =
       "Explore curated wellness solutions, ingredient-focused products, and popular health categories-all designed to help users make informed choices.",
     left_cta_label: "Explore Wellness Categories",
     left_cta_url: "/category",
+    bottom_description:
+      "Explore wellness products organized by health goals, ingredients, and lifestyle needs.",
   },
   feature_cards: [
     {
@@ -121,6 +124,9 @@ export function mergeHomepageWellnessSolutionsCms(
       left_cta_url:
         settings?.left_cta_url?.trim() ||
         DEFAULT_HOMEPAGE_WELLNESS_SOLUTIONS.settings.left_cta_url,
+      bottom_description:
+        settings?.bottom_description?.trim() ||
+        DEFAULT_HOMEPAGE_WELLNESS_SOLUTIONS.settings.bottom_description,
     },
     feature_cards: [...featureCards].sort((a, b) => a.sort_order - b.sort_order),
     showcase_products: [...showcaseProducts].sort(

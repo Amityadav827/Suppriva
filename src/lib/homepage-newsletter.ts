@@ -3,8 +3,15 @@ type Timestamp = string;
 export type HomepageNewsletterSettings = {
   id?: string;
   badge_text: string;
+  form_badge_text: string;
+  form_heading: string;
+  form_description: string;
+  email_label: string;
   email_placeholder: string;
   button_label: string;
+  loading_text: string;
+  privacy_text: string;
+  no_spam_text: string;
   success_message: string;
   error_message: string;
   created_at?: Timestamp;
@@ -28,8 +35,16 @@ export type HomepageNewsletterCms = {
 export const DEFAULT_HOMEPAGE_NEWSLETTER: HomepageNewsletterCms = {
   settings: {
     badge_text: "Premium Wellness Insider",
+    form_badge_text: "Join the list",
+    form_heading: "Get smarter supplement picks in your inbox.",
+    form_description:
+      "Curated guides, premium offers, and wellness insights. Built for clarity, not inbox clutter.",
+    email_label: "Email address",
     email_placeholder: "Enter your email",
     button_label: "Subscribe",
+    loading_text: "Subscribing...",
+    privacy_text: "Privacy protected",
+    no_spam_text: "No spam, unsubscribe anytime",
     success_message: "You are subscribed. Welcome to Suppriva wellness insights.",
     error_message: "Unable to subscribe right now.",
   },
@@ -62,12 +77,33 @@ export function mergeHomepageNewsletterCms(
       badge_text:
         settings?.badge_text?.trim() ||
         DEFAULT_HOMEPAGE_NEWSLETTER.settings.badge_text,
+      form_badge_text:
+        settings?.form_badge_text?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.form_badge_text,
+      form_heading:
+        settings?.form_heading?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.form_heading,
+      form_description:
+        settings?.form_description?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.form_description,
+      email_label:
+        settings?.email_label?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.email_label,
       email_placeholder:
         settings?.email_placeholder?.trim() ||
         DEFAULT_HOMEPAGE_NEWSLETTER.settings.email_placeholder,
       button_label:
         settings?.button_label?.trim() ||
         DEFAULT_HOMEPAGE_NEWSLETTER.settings.button_label,
+      loading_text:
+        settings?.loading_text?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.loading_text,
+      privacy_text:
+        settings?.privacy_text?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.privacy_text,
+      no_spam_text:
+        settings?.no_spam_text?.trim() ||
+        DEFAULT_HOMEPAGE_NEWSLETTER.settings.no_spam_text,
       success_message:
         settings?.success_message?.trim() ||
         DEFAULT_HOMEPAGE_NEWSLETTER.settings.success_message,

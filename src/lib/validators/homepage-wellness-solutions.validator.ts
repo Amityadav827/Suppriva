@@ -52,6 +52,10 @@ export function validateHomepageWellnessSolutionsInput(
     } else if (!isValidUrl(settings.left_cta_url)) {
       errors.push("Left feature CTA URL must be a relative path or http(s) URL.");
     }
+
+    if (!hasText(settings.bottom_description)) {
+      errors.push("Bottom informational paragraph is required.");
+    }
   }
 
   if (!Array.isArray(input.feature_cards)) {
