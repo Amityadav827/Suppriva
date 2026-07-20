@@ -6,16 +6,25 @@ import { CategoryPill } from "@/components/category/CategoryPill";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { homepageIngredients } from "@/lib/constants";
+import { getCmsIcon } from "@/lib/cms-icons";
+import {
+  DEFAULT_HOMEPAGE_INGREDIENT_CHIPS,
+  type HomepageIngredientChip,
+} from "@/lib/homepage-ingredients-discovery";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
 export function AllSupplementCategoriesSection({
   section,
+  chips = DEFAULT_HOMEPAGE_INGREDIENT_CHIPS,
 }: {
   section?: HomepageSectionConfig;
+  chips?: HomepageIngredientChip[];
 }) {
   const ctaLabel = section?.cta_label || "View All Ingredients";
   const ctaUrl = section?.cta_url || "/ingredients";
+  const visibleChips = chips
+    .filter((chip) => chip.is_visible)
+    .sort((a, b) => a.sort_order - b.sort_order);
 
   return (
     <SectionWrapper id="all-categories">
@@ -41,12 +50,12 @@ export function AllSupplementCategoriesSection({
         }}
         className="mx-auto mt-12 grid max-w-[1180px] grid-cols-2 gap-3 sm:gap-4 md:mt-14 md:flex md:flex-wrap md:justify-center"
       >
-        {homepageIngredients.map((ingredient) => (
+        {visibleChips.map((ingredient) => (
           <CategoryPill
             key={ingredient.label}
             label={ingredient.label}
-            icon={ingredient.icon}
-            href={ingredient.href}
+            icon={getCmsIcon(ingredient.icon)}
+            href={ingredient.url}
           />
         ))}
       </motion.div>

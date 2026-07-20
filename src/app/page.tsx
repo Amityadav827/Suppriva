@@ -9,6 +9,7 @@ import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
 import { ExpertsService } from "@/services/experts.service";
 import { HomepageHeroService } from "@/services/homepage-hero.service";
+import { HomepageIngredientsDiscoveryService } from "@/services/homepage-ingredients-discovery.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { ProductService } from "@/services/product.service";
 import {
@@ -54,6 +55,7 @@ export default async function Home() {
     activeExperts,
     homepageSections,
     homepageHero,
+    homepageIngredientsDiscovery,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -62,6 +64,7 @@ export default async function Home() {
     new ExpertsService().safeGetActiveExperts(),
     new HomepageSectionsService().safeGetHomepageSections(),
     new HomepageHeroService().safeGetHomepageHero(),
+    new HomepageIngredientsDiscoveryService().safeGetHomepageIngredientsDiscovery(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -111,6 +114,7 @@ export default async function Home() {
           <AllSupplementCategoriesSection
             key={section.section_key}
             section={section}
+            chips={homepageIngredientsDiscovery.chips}
           />
         );
       case "wellness_expert":

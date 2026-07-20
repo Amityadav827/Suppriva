@@ -13,6 +13,7 @@ import type {
   HomepageHeroSettings,
   HomepageHeroTrustCard,
 } from "@/lib/homepage-hero";
+import type { HomepageIngredientChip } from "@/lib/homepage-ingredients-discovery";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
@@ -730,6 +731,7 @@ export type Database = {
   homepage_hero_settings: HomepageHeroSettings & { id: string };
   homepage_hero_trust_cards: HomepageHeroTrustCard & { id: string };
   homepage_hero_floating_pills: HomepageHeroFloatingPill & { id: string };
+  homepage_ingredient_chips: HomepageIngredientChip & { id: string };
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;

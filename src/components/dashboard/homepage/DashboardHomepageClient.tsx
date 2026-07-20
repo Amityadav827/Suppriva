@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Eye, EyeOff, RefreshCw, Save } from "lucide-react";
+import { Eye, EyeOff, Plus, RefreshCw, Save, Trash2 } from "lucide-react";
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { CMS_ICON_OPTIONS } from "@/lib/cms-icons";
 import type {
@@ -10,6 +10,10 @@ import type {
   HomepageHeroSettings,
   HomepageHeroTrustCard,
 } from "@/lib/homepage-hero";
+import type {
+  HomepageIngredientChip,
+  HomepageIngredientsDiscoveryCms,
+} from "@/lib/homepage-ingredients-discovery";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
 type HomepageSectionsResponse = {
@@ -22,6 +26,11 @@ type HomepageHeroResponse = {
   error?: string;
 };
 
+type HomepageIngredientsDiscoveryResponse = {
+  ingredientsDiscovery?: HomepageIngredientsDiscoveryCms;
+  error?: string;
+};
+
 function sortSections(sections: HomepageSectionConfig[]) {
   return [...sections].sort((a, b) => a.sort_order - b.sort_order);
 }
@@ -29,10 +38,14 @@ function sortSections(sections: HomepageSectionConfig[]) {
 export function DashboardHomepageClient() {
   const [sections, setSections] = useState<HomepageSectionConfig[]>([]);
   const [hero, setHero] = useState<HomepageHeroCms | null>(null);
+  const [ingredientsDiscovery, setIngredientsDiscovery] =
+    useState<HomepageIngredientsDiscoveryCms | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isHeroLoading, setIsHeroLoading] = useState(true);
+  const [isIngredientsLoading, setIsIngredientsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isHeroSaving, setIsHeroSaving] = useState(false);
+  const [isIngredientsSaving, setIsIngredientsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
@@ -84,10 +97,40 @@ export function DashboardHomepageClient() {
     }
   }, []);
 
+  const fetchIngredientsDiscovery = useCallback(async () => {
+    setIsIngredientsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/homepage-ingredients-discovery", {
+        cache: "no-store",
+      });
+      const payload =
+        (await response.json()) as HomepageIngredientsDiscoveryResponse;
+
+      if (!response.ok) {
+        throw new Error(
+          payload.error ?? "Unable to load ingredients discovery CMS.",
+        );
+      }
+
+      setIngredientsDiscovery(payload.ingredientsDiscovery ?? null);
+    } catch (fetchError) {
+      setError(
+        fetchError instanceof Error
+          ? fetchError.message
+          : "Unable to load ingredients discovery CMS.",
+      );
+    } finally {
+      setIsIngredientsLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void fetchSections();
     void fetchHero();
-  }, [fetchHero, fetchSections]);
+    void fetchIngredientsDiscovery();
+  }, [fetchHero, fetchIngredientsDiscovery, fetchSections]);
 
   function updateSection(
     sectionKey: string,
@@ -148,6 +191,54 @@ export function DashboardHomepageClient() {
         floating_pills: currentHero.floating_pills.map((pill, pillIndex) =>
           pillIndex === index ? { ...pill, [field]: value } : pill,
         ),
+      };
+    });
+  }
+
+  function updateIngredientChip(
+    index: number,
+    field: keyof HomepageIngredientChip,
+    value: string | number | boolean,
+  ) {
+    setIngredientsDiscovery((currentDiscovery) => {
+      if (!currentDiscovery) return currentDiscovery;
+
+      return {
+        ...currentDiscovery,
+        chips: currentDiscovery.chips.map((chip, chipIndex) =>
+          chipIndex === index ? { ...chip, [field]: value } : chip,
+        ),
+      };
+    });
+  }
+
+  function addIngredientChip() {
+    setIngredientsDiscovery((currentDiscovery) => {
+      if (!currentDiscovery) return currentDiscovery;
+
+      return {
+        ...currentDiscovery,
+        chips: [
+          ...currentDiscovery.chips,
+          {
+            label: "New Ingredient",
+            icon: "leaf",
+            url: "/ingredients",
+            sort_order: currentDiscovery.chips.length,
+            is_visible: true,
+          },
+        ],
+      };
+    });
+  }
+
+  function removeIngredientChip(index: number) {
+    setIngredientsDiscovery((currentDiscovery) => {
+      if (!currentDiscovery) return currentDiscovery;
+
+      return {
+        ...currentDiscovery,
+        chips: currentDiscovery.chips.filter((_, chipIndex) => chipIndex !== index),
       };
     });
   }
@@ -213,6 +304,43 @@ export function DashboardHomepageClient() {
       );
     } finally {
       setIsHeroSaving(false);
+    }
+  }
+
+  async function saveIngredientsDiscovery() {
+    if (!ingredientsDiscovery) return;
+
+    setIsIngredientsSaving(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("/api/homepage-ingredients-discovery", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ingredientsDiscovery }),
+      });
+      const payload =
+        (await response.json()) as HomepageIngredientsDiscoveryResponse;
+
+      if (!response.ok) {
+        throw new Error(
+          payload.error ?? "Unable to save ingredients discovery CMS.",
+        );
+      }
+
+      setIngredientsDiscovery(payload.ingredientsDiscovery ?? ingredientsDiscovery);
+      setSuccess("Ingredients Discovery CMS saved successfully.");
+    } catch (saveError) {
+      setError(
+        saveError instanceof Error
+          ? saveError.message
+          : "Unable to save ingredients discovery CMS.",
+      );
+    } finally {
+      setIsIngredientsSaving(false);
     }
   }
 
@@ -576,6 +704,109 @@ export function DashboardHomepageClient() {
         ) : (
           <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
             Hero CMS could not be loaded.
+          </div>
+        )}
+      </DashboardCard>
+
+      <DashboardCard
+        title="Ingredients Discovery CMS"
+        description="Edit the ingredient chips used in the homepage Explore By Ingredients section."
+      >
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm leading-6 text-muted">
+            Section title, subtitle, CTA, order, and visibility are controlled in the
+            Homepage CMS table above.
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => void fetchIngredientsDiscovery()}
+              disabled={isIngredientsLoading || isIngredientsSaving}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <RefreshCw className="size-4" aria-hidden="true" />
+              Refresh Ingredients
+            </button>
+            <button
+              type="button"
+              onClick={addIngredientChip}
+              disabled={isIngredientsLoading || isIngredientsSaving || !ingredientsDiscovery}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Plus className="size-4" aria-hidden="true" />
+              Add Chip
+            </button>
+            <button
+              type="button"
+              onClick={() => void saveIngredientsDiscovery()}
+              disabled={
+                isIngredientsLoading || isIngredientsSaving || !ingredientsDiscovery
+              }
+              className="inline-flex items-center gap-2 rounded-pill bg-primary px-5 py-2 font-heading text-sm font-semibold text-white shadow-[0_12px_28px_rgba(6,57,33,0.16)] transition hover:bg-dark-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Save className="size-4" aria-hidden="true" />
+              {isIngredientsSaving ? "Saving..." : "Save Ingredient Chips"}
+            </button>
+          </div>
+        </div>
+
+        {isIngredientsLoading ? (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Loading ingredients discovery CMS...
+          </div>
+        ) : ingredientsDiscovery ? (
+          <div className="grid gap-4">
+            {ingredientsDiscovery.chips.map((chip, index) => (
+              <div
+                key={`${chip.label}-${index}`}
+                className="grid gap-3 rounded-[20px] border border-border-light bg-cream/40 p-4 lg:grid-cols-[130px_1fr_1fr_120px_130px_110px]"
+              >
+                <SelectField
+                  label="Icon"
+                  value={chip.icon}
+                  onChange={(value) => updateIngredientChip(index, "icon", value)}
+                />
+                <InputField
+                  label="Ingredient Name"
+                  value={chip.label}
+                  onChange={(value) => updateIngredientChip(index, "label", value)}
+                />
+                <InputField
+                  label="URL"
+                  value={chip.url}
+                  onChange={(value) => updateIngredientChip(index, "url", value)}
+                />
+                <InputField
+                  label="Order"
+                  type="number"
+                  value={String(chip.sort_order)}
+                  onChange={(value) =>
+                    updateIngredientChip(index, "sort_order", Number(value))
+                  }
+                />
+                <ToggleField
+                  label="Visible"
+                  checked={chip.is_visible}
+                  onChange={(value) =>
+                    updateIngredientChip(index, "is_visible", value)
+                  }
+                />
+                <label className="flex items-end">
+                  <button
+                    type="button"
+                    onClick={() => removeIngredientChip(index)}
+                    className="inline-flex h-12 items-center gap-2 rounded-2xl border border-red-200 bg-white px-4 font-heading text-sm font-semibold text-red-600 transition hover:bg-red-50"
+                  >
+                    <Trash2 className="size-4" aria-hidden="true" />
+                    Remove
+                  </button>
+                </label>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Ingredients Discovery CMS could not be loaded.
           </div>
         )}
       </DashboardCard>
