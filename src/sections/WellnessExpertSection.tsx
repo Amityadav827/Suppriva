@@ -3,12 +3,17 @@
 import Image from "next/image";
 import type { Expert } from "@/lib/database/types";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Stethoscope } from "lucide-react";
+import { ArrowRight, Stethoscope } from "lucide-react";
 import { getExpertiseIcon } from "@/components/experts/expert-icons";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import { getCmsIcon } from "@/lib/cms-icons";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
+import {
+  DEFAULT_HOMEPAGE_WELLNESS_EXPERT,
+  type HomepageWellnessExpertCms,
+} from "@/lib/homepage-wellness-expert";
 
 const DEFAULT_EXPERTISE_TAGS = [
   "Integrative Healthcare",
@@ -17,38 +22,28 @@ const DEFAULT_EXPERTISE_TAGS = [
   "Supplement Education",
 ] as const;
 
-const FALLBACK_EXPERT = {
-  name: "Dr. Arindham Chatterjee",
-  designation: "Medical & Wellness Advisor",
-  profileImage:
-    "https://auzapxutkteykldxhyyq.supabase.co/storage/v1/object/public/media-library/1773219025832.jpg",
-  expertiseTags: DEFAULT_EXPERTISE_TAGS,
-  description:
-    "Dr. Arindham Chatterjee contributes expert guidance to Suppriva's educational wellness content and ingredient resources, helping readers better understand ingredients, wellness goals, and healthy lifestyle practices.",
-  secondary:
-    "His focus includes wellness education, preventive lifestyle strategies, ingredient awareness, and supporting readers with evidence-informed wellness knowledge.",
-} as const;
-
 export function WellnessExpertSection({
   expert,
   section,
+  cms,
 }: {
   expert: Expert | null;
   section?: HomepageSectionConfig;
+  cms?: HomepageWellnessExpertCms;
 }) {
+  const settings = cms?.settings || DEFAULT_HOMEPAGE_WELLNESS_EXPERT.settings;
+  const BadgeIcon = getCmsIcon(settings.badge_icon);
   const expertiseTags = expert?.expertise_tags?.slice(0, 4).filter(Boolean);
   const spotlight = {
-    name: expert?.name || FALLBACK_EXPERT.name,
-    designation: expert?.designation || FALLBACK_EXPERT.designation,
-    profileImage: expert?.profile_image || FALLBACK_EXPERT.profileImage,
-    trustLine: "Wellness Education - Ingredient Research - Preventive Health",
-    expertiseTags: expertiseTags?.length ? expertiseTags : FALLBACK_EXPERT.expertiseTags,
-    description:
-      expert?.short_bio ||
-      FALLBACK_EXPERT.description,
+    name: expert?.name || settings.fallback_name,
+    designation: expert?.designation || settings.fallback_designation,
+    profileImage: expert?.profile_image || settings.fallback_image,
+    trustLine: settings.trust_line,
+    expertiseTags: expertiseTags?.length ? expertiseTags : DEFAULT_EXPERTISE_TAGS,
+    description: expert?.short_bio || settings.fallback_bio,
     secondary:
       expert?.full_bio?.split(/\n+/).map((item) => item.trim()).find(Boolean) ||
-      FALLBACK_EXPERT.secondary,
+      settings.fallback_secondary_bio,
   };
   const ctaLabel = section?.cta_label || "Explore Our Experts";
   const ctaUrl = section?.cta_url || "/experts";
@@ -57,8 +52,8 @@ export function WellnessExpertSection({
     <SectionWrapper id="wellness-expert" tone="white">
       <FadeIn className="mx-auto max-w-3xl text-center">
         <p className="inline-flex items-center gap-2 rounded-pill border border-primary/12 bg-white px-4 py-2 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-primary shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-          <ShieldCheck className="size-4 text-gold" aria-hidden="true" />
-          Medical &amp; Editorial Advisory
+          <BadgeIcon className="size-4 text-gold" aria-hidden="true" />
+          {settings.badge_text}
         </p>
         <h2 className="mt-5 font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl lg:text-5xl">
           {section?.title || "Meet Our Wellness Expert"}

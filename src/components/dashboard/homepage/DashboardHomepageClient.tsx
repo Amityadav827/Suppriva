@@ -15,6 +15,10 @@ import type {
   HomepageIngredientsDiscoveryCms,
 } from "@/lib/homepage-ingredients-discovery";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
+import type {
+  HomepageWellnessExpertCms,
+  HomepageWellnessExpertSettings,
+} from "@/lib/homepage-wellness-expert";
 
 type HomepageSectionsResponse = {
   sections?: HomepageSectionConfig[];
@@ -31,6 +35,11 @@ type HomepageIngredientsDiscoveryResponse = {
   error?: string;
 };
 
+type HomepageWellnessExpertResponse = {
+  wellnessExpert?: HomepageWellnessExpertCms;
+  error?: string;
+};
+
 function sortSections(sections: HomepageSectionConfig[]) {
   return [...sections].sort((a, b) => a.sort_order - b.sort_order);
 }
@@ -40,12 +49,16 @@ export function DashboardHomepageClient() {
   const [hero, setHero] = useState<HomepageHeroCms | null>(null);
   const [ingredientsDiscovery, setIngredientsDiscovery] =
     useState<HomepageIngredientsDiscoveryCms | null>(null);
+  const [wellnessExpert, setWellnessExpert] =
+    useState<HomepageWellnessExpertCms | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isHeroLoading, setIsHeroLoading] = useState(true);
   const [isIngredientsLoading, setIsIngredientsLoading] = useState(true);
+  const [isWellnessExpertLoading, setIsWellnessExpertLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isHeroSaving, setIsHeroSaving] = useState(false);
   const [isIngredientsSaving, setIsIngredientsSaving] = useState(false);
+  const [isWellnessExpertSaving, setIsWellnessExpertSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
@@ -126,11 +139,38 @@ export function DashboardHomepageClient() {
     }
   }, []);
 
+  const fetchWellnessExpert = useCallback(async () => {
+    setIsWellnessExpertLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/homepage-wellness-expert", {
+        cache: "no-store",
+      });
+      const payload = (await response.json()) as HomepageWellnessExpertResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to load wellness expert CMS.");
+      }
+
+      setWellnessExpert(payload.wellnessExpert ?? null);
+    } catch (fetchError) {
+      setError(
+        fetchError instanceof Error
+          ? fetchError.message
+          : "Unable to load wellness expert CMS.",
+      );
+    } finally {
+      setIsWellnessExpertLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void fetchSections();
     void fetchHero();
     void fetchIngredientsDiscovery();
-  }, [fetchHero, fetchIngredientsDiscovery, fetchSections]);
+    void fetchWellnessExpert();
+  }, [fetchHero, fetchIngredientsDiscovery, fetchSections, fetchWellnessExpert]);
 
   function updateSection(
     sectionKey: string,
@@ -210,6 +250,23 @@ export function DashboardHomepageClient() {
         ),
       };
     });
+  }
+
+  function updateWellnessExpertSettings(
+    field: keyof HomepageWellnessExpertSettings,
+    value: string,
+  ) {
+    setWellnessExpert((currentSettings) =>
+      currentSettings
+        ? {
+            ...currentSettings,
+            settings: {
+              ...currentSettings.settings,
+              [field]: value,
+            },
+          }
+        : currentSettings,
+    );
   }
 
   function addIngredientChip() {
@@ -341,6 +398,40 @@ export function DashboardHomepageClient() {
       );
     } finally {
       setIsIngredientsSaving(false);
+    }
+  }
+
+  async function saveWellnessExpert() {
+    if (!wellnessExpert) return;
+
+    setIsWellnessExpertSaving(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("/api/homepage-wellness-expert", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ wellnessExpert }),
+      });
+      const payload = (await response.json()) as HomepageWellnessExpertResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to save wellness expert CMS.");
+      }
+
+      setWellnessExpert(payload.wellnessExpert ?? wellnessExpert);
+      setSuccess("Wellness Expert CMS saved successfully.");
+    } catch (saveError) {
+      setError(
+        saveError instanceof Error
+          ? saveError.message
+          : "Unable to save wellness expert CMS.",
+      );
+    } finally {
+      setIsWellnessExpertSaving(false);
     }
   }
 
@@ -807,6 +898,125 @@ export function DashboardHomepageClient() {
         ) : (
           <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
             Ingredients Discovery CMS could not be loaded.
+          </div>
+        )}
+      </DashboardCard>
+
+      <DashboardCard
+        title="Wellness Expert CMS"
+        description="Edit the badge and fallback content used by the homepage expert section."
+      >
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm leading-6 text-muted">
+            Featured expert data still comes from the Experts module. Section title,
+            subtitle, CTA, order, and visibility are controlled in the Homepage CMS
+            table above.
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => void fetchWellnessExpert()}
+              disabled={isWellnessExpertLoading || isWellnessExpertSaving}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <RefreshCw className="size-4" aria-hidden="true" />
+              Refresh Expert CMS
+            </button>
+            <button
+              type="button"
+              onClick={() => void saveWellnessExpert()}
+              disabled={
+                isWellnessExpertLoading || isWellnessExpertSaving || !wellnessExpert
+              }
+              className="inline-flex items-center gap-2 rounded-pill bg-primary px-5 py-2 font-heading text-sm font-semibold text-white shadow-[0_12px_28px_rgba(6,57,33,0.16)] transition hover:bg-dark-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Save className="size-4" aria-hidden="true" />
+              {isWellnessExpertSaving ? "Saving..." : "Save Wellness Expert"}
+            </button>
+          </div>
+        </div>
+
+        {isWellnessExpertLoading ? (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Loading wellness expert CMS...
+          </div>
+        ) : wellnessExpert ? (
+          <div className="grid gap-6">
+            <div className="rounded-[24px] border border-border-light bg-white p-5">
+              <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                Section Badge
+              </h3>
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <InputField
+                  label="Badge"
+                  value={wellnessExpert.settings.badge_text}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("badge_text", value)
+                  }
+                />
+                <SelectField
+                  label="Badge Icon"
+                  value={wellnessExpert.settings.badge_icon}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("badge_icon", value)
+                  }
+                />
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-border-light bg-white p-5">
+              <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                Fallback Expert
+              </h3>
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <InputField
+                  label="Fallback Expert Name"
+                  value={wellnessExpert.settings.fallback_name}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("fallback_name", value)
+                  }
+                />
+                <InputField
+                  label="Fallback Designation"
+                  value={wellnessExpert.settings.fallback_designation}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("fallback_designation", value)
+                  }
+                />
+                <InputField
+                  label="Fallback Image"
+                  value={wellnessExpert.settings.fallback_image}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("fallback_image", value)
+                  }
+                />
+                <InputField
+                  label="Trust Line"
+                  value={wellnessExpert.settings.trust_line}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("trust_line", value)
+                  }
+                />
+                <TextAreaField
+                  label="Fallback Bio"
+                  value={wellnessExpert.settings.fallback_bio}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("fallback_bio", value)
+                  }
+                />
+                <TextAreaField
+                  label="Fallback Secondary Bio"
+                  value={wellnessExpert.settings.fallback_secondary_bio}
+                  onChange={(value) =>
+                    updateWellnessExpertSettings("fallback_secondary_bio", value)
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Wellness Expert CMS could not be loaded.
           </div>
         )}
       </DashboardCard>
