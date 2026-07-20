@@ -27,6 +27,12 @@ import type {
   HomepageWellnessExpertCms,
   HomepageWellnessExpertSettings,
 } from "@/lib/homepage-wellness-expert";
+import type {
+  HomepageWellnessSolutionFeatureCard,
+  HomepageWellnessSolutionsCms,
+  HomepageWellnessSolutionsSettings,
+  HomepageWellnessSolutionShowcaseProduct,
+} from "@/lib/homepage-wellness-solutions";
 
 type HomepageSectionsResponse = {
   sections?: HomepageSectionConfig[];
@@ -58,6 +64,11 @@ type HomepageWellnessExpertResponse = {
   error?: string;
 };
 
+type HomepageWellnessSolutionsResponse = {
+  wellnessSolutions?: HomepageWellnessSolutionsCms;
+  error?: string;
+};
+
 function sortSections(sections: HomepageSectionConfig[]) {
   return [...sections].sort((a, b) => a.sort_order - b.sort_order);
 }
@@ -72,18 +83,24 @@ export function DashboardHomepageClient() {
     useState<HomepageIngredientsDiscoveryCms | null>(null);
   const [wellnessExpert, setWellnessExpert] =
     useState<HomepageWellnessExpertCms | null>(null);
+  const [wellnessSolutions, setWellnessSolutions] =
+    useState<HomepageWellnessSolutionsCms | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isBlogsLoading, setIsBlogsLoading] = useState(true);
   const [isPopularPicksLoading, setIsPopularPicksLoading] = useState(true);
   const [isHeroLoading, setIsHeroLoading] = useState(true);
   const [isIngredientsLoading, setIsIngredientsLoading] = useState(true);
   const [isWellnessExpertLoading, setIsWellnessExpertLoading] = useState(true);
+  const [isWellnessSolutionsLoading, setIsWellnessSolutionsLoading] =
+    useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isBlogsSaving, setIsBlogsSaving] = useState(false);
   const [isPopularPicksSaving, setIsPopularPicksSaving] = useState(false);
   const [isHeroSaving, setIsHeroSaving] = useState(false);
   const [isIngredientsSaving, setIsIngredientsSaving] = useState(false);
   const [isWellnessExpertSaving, setIsWellnessExpertSaving] = useState(false);
+  const [isWellnessSolutionsSaving, setIsWellnessSolutionsSaving] =
+    useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
@@ -238,6 +255,34 @@ export function DashboardHomepageClient() {
     }
   }, []);
 
+  const fetchWellnessSolutions = useCallback(async () => {
+    setIsWellnessSolutionsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/homepage-wellness-solutions", {
+        cache: "no-store",
+      });
+      const payload = (await response.json()) as HomepageWellnessSolutionsResponse;
+
+      if (!response.ok) {
+        throw new Error(
+          payload.error ?? "Unable to load Discover Wellness Solutions CMS.",
+        );
+      }
+
+      setWellnessSolutions(payload.wellnessSolutions ?? null);
+    } catch (fetchError) {
+      setError(
+        fetchError instanceof Error
+          ? fetchError.message
+          : "Unable to load Discover Wellness Solutions CMS.",
+      );
+    } finally {
+      setIsWellnessSolutionsLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void fetchSections();
     void fetchHomepageBlogs();
@@ -245,6 +290,7 @@ export function DashboardHomepageClient() {
     void fetchHero();
     void fetchIngredientsDiscovery();
     void fetchWellnessExpert();
+    void fetchWellnessSolutions();
   }, [
     fetchHero,
     fetchHomepageBlogs,
@@ -252,6 +298,7 @@ export function DashboardHomepageClient() {
     fetchPopularPicks,
     fetchSections,
     fetchWellnessExpert,
+    fetchWellnessSolutions,
   ]);
 
   function updateSection(
@@ -385,6 +432,58 @@ export function DashboardHomepageClient() {
     );
   }
 
+  function updateWellnessSolutionsSettings(
+    field: keyof HomepageWellnessSolutionsSettings,
+    value: string,
+  ) {
+    setWellnessSolutions((currentSolutions) =>
+      currentSolutions
+        ? {
+            ...currentSolutions,
+            settings: {
+              ...currentSolutions.settings,
+              [field]: value,
+            },
+          }
+        : currentSolutions,
+    );
+  }
+
+  function updateWellnessSolutionFeature(
+    index: number,
+    field: keyof HomepageWellnessSolutionFeatureCard,
+    value: string | number | boolean,
+  ) {
+    setWellnessSolutions((currentSolutions) => {
+      if (!currentSolutions) return currentSolutions;
+
+      return {
+        ...currentSolutions,
+        feature_cards: currentSolutions.feature_cards.map((card, cardIndex) =>
+          cardIndex === index ? { ...card, [field]: value } : card,
+        ),
+      };
+    });
+  }
+
+  function updateWellnessSolutionProduct(
+    index: number,
+    field: keyof HomepageWellnessSolutionShowcaseProduct,
+    value: string | number | boolean,
+  ) {
+    setWellnessSolutions((currentSolutions) => {
+      if (!currentSolutions) return currentSolutions;
+
+      return {
+        ...currentSolutions,
+        showcase_products: currentSolutions.showcase_products.map(
+          (product, productIndex) =>
+            productIndex === index ? { ...product, [field]: value } : product,
+        ),
+      };
+    });
+  }
+
   function addIngredientChip() {
     setIngredientsDiscovery((currentDiscovery) => {
       if (!currentDiscovery) return currentDiscovery;
@@ -412,6 +511,72 @@ export function DashboardHomepageClient() {
       return {
         ...currentDiscovery,
         chips: currentDiscovery.chips.filter((_, chipIndex) => chipIndex !== index),
+      };
+    });
+  }
+
+  function addWellnessSolutionFeature() {
+    setWellnessSolutions((currentSolutions) => {
+      if (!currentSolutions) return currentSolutions;
+
+      return {
+        ...currentSolutions,
+        feature_cards: [
+          ...currentSolutions.feature_cards,
+          {
+            icon: "leaf",
+            title: "New Feature",
+            description: "Describe this wellness solution feature.",
+            sort_order: currentSolutions.feature_cards.length,
+            is_visible: true,
+          },
+        ],
+      };
+    });
+  }
+
+  function removeWellnessSolutionFeature(index: number) {
+    setWellnessSolutions((currentSolutions) => {
+      if (!currentSolutions) return currentSolutions;
+
+      return {
+        ...currentSolutions,
+        feature_cards: currentSolutions.feature_cards.filter(
+          (_, featureIndex) => featureIndex !== index,
+        ),
+      };
+    });
+  }
+
+  function addWellnessSolutionProduct() {
+    setWellnessSolutions((currentSolutions) => {
+      if (!currentSolutions) return currentSolutions;
+
+      return {
+        ...currentSolutions,
+        showcase_products: [
+          ...currentSolutions.showcase_products,
+          {
+            product_name: "New Product",
+            label: "FEATURED",
+            url: "/products",
+            sort_order: currentSolutions.showcase_products.length,
+            is_visible: true,
+          },
+        ],
+      };
+    });
+  }
+
+  function removeWellnessSolutionProduct(index: number) {
+    setWellnessSolutions((currentSolutions) => {
+      if (!currentSolutions) return currentSolutions;
+
+      return {
+        ...currentSolutions,
+        showcase_products: currentSolutions.showcase_products.filter(
+          (_, productIndex) => productIndex !== index,
+        ),
       };
     });
   }
@@ -614,6 +779,42 @@ export function DashboardHomepageClient() {
       );
     } finally {
       setIsWellnessExpertSaving(false);
+    }
+  }
+
+  async function saveWellnessSolutions() {
+    if (!wellnessSolutions) return;
+
+    setIsWellnessSolutionsSaving(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("/api/homepage-wellness-solutions", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ wellnessSolutions }),
+      });
+      const payload = (await response.json()) as HomepageWellnessSolutionsResponse;
+
+      if (!response.ok) {
+        throw new Error(
+          payload.error ?? "Unable to save Discover Wellness Solutions CMS.",
+        );
+      }
+
+      setWellnessSolutions(payload.wellnessSolutions ?? wellnessSolutions);
+      setSuccess("Discover Wellness Solutions CMS saved successfully.");
+    } catch (saveError) {
+      setError(
+        saveError instanceof Error
+          ? saveError.message
+          : "Unable to save Discover Wellness Solutions CMS.",
+      );
+    } finally {
+      setIsWellnessSolutionsSaving(false);
     }
   }
 
@@ -1191,6 +1392,247 @@ export function DashboardHomepageClient() {
         ) : (
           <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
             Popular Picks CMS could not be loaded.
+          </div>
+        )}
+      </DashboardCard>
+
+      <DashboardCard
+        title="Discover Wellness Solutions CMS"
+        description="Edit the left feature card, feature cards, and showcase products used in the homepage Discover Wellness Solutions section."
+      >
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm leading-6 text-muted">
+            Section title, subtitle, CTA, order, and visibility are controlled in the
+            Homepage CMS table above.
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => void fetchWellnessSolutions()}
+              disabled={isWellnessSolutionsLoading || isWellnessSolutionsSaving}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <RefreshCw className="size-4" aria-hidden="true" />
+              Refresh Wellness Solutions
+            </button>
+            <button
+              type="button"
+              onClick={() => void saveWellnessSolutions()}
+              disabled={
+                isWellnessSolutionsLoading ||
+                isWellnessSolutionsSaving ||
+                !wellnessSolutions
+              }
+              className="inline-flex items-center gap-2 rounded-pill bg-primary px-5 py-2 font-heading text-sm font-semibold text-white shadow-[0_12px_28px_rgba(6,57,33,0.16)] transition hover:bg-dark-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Save className="size-4" aria-hidden="true" />
+              {isWellnessSolutionsSaving ? "Saving..." : "Save Wellness Solutions"}
+            </button>
+          </div>
+        </div>
+
+        {isWellnessSolutionsLoading ? (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Loading Discover Wellness Solutions CMS...
+          </div>
+        ) : wellnessSolutions ? (
+          <div className="grid gap-6">
+            <div className="rounded-[24px] border border-border-light bg-white p-5">
+              <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                Left Feature Card
+              </h3>
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <InputField
+                  label="Badge"
+                  value={wellnessSolutions.settings.left_badge}
+                  onChange={(value) =>
+                    updateWellnessSolutionsSettings("left_badge", value)
+                  }
+                />
+                <InputField
+                  label="Heading"
+                  value={wellnessSolutions.settings.left_heading}
+                  onChange={(value) =>
+                    updateWellnessSolutionsSettings("left_heading", value)
+                  }
+                />
+                <TextAreaField
+                  label="Description"
+                  value={wellnessSolutions.settings.left_description}
+                  onChange={(value) =>
+                    updateWellnessSolutionsSettings("left_description", value)
+                  }
+                />
+                <InputField
+                  label="CTA Label"
+                  value={wellnessSolutions.settings.left_cta_label}
+                  onChange={(value) =>
+                    updateWellnessSolutionsSettings("left_cta_label", value)
+                  }
+                />
+                <InputField
+                  label="CTA URL"
+                  value={wellnessSolutions.settings.left_cta_url}
+                  onChange={(value) =>
+                    updateWellnessSolutionsSettings("left_cta_url", value)
+                  }
+                />
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-border-light bg-white p-5">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                  Feature Cards
+                </h3>
+                <button
+                  type="button"
+                  onClick={addWellnessSolutionFeature}
+                  className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green"
+                >
+                  <Plus className="size-4" aria-hidden="true" />
+                  Add Feature
+                </button>
+              </div>
+              <div className="grid gap-4">
+                {wellnessSolutions.feature_cards.map((feature, index) => (
+                  <div
+                    key={`${feature.title}-${index}`}
+                    className="grid gap-3 rounded-[20px] border border-border-light bg-cream/40 p-4 lg:grid-cols-[130px_1fr_1fr_120px_130px_110px]"
+                  >
+                    <SelectField
+                      label="Icon"
+                      value={feature.icon}
+                      onChange={(value) =>
+                        updateWellnessSolutionFeature(index, "icon", value)
+                      }
+                    />
+                    <InputField
+                      label="Title"
+                      value={feature.title}
+                      onChange={(value) =>
+                        updateWellnessSolutionFeature(index, "title", value)
+                      }
+                    />
+                    <InputField
+                      label="Description"
+                      value={feature.description}
+                      onChange={(value) =>
+                        updateWellnessSolutionFeature(index, "description", value)
+                      }
+                    />
+                    <InputField
+                      label="Order"
+                      type="number"
+                      value={String(feature.sort_order)}
+                      onChange={(value) =>
+                        updateWellnessSolutionFeature(
+                          index,
+                          "sort_order",
+                          Number(value),
+                        )
+                      }
+                    />
+                    <ToggleField
+                      label="Visible"
+                      checked={feature.is_visible}
+                      onChange={(value) =>
+                        updateWellnessSolutionFeature(index, "is_visible", value)
+                      }
+                    />
+                    <label className="flex items-end">
+                      <button
+                        type="button"
+                        onClick={() => removeWellnessSolutionFeature(index)}
+                        className="inline-flex h-12 items-center gap-2 rounded-2xl border border-red-200 bg-white px-4 font-heading text-sm font-semibold text-red-600 transition hover:bg-red-50"
+                      >
+                        <Trash2 className="size-4" aria-hidden="true" />
+                        Remove
+                      </button>
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-border-light bg-white p-5">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <h3 className="font-heading text-lg font-extrabold text-text-dark">
+                  Showcase Products
+                </h3>
+                <button
+                  type="button"
+                  onClick={addWellnessSolutionProduct}
+                  className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green"
+                >
+                  <Plus className="size-4" aria-hidden="true" />
+                  Add Product
+                </button>
+              </div>
+              <div className="grid gap-4">
+                {wellnessSolutions.showcase_products.map((product, index) => (
+                  <div
+                    key={`${product.product_name}-${index}`}
+                    className="grid gap-3 rounded-[20px] border border-border-light bg-cream/40 p-4 lg:grid-cols-[1fr_160px_1fr_120px_130px_110px]"
+                  >
+                    <InputField
+                      label="Product Name"
+                      value={product.product_name}
+                      onChange={(value) =>
+                        updateWellnessSolutionProduct(index, "product_name", value)
+                      }
+                    />
+                    <InputField
+                      label="Label"
+                      value={product.label}
+                      onChange={(value) =>
+                        updateWellnessSolutionProduct(index, "label", value)
+                      }
+                    />
+                    <InputField
+                      label="URL"
+                      value={product.url}
+                      onChange={(value) =>
+                        updateWellnessSolutionProduct(index, "url", value)
+                      }
+                    />
+                    <InputField
+                      label="Order"
+                      type="number"
+                      value={String(product.sort_order)}
+                      onChange={(value) =>
+                        updateWellnessSolutionProduct(
+                          index,
+                          "sort_order",
+                          Number(value),
+                        )
+                      }
+                    />
+                    <ToggleField
+                      label="Visible"
+                      checked={product.is_visible}
+                      onChange={(value) =>
+                        updateWellnessSolutionProduct(index, "is_visible", value)
+                      }
+                    />
+                    <label className="flex items-end">
+                      <button
+                        type="button"
+                        onClick={() => removeWellnessSolutionProduct(index)}
+                        className="inline-flex h-12 items-center gap-2 rounded-2xl border border-red-200 bg-white px-4 font-heading text-sm font-semibold text-red-600 transition hover:bg-red-50"
+                      >
+                        <Trash2 className="size-4" aria-hidden="true" />
+                        Remove
+                      </button>
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Discover Wellness Solutions CMS could not be loaded.
           </div>
         )}
       </DashboardCard>

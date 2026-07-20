@@ -100,8 +100,8 @@ export const DEFAULT_HOMEPAGE_SECTIONS: HomepageSectionConfig[] = [
     title: "Discover Wellness Solutions",
     subtitle:
       "Explore trusted supplements, ingredient-focused products, and wellness collections designed for informed choices.",
-    cta_label: "Explore Wellness Categories",
-    cta_url: "/category",
+    cta_label: "View All",
+    cta_url: "/supplements",
   },
   {
     section_key: "why_choose_suppriva",

@@ -10,16 +10,47 @@ import {
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { buySellFeatures, buySellShowcaseProducts } from "@/lib/constants";
+import { getCmsIcon } from "@/lib/cms-icons";
+import {
+  DEFAULT_HOMEPAGE_WELLNESS_SOLUTIONS,
+  getDefaultShowcaseProductMeta,
+  type HomepageWellnessSolutionsCms,
+} from "@/lib/homepage-wellness-solutions";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
 export function SupplementsBuySellSection({
   section,
+  cms = DEFAULT_HOMEPAGE_WELLNESS_SOLUTIONS,
 }: {
   section?: HomepageSectionConfig;
+  cms?: HomepageWellnessSolutionsCms;
 }) {
-  const ctaLabel = section?.cta_label || "Explore Wellness Categories";
-  const ctaUrl = section?.cta_url || "/category";
+  const settings = cms.settings;
+  const sectionCtaLabel = section?.cta_label || "View All";
+  const sectionCtaUrl = section?.cta_url || "/supplements";
+  const featureCards = cms.feature_cards.filter((feature) => feature.is_visible);
+  const showcaseProducts = cms.showcase_products
+    .filter((product) => product.is_visible)
+    .map((product, index) => {
+      const meta = getDefaultShowcaseProductMeta(product.product_name, product.url);
+
+      return {
+        name: product.product_name,
+        benefit:
+          meta?.benefit ||
+          "Ingredient-focused wellness support for informed supplement discovery.",
+        category: meta?.category || "Wellness",
+        status: product.label,
+        href: product.url,
+        image: meta?.image || "/assets/hero-supplements.webp",
+        accent:
+          meta?.accent ||
+          (index % 2 === 0
+            ? "from-soft-green to-primary/[0.10]"
+            : "from-soft-green to-gold/[0.14]"),
+        imageScale: meta?.imageScale || "scale-[1.03]",
+      };
+    });
 
   return (
     <SectionWrapper id="supplements-buy-sell">
@@ -51,21 +82,19 @@ export function SupplementsBuySellSection({
           <div className="relative z-10">
             <span className="inline-flex items-center gap-2 rounded-pill border border-primary/10 bg-soft-green px-4 py-2 font-heading text-sm font-semibold text-primary">
               <CheckCircle2 className="size-4 text-gold" aria-hidden="true" />
-              Curated Wellness Collection
+              {settings.left_badge}
             </span>
 
             <h2 className="mt-6 font-heading text-2xl font-extrabold leading-tight text-text-dark md:text-3xl lg:text-4xl">
-              Discover Supplements That Match Your Wellness Goals
+              {settings.left_heading}
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-muted">
-              Explore curated wellness solutions, ingredient-focused products,
-              and popular health categories-all designed to help users make
-              informed choices.
+              {settings.left_description}
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {buySellFeatures.map((feature) => {
-                const Icon = feature.icon;
+              {featureCards.map((feature) => {
+                const Icon = getCmsIcon(feature.icon);
 
                 return (
                 <div
@@ -88,13 +117,13 @@ export function SupplementsBuySellSection({
               })}
             </div>
 
-            {ctaLabel && ctaUrl ? (
+            {settings.left_cta_label && settings.left_cta_url ? (
               <PremiumButton
-                href={ctaUrl}
+                href={settings.left_cta_url}
                 className="mt-8 w-full sm:w-auto"
                 icon={<ArrowRight className="size-4" aria-hidden="true" />}
               >
-                {ctaLabel}
+                {settings.left_cta_label}
               </PremiumButton>
             ) : null}
             <p className="mt-4 max-w-xl text-sm leading-7 text-muted">
@@ -107,14 +136,14 @@ export function SupplementsBuySellSection({
         <div>
           <div className="mb-4 flex items-center justify-end">
             <Link
-              href="/supplements"
+              href={sectionCtaUrl}
               className="font-heading text-sm font-semibold text-primary transition hover:text-dark-green"
             >
-              View All -&gt;
+              {sectionCtaLabel} -&gt;
             </Link>
           </div>
           <GridWrapper className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {buySellShowcaseProducts.map((product) => (
+            {showcaseProducts.map((product) => (
               <SupplementShowcaseCard key={product.name} product={product} />
             ))}
           </GridWrapper>

@@ -17,6 +17,11 @@ import type { HomepageBlogsSettings } from "@/lib/homepage-blogs";
 import type { HomepageIngredientChip } from "@/lib/homepage-ingredients-discovery";
 import type { HomepagePopularPicksSettings } from "@/lib/homepage-popular-picks";
 import type { HomepageWellnessExpertSettings } from "@/lib/homepage-wellness-expert";
+import type {
+  HomepageWellnessSolutionFeatureCard,
+  HomepageWellnessSolutionsSettings,
+  HomepageWellnessSolutionShowcaseProduct,
+} from "@/lib/homepage-wellness-solutions";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
@@ -738,6 +743,13 @@ export type Database = {
   homepage_hero_floating_pills: HomepageHeroFloatingPill & { id: string };
   homepage_ingredient_chips: HomepageIngredientChip & { id: string };
   homepage_wellness_expert_settings: HomepageWellnessExpertSettings & { id: string };
+  homepage_wellness_solutions_settings: HomepageWellnessSolutionsSettings & {
+    id: string;
+  };
+  homepage_wellness_solution_feature_cards:
+    HomepageWellnessSolutionFeatureCard & { id: string };
+  homepage_wellness_solution_showcase_products:
+    HomepageWellnessSolutionShowcaseProduct & { id: string };
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;

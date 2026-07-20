@@ -14,6 +14,7 @@ import { HomepageIngredientsDiscoveryService } from "@/services/homepage-ingredi
 import { HomepagePopularPicksService } from "@/services/homepage-popular-picks.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { HomepageWellnessExpertService } from "@/services/homepage-wellness-expert.service";
+import { HomepageWellnessSolutionsService } from "@/services/homepage-wellness-solutions.service";
 import { ProductService } from "@/services/product.service";
 import {
   blogToCard,
@@ -64,6 +65,7 @@ export default async function Home() {
     homepagePopularPicks,
     homepageWellnessExpert,
     homepageBlogs,
+    homepageWellnessSolutions,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -76,6 +78,7 @@ export default async function Home() {
     new HomepagePopularPicksService().safeGetHomepagePopularPicks(),
     new HomepageWellnessExpertService().safeGetHomepageWellnessExpert(),
     new HomepageBlogsService().safeGetHomepageBlogs(),
+    new HomepageWellnessSolutionsService().safeGetHomepageWellnessSolutions(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -150,7 +153,11 @@ export default async function Home() {
         );
       case "discover_wellness_solutions":
         return (
-          <SupplementsBuySellSection key={section.section_key} section={section} />
+          <SupplementsBuySellSection
+            key={section.section_key}
+            section={section}
+            cms={homepageWellnessSolutions}
+          />
         );
       case "why_choose_suppriva":
         return (

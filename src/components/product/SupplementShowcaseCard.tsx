@@ -11,7 +11,7 @@ export type ShowcaseProductData = {
   name: string;
   benefit: string;
   category: string;
-  status: "FEATURED" | "POPULAR" | "TRENDING" | "UPDATED";
+  status: string;
   image?: string;
   accent: string;
   imageScale: string;
@@ -24,12 +24,15 @@ type SupplementShowcaseCardProps = {
 export function SupplementShowcaseCard({
   product,
 }: SupplementShowcaseCardProps) {
-  const badgeStyles: Record<ShowcaseProductData["status"], string> = {
+  const badgeStyles: Record<string, string> = {
     FEATURED: "bg-soft-green text-primary border border-primary/10",
     POPULAR: "bg-primary/10 text-primary border border-primary/14",
     TRENDING: "bg-gold/10 text-text-dark border border-gold/20",
     UPDATED: "bg-[#E6F5EC] text-[#0B5D3B] border border-[#B9E1C7]",
   };
+  const badgeStyle =
+    badgeStyles[product.status.toUpperCase()] ??
+    "bg-soft-green text-primary border border-primary/10";
 
   return (
     <motion.article
@@ -87,7 +90,7 @@ export function SupplementShowcaseCard({
         <span
           className={cn(
             "inline-flex rounded-pill px-3 py-1 font-heading text-[11px] font-semibold tracking-[0.08em]",
-            badgeStyles[product.status],
+            badgeStyle,
           )}
         >
           {product.status}
