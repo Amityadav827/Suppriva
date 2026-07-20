@@ -151,6 +151,17 @@ export function mergeHomepageSections(
       .map((section) => [section.section_key, section]),
   );
 
+  const withDefaultText = (
+    value: string | null | undefined,
+    defaultValue: string | null,
+  ) => {
+    if (typeof value === "string" && value.trim()) {
+      return value;
+    }
+
+    return defaultValue;
+  };
+
   return DEFAULT_HOMEPAGE_SECTIONS.map((defaultSection) => {
     const savedSection = sectionMap.get(defaultSection.section_key);
 
@@ -158,10 +169,10 @@ export function mergeHomepageSections(
       ...defaultSection,
       ...savedSection,
       section_name: savedSection?.section_name || defaultSection.section_name,
-      title: savedSection?.title ?? defaultSection.title,
-      subtitle: savedSection?.subtitle ?? defaultSection.subtitle,
-      cta_label: savedSection?.cta_label ?? defaultSection.cta_label,
-      cta_url: savedSection?.cta_url ?? defaultSection.cta_url,
+      title: withDefaultText(savedSection?.title, defaultSection.title),
+      subtitle: withDefaultText(savedSection?.subtitle, defaultSection.subtitle),
+      cta_label: withDefaultText(savedSection?.cta_label, defaultSection.cta_label),
+      cta_url: withDefaultText(savedSection?.cta_url, defaultSection.cta_url),
     };
   }).sort((a, b) => a.sort_order - b.sort_order);
 }
