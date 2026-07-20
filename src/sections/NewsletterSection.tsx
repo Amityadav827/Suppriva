@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { BadgeCheck, Leaf, Sparkles } from "lucide-react";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
+import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function NewsletterSection() {
+export function NewsletterSection({ section }: { section?: HomepageSectionConfig }) {
   return (
     <section
       id="newsletter"
@@ -62,11 +63,11 @@ export function NewsletterSection() {
               </span>
 
               <h2 className="relative mt-5 max-w-3xl font-heading text-3xl font-extrabold leading-[1.18] text-white md:text-4xl lg:text-5xl lg:leading-[1.14]">
-                Stay Updated With Health & Wellness Tips
+                {section?.title || "Stay Updated With Health & Wellness Tips"}
               </h2>
               <p className="mx-auto mt-5 max-w-[590px] text-base leading-8 text-emerald-50/90 lg:mx-0">
-                Subscribe to get exclusive offers, wellness tips, and the latest
-                supplement insights.
+                {section?.subtitle ||
+                  "Subscribe to get exclusive offers, wellness tips, and the latest supplement insights."}
               </p>
 
               <div className="mx-auto mt-6 h-px w-28 bg-gradient-to-r from-transparent via-gold/70 to-transparent lg:mx-0 lg:w-40 lg:from-gold/70 lg:via-white/18" />

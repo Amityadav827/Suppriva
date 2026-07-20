@@ -11,13 +11,24 @@ import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { buySellFeatures, buySellShowcaseProducts } from "@/lib/constants";
+import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function SupplementsBuySellSection() {
+export function SupplementsBuySellSection({
+  section,
+}: {
+  section?: HomepageSectionConfig;
+}) {
+  const ctaLabel = section?.cta_label || "Explore Wellness Categories";
+  const ctaUrl = section?.cta_url || "/category";
+
   return (
     <SectionWrapper id="supplements-buy-sell">
       <SectionTitle
-        title="Discover Wellness Solutions"
-        subtitle="Explore trusted supplements, ingredient-focused products, and wellness collections designed for informed choices."
+        title={section?.title || "Discover Wellness Solutions"}
+        subtitle={
+          section?.subtitle ||
+          "Explore trusted supplements, ingredient-focused products, and wellness collections designed for informed choices."
+        }
       />
 
       <div className="mt-12 grid items-center gap-10 md:mt-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-20">
@@ -77,13 +88,15 @@ export function SupplementsBuySellSection() {
               })}
             </div>
 
-            <PremiumButton
-              href="/category"
-              className="mt-8 w-full sm:w-auto"
-              icon={<ArrowRight className="size-4" aria-hidden="true" />}
-            >
-              Explore Wellness Categories
-            </PremiumButton>
+            {ctaLabel && ctaUrl ? (
+              <PremiumButton
+                href={ctaUrl}
+                className="mt-8 w-full sm:w-auto"
+                icon={<ArrowRight className="size-4" aria-hidden="true" />}
+              >
+                {ctaLabel}
+              </PremiumButton>
+            ) : null}
             <p className="mt-4 max-w-xl text-sm leading-7 text-muted">
               Explore wellness products organized by health goals, ingredients,
               and lifestyle needs.

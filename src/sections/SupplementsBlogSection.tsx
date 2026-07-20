@@ -3,20 +3,35 @@ import type { BlogPostCard } from "@/components/blog/BlogCard";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function SupplementsBlogSection({ posts }: { posts: BlogPostCard[] }) {
+export function SupplementsBlogSection({
+  posts,
+  section,
+}: {
+  posts: BlogPostCard[];
+  section?: HomepageSectionConfig;
+}) {
+  const ctaLabel = section?.cta_label || "View All Blogs";
+  const ctaUrl = section?.cta_url || "/blogs";
+
   return (
     <SectionWrapper id="blog" tone="white">
       <SectionTitle
-        title="Supplements Blog & Guides"
-        subtitle="Expert wellness insights, supplement reviews & health guides."
+        title={section?.title || "Supplements Blog & Guides"}
+        subtitle={
+          section?.subtitle ||
+          "Expert wellness insights, supplement reviews & health guides."
+        }
       />
       <BlogGrid posts={posts} />
-      <div className="mt-10 flex justify-center">
-        <PremiumButton href="/blogs" variant="secondary">
-          View All Blogs
-        </PremiumButton>
-      </div>
+      {ctaLabel && ctaUrl ? (
+        <div className="mt-10 flex justify-center">
+          <PremiumButton href={ctaUrl} variant="secondary">
+            {ctaLabel}
+          </PremiumButton>
+        </div>
+      ) : null}
     </SectionWrapper>
   );
 }

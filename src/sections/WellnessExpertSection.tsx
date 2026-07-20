@@ -8,6 +8,7 @@ import { getExpertiseIcon } from "@/components/experts/expert-icons";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
 const DEFAULT_EXPERTISE_TAGS = [
   "Integrative Healthcare",
@@ -28,7 +29,13 @@ const FALLBACK_EXPERT = {
     "His focus includes wellness education, preventive lifestyle strategies, ingredient awareness, and supporting readers with evidence-informed wellness knowledge.",
 } as const;
 
-export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
+export function WellnessExpertSection({
+  expert,
+  section,
+}: {
+  expert: Expert | null;
+  section?: HomepageSectionConfig;
+}) {
   const expertiseTags = expert?.expertise_tags?.slice(0, 4).filter(Boolean);
   const spotlight = {
     name: expert?.name || FALLBACK_EXPERT.name,
@@ -43,6 +50,8 @@ export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
       expert?.full_bio?.split(/\n+/).map((item) => item.trim()).find(Boolean) ||
       FALLBACK_EXPERT.secondary,
   };
+  const ctaLabel = section?.cta_label || "Explore Our Experts";
+  const ctaUrl = section?.cta_url || "/experts";
 
   return (
     <SectionWrapper id="wellness-expert" tone="white">
@@ -52,11 +61,11 @@ export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
           Medical &amp; Editorial Advisory
         </p>
         <h2 className="mt-5 font-heading text-3xl font-extrabold leading-tight text-text-dark md:text-4xl lg:text-5xl">
-          Meet Our Wellness Expert
+          {section?.title || "Meet Our Wellness Expert"}
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-muted">
-          Our educational wellness content and ingredient resources are supported by
-          expert guidance to help readers make more informed wellness decisions.
+          {section?.subtitle ||
+            "Our educational wellness content and ingredient resources are supported by expert guidance to help readers make more informed wellness decisions."}
         </p>
       </FadeIn>
 
@@ -127,15 +136,17 @@ export function WellnessExpertSection({ expert }: { expert: Expert | null }) {
             <p className="mt-5 text-base leading-8 text-muted">{spotlight.description}</p>
             <p className="mt-4 text-base leading-8 text-muted">{spotlight.secondary}</p>
 
-            <div className="mt-7 flex justify-center lg:justify-start">
-              <PremiumButton
-                href="/experts"
-                className="w-full sm:w-auto"
-                icon={<ArrowRight className="size-4" aria-hidden="true" />}
-              >
-                Explore Our Experts
-              </PremiumButton>
-            </div>
+            {ctaLabel && ctaUrl ? (
+              <div className="mt-7 flex justify-center lg:justify-start">
+                <PremiumButton
+                  href={ctaUrl}
+                  className="w-full sm:w-auto"
+                  icon={<ArrowRight className="size-4" aria-hidden="true" />}
+                >
+                  {ctaLabel}
+                </PremiumButton>
+              </div>
+            ) : null}
           </div>
         </div>
       </motion.div>

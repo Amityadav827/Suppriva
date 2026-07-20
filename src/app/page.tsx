@@ -8,6 +8,7 @@ import { buildSeoMetadata } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
 import { ExpertsService } from "@/services/experts.service";
+import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { ProductService } from "@/services/product.service";
 import {
   blogToCard,
@@ -44,12 +45,20 @@ export function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const [products, categories, blogs, featuredExperts, activeExperts] = await Promise.all([
+  const [
+    products,
+    categories,
+    blogs,
+    featuredExperts,
+    activeExperts,
+    homepageSections,
+  ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
     new BlogService().getAllBlogs(),
     new ExpertsService().safeGetFeaturedExperts(),
     new ExpertsService().safeGetActiveExperts(),
+    new HomepageSectionsService().safeGetHomepageSections(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -66,6 +75,67 @@ export default async function Home() {
     slug: category.slug,
   }));
   const homepageExpert = featuredExperts[0] || activeExperts[0] || null;
+  const visibleHomepageSections = homepageSections.filter((section) => section.is_visible);
+
+  function renderHomepageSection(section: (typeof homepageSections)[number]) {
+    switch (section.section_key) {
+      case "hero":
+        return <HeroSection key={section.section_key} section={section} />;
+      case "health_needs":
+        return (
+          <HealthNeedsSection
+            key={section.section_key}
+            categories={categoryPills}
+            section={section}
+          />
+        );
+      case "popular_picks":
+        return (
+          <PopularPicksSection
+            key={section.section_key}
+            products={productCards}
+            section={section}
+          />
+        );
+      case "ingredients_discovery":
+        return (
+          <AllSupplementCategoriesSection
+            key={section.section_key}
+            section={section}
+          />
+        );
+      case "wellness_expert":
+        return (
+          <WellnessExpertSection
+            key={section.section_key}
+            expert={homepageExpert}
+            section={section}
+          />
+        );
+      case "blogs":
+        return (
+          <SupplementsBlogSection
+            key={section.section_key}
+            posts={blogCards}
+            section={section}
+          />
+        );
+      case "discover_wellness_solutions":
+        return (
+          <SupplementsBuySellSection key={section.section_key} section={section} />
+        );
+      case "why_choose_suppriva":
+        return (
+          <WhyChooseSupprivaSection key={section.section_key} section={section} />
+        );
+      case "trust_badges":
+        return <TrustBadgesStrip key={section.section_key} section={section} />;
+      case "newsletter":
+        return <NewsletterSection key={section.section_key} section={section} />;
+      default:
+        return null;
+    }
+  }
 
   return (
     <>
@@ -93,16 +163,7 @@ export default async function Home() {
       />
       <Navbar />
       <main>
-        <HeroSection />
-        <HealthNeedsSection categories={categoryPills} />
-        <PopularPicksSection products={productCards} />
-        <AllSupplementCategoriesSection />
-        <WellnessExpertSection expert={homepageExpert} />
-        <SupplementsBlogSection posts={blogCards} />
-        <SupplementsBuySellSection />
-        <WhyChooseSupprivaSection />
-        <TrustBadgesStrip />
-        <NewsletterSection />
+        {visibleHomepageSections.map((section) => renderHomepageSection(section))}
       </main>
       <PremiumFooter />
       <BackToTopButton />

@@ -7,6 +7,7 @@ import {
   UserStatus,
 } from "./constants";
 import type { IngredientLayoutSectionKey } from "@/lib/ingredient-layout";
+import type { HomepageSectionKey } from "@/lib/homepage-sections";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
@@ -608,6 +609,20 @@ export type NewsletterSubscriber = {
   deleted_at: Timestamp | null;
 };
 
+export type HomepageSection = {
+  id: string;
+  section_key: HomepageSectionKey;
+  section_name: string;
+  is_visible: boolean;
+  sort_order: number;
+  title: string | null;
+  subtitle: string | null;
+  cta_label: string | null;
+  cta_url: string | null;
+  created_at: Timestamp;
+  updated_at: Timestamp;
+};
+
 export type ContactMessage = {
   id: string;
   name: string;
@@ -706,6 +721,7 @@ export type Database = {
   product_related_blogs: ProductRelatedBlog;
   product_related_ingredients: ProductRelatedIngredient;
   newsletter_subscribers: NewsletterSubscriber;
+  homepage_sections: HomepageSection;
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;

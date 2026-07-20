@@ -6,8 +6,31 @@ import { HeroProductShowcase } from "@/components/hero/HeroProductShowcase";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { trustItems } from "@/lib/constants";
+import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function HeroSection() {
+const DEFAULT_TITLE = "Discover Wellness Solutions That Fit Your Goals";
+const DEFAULT_SUBTITLE =
+  "Explore supplements, ingredient insights, and wellness collections designed to help you make informed health decisions with confidence.";
+
+function HeroTitle({ title }: { title: string }) {
+  if (title === DEFAULT_TITLE) {
+    return (
+      <>
+        Discover Wellness Solutions{" "}
+        <span className="text-gold">That Fit Your Goals</span>
+      </>
+    );
+  }
+
+  return title;
+}
+
+export function HeroSection({ section }: { section?: HomepageSectionConfig }) {
+  const title = section?.title || DEFAULT_TITLE;
+  const subtitle = section?.subtitle || DEFAULT_SUBTITLE;
+  const ctaLabel = section?.cta_label || "Explore Wellness Categories";
+  const ctaUrl = section?.cta_url || "/category";
+
   return (
     <section className="relative isolate overflow-hidden bg-cream py-[72px] md:py-[92px] lg:py-[100px]">
       <div
@@ -34,23 +57,20 @@ export function HeroSection() {
 
           <FadeIn delay={0.08}>
             <h1 className="mt-7 font-heading text-3xl font-extrabold leading-[1.08] text-text-dark md:text-4xl xl:text-6xl">
-              Discover Wellness Solutions{" "}
-              <span className="text-gold">That Fit Your Goals</span>
+              <HeroTitle title={title} />
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
             <p className="mx-auto mt-6 max-w-[620px] text-base leading-8 text-muted lg:mx-0">
-              Explore supplements, ingredient insights, and wellness
-              collections designed to help you make informed health decisions
-              with confidence.
+              {subtitle}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.24}>
             <div className="mt-9 grid gap-3 sm:flex sm:justify-center lg:justify-start">
-              <PremiumButton href="/category" icon={<ArrowRight className="size-4" />}>
-                Explore Wellness Categories
+              <PremiumButton href={ctaUrl} icon={<ArrowRight className="size-4" />}>
+                {ctaLabel}
               </PremiumButton>
               <PremiumButton href="/ingredients" variant="secondary" icon={<ArrowRight className="size-4" />}>
                 Explore Ingredients

@@ -1,10 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { TrustBadge } from "@/components/trust/TrustBadge";
+import { PremiumButton } from "@/components/ui/PremiumButton";
 import { trustBadges } from "@/lib/constants";
+import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function TrustBadgesStrip() {
+export function TrustBadgesStrip({ section }: { section?: HomepageSectionConfig }) {
+  const ctaLabel = section?.cta_label;
+  const ctaUrl = section?.cta_url;
+
   return (
     <section className="relative isolate overflow-hidden bg-[linear-gradient(90deg,#063921,#0B5D3B)] py-10">
       <div
@@ -14,11 +20,12 @@ export function TrustBadgesStrip() {
       <div className="site-container">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-2xl font-extrabold leading-tight text-white md:text-3xl xl:text-4xl">
-            Why Thousands Start Their Wellness Journey with Suppriva
+            {section?.title ||
+              "Why Thousands Start Their Wellness Journey with Suppriva"}
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-emerald-50/90 md:text-base">
-            Discover supplements, ingredients, wellness solutions, and expert
-            insights designed to help you make informed health decisions.
+            {section?.subtitle ||
+              "Discover supplements, ingredients, wellness solutions, and expert insights designed to help you make informed health decisions."}
           </p>
         </div>
 
@@ -40,6 +47,17 @@ export function TrustBadgesStrip() {
             <TrustBadge key={badge.title} badge={badge} />
           ))}
         </motion.div>
+        {ctaLabel && ctaUrl ? (
+          <div className="mt-8 flex justify-center">
+            <PremiumButton
+              href={ctaUrl}
+              variant="secondary"
+              icon={<ArrowRight className="size-4" aria-hidden="true" />}
+            >
+              {ctaLabel}
+            </PremiumButton>
+          </div>
+        ) : null}
       </div>
     </section>
   );

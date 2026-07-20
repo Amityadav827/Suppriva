@@ -7,6 +7,7 @@ import {
   FileText,
   FlaskConical,
   FolderOpen,
+  Home,
   Images,
   LayoutDashboard,
   BriefcaseMedical,
@@ -23,6 +24,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Homepage CMS", href: "/dashboard/homepage", icon: Home },
   { label: "Products", href: "/dashboard/products", icon: Package },
   { label: "Categories", href: "/dashboard/categories", icon: FolderOpen },
   { label: "Ingredients", href: "/dashboard/ingredients", icon: FlaskConical },
