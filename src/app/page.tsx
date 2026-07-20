@@ -13,6 +13,7 @@ import { HomepageBlogsService } from "@/services/homepage-blogs.service";
 import { HomepageIngredientsDiscoveryService } from "@/services/homepage-ingredients-discovery.service";
 import { HomepagePopularPicksService } from "@/services/homepage-popular-picks.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
+import { HomepageTrustBadgesService } from "@/services/homepage-trust-badges.service";
 import { HomepageWellnessExpertService } from "@/services/homepage-wellness-expert.service";
 import { HomepageWellnessSolutionsService } from "@/services/homepage-wellness-solutions.service";
 import { HomepageWhyChooseService } from "@/services/homepage-why-choose.service";
@@ -68,6 +69,7 @@ export default async function Home() {
     homepageBlogs,
     homepageWellnessSolutions,
     homepageWhyChoose,
+    homepageTrustBadges,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -82,6 +84,7 @@ export default async function Home() {
     new HomepageBlogsService().safeGetHomepageBlogs(),
     new HomepageWellnessSolutionsService().safeGetHomepageWellnessSolutions(),
     new HomepageWhyChooseService().safeGetHomepageWhyChoose(),
+    new HomepageTrustBadgesService().safeGetHomepageTrustBadges(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -171,7 +174,13 @@ export default async function Home() {
           />
         );
       case "trust_badges":
-        return <TrustBadgesStrip key={section.section_key} section={section} />;
+        return (
+          <TrustBadgesStrip
+            key={section.section_key}
+            section={section}
+            cms={homepageTrustBadges}
+          />
+        );
       case "newsletter":
         return <NewsletterSection key={section.section_key} section={section} />;
       default:

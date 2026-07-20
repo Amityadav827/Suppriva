@@ -1,6 +1,7 @@
 import {
   Activity,
   Battery,
+  BookOpen,
   Brain,
   Candy,
   CheckCircle2,
@@ -27,6 +28,7 @@ import {
 const cmsIcons = {
   activity: Activity,
   battery: Battery,
+  "book-open": BookOpen,
   brain: Brain,
   candy: Candy,
   "check-circle-2": CheckCircle2,
@@ -54,6 +56,7 @@ export type CmsIconName = keyof typeof cmsIcons;
 export const CMS_ICON_OPTIONS: { label: string; value: CmsIconName }[] = [
   { label: "Activity", value: "activity" },
   { label: "Battery", value: "battery" },
+  { label: "Book Open", value: "book-open" },
   { label: "Brain", value: "brain" },
   { label: "Candy", value: "candy" },
   { label: "Check Circle", value: "check-circle-2" },

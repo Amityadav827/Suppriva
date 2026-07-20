@@ -22,6 +22,10 @@ import type {
   HomepagePopularPicksCms,
   HomepagePopularPicksSettings,
 } from "@/lib/homepage-popular-picks";
+import type {
+  HomepageTrustBadge,
+  HomepageTrustBadgesCms,
+} from "@/lib/homepage-trust-badges";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 import type {
   HomepageWellnessExpertCms,
@@ -78,6 +82,11 @@ type HomepageWhyChooseResponse = {
   error?: string;
 };
 
+type HomepageTrustBadgesResponse = {
+  trustBadges?: HomepageTrustBadgesCms;
+  error?: string;
+};
+
 function sortSections(sections: HomepageSectionConfig[]) {
   return [...sections].sort((a, b) => a.sort_order - b.sort_order);
 }
@@ -95,6 +104,8 @@ export function DashboardHomepageClient() {
   const [wellnessSolutions, setWellnessSolutions] =
     useState<HomepageWellnessSolutionsCms | null>(null);
   const [whyChoose, setWhyChoose] = useState<HomepageWhyChooseCms | null>(null);
+  const [trustBadges, setTrustBadges] =
+    useState<HomepageTrustBadgesCms | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isBlogsLoading, setIsBlogsLoading] = useState(true);
   const [isPopularPicksLoading, setIsPopularPicksLoading] = useState(true);
@@ -104,6 +115,7 @@ export function DashboardHomepageClient() {
   const [isWellnessSolutionsLoading, setIsWellnessSolutionsLoading] =
     useState(true);
   const [isWhyChooseLoading, setIsWhyChooseLoading] = useState(true);
+  const [isTrustBadgesLoading, setIsTrustBadgesLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isBlogsSaving, setIsBlogsSaving] = useState(false);
   const [isPopularPicksSaving, setIsPopularPicksSaving] = useState(false);
@@ -113,6 +125,7 @@ export function DashboardHomepageClient() {
   const [isWellnessSolutionsSaving, setIsWellnessSolutionsSaving] =
     useState(false);
   const [isWhyChooseSaving, setIsWhyChooseSaving] = useState(false);
+  const [isTrustBadgesSaving, setIsTrustBadgesSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
@@ -321,6 +334,32 @@ export function DashboardHomepageClient() {
     }
   }, []);
 
+  const fetchTrustBadges = useCallback(async () => {
+    setIsTrustBadgesLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/homepage-trust-badges", {
+        cache: "no-store",
+      });
+      const payload = (await response.json()) as HomepageTrustBadgesResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to load Trust Badges CMS.");
+      }
+
+      setTrustBadges(payload.trustBadges ?? null);
+    } catch (fetchError) {
+      setError(
+        fetchError instanceof Error
+          ? fetchError.message
+          : "Unable to load Trust Badges CMS.",
+      );
+    } finally {
+      setIsTrustBadgesLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void fetchSections();
     void fetchHomepageBlogs();
@@ -330,6 +369,7 @@ export function DashboardHomepageClient() {
     void fetchWellnessExpert();
     void fetchWellnessSolutions();
     void fetchWhyChoose();
+    void fetchTrustBadges();
   }, [
     fetchHero,
     fetchHomepageBlogs,
@@ -339,6 +379,7 @@ export function DashboardHomepageClient() {
     fetchWellnessExpert,
     fetchWellnessSolutions,
     fetchWhyChoose,
+    fetchTrustBadges,
   ]);
 
   function updateSection(
@@ -541,6 +582,23 @@ export function DashboardHomepageClient() {
     });
   }
 
+  function updateTrustBadge(
+    index: number,
+    field: keyof HomepageTrustBadge,
+    value: string | number | boolean,
+  ) {
+    setTrustBadges((currentTrustBadges) => {
+      if (!currentTrustBadges) return currentTrustBadges;
+
+      return {
+        ...currentTrustBadges,
+        badges: currentTrustBadges.badges.map((badge, badgeIndex) =>
+          badgeIndex === index ? { ...badge, [field]: value } : badge,
+        ),
+      };
+    });
+  }
+
   function addIngredientChip() {
     setIngredientsDiscovery((currentDiscovery) => {
       if (!currentDiscovery) return currentDiscovery;
@@ -666,6 +724,39 @@ export function DashboardHomepageClient() {
         ...currentWhyChoose,
         cards: currentWhyChoose.cards.filter(
           (_, cardIndex) => cardIndex !== index,
+        ),
+      };
+    });
+  }
+
+  function addTrustBadge() {
+    setTrustBadges((currentTrustBadges) => {
+      if (!currentTrustBadges) return currentTrustBadges;
+
+      return {
+        ...currentTrustBadges,
+        badges: [
+          ...currentTrustBadges.badges,
+          {
+            icon: "shield-check",
+            title: "New Trust Badge",
+            description: "Describe this homepage trust badge.",
+            sort_order: currentTrustBadges.badges.length,
+            is_visible: true,
+          },
+        ],
+      };
+    });
+  }
+
+  function removeTrustBadge(index: number) {
+    setTrustBadges((currentTrustBadges) => {
+      if (!currentTrustBadges) return currentTrustBadges;
+
+      return {
+        ...currentTrustBadges,
+        badges: currentTrustBadges.badges.filter(
+          (_, badgeIndex) => badgeIndex !== index,
         ),
       };
     });
@@ -939,6 +1030,40 @@ export function DashboardHomepageClient() {
       );
     } finally {
       setIsWhyChooseSaving(false);
+    }
+  }
+
+  async function saveTrustBadges() {
+    if (!trustBadges) return;
+
+    setIsTrustBadgesSaving(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("/api/homepage-trust-badges", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ trustBadges }),
+      });
+      const payload = (await response.json()) as HomepageTrustBadgesResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to save Trust Badges CMS.");
+      }
+
+      setTrustBadges(payload.trustBadges ?? trustBadges);
+      setSuccess("Trust Badges CMS saved successfully.");
+    } catch (saveError) {
+      setError(
+        saveError instanceof Error
+          ? saveError.message
+          : "Unable to save Trust Badges CMS.",
+      );
+    } finally {
+      setIsTrustBadgesSaving(false);
     }
   }
 
@@ -1860,6 +1985,109 @@ export function DashboardHomepageClient() {
         ) : (
           <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
             Why Choose CMS could not be loaded.
+          </div>
+        )}
+      </DashboardCard>
+
+      <DashboardCard
+        title="Trust Badges CMS"
+        description="Edit the badges used in the homepage Trust Badges section."
+      >
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm leading-6 text-muted">
+            Section title, subtitle, order, and visibility are controlled in the
+            Homepage CMS table above.
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => void fetchTrustBadges()}
+              disabled={isTrustBadgesLoading || isTrustBadgesSaving}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <RefreshCw className="size-4" aria-hidden="true" />
+              Refresh Trust Badges
+            </button>
+            <button
+              type="button"
+              onClick={addTrustBadge}
+              disabled={isTrustBadgesLoading || isTrustBadgesSaving || !trustBadges}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Plus className="size-4" aria-hidden="true" />
+              Add Badge
+            </button>
+            <button
+              type="button"
+              onClick={() => void saveTrustBadges()}
+              disabled={isTrustBadgesLoading || isTrustBadgesSaving || !trustBadges}
+              className="inline-flex items-center gap-2 rounded-pill bg-primary px-5 py-2 font-heading text-sm font-semibold text-white shadow-[0_12px_28px_rgba(6,57,33,0.16)] transition hover:bg-dark-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Save className="size-4" aria-hidden="true" />
+              {isTrustBadgesSaving ? "Saving..." : "Save Trust Badges"}
+            </button>
+          </div>
+        </div>
+
+        {isTrustBadgesLoading ? (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Loading Trust Badges CMS...
+          </div>
+        ) : trustBadges ? (
+          <div className="grid gap-4">
+            {trustBadges.badges.map((badge, index) => (
+              <div
+                key={`${badge.title}-${index}`}
+                className="grid gap-3 rounded-[20px] border border-border-light bg-cream/40 p-4 lg:grid-cols-[130px_1fr_1fr_120px_130px_110px]"
+              >
+                <SelectField
+                  label="Icon"
+                  value={badge.icon}
+                  onChange={(value) => updateTrustBadge(index, "icon", value)}
+                />
+                <InputField
+                  label="Title"
+                  value={badge.title}
+                  onChange={(value) => updateTrustBadge(index, "title", value)}
+                />
+                <InputField
+                  label="Description"
+                  value={badge.description}
+                  onChange={(value) =>
+                    updateTrustBadge(index, "description", value)
+                  }
+                />
+                <InputField
+                  label="Order"
+                  type="number"
+                  value={String(badge.sort_order)}
+                  onChange={(value) =>
+                    updateTrustBadge(index, "sort_order", Number(value))
+                  }
+                />
+                <ToggleField
+                  label="Visible"
+                  checked={badge.is_visible}
+                  onChange={(value) =>
+                    updateTrustBadge(index, "is_visible", value)
+                  }
+                />
+                <label className="flex items-end">
+                  <button
+                    type="button"
+                    onClick={() => removeTrustBadge(index)}
+                    className="inline-flex h-12 items-center gap-2 rounded-2xl border border-red-200 bg-white px-4 font-heading text-sm font-semibold text-red-600 transition hover:bg-red-50"
+                  >
+                    <Trash2 className="size-4" aria-hidden="true" />
+                    Remove
+                  </button>
+                </label>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Trust Badges CMS could not be loaded.
           </div>
         )}
       </DashboardCard>

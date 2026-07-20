@@ -4,12 +4,29 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { TrustBadge } from "@/components/trust/TrustBadge";
 import { PremiumButton } from "@/components/ui/PremiumButton";
-import { trustBadges } from "@/lib/constants";
+import { getCmsIcon } from "@/lib/cms-icons";
+import {
+  DEFAULT_HOMEPAGE_TRUST_BADGES,
+  type HomepageTrustBadgesCms,
+} from "@/lib/homepage-trust-badges";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function TrustBadgesStrip({ section }: { section?: HomepageSectionConfig }) {
+export function TrustBadgesStrip({
+  section,
+  cms = DEFAULT_HOMEPAGE_TRUST_BADGES,
+}: {
+  section?: HomepageSectionConfig;
+  cms?: HomepageTrustBadgesCms;
+}) {
   const ctaLabel = section?.cta_label;
   const ctaUrl = section?.cta_url;
+  const badges = cms.badges
+    .filter((badge) => badge.is_visible)
+    .map((badge) => ({
+      title: badge.title,
+      subtitle: badge.description,
+      icon: getCmsIcon(badge.icon),
+    }));
 
   return (
     <section className="relative isolate overflow-hidden bg-[linear-gradient(90deg,#063921,#0B5D3B)] py-10">
@@ -43,8 +60,8 @@ export function TrustBadgesStrip({ section }: { section?: HomepageSectionConfig 
           }}
           className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4"
         >
-          {trustBadges.map((badge) => (
-            <TrustBadge key={badge.title} badge={badge} />
+          {badges.map((badge, index) => (
+            <TrustBadge key={`${badge.title}-${index}`} badge={badge} />
           ))}
         </motion.div>
         {ctaLabel && ctaUrl ? (

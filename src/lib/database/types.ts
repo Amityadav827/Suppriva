@@ -16,6 +16,7 @@ import type {
 import type { HomepageBlogsSettings } from "@/lib/homepage-blogs";
 import type { HomepageIngredientChip } from "@/lib/homepage-ingredients-discovery";
 import type { HomepagePopularPicksSettings } from "@/lib/homepage-popular-picks";
+import type { HomepageTrustBadge } from "@/lib/homepage-trust-badges";
 import type { HomepageWellnessExpertSettings } from "@/lib/homepage-wellness-expert";
 import type {
   HomepageWellnessSolutionFeatureCard,
@@ -752,6 +753,7 @@ export type Database = {
   homepage_wellness_solution_showcase_products:
     HomepageWellnessSolutionShowcaseProduct & { id: string };
   homepage_why_choose_cards: HomepageWhyChooseCard & { id: string };
+  homepage_trust_badges: HomepageTrustBadge & { id: string };
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;
