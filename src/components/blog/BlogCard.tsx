@@ -17,9 +17,10 @@ export type BlogPostCard = {
 
 type BlogCardProps = {
   post: BlogPostCard;
+  showBadge?: boolean;
 };
 
-export function BlogCard({ post }: BlogCardProps) {
+export function BlogCard({ post, showBadge = true }: BlogCardProps) {
   return (
     <motion.article
       variants={{
@@ -46,12 +47,14 @@ export function BlogCard({ post }: BlogCardProps) {
           className="object-cover transition duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-dark-green/0 transition duration-500 group-hover:bg-dark-green/18" />
-        <Link
-          href={post.categorySlug ? `/category/${post.categorySlug}` : "/categories"}
-          className="absolute left-5 top-5 z-30 rounded-pill bg-white/92 px-3 py-1.5 font-heading text-xs font-semibold text-primary shadow-[0_12px_28px_rgba(6,57,33,0.14)] backdrop-blur transition hover:bg-primary hover:text-white"
-        >
-          {post.category}
-        </Link>
+        {showBadge ? (
+          <Link
+            href={post.categorySlug ? `/category/${post.categorySlug}` : "/categories"}
+            className="absolute left-5 top-5 z-30 rounded-pill bg-white/92 px-3 py-1.5 font-heading text-xs font-semibold text-primary shadow-[0_12px_28px_rgba(6,57,33,0.14)] backdrop-blur transition hover:bg-primary hover:text-white"
+          >
+            {post.category}
+          </Link>
+        ) : null}
       </div>
 
       <div className="relative z-10 flex flex-1 flex-col p-6">

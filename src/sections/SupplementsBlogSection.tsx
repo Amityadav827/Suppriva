@@ -8,9 +8,11 @@ import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 export function SupplementsBlogSection({
   posts,
   section,
+  showFeaturedBadge = true,
 }: {
   posts: BlogPostCard[];
   section?: HomepageSectionConfig;
+  showFeaturedBadge?: boolean;
 }) {
   const ctaLabel = section?.cta_label || "View All Blogs";
   const ctaUrl = section?.cta_url || "/blogs";
@@ -24,7 +26,7 @@ export function SupplementsBlogSection({
           "Expert wellness insights, supplement reviews & health guides."
         }
       />
-      <BlogGrid posts={posts} />
+      <BlogGrid posts={posts} showBadge={showFeaturedBadge} />
       {ctaLabel && ctaUrl ? (
         <div className="mt-10 flex justify-center">
           <PremiumButton href={ctaUrl} variant="secondary">

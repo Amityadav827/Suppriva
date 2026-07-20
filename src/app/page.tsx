@@ -9,6 +9,7 @@ import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
 import { ExpertsService } from "@/services/experts.service";
 import { HomepageHeroService } from "@/services/homepage-hero.service";
+import { HomepageBlogsService } from "@/services/homepage-blogs.service";
 import { HomepageIngredientsDiscoveryService } from "@/services/homepage-ingredients-discovery.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { HomepageWellnessExpertService } from "@/services/homepage-wellness-expert.service";
@@ -19,6 +20,7 @@ import {
   onlyPublished,
   productToCard,
 } from "@/lib/live-data";
+import { selectHomepageBlogs } from "@/lib/homepage-blogs";
 import {
   buildBreadcrumbJsonLd,
   buildPublicPersonJsonLd,
@@ -58,6 +60,7 @@ export default async function Home() {
     homepageHero,
     homepageIngredientsDiscovery,
     homepageWellnessExpert,
+    homepageBlogs,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -68,6 +71,7 @@ export default async function Home() {
     new HomepageHeroService().safeGetHomepageHero(),
     new HomepageIngredientsDiscoveryService().safeGetHomepageIngredientsDiscovery(),
     new HomepageWellnessExpertService().safeGetHomepageWellnessExpert(),
+    new HomepageBlogsService().safeGetHomepageBlogs(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -76,8 +80,7 @@ export default async function Home() {
   const productCards = publishedProducts
     .slice(0, 8)
     .map((product, index) => productToCard(product, categoryMap, index));
-  const blogCards = publishedBlogs
-    .slice(0, 4)
+  const blogCards = selectHomepageBlogs(publishedBlogs, homepageBlogs.settings)
     .map((blog) => blogToCard(blog, categoryMap));
   const categoryPills = publishedCategories.map((category) => ({
     label: category.title,
@@ -135,6 +138,7 @@ export default async function Home() {
             key={section.section_key}
             posts={blogCards}
             section={section}
+            showFeaturedBadge={homepageBlogs.settings.show_featured_badge}
           />
         );
       case "discover_wellness_solutions":

@@ -3,7 +3,13 @@
 import { motion } from "framer-motion";
 import { BlogCard, type BlogPostCard } from "@/components/blog/BlogCard";
 
-export function BlogGrid({ posts }: { posts: BlogPostCard[] }) {
+export function BlogGrid({
+  posts,
+  showBadge = true,
+}: {
+  posts: BlogPostCard[];
+  showBadge?: boolean;
+}) {
   return (
     <motion.div
       initial="hidden"
@@ -20,7 +26,7 @@ export function BlogGrid({ posts }: { posts: BlogPostCard[] }) {
       className="mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 xl:grid-cols-4"
     >
       {posts.map((post) => (
-        <BlogCard key={post.title} post={post} />
+        <BlogCard key={post.title} post={post} showBadge={showBadge} />
       ))}
     </motion.div>
   );
