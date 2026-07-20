@@ -33,6 +33,10 @@ import type {
   HomepageWellnessSolutionsSettings,
   HomepageWellnessSolutionShowcaseProduct,
 } from "@/lib/homepage-wellness-solutions";
+import type {
+  HomepageWhyChooseCard,
+  HomepageWhyChooseCms,
+} from "@/lib/homepage-why-choose";
 
 type HomepageSectionsResponse = {
   sections?: HomepageSectionConfig[];
@@ -69,6 +73,11 @@ type HomepageWellnessSolutionsResponse = {
   error?: string;
 };
 
+type HomepageWhyChooseResponse = {
+  whyChoose?: HomepageWhyChooseCms;
+  error?: string;
+};
+
 function sortSections(sections: HomepageSectionConfig[]) {
   return [...sections].sort((a, b) => a.sort_order - b.sort_order);
 }
@@ -85,6 +94,7 @@ export function DashboardHomepageClient() {
     useState<HomepageWellnessExpertCms | null>(null);
   const [wellnessSolutions, setWellnessSolutions] =
     useState<HomepageWellnessSolutionsCms | null>(null);
+  const [whyChoose, setWhyChoose] = useState<HomepageWhyChooseCms | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isBlogsLoading, setIsBlogsLoading] = useState(true);
   const [isPopularPicksLoading, setIsPopularPicksLoading] = useState(true);
@@ -93,6 +103,7 @@ export function DashboardHomepageClient() {
   const [isWellnessExpertLoading, setIsWellnessExpertLoading] = useState(true);
   const [isWellnessSolutionsLoading, setIsWellnessSolutionsLoading] =
     useState(true);
+  const [isWhyChooseLoading, setIsWhyChooseLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isBlogsSaving, setIsBlogsSaving] = useState(false);
   const [isPopularPicksSaving, setIsPopularPicksSaving] = useState(false);
@@ -101,6 +112,7 @@ export function DashboardHomepageClient() {
   const [isWellnessExpertSaving, setIsWellnessExpertSaving] = useState(false);
   const [isWellnessSolutionsSaving, setIsWellnessSolutionsSaving] =
     useState(false);
+  const [isWhyChooseSaving, setIsWhyChooseSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
@@ -283,6 +295,32 @@ export function DashboardHomepageClient() {
     }
   }, []);
 
+  const fetchWhyChoose = useCallback(async () => {
+    setIsWhyChooseLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/homepage-why-choose", {
+        cache: "no-store",
+      });
+      const payload = (await response.json()) as HomepageWhyChooseResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to load Why Choose CMS.");
+      }
+
+      setWhyChoose(payload.whyChoose ?? null);
+    } catch (fetchError) {
+      setError(
+        fetchError instanceof Error
+          ? fetchError.message
+          : "Unable to load Why Choose CMS.",
+      );
+    } finally {
+      setIsWhyChooseLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void fetchSections();
     void fetchHomepageBlogs();
@@ -291,6 +329,7 @@ export function DashboardHomepageClient() {
     void fetchIngredientsDiscovery();
     void fetchWellnessExpert();
     void fetchWellnessSolutions();
+    void fetchWhyChoose();
   }, [
     fetchHero,
     fetchHomepageBlogs,
@@ -299,6 +338,7 @@ export function DashboardHomepageClient() {
     fetchSections,
     fetchWellnessExpert,
     fetchWellnessSolutions,
+    fetchWhyChoose,
   ]);
 
   function updateSection(
@@ -484,6 +524,23 @@ export function DashboardHomepageClient() {
     });
   }
 
+  function updateWhyChooseCard(
+    index: number,
+    field: keyof HomepageWhyChooseCard,
+    value: string | number | boolean,
+  ) {
+    setWhyChoose((currentWhyChoose) => {
+      if (!currentWhyChoose) return currentWhyChoose;
+
+      return {
+        ...currentWhyChoose,
+        cards: currentWhyChoose.cards.map((card, cardIndex) =>
+          cardIndex === index ? { ...card, [field]: value } : card,
+        ),
+      };
+    });
+  }
+
   function addIngredientChip() {
     setIngredientsDiscovery((currentDiscovery) => {
       if (!currentDiscovery) return currentDiscovery;
@@ -576,6 +633,39 @@ export function DashboardHomepageClient() {
         ...currentSolutions,
         showcase_products: currentSolutions.showcase_products.filter(
           (_, productIndex) => productIndex !== index,
+        ),
+      };
+    });
+  }
+
+  function addWhyChooseCard() {
+    setWhyChoose((currentWhyChoose) => {
+      if (!currentWhyChoose) return currentWhyChoose;
+
+      return {
+        ...currentWhyChoose,
+        cards: [
+          ...currentWhyChoose.cards,
+          {
+            icon: "leaf",
+            title: "New Card",
+            description: "Describe this Why Choose Suppriva card.",
+            sort_order: currentWhyChoose.cards.length,
+            is_visible: true,
+          },
+        ],
+      };
+    });
+  }
+
+  function removeWhyChooseCard(index: number) {
+    setWhyChoose((currentWhyChoose) => {
+      if (!currentWhyChoose) return currentWhyChoose;
+
+      return {
+        ...currentWhyChoose,
+        cards: currentWhyChoose.cards.filter(
+          (_, cardIndex) => cardIndex !== index,
         ),
       };
     });
@@ -815,6 +905,40 @@ export function DashboardHomepageClient() {
       );
     } finally {
       setIsWellnessSolutionsSaving(false);
+    }
+  }
+
+  async function saveWhyChoose() {
+    if (!whyChoose) return;
+
+    setIsWhyChooseSaving(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("/api/homepage-why-choose", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ whyChoose }),
+      });
+      const payload = (await response.json()) as HomepageWhyChooseResponse;
+
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Unable to save Why Choose CMS.");
+      }
+
+      setWhyChoose(payload.whyChoose ?? whyChoose);
+      setSuccess("Why Choose CMS saved successfully.");
+    } catch (saveError) {
+      setError(
+        saveError instanceof Error
+          ? saveError.message
+          : "Unable to save Why Choose CMS.",
+      );
+    } finally {
+      setIsWhyChooseSaving(false);
     }
   }
 
@@ -1633,6 +1757,109 @@ export function DashboardHomepageClient() {
         ) : (
           <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
             Discover Wellness Solutions CMS could not be loaded.
+          </div>
+        )}
+      </DashboardCard>
+
+      <DashboardCard
+        title="Why Choose Suppriva CMS"
+        description="Edit the cards used in the homepage Why Choose Suppriva section."
+      >
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm leading-6 text-muted">
+            Section title, subtitle, order, and visibility are controlled in the
+            Homepage CMS table above.
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => void fetchWhyChoose()}
+              disabled={isWhyChooseLoading || isWhyChooseSaving}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <RefreshCw className="size-4" aria-hidden="true" />
+              Refresh Why Choose
+            </button>
+            <button
+              type="button"
+              onClick={addWhyChooseCard}
+              disabled={isWhyChooseLoading || isWhyChooseSaving || !whyChoose}
+              className="inline-flex items-center gap-2 rounded-pill border border-border-light bg-white px-4 py-2 font-heading text-sm font-semibold text-primary transition hover:border-primary/30 hover:bg-soft-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Plus className="size-4" aria-hidden="true" />
+              Add Card
+            </button>
+            <button
+              type="button"
+              onClick={() => void saveWhyChoose()}
+              disabled={isWhyChooseLoading || isWhyChooseSaving || !whyChoose}
+              className="inline-flex items-center gap-2 rounded-pill bg-primary px-5 py-2 font-heading text-sm font-semibold text-white shadow-[0_12px_28px_rgba(6,57,33,0.16)] transition hover:bg-dark-green disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Save className="size-4" aria-hidden="true" />
+              {isWhyChooseSaving ? "Saving..." : "Save Why Choose"}
+            </button>
+          </div>
+        </div>
+
+        {isWhyChooseLoading ? (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Loading Why Choose CMS...
+          </div>
+        ) : whyChoose ? (
+          <div className="grid gap-4">
+            {whyChoose.cards.map((card, index) => (
+              <div
+                key={`${card.title}-${index}`}
+                className="grid gap-3 rounded-[20px] border border-border-light bg-cream/40 p-4 lg:grid-cols-[130px_1fr_1fr_120px_130px_110px]"
+              >
+                <SelectField
+                  label="Icon"
+                  value={card.icon}
+                  onChange={(value) => updateWhyChooseCard(index, "icon", value)}
+                />
+                <InputField
+                  label="Title"
+                  value={card.title}
+                  onChange={(value) => updateWhyChooseCard(index, "title", value)}
+                />
+                <InputField
+                  label="Description"
+                  value={card.description}
+                  onChange={(value) =>
+                    updateWhyChooseCard(index, "description", value)
+                  }
+                />
+                <InputField
+                  label="Order"
+                  type="number"
+                  value={String(card.sort_order)}
+                  onChange={(value) =>
+                    updateWhyChooseCard(index, "sort_order", Number(value))
+                  }
+                />
+                <ToggleField
+                  label="Visible"
+                  checked={card.is_visible}
+                  onChange={(value) =>
+                    updateWhyChooseCard(index, "is_visible", value)
+                  }
+                />
+                <label className="flex items-end">
+                  <button
+                    type="button"
+                    onClick={() => removeWhyChooseCard(index)}
+                    className="inline-flex h-12 items-center gap-2 rounded-2xl border border-red-200 bg-white px-4 font-heading text-sm font-semibold text-red-600 transition hover:bg-red-50"
+                  >
+                    <Trash2 className="size-4" aria-hidden="true" />
+                    Remove
+                  </button>
+                </label>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-[24px] border border-border-light px-5 py-12 text-center text-muted">
+            Why Choose CMS could not be loaded.
           </div>
         )}
       </DashboardCard>

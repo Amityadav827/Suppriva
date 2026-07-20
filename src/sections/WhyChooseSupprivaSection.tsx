@@ -6,16 +6,29 @@ import { TrustCard } from "@/components/trust/TrustCard";
 import { PremiumButton } from "@/components/ui/PremiumButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { whyChooseItems } from "@/lib/constants";
+import { getCmsIcon } from "@/lib/cms-icons";
+import {
+  DEFAULT_HOMEPAGE_WHY_CHOOSE,
+  type HomepageWhyChooseCms,
+} from "@/lib/homepage-why-choose";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
 export function WhyChooseSupprivaSection({
   section,
+  cms = DEFAULT_HOMEPAGE_WHY_CHOOSE,
 }: {
   section?: HomepageSectionConfig;
+  cms?: HomepageWhyChooseCms;
 }) {
   const ctaLabel = section?.cta_label;
   const ctaUrl = section?.cta_url;
+  const cards = cms.cards
+    .filter((card) => card.is_visible)
+    .map((card) => ({
+      title: card.title,
+      description: card.description,
+      icon: getCmsIcon(card.icon),
+    }));
 
   return (
     <SectionWrapper id="why-choose-suppriva" tone="white">
@@ -28,8 +41,8 @@ export function WhyChooseSupprivaSection({
       />
 
       <GridWrapper className="mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 xl:grid-cols-4">
-        {whyChooseItems.map((item) => (
-          <TrustCard key={item.title} item={item} />
+        {cards.map((item, index) => (
+          <TrustCard key={`${item.title}-${index}`} item={item} />
         ))}
       </GridWrapper>
       {ctaLabel && ctaUrl ? (

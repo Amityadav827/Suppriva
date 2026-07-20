@@ -15,6 +15,7 @@ import { HomepagePopularPicksService } from "@/services/homepage-popular-picks.s
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { HomepageWellnessExpertService } from "@/services/homepage-wellness-expert.service";
 import { HomepageWellnessSolutionsService } from "@/services/homepage-wellness-solutions.service";
+import { HomepageWhyChooseService } from "@/services/homepage-why-choose.service";
 import { ProductService } from "@/services/product.service";
 import {
   blogToCard,
@@ -66,6 +67,7 @@ export default async function Home() {
     homepageWellnessExpert,
     homepageBlogs,
     homepageWellnessSolutions,
+    homepageWhyChoose,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -79,6 +81,7 @@ export default async function Home() {
     new HomepageWellnessExpertService().safeGetHomepageWellnessExpert(),
     new HomepageBlogsService().safeGetHomepageBlogs(),
     new HomepageWellnessSolutionsService().safeGetHomepageWellnessSolutions(),
+    new HomepageWhyChooseService().safeGetHomepageWhyChoose(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -161,7 +164,11 @@ export default async function Home() {
         );
       case "why_choose_suppriva":
         return (
-          <WhyChooseSupprivaSection key={section.section_key} section={section} />
+          <WhyChooseSupprivaSection
+            key={section.section_key}
+            section={section}
+            cms={homepageWhyChoose}
+          />
         );
       case "trust_badges":
         return <TrustBadgesStrip key={section.section_key} section={section} />;

@@ -22,6 +22,7 @@ import type {
   HomepageWellnessSolutionsSettings,
   HomepageWellnessSolutionShowcaseProduct,
 } from "@/lib/homepage-wellness-solutions";
+import type { HomepageWhyChooseCard } from "@/lib/homepage-why-choose";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
@@ -750,6 +751,7 @@ export type Database = {
     HomepageWellnessSolutionFeatureCard & { id: string };
   homepage_wellness_solution_showcase_products:
     HomepageWellnessSolutionShowcaseProduct & { id: string };
+  homepage_why_choose_cards: HomepageWhyChooseCard & { id: string };
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;
