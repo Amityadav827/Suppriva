@@ -11,6 +11,7 @@ import { ExpertsService } from "@/services/experts.service";
 import { HomepageHeroService } from "@/services/homepage-hero.service";
 import { HomepageBlogsService } from "@/services/homepage-blogs.service";
 import { HomepageIngredientsDiscoveryService } from "@/services/homepage-ingredients-discovery.service";
+import { HomepageNewsletterService } from "@/services/homepage-newsletter.service";
 import { HomepagePopularPicksService } from "@/services/homepage-popular-picks.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { HomepageTrustBadgesService } from "@/services/homepage-trust-badges.service";
@@ -70,6 +71,7 @@ export default async function Home() {
     homepageWellnessSolutions,
     homepageWhyChoose,
     homepageTrustBadges,
+    homepageNewsletter,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -85,6 +87,7 @@ export default async function Home() {
     new HomepageWellnessSolutionsService().safeGetHomepageWellnessSolutions(),
     new HomepageWhyChooseService().safeGetHomepageWhyChoose(),
     new HomepageTrustBadgesService().safeGetHomepageTrustBadges(),
+    new HomepageNewsletterService().safeGetHomepageNewsletter(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -182,7 +185,13 @@ export default async function Home() {
           />
         );
       case "newsletter":
-        return <NewsletterSection key={section.section_key} section={section} />;
+        return (
+          <NewsletterSection
+            key={section.section_key}
+            section={section}
+            cms={homepageNewsletter}
+          />
+        );
       default:
         return null;
     }

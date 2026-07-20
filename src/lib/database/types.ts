@@ -15,6 +15,10 @@ import type {
 } from "@/lib/homepage-hero";
 import type { HomepageBlogsSettings } from "@/lib/homepage-blogs";
 import type { HomepageIngredientChip } from "@/lib/homepage-ingredients-discovery";
+import type {
+  HomepageNewsletterSettings,
+  HomepageNewsletterTrustChip,
+} from "@/lib/homepage-newsletter";
 import type { HomepagePopularPicksSettings } from "@/lib/homepage-popular-picks";
 import type { HomepageTrustBadge } from "@/lib/homepage-trust-badges";
 import type { HomepageWellnessExpertSettings } from "@/lib/homepage-wellness-expert";
@@ -744,6 +748,8 @@ export type Database = {
   homepage_hero_trust_cards: HomepageHeroTrustCard & { id: string };
   homepage_hero_floating_pills: HomepageHeroFloatingPill & { id: string };
   homepage_ingredient_chips: HomepageIngredientChip & { id: string };
+  homepage_newsletter_settings: HomepageNewsletterSettings & { id: string };
+  homepage_newsletter_trust_chips: HomepageNewsletterTrustChip & { id: string };
   homepage_wellness_expert_settings: HomepageWellnessExpertSettings & { id: string };
   homepage_wellness_solutions_settings: HomepageWellnessSolutionsSettings & {
     id: string;

@@ -3,9 +3,21 @@
 import { motion } from "framer-motion";
 import { BadgeCheck, Leaf, Sparkles } from "lucide-react";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
+import {
+  DEFAULT_HOMEPAGE_NEWSLETTER,
+  type HomepageNewsletterCms,
+} from "@/lib/homepage-newsletter";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-export function NewsletterSection({ section }: { section?: HomepageSectionConfig }) {
+export function NewsletterSection({
+  section,
+  cms = DEFAULT_HOMEPAGE_NEWSLETTER,
+}: {
+  section?: HomepageSectionConfig;
+  cms?: HomepageNewsletterCms;
+}) {
+  const trustChips = cms.trust_chips.filter((chip) => chip.is_visible);
+
   return (
     <section
       id="newsletter"
@@ -59,7 +71,7 @@ export function NewsletterSection({ section }: { section?: HomepageSectionConfig
               />
               <span className="inline-flex items-center gap-2 rounded-pill border border-gold/24 bg-gold/12 px-4 py-2 font-heading text-sm font-semibold text-white shadow-[0_12px_34px_rgba(0,0,0,0.12)] backdrop-blur">
                 <Sparkles className="size-4 text-gold" aria-hidden="true" />
-                Premium Wellness Insider
+                {cms.settings.badge_text}
               </span>
 
               <h2 className="relative mt-5 max-w-3xl font-heading text-3xl font-extrabold leading-[1.18] text-white md:text-4xl lg:text-5xl lg:leading-[1.14]">
@@ -73,12 +85,9 @@ export function NewsletterSection({ section }: { section?: HomepageSectionConfig
               <div className="mx-auto mt-6 h-px w-28 bg-gradient-to-r from-transparent via-gold/70 to-transparent lg:mx-0 lg:w-40 lg:from-gold/70 lg:via-white/18" />
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:max-w-[560px]">
-                {[
-                  "Trusted by 10,000+ wellness readers",
-                  "Weekly expert supplement insights",
-                ].map((text) => (
+                {trustChips.map((chip, index) => (
                   <motion.div
-                    key={text}
+                    key={`${chip.label}-${index}`}
                     whileHover={{ y: -2 }}
                     transition={{ duration: 0.25 }}
                     className="flex items-center justify-center gap-2 rounded-pill border border-white/10 bg-white/[0.065] px-4 py-3 text-sm text-emerald-50/90 shadow-[0_12px_30px_rgba(0,0,0,0.08)] backdrop-blur lg:justify-start"
@@ -87,13 +96,13 @@ export function NewsletterSection({ section }: { section?: HomepageSectionConfig
                       className="size-4 shrink-0 text-gold"
                       aria-hidden="true"
                     />
-                    <span>{text}</span>
+                    <span>{chip.label}</span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            <NewsletterForm />
+            <NewsletterForm settings={cms.settings} />
           </div>
         </div>
       </div>

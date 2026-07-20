@@ -3,8 +3,16 @@
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { BadgeCheck, LockKeyhole, Mail, Send, Sparkles } from "lucide-react";
+import {
+  DEFAULT_HOMEPAGE_NEWSLETTER,
+  type HomepageNewsletterSettings,
+} from "@/lib/homepage-newsletter";
 
-export function NewsletterForm() {
+export function NewsletterForm({
+  settings = DEFAULT_HOMEPAGE_NEWSLETTER.settings,
+}: {
+  settings?: HomepageNewsletterSettings;
+}) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -31,14 +39,10 @@ export function NewsletterForm() {
         throw new Error(payload.error ?? "Unable to subscribe right now.");
       }
 
-      setMessage("You are subscribed. Welcome to Suppriva wellness insights.");
+      setMessage(settings.success_message);
       setEmail("");
-    } catch (subscribeError) {
-      setError(
-        subscribeError instanceof Error
-          ? subscribeError.message
-          : "Unable to subscribe right now.",
-      );
+    } catch {
+      setError(settings.error_message);
     } finally {
       setLoading(false);
     }
@@ -90,7 +94,7 @@ export function NewsletterForm() {
               required
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="Enter your email"
+              placeholder={settings.email_placeholder}
               className="min-w-0 flex-1 bg-transparent text-base text-text-dark outline-none placeholder:text-muted"
             />
           </div>
@@ -102,7 +106,7 @@ export function NewsletterForm() {
             transition={{ duration: 0.28 }}
             className="inline-flex min-h-16 items-center justify-center gap-2 rounded-pill bg-[linear-gradient(90deg,#063921,#0B5D3B,#0E7A4F)] px-7 font-heading text-sm font-semibold text-white shadow-[0_18px_46px_rgba(11,93,59,0.34)] transition duration-300 hover:shadow-[0_24px_60px_rgba(217,165,32,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {loading ? "Subscribing..." : "Subscribe"}
+            {loading ? "Subscribing..." : settings.button_label}
             <Send className="size-4" aria-hidden="true" />
           </motion.button>
         </div>
