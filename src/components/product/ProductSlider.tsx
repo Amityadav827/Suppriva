@@ -6,7 +6,17 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ProductCard, type ProductCardData } from "@/components/product/ProductCard";
 
-export function ProductSlider({ products }: { products: ProductCardData[] }) {
+export function ProductSlider({
+  products,
+  showRating = true,
+  showCategory = true,
+  showCta = true,
+}: {
+  products: ProductCardData[];
+  showRating?: boolean;
+  showCategory?: boolean;
+  showCta?: boolean;
+}) {
   const [mounted, setMounted] = useState(false);
   const sliderProducts = products.length > 1 ? [...products, ...products] : products;
 
@@ -18,7 +28,13 @@ export function ProductSlider({ products }: { products: ProductCardData[] }) {
     return (
       <div className="mt-12 grid gap-6 md:mt-14 md:grid-cols-3 xl:grid-cols-5">
         {products.map((product) => (
-          <ProductCard key={product.name} product={product} />
+          <ProductCard
+            key={product.name}
+            product={product}
+            showRating={showRating}
+            showCategory={showCategory}
+            showCta={showCta}
+          />
         ))}
       </div>
     );
@@ -69,7 +85,12 @@ export function ProductSlider({ products }: { products: ProductCardData[] }) {
       >
         {sliderProducts.map((product, index) => (
           <SwiperSlide key={`${product.name}-${index}`} className="!h-auto pb-3">
-            <ProductCard product={product} />
+            <ProductCard
+              product={product}
+              showRating={showRating}
+              showCategory={showCategory}
+              showCta={showCta}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

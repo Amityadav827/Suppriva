@@ -15,6 +15,7 @@ import type {
 } from "@/lib/homepage-hero";
 import type { HomepageBlogsSettings } from "@/lib/homepage-blogs";
 import type { HomepageIngredientChip } from "@/lib/homepage-ingredients-discovery";
+import type { HomepagePopularPicksSettings } from "@/lib/homepage-popular-picks";
 import type { HomepageWellnessExpertSettings } from "@/lib/homepage-wellness-expert";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
@@ -731,6 +732,7 @@ export type Database = {
   newsletter_subscribers: NewsletterSubscriber;
   homepage_sections: HomepageSection;
   homepage_blogs_settings: HomepageBlogsSettings & { id: string };
+  homepage_popular_picks_settings: HomepagePopularPicksSettings & { id: string };
   homepage_hero_settings: HomepageHeroSettings & { id: string };
   homepage_hero_trust_cards: HomepageHeroTrustCard & { id: string };
   homepage_hero_floating_pills: HomepageHeroFloatingPill & { id: string };

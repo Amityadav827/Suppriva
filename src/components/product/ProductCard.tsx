@@ -19,9 +19,17 @@ export type ProductCardData = {
 
 type ProductCardProps = {
   product: ProductCardData;
+  showRating?: boolean;
+  showCategory?: boolean;
+  showCta?: boolean;
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({
+  product,
+  showRating = true,
+  showCategory = true,
+  showCta = true,
+}: ProductCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -67,29 +75,35 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       <div className="relative z-10 flex flex-1 flex-col text-center">
-        <p className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-primary/70">
-          {product.category}
-        </p>
+        {showCategory ? (
+          <p className="font-heading text-xs font-semibold uppercase tracking-[0.16em] text-primary/70">
+            {product.category}
+          </p>
+        ) : null}
         <h3 className="mt-2 font-heading text-xl font-extrabold text-text-dark">
           {product.name}
         </h3>
         <p className="mt-2 min-h-[88px] flex-1 text-sm leading-6 text-muted">
           {product.subtitle}
         </p>
-        <div className="mt-auto flex items-center justify-center gap-3 pt-5">
-        <span className="inline-flex items-center gap-1.5 rounded-pill border border-gold/35 bg-[linear-gradient(135deg,rgba(217,165,32,0.18),rgba(255,255,255,0.95))] px-3.5 py-2 font-heading text-sm font-bold text-text-dark shadow-[0_10px_26px_rgba(217,165,32,0.14)]">
-          <Star className="size-4 fill-gold text-gold" aria-hidden="true" />
-          {product.rating}
-        </span>
-        {product.slug ? (
-          <span
-            className="inline-flex items-center justify-center gap-1.5 rounded-pill bg-primary px-4 py-2 font-heading text-xs font-semibold text-white shadow-[0_12px_28px_rgba(11,93,59,0.18)] transition duration-300 group-hover:bg-button-hover group-hover:shadow-[0_16px_36px_rgba(11,93,59,0.24)]"
-          >
-            View Product
-            <ArrowRight className="size-3.5" aria-hidden="true" />
-          </span>
+        {showRating || showCta ? (
+          <div className="mt-auto flex items-center justify-center gap-3 pt-5">
+            {showRating ? (
+              <span className="inline-flex items-center gap-1.5 rounded-pill border border-gold/35 bg-[linear-gradient(135deg,rgba(217,165,32,0.18),rgba(255,255,255,0.95))] px-3.5 py-2 font-heading text-sm font-bold text-text-dark shadow-[0_10px_26px_rgba(217,165,32,0.14)]">
+                <Star className="size-4 fill-gold text-gold" aria-hidden="true" />
+                {product.rating}
+              </span>
+            ) : null}
+            {showCta && product.slug ? (
+              <span
+                className="inline-flex items-center justify-center gap-1.5 rounded-pill bg-primary px-4 py-2 font-heading text-xs font-semibold text-white shadow-[0_12px_28px_rgba(11,93,59,0.18)] transition duration-300 group-hover:bg-button-hover group-hover:shadow-[0_16px_36px_rgba(11,93,59,0.24)]"
+              >
+                View Product
+                <ArrowRight className="size-3.5" aria-hidden="true" />
+              </span>
+            ) : null}
+          </div>
         ) : null}
-        </div>
       </div>
     </motion.article>
   );

@@ -11,6 +11,7 @@ import { ExpertsService } from "@/services/experts.service";
 import { HomepageHeroService } from "@/services/homepage-hero.service";
 import { HomepageBlogsService } from "@/services/homepage-blogs.service";
 import { HomepageIngredientsDiscoveryService } from "@/services/homepage-ingredients-discovery.service";
+import { HomepagePopularPicksService } from "@/services/homepage-popular-picks.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { HomepageWellnessExpertService } from "@/services/homepage-wellness-expert.service";
 import { ProductService } from "@/services/product.service";
@@ -21,6 +22,7 @@ import {
   productToCard,
 } from "@/lib/live-data";
 import { selectHomepageBlogs } from "@/lib/homepage-blogs";
+import { selectHomepagePopularProducts } from "@/lib/homepage-popular-picks";
 import {
   buildBreadcrumbJsonLd,
   buildPublicPersonJsonLd,
@@ -59,6 +61,7 @@ export default async function Home() {
     homepageSections,
     homepageHero,
     homepageIngredientsDiscovery,
+    homepagePopularPicks,
     homepageWellnessExpert,
     homepageBlogs,
   ] = await Promise.all([
@@ -70,6 +73,7 @@ export default async function Home() {
     new HomepageSectionsService().safeGetHomepageSections(),
     new HomepageHeroService().safeGetHomepageHero(),
     new HomepageIngredientsDiscoveryService().safeGetHomepageIngredientsDiscovery(),
+    new HomepagePopularPicksService().safeGetHomepagePopularPicks(),
     new HomepageWellnessExpertService().safeGetHomepageWellnessExpert(),
     new HomepageBlogsService().safeGetHomepageBlogs(),
   ]);
@@ -77,8 +81,10 @@ export default async function Home() {
   const publishedCategories = onlyPublished(categories);
   const publishedBlogs = onlyPublished(blogs);
   const categoryMap = createCategoryMap(publishedCategories);
-  const productCards = publishedProducts
-    .slice(0, 8)
+  const productCards = selectHomepagePopularProducts(
+    publishedProducts,
+    homepagePopularPicks.settings,
+  )
     .map((product, index) => productToCard(product, categoryMap, index));
   const blogCards = selectHomepageBlogs(publishedBlogs, homepageBlogs.settings)
     .map((blog) => blogToCard(blog, categoryMap));
@@ -113,6 +119,7 @@ export default async function Home() {
             key={section.section_key}
             products={productCards}
             section={section}
+            settings={homepagePopularPicks.settings}
           />
         );
       case "ingredients_discovery":
