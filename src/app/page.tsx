@@ -8,6 +8,7 @@ import { buildSeoMetadata } from "@/lib/seo/metadata";
 import { BlogService } from "@/services/blog.service";
 import { CategoryService } from "@/services/category.service";
 import { ExpertsService } from "@/services/experts.service";
+import { HomepageHeroService } from "@/services/homepage-hero.service";
 import { HomepageSectionsService } from "@/services/homepage-sections.service";
 import { ProductService } from "@/services/product.service";
 import {
@@ -52,6 +53,7 @@ export default async function Home() {
     featuredExperts,
     activeExperts,
     homepageSections,
+    homepageHero,
   ] = await Promise.all([
     new ProductService().getAllProducts(),
     new CategoryService().getAllCategories(),
@@ -59,6 +61,7 @@ export default async function Home() {
     new ExpertsService().safeGetFeaturedExperts(),
     new ExpertsService().safeGetActiveExperts(),
     new HomepageSectionsService().safeGetHomepageSections(),
+    new HomepageHeroService().safeGetHomepageHero(),
   ]);
   const publishedProducts = onlyPublished(products);
   const publishedCategories = onlyPublished(categories);
@@ -80,7 +83,13 @@ export default async function Home() {
   function renderHomepageSection(section: (typeof homepageSections)[number]) {
     switch (section.section_key) {
       case "hero":
-        return <HeroSection key={section.section_key} section={section} />;
+        return (
+          <HeroSection
+            key={section.section_key}
+            section={section}
+            hero={homepageHero}
+          />
+        );
       case "health_needs":
         return (
           <HealthNeedsSection

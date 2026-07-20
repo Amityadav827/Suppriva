@@ -5,31 +5,25 @@ import { motion } from "framer-motion";
 import { HeroProductShowcase } from "@/components/hero/HeroProductShowcase";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PremiumButton } from "@/components/ui/PremiumButton";
-import { trustItems } from "@/lib/constants";
+import { getCmsIcon } from "@/lib/cms-icons";
+import {
+  DEFAULT_HOMEPAGE_HERO,
+  type HomepageHeroCms,
+} from "@/lib/homepage-hero";
 import type { HomepageSectionConfig } from "@/lib/homepage-sections";
 
-const DEFAULT_TITLE = "Discover Wellness Solutions That Fit Your Goals";
-const DEFAULT_SUBTITLE =
-  "Explore supplements, ingredient insights, and wellness collections designed to help you make informed health decisions with confidence.";
-
-function HeroTitle({ title }: { title: string }) {
-  if (title === DEFAULT_TITLE) {
-    return (
-      <>
-        Discover Wellness Solutions{" "}
-        <span className="text-gold">That Fit Your Goals</span>
-      </>
-    );
-  }
-
-  return title;
-}
-
-export function HeroSection({ section }: { section?: HomepageSectionConfig }) {
-  const title = section?.title || DEFAULT_TITLE;
-  const subtitle = section?.subtitle || DEFAULT_SUBTITLE;
-  const ctaLabel = section?.cta_label || "Explore Wellness Categories";
-  const ctaUrl = section?.cta_url || "/category";
+export function HeroSection({
+  hero,
+}: {
+  section?: HomepageSectionConfig;
+  hero?: HomepageHeroCms;
+}) {
+  const heroCms = hero || DEFAULT_HOMEPAGE_HERO;
+  const { settings } = heroCms;
+  const BadgeIcon = getCmsIcon(settings.badge_icon) || CheckCircle2;
+  const visibleTrustCards = heroCms.trust_cards
+    .filter((item) => item.is_visible)
+    .sort((a, b) => a.sort_order - b.sort_order);
 
   return (
     <section className="relative isolate overflow-hidden bg-cream py-[72px] md:py-[92px] lg:py-[100px]">
@@ -50,38 +44,46 @@ export function HeroSection({ section }: { section?: HomepageSectionConfig }) {
         <div className="mx-auto max-w-[680px] text-center lg:mx-0 lg:text-left">
           <FadeIn>
             <span className="inline-flex items-center gap-2 rounded-pill border border-primary/10 bg-white px-4 py-2 font-heading text-sm font-semibold text-primary shadow-[0_14px_36px_rgba(6,57,33,0.08)]">
-              <CheckCircle2 className="size-4 text-gold" aria-hidden="true" />
-              Wellness Discovery Platform
+              <BadgeIcon className="size-4 text-gold" aria-hidden="true" />
+              {settings.badge_text}
             </span>
           </FadeIn>
 
           <FadeIn delay={0.08}>
             <h1 className="mt-7 font-heading text-3xl font-extrabold leading-[1.08] text-text-dark md:text-4xl xl:text-6xl">
-              <HeroTitle title={title} />
+              {settings.heading}{" "}
+              <span className="text-gold">{settings.highlight_heading}</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
             <p className="mx-auto mt-6 max-w-[620px] text-base leading-8 text-muted lg:mx-0">
-              {subtitle}
+              {settings.description}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.24}>
             <div className="mt-9 grid gap-3 sm:flex sm:justify-center lg:justify-start">
-              <PremiumButton href={ctaUrl} icon={<ArrowRight className="size-4" />}>
-                {ctaLabel}
+              <PremiumButton
+                href={settings.primary_cta_url}
+                icon={<ArrowRight className="size-4" />}
+              >
+                {settings.primary_cta_label}
               </PremiumButton>
-              <PremiumButton href="/ingredients" variant="secondary" icon={<ArrowRight className="size-4" />}>
-                Explore Ingredients
+              <PremiumButton
+                href={settings.secondary_cta_url}
+                variant="secondary"
+                icon={<ArrowRight className="size-4" />}
+              >
+                {settings.secondary_cta_label}
               </PremiumButton>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.32}>
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
-              {trustItems.map((item) => {
-                const Icon = item.icon;
+              {visibleTrustCards.map((item) => {
+                const Icon = getCmsIcon(item.icon);
 
                 return (
                   <motion.div
@@ -108,7 +110,11 @@ export function HeroSection({ section }: { section?: HomepageSectionConfig }) {
           </FadeIn>
         </div>
 
-        <HeroProductShowcase />
+        <HeroProductShowcase
+          image={settings.hero_image}
+          imageAlt={settings.hero_image_alt}
+          floatingPills={heroCms.floating_pills}
+        />
       </div>
     </section>
   );

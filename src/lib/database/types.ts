@@ -8,6 +8,11 @@ import {
 } from "./constants";
 import type { IngredientLayoutSectionKey } from "@/lib/ingredient-layout";
 import type { HomepageSectionKey } from "@/lib/homepage-sections";
+import type {
+  HomepageHeroFloatingPill,
+  HomepageHeroSettings,
+  HomepageHeroTrustCard,
+} from "@/lib/homepage-hero";
 import type { ProductLayoutSectionKey } from "@/lib/product-layout";
 
 export type JsonValue =
@@ -722,6 +727,9 @@ export type Database = {
   product_related_ingredients: ProductRelatedIngredient;
   newsletter_subscribers: NewsletterSubscriber;
   homepage_sections: HomepageSection;
+  homepage_hero_settings: HomepageHeroSettings & { id: string };
+  homepage_hero_trust_cards: HomepageHeroTrustCard & { id: string };
+  homepage_hero_floating_pills: HomepageHeroFloatingPill & { id: string };
   contact_messages: ContactMessage;
   expert_queries: ExpertQuery;
   affiliate_clicks: AffiliateClick;

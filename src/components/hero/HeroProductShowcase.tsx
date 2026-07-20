@@ -1,43 +1,47 @@
 "use client";
 
 import Image from "next/image";
-import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { heroGoalPills } from "@/lib/constants";
+import { getCmsIcon } from "@/lib/cms-icons";
+import {
+  DEFAULT_HOMEPAGE_HERO,
+  type HomepageHeroFloatingPill,
+} from "@/lib/homepage-hero";
 
 const heroGoalPillPositions: Array<{
-  label: string;
-  icon: LucideIcon;
   className: string;
 }> = [
   {
-    label: heroGoalPills[0].label,
-    icon: heroGoalPills[0].icon,
     className: "left-2 top-12 hidden sm:flex lg:left-0 lg:top-16",
   },
   {
-    label: heroGoalPills[1].label,
-    icon: heroGoalPills[1].icon,
     className: "right-0 top-8 hidden sm:flex lg:right-2",
   },
   {
-    label: heroGoalPills[2].label,
-    icon: heroGoalPills[2].icon,
     className: "right-2 top-44 hidden md:flex lg:right-0 lg:top-48",
   },
   {
-    label: heroGoalPills[3].label,
-    icon: heroGoalPills[3].icon,
     className: "bottom-28 right-8 hidden md:flex lg:bottom-32 lg:right-4",
   },
   {
-    label: heroGoalPills[4].label,
-    icon: heroGoalPills[4].icon,
     className: "left-2 top-1/2 hidden sm:flex -translate-y-1/2 lg:left-0",
   },
 ];
 
-export function HeroProductShowcase() {
+export function HeroProductShowcase({
+  image = DEFAULT_HOMEPAGE_HERO.settings.hero_image,
+  imageAlt = DEFAULT_HOMEPAGE_HERO.settings.hero_image_alt,
+  floatingPills = DEFAULT_HOMEPAGE_HERO.floating_pills,
+}: {
+  image?: string;
+  imageAlt?: string;
+  floatingPills?: HomepageHeroFloatingPill[];
+}) {
+  const visiblePills = floatingPills
+    .filter((pill) => pill.is_visible)
+    .sort((a, b) => a.sort_order - b.sort_order);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 28, scale: 0.98 }}
@@ -72,8 +76,8 @@ export function HeroProductShowcase() {
         className="relative z-10 h-[390px] w-[340px] sm:h-[530px] sm:w-[470px] lg:h-[590px] lg:w-[520px]"
       >
         <Image
-          src="/assets/hero-supplements.webp"
-          alt="Premium supplement bottles with green and gold packaging"
+          src={image}
+          alt={imageAlt}
           fill
           priority
           sizes="(max-width: 640px) 340px, (max-width: 1024px) 470px, 520px"
@@ -81,12 +85,24 @@ export function HeroProductShowcase() {
         />
       </motion.div>
 
-      {heroGoalPillPositions.map((item, index) => {
-        const Icon = item.icon;
+      {visiblePills.map((pill, index) => {
+        const Icon = getCmsIcon(pill.icon);
+        const position =
+          heroGoalPillPositions[index % heroGoalPillPositions.length];
+        const pillContent = (
+          <>
+            <span className="grid size-8 place-items-center rounded-full bg-white/88 text-primary">
+              <Icon className="size-4" aria-hidden="true" />
+            </span>
+            <span className="font-heading text-xs font-semibold text-text-dark">
+              {pill.label}
+            </span>
+          </>
+        );
 
         return (
           <motion.div
-            key={item.label}
+            key={`${pill.label}-${pill.sort_order}`}
             animate={{ y: [0, -8, 0] }}
             transition={{
               duration: 4.4 + index * 0.35,
@@ -94,14 +110,15 @@ export function HeroProductShowcase() {
               ease: "easeInOut",
               delay: index * 0.18,
             }}
-            className={`absolute z-20 items-center gap-2 rounded-pill border border-primary/10 bg-soft-green/88 px-4 py-3 shadow-[0_18px_44px_rgba(6,57,33,0.11)] backdrop-blur ${item.className}`}
+            className={`absolute z-20 items-center gap-2 rounded-pill border border-primary/10 bg-soft-green/88 px-4 py-3 shadow-[0_18px_44px_rgba(6,57,33,0.11)] backdrop-blur ${position.className}`}
           >
-            <span className="grid size-8 place-items-center rounded-full bg-white/88 text-primary">
-              <Icon className="size-4" aria-hidden="true" />
-            </span>
-            <span className="font-heading text-xs font-semibold text-text-dark">
-              {item.label}
-            </span>
+            {pill.link ? (
+              <Link href={pill.link} className="flex items-center gap-2">
+                {pillContent}
+              </Link>
+            ) : (
+              pillContent
+            )}
           </motion.div>
         );
       })}
